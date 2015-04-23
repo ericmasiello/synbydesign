@@ -1,0 +1,26 @@
+{
+  "name": "Syn-By-Design-Fluxbone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "flux": "^2.0.1",
+    "fluxbone": "^1.0.0",
+    "jquery": "^2.1.3",
+    "react": "^0.13.1",
+    "react-addons": "^0.9.1-deprecated"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.7.0",
+    "grunt-contrib-jshint": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-react": "^0.12.1"
+  }
+}
