@@ -1,0 +1,11 @@
+.container, .container-fluid {
+
+  margin: auto;
+}
+
+
+// fixes bug with flexbox version of grid
+.row:after, .row:before {
+
+  display: none;
+}

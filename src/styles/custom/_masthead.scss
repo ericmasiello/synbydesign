@@ -1,0 +1,78 @@
+.masthead {
+
+  //background: image-url('decoration-2.svg') no-repeat center 0, image-url('decoration-2.svg') no-repeat center 100%, transparent;
+  font-family: $masthead-font-family;
+
+
+  nav {
+
+    white-space: nowrap;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: font-size .3s;
+
+    @media (min-width: $screen-sm-min) {
+
+      font-size: 1.6rem;
+    }
+
+    @media (min-width: $screen-md-min) {
+
+      font-size: 2rem;
+    }
+
+    > ul {
+
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  .row {
+
+    margin-top: 3%;
+
+    &:first-child {
+
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+
+  .masthead__logo {
+
+    min-width: 20rem;
+  }
+}
+
+
+
+.masthead__decoration-line {
+
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  height: 3px;
+}
+
+.masthead__decoration {
+
+  background: image-url('decoration-2.svg') no-repeat center 0 transparent;
+  background-size: contain;
+  height: 2.25rem;
+  margin: 0 2px;
+  max-width: 5rem;
+}
+
+.masthead__decoration--bottom {
+
+  background-image: image-url('decoration.svg');
+  margin-bottom: -1rem;
+  max-width: 10rem;
+}
+
+
+
