@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
+                    relativeAssets: true,
                     imagesDir: 'src/images/',
                     sassDir: 'src/styles',
                     cssDir: 'src/styles'
@@ -116,7 +117,7 @@ module.exports = function(grunt) {
     //grunt.loadNpmTasks('grunt-contrib-jshint');
     //grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('style', ['compass', 'autoprefixer', 'cssmin', 'copy:style', 'copy:images'/*, 'clean:tmpCSS'*/]);
+    grunt.registerTask('style', ['compass', 'autoprefixer', 'cssmin', 'copy:style', 'copy:images', 'clean:tmpCSS']);
 
     grunt.registerTask('default', ['clean:dist', 'style', 'browserify']);
 };
