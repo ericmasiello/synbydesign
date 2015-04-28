@@ -20,11 +20,8 @@ var Portfolio = React.createClass({
     this.unsubscribe = PortfolioStore.listen(function(type){
 
       var stateUpdate = {};
-      stateUpdate[type + 'Items'] = PortfolioStore.getCollectionByName(type);
+      stateUpdate[type.toLowerCase() + 'Items'] = PortfolioStore.getCollectionByName(type);
       self.setState(stateUpdate);
-
-      //self.props[type + 'Items'] = PortfolioStore.getCollectionByName(type);
-      //self.forceUpdate();
     });
   },
 

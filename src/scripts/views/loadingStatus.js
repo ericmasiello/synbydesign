@@ -7,10 +7,10 @@ var LoadingStatus = React.createClass({
 
     var self = this;
 
-    this.unsubscribe = UIStore.listen(function(status){
+    this.unsubscribe = UIStore.listen(function(){
 
       self.setState({
-        loading: status
+        loading: UIStore.isLoading()
       });
     });
   },

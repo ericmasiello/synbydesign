@@ -4,13 +4,25 @@ var UIActions = require('../actions/uiActions');
 var jQuery = require('jquery');
 var WebPortfolioCollection = require('../collections/webPortfolioCollection');
 var OtherPortfolioCollection = require('../collections/otherPortfolioCollection');
+var AjaxMixin = require('../backboneMixins/ajax');
 
 var _webPortfolio = new WebPortfolioCollection();
 var _otherPortfolio = new OtherPortfolioCollection();
 
+/*
+ * Mixin Ajax sync functionality that plays with the Flux actions
+ */
+jQuery.extend(_webPortfolio, AjaxMixin, {
+  action: PortfolioActions.loadWeb
+});
+
+jQuery.extend(_otherPortfolio, AjaxMixin, {
+  action: PortfolioActions.loadOther
+});
+
 var TYPES = {
-  other: 'other',
-  web: 'web'
+  OTHER: 'OTHER',
+  WEB: 'WEB'
 };
 
 var PortfolioStore = Reflux.createStore({
@@ -25,7 +37,7 @@ var PortfolioStore = Reflux.createStore({
   onLoadOtherCompleted: function (items) {
 
     _otherPortfolio.add(items);
-    this.trigger(TYPES.other);
+    this.trigger(TYPES.OTHER);
   },
 
   onLoadOther: function () {
@@ -37,7 +49,7 @@ var PortfolioStore = Reflux.createStore({
   onLoadWebCompleted: function (items) {
 
     _webPortfolio.add(items);
-    this.trigger(TYPES.web);
+    this.trigger(TYPES.WEB);
   },
 
   onLoadWeb: function () {
@@ -49,11 +61,11 @@ var PortfolioStore = Reflux.createStore({
 
     switch( name ){
 
-      case TYPES.web:
+      case TYPES.WEB:
 
         return _webPortfolio.toJSON();
 
-      case TYPES.other:
+      case TYPES.OTHER:
 
         return _otherPortfolio.toJSON();
     }

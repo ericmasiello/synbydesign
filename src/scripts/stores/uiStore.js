@@ -5,29 +5,34 @@ var _loadingRequests = 0;
 
 var loadingStatus = function(){
 
-  this.trigger( _loadingRequests > 0 );
+  this.trigger('CHANGE');
 };
 
 var UIStore = Reflux.createStore({
 
   init: function(){
 
-    this.listenTo(UIActions.load, 'load');
-    this.listenTo(UIActions.completedLoading, 'completeLoading');
+    this.listenTo(UIActions.load, 'onLoad');
+    this.listenTo(UIActions.completedLoading, 'onCompleteLoading');
   },
 
-  load: function(){
+  onLoad: function(){
 
     _loadingRequests++;
     console.log('making request');
     loadingStatus.call(this);
   },
 
-  completeLoading: function(){
+  onCompleteLoading: function(){
 
     _loadingRequests--;
     console.log('closing request');
     loadingStatus.call(this);
+  },
+
+  isLoading: function(){
+
+    return ( _loadingRequests > 0 );
   }
 });
 
