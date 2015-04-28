@@ -5,12 +5,12 @@ var PortfolioModel = require('../models/portfolioModel');
 var PortfolioActions = require('../actions/portfolioActions');
 var AjaxMixin = require('../backboneMixins/ajax');
 
-var OtherPorfolioColleciton = Backbone.Collection.extend({
+var OtherPorfolioCollection = Backbone.Collection.extend({
   url: './wp/wp-json/posts/?filter[category_name]=other',
   action: PortfolioActions.loadOther,
   model: PortfolioModel
 });
 
-$.extend(OtherPorfolioColleciton.prototype, AjaxMixin);
+$.extend(OtherPorfolioCollection.prototype, AjaxMixin);
 
-module.exports = OtherPorfolioColleciton;
+module.exports = OtherPorfolioCollection;

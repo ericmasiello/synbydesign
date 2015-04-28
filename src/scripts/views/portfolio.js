@@ -6,6 +6,11 @@ var $ = require('jquery');
 
 var Portfolio = React.createClass({
 
+  getInitialState: function(){
+
+    return { webItems: [], otherItems: [] }
+  },
+
   componentDidMount: function(){
 
     var self = this;
@@ -14,8 +19,12 @@ var Portfolio = React.createClass({
     PortfolioActions.loadOther();
     this.unsubscribe = PortfolioStore.listen(function(type){
 
-      self.props[type + 'Items'] = PortfolioStore.getCollectionByName(type);
-      self.forceUpdate();
+      var stateUpdate = {};
+      stateUpdate[type + 'Items'] = PortfolioStore.getCollectionByName(type);
+      self.setState(stateUpdate);
+
+      //self.props[type + 'Items'] = PortfolioStore.getCollectionByName(type);
+      //self.forceUpdate();
     });
   },
 
@@ -28,19 +37,19 @@ var Portfolio = React.createClass({
 
     var webItems = [];
     var otherItems = [];
-    if( $.isArray( this.props.webItems ) === true ){
+    if( $.isArray( this.state.webItems ) === true ){
 
-      webItems = this.props.webItems.map(function(item){
+      webItems = this.state.webItems.map(function(item){
 
-        return (<PortfolioItem item={item} />);
+        return (<PortfolioItem item={item} key={Math.random()} />);
       });
     }
 
-    if( $.isArray( this.props.otherItems ) === true ){
+    if( $.isArray( this.state.otherItems ) === true ){
 
-      otherItems = this.props.otherItems.map(function(item){
+      otherItems = this.state.otherItems.map(function(item){
 
-        return (<PortfolioItem item={item} />);
+        return (<PortfolioItem item={item} key={Math.random()} />);
       });
     }
 

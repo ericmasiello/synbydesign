@@ -6,7 +6,7 @@ var PortfolioItem = React.createClass({
 
     var tags = this.props.item.terms.post_tag.map(function(tag ){
 
-      return (<li>{tag.name}</li>);
+      return (<li key={Math.random()}>{tag.name}</li>);
     });
 
     var href = '#/detail/' + this.props.item.ID;
@@ -14,7 +14,7 @@ var PortfolioItem = React.createClass({
     var featuredImage = this.props.item.featured_image ? this.props.item.featured_image.guid : null;
 
     return (
-      <li ng-repeat="post in portfolio.webPosts" className="col-sm-6  col-md-4">
+      <li className="col-sm-6  col-md-4">
         <div className="portfolio__item">
           <h2 className="h4  portfolio__title">
             <span className="portfolio__title__text">{this.props.item.title}</span>
