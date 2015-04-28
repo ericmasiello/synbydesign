@@ -2,64 +2,61 @@ var Reflux = require('reflux');
 var PortfolioActions = require('../actions/portfolioActions');
 var UIActions = require('../actions/uiActions');
 var jQuery = require('jquery');
-var PortfolioModels = require('../collections/portfolioModels');
+var WebPortfolioCollection = require('../collections/webPortfolioCollection');
+var OtherPortfolioCollection = require('../collections/otherPortfolioCollection');
 
-var _webPortfolio = new PortfolioModels([]);
+var _webPortfolio = new WebPortfolioCollection();
+var _otherPortfolio = new OtherPortfolioCollection();
 
-//var _webPortfolio = [];
+var TYPES = {
+  other: 'other',
+  web: 'web'
+};
 
 var PortfolioStore = Reflux.createStore({
+
   init: function () {
     this.listenTo(PortfolioActions.loadWeb, 'onLoadWeb');
-    this.listenTo(PortfolioActions.loadWeb.completed, 'onLoadedWeb');
+    this.listenTo(PortfolioActions.loadWeb.completed, 'onLoadWebCompleted');
+    this.listenTo(PortfolioActions.loadOther, 'onLoadOther');
+    this.listenTo(PortfolioActions.loadOther.completed, 'onLoadOtherCompleted');
   },
 
-  onLoadedWeb: function(items){
+  onLoadOtherCompleted: function (items) {
 
-    //Here we store the data into our backbone model/collection
-    debugger;
+    _otherPortfolio.add(items);
+    this.trigger(TYPES.other);
+  },
+
+  onLoadOther: function () {
+
+    _otherPortfolio.fetch();
+  },
+
+
+  onLoadWebCompleted: function (items) {
+
     _webPortfolio.add(items);
-    this.trigger(_webPortfolio.toJSON());
+    this.trigger(TYPES.web);
   },
 
   onLoadWeb: function () {
 
-    //Assume `request` is some HTTP library (e.g.superagent)
-    //This should really be some Backbone sync operation at
-    //this point to load the data
+    _webPortfolio.fetch();
+  },
 
-    UIActions.load();
-    jQuery.getJSON('./wp/wp-json/posts/?filter[category_name]=web', function(data){
+  getCollectionByName: function(name){
 
-      PortfolioActions.loadWeb.completed(data);
-      UIActions.completedLoading();
-    });
+    switch( name ){
 
-    //setTimeout(function(){
-    //
-    //  PortfolioActions.load.completed({
-    //    title: 'Post title',
-    //    ID: 1234,
-    //    featured_image: {
-    //      guid: '/path/to/featured/image.png'
-    //    },
-    //    terms: {
-    //      post_tag: ['Tag 1', 'Tag 2', 'Tag 3']
-    //    }
-    //  });
-    //  UIActions.completedLoading();
-    //
-    //}, 1000);
+      case TYPES.web:
 
+        return _webPortfolio.toJSON();
 
+      case TYPES.other:
 
-    //request(url, function (response) {
-    //  if (response.ok) {
-    //    PortfolioActions.load.completed(response.body);
-    //  } else {
-    //    PortfolioActions.load.failed(response.error);
-    //  }
-    //})
+        return _otherPortfolio.toJSON();
+    }
   }
 });
 

@@ -11,9 +11,10 @@ var Portfolio = React.createClass({
     var self = this;
 
     PortfolioActions.loadWeb();
-    this.unsubscribe = PortfolioStore.listen(function(items){
+    PortfolioActions.loadOther();
+    this.unsubscribe = PortfolioStore.listen(function(type){
 
-      self.props.items = items;
+      self.props[type + 'Items'] = PortfolioStore.getCollectionByName(type);
       self.forceUpdate();
     });
   },
@@ -26,9 +27,18 @@ var Portfolio = React.createClass({
   render: function(){
 
     var webItems = [];
-    if( $.isArray( this.props.items ) === true ){
+    var otherItems = [];
+    if( $.isArray( this.props.webItems ) === true ){
 
-      webItems = this.props.items.map(function(item){
+      webItems = this.props.webItems.map(function(item){
+
+        return (<PortfolioItem item={item} />);
+      });
+    }
+
+    if( $.isArray( this.props.otherItems ) === true ){
+
+      otherItems = this.props.otherItems.map(function(item){
 
         return (<PortfolioItem item={item} />);
       });
@@ -38,6 +48,10 @@ var Portfolio = React.createClass({
       <h1 className="h3  text-center">Web Design &amp; Development</h1>
       <ul className="portfolio  row  center-xs  start-sm">
         {webItems}
+      </ul>
+      <h1 className="h3  text-center">Other</h1>
+      <ul className="portfolio  row  center-xs  start-sm">
+        {otherItems}
       </ul>
     </div>);
   }
