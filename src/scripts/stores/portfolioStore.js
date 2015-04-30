@@ -20,9 +20,14 @@ jQuery.extend(_otherPortfolio, AjaxMixin, {
   action: PortfolioActions.loadOther
 });
 
-var TYPES = {
+var _TYPES = {
   OTHER: 'OTHER',
   WEB: 'WEB'
+};
+
+var _LOADED_TYPES = {
+  OTHER: false,
+  WEB: false
 };
 
 var PortfolioStore = Reflux.createStore({
@@ -36,8 +41,9 @@ var PortfolioStore = Reflux.createStore({
 
   onLoadOtherCompleted: function (items) {
 
+    _LOADED_TYPES.OTHER = true;
     _otherPortfolio.add(items);
-    this.trigger(TYPES.OTHER);
+    this.trigger(_TYPES.OTHER);
   },
 
   onLoadOther: function () {
@@ -45,11 +51,11 @@ var PortfolioStore = Reflux.createStore({
     _otherPortfolio.fetch();
   },
 
-
   onLoadWebCompleted: function (items) {
 
+    _LOADED_TYPES.WEB = true;
     _webPortfolio.add(items);
-    this.trigger(TYPES.WEB);
+    this.trigger(_TYPES.WEB);
   },
 
   onLoadWeb: function () {
@@ -61,14 +67,27 @@ var PortfolioStore = Reflux.createStore({
 
     switch( name ){
 
-      case TYPES.WEB:
+      case _TYPES.WEB:
 
         return _webPortfolio.toJSON();
 
-      case TYPES.OTHER:
+      case _TYPES.OTHER:
 
         return _otherPortfolio.toJSON();
     }
+  },
+
+  hasLoadedData: function(){
+
+    for( var key in _LOADED_TYPES ){
+
+      if( _LOADED_TYPES[key] === false ){
+
+        return false;
+      }
+    }
+
+    return true;
   }
 });
 

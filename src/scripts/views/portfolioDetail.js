@@ -6,10 +6,10 @@ var React = require('react/addons');
 
 var PortfolioDetail = React.createClass({
 
-  //getInitialState: function(){
-  //
-  //  return { webItems: [], otherItems: [] }
-  //},
+  getInitialState: function(){
+
+    return { portfolioDetails: {} };
+  },
 
   componentDidMount: function(){
 

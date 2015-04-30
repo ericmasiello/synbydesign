@@ -10,7 +10,9 @@ var PortfolioItem = React.createClass({
       return (<li key={Math.random()}>{tag.name}</li>);
     });
 
-    //var href = '#/detail/' + this.props.item.ID;
+    var detailParams = {
+      id: this.props.item.ID
+    };
     var alt = this.props.item.title + ' thumbnail';
     var featuredImage = this.props.item.featured_image ? this.props.item.featured_image.guid : null;
 
@@ -20,7 +22,7 @@ var PortfolioItem = React.createClass({
           <h2 className="h4  portfolio__title">
             <span className="portfolio__title__text">{this.props.item.title}</span>
           </h2>
-          <Link to="detail" params={{id: this.props.item.ID}}>
+          <Link to="detail" params={detailParams}>
             <img className="portfolio__thumb" src={featuredImage} alt={alt} />
           </Link>
         </div>
