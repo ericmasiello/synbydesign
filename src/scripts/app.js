@@ -1,18 +1,42 @@
 /** @jsx React.DOM */
 var React = require('react/addons');
+var Router = require('react-router');
+
+/* Load views */
 var Navigation = require('./views/navigation');
 var Portfolio = require('./views/portfolio');
+var PortfolioDetail = require('./views/portfolioDetail');
+var NotFound = require("./views/404");
 var LoadingStatus = require('./views/loadingStatus');
-//console.log('hello world');
 
-React.render(
-  <div>
-    <LoadingStatus />
-    <Navigation />
+/* Load Router */
+var Route = Router.Route;
+var DefaultRoute = Router.DefaultRoute;
+var NotFoundRoute = Router.NotFoundRoute;
+var RouteHandler = Router.RouteHandler;
 
-    <div className="container-fluid">
-      <Portfolio />
-    </div>
+var App = React.createClass({
 
-  </div>,
-  document.getElementById('app'));
+  render: function(){
+
+    return (<div>
+      <LoadingStatus />
+      <Navigation />
+      <div className="container-fluid">
+        <RouteHandler/>
+      </div>
+    </div>);
+  }
+});
+
+var routes = (
+    <Route handler={App}>
+      <DefaultRoute handler={Portfolio}/>
+      <Route name="detail" path="detail/:id" handler={PortfolioDetail}/>
+      <NotFoundRoute handler={NotFound}/>
+    </Route>
+);
+
+Router.run(routes, function (Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
+});

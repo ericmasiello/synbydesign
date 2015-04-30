@@ -1,7 +1,7 @@
 var React = require('react/addons');
 var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioStore = require('../stores/portfolioStore');
-var PortfolioItem = require('./porfolioItem');
+var PortfolioItem = require('./portfolioItem');
 var $ = require('jquery');
 
 var Portfolio = React.createClass({
