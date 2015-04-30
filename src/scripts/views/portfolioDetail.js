@@ -1,33 +1,36 @@
 var React = require('react/addons');
+var Router = require('react-router');
 //var PortfolioActions = require('../actions/portfolioActions');
-//var PortfolioStore = require('../stores/portfolioStore');
+var PortfolioStore = require('../stores/portfolioStore');
 //var PortfolioItem = require('./porfolioItem');
 //var $ = require('jquery');
 
 var PortfolioDetail = React.createClass({
 
+  mixins: [ Router.Navigation, Router.State ],
+
   getInitialState: function(){
 
-    return { portfolioDetails: {} };
+    //return { portfolioDetails: {} };
+
+    return this.getStateFromStore();
+  },
+
+  getStateFromStore: function () {
+    var id = this.getParams().id;
+
+    return {
+      detail: PortfolioStore.getItem(id),
+      type: this.getParams().type
+    };
   },
 
   componentDidMount: function(){
 
-    //var self = this;
-    //
-    //PortfolioActions.loadWeb();
-    //PortfolioActions.loadOther();
-    //this.unsubscribe = PortfolioStore.listen(function(type){
-    //
-    //  var stateUpdate = {};
-    //  stateUpdate[type.toLowerCase() + 'Items'] = PortfolioStore.getCollectionByName(type);
-    //  self.setState(stateUpdate);
-    //});
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount: function(){
 
-    //this.unsubscribe();
   },
 
   render: function(){

@@ -32,7 +32,7 @@ var App = React.createClass({
 var routes = (
     <Route handler={App}>
       <DefaultRoute handler={Portfolio}/>
-      <Route name="detail" path="detail/:id" handler={PortfolioDetail}/>
+      <Route name="detail" path="/:type/detail/:id" handler={PortfolioDetail}/>
       <NotFoundRoute handler={NotFound}/>
     </Route>
 );

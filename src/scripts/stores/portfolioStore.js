@@ -13,82 +13,88 @@ var _otherPortfolio = new OtherPortfolioCollection();
  * Mixin Ajax sync functionality that plays with the Flux actions
  */
 jQuery.extend(_webPortfolio, AjaxMixin, {
-  action: PortfolioActions.loadWeb
+    action: PortfolioActions.loadWeb
 });
 
 jQuery.extend(_otherPortfolio, AjaxMixin, {
-  action: PortfolioActions.loadOther
+    action: PortfolioActions.loadOther
 });
 
 var _TYPES = {
-  OTHER: 'OTHER',
-  WEB: 'WEB'
+    OTHER: 'OTHER',
+    WEB: 'WEB'
 };
 
 var _LOADED_TYPES = {
-  OTHER: false,
-  WEB: false
+    OTHER: false,
+    WEB: false
 };
 
 var PortfolioStore = Reflux.createStore({
 
-  init: function () {
-    this.listenTo(PortfolioActions.loadWeb, 'onLoadWeb');
-    this.listenTo(PortfolioActions.loadWeb.completed, 'onLoadWebCompleted');
-    this.listenTo(PortfolioActions.loadOther, 'onLoadOther');
-    this.listenTo(PortfolioActions.loadOther.completed, 'onLoadOtherCompleted');
-  },
+    init: function () {
+        this.listenTo(PortfolioActions.loadWeb, 'onLoadWeb');
+        this.listenTo(PortfolioActions.loadWeb.completed, 'onLoadWebCompleted');
+        this.listenTo(PortfolioActions.loadOther, 'onLoadOther');
+        this.listenTo(PortfolioActions.loadOther.completed, 'onLoadOtherCompleted');
+    },
 
-  onLoadOtherCompleted: function (items) {
+    onLoadOtherCompleted: function (items) {
 
-    _LOADED_TYPES.OTHER = true;
-    _otherPortfolio.add(items);
-    this.trigger(_TYPES.OTHER);
-  },
+        _LOADED_TYPES.OTHER = true;
+        _otherPortfolio.add(items);
+        this.trigger(_TYPES.OTHER);
+    },
 
-  onLoadOther: function () {
+    onLoadOther: function () {
 
-    _otherPortfolio.fetch();
-  },
+        _otherPortfolio.fetch();
+    },
 
-  onLoadWebCompleted: function (items) {
+    onLoadWebCompleted: function (items) {
 
-    _LOADED_TYPES.WEB = true;
-    _webPortfolio.add(items);
-    this.trigger(_TYPES.WEB);
-  },
+        _LOADED_TYPES.WEB = true;
+        _webPortfolio.add(items);
+        this.trigger(_TYPES.WEB);
+    },
 
-  onLoadWeb: function () {
+    onLoadWeb: function () {
 
-    _webPortfolio.fetch();
-  },
+        _webPortfolio.fetch();
+    },
 
-  getCollectionByName: function(name){
+    getCollectionByName: function (name) {
 
-    switch( name ){
+        switch (name) {
 
-      case _TYPES.WEB:
+            case _TYPES.WEB:
 
-        return _webPortfolio.toJSON();
+                return _webPortfolio.toJSON();
 
-      case _TYPES.OTHER:
+            case _TYPES.OTHER:
 
-        return _otherPortfolio.toJSON();
+                return _otherPortfolio.toJSON();
+        }
+    },
+
+    getItem: function () {
+
+        //FIXME
+        return _webPortfolio.toJSON()[0];
+    },
+
+    hasLoadedData: function () {
+
+        for (var key in _LOADED_TYPES) {
+
+            if (_LOADED_TYPES[key] === false) {
+
+                return false;
+            }
+        }
+
+        return true;
     }
-  },
-
-  hasLoadedData: function(){
-
-    for( var key in _LOADED_TYPES ){
-
-      if( _LOADED_TYPES[key] === false ){
-
-        return false;
-      }
-    }
-
-    return true;
-  }
 });
 
 module.exports = PortfolioStore;

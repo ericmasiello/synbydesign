@@ -4,7 +4,7 @@ var PortfolioStore = require('../stores/portfolioStore');
 var PortfolioItem = require('./portfolioItem');
 var $ = require('jquery');
 
-var _mapDataToPortfolioItems = function(items){
+var _mapDataToPortfolioItems = function(items, type){
 
   var portfolioItems;
 
@@ -12,7 +12,7 @@ var _mapDataToPortfolioItems = function(items){
 
     portfolioItems = items.map(function(item){
 
-      return (<PortfolioItem item={item} key={Math.random()} />);
+      return (<PortfolioItem item={item} type={type} key={Math.random()} />);
     });
   }
 
@@ -66,8 +66,8 @@ var Portfolio = React.createClass({
 
   render: function(){
 
-    var webItems = _mapDataToPortfolioItems(this.state.webItems);
-    var otherItems = _mapDataToPortfolioItems(this.state.otherItems);
+    var webItems = _mapDataToPortfolioItems(this.state.webItems, 'web');
+    var otherItems = _mapDataToPortfolioItems(this.state.otherItems, 'other');
 
     return (<div>
       <h1 className="h3  text-center">Web Design &amp; Development</h1>
