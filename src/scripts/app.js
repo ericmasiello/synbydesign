@@ -15,28 +15,6 @@ var DefaultRoute = Router.DefaultRoute;
 var NotFoundRoute = Router.NotFoundRoute;
 var RouteHandler = Router.RouteHandler;
 
-//var PortfolioWrapper = React.createClass({
-//
-//  getInitialState: function(){
-//
-//    return { loadedPortfolio: false };
-//  },
-//
-//  updatePortfolioStateToLoaded: function(){
-//
-//    this.setState({
-//      loadedPortfolio: true
-//    });
-//  },
-//
-//  render: function(){
-//
-//    return (
-//      <Portfolio loaded={this.state.loadedPortfolio} setLoadedStateFn={this.updatePortfolioStateToLoaded} />
-//    );
-//  }
-//});
-
 var App = React.createClass({
 
   render: function(){
