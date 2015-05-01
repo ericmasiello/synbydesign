@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var extractor = require('../util/extractImageFromContent');
 
 var PortfolioModel = Backbone.Model.extend({
+  url: './wp/wp-json/posts',
   defaults: {
     ID: null,
     title: '',

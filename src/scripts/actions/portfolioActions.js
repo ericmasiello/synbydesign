@@ -6,6 +6,9 @@ var PortfolioActions = Reflux.createActions({
   },
   loadOther: {
     asyncResult: true //automatically defines completed and failed
+  },
+  loadSingleItem: {
+    asyncResult: true
   }
 });
 
