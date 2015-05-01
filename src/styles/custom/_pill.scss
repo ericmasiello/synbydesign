@@ -1,0 +1,18 @@
+/*a*/.pill {
+
+  background-color: $pill-bg;
+  border-radius: $pill-border-radius;
+  color: $pill-color;
+  position: relative;
+  display: block;
+  margin: $pill-margin;
+  padding: $pill-padding;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $pill-hover-bg;
+    color: $pill-hover-color;
+  }
+}

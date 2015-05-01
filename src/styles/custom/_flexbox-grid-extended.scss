@@ -1,0 +1,28 @@
+.default-xs {
+
+  order: initial;
+}
+
+@media (min-width: $screen-sm-min) {
+
+  .default-sm {
+
+    order: initial;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+
+  .default-md {
+
+    order: initial;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+
+  .default-lg {
+
+    order: initial;
+  }
+}
