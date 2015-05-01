@@ -1,44 +1,22 @@
 var Reflux = require('reflux');
 var PortfolioActions = require('../actions/portfolioActions');
-var UIActions = require('../actions/uiActions');
-var $ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
 var PortfolioCollection = require('../collections/portfolioCollection');
-var CollectionAjaxActionDecorator = require('../backboneMixins/collectionAjaxActionDecorator');
-//var BackboneModelAjaxMixin = require('../backboneMixins/backboneModelAjaxMixin');
+var ajaxActionDecorator = require('../util/ajaxActionDecorator');
 
-debugger;
-
-var originalFetch = PortfolioModel.prototype.fetch;
-
-$.extend(PortfolioModel.prototype, {
-    fetch: function(){
-
-        this.trigger('fetch');
-        originalFetch.apply(this);
-    }
-});
-
+var portfolioItem;
 var _portfolio = new PortfolioCollection();
-CollectionAjaxActionDecorator(_portfolio, PortfolioActions.LOAD_ALL);
 
-
-
-/*
- * Mixin Ajax sync functionality that plays with the Flux actions
- */
-//$.extend(_portfolio, BackboneCollectionAjaxMixin, {
-//    action: PortfolioActions.LOAD_ALL
-//});
+//adds event hooks to _portfolio collection to trigger appropriate Reflux Actions
+ajaxActionDecorator(_portfolio, PortfolioActions.LOAD_ALL);
 
 var _TYPES = {
     ALL: 'ALL',
     SINGLE: 'SINGLE'
 };
 
-var _LOADED_TYPES = {
-    ALL: false,
-    SINGLE: false
+var _LOADED = {
+    ALL: false
 };
 
 var PortfolioStore = Reflux.createStore({
@@ -47,51 +25,30 @@ var PortfolioStore = Reflux.createStore({
         this.listenToMany(PortfolioActions);
     },
 
-    onLOAD_SINGLECompleted: function(data){
+    onLOAD_SINGLECompleted: function(){
 
-        _portfolio.add(data);
+        _portfolio.add(portfolioItem);
         this.trigger(_TYPES.SINGLE);
     },
 
     onLOAD_SINGLE: function(id){
 
-        var portfolioItem = new PortfolioModel({
+        portfolioItem = new PortfolioModel({
             id: parseInt(id)
         });
 
-        //$.extend(portfolioItem, BackboneModelAjaxMixin, {
-        //    action: PortfolioActions.LOAD_SINGLE
-        //});
-
-        portfolioItem.on('fetch', function(){
-
-            console.log('fetching a single item');
-        });
-
-        portfolioItem.on('sync', function(){
-
-            debugger;
-            console.log('synced a single item');
-        });
-
+        //adds event hooks to portfolioItem model to trigger appropriate Reflux Actions
+        ajaxActionDecorator(portfolioItem, PortfolioActions.LOAD_SINGLE);
         portfolioItem.fetch();
     },
 
     onLOAD_ALLCompleted: function (items) {
 
-        _LOADED_TYPES.ALL = true;
+        _LOADED.ALL = true;
         this.trigger(_TYPES.ALL);
     },
 
     onLOAD_ALL: function () {
-
-        debugger;
-
-
-        _portfolio.on('sync', function(data){
-
-            PortfolioActions.LOAD_ALL.completed();
-        });
 
         _portfolio.fetch();
     },
@@ -109,7 +66,7 @@ var PortfolioStore = Reflux.createStore({
 
     hasLoadedAll: function () {
 
-        return ( _LOADED_TYPES.ALL );
+        return ( _LOADED.ALL );
     },
 
     hasLoadedItemById: function(id){
