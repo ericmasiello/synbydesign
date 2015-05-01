@@ -12,18 +12,17 @@ var UIStore = Reflux.createStore({
 
   init: function(){
 
-    this.listenTo(UIActions.load, 'onLoad');
-    this.listenTo(UIActions.completedLoading, 'onCompleteLoading');
+    this.listenToMany(UIActions);
   },
 
-  onLoad: function(){
+  onLOAD: function(){
 
     _loadingRequests++;
     console.log('making request');
     loadingStatus.call(this);
   },
 
-  onCompleteLoading: function(){
+  onCOMPLETED_LOADING: function(){
 
     _loadingRequests--;
     console.log('closing request');

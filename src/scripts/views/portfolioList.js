@@ -19,35 +19,36 @@ var _mapDataToPortfolioItems = function(items, type){
   return portfolioItems;
 };
 
-var Portfolio = React.createClass({
+var PortfolioList = React.createClass({
 
   getInitialState: function(){
 
     return { webItems: [], otherItems: [] }
   },
 
+  getStateFromStore: function () {
+
+    return {
+      webItems: PortfolioStore.getCollectionByCategory('web'),
+      otherItems: PortfolioStore.getCollectionByCategory('other')
+    };
+  },
+
   componentDidMount: function(){
 
     var self = this;
 
-    if( PortfolioStore.hasLoadedData() === false ){
+    if( PortfolioStore.hasLoadedAll() === false ){
 
-      PortfolioActions.loadWeb();
-      PortfolioActions.loadOther();
+      PortfolioActions.LOAD_ALL();
+      self.unsubscribe = PortfolioStore.listen(function(){
 
-      self.unsubscribe = PortfolioStore.listen(function(type){
-
-        var stateUpdate = {};
-        stateUpdate[type.toLowerCase() + 'Items'] = PortfolioStore.getCollectionByName(type);
-        self.setState(stateUpdate);
+        self.setState(self.getStateFromStore());
       });
 
     } else {
 
-      self.setState({
-        'webItems': PortfolioStore.getCollectionByName('WEB'),
-        'otherItems': PortfolioStore.getCollectionByName('OTHER')
-      });
+      self.setState(self.getStateFromStore());
     }
   },
 
@@ -82,4 +83,4 @@ var Portfolio = React.createClass({
   }
 });
 
-module.exports = Portfolio;
+module.exports = PortfolioList;

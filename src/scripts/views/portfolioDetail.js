@@ -30,11 +30,11 @@ var PortfolioDetail = React.createClass({
 
     var self = this;
 
-    if( PortfolioStore.hasLoadedData() === false ){
+    if( PortfolioStore.hasLoadedItemById(self.state.id) === false ){
 
-      PortfolioActions.loadSingleItem(self.state.id);
+      PortfolioActions.LOAD_SINGLE(self.state.id);
 
-      self.unsubscribe = PortfolioStore.listen(function(type){
+      self.unsubscribe = PortfolioStore.listen(function(){
 
         self.setState({
           detail: PortfolioStore.getItemById(self.state.id)
@@ -43,6 +43,10 @@ var PortfolioDetail = React.createClass({
 
     } else {
 
+      debugger;
+      self.setState({
+        detail: PortfolioStore.getItemById(self.state.id)
+      });
     }
   },
 
@@ -57,7 +61,10 @@ var PortfolioDetail = React.createClass({
   render: function(){
 
     return (<div>
-      <h1 className="h3  text-center">I am the detail screen</h1>
+      <h1 className="h3  text-center">I am the detail screen for: {this.state.detail.title}</h1>
+      <div>
+        {this.state.detail.fullSizeImage}
+      </div>
     </div>);
   }
 });

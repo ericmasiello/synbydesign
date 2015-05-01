@@ -3,7 +3,7 @@ var UIActions = require('../actions/uiActions');
 
 var ajaxComplete = function ajaxCompleteHandler() {
 
-    UIActions.completedLoading();
+    UIActions.COMPLETED_LOADING();
 };
 
 /**
@@ -54,11 +54,9 @@ var BackboneModelAjaxMixin = {
 
     sync: function (method, model, options) {
 
-        debugger;
-
         options || (options = {});
 
-        UIActions.load();
+        UIActions.LOAD();
 
         switch (method) {
 
@@ -67,7 +65,7 @@ var BackboneModelAjaxMixin = {
                 //fetch collection
                 $.ajax($.extend($AjaxConfig, {
                     method: 'get',
-                    url: this.url + '/' + this.id,
+                    url: this.url + '/' + this.get('ID'),
                     context: {
                         self: this,
                         options: options

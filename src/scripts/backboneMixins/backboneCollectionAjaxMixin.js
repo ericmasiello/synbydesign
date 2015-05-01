@@ -3,7 +3,7 @@ var UIActions = require('../actions/uiActions');
 
 var ajaxComplete = function ajaxCompleteHandler() {
 
-    UIActions.completedLoading();
+    UIActions.COMPLETED_LOADING();
 };
 
 /**
@@ -56,10 +56,7 @@ var BackboneCollectionAjaxMixin = {
 
         options || (options = {});
 
-        debugger;
-        console.log(PortfolioModel);
-
-        UIActions.load();
+        UIActions.LOAD();
 
         switch (method) {
 
