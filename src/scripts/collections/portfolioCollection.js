@@ -1,4 +1,5 @@
 var Backbone = require('backbone');
+Backbone.$ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
 
 var PortfolioCollection = Backbone.Collection.extend({

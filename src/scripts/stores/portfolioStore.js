@@ -1,20 +1,35 @@
 var Reflux = require('reflux');
 var PortfolioActions = require('../actions/portfolioActions');
 var UIActions = require('../actions/uiActions');
-var jQuery = require('jquery');
+var $ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
 var PortfolioCollection = require('../collections/portfolioCollection');
-var BackboneCollectionAjaxMixin = require('../backboneMixins/backboneCollectionAjaxMixin');
-var BackboneModelAjaxMixin = require('../backboneMixins/backboneModelAjaxMixin');
+var CollectionAjaxActionDecorator = require('../backboneMixins/collectionAjaxActionDecorator');
+//var BackboneModelAjaxMixin = require('../backboneMixins/backboneModelAjaxMixin');
+
+debugger;
+
+var originalFetch = PortfolioModel.prototype.fetch;
+
+$.extend(PortfolioModel.prototype, {
+    fetch: function(){
+
+        this.trigger('fetch');
+        originalFetch.apply(this);
+    }
+});
 
 var _portfolio = new PortfolioCollection();
+CollectionAjaxActionDecorator(_portfolio, PortfolioActions.LOAD_ALL);
+
+
 
 /*
  * Mixin Ajax sync functionality that plays with the Flux actions
  */
-jQuery.extend(_portfolio, BackboneCollectionAjaxMixin, {
-    action: PortfolioActions.LOAD_ALL
-});
+//$.extend(_portfolio, BackboneCollectionAjaxMixin, {
+//    action: PortfolioActions.LOAD_ALL
+//});
 
 var _TYPES = {
     ALL: 'ALL',
@@ -41,11 +56,22 @@ var PortfolioStore = Reflux.createStore({
     onLOAD_SINGLE: function(id){
 
         var portfolioItem = new PortfolioModel({
-            ID: id
+            id: parseInt(id)
         });
 
-        jQuery.extend(portfolioItem, BackboneModelAjaxMixin, {
-            action: PortfolioActions.LOAD_SINGLE
+        //$.extend(portfolioItem, BackboneModelAjaxMixin, {
+        //    action: PortfolioActions.LOAD_SINGLE
+        //});
+
+        portfolioItem.on('fetch', function(){
+
+            console.log('fetching a single item');
+        });
+
+        portfolioItem.on('sync', function(){
+
+            debugger;
+            console.log('synced a single item');
         });
 
         portfolioItem.fetch();
@@ -54,12 +80,18 @@ var PortfolioStore = Reflux.createStore({
     onLOAD_ALLCompleted: function (items) {
 
         _LOADED_TYPES.ALL = true;
-        _portfolio.reset([]); //clears out anything that's in there
-        _portfolio.add(items); //readds them
         this.trigger(_TYPES.ALL);
     },
 
     onLOAD_ALL: function () {
+
+        debugger;
+
+
+        _portfolio.on('sync', function(data){
+
+            PortfolioActions.LOAD_ALL.completed();
+        });
 
         _portfolio.fetch();
     },

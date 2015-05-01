@@ -50,34 +50,50 @@ var $AjaxConfig = {
  * methods this.action.completed and this.action.failed
  * @type {{sync: Function}}
  */
-var BackboneModelAjaxMixin = {
+//var BackboneCollectionAjaxMixin = {
+//
+//    sync: function (method, model, options) {
+//
+//        options || (options = {});
+//
+//        debugger;
+//        console.log(PortfolioModel);
+//
+//        UIActions.load();
+//
+//        switch (method) {
+//
+//            case 'read':
+//
+//                //fetch collection
+//                $.ajax($.extend($AjaxConfig, {
+//                    method: 'get',
+//                    url: this.url,
+//                    context: {
+//                        self: this,
+//                        options: options
+//                    },
+//                    success: ajaxSuccess
+//                }));
+//                break;
+//        }
+//    }
+//};
 
-    sync: function (method, model, options) {
+//_portfolio.on('sync', function(data){
+//
+//    PortfolioActions.LOAD_ALL.completed();
+//});
 
-        debugger;
+var DecorateBackboneCollectionWithAjaxActions = function(collection, action){
 
-        options || (options = {});
+    collection.on('sync', function(){
 
-        UIActions.LOAD();
+        if( action && typeof action.completed === 'function' ){
 
-        switch (method) {
-
-            case 'read':
-
-                //fetch collection
-                $.ajax($.extend($AjaxConfig, {
-                    method: 'get',
-                    url: this.url + '/' + this.id,
-                    context: {
-                        self: this,
-                        options: options
-                    },
-                    success: ajaxSuccess
-                }));
-
-                break;
+            action.completed();
         }
-    }
+    });
 };
 
-module.exports = BackboneModelAjaxMixin;
+module.exports = DecorateBackboneCollectionWithAjaxActions;
