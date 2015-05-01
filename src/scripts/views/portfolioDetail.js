@@ -2,16 +2,12 @@ var React = require('react/addons');
 var Router = require('react-router');
 var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioStore = require('../stores/portfolioStore');
-//var PortfolioItem = require('./porfolioItem');
-//var $ = require('jquery');
 
 var PortfolioDetail = React.createClass({
 
   mixins: [ Router.Navigation, Router.State ],
 
   getInitialState: function(){
-
-    //return { portfolioDetails: {} };
 
     return this.getStateFromStore();
   },
@@ -43,7 +39,6 @@ var PortfolioDetail = React.createClass({
 
     } else {
 
-      debugger;
       self.setState({
         detail: PortfolioStore.getItemById(self.state.id)
       });
@@ -61,9 +56,9 @@ var PortfolioDetail = React.createClass({
   render: function(){
 
     return (<div>
-      <h1 className="h3  text-center">I am the detail screen for: {this.state.detail.title}</h1>
+      <h1 className="h3  text-center">{this.state.detail.title}</h1>
       <div>
-        {this.state.detail.fullSizeImage}
+        <img src={this.state.detail.fullSizeImage} />
       </div>
     </div>);
   }
