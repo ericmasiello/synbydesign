@@ -3,135 +3,87 @@ var PortfolioActions = require('../actions/portfolioActions');
 var UIActions = require('../actions/uiActions');
 var jQuery = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
-var WebPortfolioCollection = require('../collections/webPortfolioCollection');
-var OtherPortfolioCollection = require('../collections/otherPortfolioCollection');
+var PortfolioCollection = require('../collections/portfolioCollection');
 var BackboneCollectionAjaxMixin = require('../backboneMixins/backboneCollectionAjaxMixin');
 var BackboneModelAjaxMixin = require('../backboneMixins/backboneModelAjaxMixin');
 
-var _webPortfolio = new WebPortfolioCollection();
-var _otherPortfolio = new OtherPortfolioCollection();
+var _portfolio = new PortfolioCollection();
 
 /*
  * Mixin Ajax sync functionality that plays with the Flux actions
  */
-jQuery.extend(_webPortfolio, BackboneCollectionAjaxMixin, {
-    action: PortfolioActions.loadWeb
-});
-
-jQuery.extend(_otherPortfolio, BackboneCollectionAjaxMixin, {
-    action: PortfolioActions.loadOther
+jQuery.extend(_portfolio, BackboneCollectionAjaxMixin, {
+    action: PortfolioActions.LOAD_ALL
 });
 
 var _TYPES = {
-    OTHER: 'OTHER',
-    WEB: 'WEB',
+    ALL: 'ALL',
     SINGLE: 'SINGLE'
 };
 
 var _LOADED_TYPES = {
-    OTHER: false,
-    WEB: false
+    ALL: false,
+    SINGLE: false
 };
 
 var PortfolioStore = Reflux.createStore({
 
     init: function () {
-        //this.listenTo(PortfolioActions.loadWeb, 'onLoadWeb');
-        //this.listenTo(PortfolioActions.loadWeb.completed, 'onLoadWebCompleted');
-        //this.listenTo(PortfolioActions.loadOther, 'onLoadOther');
-        //this.listenTo(PortfolioActions.loadOther.completed, 'onLoadOtherCompleted');
-
         this.listenToMany(PortfolioActions);
     },
 
-    onLoadSingleItemCompleted: function(data){
+    onLOAD_SINGLECompleted: function(data){
 
-
-        switch( data.terms.category[0].slug ){
-
-            case 'web':
-                _webPortfolio.add(data);
-                break;
-
-            case 'other':
-                _otherPortfolio.add(data);
-                break;
-        }
+        _portfolio.add(data);
         this.trigger(_TYPES.SINGLE);
-        //TODO: read object to figure out which collection to add it to
     },
 
-    onLoadSingleItem: function(id){
-
-        debugger;
+    onLOAD_SINGLE: function(id){
 
         var portfolioItem = new PortfolioModel({
-            id: id
+            ID: id
         });
 
         jQuery.extend(portfolioItem, BackboneModelAjaxMixin, {
-            action: PortfolioActions.loadSingleItem
+            action: PortfolioActions.LOAD_SINGLE
         });
 
         portfolioItem.fetch();
     },
 
-    onLoadOtherCompleted: function (items) {
+    onLOAD_ALLCompleted: function (items) {
 
-        _LOADED_TYPES.OTHER = true;
-        _otherPortfolio.add(items);
-        this.trigger(_TYPES.OTHER);
+        _LOADED_TYPES.ALL = true;
+        _portfolio.reset([]); //clears out anything that's in there
+        _portfolio.add(items); //readds them
+        this.trigger(_TYPES.ALL);
     },
 
-    onLoadOther: function () {
+    onLOAD_ALL: function () {
 
-        _otherPortfolio.fetch();
+        _portfolio.fetch();
     },
 
-    onLoadWebCompleted: function (items) {
+    getCollectionByCategory: function (category) {
 
-        _LOADED_TYPES.WEB = true;
-        _webPortfolio.add(items);
-        this.trigger(_TYPES.WEB);
-    },
-
-    onLoadWeb: function () {
-
-        _webPortfolio.fetch();
-    },
-
-    getCollectionByName: function (name) {
-
-        switch (name) {
-
-            case _TYPES.WEB:
-
-                return _webPortfolio.toJSON();
-
-            case _TYPES.OTHER:
-
-                return _otherPortfolio.toJSON();
-        }
+        return _portfolio.getFilteredCollectionByCategory(category).toJSON();
     },
 
     getItemById: function (id) {
 
-        //FIXME
-        debugger;
-        return _webPortfolio.toJSON()[0];
+        var model = _portfolio.getModelById(id);
+        return (model === null) ? {} : model.toJSON();
     },
 
-    hasLoadedData: function () {
+    hasLoadedAll: function () {
 
-        for (var key in _LOADED_TYPES) {
+        return ( _LOADED_TYPES.ALL );
+    },
 
-            if (_LOADED_TYPES[key] === false) {
+    hasLoadedItemById: function(id){
 
-                return false;
-            }
-        }
-
-        return true;
+        var model = _portfolio.getModelById(id);
+        return ( model === null ) ? false : true;
     }
 });
 

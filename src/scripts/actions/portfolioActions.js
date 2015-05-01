@@ -1,13 +1,10 @@
 var Reflux = require('reflux');
 
 var PortfolioActions = Reflux.createActions({
-  loadWeb: {
+  LOAD_ALL: {
     asyncResult: true //automatically defines completed and failed
   },
-  loadOther: {
-    asyncResult: true //automatically defines completed and failed
-  },
-  loadSingleItem: {
+  LOAD_SINGLE: {
     asyncResult: true
   }
 });
