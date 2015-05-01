@@ -55,12 +55,26 @@ var PortfolioDetail = React.createClass({
 
   render: function(){
 
-    return (<div>
-      <h1 className="h3  text-center">{this.state.detail.title}</h1>
-      <div>
-        <img src={this.state.detail.fullSizeImage} />
+    var tags = (this.state.detail.terms) ? (this.state.detail.terms.post_tag.map(function( tag ){
+
+      return (<li key={Math.random()}>{tag.name}</li>);
+    })) : [];
+
+    return (
+      <div className="portfolio__item mtxl container-fluid">
+        <div className="row">
+          <div className="col-xs-12 col-sm-8 mbxl">
+            <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={this.state.detail.title} />
+          </div>
+          <div className="col-xs-12 col-sm-4 phl">
+            <h1 className="mtn"><span class="portfolio__title__text">{this.state.detail.title}</span></h1>
+            <ul className="h4">
+              {tags}
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>);
+    );
   }
 });
 
