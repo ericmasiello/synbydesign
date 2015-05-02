@@ -4,7 +4,8 @@ var Router = require('react-router');
 
 /* Load views */
 var Navigation = require('./views/navigation');
-var PortfolioList = require('./views/portfolioList');
+//var PortfolioList = require('./views/portfolioList');
+var Home = require("./views/home");
 var PortfolioDetail = require('./views/portfolioDetail');
 var NotFound = require("./views/404");
 var LoadingStatus = require('./views/loadingStatus');
@@ -31,7 +32,7 @@ var App = React.createClass({
 
 var routes = (
     <Route handler={App}>
-      <DefaultRoute handler={PortfolioList}/>
+      <DefaultRoute handler={Home}/>
       <Route name="detail" path="/:type/detail/:id" handler={PortfolioDetail}/>
       <NotFoundRoute handler={NotFound}/>
     </Route>
