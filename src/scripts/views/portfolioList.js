@@ -23,7 +23,7 @@ var PortfolioList = React.createClass({
 
   getInitialState: function(){
 
-    return { webItems: [], otherItems: [] }
+    return this.getStateFromStore();
   },
 
   getStateFromStore: function () {
@@ -34,21 +34,17 @@ var PortfolioList = React.createClass({
     };
   },
 
-  componentDidMount: function(){
+  setStateFromStore: function(){
 
-    var self = this;
+    this.setState(this.getStateFromStore());
+  },
+
+  componentDidMount: function(){
 
     if( PortfolioStore.hasLoadedAll() === false ){
 
       PortfolioActions.LOAD_ALL();
-      self.unsubscribe = PortfolioStore.listen(function(){
-
-        self.setState(self.getStateFromStore());
-      });
-
-    } else {
-
-      self.setState(self.getStateFromStore());
+      this.unsubscribe = PortfolioStore.listen(this.setStateFromStore.bind(this));
     }
   },
 
