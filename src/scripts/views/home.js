@@ -8,7 +8,7 @@ var Home = React.createClass({
 
         return (
             <div>
-                <About content={'<p>Hello world</p>'}/>
+                <About />
                 <PortfolioList />
             </div>
         );
