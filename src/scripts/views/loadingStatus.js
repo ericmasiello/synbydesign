@@ -1,18 +1,26 @@
 var React = require('react/addons');
 var UIStore = require('../stores/uiStore');
+var NProgress = require('nprogress');
 
 var LoadingStatus = React.createClass({
 
+  getInitialState: function(){
+
+    return {
+      loading: UIStore.isLoading()
+    };
+  },
+
+  setStateFromStore: function(){
+
+    this.setState({
+      loading: UIStore.isLoading()
+    });
+  },
+
   componentDidMount: function(){
 
-    var self = this;
-
-    this.unsubscribe = UIStore.listen(function(){
-
-      self.setState({
-        loading: UIStore.isLoading()
-      });
-    });
+    this.unsubscribe = UIStore.listen(this.setStateFromStore.bind(this));
   },
 
   componentWillUnmount: function(){
@@ -20,17 +28,19 @@ var LoadingStatus = React.createClass({
     this.unsubscribe();
   },
 
-  getInitialState: function(){
-
-    return { loading: false }
-  },
-
   render: function(){
 
-    var loadingMessage = this.state.loading ? 'Loading...' : 'All loaded.';
+    if( this.state.loading === true ) {
+
+      NProgress.start();
+
+    } else {
+
+      NProgress.done();
+    }
 
     return (
-      <div>{loadingMessage}</div>
+      <div></div>
     );
   }
 });

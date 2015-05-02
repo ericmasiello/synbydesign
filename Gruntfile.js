@@ -74,23 +74,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //cssUrlRewrite: {
-        //    dist: {
-        //        src: "dist/styles/main.css",
-        //        dest: "dist/styles/main.rewrite.css",
-        //        options: {
-        //            skipExternal: true,
-        //            rewriteUrl: function(url, options, dataURI) {
-        //                console.log(url);
-        //                console.log(options);
-        //
-        //                var path = url.replace('src/images', 'dist/images');
-        //                return path;
-        //            }
-        //        }
-        //    }
-        //},
-
         watch: {
             //jsx: {
             //    files: ['jsx/**/*.jsx'],
