@@ -29,16 +29,22 @@
       text-align: center;
     }
   }
+}
 
-  .row {
+.masthead__decoration-container {
 
-    margin-top: 3%;
+  margin-top: 2rem;
 
-    &:first-child {
+  &:first-child {
 
-      margin-top: 0;
-    }
+    margin-top: 0;
+    margin-bottom: 4.5rem;
   }
+}
+
+.masthead__logo__title {
+
+  margin: -2.5rem 0 0;
 }
 
 @media (min-width: $screen-sm-min) {

@@ -4,6 +4,7 @@
 @import "custom/variables";
 
 @import "bootstrap/mixins";
+@import "custom/mixins";
 
 // Reset and dependencies
 @import "bootstrap/normalize";
@@ -11,8 +12,8 @@
 //@import "bootstrap/glyphicons";
 
 // Core CSS
-@import "bootstrap/scaffolding";
-@import "bootstrap/type";
+@import "custom/scaffolding";
+@import "custom/type";
 @import "bootstrap/code";
 //@import "bootstrap/grid";
 //@import "bootstrap/tables";
