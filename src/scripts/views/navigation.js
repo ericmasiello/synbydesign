@@ -12,7 +12,7 @@ var Navigation = React.createClass({
       <header className="header  masthead">
         <div className="container-fluid">
 
-          <div className="row  middle-xs">
+          <div className="row  masthead__decoration-container  middle-xs">
             <div className="col-xs  masthead__decoration-line"></div>
             <div className="col-xs  masthead__decoration"></div>
             <div className="col-xs  masthead__decoration-line"></div>
@@ -23,7 +23,7 @@ var Navigation = React.createClass({
               <li role="presentation" className="col-xs-12  col-sm"><a href="#about" className="pill">About</a></li>
               <li role="presentation" className="col-xs-12  col-sm"><a href="#portfolio" className="pill">Portfolio</a></li>
               <li role="presentation" className="col-xs-12  col-sm  col-md-5  first-xs  default-sm  masthead__logo">
-                <h1>
+                <h1 className="masthead__logo__title">
                   <svg className="logo  logo__head" dangerouslySetInnerHTML={{__html:logo}} />
                   <svg className="logo  logo__title" dangerouslySetInnerHTML={{__html:title}} />
                   <svg className="logo  logo__slogan" dangerouslySetInnerHTML={{__html:slogan}} />
@@ -34,7 +34,7 @@ var Navigation = React.createClass({
             </ul>
           </nav>
 
-          <div className="row  middle-xs">
+          <div className="row  masthead__decoration-container  middle-xs">
             <div className="col-xs  masthead__decoration-line"></div>
             <div className="col-xs  masthead__decoration  masthead__decoration--bottom"></div>
             <div className="col-xs  masthead__decoration-line"></div>

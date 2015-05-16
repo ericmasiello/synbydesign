@@ -1,11 +1,22 @@
 var Reflux = require('reflux');
 var UIActions = require('../actions/uiActions');
 
-var _loadingRequests = 0;
+var _totalRequests = 0;
+var _loadedRequests = 0;
 
 var loadingStatus = function(){
 
   this.trigger('CHANGE');
+
+  if( _loadedRequests === _totalRequests ){
+    resetRequests.apply(this);
+  }
+};
+
+var resetRequests = function(){
+
+  _totalRequests = 0;
+  _loadedRequests = 0;
 };
 
 var UIStore = Reflux.createStore({
@@ -17,22 +28,27 @@ var UIStore = Reflux.createStore({
 
   onLOAD: function(){
 
-    _loadingRequests++;
+    _totalRequests++;
     console.log('making request');
     loadingStatus.call(this);
   },
 
   onCOMPLETED_LOADING: function(){
 
-    _loadingRequests--;
-    console.log('closing request');
+    _loadedRequests++;
+    console.log('loaded request');
     loadingStatus.call(this);
   },
 
   isLoading: function(){
 
-    return ( _loadingRequests > 0 );
-  }
+    return ( _totalRequests > _loadedRequests );
+  },
+
+  getLoadingPercentageComplete: function(){
+
+    return ( _loadedRequests / _totalRequests );
+  },
 });
 
 module.exports = UIStore;
