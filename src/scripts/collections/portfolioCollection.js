@@ -5,20 +5,20 @@ var PortfolioModel = require('../models/portfolioModel');
 var PortfolioCollection = Backbone.Collection.extend({
   url: './wp/wp-json/posts/?filter[category_name]=web,other',
   model: PortfolioModel,
-  initialize: function(){
-
-    this.on('request', function(){
-      console.log('Collection: request');
-    });
-
-    this.on('sync', function(){
-      console.log('Collection: sync');
-    });
-
-    this.on('error', function(){
-      console.log('Collection: error');
-    });
-  },
+  //initialize: function(){
+  //
+  //  this.on('request', function(){
+  //    console.log('Collection: request');
+  //  });
+  //
+  //  this.on('sync', function(){
+  //    console.log('Collection: sync');
+  //  });
+  //
+  //  this.on('error', function(){
+  //    console.log('Collection: error');
+  //  });
+  //},
   getFilteredCollectionByCategory: function(type){
 
     var filtered = this.filter(function(portfolioItem) {

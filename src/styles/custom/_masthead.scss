@@ -9,7 +9,6 @@
     white-space: nowrap;
     font-size: 2rem;
     font-weight: 700;
-    text-transform: uppercase;
     transition: font-size .3s;
 
     @media (min-width: $screen-sm-min) {
@@ -42,10 +41,30 @@
   }
 }
 
+.masthead__logo {
+
+  margin: auto;
+}
+
 .masthead__logo__title {
 
   margin: -2.5rem 0 0;
 }
+
+.masthead__nav {
+
+  list-style-type: none;
+  position: relative;
+}
+
+//.masthead__back-link {
+//
+//  bottom: 0;
+//  left: 0;
+//  position: absolute;
+//  right: 0;
+//  top: 0;
+//}
 
 @media (min-width: $screen-sm-min) {
 

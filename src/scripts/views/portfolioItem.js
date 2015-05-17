@@ -11,8 +11,7 @@ var PortfolioItem = React.createClass({
     });
 
     var detailParams = {
-      id: this.props.item.ID,
-      type: this.props.type
+      id: this.props.item.ID
     };
     var alt = this.props.item.title + ' thumbnail';
     var featuredImage = this.props.item.featured_image ? this.props.item.featured_image.guid : null;

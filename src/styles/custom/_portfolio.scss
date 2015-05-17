@@ -48,14 +48,12 @@
 
 .portfolio__title__text {
 
-  //FIXME - make these variables!!!
+  background-color: $portfolio-title-bg;
+  color: $portfolio-text-color;
   display: inline-block;
-  background-color: rgba(223, 141, 205, 0.85);
   border-radius: 3px;
-  color: #F5F2F2;
   margin: auto;
   padding: 0 .75rem;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .portfolio__full {

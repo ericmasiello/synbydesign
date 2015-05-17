@@ -14,7 +14,6 @@ var PortfolioModel = Backbone.Model.extend({
 
     this.on('add sync', function(){
 
-      console.log('got to fullsizeimage thing');
       //Sets the full sized image path based off the content
       this.set('fullSizeImage', extractor(this.get('content')));
     });

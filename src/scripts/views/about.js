@@ -1,6 +1,7 @@
 var React = require('react');
 var AboutActions = require('../actions/aboutActions');
 var AboutStore = require('../stores/aboutStore');
+var UIIDs = require('../props/uiIDs');
 
 var About = React.createClass({
 
@@ -28,7 +29,7 @@ var About = React.createClass({
         if( this.state.content === null ){
 
             AboutActions.LOAD();
-            this.unsubscribe = AboutStore.listen(this.setStateFromStore.bind(this));
+            this.unsubscribe = AboutStore.listen(this.setStateFromStore);
         }
     },
 
@@ -45,7 +46,7 @@ var About = React.createClass({
         var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
 
         return (
-            <div className="container-fluid">
+            <div className="container-fluid" id={UIIDs.about}>
                 <div className="well h4 text-center" dangerouslySetInnerHTML={{__html: content}}></div>
             </div>
         );
