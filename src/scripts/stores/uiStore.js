@@ -29,14 +29,14 @@ var UIStore = Reflux.createStore({
   onLOAD: function(){
 
     _totalRequests++;
-    console.log('making request');
+    //console.log('making request');
     loadingStatus.call(this);
   },
 
   onCOMPLETED_LOADING: function(){
 
     _loadedRequests++;
-    console.log('loaded request');
+    //console.log('loaded request');
     loadingStatus.call(this);
   },
 

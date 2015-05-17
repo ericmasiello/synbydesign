@@ -20,7 +20,7 @@ var LoadingStatus = React.createClass({
 
   componentDidMount: function() {
 
-    this.unsubscribe = UIStore.listen(this.setStateFromStore.bind(this));
+    this.unsubscribe = UIStore.listen(this.setStateFromStore);
     this.node = this.getDOMNode();
     this.renderNProgress();
   },

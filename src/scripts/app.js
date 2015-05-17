@@ -3,7 +3,7 @@ var React = require('react/addons');
 var Router = require('react-router');
 
 /* Load views */
-var Navigation = require('./views/navigation');
+//var Navigation = require('./views/navigation');
 //var PortfolioList = require('./views/portfolioList');
 var Home = require("./views/home");
 var PortfolioDetail = require('./views/portfolioDetail');
@@ -22,17 +22,14 @@ var App = React.createClass({
 
     return (<div>
       <LoadingStatus />
-      <Navigation />
-      <div className="container-fluid">
-        <RouteHandler/>
-      </div>
+      <RouteHandler/>
     </div>);
   }
 });
 
 var routes = (
     <Route handler={App}>
-      <DefaultRoute handler={Home}/>
+      <DefaultRoute name="home" handler={Home}/>
       <Route name="detail" path="/:type/detail/:id" handler={PortfolioDetail}/>
       <NotFoundRoute handler={NotFound}/>
     </Route>

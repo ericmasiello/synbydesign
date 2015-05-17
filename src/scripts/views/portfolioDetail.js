@@ -1,5 +1,6 @@
 var React = require('react/addons');
 var Router = require('react-router');
+var Navigation = require('./navigation');
 var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioStore = require('../stores/portfolioStore');
 
@@ -61,16 +62,19 @@ var PortfolioDetail = React.createClass({
     })) : [];
 
     return (
-      <div className="portfolio__item mtxl container-fluid">
-        <div className="row">
-          <div className="col-xs-12 col-sm-8 mbxl">
-            <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={this.state.detail.title} />
-          </div>
-          <div className="col-xs-12 col-sm-4 phl">
-            <h1 className="mtn"><span class="portfolio__title__text">{this.state.detail.title}</span></h1>
-            <ul className="h4">
-              {tags}
-            </ul>
+      <div>
+        <Navigation view={'detail'} />
+        <div className="portfolio__item mtxl container-fluid">
+          <div className="row">
+            <div className="col-xs-12 col-sm-8 mbxl">
+              <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={this.state.detail.title} />
+            </div>
+            <div className="col-xs-12 col-sm-4 phl">
+              <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
+              <ul className="h4">
+                {tags}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
