@@ -1,0 +1,22 @@
+{
+  "name": "fluxbone-playground",
+  "version": "0.0.0",
+  "authors": [
+    "Eric Masiello <masielle@advisory.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "es5-shim": "~4.1.1",
+    "console-polyfill": "~0.2.1"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.2"
+  }
+}

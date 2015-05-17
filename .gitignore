@@ -1,4 +1,5 @@
 .idea
+.sass-cache
 .DS_Store
 node_modules
 npm-debug.log
@@ -6,3 +7,5 @@ npm-debug.log
 # Wordpress directory
 wp
 _archive
+bower_components
+dist

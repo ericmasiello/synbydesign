@@ -1,0 +1,114 @@
+/*ul*/.portfolio {
+
+  list-style-type: none;
+  padding: 0;
+
+  @media (min-width: $screen-md-min) {
+
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+
+  > li {
+
+    padding: 1rem 1.5rem;
+    width: 100%;
+
+    &:nth-child(2n) .portfolio__thumb {
+
+      animation-delay: 4s;
+    }
+
+    &:nth-child(3n) .portfolio__thumb {
+
+      animation-delay: 8s;
+    }
+
+    &:nth-child(4n) .portfolio__thumb {
+
+      animation-delay: 12s;
+    }
+  }
+}
+
+.portfolio__item {
+
+  position: relative;
+}
+
+.portfolio__title {
+
+  bottom: -.5rem;
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+}
+
+.portfolio__title__text {
+
+  background-color: $portfolio-title-bg;
+  color: $portfolio-text-color;
+  display: inline-block;
+  border-radius: 3px;
+  margin: auto;
+  padding: 0 .75rem;
+}
+
+.portfolio__full {
+
+  border: 10px solid #d4cfd1;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio__thumb {
+
+  @extend .portfolio__full;
+  background-color: lighten(#d4cfd1,5%);
+  display: inline-block;
+  max-width: 42rem;
+  max-height: 29.3rem;
+  overflow: hidden;
+
+  @media (min-width: $screen-sm-min) {
+
+    height: 23rem;
+  }
+
+  @media (min-width: $screen-md-min) {
+
+    width: 30rem;
+    height: 20.5rem;
+  }
+}
+
+.portfolio__thumb__img {
+
+  animation-duration: 4s;
+  animation-name: pulseGrayscale;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  filter: grayscale(1);
+  transition: filter .2s;
+
+  &:hover {
+
+    animation: none;
+    filter: grayscale(0);
+  }
+}
+
+
+@keyframes pulseGrayscale {
+  from {
+    filter: grayscale(1);
+  }
+
+  to {
+    filter: grayscale(.7);
+  }
+}

@@ -1,0 +1,28 @@
+$base-font-size: 10px;
+$body-max-width: 96rem;
+
+$highlight-dark-color: #7d0a57;
+$font-family-base: 'Open Sans', Helvetica, 'Helvetica Neue', Arial, sans-serif;
+$masthead-font-family: 'Hind', 'Myriad Pro', Helvetica, 'Helvetica Neue', Arial, sans-serif;
+$border-color: #5d656d;
+$link-color: #AC0E78;
+$link-hover-color:  darken($link-color, 15%);
+$headings-line-height: 1.4;
+
+$well-bg: lighten( $highlight-dark-color, 65% );
+$well-border: lighten( $highlight-dark-color, 60% );
+
+$pill-color: #526B91;
+$pill-bg: rgba(179, 169, 173, 0.1);
+$pill-border-radius: $nav-pills-border-radius;
+$pill-padding: .4rem 1rem .3rem;
+$pill-margin: .5rem;
+
+$pill-hover-bg: #B3A9AD;
+$pill-hover-color: #F3F5F9;
+
+$portfolio-title-bg: lighten( $highlight-dark-color, 10% );
+$portfolio-text-color: #fff;
+
+
+
