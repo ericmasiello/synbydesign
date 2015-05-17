@@ -68,6 +68,7 @@
 .portfolio__thumb {
 
   @extend .portfolio__full;
+  background-color: lighten(#d4cfd1,5%);
   display: inline-block;
   max-width: 42rem;
   max-height: 29.3rem;

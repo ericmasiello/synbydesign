@@ -33,8 +33,6 @@ var PortfolioDetail = React.createClass({
 
       jQueryScrollTo('#' + UIIDs.masthead, 500)
     },0);
-
-
   },
 
   componentDidMount: function(){
@@ -80,13 +78,20 @@ var PortfolioDetail = React.createClass({
       });
     }
 
+    var imageStyles = {
+      'maxHeight': this.state.detail.maxHeight,
+      'maxWidth': this.state.detail.maxWidth
+    };
+
+    var altText = (typeof this.state.detail.altText === 'string' && this.state.detail.altText.length > 0 ) ? this.state.detail.altText : this.state.detail.title;
+
     return (
       <div>
         <Navigation view={'detail'} />
         <div className="portfolio__item mtxl container-fluid">
           <div>
-            <div className="mbxl">
-              <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={this.state.detail.title} />
+            <div className="mbxl  text-center">
+              <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles} />
             </div>
             <div className="text-center">
               <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
