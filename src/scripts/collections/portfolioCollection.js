@@ -3,7 +3,7 @@ Backbone.$ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
 
 var PortfolioCollection = Backbone.Collection.extend({
-  url: './wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers',
+  url: './wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards',
   model: PortfolioModel,
   //initialize: function(){
   //
@@ -23,7 +23,7 @@ var PortfolioCollection = Backbone.Collection.extend({
 
     if(type === 'design'){
 
-      type = ['logos', 'illustration', 'flyers'];
+      type = ['logos', 'illustration', 'flyers', 'business-cards'];
 
     } else {
 
