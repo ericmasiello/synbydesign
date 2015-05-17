@@ -70,10 +70,15 @@ var PortfolioDetail = React.createClass({
 
   render: function(){
 
-    var tags = (this.state.detail.terms) ? (this.state.detail.terms.post_tag.map(function( tag ){
+    var skills;
 
-      return (<li key={Math.random()}>{tag.name}</li>);
-    })) : [];
+    if( this.state.detail.terms && this.state.detail.terms.post_tag ){
+
+      skills = this.state.detail.terms.post_tag.map(function( tag ){
+
+        return (<li key={Math.random()}>{tag.name}</li>);
+      });
+    }
 
     return (
       <div>
@@ -86,7 +91,7 @@ var PortfolioDetail = React.createClass({
             <div className="text-center">
               <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
               <ul className="h4  list-unstyled">
-                {tags}
+                {skills}
               </ul>
             </div>
           </div>

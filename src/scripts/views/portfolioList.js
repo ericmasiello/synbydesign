@@ -31,6 +31,7 @@ var PortfolioList = React.createClass({
 
     return {
       webItems: PortfolioStore.getCollectionByCategory('web'),
+      designItems: PortfolioStore.getCollectionByCategory('design'),
       otherItems: PortfolioStore.getCollectionByCategory('other')
     };
   },
@@ -65,12 +66,17 @@ var PortfolioList = React.createClass({
   render: function(){
 
     var webItems = _mapDataToPortfolioItems(this.state.webItems, 'web');
+    var designItems = _mapDataToPortfolioItems(this.state.designItems, 'design');
     var otherItems = _mapDataToPortfolioItems(this.state.otherItems, 'other');
 
     return (<div id={UIIDs.portfolioList}>
       <h1 className="h3  text-center">Web Design &amp; Development</h1>
       <ul className="portfolio  row  center-xs  start-sm">
         {webItems}
+      </ul>
+      <h1 className="h3  text-center">Illustration, Logos, &amp; Fliers</h1>
+      <ul className="portfolio  row  center-xs  start-sm">
+        {designItems}
       </ul>
       <h1 className="h3  text-center">Other</h1>
       <ul className="portfolio  row  center-xs  start-sm">

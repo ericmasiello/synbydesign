@@ -5,10 +5,15 @@ var PortfolioItem = React.createClass({
 
   render: function(){
 
-    var tags = this.props.item.terms.post_tag.map(function(tag ){
+    var skills;
 
-      return (<li key={Math.random()}>{tag.name}</li>);
-    });
+    if( this.props.item.terms && this.props.item.terms.post_tag ){
+
+      skills = this.props.item.terms.post_tag.map(function(tag ){
+
+        return (<li key={Math.random()}>{tag.name}</li>);
+      });
+    }
 
     var detailParams = {
       id: this.props.item.ID
@@ -27,7 +32,7 @@ var PortfolioItem = React.createClass({
           </Link>
         </div>
         <ul className="skills  small">
-          {tags}
+          {skills}
         </ul>
       </li>
     );

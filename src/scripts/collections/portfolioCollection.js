@@ -3,7 +3,7 @@ Backbone.$ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
 
 var PortfolioCollection = Backbone.Collection.extend({
-  url: './wp/wp-json/posts/?filter[category_name]=web,other',
+  url: './wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers',
   model: PortfolioModel,
   //initialize: function(){
   //
@@ -21,9 +21,18 @@ var PortfolioCollection = Backbone.Collection.extend({
   //},
   getFilteredCollectionByCategory: function(type){
 
+    if(type === 'design'){
+
+      type = ['logos', 'illustration', 'flyers'];
+
+    } else {
+
+      type = [type];
+    }
+
     var filtered = this.filter(function(portfolioItem) {
 
-      return (portfolioItem.get('terms').category && portfolioItem.get('terms').category.length > 0 ) ? portfolioItem.get('terms').category[0].slug === type : false;
+      return (portfolioItem.get('terms').category && portfolioItem.get('terms').category.length > 0 ) ? (type.indexOf(portfolioItem.get('terms').category[0].slug) > -1) : false;
     });
 
     return new PortfolioCollection(filtered);
