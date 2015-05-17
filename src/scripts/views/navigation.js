@@ -55,7 +55,7 @@ var Navigation = React.createClass({
     }
 
     return (
-      <header className="header  masthead">
+      <header className="header  masthead" id={UIIDs.masthead}>
         <div className="container-fluid">
           <div className="row  masthead__decoration-container  middle-xs">
             <div className="col-xs  masthead__decoration-line"></div>

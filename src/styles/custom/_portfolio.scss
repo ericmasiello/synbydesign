@@ -13,6 +13,7 @@
   > li {
 
     padding: 1rem 1.5rem;
+    width: 100%;
 
     &:nth-child(2n) .portfolio__thumb {
 
@@ -67,13 +68,30 @@
 .portfolio__thumb {
 
   @extend .portfolio__full;
+  display: inline-block;
+  max-width: 42rem;
+  max-height: 29.3rem;
+  overflow: hidden;
+
+  @media (min-width: $screen-sm-min) {
+
+    height: 23rem;
+  }
+
+  @media (min-width: $screen-md-min) {
+
+    width: 30rem;
+    height: 20.5rem;
+  }
+}
+
+.portfolio__thumb__img {
+
   animation-duration: 4s;
   animation-name: pulseGrayscale;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   filter: grayscale(1);
-  max-width: 44rem;
-  max-height: 29.3rem;
   transition: filter .2s;
 
   &:hover {

@@ -3,6 +3,8 @@ var Router = require('react-router');
 var Navigation = require('./navigation');
 var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioStore = require('../stores/portfolioStore');
+var jQueryScrollTo = require('jquery.scrollto');
+var UIIDs = require('../props/uiIDs');
 
 var PortfolioDetail = React.createClass({
 
@@ -21,6 +23,18 @@ var PortfolioDetail = React.createClass({
       detail: PortfolioStore.getItemById(id),
       type: this.getParams().type
     };
+  },
+
+  backToTop: function(e){
+
+    e.preventDefault();
+
+    window.setTimeout(function(){
+
+      jQueryScrollTo('#' + UIIDs.masthead, 500)
+    },0);
+
+
   },
 
   componentDidMount: function(){
@@ -65,16 +79,19 @@ var PortfolioDetail = React.createClass({
       <div>
         <Navigation view={'detail'} />
         <div className="portfolio__item mtxl container-fluid">
-          <div className="row">
-            <div className="col-xs-12 col-sm-8 mbxl">
+          <div>
+            <div className="mbxl">
               <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={this.state.detail.title} />
             </div>
-            <div className="col-xs-12 col-sm-4 phl">
+            <div className="text-center">
               <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
-              <ul className="h4">
+              <ul className="h4  list-unstyled">
                 {tags}
               </ul>
             </div>
+          </div>
+          <div className="text-center mtl">
+            <a href="#" onClick={this.backToTop}>Back to top</a>
           </div>
         </div>
       </div>

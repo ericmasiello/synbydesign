@@ -22,8 +22,8 @@ var PortfolioItem = React.createClass({
           <h2 className="h4  portfolio__title">
             <span className="portfolio__title__text">{this.props.item.title}</span>
           </h2>
-          <Link to="detail" params={detailParams}>
-            <img className="portfolio__thumb" src={featuredImage} alt={alt} />
+          <Link to="detail" params={detailParams} className="portfolio__thumb">
+            <img className="portfolio__thumb__img" src={featuredImage} alt={alt} />
           </Link>
         </div>
         <ul className="skills  small">
