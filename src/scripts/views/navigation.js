@@ -47,6 +47,18 @@ var Navigation = React.createClass({
 
     if( this.props.view === 'detail'){
 
+      logo = (
+        <li role="presentation" className="col-xs-12  col-sm  col-md-5  first-xs  default-sm  masthead__logo">
+          <h1 className="masthead__logo__title">
+            <Link to="home">
+              <svg className="logo  logo__head  logo--detail" dangerouslySetInnerHTML={{__html:logo}} />
+              <svg className="logo  logo__title  logo--detail" dangerouslySetInnerHTML={{__html:title}} />
+              <svg className="logo  logo__slogan  logo--detail" dangerouslySetInnerHTML={{__html:slogan}} />
+            </Link>
+          </h1>
+        </li>
+      );
+
       nav = (
         <ul className="row  flex-center  middle-xs  masthead__nav">
           {logo}
