@@ -9,6 +9,7 @@ var Home = require("./views/home");
 var PortfolioDetail = require('./views/portfolioDetail');
 var NotFound = require("./views/404");
 var LoadingStatus = require('./views/loadingStatus');
+var ReactCSSTransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 
 /* Load Router */
 var Route = Router.Route;
@@ -20,9 +21,13 @@ var App = React.createClass({
 
   render: function(){
 
+    var route = window.location.hash;
+
     return (<div>
       <LoadingStatus />
-      <RouteHandler/>
+      <ReactCSSTransitionGroup transitionName="example">
+        <RouteHandler key={route} />
+      </ReactCSSTransitionGroup>
     </div>);
   }
 });
