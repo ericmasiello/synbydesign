@@ -1,7 +1,9 @@
 var React = require('react');
-var About = require('./about');
-var PortfolioList = require('./portfolioList');
-var Navigation = require('./navigation');
+var DocumentTitle = require('react-document-title');
+var About = require('./components/about');
+var PortfolioList = require('./components/portfolioList');
+var Navigation = require('./components/navigation');
+var AppConsts = require('../consts/app');
 
 var Home = React.createClass({
 
@@ -9,6 +11,7 @@ var Home = React.createClass({
 
         return (
             <div>
+                <DocumentTitle title={AppConsts.TITLE} />
                 <Navigation view={'home'} />
                 <div className="container-fluid">
                     <About />
