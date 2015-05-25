@@ -17,6 +17,7 @@
     "nprogress": "^0.1.6",
     "react": "^0.13.1",
     "react-addons": "^0.9.1-deprecated",
+    "react-document-title": "^1.0.2",
     "reflux": "^0.2.7"
   },
   "devDependencies": {

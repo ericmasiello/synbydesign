@@ -1,10 +1,9 @@
 var React = require('react/addons');
-var PortfolioActions = require('../actions/portfolioActions');
-var PortfolioStore = require('../stores/portfolioStore');
+var PortfolioActions = require('../../actions/portfolioActions');
+var PortfolioStore = require('../../stores/portfolioStore');
 var PortfolioItem = require('./portfolioItem');
 var jQuery = require('jquery');
-var jQueryScrollTo = require('jquery.scrollto');
-var UIIDs = require('../props/uiIDs');
+var AppConsts = require('../../consts/app');
 
 var _mapDataToPortfolioItems = function(items, type){
 
@@ -64,16 +63,6 @@ var PortfolioList = React.createClass({
     }
   },
 
-  backToTop: function(e){
-
-    e.preventDefault();
-
-    window.setTimeout(function(){
-
-      jQueryScrollTo('#' + UIIDs.masthead, 500)
-    },0);
-  },
-
   render: function(){
 
     var webItems = _mapDataToPortfolioItems(this.state.webItems, 'web');
@@ -117,13 +106,10 @@ var PortfolioList = React.createClass({
       );
     }
 
-    return (<div id={UIIDs.portfolioList}>
+    return (<div id={AppConsts.UIID.portfolioList}>
       {webContent}
       {designContent}
       {otherContent}
-      <div className="text-center mtl">
-        <a href="#" onClick={this.backToTop}>Back to top</a>
-      </div>
     </div>);
   }
 });
