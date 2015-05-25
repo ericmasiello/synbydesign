@@ -1,10 +1,10 @@
 var React = require('react/addons');
 var Router = require('react-router');
-var Navigation = require('./navigation');
+var Navigation = require('./components/navigation');
 var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioStore = require('../stores/portfolioStore');
-var jQueryScrollTo = require('jquery.scrollto');
-var UIIDs = require('../props/uiIDs');
+var AppConsts = require('../consts/app');
+var DocumentTitle = require('react-document-title');
 
 var PortfolioDetail = React.createClass({
 
@@ -23,16 +23,6 @@ var PortfolioDetail = React.createClass({
       detail: PortfolioStore.getItemById(id),
       type: this.getParams().type
     };
-  },
-
-  backToTop: function(e){
-
-    e.preventDefault();
-
-    window.setTimeout(function(){
-
-      jQueryScrollTo('#' + UIIDs.masthead, 500)
-    },0);
   },
 
   componentDidMount: function(){
@@ -83,10 +73,13 @@ var PortfolioDetail = React.createClass({
       'maxWidth': this.state.detail.maxWidth
     };
 
+    var pageTitle = (this.state.detail && this.state.detail.title ) ? this.state.detail.title + ' - ' + AppConsts.TITLE : AppConsts.TITLE;
+
     var altText = (typeof this.state.detail.altText === 'string' && this.state.detail.altText.length > 0 ) ? this.state.detail.altText : this.state.detail.title;
 
     return (
       <div>
+        <DocumentTitle title={pageTitle} />
         <Navigation view={'detail'} />
         <div className="portfolio__item mtxl container-fluid">
           <div>
@@ -99,9 +92,6 @@ var PortfolioDetail = React.createClass({
                 {skills}
               </ul>
             </div>
-          </div>
-          <div className="text-center mtl">
-            <a href="#" onClick={this.backToTop}>Back to top</a>
           </div>
         </div>
       </div>

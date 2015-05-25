@@ -1,5 +1,5 @@
 var React = require('react/addons');
-var UIStore = require('../stores/uiStore');
+var UIStore = require('../../stores/uiStore');
 var NProgress = require('nprogress');
 
 var LoadingStatus = React.createClass({
