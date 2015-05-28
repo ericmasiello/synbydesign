@@ -18,6 +18,7 @@
     "react": "^0.13.1",
     "react-addons": "^0.9.1-deprecated",
     "react-document-title": "^1.0.2",
+    "react-router": "^0.13.3",
     "reflux": "^0.2.7"
   },
   "devDependencies": {
