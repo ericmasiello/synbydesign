@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react');
 var DocumentTitle = require('react-document-title');
 var About = require('./components/about');

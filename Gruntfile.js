@@ -15,15 +15,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        //jshint: {
-        //    files: scripts,
-        //    options: {
-        //        debug: true,
-        //        globals: {
-        //            jQuery: true
-        //        }
-        //    }
-        //},
 
         // Add vendor prefixed styles
         autoprefixer: {
@@ -86,21 +77,45 @@ module.exports = function(grunt) {
             app: {
                 files: scripts,
                 //tasks: ['jshint', 'browserify']
-                tasks: ['browserify']
+                tasks: ['eslint', 'browserify']
             }
         },
         clean: {
             dist: ['dist'],
             tmpCSS: ['src/styles/main.css']
+        },
+        eslint: {
+            target: ['src/scripts/'],
+            options: {
+                "rules": {
+                    "camelcase": 0,
+                    "new-cap": 0,
+                    "eol-last": 0,
+                    "quotes": "single",
+                    "global-strict": 0,
+                    "react/display-name": 0,
+                    "react/jsx-boolean-value": 1,
+                    "react/jsx-quotes": 1,
+                    "react/jsx-no-undef": 1,
+                    "react/jsx-sort-props": 0,
+                    "react/jsx-sort-prop-types": 1,
+                    "react/jsx-uses-react": 1,
+                    "react/jsx-uses-vars": 1,
+                    "react/no-did-mount-set-state": 1,
+                    "react/no-did-update-set-state": 1,
+                    "react/no-multi-comp": 1,
+                    "react/no-unknown-property": 1,
+                    "react/prop-types": 1,
+                    "react/react-in-jsx-scope": 1,
+                    "react/self-closing-comp": 1,
+                    "react/sort-comp": 0,
+                    "react/wrap-multilines": 1
+                }
+            }
         }
     });
 
-    //grunt.loadNpmTasks('grunt-react');
-    //grunt.loadNpmTasks('grunt-browserify');
-    //grunt.loadNpmTasks('grunt-contrib-jshint');
-    //grunt.loadNpmTasks('grunt-contrib-watch');
-
     grunt.registerTask('style', ['compass', 'autoprefixer', 'cssmin', 'copy:style', 'copy:images', 'clean:tmpCSS']);
 
-    grunt.registerTask('default', ['clean:dist', 'style', 'browserify']);
+    grunt.registerTask('default', ['eslint', 'clean:dist', 'style', 'browserify']);
 };

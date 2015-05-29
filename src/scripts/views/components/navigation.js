@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react/addons');
 var Link = require('react-router').Link;
 var jQueryScrollTo = require('jquery.scrollto');
@@ -5,12 +7,16 @@ var AppConsts = require('../../consts/app');
 
 var Navigation = React.createClass({
 
+  propTypes: {
+    view: React.PropTypes.string.isRequired
+  },
+
   scrollTo: function(scrollToID){
 
     window.setTimeout(function(){
 
-      jQueryScrollTo('#' + scrollToID, 500)
-    },0);
+      jQueryScrollTo('#' + scrollToID, 500);
+    }, 0);
   },
 
   render: function(){
@@ -23,9 +29,9 @@ var Navigation = React.createClass({
       <li role="presentation" className="col-xs-12  col-sm  col-md-5  first-xs  default-sm  masthead__logo">
         <h1 className="masthead__logo__title">
           <Link to="home">
-            <svg className="logo  logo__head" dangerouslySetInnerHTML={{__html:svgLogo}} />
-            <svg className="logo  logo__title" dangerouslySetInnerHTML={{__html:svgTitle}} />
-            <svg className="logo  logo__slogan" dangerouslySetInnerHTML={{__html:svgSlogan}} />
+            <svg className="logo  logo__head" dangerouslySetInnerHTML={{__html: svgLogo}} />
+            <svg className="logo  logo__title" dangerouslySetInnerHTML={{__html: svgTitle}} />
+            <svg className="logo  logo__slogan" dangerouslySetInnerHTML={{__html: svgSlogan}} />
           </Link>
         </h1>
       </li>
@@ -51,9 +57,9 @@ var Navigation = React.createClass({
         <li role="presentation" className="col-xs-12  col-sm  col-md-5  first-xs  default-sm  masthead__logo">
           <h1 className="masthead__logo__title">
             <Link to="home">
-              <svg className="logo  logo__head  logo--detail" dangerouslySetInnerHTML={{__html:svgLogo}} />
-              <svg className="logo  logo__title  logo--detail" dangerouslySetInnerHTML={{__html:svgTitle}} />
-              <svg className="logo  logo__slogan  logo--detail" dangerouslySetInnerHTML={{__html:svgSlogan}} />
+              <svg className="logo  logo__head  logo--detail" dangerouslySetInnerHTML={{__html: svgLogo}} />
+              <svg className="logo  logo__title  logo--detail" dangerouslySetInnerHTML={{__html: svgTitle}} />
+              <svg className="logo  logo__slogan  logo--detail" dangerouslySetInnerHTML={{__html: svgSlogan}} />
             </Link>
           </h1>
         </li>

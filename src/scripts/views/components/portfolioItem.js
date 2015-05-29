@@ -1,7 +1,13 @@
+'use strict';
+
 var React = require('react/addons');
 var Link = require('react-router').Link;
 
 var PortfolioItem = React.createClass({
+
+  propTypes: {
+    item: React.PropTypes.object.isRequired
+  },
 
   render: function(){
 

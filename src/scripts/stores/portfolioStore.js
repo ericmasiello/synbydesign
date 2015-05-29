@@ -1,3 +1,5 @@
+'use strict';
+
 var Reflux = require('reflux');
 var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioModel = require('../models/portfolioModel');
@@ -5,17 +7,17 @@ var PortfolioCollection = require('../collections/portfolioCollection');
 var ajaxActionDecorator = require('../util/ajaxActionDecorator');
 
 var portfolioItem;
-var _portfolio = new PortfolioCollection();
+var portfolio = new PortfolioCollection();
 
-//adds event hooks to _portfolio collection to trigger appropriate Reflux Actions
-ajaxActionDecorator(_portfolio, PortfolioActions.LOAD_ALL);
+//adds event hooks to portfolio collection to trigger appropriate Reflux Actions
+ajaxActionDecorator(portfolio, PortfolioActions.LOAD_ALL);
 
-var _TYPES = {
+var TYPES = {
     ALL: 'ALL',
     SINGLE: 'SINGLE'
 };
 
-var _LOADED = {
+var LOADED = {
     ALL: false
 };
 
@@ -27,8 +29,8 @@ var PortfolioStore = Reflux.createStore({
 
     onLOAD_SINGLECompleted: function(){
 
-        _portfolio.add(portfolioItem);
-        this.trigger(_TYPES.SINGLE);
+        portfolio.add(portfolioItem);
+        this.trigger(TYPES.SINGLE);
     },
 
     onLOAD_SINGLE: function(id){
@@ -42,36 +44,36 @@ var PortfolioStore = Reflux.createStore({
         portfolioItem.fetch();
     },
 
-    onLOAD_ALLCompleted: function (items) {
+    onLOAD_ALLCompleted: function () {
 
-        _LOADED.ALL = true;
-        this.trigger(_TYPES.ALL);
+        LOADED.ALL = true;
+        this.trigger(TYPES.ALL);
     },
 
     onLOAD_ALL: function () {
 
-        _portfolio.fetch();
+        portfolio.fetch();
     },
 
     getCollectionByCategory: function (category) {
 
-        return _portfolio.getFilteredCollectionByCategory(category).toJSON();
+        return portfolio.getFilteredCollectionByCategory(category).toJSON();
     },
 
     getItemById: function (id) {
 
-        var model = _portfolio.getModelById(id);
+        var model = portfolio.getModelById(id);
         return (model === null) ? {} : model.toJSON();
     },
 
     hasLoadedAll: function () {
 
-        return ( _LOADED.ALL );
+        return ( LOADED.ALL );
     },
 
     hasLoadedItemById: function(id){
 
-        var model = _portfolio.getModelById(id);
+        var model = portfolio.getModelById(id);
         return ( model === null ) ? false : true;
     }
 });
