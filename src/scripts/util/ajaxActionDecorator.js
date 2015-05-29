@@ -1,4 +1,3 @@
-var $ = require('jquery');
 var UIActions = require('../actions/uiActions');
 
 var ajaxComplete = function ajaxCompleteHandler() {
