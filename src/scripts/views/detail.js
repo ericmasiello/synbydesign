@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react/addons');
 var Router = require('react-router');
 var Navigation = require('./components/navigation');
@@ -69,8 +71,8 @@ var PortfolioDetail = React.createClass({
     }
 
     var imageStyles = {
-      'maxHeight': this.state.detail.maxHeight,
-      'maxWidth': this.state.detail.maxWidth
+      maxHeight: this.state.detail.maxHeight,
+      maxWidth: this.state.detail.maxWidth
     };
 
     var pageTitle = (this.state.detail && this.state.detail.title ) ? this.state.detail.title + ' - ' + AppConsts.TITLE : AppConsts.TITLE;

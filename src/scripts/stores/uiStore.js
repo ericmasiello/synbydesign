@@ -1,22 +1,24 @@
+'use strict';
+
 var Reflux = require('reflux');
 var UIActions = require('../actions/uiActions');
 
-var _totalRequests = 0;
-var _loadedRequests = 0;
+var totalRequests = 0;
+var loadedRequests = 0;
+
+var resetRequests = function(){
+
+  totalRequests = 0;
+  loadedRequests = 0;
+};
 
 var loadingStatus = function(){
 
   this.trigger('CHANGE');
 
-  if( _loadedRequests === _totalRequests ){
+  if( loadedRequests === totalRequests ){
     resetRequests.apply(this);
   }
-};
-
-var resetRequests = function(){
-
-  _totalRequests = 0;
-  _loadedRequests = 0;
 };
 
 var UIStore = Reflux.createStore({
@@ -28,27 +30,27 @@ var UIStore = Reflux.createStore({
 
   onLOAD: function(){
 
-    _totalRequests++;
+    totalRequests++;
     //console.log('making request');
     loadingStatus.call(this);
   },
 
   onCOMPLETED_LOADING: function(){
 
-    _loadedRequests++;
+    loadedRequests++;
     //console.log('loaded request');
     loadingStatus.call(this);
   },
 
   isLoading: function(){
 
-    return ( _totalRequests > _loadedRequests );
+    return ( totalRequests > loadedRequests );
   },
 
   getLoadingPercentageComplete: function(){
 
-    return ( _loadedRequests / _totalRequests );
-  },
+    return ( loadedRequests / totalRequests );
+  }
 });
 
 module.exports = UIStore;

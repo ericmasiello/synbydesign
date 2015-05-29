@@ -9,3 +9,4 @@ wp
 _archive
 bower_components
 dist
+.tmp

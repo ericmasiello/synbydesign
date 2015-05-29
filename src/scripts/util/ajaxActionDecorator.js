@@ -1,4 +1,5 @@
-var $ = require('jquery');
+'use strict';
+
 var UIActions = require('../actions/uiActions');
 
 var ajaxComplete = function ajaxCompleteHandler() {
