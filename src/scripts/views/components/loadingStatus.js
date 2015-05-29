@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react/addons');
 var UIStore = require('../../stores/uiStore');
 var NProgress = require('nprogress');

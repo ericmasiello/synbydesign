@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react/addons');
 var PortfolioActions = require('../../actions/portfolioActions');
 var PortfolioStore = require('../../stores/portfolioStore');
@@ -5,7 +7,7 @@ var PortfolioItem = require('./portfolioItem');
 var jQuery = require('jquery');
 var AppConsts = require('../../consts/app');
 
-var _mapDataToPortfolioItems = function(items, type){
+var mapDataToPortfolioItems = function(items, type){
 
   var portfolioItems;
 
@@ -65,9 +67,9 @@ var PortfolioList = React.createClass({
 
   render: function(){
 
-    var webItems = _mapDataToPortfolioItems(this.state.webItems, 'web');
-    var designItems = _mapDataToPortfolioItems(this.state.designItems, 'design');
-    var otherItems = _mapDataToPortfolioItems(this.state.otherItems, 'other');
+    var webItems = mapDataToPortfolioItems(this.state.webItems, 'web');
+    var designItems = mapDataToPortfolioItems(this.state.designItems, 'design');
+    var otherItems = mapDataToPortfolioItems(this.state.otherItems, 'other');
 
     var webContent;
     var designContent;

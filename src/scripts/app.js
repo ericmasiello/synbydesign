@@ -1,4 +1,5 @@
-/** @jsx React.DOM */
+'use strict';
+
 var React = require('react/addons');
 var Router = require('react-router');
 var jQueryScrollTo = require('jquery.scrollto');
@@ -26,8 +27,8 @@ var App = React.createClass({
 
     window.setTimeout(function(){
 
-      jQueryScrollTo('#' + AppConsts.UIID.masthead, 500)
-    },0);
+      jQueryScrollTo('#' + AppConsts.UIID.masthead, 500);
+    }, 0);
   },
 
   render: function(){

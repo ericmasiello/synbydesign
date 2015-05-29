@@ -1,3 +1,5 @@
+'use strict';
+
 var Backbone = require('backbone');
 Backbone.$ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
@@ -43,7 +45,7 @@ var PortfolioCollection = Backbone.Collection.extend({
 
     if( matchingModel.length === 1 ){
 
-      return matchingModel[0]
+      return matchingModel[0];
 
     } else {
 

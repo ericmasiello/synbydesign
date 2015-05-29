@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "module": true,
+    "require": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  }
+}

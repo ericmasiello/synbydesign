@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react/addons');
 var DocumentTitle = require('react-document-title');
 var AppConsts = require('../consts/app');

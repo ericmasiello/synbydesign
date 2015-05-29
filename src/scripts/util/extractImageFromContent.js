@@ -1,3 +1,5 @@
+'use strict';
+
 var jQuery = require('jquery');
 
 var getPropFromSource = function(html, prop){
