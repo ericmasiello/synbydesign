@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/scripts/app.js': ['src/scripts/**/*.js']
+                    '.tmp/app.js': ['src/scripts/**/*.js']
                 }
             }
         },
@@ -66,17 +66,12 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            //jsx: {
-            //    files: ['jsx/**/*.jsx'],
-            //    tasks: ['react', 'browserify']
-            //},
             css: {
                 files: ['src/styles/**/*.scss'],
                 tasks: ['style']
             },
             app: {
                 files: scripts,
-                //tasks: ['jshint', 'browserify']
                 tasks: ['eslint', 'browserify']
             }
         },
@@ -112,10 +107,16 @@ module.exports = function(grunt) {
                     "react/wrap-multilines": 1
                 }
             }
+        },
+        uglify: {
+            app: {
+                files: {
+                    'dist/scripts/app.js': ['.tmp/app.js']
+                }
+            }
         }
     });
 
     grunt.registerTask('style', ['compass', 'autoprefixer', 'cssmin', 'copy:style', 'copy:images', 'clean:tmpCSS']);
-
-    grunt.registerTask('default', ['eslint', 'clean:dist', 'style', 'browserify']);
+    grunt.registerTask('default', ['eslint', 'clean:dist', 'style', 'browserify', 'uglify']);
 };
