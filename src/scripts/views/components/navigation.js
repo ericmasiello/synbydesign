@@ -29,6 +29,7 @@ var Navigation = React.createClass({
       <li role="presentation" className="col-xs-12  col-sm  col-md-5  first-xs  default-sm  masthead__logo">
         <h1 className="masthead__logo__title">
           <Link to="home">
+            <span className="visually-hidden">Syn By Design</span>
             <svg className="logo  logo__head" dangerouslySetInnerHTML={{__html: svgLogo}} />
             <svg className="logo  logo__title" dangerouslySetInnerHTML={{__html: svgTitle}} />
             <svg className="logo  logo__slogan" dangerouslySetInnerHTML={{__html: svgSlogan}} />
