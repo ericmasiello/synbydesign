@@ -9,19 +9,20 @@ var AppConsts = require('../consts/app');
 
 var Home = React.createClass({
 
-    render: function(){
+  render: function () {
 
-        return (
-            <div>
-                <DocumentTitle title={AppConsts.TITLE} />
-                <Navigation view={'home'} />
-                <div className="container-fluid">
-                    <About />
-                    <PortfolioList />
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div>
+        <DocumentTitle title={AppConsts.TITLE}/>
+        <Navigation view={'home'}/>
+
+        <div className="container-fluid">
+          <About />
+          <PortfolioList />
+        </div>
+      </div>
+    );
+  }
 });
 
 module.exports = Home;

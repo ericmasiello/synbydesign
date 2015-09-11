@@ -7,6 +7,7 @@ var PortfolioActions = require('../actions/portfolioActions');
 var PortfolioStore = require('../stores/portfolioStore');
 var AppConsts = require('../consts/app');
 var DocumentTitle = require('react-document-title');
+var Skills = require('./components/skills');
 
 var PortfolioDetail = React.createClass({
 
@@ -48,6 +49,10 @@ var PortfolioDetail = React.createClass({
         detail: PortfolioStore.getItemById(self.state.id)
       });
     }
+
+    setTimeout(function(){
+      document.getElementById(AppConsts.UIID.portfolioDetail).focus();
+    });
   },
 
   componentWillUnmount: function(){
@@ -60,39 +65,28 @@ var PortfolioDetail = React.createClass({
 
   render: function(){
 
-    var skills;
-
-    if( this.state.detail.terms && this.state.detail.terms.post_tag ){
-
-      skills = this.state.detail.terms.post_tag.map(function( tag ){
-
-        return (<li key={Math.random()}>{tag.name}</li>);
-      });
-    }
-
     var imageStyles = {
       maxHeight: this.state.detail.maxHeight,
       maxWidth: this.state.detail.maxWidth
     };
 
     var pageTitle = (this.state.detail && this.state.detail.title ) ? this.state.detail.title + ' - ' + AppConsts.TITLE : AppConsts.TITLE;
-
     var altText = (typeof this.state.detail.altText === 'string' && this.state.detail.altText.length > 0 ) ? this.state.detail.altText : this.state.detail.title;
 
     return (
       <div>
         <DocumentTitle title={pageTitle} />
         <Navigation view={'detail'} />
-        <div className="portfolio__item mtxl container-fluid">
+        <div className="portfolio__item mtxl container-fluid" tabIndex="0" id={AppConsts.UIID.portfolioDetail} aria-label={this.state.detail.title + ' detailed view'}>
           <div>
             <div className="mbxl  text-center">
               <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles} />
             </div>
             <div className="text-center">
               <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
-              <ul className="h4  list-unstyled">
-                {skills}
-              </ul>
+              <Skills classNames="h4  list-unstyled"
+                      title={this.state.detail.title}
+                      skills={ this.state.detail.terms && this.state.detail.terms.post_tag ? this.state.detail.terms.post_tag : []} />
             </div>
           </div>
         </div>

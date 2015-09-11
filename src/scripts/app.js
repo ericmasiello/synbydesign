@@ -13,6 +13,9 @@ var NotFound = require("./views/404");
 var LoadingStatus = require('./views/components/loadingStatus');
 var ReactCSSTransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 
+/* Load stores */
+var UIStore = require('./stores/uiStore');
+
 /* Load Router */
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
@@ -28,15 +31,40 @@ var App = React.createClass({
     window.setTimeout(function(){
 
       jQueryScrollTo('#' + AppConsts.UIID.masthead, 500);
+      document.getElementById(AppConsts.UIID.masthead).focus();
     }, 0);
+  },
+
+  getInitialState: function(){
+
+    return {
+      loading: false
+    };
+  },
+
+  setStateFromStore: function(){
+
+    this.setState({
+      loading: UIStore.isLoading()
+    });
+  },
+
+  componentDidMount: function(){
+
+    this.unsubscribe = UIStore.listen(this.setStateFromStore);
+  },
+
+  componentWillUnmount: function(){
+
+    this.unsubscribe();
   },
 
   render: function(){
 
     var route = window.location.hash;
 
-    return (<div>
-      <LoadingStatus />
+    return (<div aria-live="polite" aria-busy={this.state.loading}>
+      <LoadingStatus loading={this.state.loading} percentageComplete={UIStore.getLoadingPercentageComplete()} />
       <ReactCSSTransitionGroup transitionName="example">
         <RouteHandler key={route} />
         <div className="text-center mtl">
