@@ -3,6 +3,7 @@ module.exports = {
   UIID: {
     masthead: 'masthead',
     about: 'about',
-    portfolioList: 'portfolioList'
+    portfolioList: 'portfolioList',
+    portfolioDetail: 'portfolioDetail'
   }
 };

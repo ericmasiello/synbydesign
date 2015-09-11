@@ -44,6 +44,11 @@
 .masthead__logo {
 
   margin: auto;
+  order: 0;
+  @media (min-width: $screen-sm-min) {
+
+    order: 3;
+  }
 }
 
 .masthead__logo__title {
@@ -57,14 +62,21 @@
   position: relative;
 }
 
-//.masthead__back-link {
-//
-//  bottom: 0;
-//  left: 0;
-//  position: absolute;
-//  right: 0;
-//  top: 0;
-//}
+.masthead__nav__about {
+  order: 1;
+}
+
+.masthead__nav__portfolio {
+  order: 2;
+}
+
+.masthead__nav__linked-in {
+  order: 4;
+}
+
+.masthead__nav__twitter {
+  order: 5;
+}
 
 @media (min-width: $screen-sm-min) {
 

@@ -7,7 +7,10 @@ module.exports = function(grunt) {
 
         browserify: {
             options:      {
-                transform:  [ require('grunt-react').browserify ]
+                transform:  [ require('grunt-react').browserify ],
+                browserifyOptions: {
+                    debug: true
+                }
             },
             dist: {
                 files: {
@@ -109,6 +112,10 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
+            options : {
+                sourceMap : true,
+                sourceMapIncludeSources : true
+            },
             app: {
                 files: {
                     'dist/scripts/app.js': ['.tmp/app.js']
