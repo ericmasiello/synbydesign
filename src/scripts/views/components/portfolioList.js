@@ -108,7 +108,7 @@ var PortfolioList = React.createClass({
       );
     }
 
-    return (<div id={AppConsts.UIID.portfolioList}>
+    return (<div id={AppConsts.UIID.portfolioList} tabIndex="0">
       {webContent}
       {designContent}
       {otherContent}

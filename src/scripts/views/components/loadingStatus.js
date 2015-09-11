@@ -1,28 +1,17 @@
 'use strict';
 
 var React = require('react/addons');
-var UIStore = require('../../stores/uiStore');
 var NProgress = require('nprogress');
 
 var LoadingStatus = React.createClass({
 
-  getInitialState: function(){
-
-    return {
-      loading: false
-    };
-  },
-
-  setStateFromStore: function(){
-
-    this.setState({
-      loading: UIStore.isLoading()
-    });
+  propTypes: {
+    loading: React.PropTypes.bool.isRequired,
+    percentageComplete: React.PropTypes.number
   },
 
   componentDidMount: function() {
 
-    this.unsubscribe = UIStore.listen(this.setStateFromStore);
     this.node = this.getDOMNode();
     this.renderNProgress();
   },
@@ -40,11 +29,6 @@ var LoadingStatus = React.createClass({
     React.render(<div />, this.node);
   },
 
-  componentWillUnmount: function(){
-
-    this.unsubscribe();
-  },
-
   render: function(){
 
     if( this.progress ){
@@ -53,17 +37,17 @@ var LoadingStatus = React.createClass({
        * If we are now in a loading state and we haven't rendered the progress
        * plugin yet, we need to call .start() to add it ot the DOM
        */
-      if( this.state.loading === true && this.progress.isRendered() === false ){
+      if( this.props.loading === true && this.progress.isRendered() === false ){
 
         this.progress.start();
 
-      } else if( this.state.loading === false ){
+      } else if( this.props.loading === false ){
 
         this.progress.done();
 
       } else {
 
-        this.progress.inc(UIStore.getLoadingPercentageComplete());
+        this.progress.inc(this.props.percentageComplete);
       }
     }
 
