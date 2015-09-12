@@ -77,7 +77,7 @@ var PortfolioDetail = React.createClass({
       <div>
         <DocumentTitle title={pageTitle} />
         <Navigation view={'detail'} />
-        <div className="portfolio__item mtxl container-fluid" tabIndex="0" id={AppConsts.UIID.portfolioDetail} aria-label={this.state.detail.title + ' detailed view'}>
+        <section className="portfolio__item mtxl container-fluid" tabIndex="0" id={AppConsts.UIID.portfolioDetail} aria-label={this.state.detail.title + ' detailed view'}>
           <div>
             <div className="mbxl  text-center">
               <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles} />
@@ -85,11 +85,12 @@ var PortfolioDetail = React.createClass({
             <div className="text-center">
               <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
               <Skills classNames="h4  list-unstyled"
+                      bulletClassNames="hide"
                       title={this.state.detail.title}
                       skills={ this.state.detail.terms && this.state.detail.terms.post_tag ? this.state.detail.terms.post_tag : []} />
             </div>
           </div>
-        </div>
+        </section>
       </div>
     );
   }

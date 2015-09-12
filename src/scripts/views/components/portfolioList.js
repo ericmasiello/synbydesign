@@ -108,11 +108,11 @@ var PortfolioList = React.createClass({
       );
     }
 
-    return (<div id={AppConsts.UIID.portfolioList} tabIndex="0">
+    return (<section id={AppConsts.UIID.portfolioList}>
       {webContent}
       {designContent}
       {otherContent}
-    </div>);
+    </section>);
   }
 });
 

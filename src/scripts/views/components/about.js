@@ -48,9 +48,9 @@ var About = React.createClass({
         var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
 
         return (
-            <div className="container-fluid" id={AppConsts.UIID.about} tabIndex="0">
+            <section className="container-fluid" id={AppConsts.UIID.about} tabIndex="0">
                 <div className="well h4 text-center" dangerouslySetInnerHTML={{__html: content}}></div>
-            </div>
+            </section>
         );
     }
 });

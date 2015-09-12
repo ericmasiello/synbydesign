@@ -9,6 +9,13 @@ var AppConsts = require('../consts/app');
 
 var Home = React.createClass({
 
+  componentDidMount: function(){
+
+    setTimeout(function(){
+      document.getElementById(AppConsts.UIID.masthead).focus();
+    });
+  },
+
   render: function () {
 
     return (
@@ -17,7 +24,7 @@ var Home = React.createClass({
         <Navigation view={'home'}/>
 
         <div className="container-fluid">
-          <About />
+          <About/>
           <PortfolioList />
         </div>
       </div>

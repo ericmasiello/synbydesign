@@ -16,3 +16,17 @@ body {
   width: 1px !important;
   overflow: hidden;
 }
+
+header,
+section,
+div,
+a,
+input,
+button,
+textarea {
+
+  &:focus {
+    outline-color: lighten($portfolio-title-bg, 25);
+    outline-offset: 5px;
+  }
+}
