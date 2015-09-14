@@ -75,7 +75,7 @@ module.exports = function(grunt) {
             },
             app: {
                 files: scripts,
-                tasks: ['eslint', 'browserify']
+                tasks: ['eslint', 'browserify', 'uglify']
             }
         },
         clean: {

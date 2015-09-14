@@ -7,11 +7,5 @@
   > li {
 
     display: inline-block;
-
-    &::before {
-
-      //space + bullet + space
-      content: '\00a0\2219\00a0';
-    }
   }
 }

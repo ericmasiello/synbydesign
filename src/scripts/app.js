@@ -31,7 +31,7 @@ var App = React.createClass({
     window.setTimeout(function(){
 
       jQueryScrollTo('#' + AppConsts.UIID.masthead, 500);
-      document.getElementById(AppConsts.UIID.masthead).focus();
+      document.getElementById(AppConsts.UIID.logo).focus();
     }, 0);
   },
 
@@ -63,10 +63,12 @@ var App = React.createClass({
 
     var route = window.location.hash;
 
-    return (<div aria-live="polite" aria-busy={this.state.loading}>
+    //console.log("loadingState on app", this.state.loading);
+
+    return (<div aria-atomic="true" aria-live="polite" aria-busy={this.state.loading} >
       <LoadingStatus loading={this.state.loading} percentageComplete={UIStore.getLoadingPercentageComplete()} />
       <ReactCSSTransitionGroup transitionName="example">
-        <RouteHandler key={route} />
+        <RouteHandler key={route} loadingState={this.state.loading} />
         <div className="text-center mtl">
           <a href="#" onClick={this.backToTop}>Back to top</a>
         </div>
