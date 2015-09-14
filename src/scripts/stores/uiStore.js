@@ -3,6 +3,7 @@
 var Reflux = require('reflux');
 var UIActions = require('../actions/uiActions');
 
+var initialLoad = true;
 var totalRequests = 0;
 var loadedRequests = 0;
 
@@ -42,6 +43,11 @@ var UIStore = Reflux.createStore({
     loadingStatus.call(this);
   },
 
+  onAPP_LOADED: function(){
+
+    initialLoad = false;
+  },
+
   isLoading: function(){
 
     return ( totalRequests > loadedRequests );
@@ -50,6 +56,11 @@ var UIStore = Reflux.createStore({
   getLoadingPercentageComplete: function(){
 
     return ( loadedRequests / totalRequests );
+  },
+
+  isInitialLoad: function(){
+
+    return initialLoad;
   }
 });
 
