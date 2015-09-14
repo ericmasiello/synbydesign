@@ -8,6 +8,7 @@ var PortfolioStore = require('../stores/portfolioStore');
 var AppConsts = require('../consts/app');
 var DocumentTitle = require('react-document-title');
 var Skills = require('./components/skills');
+var UIStore = require('../stores/uiStore');
 
 var PortfolioDetail = React.createClass({
 
@@ -50,9 +51,12 @@ var PortfolioDetail = React.createClass({
       });
     }
 
-    setTimeout(function(){
-      document.getElementById(AppConsts.UIID.portfolioDetail).focus();
-    });
+    //Only set focus to primary content if we navigating here from somewhere else (e.g. home page)
+    if( UIStore.isInitialLoad() === false ){
+      setTimeout(function(){
+        document.getElementById(AppConsts.UIID.portfolioDetail).focus();
+      });
+    }
   },
 
   componentWillUnmount: function(){

@@ -16,6 +16,9 @@ var ReactCSSTransitionGroup = require('react/lib/ReactCSSTransitionGroup');
 /* Load stores */
 var UIStore = require('./stores/uiStore');
 
+/* Load actions */
+var UIActions = require('./actions/uiActions');
+
 /* Load Router */
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
@@ -52,6 +55,7 @@ var App = React.createClass({
   componentDidMount: function(){
 
     this.unsubscribe = UIStore.listen(this.setStateFromStore);
+    UIActions.APP_LOADED();
   },
 
   componentWillUnmount: function(){
