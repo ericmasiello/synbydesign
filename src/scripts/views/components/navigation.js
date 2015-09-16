@@ -4,6 +4,7 @@ var React = require('react/addons');
 var Link = require('react-router').Link;
 var jQueryScrollTo = require('jquery.scrollto');
 var AppConsts = require('../../consts/app');
+var ScreenReaderFocusElm = require('./screenReaderFocusElm');
 
 var Navigation = React.createClass({
 
@@ -74,7 +75,8 @@ var Navigation = React.createClass({
     }
 
     return (
-      <header className="header  masthead" id={AppConsts.UIID.masthead} tabIndex="0">
+      <header className="header  masthead">
+        <ScreenReaderFocusElm elmId={AppConsts.UIID.masthead} />
         <div className="container-fluid">
           <div className="row  masthead__decoration-container  middle-xs">
             <div className="col-xs  masthead__decoration-line"></div>

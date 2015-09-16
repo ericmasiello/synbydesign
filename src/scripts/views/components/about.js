@@ -4,6 +4,7 @@ var React = require('react');
 var AboutActions = require('../../actions/aboutActions');
 var AboutStore = require('../../stores/aboutStore');
 var AppConsts = require('../../consts/app');
+var ScreenReaderFocusElm = require('./screenReaderFocusElm');
 
 var About = React.createClass({
 
@@ -43,12 +44,17 @@ var About = React.createClass({
         }
     },
 
+    shouldComponentUpdate: function(nextProps, nextState){
+
+        return typeof nextState.content === "string" && this.state.content !== nextState.content;
+    },
+
     render: function(){
 
         var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
-
         return (
-            <section className="container-fluid" id={AppConsts.UIID.about} tabIndex="0">
+            <section className="container-fluid">
+                <ScreenReaderFocusElm elmId={AppConsts.UIID.about} />
                 <div className="well h4 text-center" dangerouslySetInnerHTML={{__html: content}}></div>
             </section>
         );
