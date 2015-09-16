@@ -6,6 +6,7 @@ var PortfolioStore = require('../../stores/portfolioStore');
 var PortfolioItem = require('./portfolioItem');
 var jQuery = require('jquery');
 var AppConsts = require('../../consts/app');
+var ScreenReaderFocusElm = require('./screenReaderFocusElm');
 
 var mapDataToPortfolioItems = function(items, type){
 
@@ -108,7 +109,8 @@ var PortfolioList = React.createClass({
       );
     }
 
-    return (<section id={AppConsts.UIID.portfolioList}>
+    return (<section>
+      <ScreenReaderFocusElm elmId={AppConsts.UIID.portfolioList} />
       {webContent}
       {designContent}
       {otherContent}

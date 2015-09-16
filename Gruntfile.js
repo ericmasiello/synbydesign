@@ -6,15 +6,22 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         browserify: {
-            options:      {
-                transform:  [ require('grunt-react').browserify ],
-                browserifyOptions: {
-                    debug: true
+            options: {
+                transform:  [ require('grunt-react').browserify ]
+            },
+            dev: {
+                options: {
+                    browserifyOptions: {
+                        debug: true
+                    }
+                },
+                files: {
+                    'dist/scripts/app.js': ['src/scripts/**/*.js']
                 }
             },
             dist: {
                 files: {
-                    '.tmp/app.js': ['src/scripts/**/*.js']
+                    'dist/scripts/app.js': ['src/scripts/**/*.js']
                 }
             }
         },
@@ -75,7 +82,7 @@ module.exports = function(grunt) {
             },
             app: {
                 files: scripts,
-                tasks: ['eslint', 'browserify', 'uglify']
+                tasks: ['eslint', 'browserify:dev']
             }
         },
         clean: {
@@ -112,18 +119,17 @@ module.exports = function(grunt) {
             }
         },
         uglify: {
-            options : {
-                sourceMap : true,
-                sourceMapIncludeSources : true
-            },
             app: {
                 files: {
-                    'dist/scripts/app.js': ['.tmp/app.js']
+                    'dist/scripts/app.js': ['dist/scripts/app.js']
                 }
             }
         }
     });
 
+
     grunt.registerTask('style', ['compass', 'autoprefixer', 'cssmin', 'copy:style', 'copy:images', 'clean:tmpCSS']);
-    grunt.registerTask('default', ['eslint', 'clean:dist', 'style', 'browserify', 'uglify']);
+    grunt.registerTask('dev', ['eslint', 'style', 'browserify:dev', 'watch']);
+    grunt.registerTask('build', ['eslint', 'clean:dist', 'style', 'browserify:dist', 'uglify']);
+    grunt.registerTask('default', ['build']);
 };

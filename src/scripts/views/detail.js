@@ -9,6 +9,7 @@ var AppConsts = require('../consts/app');
 var DocumentTitle = require('react-document-title');
 var Skills = require('./components/skills');
 var UIStore = require('../stores/uiStore');
+var ScreenReaderFocusElm = require('./components/screenReaderFocusElm');
 
 var PortfolioDetail = React.createClass({
 
@@ -81,7 +82,8 @@ var PortfolioDetail = React.createClass({
       <div>
         <DocumentTitle title={pageTitle} />
         <Navigation view={'detail'} />
-        <section className="portfolio__item mtxl container-fluid" tabIndex="0" id={AppConsts.UIID.portfolioDetail} aria-label={this.state.detail.title + ' detailed view'}>
+        <ScreenReaderFocusElm elmId={AppConsts.UIID.portfolioDetail} />
+        <section className="portfolio__item mtxl container-fluid" aria-label={this.state.detail.title + ' detailed view'}>
           <div>
             <div className="mbxl  text-center">
               <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles} />
