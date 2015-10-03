@@ -61,7 +61,20 @@ module.exports = function(grunt) {
                 src: ['**'],
                 dest: 'dist/images/',
                 filter: 'isFile'
+            },
+            distFolder: {
+                expand: true,
+                cwd: 'dist',
+                src: ['**/*'],
+                dest: '../dist'
+            },
+            distIndex: {
+                expand: true,
+                cwd: './',
+                src: ['index.html'],
+                dest: '../'
             }
+
         },
 
         cssmin: {
@@ -131,5 +144,6 @@ module.exports = function(grunt) {
     grunt.registerTask('style', ['compass', 'autoprefixer', 'cssmin', 'copy:style', 'copy:images', 'clean:tmpCSS']);
     grunt.registerTask('dev', ['eslint', 'style', 'browserify:dev', 'watch']);
     grunt.registerTask('build', ['eslint', 'clean:dist', 'style', 'browserify:dist', 'uglify']);
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('localDist', ['copy:distFolder', 'copy:distIndex']);
+    grunt.registerTask('default', ['build', 'localDist']);
 };
