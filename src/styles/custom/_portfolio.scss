@@ -69,7 +69,7 @@
 
   @extend .portfolio__full;
   background-color: lighten(#d4cfd1,5%);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   max-width: 42rem;
   max-height: 29.3rem;
