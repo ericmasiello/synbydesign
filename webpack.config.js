@@ -30,6 +30,18 @@ var common = {
         test: /\.jsx?$/,
         loaders: ['babel'],
         include: APP_PATH
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=25000'
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline'
       }
     ]
   },
