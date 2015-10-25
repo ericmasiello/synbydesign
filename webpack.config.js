@@ -2,6 +2,7 @@ var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var TARGET = process.env.npm_lifecycle_event;
 var ROOT_PATH = path.resolve(__dirname);
@@ -33,7 +34,8 @@ var common = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        //loader: 'style!css!sass'
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
       },
       {
         test: /\.(png|jpg)$/,
@@ -47,8 +49,18 @@ var common = {
   },
   plugins: [
     new HtmlwebpackPlugin({
-      title: 'The App'
-    })
+      title: 'Syn By Design - Eric Masiello\'s Portfolio',
+      googleAnalyticsCode: 'UA-162757-4',
+      template: 'app/index.tpl.html',
+      hash: true,
+      minify: {
+        removeComments: true,
+        removeCommentsFromCDATA: true,
+        collapseWhitespace: true,
+        removeEmptyAttributes: true
+      }
+    }),
+    new ExtractTextPlugin("[name].css")
   ]
 };
 
