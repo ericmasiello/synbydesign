@@ -35,7 +35,7 @@ var common = {
       {
         test: /\.scss$/,
         //loader: 'style!css!sass'
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?browsers=last 2 versions!sass-loader")
       },
       {
         test: /\.(png|jpg)$/,
