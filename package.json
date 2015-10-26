@@ -10,8 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "history": "^1.12.6",
+    "jquery.scrollto": "^2.1.2",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
+    "react-router": "^1.0.0-rc3",
     "synbydesign.design": "~0.0.3"
   },
   "devDependencies": {
