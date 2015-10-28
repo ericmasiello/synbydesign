@@ -6,7 +6,19 @@ import { render } from 'react-dom'
 import jQueryScrollTo from 'jquery.scrollto';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 
+// Load stores
+import UIStore from './stores/uiStore';
+// Load actions
+import UIActions from './actions/uiActions';
+// Load Consts
 import AppConsts from './consts/app';
+// Load Views
+
+import Home from './views/home';
+import PortfolioDetail from './views/detail';
+import NotFound from './views/404';
+import LoadingStatus from './views/components/loadingStatus';
+
 
 // First we import some components...
 import { Router, Route, Link } from 'react-router'
@@ -26,6 +38,43 @@ const Inbox = React.createClass({
 // Then we delete a bunch of code from App and
 // add some <Link> elements...
 const App = React.createClass({
+
+  backToTop: function(e){
+
+    e.preventDefault();
+
+    window.setTimeout(function(){
+
+      jQueryScrollTo('#' + AppConsts.UIID.masthead, 500);
+      document.getElementById(AppConsts.UIID.logo).focus();
+    }, 0);
+  },
+
+  getInitialState: function(){
+
+    return {
+      loading: false
+    };
+  },
+
+  setStateFromStore: function(){
+
+    this.setState({
+      loading: UIStore.isLoading()
+    });
+  },
+
+  componentDidMount: function(){
+
+    this.unsubscribe = UIStore.listen(this.setStateFromStore);
+    UIActions.APP_LOADED();
+  },
+
+  componentWillUnmount: function(){
+
+    this.unsubscribe();
+  },
+
   render() {
     return (
       <div>
@@ -53,7 +102,7 @@ const App = React.createClass({
 render((
   <Router>
     <Route path="/" component={App}>
-      <Route path="about" component={About} />
+      <Route path="about" component={Home} />
       <Route path="inbox" component={Inbox} />
     </Route>
   </Router>
