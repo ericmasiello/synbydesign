@@ -1,5 +1,4 @@
 require('synbydesign.design');
-require('./app.scss');
 
 import React from 'react';
 import { render } from 'react-dom'
@@ -19,21 +18,8 @@ import PortfolioDetail from './views/detail';
 import NotFound from './views/404';
 import LoadingStatus from './views/components/loadingStatus';
 
-
 // First we import some components...
 import { Router, Route, Link } from 'react-router'
-
-const About = React.createClass({
-  render(){
-    return <div>About</div>
-  }
-});
-
-const Inbox = React.createClass({
-  render(){
-    return <div>Inbox</div>
-  }
-});
 
 // Then we delete a bunch of code from App and
 // add some <Link> elements...
@@ -76,36 +62,30 @@ const App = React.createClass({
   },
 
   render() {
-    return (
-      <div>
-        <h1>App</h1>
-        {/* change the <a>s to <Link>s */}
-        <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
-        </ul>
 
-        {/*
-         next we replace `<Child>` with `this.props.children`
-         the router will figure out the children for us
-         */}
-        <div>Before</div>
-        {this.props.children}
-        <div>After</div>
+    return (
+      <div aria-atomic="true" aria-live="polite" aria-busy={this.state.loading} >
+        <LoadingStatus loading={this.state.loading} percentageComplete={UIStore.getLoadingPercentageComplete()} />
+        <div>
+          { React.cloneElement(this.props.children || <Home />, {loadingState: this.state.loading}) }
+        </div>
+        <div className="text-center mtl">
+          <a href="#" onClick={this.backToTop}>Back to top</a>
+        </div>
       </div>
     )
   }
-})
+});
 
 // Finally, we render a <Router> with some <Route>s.
 // It does all the fancy routing stuff for us.
 render((
   <Router>
     <Route path="/" component={App}>
-      <Route path="about" component={Home} />
-      <Route path="inbox" component={Inbox} />
+      <Route path="/detail/:type/:id" component={PortfolioDetail} />
+      <Route path="*" component={NotFound}/>
     </Route>
   </Router>
-), document.getElementById('app'))
+), document.getElementById('app'));
 
 

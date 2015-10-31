@@ -21,12 +21,11 @@ var PortfolioDetail = React.createClass({
   },
 
   getStateFromStore: function () {
-    var id = this.getParams().id;
 
     return {
-      id: id,
-      detail: PortfolioStore.getItemById(id),
-      type: this.getParams().type
+      id: this.props.params.id,
+      detail: PortfolioStore.getItemById(this.props.params.id),
+      type: this.props.params.type
     };
   },
 

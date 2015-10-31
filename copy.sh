@@ -1,3 +1,3 @@
 #!/bin/sh
-rm -rf ../build-react
+rm -rf ../react
 cp -r build ../react

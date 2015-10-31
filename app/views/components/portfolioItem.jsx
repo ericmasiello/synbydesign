@@ -1,10 +1,10 @@
 'use strict';
 
-var React = require('react/addons');
-var Link = require('react-router').Link;
-var Skills = require('./skills');
+import React from 'react';
+import { Link } from 'react-router';
+import Skills from './skills';
 
-var PortfolioItem = React.createClass({
+export default React.createClass({
 
   propTypes: {
     item: React.PropTypes.object.isRequired
@@ -12,12 +12,9 @@ var PortfolioItem = React.createClass({
 
   render: function(){
 
-    var detailParams = {
-      id: this.props.item.ID
-    };
-    var altAttr = 'Preview image of ' + this.props.item.title;
-    var titleAttr = 'View detailed image of ' + this.props.item.title;
-    var featuredImage = this.props.item.featured_image ? this.props.item.featured_image.guid : null;
+    const altAttr = 'Preview image of ' + this.props.item.title;
+    const titleAttr = 'View detailed image of ' + this.props.item.title;
+    const featuredImage = this.props.item.featured_image ? this.props.item.featured_image.guid : null;
 
     return (
       <li className="col-sm-6  col-md-4" role="presentation">
@@ -25,7 +22,7 @@ var PortfolioItem = React.createClass({
           <span className="h4  portfolio__title">
             <span className="portfolio__title__text">{this.props.item.title}</span>
           </span>
-          <Link to="detail" params={detailParams} className="portfolio__thumb" aria-label={titleAttr}>
+          <Link to={`/detail/${this.props.type}/${this.props.item.ID}`} className="portfolio__thumb" aria-label={titleAttr}>
             <img className="portfolio__thumb__img" src={featuredImage} alt={altAttr} />
           </Link>
         </div>
@@ -36,5 +33,3 @@ var PortfolioItem = React.createClass({
     );
   }
 });
-
-module.exports = PortfolioItem;

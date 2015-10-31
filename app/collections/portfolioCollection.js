@@ -5,7 +5,7 @@ Backbone.$ = require('jquery');
 var PortfolioModel = require('../models/portfolioModel');
 
 var PortfolioCollection = Backbone.Collection.extend({
-  url: './wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards',
+  url: '../wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards',
   model: PortfolioModel,
 
   getFilteredCollectionByCategory: function(type){
