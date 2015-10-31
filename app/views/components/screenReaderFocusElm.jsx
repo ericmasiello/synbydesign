@@ -17,7 +17,7 @@ export default React.createClass({
   render: function(){
 
     return (
-      <span id={this.props.elmId} tabIndex="-1"></span>
+      <div id={this.props.elmId} tabIndex="-1"></div>
     );
   }
 });

@@ -22,8 +22,8 @@ export default React.createClass({
           <span className="h4  portfolio__title">
             <span className="portfolio__title__text">{this.props.item.title}</span>
           </span>
-          <Link to={`/detail/${this.props.type}/${this.props.item.ID}`} className="portfolio__thumb" aria-label={titleAttr}>
-            <img className="portfolio__thumb__img" src={featuredImage} alt={altAttr} />
+          <Link to={`/detail/${this.props.type}/${this.props.item.ID}`} aria-label={titleAttr}>
+            <img className="portfolio__img" src={featuredImage} alt={altAttr} />
           </Link>
         </div>
         <Skills title={this.props.item.title}

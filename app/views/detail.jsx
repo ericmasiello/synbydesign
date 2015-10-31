@@ -10,6 +10,7 @@ import DocumentTitle from 'react-document-title';
 import Skills from './components/skills';
 import UIStore from '../stores/uiStore';
 import ScreenReaderFocusElm from './components/screenReaderFocusElm';
+import jQueryScrollTo from 'jquery.scrollto';
 
 export default React.createClass({
 
@@ -55,6 +56,7 @@ export default React.createClass({
     if (UIStore.isInitialLoad() === false) {
       setTimeout(function () {
         document.getElementById(AppConsts.UIID.portfolioDetail).focus();
+        jQueryScrollTo(`#${AppConsts.UIID.portfolioDetail}`, 0);
       });
     }
   },
@@ -69,35 +71,27 @@ export default React.createClass({
 
   render() {
 
-    var imageStyles = {
-      maxHeight: this.state.detail.maxHeight,
-      maxWidth: this.state.detail.maxWidth
-    };
-
-    var pageTitle = (this.state.detail && this.state.detail.title ) ? this.state.detail.title + ' - ' + AppConsts.TITLE : AppConsts.TITLE;
-    var altText = (typeof this.state.detail.altText === 'string' && this.state.detail.altText.length > 0 ) ? this.state.detail.altText : this.state.detail.title;
+    const pageTitle = (this.state.detail && this.state.detail.title ) ? this.state.detail.title + ' - ' + AppConsts.TITLE : AppConsts.TITLE;
+    const altText = (typeof this.state.detail.altText === 'string' && this.state.detail.altText.length > 0 ) ? this.state.detail.altText : this.state.detail.title;
 
     return (
-      <div>
+      <section className="portfolio-detail">
         <DocumentTitle title={pageTitle}/>
         <Navigation view={'detail'}/>
         <ScreenReaderFocusElm elmId={AppConsts.UIID.portfolioDetail}/>
-        <section className="portfolio__item mtxl container-fluid"
-                 aria-label={this.state.detail.title + ' detailed view'}>
-          <div>
-            <div className="mbxl  text-center">
-              <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles}/>
-            </div>
-            <div className="text-center">
-              <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
-              <Skills classNames="h4  list-unstyled"
-                      bulletClassNames="hide"
-                      title={this.state.detail.title}
-                      skills={ this.state.detail.terms && this.state.detail.terms.post_tag ? this.state.detail.terms.post_tag : []}/>
-            </div>
+        <div className="col-xs">
+          <h1 className="mtn  text-center"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
+          <div className="portfolio__item  portfolio__item--full mtxl mbxl container-fluid  first-xs"
+               aria-label={this.state.detail.title + ' detailed view'}>
+            <img className="portfolio__img  portfolio__img--detail" src={this.state.detail.fullSizeImage}
+                 alt={altText}/>
           </div>
-        </section>
-      </div>
+          <Skills classNames="h4  list-unstyled  text-center"
+                  bulletClassNames="hide"
+                  title={this.state.detail.title}
+                  skills={ this.state.detail.terms && this.state.detail.terms.post_tag ? this.state.detail.terms.post_tag : []}/>
+        </div>
+      </section>
     );
   }
 });

@@ -31,13 +31,8 @@ var common = {
         include: APP_PATH
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|svg$)$/,
         loader: 'url?limit=25000',
-        include: [APP_PATH, DESIGN_ASSETS]
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline',
         include: [APP_PATH, DESIGN_ASSETS]
       }
     ]
