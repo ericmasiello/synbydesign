@@ -1,8 +1,8 @@
 'use strict';
 
-var React = require('react/addons');
+import React from 'react';
 
-var Skills = React.createClass({
+export default React.createClass({
 
   propTypes: {
     bulletClassNames: React.PropTypes.string,
@@ -11,12 +11,12 @@ var Skills = React.createClass({
     title: React.PropTypes.string
   },
 
-  render: function(){
+  render: function () {
 
     var bulletClassNames = typeof this.props.bulletClassNames === "string" ? this.props.bulletClassNames : "";
     bulletClassNames = bulletClassNames + " bullet";
 
-    var skills = this.props.skills.map(function(tag){
+    var skills = this.props.skills.map(function (tag) {
       return (<li key={Math.random()} role="presentation">
         <span className={bulletClassNames} aria-hidden="true"></span>{' ' + tag.name}
       </li>);
@@ -27,5 +27,3 @@ var Skills = React.createClass({
     </ul>);
   }
 });
-
-module.exports = Skills;

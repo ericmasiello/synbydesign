@@ -1,22 +1,22 @@
 'use strict';
 
-var React = require('react/addons');
-var NProgress = require('nprogress');
+import React from 'react';
+import NProgress from 'nprogress';
 
-var LoadingStatus = React.createClass({
+export default React.createClass({
 
   propTypes: {
     loading: React.PropTypes.bool.isRequired,
     percentageComplete: React.PropTypes.number
   },
 
-  componentDidMount: function() {
+  componentDidMount: function () {
 
     this.node = this.getDOMNode();
     this.renderNProgress();
   },
 
-  renderNProgress: function(){
+  renderNProgress: function () {
 
     //create reference to progress instance
     this.progress = NProgress.configure({});
@@ -29,19 +29,19 @@ var LoadingStatus = React.createClass({
     React.render(<div />, this.node);
   },
 
-  render: function(){
+  render: function () {
 
-    if( this.progress ){
+    if (this.progress) {
 
       /**
        * If we are now in a loading state and we haven't rendered the progress
        * plugin yet, we need to call .start() to add it ot the DOM
        */
-      if( this.props.loading === true && this.progress.isRendered() === false ){
+      if (this.props.loading === true && this.progress.isRendered() === false) {
 
         this.progress.start();
 
-      } else if( this.props.loading === false ){
+      } else if (this.props.loading === false) {
 
         this.progress.done();
 
@@ -56,6 +56,3 @@ var LoadingStatus = React.createClass({
     );
   }
 });
-
-module.exports = LoadingStatus;
-

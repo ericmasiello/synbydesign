@@ -1,12 +1,12 @@
 'use strict';
 
-var React = require('react/addons');
-var PortfolioActions = require('../../actions/portfolioActions');
-var PortfolioStore = require('../../stores/portfolioStore');
-var PortfolioItem = require('./portfolioItem');
-var jQuery = require('jquery');
-var AppConsts = require('../../consts/app');
-var ScreenReaderFocusElm = require('./screenReaderFocusElm');
+import React from 'react';
+import PortfolioActions from '../../actions/portfolioActions';
+import PortfolioStore from '../../stores/portfolioStore';
+import PortfolioItem from './portfolioItem';
+import jQuery from 'jquery';
+import AppConsts from '../../consts/app';
+import ScreenReaderFocusElm from './screenReaderFocusElm';
 
 var mapDataToPortfolioItems = function(items, type){
 
@@ -23,7 +23,7 @@ var mapDataToPortfolioItems = function(items, type){
   return portfolioItems;
 };
 
-var PortfolioList = React.createClass({
+export default React.createClass({
 
   getInitialState: function(){
 
@@ -117,5 +117,3 @@ var PortfolioList = React.createClass({
     </section>);
   }
 });
-
-module.exports = PortfolioList;

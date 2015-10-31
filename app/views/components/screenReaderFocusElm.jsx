@@ -1,6 +1,6 @@
 'use strict';
 
-var React = require('react/addons');
+import React from 'react';
 
 /*
  * Kludge, in order to avoid the screen reader reading content twice (caused by having a tabIndex value set,
@@ -8,7 +8,7 @@ var React = require('react/addons');
  * I'll focus/scroll to the empty span tag (below) and that way the content will just above what needs to be read, thus
  * only reading the text inside the content below the empty span once.
  */
-var ScreenReaderFocusElm = React.createClass({
+export default React.createClass({
 
   propTypes: {
     elmId: React.PropTypes.number.isRequired
@@ -21,5 +21,3 @@ var ScreenReaderFocusElm = React.createClass({
     );
   }
 });
-
-module.exports = ScreenReaderFocusElm;

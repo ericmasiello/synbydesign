@@ -1,64 +1,63 @@
 'use strict';
 
-var React = require('react');
-var AboutActions = require('../../actions/aboutActions');
-var AboutStore = require('../../stores/aboutStore');
-var AppConsts = require('../../consts/app');
-var ScreenReaderFocusElm = require('./screenReaderFocusElm');
+import React from 'react';
+import AboutActions from '../../actions/aboutActions';
+import AboutStore from '../../stores/aboutStore';
+import AppConsts from '../../consts/app';
+import ScreenReaderFocusElm from './screenReaderFocusElm';
 
-var About = React.createClass({
+export default React.createClass({
 
-    getInitialState: function(){
+  getInitialState: function () {
 
-        return this.getStateFromStore();
-    },
+    return this.getStateFromStore();
+  },
 
-    getStateFromStore: function(){
+  getStateFromStore: function () {
 
-        return {
-            content: AboutStore.getContent()
-        };
-    },
+    return {
+      content: AboutStore.getContent()
+    };
+  },
 
-    setStateFromStore: function(){
+  setStateFromStore: function () {
 
-        this.setState({
-            content: AboutStore.getContent()
-        });
-    },
+    this.setState({
+      content: AboutStore.getContent()
+    });
+  },
 
-    componentDidMount: function(){
+  componentDidMount: function () {
 
-        if( this.state.content === null ){
+    if (this.state.content === null) {
 
-            AboutActions.LOAD();
-            this.unsubscribe = AboutStore.listen(this.setStateFromStore);
-        }
-    },
-
-    componentWillUnmount: function(){
-
-        if(typeof this.unsubscribe === 'function' ){
-
-            this.unsubscribe();
-        }
-    },
-
-    shouldComponentUpdate: function(nextProps, nextState){
-
-        return typeof nextState.content === "string" && this.state.content !== nextState.content;
-    },
-
-    render: function(){
-
-        var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
-        return (
-            <section className="container-fluid">
-                <ScreenReaderFocusElm elmId={AppConsts.UIID.about} />
-                <div className="well h4 text-center" dangerouslySetInnerHTML={{__html: content}}></div>
-            </section>
-        );
+      AboutActions.LOAD();
+      this.unsubscribe = AboutStore.listen(this.setStateFromStore);
     }
-});
+  },
 
-module.exports = About;
+  componentWillUnmount: function () {
+
+    if (typeof this.unsubscribe === 'function') {
+
+      this.unsubscribe();
+    }
+  },
+
+  shouldComponentUpdate: function (nextProps, nextState) {
+
+    return typeof nextState.content === "string" && this.state.content !== nextState.content;
+  },
+
+  render: function () {
+
+    var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
+    return (
+      <section className="container-fluid">
+        <ScreenReaderFocusElm elmId={AppConsts.UIID.about}/>
+
+        <div className="well h4 text-center" dangerouslySetInnerHTML={{__html: content}}></div>
+      </section>
+    );
+  }
+});

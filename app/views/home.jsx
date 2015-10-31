@@ -1,24 +1,24 @@
 'use strict';
 
-var React = require('react');
-var DocumentTitle = require('react-document-title');
-var About = require('./components/about');
-var PortfolioList = require('./components/portfolioList');
-var Navigation = require('./components/navigation');
-var AppConsts = require('../consts/app');
-var UIStore = require('../stores/uiStore');
+import React from 'react';
+import DocumentTitle from 'react-document-title';
+import About from './components/about';
+import PortfolioList from './components/portfolioList';
+import Navigation from './components/navigation';
+import AppConsts from '../consts/app';
+import UIStore from '../stores/uiStore';
 
-var Home = React.createClass({
+export default React.createClass({
 
-  componentDidMount: function(){
+  componentDidMount: function () {
 
     /*
      * Only set focus on the masthead area if this isn't your first time loading the page
      * this done purely for cosmetic reasons so the page's header doesn't have that
      * pink outline around it when you visit the site for the very first time
      */
-    if( UIStore.isInitialLoad() === false ){
-      setTimeout(function(){
+    if (UIStore.isInitialLoad() === false) {
+      setTimeout(function () {
         document.getElementById(AppConsts.UIID.masthead).focus();
       });
     }
@@ -39,5 +39,3 @@ var Home = React.createClass({
     );
   }
 });
-
-module.exports = Home;

@@ -1,21 +1,21 @@
 'use strict';
 
-var React = require('react/addons');
-var Router = require('react-router');
-var Navigation = require('./components/navigation');
-var PortfolioActions = require('../actions/portfolioActions');
-var PortfolioStore = require('../stores/portfolioStore');
-var AppConsts = require('../consts/app');
-var DocumentTitle = require('react-document-title');
-var Skills = require('./components/skills');
-var UIStore = require('../stores/uiStore');
-var ScreenReaderFocusElm = require('./components/screenReaderFocusElm');
+import React from 'react';
+import Router from 'react-router';
+import Navigation from './components/navigation';
+import PortfolioActions from '../actions/portfolioActions';
+import PortfolioStore from '../stores/portfolioStore';
+import AppConsts from '../consts/app';
+import DocumentTitle from 'react-document-title';
+import Skills from './components/skills';
+import UIStore from '../stores/uiStore';
+import ScreenReaderFocusElm from './components/screenReaderFocusElm';
 
-var PortfolioDetail = React.createClass({
+export default React.createClass({
 
-  mixins: [ Router.Navigation, Router.State ],
+  mixins: [Router.Navigation, Router.State],
 
-  getInitialState: function(){
+  getInitialState: function () {
 
     return this.getStateFromStore();
   },
@@ -29,15 +29,15 @@ var PortfolioDetail = React.createClass({
     };
   },
 
-  componentDidMount: function(){
+  componentDidMount: function () {
 
     var self = this;
 
-    if( PortfolioStore.hasLoadedItemById(self.state.id) === false ){
+    if (PortfolioStore.hasLoadedItemById(self.state.id) === false) {
 
       PortfolioActions.LOAD_SINGLE(self.state.id);
 
-      self.unsubscribe = PortfolioStore.listen(function(){
+      self.unsubscribe = PortfolioStore.listen(function () {
 
         self.setState({
           detail: PortfolioStore.getItemById(self.state.id)
@@ -52,22 +52,22 @@ var PortfolioDetail = React.createClass({
     }
 
     //Only set focus to primary content if we navigating here from somewhere else (e.g. home page)
-    if( UIStore.isInitialLoad() === false ){
-      setTimeout(function(){
+    if (UIStore.isInitialLoad() === false) {
+      setTimeout(function () {
         document.getElementById(AppConsts.UIID.portfolioDetail).focus();
       });
     }
   },
 
-  componentWillUnmount: function(){
+  componentWillUnmount: function () {
 
-    if( typeof this.unsubscribe === 'function'){
+    if (typeof this.unsubscribe === 'function') {
 
       this.unsubscribe();
     }
   },
 
-  render: function(){
+  render: function () {
 
     var imageStyles = {
       maxHeight: this.state.detail.maxHeight,
@@ -79,20 +79,21 @@ var PortfolioDetail = React.createClass({
 
     return (
       <div>
-        <DocumentTitle title={pageTitle} />
-        <Navigation view={'detail'} />
-        <ScreenReaderFocusElm elmId={AppConsts.UIID.portfolioDetail} />
-        <section className="portfolio__item mtxl container-fluid" aria-label={this.state.detail.title + ' detailed view'}>
+        <DocumentTitle title={pageTitle}/>
+        <Navigation view={'detail'}/>
+        <ScreenReaderFocusElm elmId={AppConsts.UIID.portfolioDetail}/>
+        <section className="portfolio__item mtxl container-fluid"
+                 aria-label={this.state.detail.title + ' detailed view'}>
           <div>
             <div className="mbxl  text-center">
-              <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles} />
+              <img className="portfolio__full" src={this.state.detail.fullSizeImage} alt={altText} style={imageStyles}/>
             </div>
             <div className="text-center">
               <h1 className="mtn"><span className="portfolio__title__text">{this.state.detail.title}</span></h1>
               <Skills classNames="h4  list-unstyled"
                       bulletClassNames="hide"
                       title={this.state.detail.title}
-                      skills={ this.state.detail.terms && this.state.detail.terms.post_tag ? this.state.detail.terms.post_tag : []} />
+                      skills={ this.state.detail.terms && this.state.detail.terms.post_tag ? this.state.detail.terms.post_tag : []}/>
             </div>
           </div>
         </section>
@@ -100,5 +101,3 @@ var PortfolioDetail = React.createClass({
     );
   }
 });
-
-module.exports = PortfolioDetail;
