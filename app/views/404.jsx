@@ -5,7 +5,7 @@ import DocumentTitle from 'react-document-title';
 import AppConsts from '../consts/app';
 
 export default React.createClass({
-  render: function () {
+  render() {
     return (
       <DocumentTitle title={'404 Page Not Found - ' + AppConsts.TITLE}>
         <h2>Not found</h2>

@@ -10,13 +10,13 @@ export default React.createClass({
     percentageComplete: React.PropTypes.number
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
 
     this.node = this.getDOMNode();
     this.renderNProgress();
   },
 
-  renderNProgress: function () {
+  renderNProgress() {
 
     //create reference to progress instance
     this.progress = NProgress.configure({});
@@ -29,7 +29,7 @@ export default React.createClass({
     React.render(<div />, this.node);
   },
 
-  render: function () {
+  render() {
 
     if (this.progress) {
 

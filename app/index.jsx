@@ -25,7 +25,7 @@ import { Router, Route, Link } from 'react-router'
 // add some <Link> elements...
 const App = React.createClass({
 
-  backToTop: function(e){
+  backToTop(e){
 
     e.preventDefault();
 
@@ -36,27 +36,27 @@ const App = React.createClass({
     }, 0);
   },
 
-  getInitialState: function(){
+  getInitialState(){
 
     return {
       loading: false
     };
   },
 
-  setStateFromStore: function(){
+  setStateFromStore(){
 
     this.setState({
       loading: UIStore.isLoading()
     });
   },
 
-  componentDidMount: function(){
+  componentDidMount(){
 
     this.unsubscribe = UIStore.listen(this.setStateFromStore);
     UIActions.APP_LOADED();
   },
 
-  componentWillUnmount: function(){
+  componentWillUnmount(){
 
     this.unsubscribe();
   },

@@ -30,7 +30,7 @@ export default React.createClass({
     return this.getStateFromStore();
   },
 
-  getStateFromStore: function () {
+  getStateFromStore() {
 
     return {
       webItems: PortfolioStore.getCollectionByCategory('web'),
@@ -53,7 +53,7 @@ export default React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount() {
 
     /*
      * the unsubscribe property is only set when initially loading the component. Afterward

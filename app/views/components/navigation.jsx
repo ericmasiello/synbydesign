@@ -12,7 +12,7 @@ export default React.createClass({
     view: React.PropTypes.string.isRequired
   },
 
-  scrollTo: function (scrollToID) {
+  scrollTo(scrollToID) {
 
     window.setTimeout(function () {
 
@@ -21,7 +21,7 @@ export default React.createClass({
     }, 0);
   },
 
-  render: function () {
+  render() {
 
     var svgLogo = '<use xlink:href="#syn-logo" />';
     var svgTitle = '<use xlink:href="#syn-title" />';

@@ -10,7 +10,7 @@ import UIStore from '../stores/uiStore';
 
 export default React.createClass({
 
-  componentDidMount: function () {
+  componentDidMount() {
 
     /*
      * Only set focus on the masthead area if this isn't your first time loading the page
@@ -24,7 +24,7 @@ export default React.createClass({
     }
   },
 
-  render: function () {
+  render() {
 
     return (
       <div>

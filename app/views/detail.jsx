@@ -15,12 +15,12 @@ export default React.createClass({
 
   mixins: [Router.Navigation, Router.State],
 
-  getInitialState: function () {
+  getInitialState() {
 
     return this.getStateFromStore();
   },
 
-  getStateFromStore: function () {
+  getStateFromStore() {
 
     return {
       id: this.props.params.id,
@@ -29,7 +29,7 @@ export default React.createClass({
     };
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
 
     var self = this;
 
@@ -59,7 +59,7 @@ export default React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount() {
 
     if (typeof this.unsubscribe === 'function') {
 
@@ -67,7 +67,7 @@ export default React.createClass({
     }
   },
 
-  render: function () {
+  render() {
 
     var imageStyles = {
       maxHeight: this.state.detail.maxHeight,

@@ -8,26 +8,26 @@ import ScreenReaderFocusElm from './screenReaderFocusElm';
 
 export default React.createClass({
 
-  getInitialState: function () {
+  getInitialState() {
 
     return this.getStateFromStore();
   },
 
-  getStateFromStore: function () {
+  getStateFromStore() {
 
     return {
       content: AboutStore.getContent()
     };
   },
 
-  setStateFromStore: function () {
+  setStateFromStore() {
 
     this.setState({
       content: AboutStore.getContent()
     });
   },
 
-  componentDidMount: function () {
+  componentDidMount() {
 
     if (this.state.content === null) {
 
@@ -36,7 +36,7 @@ export default React.createClass({
     }
   },
 
-  componentWillUnmount: function () {
+  componentWillUnmount() {
 
     if (typeof this.unsubscribe === 'function') {
 
@@ -44,12 +44,12 @@ export default React.createClass({
     }
   },
 
-  shouldComponentUpdate: function (nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
 
     return typeof nextState.content === "string" && this.state.content !== nextState.content;
   },
 
-  render: function () {
+  render() {
 
     var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
     return (

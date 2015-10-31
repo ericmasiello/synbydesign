@@ -11,7 +11,7 @@ export default React.createClass({
     title: React.PropTypes.string
   },
 
-  render: function () {
+  render() {
 
     var bulletClassNames = typeof this.props.bulletClassNames === "string" ? this.props.bulletClassNames : "";
     bulletClassNames = bulletClassNames + " bullet";
