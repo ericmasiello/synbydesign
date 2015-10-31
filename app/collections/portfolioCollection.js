@@ -1,16 +1,16 @@
 'use strict';
 
-var Backbone = require('backbone');
+import Backbone from 'backbone';
 Backbone.$ = require('jquery');
-var PortfolioModel = require('../models/portfolioModel');
+import PortfolioModel from '../models/portfolioModel';
 
-var PortfolioCollection = Backbone.Collection.extend({
+var PortfolioCollection =  Backbone.Collection.extend({
   url: '../wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards',
   model: PortfolioModel,
 
-  getFilteredCollectionByCategory: function(type){
+  getFilteredCollectionByCategory(type) {
 
-    if(type === 'design'){
+    if (type === 'design') {
 
       type = ['logos', 'illustration', 'flyers', 'business-cards'];
 
@@ -19,7 +19,7 @@ var PortfolioCollection = Backbone.Collection.extend({
       type = [type];
     }
 
-    var filtered = this.filter(function(portfolioItem) {
+    var filtered = this.filter(function (portfolioItem) {
 
       return (portfolioItem.get('terms').category && portfolioItem.get('terms').category.length > 0 ) ? (type.indexOf(portfolioItem.get('terms').category[0].slug) > -1) : false;
     });
@@ -32,18 +32,18 @@ var PortfolioCollection = Backbone.Collection.extend({
    * @param id
    * @returns {*}
    */
-  getModelById: function(id){
+  getModelById(id) {
 
-    if(typeof id === 'string' ){
+    if (typeof id === 'string') {
       id = parseInt(id);
     }
 
-    var matchingModel = this.filter(function(portfolioItem) {
+    var matchingModel = this.filter(function (portfolioItem) {
 
       return portfolioItem.get('ID') === id;
     });
 
-    if( matchingModel.length === 1 ){
+    if (matchingModel.length === 1) {
 
       return matchingModel[0];
 
@@ -54,4 +54,4 @@ var PortfolioCollection = Backbone.Collection.extend({
   }
 });
 
-module.exports = PortfolioCollection;
+export default PortfolioCollection;

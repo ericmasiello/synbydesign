@@ -1,11 +1,11 @@
 'use strict';
 
-var jQuery = require('jquery');
+import jQuery from 'jquery';
 
-var getPropFromSource = function(html, prop){
+var getPropFromSource = function (html, prop) {
 
   //return $sce.trustAsResourceUrl(html);
-  if (typeof html !== 'string' ){
+  if (typeof html !== 'string') {
 
     return '';
   }
@@ -13,7 +13,7 @@ var getPropFromSource = function(html, prop){
   var regex = new RegExp('<img.*?' + prop + '="(.*?)"|<img.*?' + prop + '=\'(.*?)\'/');
   var matches = html.match(regex);
 
-  if (jQuery.isArray(matches) === false || matches.length < 2){
+  if (jQuery.isArray(matches) === false || matches.length < 2) {
 
     return '';
   }
@@ -21,27 +21,25 @@ var getPropFromSource = function(html, prop){
   return matches[1];
 };
 
-var ImagePropExtractor = {
+export default {
 
-  getSource: function(html){
+  getSource(html) {
 
     return getPropFromSource(html, 'src');
   },
 
-  getAltText: function(html){
+  getAltText(html) {
 
     return getPropFromSource(html, 'alt');
   },
 
-  getWidth: function(html){
+  getWidth(html) {
 
     return getPropFromSource(html, 'width');
   },
 
-  getHeight: function(html){
+  getHeight(html) {
 
     return getPropFromSource(html, 'height');
   }
 };
-
-module.exports = ImagePropExtractor;

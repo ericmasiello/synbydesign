@@ -1,9 +1,9 @@
 'use strict';
 
-var Reflux = require('reflux');
-var AboutActions = require('../actions/aboutActions');
-var AboutModel = require('../models/aboutModel');
-var ajaxActionDecorator = require('../util/ajaxActionDecorator');
+import Reflux from 'reflux';
+import AboutActions from '../actions/aboutActions';
+import AboutModel from '../models/aboutModel';
+import ajaxActionDecorator from '../util/ajaxActionDecorator';
 
 var aboutContent = new AboutModel();
 ajaxActionDecorator(aboutContent, AboutActions.LOAD);
@@ -12,27 +12,25 @@ var EVENTS = {
   LOADED: 'LOADED'
 };
 
-var AboutStore = Reflux.createStore({
+export default Reflux.createStore({
 
-    init: function(){
+  init() {
 
-        this.listenToMany(AboutActions);
-    },
+    this.listenToMany(AboutActions);
+  },
 
-    onLOADCompleted: function(){
+  onLOADCompleted() {
 
-        this.trigger(EVENTS.LOADED);
-    },
+    this.trigger(EVENTS.LOADED);
+  },
 
-    onLOAD: function(){
+  onLOAD() {
 
-        aboutContent.fetch();
-    },
+    aboutContent.fetch();
+  },
 
-    getContent: function(){
+  getContent() {
 
-        return aboutContent.get('content');
-    }
+    return aboutContent.get('content');
+  }
 });
-
-module.exports = AboutStore;

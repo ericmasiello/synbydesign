@@ -1,6 +1,6 @@
 'use strict';
 
-var UIActions = require('../actions/uiActions');
+import UIActions from '../actions/uiActions';
 
 var ajaxComplete = function ajaxCompleteHandler() {
 
@@ -20,7 +20,7 @@ var ajaxInit = function ajaxInitHandler(){
  * @param backboneInstance
  * @param action
  */
-var ajaxActionDecorator = function(backboneInstance, action){
+export default function(backboneInstance, action){
 
     backboneInstance.on('request', function(){
 
@@ -45,5 +45,3 @@ var ajaxActionDecorator = function(backboneInstance, action){
         ajaxComplete();
     });
 };
-
-module.exports = ajaxActionDecorator;

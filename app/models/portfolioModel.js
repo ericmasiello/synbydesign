@@ -1,10 +1,10 @@
 'use strict';
 
-var Backbone = require('backbone');
+import Backbone from 'backbone';
 Backbone.$ = require('jquery');
-var extractor = require('../util/extractImageFromContent');
+import extractor from '../util/extractImageFromContent';
 
-var PortfolioModel = Backbone.Model.extend({
+export default Backbone.Model.extend({
   urlRoot: '../wp/wp-json/posts',
   defaults: {
     ID: null,
@@ -28,5 +28,3 @@ var PortfolioModel = Backbone.Model.extend({
     });
   }
 });
-
-module.exports = PortfolioModel;

@@ -1,6 +1,6 @@
-var Reflux = require('reflux');
+import Reflux from 'reflux';
 
-var PortfolioActions = Reflux.createActions({
+export default Reflux.createActions({
   LOAD_ALL: {
     asyncResult: true //automatically defines completed and failed
   },
@@ -8,5 +8,3 @@ var PortfolioActions = Reflux.createActions({
     asyncResult: true
   }
 });
-
-module.exports = PortfolioActions;

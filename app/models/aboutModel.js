@@ -1,11 +1,9 @@
-var Backbone = require('backbone');
+import Backbone from 'backbone';
 Backbone.$ = require('jquery');
 
-var AboutModel = Backbone.Model.extend({
+export default Backbone.Model.extend({
   urlRoot: '../wp/wp-json/pages/about',
   defaults: {
     content: null
   }
 });
-
-module.exports = AboutModel;

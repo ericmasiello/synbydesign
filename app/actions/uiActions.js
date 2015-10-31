@@ -1,9 +1,7 @@
-var Reflux = require('reflux');
+import Reflux from 'reflux';
 
-var UIActions = Reflux.createActions([
+export default Reflux.createActions([
   'LOAD',
   'COMPLETED_LOADING',
   'APP_LOADED'
 ]);
-
-module.exports = UIActions;

@@ -1,10 +1,10 @@
 'use strict';
 
-var Reflux = require('reflux');
-var PortfolioActions = require('../actions/portfolioActions');
-var PortfolioModel = require('../models/portfolioModel');
-var PortfolioCollection = require('../collections/portfolioCollection');
-var ajaxActionDecorator = require('../util/ajaxActionDecorator');
+import Reflux from 'reflux';
+import PortfolioActions from '../actions/portfolioActions';
+import PortfolioModel from '../models/portfolioModel';
+import PortfolioCollection from '../collections/portfolioCollection';
+import ajaxActionDecorator from '../util/ajaxActionDecorator';
 
 var portfolioItem;
 var portfolio = new PortfolioCollection();
@@ -13,69 +13,67 @@ var portfolio = new PortfolioCollection();
 ajaxActionDecorator(portfolio, PortfolioActions.LOAD_ALL);
 
 var TYPES = {
-    ALL: 'ALL',
-    SINGLE: 'SINGLE'
+  ALL: 'ALL',
+  SINGLE: 'SINGLE'
 };
 
 var LOADED = {
-    ALL: false
+  ALL: false
 };
 
-var PortfolioStore = Reflux.createStore({
+export default Reflux.createStore({
 
-    init: function () {
-        this.listenToMany(PortfolioActions);
-    },
+  init() {
+    this.listenToMany(PortfolioActions);
+  },
 
-    onLOAD_SINGLECompleted: function(){
+  onLOAD_SINGLECompleted() {
 
-        portfolio.add(portfolioItem);
-        this.trigger(TYPES.SINGLE);
-    },
+    portfolio.add(portfolioItem);
+    this.trigger(TYPES.SINGLE);
+  },
 
-    onLOAD_SINGLE: function(id){
+  onLOAD_SINGLE(id) {
 
-        portfolioItem = new PortfolioModel({
-            id: parseInt(id)
-        });
+    portfolioItem = new PortfolioModel({
+      id: parseInt(id)
+    });
 
-        //adds event hooks to portfolioItem model to trigger appropriate Reflux Actions
-        ajaxActionDecorator(portfolioItem, PortfolioActions.LOAD_SINGLE);
-        portfolioItem.fetch();
-    },
+    //adds event hooks to portfolioItem model to trigger appropriate Reflux Actions
+    ajaxActionDecorator(portfolioItem, PortfolioActions.LOAD_SINGLE);
+    portfolioItem.fetch();
+  },
 
-    onLOAD_ALLCompleted: function () {
+  onLOAD_ALLCompleted() {
 
-        LOADED.ALL = true;
-        this.trigger(TYPES.ALL);
-    },
+    LOADED.ALL = true;
+    this.trigger(TYPES.ALL);
+  },
 
-    onLOAD_ALL: function () {
+  onLOAD_ALL() {
 
-        portfolio.fetch();
-    },
+    portfolio.fetch();
+  },
 
-    getCollectionByCategory: function (category) {
+  getCollectionByCategory(category) {
 
-        return portfolio.getFilteredCollectionByCategory(category).toJSON();
-    },
+    return portfolio.getFilteredCollectionByCategory(category).toJSON();
+  },
 
-    getItemById: function (id) {
+  getItemById(id) {
 
-        var model = portfolio.getModelById(id);
-        return (model === null) ? {} : model.toJSON();
-    },
+    var model = portfolio.getModelById(id);
+    return (model === null) ? {} : model.toJSON();
+  },
 
-    hasLoadedAll: function () {
+  hasLoadedAll() {
 
-        return ( LOADED.ALL );
-    },
+    return ( LOADED.ALL );
+  },
 
-    hasLoadedItemById: function(id){
+  hasLoadedItemById(id) {
 
-        var model = portfolio.getModelById(id);
-        return ( model === null ) ? false : true;
-    }
+    var model = portfolio.getModelById(id);
+    return ( model === null ) ? false : true;
+  }
 });
-
-module.exports = PortfolioStore;

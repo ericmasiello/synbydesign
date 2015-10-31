@@ -1,9 +1,7 @@
-var Reflux = require('reflux');
+import Reflux from 'reflux';
 
-var AboutActions = Reflux.createActions({
-    'LOAD': {
-        asyncResult: true
-    }
+export default Reflux.createActions({
+  'LOAD': {
+    asyncResult: true
+  }
 });
-
-module.exports = AboutActions;
