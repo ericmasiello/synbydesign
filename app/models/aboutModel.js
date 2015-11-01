@@ -1,8 +1,9 @@
 import Backbone from 'backbone';
 Backbone.$ = require('jquery');
+import {SERVER} from '../consts/app';
 
 export default Backbone.Model.extend({
-  urlRoot: '../wp/wp-json/pages/about',
+  urlRoot: `${SERVER}/pages/about`,
   defaults: {
     content: null
   }

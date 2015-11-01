@@ -3,9 +3,10 @@
 import Backbone from 'backbone';
 Backbone.$ = require('jquery');
 import PortfolioModel from '../models/portfolioModel';
+import {SERVER} from '../consts/app';
 
 var PortfolioCollection =  Backbone.Collection.extend({
-  url: '../wp/wp-json/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards',
+  url: `${SERVER}/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards`,
   model: PortfolioModel,
 
   getFilteredCollectionByCategory(type) {

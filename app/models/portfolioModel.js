@@ -3,9 +3,10 @@
 import Backbone from 'backbone';
 Backbone.$ = require('jquery');
 import extractor from '../util/extractImageFromContent';
+import {SERVER} from '../consts/app';
 
 export default Backbone.Model.extend({
-  urlRoot: '../wp/wp-json/posts',
+  urlRoot: `${SERVER}/posts`,
   defaults: {
     ID: null,
     title: '',

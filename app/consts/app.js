@@ -6,5 +6,6 @@ export default {
     about: 'about',
     portfolioList: 'portfolioList',
     portfolioDetail: 'portfolioDetail'
-  }
+  },
+  SERVER: 'http://www.synbydesign.com/wp/wp-json'
 };
