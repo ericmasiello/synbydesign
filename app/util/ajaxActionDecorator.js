@@ -2,12 +2,12 @@
 
 import UIActions from '../actions/uiActions';
 
-var ajaxComplete = function ajaxCompleteHandler() {
+const ajaxComplete = function ajaxCompleteHandler() {
 
     UIActions.COMPLETED_LOADING();
 };
 
-var ajaxInit = function ajaxInitHandler(){
+const ajaxInit = function ajaxInitHandler(){
 
     UIActions.LOAD();
 };

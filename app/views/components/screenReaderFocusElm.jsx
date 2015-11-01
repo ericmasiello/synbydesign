@@ -11,7 +11,7 @@ import React from 'react';
 export default React.createClass({
 
   propTypes: {
-    elmId: React.PropTypes.number.isRequired
+    elmId: React.PropTypes.string.isRequired
   },
 
   render: function(){

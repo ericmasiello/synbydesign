@@ -5,7 +5,7 @@ Backbone.$ = require('jquery');
 import PortfolioModel from '../models/portfolioModel';
 import {SERVER} from '../consts/app';
 
-var PortfolioCollection =  Backbone.Collection.extend({
+const PortfolioCollection =  Backbone.Collection.extend({
   url: `${SERVER}/posts/?filter[category_name]=web,other,logos,illustration,flyers,business-cards`,
   model: PortfolioModel,
 
@@ -20,7 +20,7 @@ var PortfolioCollection =  Backbone.Collection.extend({
       type = [type];
     }
 
-    var filtered = this.filter(function (portfolioItem) {
+    const filtered = this.filter(function (portfolioItem) {
 
       return (portfolioItem.get('terms').category && portfolioItem.get('terms').category.length > 0 ) ? (type.indexOf(portfolioItem.get('terms').category[0].slug) > -1) : false;
     });
@@ -39,7 +39,7 @@ var PortfolioCollection =  Backbone.Collection.extend({
       id = parseInt(id);
     }
 
-    var matchingModel = this.filter(function (portfolioItem) {
+    const matchingModel = this.filter(function (portfolioItem) {
 
       return portfolioItem.get('ID') === id;
     });

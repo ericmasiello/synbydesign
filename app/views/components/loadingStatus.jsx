@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { findDOMNode, render } from 'react-dom';
 import NProgress from 'nprogress';
 
 export default React.createClass({
@@ -12,7 +13,7 @@ export default React.createClass({
 
   componentDidMount() {
 
-    this.node = this.getDOMNode();
+    this.node = findDOMNode(this);
     this.renderNProgress();
   },
 
@@ -26,7 +27,7 @@ export default React.createClass({
     // Not sure if I need this or not...
     // Got this approach from: https://github.com/ryanflorence/react-training/blob/gh-pages/lessons/05-wrapping-dom-libs.md
     // See also: https://github.com/ryanflorence/react-training/blob/gh-pages/code/Dialog/Dialog.js
-    React.render(<div />, this.node);
+    render(<div />, this.node);
   },
 
   render() {

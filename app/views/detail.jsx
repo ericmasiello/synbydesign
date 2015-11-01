@@ -32,7 +32,7 @@ export default React.createClass({
 
   componentDidMount() {
 
-    var self = this;
+    const self = this;
 
     if (PortfolioStore.hasLoadedItemById(self.state.id) === false) {
 

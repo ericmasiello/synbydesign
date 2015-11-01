@@ -3,17 +3,17 @@
 import Reflux from 'reflux';
 import UIActions from '../actions/uiActions';
 
-var initialLoad = true;
-var totalRequests = 0;
-var loadedRequests = 0;
+let initialLoad = true;
+let totalRequests = 0;
+let loadedRequests = 0;
 
-var resetRequests = function () {
+const resetRequests = function () {
 
   totalRequests = 0;
   loadedRequests = 0;
 };
 
-var loadingStatus = function () {
+const loadingStatus = function () {
 
   this.trigger('CHANGE');
 

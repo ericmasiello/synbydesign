@@ -23,11 +23,11 @@ export default React.createClass({
 
   render() {
 
-    var svgLogo = '<use xlink:href="#syn-logo" />';
-    var svgTitle = '<use xlink:href="#syn-title" />';
-    var svgSlogan = '<use xlink:href="#syn-slogan" />';
+    const svgLogo = '<use xlink:href="#syn-logo" />';
+    const svgTitle = '<use xlink:href="#syn-title" />';
+    const svgSlogan = '<use xlink:href="#syn-slogan" />';
 
-    var logo = (
+    let logo = (
       <li role="presentation" className="col-xs-12  col-sm  col-md-5  default-sm  masthead__logo">
         <h1 className="masthead__logo__title" id={AppConsts.UIID.logo}>
           <span className="visually-hidden">Syn By Design</span>
@@ -38,7 +38,7 @@ export default React.createClass({
       </li>
     );
 
-    var nav = (
+    let nav = (
       <ul className="row  flex-center  middle-xs  masthead__nav">
         {logo}
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__about">

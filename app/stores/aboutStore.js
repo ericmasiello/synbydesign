@@ -5,10 +5,10 @@ import AboutActions from '../actions/aboutActions';
 import AboutModel from '../models/aboutModel';
 import ajaxActionDecorator from '../util/ajaxActionDecorator';
 
-var aboutContent = new AboutModel();
+let aboutContent = new AboutModel();
 ajaxActionDecorator(aboutContent, AboutActions.LOAD);
 
-var EVENTS = {
+const EVENTS = {
   LOADED: 'LOADED'
 };
 

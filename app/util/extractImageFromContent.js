@@ -1,19 +1,16 @@
 'use strict';
 
-import jQuery from 'jquery';
+const getPropFromSource = function (html, prop) {
 
-var getPropFromSource = function (html, prop) {
-
-  //return $sce.trustAsResourceUrl(html);
   if (typeof html !== 'string') {
 
     return '';
   }
 
-  var regex = new RegExp('<img.*?' + prop + '="(.*?)"|<img.*?' + prop + '=\'(.*?)\'/');
-  var matches = html.match(regex);
+  const regex = new RegExp(`<img.*?${prop}="(.*?)"|<img.*?${prop}=\'(.*?)\'/`);
+  const matches = html.match(regex);
 
-  if (jQuery.isArray(matches) === false || matches.length < 2) {
+  if (Array.isArray(matches) === false || matches.length < 2) {
 
     return '';
   }

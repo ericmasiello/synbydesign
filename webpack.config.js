@@ -4,7 +4,7 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var Clean = require('clean-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var TARGET = process.env.npm_lifecycle_event;
 var ROOT_PATH = path.resolve(__dirname);
@@ -50,7 +50,7 @@ var common = {
         removeEmptyAttributes: true
       }
     }),
-    new ExtractTextPlugin("[name].[chunkhash].css")
+    new ExtractTextPlugin('[name].[chunkhash].css')
   ]
 };
 
@@ -67,7 +67,7 @@ if (TARGET === 'start' || !TARGET) {
       loaders: [
         {
           test: /\.scss$/,
-          loader: 'style!css!sass',
+          loader: 'style!css!autoprefixer-loader?browsers=last 2 versions!sass',
           include: [APP_PATH, DESIGN_ASSETS]
         }
       ]
@@ -94,8 +94,7 @@ if (TARGET === 'build'){
       loaders: [
         {
           test: /\.scss$/,
-          //loader: 'style!css!sass'
-          loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader?browsers=last 2 versions!sass-loader"),
+          loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?browsers=last 2 versions!sass-loader'),
           include: [APP_PATH, DESIGN_ASSETS]
         }
       ]

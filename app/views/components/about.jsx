@@ -46,12 +46,12 @@ export default React.createClass({
 
   shouldComponentUpdate(nextProps, nextState) {
 
-    return typeof nextState.content === "string" && this.state.content !== nextState.content;
+    return typeof nextState.content === 'string' && this.state.content !== nextState.content;
   },
 
   render() {
 
-    var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
+    const content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
     return (
       <section className="container-fluid">
         <ScreenReaderFocusElm elmId={AppConsts.UIID.about}/>

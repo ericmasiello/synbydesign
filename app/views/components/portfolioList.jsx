@@ -4,15 +4,14 @@ import React from 'react';
 import PortfolioActions from '../../actions/portfolioActions';
 import PortfolioStore from '../../stores/portfolioStore';
 import PortfolioItem from './portfolioItem';
-import jQuery from 'jquery';
 import AppConsts from '../../consts/app';
 import ScreenReaderFocusElm from './screenReaderFocusElm';
 
-var mapDataToPortfolioItems = function(items, type){
+const mapDataToPortfolioItems = function(items, type){
 
-  var portfolioItems;
+  let portfolioItems;
 
-  if( jQuery.isArray( items ) === true ){
+  if( Array.isArray( items ) === true ){
 
     portfolioItems = items.map(function(item){
 
@@ -68,13 +67,13 @@ export default React.createClass({
 
   render: function(){
 
-    var webItems = mapDataToPortfolioItems(this.state.webItems, 'web');
-    var designItems = mapDataToPortfolioItems(this.state.designItems, 'design');
-    var otherItems = mapDataToPortfolioItems(this.state.otherItems, 'other');
+    const webItems = mapDataToPortfolioItems(this.state.webItems, 'web');
+    const designItems = mapDataToPortfolioItems(this.state.designItems, 'design');
+    const otherItems = mapDataToPortfolioItems(this.state.otherItems, 'other');
 
-    var webContent;
-    var designContent;
-    var otherContent;
+    let webContent;
+    let designContent;
+    let otherContent;
 
     if( webItems.length > 0 ){
       webContent = (
