@@ -67,7 +67,7 @@ if (TARGET === 'start' || !TARGET) {
       loaders: [
         {
           test: /\.scss$/,
-          loader: 'style!css!sass',
+          loader: 'style!css!autoprefixer-loader?browsers=last 2 versions!sass',
           include: [APP_PATH, DESIGN_ASSETS]
         }
       ]
@@ -94,7 +94,6 @@ if (TARGET === 'build'){
       loaders: [
         {
           test: /\.scss$/,
-          //loader: 'style!css!sass'
           loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?browsers=last 2 versions!sass-loader'),
           include: [APP_PATH, DESIGN_ASSETS]
         }
