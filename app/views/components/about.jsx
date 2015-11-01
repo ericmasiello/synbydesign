@@ -46,7 +46,7 @@ export default React.createClass({
 
   shouldComponentUpdate(nextProps, nextState) {
 
-    return typeof nextState.content === "string" && this.state.content !== nextState.content;
+    return typeof nextState.content === 'string' && this.state.content !== nextState.content;
   },
 
   render() {
