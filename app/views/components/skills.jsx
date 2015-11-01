@@ -13,8 +13,8 @@ export default React.createClass({
 
   render() {
 
-    let bulletClassNames = typeof this.props.bulletClassNames === "string" ? this.props.bulletClassNames : "";
-    bulletClassNames = bulletClassNames + " bullet";
+    let bulletClassNames = typeof this.props.bulletClassNames === 'string' ? this.props.bulletClassNames : '';
+    bulletClassNames = `${bulletClassNames} bullet`;
 
     const skills = this.props.skills.map(function (tag) {
       return (<li key={Math.random()} role="presentation">
