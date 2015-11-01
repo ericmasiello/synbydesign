@@ -10,3 +10,4 @@ _archive
 bower_components
 dist
 .tmp
+build
