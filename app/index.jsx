@@ -19,7 +19,7 @@ import NotFound from './views/404';
 import LoadingStatus from './views/components/loadingStatus';
 
 // First we import some components...
-import { Router, Route, Link } from 'react-router'
+import { Router, Route, Link, IndexRoute } from 'react-router'
 
 // Then we delete a bunch of code from App and
 // add some <Link> elements...
@@ -67,7 +67,7 @@ const App = React.createClass({
       <div aria-atomic="true" aria-live="polite" aria-busy={this.state.loading} >
         <LoadingStatus loading={this.state.loading} percentageComplete={UIStore.getLoadingPercentageComplete()} />
         <div>
-          { React.cloneElement(this.props.children || <Home />, {loadingState: this.state.loading}) }
+          { React.cloneElement(this.props.children, {loadingState: this.state.loading}) }
         </div>
         <div className="text-center mtl">
           <a href="#" onClick={this.backToTop}>Back to top</a>
@@ -82,6 +82,7 @@ const App = React.createClass({
 render((
   <Router>
     <Route path="/" component={App}>
+      <IndexRoute component={Home} />
       <Route path="/detail/:type/:id" component={PortfolioDetail} />
       <Route path="*" component={NotFound}/>
     </Route>

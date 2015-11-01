@@ -51,7 +51,7 @@ export default React.createClass({
 
   render() {
 
-    var content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
+    const content = (this.state.content === null ) ? '<p>Loading...</p>' : this.state.content;
     return (
       <section className="container-fluid">
         <ScreenReaderFocusElm elmId={AppConsts.UIID.about}/>

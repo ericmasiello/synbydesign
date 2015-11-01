@@ -6,18 +6,18 @@ import PortfolioModel from '../models/portfolioModel';
 import PortfolioCollection from '../collections/portfolioCollection';
 import ajaxActionDecorator from '../util/ajaxActionDecorator';
 
-var portfolioItem;
-var portfolio = new PortfolioCollection();
+let portfolioItem;
+let portfolio = new PortfolioCollection();
 
 //adds event hooks to portfolio collection to trigger appropriate Reflux Actions
 ajaxActionDecorator(portfolio, PortfolioActions.LOAD_ALL);
 
-var TYPES = {
+const TYPES = {
   ALL: 'ALL',
   SINGLE: 'SINGLE'
 };
 
-var LOADED = {
+const LOADED = {
   ALL: false
 };
 
@@ -62,7 +62,7 @@ export default Reflux.createStore({
 
   getItemById(id) {
 
-    var model = portfolio.getModelById(id);
+    const model = portfolio.getModelById(id);
     return (model === null) ? {} : model.toJSON();
   },
 
@@ -73,7 +73,7 @@ export default Reflux.createStore({
 
   hasLoadedItemById(id) {
 
-    var model = portfolio.getModelById(id);
+    const model = portfolio.getModelById(id);
     return ( model === null ) ? false : true;
   }
 });
