@@ -11,15 +11,13 @@ class Test extends Component {
     this.fetchData = this.fetchData.bind(this);
 
     this.fetchData();
-
-    setTimeout(function(){
-      this.props.receiveDataFromServer();
-    }.bind(this), 1000);
-
   }
 
   fetchData(){
     this.props.requestDataFromServer();
+    setTimeout(function(){
+      this.props.receiveDataFromServer();
+    }.bind(this), 1000);
   }
 
   render() {

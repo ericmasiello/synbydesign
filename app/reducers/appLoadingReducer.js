@@ -5,6 +5,8 @@ export default (state = {
   loadedRequests: 0
 }, action) => {
 
+  console.log(state);
+
   switch(action.type){
     case REQUEST_DATA:
       return {
@@ -12,6 +14,19 @@ export default (state = {
         loadedRequests: state.loadedRequests
       };
     case RECEIVED_DATA:
+
+      /*
+       If the incoming request is the final request to be made
+       then we can just reset our object to say there are no
+       active requests
+       */
+      if( state.activeRequests === state.loadedRequests + 1 ){
+        return {
+          activeRequests: 0,
+          loadedRequests: 0
+        }
+      }
+
       return {
         activeRequests: state.activeRequests,
         loadedRequests: state.loadedRequests + 1
