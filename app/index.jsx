@@ -1,92 +1,44 @@
-require('synbydesign.design');
-
+import 'synbydesign.design';
 import React from 'react';
-import { render } from 'react-dom'
-import jQueryScrollTo from 'jquery.scrollto';
-import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-// Load stores
-import UIStore from './stores/uiStore';
-// Load actions
-import UIActions from './actions/uiActions';
-// Load Consts
-import AppConsts from './consts/app';
-// Load Views
+import App from './components/App.jsx';
+import reducers from './reducers';
 
-import Home from './views/home';
-import PortfolioDetail from './views/detail';
-import NotFound from './views/404';
-import LoadingStatus from './views/components/loadingStatus';
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-// First we import some components...
-import { Router, Route, Link, IndexRoute } from 'react-router'
+render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.getElementById('app'));
 
-// Then we delete a bunch of code from App and
-// add some <Link> elements...
-const App = React.createClass({
+/*
 
-  backToTop(e){
+ Events in the application (e.g. user clicks something, page loads for the first time, etc)
+ call Action Creators.
 
-    e.preventDefault();
+ Action Creators are simple functions that return Actions
+ Actions are just objects that have a 'type' property e.g.
+ {
+ type: 'THE_ACTION_TO_PERFORM'
+ }
+ Actions can also contain other metadata properties e.g.
+ {
+ type: 'BOOK_SELECTED',
+ book: {
+ id: 48,
+ title: 'Book title'
+ }
+ }
 
-    window.setTimeout(function(){
+ Actions are sent automatically to ALL reducers in the application
 
-      jQueryScrollTo('#' + AppConsts.UIID.masthead, 500);
-      document.getElementById(AppConsts.UIID.logo).focus();
-    }, 0);
-  },
+ Reducers can choose to return a different piece of state depending on the Action
+ This newly returned state gets piped backed into our [Redux] applicaiton state which,
+ in turn, gets piped back into our Container views causing them
+ to re-render based on the newly updated redux app state
 
-  getInitialState(){
-
-    return {
-      loading: false
-    };
-  },
-
-  setStateFromStore(){
-
-    this.setState({
-      loading: UIStore.isLoading()
-    });
-  },
-
-  componentDidMount(){
-
-    this.unsubscribe = UIStore.listen(this.setStateFromStore);
-    UIActions.APP_LOADED();
-  },
-
-  componentWillUnmount(){
-
-    this.unsubscribe();
-  },
-
-  render() {
-
-    return (
-      <div aria-atomic="true" aria-live="polite" aria-busy={this.state.loading} >
-        <LoadingStatus loading={this.state.loading} percentageComplete={UIStore.getLoadingPercentageComplete()} />
-        <div>
-          { React.cloneElement(this.props.children, {loadingState: this.state.loading}) }
-        </div>
-        <div className="text-center mtl">
-          <a href="#" onClick={this.backToTop}>Back to top</a>
-        </div>
-      </div>
-    )
-  }
-});
-
-// Finally, we render a <Router> with some <Route>s.
-// It does all the fancy routing stuff for us.
-render((
-  <Router>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="/detail/:type/:id" component={PortfolioDetail} />
-      <Route path="*" component={NotFound}/>
-    </Route>
-  </Router>
-), document.getElementById('app'));
-
-
+ */
