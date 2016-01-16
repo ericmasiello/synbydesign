@@ -14,35 +14,58 @@ describe('Redux Store', () => {
     });
   });
 
-  it('should respond to REQUEST_DATA events', ()=>{
+  describe('appLoading state', () => {
+    it('should respond to REQUEST_DATA events', ()=>{
 
-    store.dispatch({
-      type: 'REQUEST_DATA'
+      store.dispatch({
+        type: 'REQUEST_DATA'
+      });
+
+      store.dispatch({
+        type: 'REQUEST_DATA'
+      });
+
+      const actual = store.getState();
+      expect(actual).toEqual({
+        appLoading: {
+          activeRequests: 2,
+          loadedRequests: 0
+        }
+      });
     });
 
-    const actual = store.getState();
-    expect(actual).toEqual({
-      appLoading: {
-        activeRequests: 1,
-        loadedRequests: 0
-      }
+    it('should respond to RECEIVED_DATA events', ()=>{
+
+      store.dispatch({
+        type: 'RECEIVED_DATA'
+      });
+
+      const actual = store.getState();
+      expect(actual).toEqual({
+        appLoading: {
+          activeRequests: 2,
+          loadedRequests: 1
+        }
+      });
+    });
+
+    it('appLoading should respond with zeros for both values once activeRequests == loadedRequests', ()=>{
+
+      store.dispatch({
+        type: 'RECEIVED_DATA'
+      });
+
+      const actual = store.getState();
+      expect(actual).toEqual({
+        appLoading: {
+          activeRequests: 0,
+          loadedRequests: 0
+        }
+      });
     });
   });
 
-  it('should respond to RECEIVED_DATA events', ()=>{
 
-    store.dispatch({
-      type: 'RECEIVED_DATA'
-    });
-
-    const actual = store.getState();
-    expect(actual).toEqual({
-      appLoading: {
-        activeRequests: 1,
-        loadedRequests: 1
-      }
-    });
-  });
   //
   //it('should respond to TOGGLE_TODO events', ()=>{
   //

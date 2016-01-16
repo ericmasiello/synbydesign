@@ -5,7 +5,7 @@ export default (state = {
   loadedRequests: 0
 }, action) => {
 
-  console.log(state);
+  //console.log(state);
 
   switch(action.type){
     case REQUEST_DATA:
