@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import PortfolioItem from './portfolio-item.component';
 import { UI_IDS, DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES } from '../configuration/';
-import filterPortfolioByType from '../util/filter-portfolio-by-type.util';
+import filterPortfolioByType from '../util/filter-by-category-slug.util';
 
 export default class PortfolioList extends Component {
   constructor(props) {
