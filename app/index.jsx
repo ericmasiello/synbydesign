@@ -3,14 +3,25 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
 
-import App from './components/App.jsx';
+import App from './components/app.component';
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+/*
+ * middleware intercepts actions emitted from action creators before
+ * the reach reducers
+ * they allow you to block, modify, or pass through actions before
+ * they hit the reducer
+ * they act as a gatekeeper between action creators and reducers
+ */
+const store = applyMiddleware(ReduxPromise)(createStore)(reducers);
+
+// FIXME: remove this - this is just for testing
+window.syn_store = store;
 
 render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>
   , document.getElementById('app'));

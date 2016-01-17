@@ -3,7 +3,7 @@ import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
-import LoadingStatus from './../components/LoadingStatus';
+import LoadingStatus from './../components/loading-status.component';
 
 describe('LoadingStatus', () => {
 

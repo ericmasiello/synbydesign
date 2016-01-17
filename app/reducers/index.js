@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import AppLoadingReducer from './appLoadingReducer';
+import AppLoadingReducer from './app-loading.reducer';
+import PortfolioReducer from './portfolio.reducer';
 
 //import BooksReducer from './reducer-books';
 //import ActiveBookReducer from './reducer-active-book';
@@ -9,9 +10,9 @@ import AppLoadingReducer from './appLoadingReducer';
  * application state - the whoooole thing.
  */
 const rootReducer = combineReducers({
-  //portfolio: PortfolioReducer,
+  appLoading: AppLoadingReducer,
+  portfolio: PortfolioReducer
   //selectedPortfolioItem: SelectedPortfolioReducer,
-  appLoading: AppLoadingReducer
 });
 
 export default rootReducer;

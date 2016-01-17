@@ -3,7 +3,7 @@ import { REQUEST_DATA, RECEIVED_DATA } from '../actions/types';
 export default (state = {
   activeRequests: 0,
   loadedRequests: 0
-}, action) => {
+}, action = {}) => {
 
   //console.log(state);
 

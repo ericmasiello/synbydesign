@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestDataFromServer, receiveDataFromServer } from '../actions/appLoadingActionCreator';
+import { requestDataFromServer, receiveDataFromServer } from '../actions/app-loading.action-creator';
 import { bindActionCreators } from 'redux';
 
 class Test extends Component {

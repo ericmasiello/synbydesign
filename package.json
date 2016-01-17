@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.8.1",
     "backbone": "^1.2.3",
     "history": "^1.13.0",
     "isomorphic-fetch": "^2.2.1",
@@ -21,6 +22,7 @@
     "react": "^0.14.6",
     "react-document-title": "^2.0.1",
     "react-dom": "^0.14.0",
+    "redux-promise": "^0.5.0",
     "reflux": "^0.3.0",
     "synbydesign.design": "~0.1.1"
   },

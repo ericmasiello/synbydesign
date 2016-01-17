@@ -1,7 +1,10 @@
 import expect from 'expect';
-import store from './configureStore';
+import rootReducer from './index';
+import { createStore } from 'redux';
 
 describe('Redux Store', () => {
+
+  const store = createStore(rootReducer);
 
   it('should be empty by default', ()=>{
 
@@ -10,7 +13,8 @@ describe('Redux Store', () => {
       appLoading: {
         activeRequests: 0,
         loadedRequests: 0
-      }
+      },
+      portfolio: []
     });
   });
 
@@ -25,12 +29,10 @@ describe('Redux Store', () => {
         type: 'REQUEST_DATA'
       });
 
-      const actual = store.getState();
+      const actual = store.getState().appLoading;
       expect(actual).toEqual({
-        appLoading: {
-          activeRequests: 2,
-          loadedRequests: 0
-        }
+        activeRequests: 2,
+        loadedRequests: 0
       });
     });
 
@@ -40,12 +42,10 @@ describe('Redux Store', () => {
         type: 'RECEIVED_DATA'
       });
 
-      const actual = store.getState();
+      const actual = store.getState().appLoading;
       expect(actual).toEqual({
-        appLoading: {
-          activeRequests: 2,
-          loadedRequests: 1
-        }
+        activeRequests: 2,
+        loadedRequests: 1
       });
     });
 
@@ -55,12 +55,10 @@ describe('Redux Store', () => {
         type: 'RECEIVED_DATA'
       });
 
-      const actual = store.getState();
+      const actual = store.getState().appLoading;
       expect(actual).toEqual({
-        appLoading: {
-          activeRequests: 0,
-          loadedRequests: 0
-        }
+        activeRequests: 0,
+        loadedRequests: 0
       });
     });
   });
