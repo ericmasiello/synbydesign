@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
 
 /*
  * Kludge, in order to avoid the screen reader reading content twice (caused by having a tabIndex value set,
@@ -8,13 +8,11 @@ import React, { Component } from 'react';
  * I'll focus/scroll to the empty span tag (below) and that way the content will just above what needs to be read, thus
  * only reading the text inside the content below the empty span once.
  */
-export default class ScreenReaderFocusElm extends Component {
-  render(){
 
-    return (
-      <div id={this.props.elmId} tabIndex="-1"></div>
-    );
-  }
+export default function ScreenReaderFocusElm(props){
+  return (
+    <div id={props.elmId} tabIndex="-1"></div>
+  );
 }
 
 ScreenReaderFocusElm.propsTypes = {
