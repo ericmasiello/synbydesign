@@ -14,7 +14,8 @@
   "dependencies": {
     "axios": "^0.8.1",
     "backbone": "^1.2.3",
-    "history": "^1.13.0",
+    "react-router": "1.0.2",
+    "history": "1.13.x",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.1.4",
     "jquery.scrollto": "^2.1.2",
@@ -22,6 +23,8 @@
     "react": "^0.14.6",
     "react-document-title": "^2.0.1",
     "react-dom": "^0.14.0",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5",
     "redux-promise": "^0.5.0",
     "reflux": "^0.3.0",
     "synbydesign.design": "~0.1.1"

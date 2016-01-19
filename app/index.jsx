@@ -7,6 +7,8 @@ import ReduxPromise from 'redux-promise';
 
 import App from './components/app.component';
 import reducers from './reducers';
+import promiseDispatcherMiddleware from './middleware/promise-dispatcher.middleware';
+import { REQUEST_DATA, RECEIVED_DATA } from './actions/types';
 
 /*
  * middleware intercepts actions emitted from action creators before
@@ -15,7 +17,7 @@ import reducers from './reducers';
  * they hit the reducer
  * they act as a gatekeeper between action creators and reducers
  */
-const store = applyMiddleware(ReduxPromise)(createStore)(reducers);
+const store = applyMiddleware(promiseDispatcherMiddleware(REQUEST_DATA, RECEIVED_DATA), ReduxPromise)(createStore)(reducers);
 
 // FIXME: remove this - this is just for testing
 window.syn_store = store;
