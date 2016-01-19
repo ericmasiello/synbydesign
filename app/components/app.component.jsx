@@ -8,7 +8,6 @@ export default class App extends Component {
       <div>
         <LoadingStatusContainer />
         <PortfolioList />
-        Hello World
       </div>
     );
   }
