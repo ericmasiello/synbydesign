@@ -7,7 +7,7 @@ export const UI_IDS = {
   portfolioDetail: 'portfolioDetail'
 };
 
-export const API_URL = 'http://www.synbydesign.com/wp/wp-json';
+export const API_URL = '/wp/wp-json';
 
 export const DESIGN_CATEGORIES = ['logos', 'illustration', 'flyers', 'business-cards'];
 export const OTHER_CATEGORIES = ['other'];
