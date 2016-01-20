@@ -5,10 +5,13 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 
-import App from './components/app.component';
+import AppContainer from './containers/app.container';
 import reducers from './reducers';
 import promiseDispatcherMiddleware from './middleware/promise-dispatcher.middleware';
 import { REQUEST_DATA, RECEIVED_DATA } from './actions/types';
+
+import { Router, Route, Link, IndexRoute } from 'react-router'
+import Home from './components/home.component';
 
 /*
  * middleware intercepts actions emitted from action creators before
@@ -19,9 +22,30 @@ import { REQUEST_DATA, RECEIVED_DATA } from './actions/types';
  */
 const store = applyMiddleware(promiseDispatcherMiddleware(REQUEST_DATA, RECEIVED_DATA), ReduxPromise)(createStore)(reducers);
 
+// TEMP
+const { Component } = React;
+class PortfolioDetail extends Component {
+ render(){
+  return <div>Portfolio Detail</div>
+ }
+}
+class NotFound extends Component {
+ render(){
+  return <div>Not Found 404</div>
+ }
+}
+
+
+
 render(
   <Provider store={store}>
-    <App />
+    <Router>
+     <Route path="/" component={AppContainer}>
+      <IndexRoute component={Home} />
+      <Route path="/detail/:id" component={PortfolioDetail} />
+      <Route path="*" component={NotFound}/>
+     </Route>
+    </Router>
   </Provider>
   , document.getElementById('app'));
 

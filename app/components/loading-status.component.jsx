@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { findDOMNode, render } from 'react-dom';
 import NProgress from 'nprogress';
+import isAppLoading from '../util/is-app-loading.util';
 
 export default React.createClass({
 
@@ -32,8 +33,7 @@ export default React.createClass({
     //console.log('called render');
     if (this.progress) {
 
-      const { activeRequests, loadedRequests } = this.props.appLoading;
-      const isLoading = ( activeRequests > loadedRequests );
+      const isLoading = isAppLoading(this.props.appLoading);
 
       /**
        * If we are now in a loading state and we haven't rendered the progress
