@@ -6,7 +6,7 @@ export default class App extends Component {
 
   backToTop(){
     //FIXME
-    console.log('back to top');
+    alert('fixme!')
   }
 
   render() {
@@ -14,9 +14,7 @@ export default class App extends Component {
     return (
       <div aria-atomic="true" aria-live="polite" aria-busy={isAppLoading(this.props.appLoading)} >
         <LoadingStatusContainer />
-        <div>
-          { React.cloneElement(this.props.children) }
-        </div>
+        { this.props.children }
         <div className="text-center mtl">
           <a href="#" onClick={this.backToTop}>Back to top</a>
         </div>

@@ -9,7 +9,7 @@ import React from 'react';
  * only reading the text inside the content below the empty span once.
  */
 
-export default function ScreenReaderFocusElm(props){
+function ScreenReaderFocusElm(props){
   return (
     <div id={props.elmId} tabIndex="-1"></div>
   );
@@ -18,3 +18,5 @@ export default function ScreenReaderFocusElm(props){
 ScreenReaderFocusElm.propsTypes = {
   elmId: React.PropTypes.string.isRequired
 };
+
+export default ScreenReaderFocusElm;
