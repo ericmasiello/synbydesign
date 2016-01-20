@@ -19,9 +19,6 @@ import { REQUEST_DATA, RECEIVED_DATA } from './actions/types';
  */
 const store = applyMiddleware(promiseDispatcherMiddleware(REQUEST_DATA, RECEIVED_DATA), ReduxPromise)(createStore)(reducers);
 
-// FIXME: remove this - this is just for testing
-window.syn_store = store;
-
 render(
   <Provider store={store}>
     <App />
