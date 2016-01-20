@@ -65,14 +65,7 @@ if (TARGET === 'start' || !TARGET) {
       proxy: [
         {
           "path": "/wp/wp-json*",
-          "target": "http://localhost/synbydesign/wp/wp-json",
-          "host": "localhost",
-          "bypass": function(req){
-            console.log('got into bypass handler with', req.url);
-
-            //this still doesn't work :(
-            return 'http://localhost/synbydesign/wp/wp-json' + req.url;
-          }
+          "target": "http://localhost/synbydesign"
         }
       ]
     },
