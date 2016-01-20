@@ -9,6 +9,9 @@ export default class PortfolioList extends Component {
     super(props);
 
     this.createPortfolioItem = this.createPortfolioItem.bind(this);
+  }
+
+  componentWillMount(){
     this.props.loadAllPortfolio(['web','other', 'logos', 'illustration', 'flyers', 'business-cards']);
   }
 
