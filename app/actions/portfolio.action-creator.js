@@ -4,7 +4,9 @@ import { API_URL } from '../configuration/';
 
 export function loadAllPortfolio(categories){
 
-  const request = axios.get(`${API_URL}/posts/?filter[category_name]=${categories.join(',')}`);
+  const URI = `${API_URL}/posts/?filter[category_name]=${categories.join(',')}`;
+  console.log('URI', URI);
+  const request = axios.get(URI);
 
   return {
     type: LOAD_PORTFOLIO_ALL,

@@ -61,7 +61,12 @@ if (TARGET === 'start' || !TARGET) {
       historyApiFallback: true,
       hot: true,
       inline: true,
-      progress: true
+      progress: true,
+      proxy: {
+        '/wp/wp-json*': {
+          target: 'http://localhost/synbydesign/wp/wp-json'
+        }
+      }
     },
     module: {
       loaders: [
