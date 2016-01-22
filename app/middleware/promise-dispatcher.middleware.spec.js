@@ -46,7 +46,7 @@ describe('Promise Dispatcher Middleware', () => {
   it('should send actions when a promises is the payload', (done) => {
 
     const promise = new Promise(function(resolve, reject) {
-      resolve("Resolving promise");
+      resolve('Resolving promise');
     });
 
     m({

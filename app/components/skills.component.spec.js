@@ -21,7 +21,7 @@ describe('Skills', () => {
   it('should set the CSS class names based on props', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<Skills classNames='test-class' />);
+    r.render(<Skills classNames="test-class" />);
     const actual = r.getRenderOutput();
     const expected = 'test-class';
 
@@ -31,7 +31,7 @@ describe('Skills', () => {
   it('should set the aria-label based on props', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<Skills title='Test Title' />);
+    r.render(<Skills title="Test Title" />);
     const actual = r.getRenderOutput();
     const expected = 'Skills used to make Test Title';
 
@@ -49,7 +49,7 @@ describe('Skills', () => {
     }];
 
     const r = TestUtils.createRenderer();
-    r.render(<Skills skills={skills} bulletClassNames='something' />);
+    r.render(<Skills skills={skills} bulletClassNames="something" />);
     const actual = r.getRenderOutput();
     expect(actual).toIncludeJSX(<li role="presentation"><span aria-hidden="true" className="something bullet" /> HTML</li>);
     expect(actual).toIncludeJSX(<li role="presentation"><span aria-hidden="true" className="something bullet" /> CSS</li>);

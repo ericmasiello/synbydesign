@@ -35,6 +35,12 @@ class NotFound extends Component {
  }
 }
 
+class ChangeLog extends Component {
+ render(){
+  return <div>This is a changelog that will pull in data Wordpress</div>;
+ }
+}
+
 
 
 render(
@@ -43,6 +49,7 @@ render(
      <Route path="/" component={AppContainer}>
       <IndexRoute component={Home} />
       <Route path="/detail/:id" component={PortfolioDetail} />
+      <Route path="/changelog" component={ChangeLog} />
       <Route path="*" component={NotFound}/>
      </Route>
     </Router>

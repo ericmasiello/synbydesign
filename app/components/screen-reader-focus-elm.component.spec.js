@@ -21,7 +21,7 @@ describe('ScreenReaderFocusElm', () => {
   it('should set the id based on props', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<ScreenReaderFocusElm elmId='testId' />);
+    r.render(<ScreenReaderFocusElm elmId="testId" />);
     const actual = r.getRenderOutput();
     const expected = 'testId';
 
