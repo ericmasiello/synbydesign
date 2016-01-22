@@ -12,7 +12,10 @@ export default class PortfolioList extends Component {
   }
 
   componentWillMount(){
-    this.props.loadAllPortfolio(['web','other', 'logos', 'illustration', 'flyers', 'business-cards']);
+    //only dispatch action if we don't have any portfoio items
+    if(this.props.portfolio.length == 0 ){
+      this.props.loadAllPortfolio(['web','other', 'logos', 'illustration', 'flyers', 'business-cards']);
+    }
   }
 
   createPortfolioItem(item) {

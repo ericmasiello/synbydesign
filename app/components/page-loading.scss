@@ -1,0 +1,8 @@
+.page-loading {
+  filter: blur(20px);
+  transition: filter 1s ease-out;
+}
+
+.page-loading--done {
+  filter: blur(0);
+}
