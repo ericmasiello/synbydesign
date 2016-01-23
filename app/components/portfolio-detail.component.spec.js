@@ -6,6 +6,7 @@ import React from 'react';
 import PortfolioDetail from './../components/portfolio-detail.component';
 
 describe('PortfolioDetail', () => {
+  'use strict';
 
   let requestedID = null;
 

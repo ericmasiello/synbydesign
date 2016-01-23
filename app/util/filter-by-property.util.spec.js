@@ -2,6 +2,7 @@ import expect from 'expect';
 import filter from './filter-by-property.util';
 
 describe('Filter Portfolio By Property Utility', () => {
+  'use strict';
 
   let actual;
   let expected;
@@ -31,7 +32,7 @@ describe('Filter Portfolio By Property Utility', () => {
       ID: 3,
       isWebsite: true
     }];
-    actual = list.filter(filter('isWebsite')).map( item => { return item.ID });
+    actual = list.filter(filter('isWebsite')).map( item => item.ID);
     expected = [1, 3];
 
     expect(actual).toEqual(expected);

@@ -1,4 +1,3 @@
-'use strict';
 import React, { Component } from 'react';
 import { findDOMNode, render } from 'react-dom';
 import NProgress from 'nprogress';
@@ -11,12 +10,13 @@ export default React.createClass({
   },
 
   componentDidMount() {
+    'use strict';
     this.node = findDOMNode(this);
     this.renderNProgress();
   },
 
   renderNProgress() {
-
+    'use strict';
     //create reference to progress instance
     this.progress = NProgress.configure({});
 
@@ -29,7 +29,7 @@ export default React.createClass({
   },
 
   render() {
-
+    'use strict';
     //console.log('called render');
     if (this.progress) {
 

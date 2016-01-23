@@ -11,6 +11,7 @@ import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
 import { DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
 
 describe('PortfolioList', () => {
+  'use strict';
 
   const mockLoadAllPortfolio = function(){};
   const WebTitle = <h1 className="h3  text-center">Web Design &amp; Development</h1>;
@@ -32,7 +33,7 @@ describe('PortfolioList', () => {
 
     let actual = [];
     const customMockLoadAllPortfolio = (categories) => {
-      actual = categories
+      actual = categories;
     };
 
     const r = TestUtils.createRenderer();

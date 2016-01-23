@@ -7,6 +7,8 @@ import Skills from './skills.component';
 
 describe('Skills', () => {
 
+  'use strict';
+
   it('should render as an UL', () => {
 
     const r = TestUtils.createRenderer();

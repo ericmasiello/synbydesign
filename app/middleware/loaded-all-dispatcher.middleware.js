@@ -1,8 +1,9 @@
-export default (listenForActionType, dispatchActionUponLoadedType) => store => next => action => {
+export default (listenForActionType, dispatchActionUponLoadedType) => store => next => action => { //eslint-disable-line strict
+  'use strict';
 
   if( action.type === listenForActionType && action.payload && typeof action.payload.then == 'function'){
 
-    action.payload.then(function(){
+    action.payload.then(() =>{
 
       store.dispatch({
         type: dispatchActionUponLoadedType

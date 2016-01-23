@@ -3,6 +3,7 @@ import rootReducer from './index';
 import { createStore } from 'redux';
 
 describe('Redux Store', () => {
+  'use strict';
 
   const store = createStore(rootReducer);
 

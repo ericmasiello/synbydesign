@@ -2,6 +2,7 @@ import expect from 'expect';
 import middleware from './loaded-all-dispatcher.middleware';
 
 describe('Loaded All Dispatcher Middleware', () => {
+  'use strict';
 
   let calledListenedForCount = 0;
   let calledDispatchUponMatchingEventCount = 0;

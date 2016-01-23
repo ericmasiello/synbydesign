@@ -5,6 +5,7 @@ import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
 import mockOtherPortfolio from '../test-data/portfolio-other.mock.json';
 
 describe('Transform Portfolio JSON Utility', () => {
+  'use strict';
 
   let actual;
   let expected;
@@ -58,8 +59,17 @@ describe('Transform Portfolio JSON Utility', () => {
         liveSiteUrl: 'http://www.anarchostar.com'
       }
     }];
+  });
+
+  it('should set default alt text if not defined', () => {
+
+    let mockData = mockWebPortfolio[0];
+    //removing alt property from html
+    mockData.content = '<p><a href=\"http:\/\/www.synbydesign.com\/wp\/wp-content\/uploads\/2015\/02\/anarchostar.jpg\"><img class=\"alignright size-full wp-image-57\" src=\"http:\/\/www.synbydesign.com\/wp\/wp-content\/uploads\/2015\/02\/anarchostar.jpg\" width=\"1400\" height=\"4704\" \/><\/a><\/p>\n';
+    actual = filter([mockWebPortfolio[0]])[0].fullSizeImage.altText;
+
+    expected = 'Anarchostar';
 
     expect(actual).toEqual(expected);
-
   });
 });

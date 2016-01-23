@@ -5,17 +5,19 @@ import { loadAllPortfolio } from '../actions/portfolio.action-creator';
 import { bindActionCreators } from 'redux';
 import transfromPortfolioJSON from '../util/transform-portfolio-json.util';
 
-function mapStateToProps({portfolio, loadedAllItems}){
+const mapStateToProps = ({portfolio, loadedAllItems}) => {
+  'use strict';
   return {
     portfolio: transfromPortfolioJSON(portfolio),
     loadedAllItems
-  }
-}
+  };
+};
 
-function mapDispatchToProps(dispatch){
+const mapDispatchToProps = (dispatch) => {
+  'use strict';
   return bindActionCreators({
     loadAllPortfolio
   }, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PortfolioList);

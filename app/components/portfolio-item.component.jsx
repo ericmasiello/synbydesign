@@ -1,10 +1,9 @@
-'use strict';
-
 import React from 'react';
 import { Link } from 'react-router';
 import Skills from './skills.component';
 
 export default (props) => {
+  'use strict';
 
   const { title, featuredImagePath } = props.item;
   const altAttr = `Preview image of ${title}`;

@@ -5,7 +5,7 @@ export default (state = {
   loadedRequests: 0
 }, action = {}) => {
 
-  //console.log(state);
+  'use strict';
 
   switch(action.type){
     case REQUEST_DATA:
@@ -24,7 +24,7 @@ export default (state = {
         return {
           activeRequests: 0,
           loadedRequests: 0
-        }
+        };
       }
 
       return {

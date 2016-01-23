@@ -1,7 +1,8 @@
-'use strict';
-
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title';
 import Skills from './skills.component';
+import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
+import { TITLE, UI_IDS } from '../configuration/';
 
 export default class PortfolioDetail extends Component {
 
@@ -30,12 +31,35 @@ export default class PortfolioDetail extends Component {
   render(){
 
     const portfolioItem = this.getPortfolioItemById(this.props.params.id);
-    if( !portfolioItem ){
-      return <div></div>;
+    let pageTitle = `Loading... - ${TITLE}`;
+    let pageContents = null;
+
+    if( portfolioItem ){
+
+      pageTitle = portfolioItem.title + ' - ' + TITLE;
+
+      pageContents = (
+        <div className="col-xs">
+          <h1 className="mtn  text-center"><span className="portfolio__title__text">{portfolioItem.title}</span></h1>
+          <div className="portfolio__item  portfolio__item--full mtxl mbxl container-fluid  first-xs"
+               aria-label={`${portfolioItem.title} detailed view`}>
+            <img className="portfolio__img  portfolio__img--detail" src={portfolioItem.fullSizeImage.path}
+                 alt={portfolioItem.fullSizeImage.altText}/>
+          </div>
+          <Skills classNames="h4  list-unstyled  text-center"
+                  bulletClassNames="hide"
+                  title={portfolioItem.title}
+                  skills={portfolioItem.skills}/>
+        </div>
+      );
     }
 
     return (
-      <div>Detail View Loaded {portfolioItem.ID}</div>
+      <section className="portfolio-detail">
+        <DocumentTitle title={pageTitle}/>
+        <ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail}/>
+        {pageContents}
+      </section>
     );
   }
 }
