@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import PortfolioItem from './portfolio-item.component';
-import { UI_IDS, DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES } from '../configuration/';
-import filterPortfolioByType from '../util/filter-by-category-slug.util';
+import { UI_IDS, DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
+import filterPortfolioByProp from '../util/filter-by-property.util';
 
 export default class PortfolioList extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ export default class PortfolioList extends Component {
 
   componentWillMount(){
     if(this.props.loadedAllItems === false ){
-      this.props.loadAllPortfolio(['web','other', 'logos', 'illustration', 'flyers', 'business-cards']);
+      this.props.loadAllPortfolio([...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES]);
     }
   }
 
@@ -24,9 +24,9 @@ export default class PortfolioList extends Component {
   render() {
 
     const { portfolio } = this.props;
-    const webItems = portfolio.filter(filterPortfolioByType(WEB_CATEGORIES)).map(this.createPortfolioItem);
-    const designItems = portfolio.filter(filterPortfolioByType(DESIGN_CATEGORIES)).map(this.createPortfolioItem);
-    const otherItems = portfolio.filter(filterPortfolioByType(OTHER_CATEGORIES)).map(this.createPortfolioItem);
+    const webItems = portfolio.filter(filterPortfolioByProp('isWebsite')).map(this.createPortfolioItem);
+    const designItems = portfolio.filter(filterPortfolioByProp('isDesign')).map(this.createPortfolioItem);
+    const otherItems = portfolio.filter(filterPortfolioByProp('isOther')).map(this.createPortfolioItem);
 
     let webContent = null;
     let designContent = null;

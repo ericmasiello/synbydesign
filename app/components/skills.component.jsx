@@ -7,9 +7,9 @@ function Skills(props) {
     let bulletClassNames = typeof props.bulletClassNames === 'string' ? props.bulletClassNames : '';
     bulletClassNames = `${bulletClassNames} bullet`;
 
-    const skills = ( props.skills ) ? props.skills.map(function (tag) {
-      return (<li key={tag.name} role="presentation">
-        <span className={bulletClassNames} aria-hidden="true"></span>{' ' + tag.name}
+    const skills = ( props.skills ) ? props.skills.map((skill)=> {
+      return (<li key={skill} role="presentation">
+        <span className={bulletClassNames} aria-hidden="true"></span>{' ' + skill}
       </li>);
     }) : null;
 

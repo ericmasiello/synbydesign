@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import PortfolioList from '../components/portfolio-list.component';
 import { loadAllPortfolio } from '../actions/portfolio.action-creator';
 import { bindActionCreators } from 'redux';
+import transfromPortfolioJSON from '../util/transform-portfolio-json.util';
 
 function mapStateToProps({portfolio, loadedAllItems}){
   return {
-    portfolio,
+    portfolio: transfromPortfolioJSON(portfolio),
     loadedAllItems
   }
 }

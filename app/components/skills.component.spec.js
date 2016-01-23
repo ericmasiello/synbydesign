@@ -40,13 +40,7 @@ describe('Skills', () => {
 
   it('should render a list of skills with appropriate CSS class names', () => {
 
-    const skills = [{
-      name: 'HTML'
-    },{
-      name: 'CSS'
-    },{
-      name: 'JavaScript'
-    }];
+    const skills = ['HTML', 'CSS', 'JavaScript'];
 
     const r = TestUtils.createRenderer();
     r.render(<Skills skills={skills} bulletClassNames="something" />);
