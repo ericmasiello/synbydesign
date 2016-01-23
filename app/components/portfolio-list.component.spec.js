@@ -26,7 +26,7 @@ describe('PortfolioList', () => {
     expect(rootTag).toEqual(expected);
   });
 
-  it('should request portfolio items of the appropriate categories', () => {
+  it('should request portfolio items of the appropriate categories based on whether or not we have already loaded all the items', () => {
 
     let actual = [];
     const customMockLoadAllPortfolio = (categories) => {
@@ -34,9 +34,17 @@ describe('PortfolioList', () => {
     };
 
     const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} />);
+    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={false} />);
     r.getRenderOutput();
-    const expected = ['web','other', 'logos', 'illustration', 'flyers', 'business-cards'];
+    let expected = ['web','other', 'logos', 'illustration', 'flyers', 'business-cards'];
+
+    expect(actual).toEqual(expected);
+
+    actual = []; //reset
+
+    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={true} />);
+    r.getRenderOutput();
+    expected = [];
 
     expect(actual).toEqual(expected);
   });

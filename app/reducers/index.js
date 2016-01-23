@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
 import AppLoadingReducer from './app-loading.reducer';
 import PortfolioReducer from './portfolio.reducer';
-
-//import BooksReducer from './reducer-books';
-//import ActiveBookReducer from './reducer-active-book';
+import LoadedAllItemsReducer from './loaded-all-items.reducer';
 
 /*
  * The object returned from here represents our GLOBAL
@@ -11,8 +9,8 @@ import PortfolioReducer from './portfolio.reducer';
  */
 const rootReducer = combineReducers({
   appLoading: AppLoadingReducer,
-  portfolio: PortfolioReducer
-  //selectedPortfolioItem: SelectedPortfolioReducer,
+  portfolio: PortfolioReducer,
+  loadedAllItems: LoadedAllItemsReducer
 });
 
 export default rootReducer;

@@ -14,7 +14,21 @@ describe('Redux Store', () => {
         activeRequests: 0,
         loadedRequests: 0
       },
-      portfolio: []
+      portfolio: [],
+      loadedAllItems: false
+    });
+  });
+
+  describe('loadedAllItems state', () => {
+    it('should update based on LOADED_ALL_PORTFOLIO event', ()=>{
+
+      store.dispatch({
+        type: 'LOADED_ALL_PORTFOLIO'
+      });
+
+      const actual = store.getState().loadedAllItems;
+      expect(actual).toEqual(true);
+
     });
   });
 
@@ -62,91 +76,4 @@ describe('Redux Store', () => {
       });
     });
   });
-
-
-  //
-  //it('should respond to TOGGLE_TODO events', ()=>{
-  //
-  //  store.dispatch({
-  //    type: 'ADD_TODO',
-  //    id: 2,
-  //    text: 'Toggle Me Baby'
-  //  });
-  //
-  //  store.dispatch({
-  //    type: 'TOGGLE_TODO',
-  //    id: 2
-  //  });
-  //
-  //  const actual = store.getState();
-  //  expect(actual).toEqual({
-  //    todos: [{
-  //      id: 1,
-  //      text: 'Hello world',
-  //      completed: false
-  //    },{
-  //      id: 2,
-  //      text: 'Toggle Me Baby',
-  //      completed: true
-  //    }],
-  //    visibilityFilter: 'SHOW_ALL'
-  //  });
-  //});
-  //
-  //it('should respond to REMOVE_TODO events', ()=>{
-  //
-  //  store.dispatch({
-  //    type: 'REMOVE_TODO',
-  //    id: 1
-  //  });
-  //
-  //  const actual = store.getState();
-  //  expect(actual).toEqual({
-  //    todos: [{
-  //      id: 2,
-  //      text: 'Toggle Me Baby',
-  //      completed: true
-  //    }],
-  //    visibilityFilter: 'SHOW_ALL'
-  //  });
-  //});
-  //
-  //it('should respond to REMOVE_ALL_TODOS events', ()=>{
-  //
-  //  store.dispatch({
-  //    type: 'ADD_TODO',
-  //    id: 1,
-  //    text: 'Stuff'
-  //  });
-  //  store.dispatch({
-  //    type: 'ADD_TODO',
-  //    id: 3,
-  //    text: 'More stuff'
-  //  });
-  //  store.dispatch({
-  //    type: 'REMOVE_ALL_TODOS'
-  //  });
-  //
-  //  const actual = store.getState();
-  //  expect(actual).toEqual({
-  //    todos: [],
-  //    visibilityFilter: 'SHOW_ALL'
-  //  });
-  //});
-  //
-  //it("should respond to visibility events", () => {
-  //
-  //  store.dispatch({
-  //    type: 'TOGGLE_SHOW_COMPLETED'
-  //  });
-  //
-  //  expect(store.getState().visibilityFilter).toEqual('SHOW_COMPLETED');
-  //
-  //  store.dispatch({
-  //    type: 'TOGGLE_SHOW_ALL'
-  //  });
-  //
-  //  expect(store.getState().visibilityFilter).toEqual('SHOW_ALL');
-  //
-  //})
 });
