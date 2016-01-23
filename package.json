@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run lint && ./node_modules/.bin/webpack && ./copy.sh",
+    "watch-lint": "esw ./app --ext .js --ext .jsx --watch",
+    "watch-test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register --watch",
     "start": "./node_modules/.bin/webpack-dev-server --port 8181",
     "lint": "eslint ./app --ext .js --ext .jsx",
-    "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register --watch"
+    "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +40,7 @@
     "css-loader": "^0.21.0",
     "eslint": "^1.8.0",
     "eslint-plugin-react": "^3.6.3",
+    "eslint-watch": "^2.1.5",
     "expect": "^1.13.4",
     "expect-jsx": "^2.2.2",
     "extract-text-webpack-plugin": "^0.8.2",
