@@ -36,15 +36,18 @@ describe('Transform Portfolio JSON Utility', () => {
 
     actual = filter([mockWebPortfolio[0]]);
 
-    //console.log('ACTUAL', actual);
-
     expected = [{
       ID: 53,
       title: 'Anarchostar',
-      content: '<p><a href=\"http:\/\/www.synbydesign.com\/wp\/wp-content\/uploads\/2015\/02\/anarchostar.jpg\"><img class=\"alignright size-full wp-image-57\" src=\"http:\/\/www.synbydesign.com\/wp\/wp-content\/uploads\/2015\/02\/anarchostar.jpg\" alt=\"anarchostar\" width=\"1400\" height=\"4704\" \/><\/a><\/p>\n',
       slug: 'anarchostar',
       sticky: false,
-      featuredImage: 'http:\/\/www.synbydesign.com\/wp\/wp-content\/uploads\/2015\/02\/anarchostar1.jpg',
+      featuredImagePath: 'http:\/\/www.synbydesign.com\/wp\/wp-content\/uploads\/2015\/02\/anarchostar1.jpg',
+      fullSizeImage: {
+        altText: 'anarchostar',
+        maxHeight: '4704',
+        maxWidth: '1400',
+        path: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/anarchostar.jpg'
+      },
       skills: ['HTML5 Audio', 'Mobile\/Responsive Design', 'Parallax', 'Wordpress Custom Theme', 'Wordpress Plugin'],
       isWebsite: true,
       isDesign: false,

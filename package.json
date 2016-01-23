@@ -7,13 +7,13 @@
     "build": "npm run lint && ./node_modules/.bin/webpack && ./copy.sh",
     "start": "./node_modules/.bin/webpack-dev-server --port 8181",
     "lint": "eslint ./app --ext .js --ext .jsx",
-    "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register"
+    "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.8.1",
-    "react-router": "1.0.2",
+    "extract-image-props-from-html-string": "^0.2.3",
     "history": "1.13.x",
     "isomorphic-fetch": "^2.2.1",
     "jquery.scrollto": "^2.1.2",
@@ -22,6 +22,7 @@
     "react-document-title": "^2.0.1",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.6",
+    "react-router": "1.0.2",
     "redux": "^3.0.5",
     "redux-promise": "^0.5.0",
     "reflux": "^0.3.0",

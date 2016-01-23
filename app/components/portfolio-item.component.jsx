@@ -6,7 +6,7 @@ import Skills from './skills.component';
 
 export default (props) => {
 
-  const { title, featuredImage } = props.item;
+  const { title, featuredImagePath } = props.item;
   const altAttr = `Preview image of ${title}`;
   const titleAttr = `View detailed image of ${title}`;
 
@@ -17,7 +17,7 @@ export default (props) => {
             <span className="portfolio__title__text">{props.item.title}</span>
           </span>
         <Link to={`/detail/${props.item.ID}`} aria-label={titleAttr}>
-          <img className="portfolio__img" src={featuredImage} alt={altAttr}/>
+          <img className="portfolio__img" src={featuredImagePath} alt={altAttr}/>
         </Link>
       </div>
       <Skills title={props.item.title}

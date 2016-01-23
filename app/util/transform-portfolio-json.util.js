@@ -1,4 +1,5 @@
 import { DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
+import extractor from 'extract-image-props-from-html-string';
 
 const categoryReducerPartial = (types) => {
   return (previous, cat) => {
@@ -26,14 +27,18 @@ export default (portfolioList) => {
   const isMixReducer = categoryReducerPartial(MIX_CATEGORIES);
 
   return portfolioList.map((item) => {
-
     return addMetaData({
       ID: item.ID,
       title: item.title,
-      content: item.content,
       slug: item.slug,
       sticky: item.sticky,
-      featuredImage: item.featured_image.guid,
+      featuredImagePath: item.featured_image.guid,
+      fullSizeImage: {
+        path: extractor.getSource(item.content),
+        altText: extractor.getAltText(item.content),
+        maxWidth: extractor.getWidth(item.content),
+        maxHeight: extractor.getHeight(item.content)
+      },
       skills: item.terms.post_tag ? item.terms.post_tag.map(tag => tag.name) : [],
       isWebsite: item.terms.category.reduce(isWebsiteReducer, false),
       isDesign: item.terms.category.reduce(isDesignReducer, false),
