@@ -4,9 +4,9 @@ expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
 import PortfolioList from './../components/portfolio-list.component';
-import mockWebPortfolio from '../test-utils/portfolio-web.mock.json';
-import mockDesignPortfolio from '../test-utils/portfolio-design.mock.json';
-import mockOtherPortfolio from '../test-utils/portfolio-other.mock.json';
+import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
+import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
+import mockOtherPortfolio from '../test-data/portfolio-other.mock.json';
 
 describe('PortfolioList', () => {
 
