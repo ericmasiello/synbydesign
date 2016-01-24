@@ -4,90 +4,125 @@
 }
 
 
-$border-width: 10;
 
-$live-desktop-border-bottom: 10;
 $live-desktop-width: 1366;
 $live-desktop-height: 768;
-$live-desktop-scale: .5;
+$live-desktop-scale: .60;
+$live-desktop-border-top-width: 20;
+$live-desktop-border-bottom-width: 20;
+$live-desktop-border-left-width: 20;
+$live-desktop-border-right-width: 20;
 
-$live-tablet-border-bottom: 65;
+
 $live-tablet-width: 1024;
 $live-tablet-height: 768;
 $live-tablet-scale: .5;
 
-$live-phone-border-bottom: 45;
+$live-tablet-border-top-width: 10;
+$live-tablet-border-bottom-width: 10;
+$live-tablet-border-left-width: 65;
+$live-tablet-border-right-width: 45;
+
+
 $live-phone-width: 320;
 $live-phone-height: 568;
 $live-phone-scale: .5;
 
+$live-phone-border-top-width: 40;
+$live-phone-border-bottom-width: 45;
+$live-phone-border-left-width: 10;
+$live-phone-border-right-width: 10;
+
 $live-device-bezel-color: #222;
 $live-device-background-color: #000;
 
-$live-mobile-home-button-radius: 25;
+$live-mobile-home-button-radius: 30;
 
-.portfolio__live-site {
-  border-radius: 5px;
-  width: ($live-desktop-width * $live-desktop-scale) + ($border-width * 2) * 1px;
-  height: ($live-desktop-height * $live-desktop-scale) + ($border-width + $live-desktop-border-bottom) * 1px;
-  transition: all .5s;
-  border-color: $live-device-bezel-color;
-  background-color: $live-device-background-color;
+$live-device-border-radius: 10;
 
-  &--tablet,
-  &--phone {
-    .portfolio__live-site__home-button {
-      display: block;
+.portfolio__live-site__content {
+  display: none;
+}
+
+@media(min-width: 890px) {
+
+  .portfolio__live-site {
+    border-radius: $live-device-border-radius * 1px;
+    transition: height .5s, width .5s, padding .5s;
+    border: none;
+    width: ($live-desktop-width * $live-desktop-scale) + ($live-desktop-border-left-width + $live-desktop-border-right-width) * 1px;
+    height: ($live-desktop-height * $live-desktop-scale) + ($live-desktop-border-top-width + $live-desktop-border-bottom-width) * 1px;
+    padding: ($live-desktop-border-top-width * 1px) ($live-desktop-border-right-width * 1px) ($live-desktop-border-bottom-width * 1px) ($live-desktop-border-left-width * 1px);
+    background-color: $live-device-bezel-color;
+    box-shadow: 2px 2px 1px rgba(255,255,255,.9) inset, 1px 2px 2px rgba(0,0,0,.4);
+
+    &:before {
+      content: '';
+      height: $live-mobile-home-button-radius * 1px;
+      width: $live-mobile-home-button-radius * 1px;
+      border: 2px solid lighten($live-device-bezel-color,50);
+      border-radius: $live-mobile-home-button-radius * 1px;
+      background: radial-gradient(ellipse at center, lighten($live-device-bezel-color,10) 0%,$live-device-bezel-color 50%,lighten($live-device-bezel-color,10) 100%);
+      position: absolute;
+      display: none;
+    }
+
+    &--tablet,
+    &--phone {
+      &:before {
+        display: block;
+      }
+    }
+
+    &--tablet {
+      width: ($live-tablet-width * $live-tablet-scale) + ($live-tablet-border-left-width + $live-tablet-border-right-width) * 1px;
+      height: ($live-tablet-height * $live-tablet-scale) + ($live-tablet-border-top-width + $live-tablet-border-bottom-width) * 1px;
+      padding: ($live-tablet-border-top-width * 1px) ($live-tablet-border-right-width * 1px) ($live-tablet-border-bottom-width * 1px) ($live-tablet-border-left-width * 1px);
+
+      &:before {
+        left: (($live-tablet-border-left-width/2)-($live-mobile-home-button-radius/2))*1px;
+        top: 50%;
+        margin-top: (($live-mobile-home-button-radius/2) * -1) * 1px;
+      }
+    }
+
+    &--phone {
+      width: ($live-phone-width * $live-phone-scale) + ($live-phone-border-left-width + $live-phone-border-right-width) * 1px;
+      height: ($live-phone-height * $live-phone-scale) + ($live-phone-border-top-width + $live-phone-border-bottom-width) * 1px;
+      padding: ($live-phone-border-top-width * 1px) ($live-phone-border-right-width * 1px) ($live-phone-border-bottom-width * 1px) ($live-phone-border-left-width * 1px);
+
+      &:before {
+        bottom: (($live-phone-border-bottom-width/2)-($live-mobile-home-button-radius/2))*1px;
+        left: 50%;
+        margin-left: (($live-mobile-home-button-radius/2) * -1) * 1px;
+      }
     }
   }
 
-  &--tablet {
-    width: ($live-tablet-width * $live-tablet-scale) + ($border-width + $live-tablet-border-bottom) * 1px;
-    height: ($live-tablet-height * $live-tablet-scale) + ($border-width * 2) * 1px;
-    border-left-width: $live-tablet-border-bottom * 1px;
-  }
+  .portfolio__live-site__content {
 
-  &--phone {
-    width: ($live-phone-width * $live-phone-scale) + ($border-width * 2) * 1px;
-    height: ($live-phone-height * $live-phone-scale) + ($border-width + $live-phone-border-bottom) * 1px;
-    border-bottom-width: $live-phone-border-bottom * 1px;
-  }
-}
+    display: block;
+    border: 1px solid darken(#d4cfd1, 2);
+    overflow: hidden;
+    width: $live-desktop-width * 1px;
+    height: $live-desktop-height * 1px;
+    transform: scale($live-desktop-scale) translateX(0) translateY(0);
+    transform-origin: top left;
+    transition: transform .5s;
+    transition-delay: .5s;
 
-.portfolio__live-site__home-button {
-  height: $live-mobile-home-button-radius * 1px;
-  width: $live-mobile-home-button-radius * 1px;
-  border: 2px solid #fff;
-  border-radius: $live-mobile-home-button-radius * 1px;
-  background: radial-gradient(ellipse at center, lighten($live-device-bezel-color,10) 0%,$live-device-bezel-color 50%,lighten($live-device-bezel-color,10) 100%);
-  position: absolute;
-  display: none;
-  left: 0;
-  top: 0;
-}
+    &--tablet {
+      width: $live-tablet-width * 1px;
+      height: $live-tablet-height * 1px;
+      transform: scale($live-tablet-scale) translateX(0) translateY(0);
+      /*transform-origin: top left;*/
+    }
 
-.portfolio__live-site__content {
-
-  border: 1px solid darken(#d4cfd1, 2);
-  overflow: hidden;
-  width: $live-desktop-width * 1px;
-  height: $live-desktop-height * 1px;
-  transform: scale($live-desktop-scale) translateX($live-desktop-scale * -100%) translateY($live-desktop-scale * -100%);
-  /*transform-origin: top left;*/
-  transition: all .5s;
-  transition-delay: .5s;
-
-  &--tablet {
-    width: $live-tablet-width * 1px;
-    height: $live-tablet-height * 1px;
-    transform: scale($live-tablet-scale) translateX($live-tablet-scale * -100%) translateY($live-tablet-scale * -100%);
-    /*transform-origin: top left;*/
-  }
-
-  &--phone {
-    width: $live-phone-width * 1px;
-    height: $live-phone-height * 1px;
-    transform: scale($live-phone-scale) translateX($live-phone-scale * -100%) translateY($live-phone-scale * -100%);
-    /*transform-origin: top left;*/
+    &--phone {
+      width: $live-phone-width * 1px;
+      height: $live-phone-height * 1px;
+      transform: scale($live-phone-scale) translateX(0) translateY(0);
+      /*transform-origin: top left;*/
+    }
   }
 }

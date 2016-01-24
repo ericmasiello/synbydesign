@@ -7,10 +7,27 @@ export default class PortfolioDetailLiveWeb extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mode: 'desktop'
+      mode: 'desktop',
+      enableLiveSite: false
     };
 
-    this.setState = this.setState.bind(this);
+    this.changeMode = this.changeMode.bind(this);
+    this.handleMediaChange = this.handleMediaChange.bind(this);
+    this.mql = window.matchMedia(`(min-width: ${this.props.liveSiteMinWidthMQ}px)`);
+  }
+
+  handleMediaChange(mediaQueryList) {
+    this.setState({enableLiveSite: mediaQueryList.matches});
+  }
+
+  componentDidMount(){
+    this.mql.addListener(this.handleMediaChange);
+    this.handleMediaChange(this.mql);
+  }
+
+  componentWillUnmount(){
+
+    this.mql.removeListener(this.handleMediaChange);
   }
 
   changeMode(mode){
@@ -37,10 +54,14 @@ export default class PortfolioDetailLiveWeb extends Component {
         <h1 className="mtn  text-center"><span className="portfolio__title__text">{portfolioItem.title}</span></h1>
         <div className={`portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs portfolio__live-site ${this.getCSSClassNameByMode('portfolio__live-site', this.state.mode)}`}
              aria-label={`${portfolioItem.title} detailed view`}>
-          <iframe src={portfolioItem.meta.liveSiteUrl}
-                  className={`portfolio__live-site__content ${this.getCSSClassNameByMode('portfolio__live-site__content', this.state.mode)}`}>
-          </iframe>
-          <span className="portfolio__live-site__home-button" role="presentation"></span>
+          {this.state.enableLiveSite ? (
+            <iframe src={portfolioItem.meta.liveSiteUrl}
+                    className={`portfolio__live-site__content ${this.getCSSClassNameByMode('portfolio__live-site__content', this.state.mode)}`}>
+            </iframe>
+          ) : (
+            <img className="portfolio__img  portfolio__img--detail" src={portfolioItem.fullSizeImage.path}
+                 alt={portfolioItem.fullSizeImage.altText}/>
+          )}
         </div>
         <div className="text-center">
           <a onClick={()=> this.changeMode('phone')}>Phone</a>

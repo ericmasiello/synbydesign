@@ -4,6 +4,7 @@ import Skills from './skills.component';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import { TITLE, UI_IDS } from '../configuration/';
 import PortfolioDetailLiveWeb from './portfolio-detail-live-web.component';
+import { MIN_LIVE_SITE_BROWSER_WIDTH_MQ } from '../configuration';
 require('./portfolio-image-stack.scss');
 require('./portfolio.scss');
 
@@ -82,7 +83,7 @@ export default class PortfolioDetail extends Component {
 
       if(portfolioItem.meta.showLiveSite){
         pageContents = (
-          <PortfolioDetailLiveWeb portfolioItem={portfolioItem} />
+          <PortfolioDetailLiveWeb portfolioItem={portfolioItem} liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ} />
         );
       }
     }
