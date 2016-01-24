@@ -85,13 +85,17 @@ export default class PortfolioDetailLiveWeb extends Component {
         {this.state.enableLiveSite ? (
           <div className="text-center  portfolio__live__devices mbxl">
             {devices.map((device)=>{
+
+              const isSelected = this.state.mode === device.label.toLowerCase();
+
               return (
                 <a key={device.label} className="portfolio__live__device"
                    href="#"
-                   onClick={device.changeFn}>{device.label}
+                   onClick={device.changeFn}>
+                  {device.label}
                   <svg className={`portfolio__live__device__icon
                                     portfolio__live__device__icon--${device.label.toLowerCase()}
-                                    ${this.state.mode === device.label.toLowerCase() ? 'portfolio__live__device__icon--selected' : ''}`}
+                                    ${isSelected ? 'portfolio__live__device__icon--selected' : ''}`}
                        dangerouslySetInnerHTML={{__html: device.icon}}/>
                 </a>
               );
