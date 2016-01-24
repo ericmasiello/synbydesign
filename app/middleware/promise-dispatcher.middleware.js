@@ -1,4 +1,5 @@
-export default (beginPromiseAction, completePromiseAction) => store => next => action => {
+export default (beginPromiseAction, completePromiseAction) => store => next => action => { //eslint-disable-line strict
+  'use strict';
 
   if( action.payload && typeof action.payload.then == 'function'){
 

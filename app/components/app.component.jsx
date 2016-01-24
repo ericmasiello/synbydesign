@@ -8,7 +8,7 @@ export default class App extends Component {
 
   backToTop(){
     //FIXME
-    alert('fixme!')
+    alert('fixme!');
   }
 
   render() {

@@ -1,0 +1,30 @@
+.portfolio__item--stack {
+  position: relative;
+  overflow: visible;
+}
+
+.portfolio__img {
+
+  &--top, &--middle {
+    position: absolute;
+    box-shadow: 2px 0 3px rgba(0,0,0,.2);
+  }
+
+  &--top {
+    z-index: 3;
+    transform: rotate(.5deg);
+  }
+
+  &--middle {
+    filter: brightness(.9);
+    z-index: 2;
+    transform: rotate(-1deg);
+  }
+
+  &--bottom {
+    filter: brightness(.8);
+    position: relative;
+    z-index: 1;
+    transform: rotate(-2.5deg);
+  }
+}

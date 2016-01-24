@@ -3,6 +3,7 @@ import reducer from './portfolio.reducer';
 import { LOAD_PORTFOLIO_ALL, LOAD_PORTFOLIO_DETAIL } from '../actions/types';
 
 describe('Portfolio Reducer', () => {
+  'use strict';
 
   it('should return payload data when responding to LOAD_PORTFOLIO_ALL', ()=>{
 

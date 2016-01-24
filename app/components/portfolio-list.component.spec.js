@@ -4,11 +4,14 @@ expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
 import PortfolioList from './../components/portfolio-list.component';
-import mockWebPortfolio from '../test-utils/portfolio-web.mock.json';
-import mockDesignPortfolio from '../test-utils/portfolio-design.mock.json';
-import mockOtherPortfolio from '../test-utils/portfolio-other.mock.json';
+import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
+import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
+import mockOtherPortfolio from '../test-data/portfolio-other.mock.json';
+import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
+import { DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
 
 describe('PortfolioList', () => {
+  'use strict';
 
   const mockLoadAllPortfolio = function(){};
   const WebTitle = <h1 className="h3  text-center">Web Design &amp; Development</h1>;
@@ -26,17 +29,25 @@ describe('PortfolioList', () => {
     expect(rootTag).toEqual(expected);
   });
 
-  it('should request portfolio items of the appropriate categories', () => {
+  it('should request portfolio items of the appropriate categories based on whether or not we have already loaded all the items', () => {
 
     let actual = [];
     const customMockLoadAllPortfolio = (categories) => {
-      actual = categories
+      actual = categories;
     };
 
     const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} />);
+    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={false} />);
     r.getRenderOutput();
-    const expected = ['web','other', 'logos', 'illustration', 'flyers', 'business-cards'];
+    let expected = [...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES];
+
+    expect(actual).toEqual(expected);
+
+    actual = []; //reset
+
+    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={true} />);
+    r.getRenderOutput();
+    expected = [];
 
     expect(actual).toEqual(expected);
   });
@@ -54,7 +65,7 @@ describe('PortfolioList', () => {
   it('should render the web section when web portfolio items are provided', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={mockLoadAllPortfolio} portfolio={[...mockWebPortfolio]} />);
+    r.render(<PortfolioList loadAllPortfolio={mockLoadAllPortfolio} portfolio={[...transformPortfolioJSONUtil(mockWebPortfolio)]} />);
     const actual = r.getRenderOutput();
 
     expect(actual).toIncludeJSX(WebTitle);
@@ -65,7 +76,7 @@ describe('PortfolioList', () => {
   it('should render the design section when design portfolio items are provided', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={mockLoadAllPortfolio} portfolio={[...mockDesignPortfolio]} />);
+    r.render(<PortfolioList loadAllPortfolio={mockLoadAllPortfolio} portfolio={[...transformPortfolioJSONUtil(mockDesignPortfolio)]} />);
     const actual = r.getRenderOutput();
 
     expect(actual).toNotIncludeJSX(WebTitle);
@@ -76,7 +87,7 @@ describe('PortfolioList', () => {
   it('should render the other section when other portfolio items are provided', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={mockLoadAllPortfolio} portfolio={[...mockOtherPortfolio]} />);
+    r.render(<PortfolioList loadAllPortfolio={mockLoadAllPortfolio} portfolio={[...transformPortfolioJSONUtil(mockOtherPortfolio)]} />);
     const actual = r.getRenderOutput();
 
     expect(actual).toNotIncludeJSX(WebTitle);

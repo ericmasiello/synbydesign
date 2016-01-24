@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 
 /*
@@ -9,11 +7,12 @@ import React from 'react';
  * only reading the text inside the content below the empty span once.
  */
 
-function ScreenReaderFocusElm(props){
+const ScreenReaderFocusElm = (props) => {
+  'use strict';
   return (
     <div id={props.elmId} tabIndex="-1"></div>
   );
-}
+};
 
 ScreenReaderFocusElm.propsTypes = {
   elmId: React.PropTypes.string.isRequired

@@ -8,10 +8,15 @@ import ReduxPromise from 'redux-promise';
 import AppContainer from './containers/app.container';
 import reducers from './reducers';
 import promiseDispatcherMiddleware from './middleware/promise-dispatcher.middleware';
-import { REQUEST_DATA, RECEIVED_DATA } from './actions/types';
+import loadedAllDispatcherMiddleware from './middleware/loaded-all-dispatcher.middleware';
+import { REQUEST_DATA, RECEIVED_DATA, LOAD_PORTFOLIO_ALL, LOADED_ALL_PORTFOLIO } from './actions/types';
 
-import { Router, Route, Link, IndexRoute } from 'react-router'
+import { Router, Route, Link, IndexRoute } from 'react-router';
 import Home from './components/home.component';
+import PortfolioDetail from './containers/portfolio-detail.container';
+
+require('./components/portfolio-image-stack.scss');
+require('./components/portfolio.scss');
 
 /*
  * middleware intercepts actions emitted from action creators before
@@ -20,18 +25,16 @@ import Home from './components/home.component';
  * they hit the reducer
  * they act as a gatekeeper between action creators and reducers
  */
-const store = applyMiddleware(promiseDispatcherMiddleware(REQUEST_DATA, RECEIVED_DATA), ReduxPromise)(createStore)(reducers);
+const store = applyMiddleware(
+  promiseDispatcherMiddleware(REQUEST_DATA, RECEIVED_DATA),
+  loadedAllDispatcherMiddleware(LOAD_PORTFOLIO_ALL, LOADED_ALL_PORTFOLIO),
+  ReduxPromise)(createStore)(reducers);
 
 // TEMP
 const { Component } = React;
-class PortfolioDetail extends Component {
- render(){
-  return <div>Portfolio Detail</div>
- }
-}
 class NotFound extends Component {
  render(){
-  return <div>Not Found 404</div>
+  return <div>Not Found 404</div>;
  }
 }
 
@@ -41,7 +44,7 @@ class ChangeLog extends Component {
  }
 }
 
-
+window.store = store;
 
 render(
   <Provider store={store}>

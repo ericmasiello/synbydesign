@@ -6,6 +6,7 @@ import React from 'react';
 import ScreenReaderFocusElm from './../components/screen-reader-focus-elm.component';
 
 describe('ScreenReaderFocusElm', () => {
+  'use strict';
 
   it('should render as a div', () => {
 

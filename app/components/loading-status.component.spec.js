@@ -6,7 +6,7 @@ import React from 'react';
 import LoadingStatus from './../components/loading-status.component';
 
 describe('LoadingStatus', () => {
-
+  'use strict';
   it('should not have a progress property by default', () => {
 
     const appLoadingProp = {
@@ -21,7 +21,6 @@ describe('LoadingStatus', () => {
   });
 
   it('should render an empty div by default', () => {
-
     const appLoadingProp = {
       activeRequests: 0,
       loadedRequests: 0
@@ -35,5 +34,5 @@ describe('LoadingStatus', () => {
     );
 
     expect(actual).toIncludeJSX(expected);
-  })
+  });
 });

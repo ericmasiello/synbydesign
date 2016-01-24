@@ -3,7 +3,8 @@ import PortfolioList from '../containers/portfolio-list.container';
 import DocumentTitle from 'react-document-title';
 import { TITLE } from '../configuration/';
 
-export default () =>{
+export default () => {
+  'use strict';
   return (
     <div>
       <DocumentTitle title={TITLE}/>
@@ -14,4 +15,4 @@ export default () =>{
       </div>
     </div>
   );
-}
+};
