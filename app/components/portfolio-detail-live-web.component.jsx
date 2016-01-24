@@ -1,0 +1,57 @@
+import React, { Component } from 'react';
+import Skills from './skills.component';
+
+
+export default class PortfolioDetailLiveWeb extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      mode: 'desktop'
+    };
+
+    this.setState = this.setState.bind(this);
+  }
+
+  changeMode(mode){
+    this.setState({mode});
+  }
+
+  getCSSClassNameByMode(prefix, mode){
+
+    switch(mode){
+    case 'tablet':
+    case 'phone':
+      return `${prefix}--${mode}`;
+    }
+
+    return '';
+  }
+
+  render(){
+
+    const { portfolioItem } = this.props;
+
+    return (
+      <div className="col-xs">
+        <h1 className="mtn  text-center"><span className="portfolio__title__text">{portfolioItem.title}</span></h1>
+        <div className={`portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs portfolio__live-site ${this.getCSSClassNameByMode('portfolio__live-site', this.state.mode)}`}
+             aria-label={`${portfolioItem.title} detailed view`}>
+          <iframe src={portfolioItem.meta.liveSiteUrl}
+                  className={`portfolio__live-site__content ${this.getCSSClassNameByMode('portfolio__live-site__content', this.state.mode)}`}>
+          </iframe>
+          <span className="portfolio__live-site__home-button" role="presentation"></span>
+        </div>
+        <div className="text-center">
+          <a onClick={()=> this.changeMode('phone')}>Phone</a>
+          <a onClick={()=> this.changeMode('tablet')}>Tablet</a>
+          <a onClick={()=> this.changeMode('desktop')}>Desktop</a>
+        </div>
+        <Skills classNames="h4  list-unstyled  text-center"
+                bulletClassNames="hide"
+                title={portfolioItem.title}
+                skills={portfolioItem.skills}/>
+      </div>
+    );
+  }
+}

@@ -13,7 +13,8 @@ const addMetaData = (portfolioItem, meta) => {
   return Object.assign(portfolioItem, (meta ? {
     meta: {
       showLiveSite: portfolioItem.isWebsite && typeof meta.website_url === 'string' && meta.website_url.length > 0 ? true : false,
-      liveSiteUrl: meta.website_url
+      liveSiteUrl: meta.website_url,
+      stackDesign: meta.stack_design == "true" ? true : false
     }
   } : {}));
 };
