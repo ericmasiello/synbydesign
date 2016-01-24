@@ -61,16 +61,33 @@ $live-device-border-radius: 10;
   align-items: center;
   justify-content: center;
   padding: 0 2rem;
+
+  &--selected {
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 $phone-width: 3;
 $tablet-width: $phone-width * 2.222222222;
 $desktop-width: $phone-width * 4.444444444;
 
+@keyframes bounce {
+  0%   {transform: translateY(0);}
+  50%  {transform: translateY(-.75rem);}
+  100% {transform: translateY(0);}
+}
+
 .portfolio__live__device__icon {
   height: $phone-width * 2.1111111111 * 1rem;
   width: $phone-width * 1rem;
   fill: $live-device-bezel-color;
+
+  .portfolio__live__device:hover & {
+    animation-name: bounce;
+    animation-duration: .35s;
+    animation-timing-function: ease;
+  }
 
   &--tablet {
     height: $tablet-width * 1.3 * 1rem;

@@ -89,7 +89,7 @@ export default class PortfolioDetailLiveWeb extends Component {
               const isSelected = this.state.mode === device.label.toLowerCase();
 
               return (
-                <a key={device.label} className="portfolio__live__device"
+                <a key={device.label} className={`portfolio__live__device ${isSelected ? 'portfolio__live__device--selected' : ''}`}
                    href="#"
                    onClick={device.changeFn}>
                   {device.label}
