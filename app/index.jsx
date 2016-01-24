@@ -15,6 +15,9 @@ import { Router, Route, Link, IndexRoute } from 'react-router';
 import Home from './components/home.component';
 import PortfolioDetail from './containers/portfolio-detail.container';
 
+require('./components/portfolio-image-stack.scss');
+require('./components/portfolio.scss');
+
 /*
  * middleware intercepts actions emitted from action creators before
  * the reach reducers

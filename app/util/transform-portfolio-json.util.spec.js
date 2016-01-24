@@ -72,4 +72,70 @@ describe('Transform Portfolio JSON Utility', () => {
 
     expect(actual).toEqual(expected);
   });
+
+  describe('should set meta properties', ()=>{
+
+    it('should set the showLiveSite and liveSiteUrl properties if the portfolio is a website', ()=>{
+
+      let mockData = Object.assign({},mockWebPortfolio[0]);
+      mockData.custom_meta = {
+        website_url: 'http://www.synbydesign.com'
+      };
+      actual = filter([mockData])[0].meta;
+
+      expected = {
+        showLiveSite: true,
+        liveSiteUrl: 'http://www.synbydesign.com'
+      };
+
+      expect(actual.showLiveSite).toEqual(expected.showLiveSite);
+      expect(actual.liveSiteUrl).toEqual(expected.liveSiteUrl);
+
+
+      mockData = Object.assign({},mockDesignPortfolio[0]);
+      mockData.custom_meta = {
+        website_url: 'http://www.synbydesign.com'
+      };
+      actual = filter([mockData])[0].meta;
+
+      expected = {
+        showLiveSite: false,
+        liveSiteUrl: null
+      };
+
+      expect(actual.showLiveSite).toEqual(expected.showLiveSite);
+      expect(actual.liveSiteUrl).toEqual(expected.liveSiteUrl);
+    });
+
+    it('should set the stackDesign property if value is set and is design portfolio', () =>{
+
+      let mockData = Object.assign({},mockDesignPortfolio[0]);
+      mockData.custom_meta = {
+        stack_design: 'true'
+      };
+      actual = filter([mockData])[0].meta;
+      expected = {
+        stackDesign: true
+      };
+      expect(actual.stackDesign).toEqual(expected.stackDesign);
+
+      mockData = Object.assign({},mockDesignPortfolio[0]);
+      actual = filter([mockData])[0].meta;
+      expected = {
+        stackDesign: false
+      };
+      expect(actual.stackDesign).toEqual(expected.stackDesign);
+
+
+      mockData = Object.assign({},mockOtherPortfolio[0]);
+      mockData.custom_meta = {
+        stack_design: 'true'
+      };
+      actual = filter([mockData])[0].meta;
+      expected = {
+        stackDesign: false
+      };
+      expect(actual.stackDesign).toEqual(expected.stackDesign);
+    });
+  });
 });

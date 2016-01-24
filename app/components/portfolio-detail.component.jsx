@@ -3,10 +3,10 @@ import DocumentTitle from 'react-document-title';
 import Skills from './skills.component';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import { TITLE, UI_IDS } from '../configuration/';
+import PortfolioDetailDefault from './portfolio-detail-default.component';
 import PortfolioDetailLiveWeb from './portfolio-detail-live-web.component';
+import PortfolioDetailStackDesign from './portfolio-detail-stack-design.component';
 import { MIN_LIVE_SITE_BROWSER_WIDTH_MQ } from '../configuration';
-require('./portfolio-image-stack.scss');
-require('./portfolio.scss');
 
 export default class PortfolioDetail extends Component {
 
@@ -35,56 +35,23 @@ export default class PortfolioDetail extends Component {
   render(){
 
     const portfolioItem = this.getPortfolioItemById(this.props.params.id);
-    let pageTitle = `Loading... - ${TITLE}`;
+    let pageTitle = `Loading... ${TITLE}`;
     let pageContents = null;
 
     if( portfolioItem ){
 
       pageTitle = portfolioItem.title + ' - ' + TITLE;
 
-      pageContents = (
-        <div className="col-xs">
-          <h1 className="mtn  text-center"><span className="portfolio__title__text">{portfolioItem.title}</span></h1>
-          <div className="portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs"
-               aria-label={`${portfolioItem.title} detailed view`}>
-            <img className="portfolio__img  portfolio__img--detail" src={portfolioItem.fullSizeImage.path}
-                 alt={portfolioItem.fullSizeImage.altText}/>
-          </div>
-          <Skills classNames="h4  list-unstyled  text-center"
-                  bulletClassNames="hide"
-                  title={portfolioItem.title}
-                  skills={portfolioItem.skills}/>
-        </div>
-      );
-
       if(portfolioItem.meta.stackDesign){
 
-        pageContents = (
-          <div className="row">
-            <div className="col-sm-6  center-xs">
-              <h1 className="start-xs  pll  portfolio__title__text  portfolio__title__text--full">{portfolioItem.title}</h1>
-              <Skills classNames="h4  list-unstyled  text-center"
-                      bulletClassNames="hide"
-                      title={portfolioItem.title}
-                      skills={portfolioItem.skills}/>
-            </div>
-            <div className="col-sm-6  first-sm portfolio__item--stack"
-                 aria-label={`${portfolioItem.title} detailed view`}>
-              <img className="portfolio__img  portfolio__img--detail  portfolio__img--top" src={portfolioItem.fullSizeImage.path}
-                   alt={portfolioItem.fullSizeImage.altText}/>
-              <img className="portfolio__img  portfolio__img--detail  portfolio__img--middle" src={portfolioItem.fullSizeImage.path}
-                   role="presentation"/>
-              <img className="portfolio__img  portfolio__img--detail  portfolio__img--bottom" src={portfolioItem.fullSizeImage.path}
-                   role="presentation"/>
-            </div>
-          </div>
-        );
-      }
+        pageContents = (<PortfolioDetailStackDesign portfolioItem={portfolioItem} />);
 
-      if(portfolioItem.meta.showLiveSite){
-        pageContents = (
-          <PortfolioDetailLiveWeb portfolioItem={portfolioItem} liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ} />
-        );
+      } else if(portfolioItem.meta.showLiveSite){
+
+        pageContents = (<PortfolioDetailLiveWeb portfolioItem={portfolioItem} liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ} />);
+
+      } else {
+        pageContents = (<PortfolioDetailDefault portfolioItem={portfolioItem} />);
       }
     }
 

@@ -1,3 +1,6 @@
+$link-color: #AC0E78;
+
+
 .portfolio__title__text--full {
   display: block;
   margin: 0;
@@ -34,7 +37,6 @@ $live-phone-border-left-width: 10;
 $live-phone-border-right-width: 10;
 
 $live-device-bezel-color: #222;
-$live-device-background-color: #000;
 
 $live-mobile-home-button-radius: 30;
 
@@ -42,6 +44,59 @@ $live-device-border-radius: 10;
 
 .portfolio__live-site__content {
   display: none;
+}
+
+.portfolio__live__devices {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  order: -1;
+
+}
+
+.portfolio__live__device {
+  border-top: 4px solid transparent;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+$phone-width: 3;
+$tablet-width: $phone-width * 2.222222222;
+$desktop-width: $phone-width * 4.444444444;
+
+.portfolio__live__device__icon {
+  height: $phone-width * 2.1111111111 * 1rem;
+  width: $phone-width * 1rem;
+  fill: $live-device-bezel-color;
+
+  &--tablet {
+    height: $tablet-width * 1.3 * 1rem;
+    width: $tablet-width * 1rem;
+    transition: transform .5s, height .5s, width .5s;
+
+    &.portfolio__live__device__icon--selected {
+      transform: rotate(90deg);
+      //width: $tablet-width * 1.3 * 1rem;
+      //height: $tablet-width * 1rem;
+    }
+  }
+
+  &--desktop {
+    height: $desktop-width * .8 * 1rem;
+    width: $desktop-width * 1rem;
+  }
+
+  &--selected {
+    fill: $link-color;
+  }
+}
+
+.portfolio__title__detail-text {
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 @media(min-width: 890px) {

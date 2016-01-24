@@ -30,8 +30,13 @@ export default class PortfolioDetailLiveWeb extends Component {
     this.mql.removeListener(this.handleMediaChange);
   }
 
-  changeMode(mode){
-    this.setState({mode});
+  changeMode(setMode){
+
+    const mode = setMode;
+    return (e) => {
+      e.preventDefault();
+      this.setState({mode});
+    };
   }
 
   getCSSClassNameByMode(prefix, mode){
@@ -49,9 +54,23 @@ export default class PortfolioDetailLiveWeb extends Component {
 
     const { portfolioItem } = this.props;
 
+    const devices = [{
+      label: 'Phone',
+      icon: '<use xlink:href="#phone" />',
+      changeFn: this.changeMode('phone')
+    },{
+      label: 'Tablet',
+      icon: '<use xlink:href="#tablet" />',
+      changeFn: this.changeMode('tablet')
+    },{
+      label: 'Desktop',
+      icon: '<use xlink:href="#desktop" />',
+      changeFn: this.changeMode('desktop')
+    }];
+
     return (
       <div className="col-xs">
-        <h1 className="mtn  text-center"><span className="portfolio__title__text">{portfolioItem.title}</span></h1>
+        <h1 className="mtn  text-center"><span className="portfolio__title__detail-text">{portfolioItem.title}</span></h1>
         <div className={`portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs portfolio__live-site ${this.getCSSClassNameByMode('portfolio__live-site', this.state.mode)}`}
              aria-label={`${portfolioItem.title} detailed view`}>
           {this.state.enableLiveSite ? (
@@ -63,11 +82,22 @@ export default class PortfolioDetailLiveWeb extends Component {
                  alt={portfolioItem.fullSizeImage.altText}/>
           )}
         </div>
-        <div className="text-center">
-          <a onClick={()=> this.changeMode('phone')}>Phone</a>
-          <a onClick={()=> this.changeMode('tablet')}>Tablet</a>
-          <a onClick={()=> this.changeMode('desktop')}>Desktop</a>
-        </div>
+        {this.state.enableLiveSite ? (
+          <div className="text-center  portfolio__live__devices mbxl">
+            {devices.map((device)=>{
+              return (
+                <a key={device.label} className="portfolio__live__device"
+                   href="#"
+                   onClick={device.changeFn}>{device.label}
+                  <svg className={`portfolio__live__device__icon
+                                    portfolio__live__device__icon--${device.label.toLowerCase()}
+                                    ${this.state.mode === device.label.toLowerCase() ? 'portfolio__live__device__icon--selected' : ''}`}
+                       dangerouslySetInnerHTML={{__html: device.icon}}/>
+                </a>
+              );
+            })}
+          </div>
+        ) : ( null )}
         <Skills classNames="h4  list-unstyled  text-center"
                 bulletClassNames="hide"
                 title={portfolioItem.title}
