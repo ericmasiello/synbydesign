@@ -1,3 +1,8 @@
+/**
+ * Filter By Property Util
+ * @param property
+ * @returns {Function}
+ */
 export default ( property ) => {
   'use strict';
 

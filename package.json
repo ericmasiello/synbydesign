@@ -9,7 +9,8 @@
     "watch-test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register --watch",
     "start": "./node_modules/.bin/webpack-dev-server --port 8181",
     "lint": "eslint ./app --ext .js --ext .jsx",
-    "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register"
+    "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register",
+    "jsdoc": "jsdoc app/**/*.js*"
   },
   "author": "",
   "license": "ISC",
@@ -46,6 +47,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.2",
+    "jsdoc": "^3.4.0",
     "mocha": "^2.3.4",
     "node-sass": "^3.4.0",
     "react-addons-test-utils": "^0.14.6",
