@@ -15,11 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@synapsestudios/react-scroll": "^0.4.0",
     "axios": "^0.8.1",
     "extract-image-props-from-html-string": "^0.2.3",
     "history": "1.13.x",
     "isomorphic-fetch": "^2.2.1",
-    "jquery.scrollto": "^2.1.2",
     "nprogress": "^0.2.0",
     "react": "^0.14.6",
     "react-document-title": "^2.0.1",

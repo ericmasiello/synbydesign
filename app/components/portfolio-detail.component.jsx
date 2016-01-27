@@ -60,8 +60,9 @@ export default class PortfolioDetail extends Component {
       <section className="portfolio-detail">
         <DocumentTitle title={pageTitle}/>
         <Navigation view={'detail'}/>
-        <ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail}/>
-        {pageContents}
+        <ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail}>
+          {pageContents}
+        </ScreenReaderFocusElm>
       </section>
     );
   }

@@ -2,19 +2,16 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-//FIXME: refactor so I don't need jQuery to do this
-import jQueryScrollTo from 'jquery.scrollto';
 import {UI_IDS} from '../configuration';
 import Logo from './logo.component';
-import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
+import Scroll from '@synapsestudios/react-scroll';
+const ScrollLink = Scroll.Link;
 
 export default class Navigation extends Component {
 
   scrollTo(scrollToID) {
 
     window.setTimeout(function () {
-
-      jQueryScrollTo('#' + scrollToID, 500);
       document.getElementById(scrollToID).focus();
     }, 0);
   }
@@ -36,11 +33,11 @@ export default class Navigation extends Component {
           <Logo view={view} logoID={UI_IDS.logo} />
         </li>
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__about">
-          <Link to="/" className="pill" onClick={this.scrollTo.bind(this, UI_IDS.about)}>About</Link>
+          <ScrollLink href="#" to={UI_IDS.about} smooth={true} duration={500} className="pill" onClick={this.scrollTo.bind(this, UI_IDS.about)}>About</ScrollLink>
         </li>
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__portfolio">
-          <Link to="/" className="pill"
-                onClick={this.scrollTo.bind(this, UI_IDS.portfolioList)}>Portfolio</Link>
+          <ScrollLink href="#" to={UI_IDS.portfolioList} smooth={true} duration={500} className="pill"
+                onClick={this.scrollTo.bind(this, UI_IDS.portfolioList)}>Portfolio</ScrollLink>
         </li>
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__linked-in"><a
           href="https://www.linkedin.com/in/ericmasiello" className="pill">LinkedIn</a></li>
@@ -51,7 +48,6 @@ export default class Navigation extends Component {
 
     return (
       <header className="header  masthead">
-        <ScreenReaderFocusElm elmId={UI_IDS.masthead}/>
         <div className="container-fluid">
           <div className="row  masthead__decoration-container  middle-xs">
             <div className="col-xs  masthead__decoration-line"></div>

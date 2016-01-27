@@ -1,0 +1,5 @@
+.no-focus-ring {
+  &:focus {
+    outline: none;
+  }
+}

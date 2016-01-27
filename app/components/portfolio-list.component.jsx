@@ -67,10 +67,11 @@ export default class PortfolioList extends Component {
 
     return (
       <section>
-        <ScreenReaderFocusElm elmId={UI_IDS.portfolioList}/>
-        {webContent}
-        {designContent}
-        {otherContent}
+        <ScreenReaderFocusElm elmId={UI_IDS.portfolioList}>
+          {webContent}
+          {designContent}
+          {otherContent}
+        </ScreenReaderFocusElm>
       </section>
     );
   }

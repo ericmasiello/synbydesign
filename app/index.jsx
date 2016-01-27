@@ -19,9 +19,10 @@ import PortfolioDetail from './containers/portfolio-detail.container';
 /*
  * FIXME these need to get moved into synbydesign.design
  */
-import './components/portfolio-image-stack.scss';
-import './components/portfolio.scss';
-import './components/page-loading.scss';
+import './scss/portfolio-image-stack.scss';
+import './scss/portfolio.scss';
+import './scss/page-loading.scss';
+import './scss/screen-reader.scss';
 
 /*
  * middleware intercepts actions emitted from action creators before

@@ -8,15 +8,13 @@ import ScreenReaderFocusElm from './../components/screen-reader-focus-elm.compon
 describe('ScreenReaderFocusElm', () => {
   'use strict';
 
-  it('should render as a div', () => {
+  it('should embed its contents', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<ScreenReaderFocusElm />);
+    r.render(<ScreenReaderFocusElm><div>Hello World</div></ScreenReaderFocusElm>);
     const actual = r.getRenderOutput();
-    const rootTag = actual.type;
-    const expected = 'div';
 
-    expect(rootTag).toEqual(expected);
+    expect(actual).toIncludeJSX(<div>Hello World</div>);
   });
 
   it('should set the id based on props', () => {
