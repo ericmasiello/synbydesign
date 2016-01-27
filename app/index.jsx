@@ -15,8 +15,13 @@ import { Router, Route, Link, IndexRoute } from 'react-router';
 import Home from './components/home.component';
 import PortfolioDetail from './containers/portfolio-detail.container';
 
-require('./components/portfolio-image-stack.scss');
-require('./components/portfolio.scss');
+
+/*
+ * FIXME these need to get moved into synbydesign.design
+ */
+import './components/portfolio-image-stack.scss';
+import './components/portfolio.scss';
+import './components/page-loading.scss';
 
 /*
  * middleware intercepts actions emitted from action creators before
@@ -44,6 +49,7 @@ class ChangeLog extends Component {
  }
 }
 
+//FIXME: remove this
 window.store = store;
 
 render(
@@ -58,31 +64,3 @@ render(
     </Router>
   </Provider>
   , document.getElementById('app'));
-
-/*
-
- Events in the application (e.g. user clicks something, page loads for the first time, etc)
- call Action Creators.
-
- Action Creators are simple functions that return Actions
- Actions are just objects that have a 'type' property e.g.
- {
- type: 'THE_ACTION_TO_PERFORM'
- }
- Actions can also contain other metadata properties e.g.
- {
- type: 'BOOK_SELECTED',
- book: {
- id: 48,
- title: 'Book title'
- }
- }
-
- Actions are sent automatically to ALL reducers in the application
-
- Reducers can choose to return a different piece of state depending on the Action
- This newly returned state gets piped backed into our [Redux] applicaiton state which,
- in turn, gets piped back into our Container views causing them
- to re-render based on the newly updated redux app state
-
- */

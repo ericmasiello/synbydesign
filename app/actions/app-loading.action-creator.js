@@ -1,5 +1,11 @@
 import { REQUEST_DATA, RECEIVED_DATA } from './types';
 
+/**
+ * @description Creates an action for generating a data request
+ * from the server. This is used to inform our <Loading/> component
+ * that it should display the loading bar
+ * @returns {{type: REQUEST_DATA}}
+ */
 export function requestDataFromServer(){
   'use strict';
   return {
@@ -7,6 +13,12 @@ export function requestDataFromServer(){
   };
 };
 
+/**
+ * @description Creates an action for generating a data received
+ * from the server. This is used to inform our <Loading/> component
+ * that it should stop displaying the loading bar
+ * @returns {{type: RECEIVED_DATA}}
+ */
 export function receiveDataFromServer(){
   'use strict';
   return {

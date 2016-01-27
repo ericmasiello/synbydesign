@@ -11,4 +11,4 @@ bower_components
 dist
 .tmp
 build
-out
+jsdoc

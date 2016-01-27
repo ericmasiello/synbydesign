@@ -6,7 +6,7 @@ export default (props) => {
   const { portfolioItem } = props;
 
   return (
-    <div className="row">
+    <div className="row mtl">
       <div className="col-sm-6  center-xs">
         <h1 className="start-xs  pll  portfolio__title__detail-text">{portfolioItem.title}</h1>
         <Skills classNames="h4  list-unstyled  text-center"

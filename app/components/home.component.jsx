@@ -4,6 +4,11 @@ import DocumentTitle from 'react-document-title';
 import { TITLE } from '../configuration/';
 import Navigation from './navigation.component';
 
+/**
+ * Home component
+ * @description Home component that contains contents for home (portfolio list) page.
+ * @returns {XML}
+ */
 export default () => {
   'use strict';
   return (
