@@ -33,6 +33,7 @@ export default React.createClass({
     //console.log('called render');
     if (this.progress) {
 
+      const { loadedRequests,activeRequests } = this.props.appLoading;
       const isLoading = isAppLoading(this.props.appLoading);
 
       /**

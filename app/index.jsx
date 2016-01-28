@@ -37,6 +37,8 @@ const store = applyMiddleware(
   ReduxPromise)(createStore)(reducers);
 
 // TEMP
+
+//FIXME...
 const { Component } = React;
 class NotFound extends Component {
  render(){
@@ -44,14 +46,12 @@ class NotFound extends Component {
  }
 }
 
+//FIXME...
 class ChangeLog extends Component {
  render(){
   return <div>This is a changelog that will pull in data Wordpress</div>;
  }
 }
-
-//FIXME: remove this
-window.store = store;
 
 render(
   <Provider store={store}>
