@@ -21,7 +21,7 @@ const addMetaData = (portfolioItem, meta) => {
       showLiveSite: portfolioItem.isWebsite && typeof meta.website_url === 'string' && meta.website_url.length > 0 ? true : false,
       liveSiteUrl: portfolioItem.isWebsite && typeof meta.website_url === 'string' && meta.website_url.length > 0 ? meta.website_url : null,
       stackDesign: portfolioItem.isDesign && meta.stack_design == 'true' ? true : false,
-      svg: portfolioItem.isDesign && meta.svg ? meta.svg : null
+      svg: portfolioItem.isDesign && typeof meta.svg === 'string' && meta.svg.length > 0 ? meta.svg : null
     }
   } : {}));
 };
