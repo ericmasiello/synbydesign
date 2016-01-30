@@ -16,6 +16,11 @@ $screen-md-min: 992px;
   }
 }
 
+.portfolio__title__detail-text {
+  position: relative;
+  z-index: 5;
+}
+
 .portfolio__img--svg {
   width: 40rem;
 

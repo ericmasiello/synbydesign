@@ -39,10 +39,12 @@ export default class Navigation extends Component {
           <ScrollLink href="#" to={UI_IDS.portfolioList} smooth={true} duration={500} className="pill"
                 onClick={this.scrollTo.bind(this, UI_IDS.portfolioList)}>Portfolio</ScrollLink>
         </li>
-        <li role="presentation" className="col-xs-12  col-sm  masthead__nav__linked-in"><a
-          href="https://www.linkedin.com/in/ericmasiello" className="pill">LinkedIn</a></li>
-        <li role="presentation" className="col-xs-12  col-sm  masthead__nav__twitter"><a
-          href="http://www.twitter.com/ericmasiello" className="pill">Twitter</a></li>
+        <li role="presentation" className="col-xs-12  col-sm  masthead__nav__linked-in">
+          <a href="https://www.linkedin.com/in/ericmasiello" className="pill">LinkedIn</a>
+        </li>
+        <li role="presentation" className="col-xs-12  col-sm  masthead__nav__twitter">
+          <a href="http://www.twitter.com/ericmasiello" className="pill">Twitter</a>
+        </li>
       </ul>
     );
 
@@ -57,7 +59,7 @@ export default class Navigation extends Component {
           <nav>
             {nav}
           </nav>
-          { view == 'home' ?
+          { view != 'detail' ?
             <div className="row  masthead__decoration-container  middle-xs">
               <div className="col-xs  masthead__decoration-line"></div>
               <div className="col-xs  masthead__decoration  masthead__decoration--bottom"></div>
