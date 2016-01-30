@@ -12,6 +12,10 @@ const Skills = (props) => {
     </li>);
   }) : null;
 
+  if( !skills ){
+    return <div></div>;
+  }
+
   return (<ul className={props.classNames} aria-label={'Skills used to make ' + props.title}>
     {skills}
   </ul>);

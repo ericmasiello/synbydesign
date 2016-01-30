@@ -15,7 +15,7 @@ export default class App extends Component {
    * Back to top method. Used to jump the user back to the top of the page.
    */
   backToTop(){
-    document.getElementById(UI_IDS.masthead).focus();
+    document.getElementById(UI_IDS.appContents).focus();
   }
 
   /**
@@ -28,7 +28,7 @@ export default class App extends Component {
     const clsName = isAppLoading(this.props.appLoading) ? 'page-loading' : 'page-loading page-loading--done';
 
     return (
-      <ScreenReaderFocusElm elmId={UI_IDS.masthead} className="no-focus-ring">
+      <ScreenReaderFocusElm elmId={UI_IDS.appContents} className="no-focus-ring">
         <div aria-atomic="true"
              aria-live="polite"
              aria-busy={isAppLoading(this.props.appLoading)}>
@@ -39,7 +39,7 @@ export default class App extends Component {
               <Link to="/changelog">
                 Change Log
               </Link> <br />
-              <ScrollLink href="#" onClick={this.backToTop} to={UI_IDS.masthead} spy={true} smooth={true} duration={500}>Back to Top</ScrollLink>
+              <ScrollLink href="#" onClick={this.backToTop} to={UI_IDS.appContents} spy={true} smooth={true} duration={500}>Back to Top</ScrollLink>
             </div>
           </div>
         </div>

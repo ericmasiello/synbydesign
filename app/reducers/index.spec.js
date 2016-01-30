@@ -11,6 +11,7 @@ describe('Redux Store', () => {
 
     const actual = store.getState();
     expect(actual).toEqual({
+      aboutContent: null,
       appLoading: {
         activeRequests: 0,
         loadedRequests: 0

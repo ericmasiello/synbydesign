@@ -11,14 +11,13 @@ export default (props) => {
 
   return (
     <li className="col-sm-6  col-md-4" role="presentation">
-      <div className="portfolio__item">
-          <span className="h4  portfolio__title">
-            <span className="portfolio__title__text">{props.item.title}</span>
-          </span>
-        <Link to={`/detail/${props.item.ID}`} aria-label={titleAttr}>
-          <img className="portfolio__img" src={featuredImagePath} alt={altAttr}/>
-        </Link>
-      </div>
+      <Link to={`/detail/${props.item.ID}`} aria-label={titleAttr} className="portfolio__item">
+        <span className="h4  portfolio__title">
+          <span className="portfolio__title__text">{props.item.title}</span>
+        </span>
+        <img className={`portfolio__img  ${(featuredImagePath.search(/(\.svg)$/)) > -1 ? 'portfolio__img--svg' : ''}`}
+             src={featuredImagePath} alt={altAttr}/>
+      </Link>
       <Skills title={props.item.title}
               classNames="skills  small"
               skills={props.item.skills}/>

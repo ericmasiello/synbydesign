@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Skills from './skills.component';
+import Skills from '../skills.component';
 
 
 export default class PortfolioDetailLiveWeb extends Component {
@@ -72,9 +72,10 @@ export default class PortfolioDetailLiveWeb extends Component {
       <div className="col-xs">
         <h1 className="mtn  text-center"><span className="portfolio__title__detail-text">{portfolioItem.title}</span></h1>
         <div className={`portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs portfolio__live-site ${this.getCSSClassNameByMode('portfolio__live-site', this.state.mode)}`}
-             aria-label={`${portfolioItem.title} detailed view`}>
+             role="tabpanel">
           {this.state.enableLiveSite ? (
             <iframe src={portfolioItem.meta.liveSiteUrl}
+                    title={`Live embedded site of ${portfolioItem.title}`}
                     className={`portfolio__live-site__content ${this.getCSSClassNameByMode('portfolio__live-site__content', this.state.mode)}`}>
             </iframe>
           ) : (
@@ -83,7 +84,7 @@ export default class PortfolioDetailLiveWeb extends Component {
           )}
         </div>
         {this.state.enableLiveSite ? (
-          <div className="text-center  portfolio__live__devices mbxl">
+          <div className="text-center  portfolio__live__devices mbxl" role="tablist">
             {devices.map((device)=>{
 
               const isSelected = this.state.mode === device.label.toLowerCase();
@@ -91,6 +92,9 @@ export default class PortfolioDetailLiveWeb extends Component {
               return (
                 <a key={device.label} className={`portfolio__live__device ${isSelected ? 'portfolio__live__device--selected' : ''}`}
                    href="#"
+                   role="tab"
+                   aria-label={`Update embedded site to ${device.label.toLowerCase()} view`}
+                   aria-selected={`${isSelected ? 'true' : 'false'}`}
                    onClick={device.changeFn}>
                   {device.label}
                   <svg className={`portfolio__live__device__icon

@@ -57,11 +57,12 @@ export default class Navigation extends Component {
           <nav>
             {nav}
           </nav>
-          <div className="row  masthead__decoration-container  middle-xs">
-            <div className="col-xs  masthead__decoration-line"></div>
-            <div className="col-xs  masthead__decoration  masthead__decoration--bottom"></div>
-            <div className="col-xs  masthead__decoration-line"></div>
-          </div>
+          { view == 'home' ?
+            <div className="row  masthead__decoration-container  middle-xs">
+              <div className="col-xs  masthead__decoration-line"></div>
+              <div className="col-xs  masthead__decoration  masthead__decoration--bottom"></div>
+              <div className="col-xs  masthead__decoration-line"></div>
+            </div> : null }
         </div>
       </header>
     );

@@ -3,7 +3,7 @@ import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
-import ScreenReaderFocusElm from './../components/screen-reader-focus-elm.component';
+import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 
 describe('ScreenReaderFocusElm', () => {
   'use strict';
@@ -11,7 +11,7 @@ describe('ScreenReaderFocusElm', () => {
   it('should embed its contents', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<ScreenReaderFocusElm><div>Hello World</div></ScreenReaderFocusElm>);
+    r.render(<ScreenReaderFocusElm elmId="testId"><div>Hello World</div></ScreenReaderFocusElm>);
     const actual = r.getRenderOutput();
 
     expect(actual).toIncludeJSX(<div>Hello World</div>);
@@ -30,7 +30,7 @@ describe('ScreenReaderFocusElm', () => {
   it('should set the tabIndex value', () => {
 
     const r = TestUtils.createRenderer();
-    r.render(<ScreenReaderFocusElm />);
+    r.render(<ScreenReaderFocusElm elmId="testId"/>);
     const actual = r.getRenderOutput();
     const expected = '-1';
 

@@ -3,9 +3,10 @@ import DocumentTitle from 'react-document-title';
 import Skills from './skills.component';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import { TITLE, UI_IDS } from '../configuration/';
-import PortfolioDetailDefault from './portfolio-detail-default.component';
-import PortfolioDetailLiveWeb from './portfolio-detail-live-web.component';
-import PortfolioDetailStackDesign from './portfolio-detail-stack-design.component';
+import PortfolioDetailDefault from './portfolio-detail/portfolio-detail-default.component';
+import PortfolioDetailLiveWeb from './portfolio-detail/portfolio-detail-live-web.component';
+import PortfolioDetailStackDesign from './portfolio-detail/portfolio-detail-stack-design.component';
+import PortfolioDetailSVG from './portfolio-detail/portfolio-detail-svg.component';
 import Navigation from './navigation.component';
 import { MIN_LIVE_SITE_BROWSER_WIDTH_MQ } from '../configuration';
 
@@ -15,6 +16,12 @@ export default class PortfolioDetail extends Component {
     super(props);
 
     this.getPortfolioItemById = this.getPortfolioItemById.bind(this);
+  }
+
+  componentDidMount(){
+
+    document.getElementById(UI_IDS.portfolioDetail).focus();
+    window.scrollTo(0,0);
   }
 
   componentWillMount(){
@@ -47,9 +54,12 @@ export default class PortfolioDetail extends Component {
 
         pageContents = (<PortfolioDetailStackDesign portfolioItem={portfolioItem} />);
 
-      } else if(portfolioItem.meta.showLiveSite){
+      } else if(portfolioItem.meta.showLiveSite) {
 
-        pageContents = (<PortfolioDetailLiveWeb portfolioItem={portfolioItem} liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ} />);
+        pageContents = (<PortfolioDetailLiveWeb portfolioItem={portfolioItem} liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ}/>);
+
+      } else if(portfolioItem.meta.svg){
+        pageContents = (<PortfolioDetailSVG portfolioItem={portfolioItem} />);
 
       } else {
         pageContents = (<PortfolioDetailDefault portfolioItem={portfolioItem} />);
@@ -60,7 +70,7 @@ export default class PortfolioDetail extends Component {
       <section className="portfolio-detail">
         <DocumentTitle title={pageTitle}/>
         <Navigation view={'detail'}/>
-        <ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail}>
+        <ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail} className="no-focus-ring">
           {pageContents}
         </ScreenReaderFocusElm>
       </section>

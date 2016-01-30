@@ -6,9 +6,10 @@ import React from 'react';
 import PortfolioDetail from './../components/portfolio-detail.component';
 import DocumentTitle from 'react-document-title';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
-import PortfolioDetailDefault from './portfolio-detail-default.component.jsx';
-import PortfolioDetailLiveWeb from './portfolio-detail-live-web.component';
-import PortfolioDetailStackDesign from './portfolio-detail-stack-design.component';
+import PortfolioDetailDefault from './portfolio-detail/portfolio-detail-default.component.jsx';
+import PortfolioDetailLiveWeb from './portfolio-detail/portfolio-detail-live-web.component';
+import PortfolioDetailStackDesign from './portfolio-detail/portfolio-detail-stack-design.component';
+import PortfolioDetailSVG from './portfolio-detail/portfolio-detail-svg.component';
 import { TITLE, UI_IDS, MIN_LIVE_SITE_BROWSER_WIDTH_MQ } from '../configuration/';
 import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
 import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
@@ -84,7 +85,7 @@ describe('PortfolioDetail', () => {
                               params={{id: 5}} />);
 
     actual = r.getRenderOutput();
-    expect(actual).toIncludeJSX(<ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail}/>);
+    expect(actual).toIncludeJSX(<ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail} className="no-focus-ring"/>);
   });
 
   describe('should render the appropriate page contents', ()=>{
@@ -101,6 +102,22 @@ describe('PortfolioDetail', () => {
 
       actual = r.getRenderOutput();
       expect(actual).toIncludeJSX(<PortfolioDetailDefault portfolioItem={mockPortfolioItem} />);
+    });
+
+    it('should render the SVG view', ()=>{
+
+      let mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
+      mockPortfolioItem.meta = {
+        svg: (<svg></svg>)
+      };
+
+      r = TestUtils.createRenderer();
+      r.render(<PortfolioDetail loadedAllItems={true}
+                                portfolio={[mockPortfolioItem]}
+                                params={{id: mockPortfolioItem.ID}} />);
+
+      actual = r.getRenderOutput();
+      expect(actual).toIncludeJSX(<PortfolioDetailSVG portfolioItem={mockPortfolioItem} />);
     });
 
     it('should render the live web view', ()=>{
