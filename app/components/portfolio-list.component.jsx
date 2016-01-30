@@ -23,10 +23,6 @@ export default class PortfolioList extends Component {
 
   render() {
 
-    /*
-     * FIXME: when :focus on individual items in the list, you can't see the outline. this is bad for accessibility. Also make sure design works on Firefox
-     */
-
     const { portfolio } = this.props;
     const webItems = portfolio.filter(filterPortfolioByProp('isWebsite')).map(this.createPortfolioItem);
     const designItems = portfolio.filter(filterPortfolioByProp('isDesign')).map(this.createPortfolioItem);
