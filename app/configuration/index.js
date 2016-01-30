@@ -1,7 +1,7 @@
 export const TITLE = 'Syn By Design - Eric Masiello\'s portfolio';
 export const UI_IDS = {
   logo: 'logo',
-  masthead: 'masthead',
+  appContents: 'appContents',
   about: 'about',
   portfolioList: 'portfolioList',
   portfolioDetail: 'portfolioDetail'

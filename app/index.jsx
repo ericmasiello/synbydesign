@@ -19,8 +19,12 @@ import PortfolioDetail from './containers/portfolio-detail.container';
 /*
  * FIXME these need to get moved into synbydesign.design
  */
-import './scss/portfolio-image-stack.scss';
+import './scss/typography.scss';
+import './scss/masthead.scss';
 import './scss/portfolio.scss';
+import './scss/portfolio-live.scss';
+import './scss/portfolio-3-up.scss';
+import './scss/portfolio-image-stack.scss';
 import './scss/page-loading.scss';
 import './scss/screen-reader.scss';
 
@@ -41,27 +45,59 @@ const store = applyMiddleware(
 //FIXME...
 const { Component } = React;
 class NotFound extends Component {
- render(){
-  return <div>Not Found 404</div>;
- }
+  render() {
+    return <div>Not Found 404</div>;
+  }
 }
 
 //FIXME...
 class ChangeLog extends Component {
- render(){
-  return <div>This is a changelog that will pull in data Wordpress</div>;
- }
+  render() {
+    return <div>This is a changelog that will pull in data Wordpress</div>;
+  }
+}
+
+class Typography extends Component {
+  render() {
+    return (
+      <div>
+        <h1 className="h1">h1: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti
+          </h1>
+
+        <h2 className="h2">h2: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti
+          </h2>
+
+        <h3 className="h3">h3: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti
+          </h3>
+        <h4 className="h4">h4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti
+          </h4>
+        <h5 className="h5">h5: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti
+          </h5>
+        <h6 className="h6">h6: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti
+          </h6>
+
+        <p>Lorem <strong>ipsum dolor sit amet</strong>, consectetur adipisicing elit. <em>Alias amet beatae culpa</em>
+          deleniti doloribus esse eveniet, expedita fuga itaque laudantium molestiae nulla obcaecati placeat praesentium
+          quisquam repellendus, repudiandae soluta, vel!</p>
+        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet beatae culpa deleniti doloribus esse
+          eveniet, expedita fuga itaque laudantium molestiae nulla obcaecati placeat praesentium quisquam repellendus,
+          repudiandae soluta, vel!
+        </small>
+      </div>
+    );
+  }
 }
 
 render(
   <Provider store={store}>
     <Router>
-     <Route path="/" component={AppContainer}>
-      <IndexRoute component={Home} />
-      <Route path="/detail/:id" component={PortfolioDetail} />
-      <Route path="/changelog" component={ChangeLog} />
-      <Route path="*" component={NotFound}/>
-     </Route>
+      <Route path="/" component={AppContainer}>
+        <IndexRoute component={Home}/>
+        <Route path="/detail/:id" component={PortfolioDetail}/>
+        <Route path="/changelog" component={ChangeLog}/>
+        <Route path="/type" component={Typography}/>
+        <Route path="*" component={NotFound}/>
+      </Route>
     </Router>
   </Provider>
   , document.getElementById('app'));

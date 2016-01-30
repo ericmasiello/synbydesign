@@ -67,7 +67,7 @@ export default class PortfolioList extends Component {
 
     return (
       <section>
-        <ScreenReaderFocusElm elmId={UI_IDS.portfolioList}>
+        <ScreenReaderFocusElm elmId={UI_IDS.portfolioList} className="no-focus-ring">
           {webContent}
           {designContent}
           {otherContent}

@@ -16,15 +16,20 @@
   }
 
   &--middle {
-    filter: brightness(.9);
+    &, &:hover {
+      filter: brightness(.9);
+    }
     z-index: 2;
     transform: rotate(-1deg);
   }
 
   &--bottom {
-    filter: brightness(.8);
+    &, &:hover {
+      filter: brightness(.85);
+    }
+    box-shadow: 2px 0 20px rgba(0,0,0,.25);
     position: relative;
     z-index: 1;
-    transform: rotate(-2.5deg);
+    transform: rotate(-9.5deg);  //this number could be randomized in JS from -2.5 to -9.5
   }
 }
