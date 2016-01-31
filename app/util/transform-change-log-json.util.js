@@ -14,6 +14,6 @@ export default (changeLogList) => {
       htmlContent: item.content,
       htmlExcerpt: item.excerpt,
       modifiedDate: item.modified_gmt
-    }
+    };
   });
 };
