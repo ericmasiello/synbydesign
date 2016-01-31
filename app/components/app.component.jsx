@@ -26,6 +26,7 @@ export default class App extends Component {
   render() {
 
     const clsName = isAppLoading(this.props.appLoading) ? 'page-loading' : 'page-loading page-loading--done';
+    const isChangeLog = window.location.hash.substr(1).indexOf('changelog') > -1;
 
     return (
       <ScreenReaderFocusElm elmId={UI_IDS.appContents} className="no-focus-ring">
@@ -36,9 +37,13 @@ export default class App extends Component {
           <div className={clsName}>
             { this.props.children }
             <div className="text-center mtl">
-              <Link to="/changelog">
-                Change Log
-              </Link> <br />
+              { !isChangeLog ? (
+                <div>
+                  <Link to="/changelog">
+                    Change Log
+                  </Link>
+                </div>
+              ) : (<div></div>) }
               <ScrollLink href="#" onClick={this.backToTop} to={UI_IDS.appContents} spy={true} smooth={true} duration={500}>Back to Top</ScrollLink>
             </div>
           </div>

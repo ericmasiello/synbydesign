@@ -3,6 +3,8 @@ import AppLoadingReducer from './app-loading.reducer';
 import PortfolioReducer from './portfolio.reducer';
 import LoadedAllItemsReducer from './loaded-all-items.reducer';
 import AboutContentReducer from './about-content.reducer';
+import ChangeLogReducer from './change-log.reducer';
+import LoadedChangeLogReducer from './loaded-change-log.reducer';
 
 /*
  * The object returned from here represents our GLOBAL
@@ -12,7 +14,9 @@ const rootReducer = combineReducers({
   appLoading: AppLoadingReducer,
   aboutContent: AboutContentReducer,
   portfolio: PortfolioReducer,
-  loadedAllItems: LoadedAllItemsReducer
+  loadedAllItems: LoadedAllItemsReducer,
+  changeLog: ChangeLogReducer,
+  loadedChangeLog: LoadedChangeLogReducer
 });
 
 export default rootReducer;

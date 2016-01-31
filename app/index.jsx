@@ -14,6 +14,7 @@ import { REQUEST_DATA, RECEIVED_DATA, LOAD_PORTFOLIO_ALL, LOADED_ALL_PORTFOLIO }
 import { Router, Route, Link, IndexRoute } from 'react-router';
 import Home from './components/home.component';
 import PortfolioDetail from './containers/portfolio-detail.container';
+import ChangeLog from './containers/change-log.container';
 
 
 /*
@@ -47,13 +48,6 @@ const { Component } = React;
 class NotFound extends Component {
   render() {
     return <div>Not Found 404</div>;
-  }
-}
-
-//FIXME...
-class ChangeLog extends Component {
-  render() {
-    return <div>This is a changelog that will pull in data Wordpress</div>;
   }
 }
 
