@@ -1,6 +1,6 @@
 import { LOAD_ABOUT_CONTENT } from './types';
 import axios from 'axios';
-import { API_URL } from '../configuration/';
+import { API_URL, API_DOMAIN } from '../configuration/';
 
 /**
  * @description generates an action for loading the about contentfrom the server. This
@@ -10,7 +10,7 @@ import { API_URL } from '../configuration/';
  */
 const loadAboutContent = () => {
   'use strict';
-  const URI = `${API_URL}/pages/about`;
+  const URI = `${API_DOMAIN}${API_URL}/pages/about`;
   const request = axios.get(URI);
 
   return {

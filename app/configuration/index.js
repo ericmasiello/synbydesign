@@ -18,3 +18,5 @@ export const MIN_LIVE_SITE_BROWSER_WIDTH_MQ = 890;
 export const WP_SLUGS = {
   CHANGE_LOG: 'change-log'
 };
+
+export const API_DOMAIN = __PROD__ ? 'http://www.synbydesign.com' : '';
