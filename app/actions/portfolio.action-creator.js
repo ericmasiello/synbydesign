@@ -1,6 +1,6 @@
 import { LOAD_PORTFOLIO_ALL, LOAD_PORTFOLIO_DETAIL } from './types';
 import axios from 'axios';
-import { API_URL } from '../configuration/';
+import { API_URL, API_DOMAIN } from '../configuration/';
 
 /**
  * @description generates an action for loading all portfolio items from the server. This
@@ -11,7 +11,7 @@ import { API_URL } from '../configuration/';
  */
 const loadAllPortfolio = (categories) => {
   'use strict';
-  const URI = `${API_URL}/posts/?filter[category_name]=${categories.join(',')}`;
+  const URI = `${API_DOMAIN}${API_URL}/posts/?filter[category_name]=${categories.join(',')}`;
   const request = axios.get(URI);
 
   return {
@@ -29,7 +29,7 @@ const loadAllPortfolio = (categories) => {
  */
 const loadSelectedPortfolio = (id) => {
   'use strict';
-  const URI = `${API_URL}/posts/${id}`;
+  const URI = `${API_DOMAIN}${API_URL}/posts/${id}`;
   const request = axios.get(URI);
 
   return {
