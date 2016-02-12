@@ -84,7 +84,7 @@ class Typography extends Component {
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router>
       <Route path="/" component={AppContainer}>
         <IndexRoute component={Home}/>
         <Route path="/detail/:id" component={PortfolioDetail}/>
