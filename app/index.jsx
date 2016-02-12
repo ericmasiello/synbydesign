@@ -11,7 +11,7 @@ import promiseDispatcherMiddleware from './middleware/promise-dispatcher.middlew
 import loadedAllDispatcherMiddleware from './middleware/loaded-all-dispatcher.middleware';
 import { REQUEST_DATA, RECEIVED_DATA, LOAD_PORTFOLIO_ALL, LOADED_ALL_PORTFOLIO } from './actions/types';
 
-import { Router, Route, Link, IndexRoute } from 'react-router';
+import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router';
 import Home from './components/home.component';
 import PortfolioDetail from './containers/portfolio-detail.container';
 import ChangeLog from './containers/change-log.container';
@@ -84,7 +84,7 @@ class Typography extends Component {
 
 render(
   <Provider store={store}>
-    <Router>
+    <Router history={browserHistory}>
       <Route path="/" component={AppContainer}>
         <IndexRoute component={Home}/>
         <Route path="/detail/:id" component={PortfolioDetail}/>
