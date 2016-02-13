@@ -55,13 +55,20 @@ var common = {
 };
 
 if (TARGET === 'start' || !TARGET) {
+
   module.exports = merge(common, {
     devtool: 'eval-source-map',
     devServer: {
       historyApiFallback: true,
       hot: true,
       inline: true,
-      progress: true
+      progress: true,
+      proxy: [
+        {
+          "path": "/wp/wp-json*",
+          "target": "http://localhost/synbydesign"
+        }
+      ]
     },
     module: {
       loaders: [
@@ -74,6 +81,10 @@ if (TARGET === 'start' || !TARGET) {
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
+      new webpack.DefinePlugin({
+        __DEV__: true,
+        __PROD__: false
+      })
     ]
   });
 }
@@ -116,6 +127,10 @@ if (TARGET === 'build'){
         compress: {
           warnings: false
         }
+      }),
+      new webpack.DefinePlugin({
+        __DEV__: false,
+        __PROD__: true
       })
     ]
   });
