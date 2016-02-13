@@ -4,12 +4,12 @@ import { TITLE } from '../configuration/';
 import Navigation from './navigation.component';
 
 export default () => {
+  'use strict';
   return (
     <section className="portfolio-detail">
       <DocumentTitle title={`404 Page Not Found - ${TITLE}`}/>
       <Navigation view={'detail'}/>
       <h2 className="text-center">Sorry :( Page not found</h2>
     </section>
-
   );
-}
+};
