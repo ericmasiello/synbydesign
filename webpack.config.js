@@ -16,12 +16,12 @@ process.env.BABEL_ENV = TARGET;
 
 var common = {
   entry: APP_PATH,
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
   output: {
     path: BUILD_PATH,
-    filename: 'bundle.js'
+    filename: '[name].js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     loaders: [
@@ -96,9 +96,9 @@ if (TARGET === 'build'){
       vendor: Object.keys(pkg.dependencies)
     },
     /* important */
-    ouptput: {
+    output: {
       path: BUILD_PATH,
-      filename: '[name].[chunkhash].js?'
+      filename: '[name].[chunkhash].js'
     },
     devtool: 'source-map',
     module: {
