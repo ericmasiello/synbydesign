@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import AboutContent from '../components/about-content.component';
 import { loadAboutContent } from '../actions/about-content.action-creator';
 import { bindActionCreators } from 'redux';
-//import transfromPortfolioJSON from '../util/transform-portfolio-json.util';
+import Immutable from 'immutable';
 
 const mapStateToProps = ({aboutContent}) => {
   'use strict';
   return {
-    aboutContent: aboutContent ? ( aboutContent.content ) : aboutContent
+    aboutContent: aboutContent ? ( aboutContent.get('content') ) : aboutContent
   };
 };
 
