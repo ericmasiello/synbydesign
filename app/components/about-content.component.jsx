@@ -18,7 +18,7 @@ export default class AboutContent extends Component {
     return (
       <section className="container-fluid">
         <ScreenReaderFocusElm elmId={UI_IDS.about}>
-          <div className="well h4 text-center" dangerouslySetInnerHTML={{__html: content}}></div>
+          <div className="well h4" dangerouslySetInnerHTML={{__html: content}}></div>
         </ScreenReaderFocusElm>
       </section>
     );
