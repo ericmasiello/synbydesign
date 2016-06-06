@@ -1,18 +1,18 @@
+'use strict';
 import expect from 'expect';
 import rootReducer from './index';
 import { createStore } from 'redux';
 import Immutable from 'immutable';
 
 describe('Redux Store', () => {
-  'use strict';
 
   const store = createStore(rootReducer);
 
-  it('should be empty by default', ()=>{
+  it('should be empty by default', ()=> {
 
     const actual = store.getState();
 
-    expect(actual.aboutContent).toEqual(null);
+    expect(actual.aboutContent).toEqual('');
     expect(actual.appLoading).toEqual(Immutable.Map({
       activeRequests: 0,
       loadedRequests: 0
@@ -22,7 +22,7 @@ describe('Redux Store', () => {
   });
 
   describe('loadedAllItems state', () => {
-    it('should update based on LOADED_ALL_PORTFOLIO event', ()=>{
+    it('should update based on LOADED_ALL_PORTFOLIO event', ()=> {
 
       store.dispatch({
         type: 'LOADED_ALL_PORTFOLIO'
@@ -35,7 +35,7 @@ describe('Redux Store', () => {
   });
 
   describe('appLoading state', () => {
-    it('should respond to REQUEST_DATA events', ()=>{
+    it('should respond to REQUEST_DATA events', ()=> {
 
       store.dispatch({
         type: 'REQUEST_DATA'
@@ -51,7 +51,7 @@ describe('Redux Store', () => {
       }));
     });
 
-    it('should respond to RECEIVED_DATA events', ()=>{
+    it('should respond to RECEIVED_DATA events', ()=> {
 
       store.dispatch({
         type: 'RECEIVED_DATA'

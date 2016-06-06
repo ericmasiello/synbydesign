@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AboutContent from '../components/about-content.component';
@@ -5,15 +6,14 @@ import { loadAboutContent } from '../actions/about-content.action-creator';
 import { bindActionCreators } from 'redux';
 import Immutable from 'immutable';
 
-const mapStateToProps = ({aboutContent}) => {
-  'use strict';
+const mapStateToProps = ({aboutContent, loadedAboutContent}) => {
   return {
-    aboutContent: aboutContent ? ( aboutContent.get('content') ) : aboutContent
+    aboutContent,
+    loadedAboutContent
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  'use strict';
   return bindActionCreators({
     loadAboutContent
   }, dispatch);

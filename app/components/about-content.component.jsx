@@ -5,7 +5,7 @@ import { UI_IDS } from '../configuration';
 export default class AboutContent extends Component {
 
   componentWillMount(){
-    if(this.props.aboutContent === null){
+    if(this.props.loadedAboutContent === false) {
       this.props.loadAboutContent();
     }
   }
@@ -23,9 +23,11 @@ export default class AboutContent extends Component {
 }
 
 AboutContent.propTypes = {
-  content: React.PropTypes.string.isRequired
+  content: React.PropTypes.string.isRequired,
+  loadedAboutContent: React.PropTypes.bool.isRequired
 };
 
 AboutContent.defaultProps = {
-  content: '<p>Loading...</p>'
+  content: '<p>Loading...</p>',
+  loadedAboutContent: false
 };

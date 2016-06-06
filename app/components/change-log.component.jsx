@@ -6,8 +6,7 @@ import { TITLE, UI_IDS } from '../configuration';
 
 export default class ChangeLog extends Component {
 
-  componentWillMount(){
-
+  componentWillMount() {
     if(this.props.loadedChangeLog === false){
       this.props.loadChangeLog();
     }

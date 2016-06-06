@@ -3,6 +3,7 @@ import AppLoadingReducer from './app-loading.reducer';
 import PortfolioReducer from './portfolio.reducer';
 import LoadedAllItemsReducer from './loaded-all-items.reducer';
 import AboutContentReducer from './about-content.reducer';
+import LoadedAboutContentReducer from './loaded-about-content.reducer';
 import ChangeLogReducer from './change-log.reducer';
 import LoadedChangeLogReducer from './loaded-change-log.reducer';
 
@@ -13,6 +14,7 @@ import LoadedChangeLogReducer from './loaded-change-log.reducer';
 const rootReducer = combineReducers({
   appLoading: AppLoadingReducer,
   aboutContent: AboutContentReducer,
+  loadedAboutContent: LoadedAboutContentReducer,
   portfolio: PortfolioReducer,
   loadedAllItems: LoadedAllItemsReducer,
   changeLog: ChangeLogReducer,
