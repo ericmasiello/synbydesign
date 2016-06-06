@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChangeLog from '../components/change-log.component';
@@ -6,15 +7,13 @@ import { bindActionCreators } from 'redux';
 import transformChangeLogJSON from '../util/transform-change-log-json.util';
 
 const mapStateToProps = ({changeLog, loadedChangeLog}) => {
-  'use strict';
   return {
     changeLog: transformChangeLogJSON(changeLog),
     loadedChangeLog
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  'use strict';
+const mapDispatchToProps = (dispatch) => {  
   return bindActionCreators({
     loadChangeLog
   }, dispatch);

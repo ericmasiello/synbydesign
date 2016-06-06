@@ -14,9 +14,9 @@ export default class ChangeLog extends Component {
 
   renderChangeLogItem(item){
    return (
-     <li key={item.ID}>
-       <h2 className="h1">{item.title}</h2>
-       <div dangerouslySetInnerHTML={{__html: item.htmlContent}} />
+     <li key={item.get('ID')}>
+       <h2 className="h1">{item.get('title')}</h2>
+       <div dangerouslySetInnerHTML={{__html: item.get('htmlContent')}} />
      </li>
    );
   }
@@ -27,7 +27,7 @@ export default class ChangeLog extends Component {
     let contents = (<p>Loading...</p>);
     let pageTitle = `Loading... Change Log for ${TITLE}`;
 
-    if( loadedChangeLog ){
+    if(loadedChangeLog) {
       pageTitle = `Change Log for ${TITLE}`;
       contents = (
         <ul>

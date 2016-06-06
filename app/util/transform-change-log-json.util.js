@@ -1,19 +1,21 @@
+'use strict';
+import Immutable from 'immutable';
+
 export default (changeLogList) => {
-  'use strict';
   if (!changeLogList || typeof changeLogList !== 'object' || changeLogList.length === 0) {
     return changeLogList;
   }
 
   return changeLogList.map((item) => {
 
-    return {
-      ID: item.ID,
-      title: item.title,
-      slug: item.slug,
-      sticky: item.sticky,
-      htmlContent: item.content,
-      htmlExcerpt: item.excerpt,
-      modifiedDate: item.modified_gmt
-    };
+    return Immutable.Map({
+      ID: item.get('ID'),
+      title: item.get('title'),
+      slug: item.get('slug'),
+      sticky: item.get('sticky'),
+      htmlContent: item.get('content'),
+      htmlExcerpt: item.get('excerpt'),
+      modifiedDate: item.get('modified_gmt')
+    });
   });
 };
