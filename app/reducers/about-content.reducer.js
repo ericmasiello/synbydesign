@@ -1,7 +1,7 @@
 import { LOAD_ABOUT_CONTENT } from '../actions/types';
 import Immutable from 'immutable';
 
-export default (state = null, action = {}) => {
+export default (state = Immutable.fromJS(null), action = {}) => {
   'use strict';
 
   switch(action.type){

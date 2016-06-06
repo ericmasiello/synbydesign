@@ -1,6 +1,7 @@
 import expect from 'expect';
 import rootReducer from './index';
 import { createStore } from 'redux';
+import Immutable from 'immutable';
 
 describe('Redux Store', () => {
   'use strict';
@@ -10,15 +11,14 @@ describe('Redux Store', () => {
   it('should be empty by default', ()=>{
 
     const actual = store.getState();
-    expect(actual).toEqual({
-      aboutContent: null,
-      appLoading: {
-        activeRequests: 0,
-        loadedRequests: 0
-      },
-      portfolio: [],
-      loadedAllItems: false
-    });
+
+    expect(actual.aboutContent).toEqual(null);
+    expect(actual.appLoading).toEqual(Immutable.Map({
+      activeRequests: 0,
+      loadedRequests: 0
+    }));
+    expect(actual.portfolio).toEqual([]);
+    expect(actual.loadedAllItems).toEqual(false);
   });
 
   describe('loadedAllItems state', () => {
@@ -46,10 +46,9 @@ describe('Redux Store', () => {
       });
 
       const actual = store.getState().appLoading;
-      expect(actual).toEqual({
-        activeRequests: 2,
-        loadedRequests: 0
-      });
+      expect(actual).toEqual(Immutable.Map({
+        activeRequests: 2, loadedRequests: 0
+      }));
     });
 
     it('should respond to RECEIVED_DATA events', ()=>{
@@ -59,10 +58,10 @@ describe('Redux Store', () => {
       });
 
       const actual = store.getState().appLoading;
-      expect(actual).toEqual({
+      expect(actual).toEqual(Immutable.Map({
         activeRequests: 2,
         loadedRequests: 1
-      });
+      }));
     });
 
     it('appLoading should respond with zeros for both values once activeRequests == loadedRequests', ()=>{
@@ -72,10 +71,10 @@ describe('Redux Store', () => {
       });
 
       const actual = store.getState().appLoading;
-      expect(actual).toEqual({
+      expect(actual).toEqual(Immutable.Map({
         activeRequests: 0,
         loadedRequests: 0
-      });
+      }));
     });
   });
 });

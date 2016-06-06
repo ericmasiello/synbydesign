@@ -19,4 +19,6 @@ export const WP_SLUGS = {
   CHANGE_LOG: 'change-log'
 };
 
+var __PROD__ = __PROD__ || false;
+
 export const API_DOMAIN = __PROD__ ? 'http://www.synbydesign.com' : '';

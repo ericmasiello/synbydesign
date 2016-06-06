@@ -1,4 +1,4 @@
-export default ({ activeRequests, loadedRequests }) => {
+export default (appLoading) => {
   'use strict';
-  return ( activeRequests > loadedRequests );
+  return (appLoading.get('activeRequests') > appLoading.get('loadedRequests'));
 };
