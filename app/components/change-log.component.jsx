@@ -3,21 +3,14 @@ import DocumentTitle from 'react-document-title';
 import Navigation from './navigation.component';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import { TITLE, UI_IDS } from '../configuration';
-import Immutable from 'immutable';
 
 export default class ChangeLog extends Component {
 
-  componentWillMount() {
-    if(this.props.loadedChangeLog === false){
-      this.props.loadChangeLog();
-    }
-  }
-
   renderChangeLogItem(item){
    return (
-     <li key={item.get('ID')}>
-       <h2 className="h1">{item.get('title')}</h2>
-       <div dangerouslySetInnerHTML={{__html: item.get('htmlContent')}} />
+     <li key={item.ID}>
+       <h2 className="h1">{item.title}</h2>
+       <div dangerouslySetInnerHTML={{__html: item.htmlContent}} />
      </li>
    );
   }
@@ -50,7 +43,7 @@ export default class ChangeLog extends Component {
 }
 
 ChangeLog.propTypes = {
-  changeLog: React.PropTypes.instanceOf(Immutable.List),
+  changeLog: React.PropTypes.array.isRequired,
   loadedChangeLog: React.PropTypes.bool.isRequired,
   loadChangeLog: React.PropTypes.func.isRequired
 };

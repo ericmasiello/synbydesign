@@ -2,7 +2,6 @@
 import expect from 'expect';
 import rootReducer from './index';
 import { createStore } from 'redux';
-import Immutable from 'immutable';
 
 describe('Redux Store', () => {
 
@@ -13,10 +12,10 @@ describe('Redux Store', () => {
     const actual = store.getState();
 
     expect(actual.aboutContent).toEqual('');
-    expect(actual.appLoading).toEqual(Immutable.Map({
+    expect(actual.appLoading).toEqual({
       activeRequests: 0,
       loadedRequests: 0
-    }));
+    });
     expect(actual.portfolio).toEqual([]);
     expect(actual.loadedAllItems).toEqual(false);
   });
@@ -46,9 +45,10 @@ describe('Redux Store', () => {
       });
 
       const actual = store.getState().appLoading;
-      expect(actual).toEqual(Immutable.Map({
-        activeRequests: 2, loadedRequests: 0
-      }));
+      expect(actual).toEqual({
+        activeRequests: 2,
+        loadedRequests: 0
+      });
     });
 
     it('should respond to RECEIVED_DATA events', ()=> {
@@ -58,10 +58,10 @@ describe('Redux Store', () => {
       });
 
       const actual = store.getState().appLoading;
-      expect(actual).toEqual(Immutable.Map({
+      expect(actual).toEqual({
         activeRequests: 2,
         loadedRequests: 1
-      }));
+      });
     });
 
     it('appLoading should respond with zeros for both values once activeRequests == loadedRequests', ()=>{
@@ -71,10 +71,10 @@ describe('Redux Store', () => {
       });
 
       const actual = store.getState().appLoading;
-      expect(actual).toEqual(Immutable.Map({
+      expect(actual).toEqual({
         activeRequests: 0,
         loadedRequests: 0
-      }));
+      });
     });
   });
 });

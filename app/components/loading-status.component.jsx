@@ -26,7 +26,7 @@ export default class LoadingStatus extends Component {
   render() {
     if (this.progress) {
 
-      const { loadedRequests,activeRequests } = this.props.appLoading.toJS();
+      const { loadedRequests,activeRequests } = this.props.appLoading;
       const isLoading = isAppLoading(this.props.appLoading);
 
       /**

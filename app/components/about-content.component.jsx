@@ -4,12 +4,6 @@ import { UI_IDS } from '../configuration';
 
 export default class AboutContent extends Component {
 
-  componentWillMount(){
-    if(this.props.loadedAboutContent === false) {
-      this.props.loadAboutContent();
-    }
-  }
-
   render(){
     const { aboutContent } = this.props;
     return (

@@ -1,14 +1,14 @@
 import { DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
 import extractor from 'extract-image-props-from-html-string';
 
-const categoryReducerPartial = (types) => {
+export const categoryReducerPartial = (types) => {
   'use strict';
   return (previous, cat) => {
     return ( previous || types.includes(cat.slug) == true);
   };
 };
 
-const addMetaData = (portfolioItem, meta) => {
+export const addMetaData = (portfolioItem, meta) => {
   'use strict';
   return Object.assign(portfolioItem, {
     meta: {
@@ -18,10 +18,17 @@ const addMetaData = (portfolioItem, meta) => {
     }
   }, (meta ? {
     meta: {
-      showLiveSite: portfolioItem.isWebsite && typeof meta.website_url === 'string' && meta.website_url.length > 0 ? true : false,
-      liveSiteUrl: portfolioItem.isWebsite && typeof meta.website_url === 'string' && meta.website_url.length > 0 ? meta.website_url : null,
-      stackDesign: portfolioItem.isDesign && meta.stack_design == 'true' ? true : false,
-      svg: portfolioItem.isDesign && typeof meta.svg === 'string' && meta.svg.length > 0 ? meta.svg : null
+      showLiveSite: portfolioItem.isWebsite 
+        && typeof meta.website_url === 'string'
+        && meta.website_url.length > 0 ? true : false,
+      liveSiteUrl: portfolioItem.isWebsite
+        && typeof meta.website_url === 'string'
+        && meta.website_url.length > 0 ? meta.website_url : null,
+      stackDesign: portfolioItem.isDesign
+        && meta.stack_design == 'true' ? true : false,
+      svg: portfolioItem.isDesign
+        && typeof meta.svg === 'string'
+        && meta.svg.length > 0 ? meta.svg : null
     }
   } : {}));
 };

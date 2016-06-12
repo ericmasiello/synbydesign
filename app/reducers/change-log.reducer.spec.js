@@ -2,12 +2,11 @@
 import expect from 'expect';
 import reducer from './change-log.reducer';
 import { LOAD_CHANGE_LOG } from '../actions/types';
-import Immutable from 'immutable';
 import mockData from '../test-data/change-log.mock.json';
 
 describe('Change Log Reducer', () => {
 
-  const initialState = Immutable.List([]);
+  const initialState = [];
 
   it('should return change log data as list when responding to LOAD_CHANGE_LOG', () => {
 
@@ -18,7 +17,7 @@ describe('Change Log Reducer', () => {
       }
     });
 
-    const expected = Immutable.fromJS(mockData);
+    const expected = mockData;
 
     expect(actual).toEqual(expected);
   });

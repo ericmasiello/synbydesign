@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import AboutContent from '../components/about-content.component';
 import { loadAboutContent } from '../actions/about-content.action-creator';
 import { bindActionCreators } from 'redux';
-import Immutable from 'immutable';
+import callOnMountHOC from '../hoc/call-on-mount.hoc';
 
 const mapStateToProps = ({aboutContent, loadedAboutContent}) => {
   return {
@@ -19,4 +19,13 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AboutContent);
+export default connect(mapStateToProps, mapDispatchToProps)(
+  callOnMountHOC(
+    function() {
+      return this.props.loadedAboutContent === false;
+    },
+    function() {
+      this.props.loadAboutContent();
+    }
+  )
+  (AboutContent));

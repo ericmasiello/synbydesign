@@ -1,19 +1,17 @@
+'use strict';
 import { REQUEST_DATA, RECEIVED_DATA } from '../actions/types';
-import Immutable from 'immutable';
 
-export default (state = Immutable.Map({
+export default (state = {
   activeRequests: 0,
   loadedRequests: 0
-}), action = {}) => {
-
-  'use strict';
+}, action = {}) => {
 
   switch(action.type) {
     case REQUEST_DATA:
-      return Immutable.Map({
-        activeRequests: state.get('activeRequests') + 1,
-        loadedRequests: state.get('loadedRequests')
-      });
+      return {
+        activeRequests: state.activeRequests + 1,
+        loadedRequests: state.loadedRequests
+      }
     case RECEIVED_DATA:
 
       /*
@@ -21,17 +19,17 @@ export default (state = Immutable.Map({
        then we can just reset our object to say there are no
        active requests
        */
-      if( state.get('activeRequests') === state.get('loadedRequests') + 1 ){
-        return Immutable.Map({
+      if( state.activeRequests === state.loadedRequests + 1 ){
+        return {
           activeRequests: 0,
           loadedRequests: 0
-        });
+        };
       }
 
-      return Immutable.Map({
-        activeRequests: state.get('activeRequests'),
-        loadedRequests: state.get('loadedRequests') + 1
-      });
+      return {
+        activeRequests: state.activeRequests,
+        loadedRequests: state.loadedRequests + 1
+      };
   }
 
   return state;
