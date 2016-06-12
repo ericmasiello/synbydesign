@@ -24,13 +24,6 @@ export default class PortfolioDetail extends Component {
     window.scrollTo(0,0);
   }
 
-  componentWillMount(){
-
-    if(this.props.loadedAllItems === false){
-      this.props.loadSelectedPortfolio(this.props.params.id);
-    }
-  }
-
   getPortfolioItemById(id){
 
     if( !this.props.portfolio || this.props.portfolio.length === 0 ) {
@@ -77,3 +70,14 @@ export default class PortfolioDetail extends Component {
     );
   }
 }
+
+PortfolioDetail.propTypes = {
+  portfolio: React.PropTypes.array.isRequired,
+  params: React.PropTypes.shape({
+    id: React.PropTypes.string.isRequired
+  }).isRequired
+};
+
+PortfolioDetail.defaultProps = {
+  portfolio: []
+};

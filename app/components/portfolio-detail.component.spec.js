@@ -32,19 +32,7 @@ describe('PortfolioDetail', () => {
 
   const mockLoadSelectedPortfolio = (ID) => {
     requestedID = ID;
-  };
-
-  it('should request to load the item if all data has not been loaded', () => {
-
-    r = TestUtils.createRenderer();
-    r.render(<PortfolioDetail loadedAllItems={false}
-                              loadSelectedPortfolio={mockLoadSelectedPortfolio}
-                              params={{id: 5}} />);
-    actual = requestedID;
-    expected = 5;
-
-    expect(actual).toEqual(expected);
-  });
+  };  
 
   it('should render a node with a portfolio-detail CSS class name', ()=>{
     r = TestUtils.createRenderer();

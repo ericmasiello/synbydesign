@@ -1,10 +1,10 @@
+'use strict';
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { TITLE } from '../configuration/';
 import Navigation from './navigation.component';
 
 export default () => {
-  'use strict';
   return (
     <section className="portfolio-detail">
       <DocumentTitle title={`404 Page Not Found - ${TITLE}`}/>

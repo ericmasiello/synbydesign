@@ -1,3 +1,4 @@
+'use strict';
 import { REQUEST_DATA, RECEIVED_DATA } from '../actions/types';
 
 export default (state = {
@@ -5,14 +6,12 @@ export default (state = {
   loadedRequests: 0
 }, action = {}) => {
 
-  'use strict';
-
-  switch(action.type){
+  switch(action.type) {
     case REQUEST_DATA:
       return {
         activeRequests: state.activeRequests + 1,
         loadedRequests: state.loadedRequests
-      };
+      }
     case RECEIVED_DATA:
 
       /*
@@ -31,7 +30,7 @@ export default (state = {
         activeRequests: state.activeRequests,
         loadedRequests: state.loadedRequests + 1
       };
-    default:
-      return state;
   }
+
+  return state;
 };

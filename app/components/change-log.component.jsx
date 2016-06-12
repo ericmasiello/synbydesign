@@ -6,13 +6,6 @@ import { TITLE, UI_IDS } from '../configuration';
 
 export default class ChangeLog extends Component {
 
-  componentWillMount(){
-
-    if(this.props.loadedChangeLog === false){
-      this.props.loadChangeLog();
-    }
-  }
-
   renderChangeLogItem(item){
    return (
      <li key={item.ID}>
@@ -28,7 +21,7 @@ export default class ChangeLog extends Component {
     let contents = (<p>Loading...</p>);
     let pageTitle = `Loading... Change Log for ${TITLE}`;
 
-    if( loadedChangeLog ){
+    if(loadedChangeLog) {
       pageTitle = `Change Log for ${TITLE}`;
       contents = (
         <ul>
@@ -48,3 +41,9 @@ export default class ChangeLog extends Component {
     );
   }
 }
+
+ChangeLog.propTypes = {
+  changeLog: React.PropTypes.array.isRequired,
+  loadedChangeLog: React.PropTypes.bool.isRequired,
+  loadChangeLog: React.PropTypes.func.isRequired
+};

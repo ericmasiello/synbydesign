@@ -52,3 +52,17 @@ export default class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  appLoading: React.PropTypes.shape({
+    activeRequests: React.PropTypes.number.isRequired,
+    loadedRequests: React.PropTypes.number.isRequired
+  })
+}
+
+App.defaultPropTypes = {
+  appLoading: {
+    activeRequests: 0,
+    loadedRequests: 0
+  }
+}

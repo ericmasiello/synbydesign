@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -6,7 +7,6 @@ import React from 'react';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 
 describe('ScreenReaderFocusElm', () => {
-  'use strict';
 
   it('should embed its contents', () => {
 

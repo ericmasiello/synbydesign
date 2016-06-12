@@ -29,29 +29,6 @@ describe('PortfolioList', () => {
     expect(rootTag).toEqual(expected);
   });
 
-  it('should request portfolio items of the appropriate categories based on whether or not we have already loaded all the items', () => {
-
-    let actual = [];
-    const customMockLoadAllPortfolio = (categories) => {
-      actual = categories;
-    };
-
-    const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={false} />);
-    r.getRenderOutput();
-    let expected = [...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES];
-
-    expect(actual).toEqual(expected);
-
-    actual = []; //reset
-
-    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={true} />);
-    r.getRenderOutput();
-    expected = [];
-
-    expect(actual).toEqual(expected);
-  });
-
   it('should not render web, design, other headings when no corresponding portfolio data is provided', () => {
 
     const r = TestUtils.createRenderer();

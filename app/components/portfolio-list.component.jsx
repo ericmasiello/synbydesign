@@ -1,20 +1,14 @@
+'use strict';
 import React, { Component } from 'react';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import PortfolioItem from './portfolio-item.component';
-import { UI_IDS, DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
+import { UI_IDS } from '../configuration/';
 import filterPortfolioByProp from '../util/filter-by-property.util';
 
 export default class PortfolioList extends Component {
   constructor(props) {
     super(props);
-
     this.createPortfolioItem = this.createPortfolioItem.bind(this);
-  }
-
-  componentWillMount(){
-    if(this.props.loadedAllItems === false ){
-      this.props.loadAllPortfolio([...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES]);
-    }
   }
 
   createPortfolioItem(item) {
@@ -22,7 +16,6 @@ export default class PortfolioList extends Component {
   }
 
   render() {
-
     const { portfolio } = this.props;
     const webItems = portfolio.filter(filterPortfolioByProp('isWebsite')).map(this.createPortfolioItem);
     const designItems = portfolio.filter(filterPortfolioByProp('isDesign')).map(this.createPortfolioItem);
@@ -76,3 +69,9 @@ export default class PortfolioList extends Component {
     );
   }
 }
+
+PortfolioList.propTypes = {
+  portfolio: React.PropTypes.array.isRequired,
+  loadedAllItems: React.PropTypes.bool.isRequired,
+  loadAllPortfolio: React.PropTypes.func.isRequired
+};
