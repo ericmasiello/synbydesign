@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const Logo = ( props ) => {
 
-  const { logoID, view } = props;  
+  const { logoID, view } = props;
   const isDetail = (view === 'detail') ? true : false;
   const svgLogo = '<use xlink:href="#syn-logo" />';
   const svgTitle = '<use xlink:href="#syn-title" />';
@@ -32,6 +32,6 @@ const Logo = ( props ) => {
 Logo.propTypes = {
   logoID: React.PropTypes.string.isRequired,
   view: React.PropTypes.oneOf(['detail', 'home']).isRequired,
-}
+};
 
 export default Logo;

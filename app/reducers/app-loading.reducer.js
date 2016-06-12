@@ -11,7 +11,7 @@ export default (state = {
       return {
         activeRequests: state.activeRequests + 1,
         loadedRequests: state.loadedRequests
-      }
+      };
     case RECEIVED_DATA:
 
       /*

@@ -58,11 +58,11 @@ LoadingStatus.propTypes = {
     activeRequests: React.PropTypes.number.isRequired,
     loadedRequests: React.PropTypes.number.isRequired
   })
-}
+};
 
 LoadingStatus.defaultPropTypes = {
   appLoading: {
     activeRequests: 0,
     loadedRequests: 0
   }
-}
+};

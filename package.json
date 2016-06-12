@@ -1,6 +1,6 @@
 {
   "name": "Syn-By-Design-React",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -51,6 +51,8 @@
     "node-sass": "^3.4.0",
     "react-addons-test-utils": "^0.14.6",
     "react-transform-hmr": "^1.0.1",
+    "redux-logger": "^2.6.1",
+    "remote-redux-devtools": "^0.3.3",
     "sass-loader": "^3.0.0",
     "style-loader": "^0.13.0",
     "svg-inline-loader": "^0.3.0",

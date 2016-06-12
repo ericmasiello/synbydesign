@@ -1,4 +1,5 @@
-[
+/* eslint-disable */
+export default [
   {
     "ID": 53,
     "title": "My Cool mix",

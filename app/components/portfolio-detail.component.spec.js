@@ -11,8 +11,8 @@ import PortfolioDetailLiveWeb from './portfolio-detail/portfolio-detail-live-web
 import PortfolioDetailStackDesign from './portfolio-detail/portfolio-detail-stack-design.component';
 import PortfolioDetailSVG from './portfolio-detail/portfolio-detail-svg.component';
 import { TITLE, UI_IDS, MIN_LIVE_SITE_BROWSER_WIDTH_MQ } from '../configuration/';
-import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
-import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
+import mockWebPortfolio from '../test-data/portfolio-web.mock';
+import mockDesignPortfolio from '../test-data/portfolio-design.mock';
 import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
 
 describe('PortfolioDetail', () => {
@@ -32,7 +32,7 @@ describe('PortfolioDetail', () => {
 
   const mockLoadSelectedPortfolio = (ID) => {
     requestedID = ID;
-  };  
+  };
 
   it('should render a node with a portfolio-detail CSS class name', ()=>{
     r = TestUtils.createRenderer();

@@ -24,5 +24,5 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(callOnMountHOC(function(){
   return this.props.loadedAllItems === false;
 }, function(){
-  this.props.loadSelectedPortfolio(this.props.params.id)
+  this.props.loadSelectedPortfolio(this.props.params.id);
 })(PortfolioDetail));
