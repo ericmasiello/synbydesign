@@ -9,7 +9,7 @@ export default class ChangeLog extends Component {
   renderChangeLogItem(item){
    return (
      <li key={item.ID}>
-       <h2 className="h1">{item.title}</h2>
+       <h2 className="h4">{item.title}</h2>
        <div dangerouslySetInnerHTML={{__html: item.htmlContent}} />
      </li>
    );
