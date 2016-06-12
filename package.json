@@ -1,6 +1,6 @@
 {
   "name": "Syn-By-Design-React",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "react-router": "^2.0.0-rc6",
     "redux": "^3.0.5",
     "redux-promise": "^0.5.0",
+    "redux-promise-mock": "^0.1.0",
     "synbydesign.design": "^0.3.1"
   },
   "devDependencies": {

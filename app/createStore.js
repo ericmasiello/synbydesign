@@ -6,7 +6,7 @@ import devTools from 'remote-redux-devtools';
 import reducers from './reducers';
 import promiseDispatcherMiddleware from './middleware/promise-dispatcher.middleware';
 import loadedAllDispatcherMiddleware from './middleware/loaded-all-dispatcher.middleware';
-import createMockMiddleware from './middleware/redux-promise-mock-data.middleware';
+import { createMockMiddleware } from 'redux-promise-mock';
 
 import {
   REQUEST_DATA,
