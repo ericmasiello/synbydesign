@@ -22,7 +22,7 @@ describe('Call On Mount HOC', () => {
     r = undefined;
     actual = undefined;
     expected = undefined;
-    calledTestFn = false
+    calledTestFn = false;
     calledRunOnMountFn = false;
     EnhancedComponent = undefined;
   });

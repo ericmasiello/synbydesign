@@ -21,8 +21,8 @@ export default function callOnMountHOC() {
       }
 
       render() {
-        return <WrappedComponent {...this.props} />
+        return <WrappedComponent {...this.props} />;
       }
-    }
-  }
+    };
+  };
 }

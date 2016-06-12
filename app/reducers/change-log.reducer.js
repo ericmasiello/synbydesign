@@ -5,6 +5,7 @@ export default (state = [], action = {}) => {
 
   switch(action.type){
     case LOAD_CHANGE_LOG:
+      console.log('!!!!! CHANGE LOG', action);
       return action.payload.data;
   }
 

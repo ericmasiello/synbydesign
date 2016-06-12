@@ -2,7 +2,7 @@
 import expect from 'expect';
 import reducer from './change-log.reducer';
 import { LOAD_CHANGE_LOG } from '../actions/types';
-import mockData from '../test-data/change-log.mock.json';
+import mockData from '../test-data/change-log.mock';
 
 describe('Change Log Reducer', () => {
 

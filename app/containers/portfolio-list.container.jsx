@@ -27,6 +27,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(
       return this.props.loadedAllItems === false;
     },
     function() {
-      this.props.loadAllPortfolio([...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES])
+      this.props.loadAllPortfolio([...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES]);
     })
   (PortfolioList));

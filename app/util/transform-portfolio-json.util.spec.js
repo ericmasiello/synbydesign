@@ -1,9 +1,9 @@
 'use strict';
 import expect from 'expect';
 import filter, { categoryReducerPartial, addMetaData } from './transform-portfolio-json.util';
-import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
-import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
-import mockOtherPortfolio from '../test-data/portfolio-other.mock.json';
+import mockWebPortfolio from '../test-data/portfolio-web.mock';
+import mockDesignPortfolio from '../test-data/portfolio-design.mock';
+import mockOtherPortfolio from '../test-data/portfolio-other.mock';
 
 describe('Transform Portfolio JSON Utility', () => {
 

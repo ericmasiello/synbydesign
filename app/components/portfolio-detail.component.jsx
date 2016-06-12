@@ -69,7 +69,7 @@ export default class PortfolioDetail extends Component {
       </section>
     );
   }
-}
+};
 
 PortfolioDetail.propTypes = {
   portfolio: React.PropTypes.array.isRequired,

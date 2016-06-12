@@ -21,4 +21,4 @@ export const WP_SLUGS = {
 
 var __PROD__ = __PROD__ || false;
 
-export const API_DOMAIN = __PROD__ ? 'http://www.synbydesign.com' : '';
+export const API_DOMAIN = !__DEV__ ? 'http://www.synbydesign.com' : '';

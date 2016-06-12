@@ -1,4 +1,5 @@
-[{
+/* eslint-disable */
+export default [{
 	"ID": 278,
 	"title": "Version 2.0.2",
 	"status": "publish",
