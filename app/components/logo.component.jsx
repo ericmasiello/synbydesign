@@ -1,11 +1,10 @@
+'use strict';
 import React from 'react';
 import { Link } from 'react-router';
 
-export default ( props ) => {
+const Logo = ( props ) => {
 
-  'use strict';
-
-  const { logoID, view } = props;
+  const { logoID, view } = props;  
   const isDetail = (view === 'detail') ? true : false;
   const svgLogo = '<use xlink:href="#syn-logo" />';
   const svgTitle = '<use xlink:href="#syn-title" />';
@@ -29,3 +28,10 @@ export default ( props ) => {
     </h1>
   );
 };
+
+Logo.propTypes = {
+  logoID: React.PropTypes.string.isRequired,
+  view: React.PropTypes.oneOf(['detail', 'home']).isRequired,
+}
+
+export default Logo;

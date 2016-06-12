@@ -70,3 +70,14 @@ export default class PortfolioDetail extends Component {
     );
   }
 }
+
+PortfolioDetail.propTypes = {
+  portfolio: React.PropTypes.array.isRequired,
+  params: React.PropTypes.shape({
+    id: React.PropTypes.string.isRequired
+  }).isRequired
+};
+
+PortfolioDetail.defaultProps = {
+  portfolio: []
+};

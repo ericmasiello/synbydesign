@@ -1,7 +1,7 @@
+'use strict';
 import React from 'react';
 
 const Skills = (props) => {
-  'use strict';
 
   let bulletClassNames = typeof props.bulletClassNames === 'string' ? props.bulletClassNames : '';
   bulletClassNames = `${bulletClassNames} bullet`;

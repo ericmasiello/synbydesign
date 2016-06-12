@@ -10,7 +10,6 @@ const ScrollLink = Scroll.Link;
 export default class Navigation extends Component {
 
   scrollTo(scrollToID) {
-
     window.setTimeout(function () {
       document.getElementById(scrollToID).focus();
     }, 0);
@@ -72,5 +71,5 @@ export default class Navigation extends Component {
 };
 
 Navigation.propTypes = {
-  view: React.PropTypes.string.isRequired
+  view: React.PropTypes.oneOf(['detail', 'home']).isRequired
 };
