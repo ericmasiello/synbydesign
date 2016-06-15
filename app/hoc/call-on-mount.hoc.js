@@ -15,13 +15,13 @@ export default function callOnMountHOC() {
 
   return function(WrappedComponent) {
 
-    return class extends Component {
+    return class CallOnMountEnhancer extends WrappedComponent {
       componentWillMount() {
         testIfIShouldRunOnMount.call(this) && runOnMount.call(this);
       }
 
       render() {
-        return <WrappedComponent {...this.props} />;
+        return super.render();
       }
     };
   };
