@@ -1,3 +1,4 @@
+'use strict';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import ReduxPromise from 'redux-promise';
 import createLogger from 'redux-logger';

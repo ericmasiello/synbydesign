@@ -1,6 +1,6 @@
+'use strict';
 import React, { Component } from 'react';
 import Skills from '../skills.component';
-
 
 export default class PortfolioDetailLiveWeb extends Component {
 

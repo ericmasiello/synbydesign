@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PortfolioDetail from '../components/portfolio-detail.component';
@@ -7,7 +8,6 @@ import transfromPortfolioJSON from '../util/transform-portfolio-json.util';
 import callOnMountHOC from '../hoc/call-on-mount.hoc';
 
 const mapStateToProps = ({portfolio, loadedAllItems}) => {
-  'use strict';
   return {
     portfolio: transfromPortfolioJSON(portfolio),
     loadedAllItems
@@ -15,7 +15,6 @@ const mapStateToProps = ({portfolio, loadedAllItems}) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  'use strict';
   return bindActionCreators({
     loadSelectedPortfolio
   }, dispatch);

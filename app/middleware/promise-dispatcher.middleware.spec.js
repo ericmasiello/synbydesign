@@ -1,9 +1,8 @@
+'use strict';
 import expect from 'expect';
 import middleware from './promise-dispatcher.middleware';
 
 describe('Promise Dispatcher Middleware', () => {
-  'use strict';
-
   let calledBeginCount = 0;
   let calledEndCount = 0;
 

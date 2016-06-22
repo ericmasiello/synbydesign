@@ -9,7 +9,7 @@
   ],
   "rules": {
     "new-cap": 0,
-    "strict": [1, "function"],
+    "strict": [1, "global"],
     "semi": [2, "always"],
     "no-underscore-dangle": 0,
     "no-use-before-define": 0,

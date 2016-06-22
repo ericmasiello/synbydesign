@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import LoadingStatusContainer from '../containers/loading-status.container';
 import isAppLoading from '../util/is-app-loading.util';

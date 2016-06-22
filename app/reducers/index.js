@@ -1,3 +1,4 @@
+'use strict';
 import { combineReducers } from 'redux';
 import AppLoadingReducer from './app-loading.reducer';
 import PortfolioReducer from './portfolio.reducer';

@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -6,9 +7,6 @@ import React from 'react';
 import Skills from './skills.component';
 
 describe('Skills', () => {
-
-  'use strict';
-
   let skills;
   let r;
   let actual;

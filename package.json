@@ -23,7 +23,7 @@
     "react-document-title": "^2.0.2",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
-    "react-router": "^2.0.0-rc6",
+    "react-router": "^2.4.1",
     "react-scroll": "^1.0.17",
     "redux": "^3.5.2",
     "redux-promise": "^0.5.3",

@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
 import { UI_IDS } from '../configuration';

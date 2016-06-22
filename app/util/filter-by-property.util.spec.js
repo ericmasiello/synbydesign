@@ -1,9 +1,8 @@
+'use strict';
 import expect from 'expect';
 import filter from './filter-by-property.util';
 
 describe('Filter Portfolio By Property Utility', () => {
-  'use strict';
-
   let actual;
   let expected;
 
