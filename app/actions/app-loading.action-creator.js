@@ -1,3 +1,4 @@
+'use strict';
 import { REQUEST_DATA, RECEIVED_DATA } from './types';
 
 /**
@@ -7,7 +8,6 @@ import { REQUEST_DATA, RECEIVED_DATA } from './types';
  * @returns {{type: REQUEST_DATA}}
  */
 export function requestDataFromServer(){
-  'use strict';
   return {
     type: REQUEST_DATA
   };
@@ -19,8 +19,7 @@ export function requestDataFromServer(){
  * that it should stop displaying the loading bar
  * @returns {{type: RECEIVED_DATA}}
  */
-export function receiveDataFromServer(){
-  'use strict';
+export function receiveDataFromServer(){  
   return {
     type: RECEIVED_DATA
   };

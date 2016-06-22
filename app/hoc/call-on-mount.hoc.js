@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 
 export default function callOnMountHOC() {
@@ -23,7 +24,7 @@ export default function callOnMountHOC() {
         testIfIShouldRunOnMount.call(this) && runOnMount.call(this);
       }
 
-      render() {        
+      render() {
         return isClassComponent ? super.render() : <WrappedComponent />;
       }
     };

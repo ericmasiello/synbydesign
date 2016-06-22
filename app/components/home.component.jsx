@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 import PortfolioList from '../containers/portfolio-list.container';
 import DocumentTitle from 'react-document-title';
@@ -10,8 +11,7 @@ import AboutContent from '../containers/about-content.container';
  * @description Home component that contains contents for home (portfolio list) page.
  * @returns {XML}
  */
-export default () => {
-  'use strict';
+export default () => {  
   return (
     <div>
       <DocumentTitle title={TITLE}/>

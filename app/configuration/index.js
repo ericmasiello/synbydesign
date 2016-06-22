@@ -1,3 +1,4 @@
+'use strict';
 export const TITLE = 'Syn By Design - Eric Masiello\'s portfolio';
 export const UI_IDS = {
   logo: 'logo',
@@ -19,4 +20,5 @@ export const WP_SLUGS = {
   CHANGE_LOG: 'change-log'
 };
 
-export const API_DOMAIN = process.env.NODE_ENV === 'production' ? 'http://www.synbydesign.com' : '';
+//dynamically load value based on `process.env.NODE_ENV`
+export const API_DOMAIN = require('./api-domain.' + process.env.NODE_ENV);

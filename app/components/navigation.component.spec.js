@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -7,9 +8,7 @@ import Navigation from './navigation.component';
 import Logo from './logo.component';
 import { UI_IDS } from '../configuration';
 
-describe('Navigation', () => {
-  'use strict';
-
+describe('Navigation', () => {  
   let requestedID = null;
   let r;
   let actual;

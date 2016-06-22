@@ -1,6 +1,6 @@
 {
   "name": "Syn-By-Design-React",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,18 +15,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.8.1",
+    "axios": "^0.12.0",
     "extract-image-props-from-html-string": "^0.2.3",
-    "history": "1.13.x",
+    "history": "^3.0.0",
     "nprogress": "^0.2.0",
     "react": "^15.1.0",
-    "react-document-title": "^2.0.1",
+    "react-document-title": "^2.0.2",
     "react-dom": "^15.1.0",
-    "react-redux": "^4.0.6",
-    "react-router": "^2.0.0-rc6",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
     "react-scroll": "^1.0.17",
-    "redux": "^3.0.5",
-    "redux-promise": "^0.5.0",
+    "redux": "^3.5.2",
+    "redux-promise": "^0.5.3",
     "redux-promise-mock": "^0.1.0",
     "synbydesign.design": "^0.3.1"
   },

@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -5,8 +6,7 @@ import TestUtils from 'react-addons-test-utils';
 import React from 'react';
 import LoadingStatus from './../components/loading-status.component';
 
-describe('LoadingStatus', () => {
-  'use strict';
+describe('LoadingStatus', () => {  
   it('should not have a progress property by default', () => {
 
     const appLoadingProp = {

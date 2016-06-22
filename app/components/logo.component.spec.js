@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -7,9 +8,6 @@ import Logo from './logo.component';
 import { Link } from 'react-router';
 
 describe('Logo', () => {
-
-  'use strict';
-
   let r;
   let actual;
   let expected;
