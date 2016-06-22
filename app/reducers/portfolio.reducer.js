@@ -1,7 +1,7 @@
+'use strict';
 import { LOAD_PORTFOLIO_ALL, LOAD_PORTFOLIO_DETAIL } from '../actions/types';
 
 export default (state = [], action = {}) => {
-  'use strict';
 
   switch(action.type){
     case LOAD_PORTFOLIO_ALL:

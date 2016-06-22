@@ -1,17 +1,17 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
 import PortfolioList from './../components/portfolio-list.component';
-import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
-import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
-import mockOtherPortfolio from '../test-data/portfolio-other.mock.json';
+import mockWebPortfolio from '../test-data/portfolio-web.mock';
+import mockDesignPortfolio from '../test-data/portfolio-design.mock';
+import mockOtherPortfolio from '../test-data/portfolio-other.mock';
 import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
 import { DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
 
 describe('PortfolioList', () => {
-  'use strict';
 
   const mockLoadAllPortfolio = function(){};
   const WebTitle = <h1 className="h3  text-center">Web Design &amp; Development</h1>;
@@ -27,29 +27,6 @@ describe('PortfolioList', () => {
     const expected = 'section';
 
     expect(rootTag).toEqual(expected);
-  });
-
-  it('should request portfolio items of the appropriate categories based on whether or not we have already loaded all the items', () => {
-
-    let actual = [];
-    const customMockLoadAllPortfolio = (categories) => {
-      actual = categories;
-    };
-
-    const r = TestUtils.createRenderer();
-    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={false} />);
-    r.getRenderOutput();
-    let expected = [...DESIGN_CATEGORIES, ...OTHER_CATEGORIES, ...WEB_CATEGORIES, ...MIX_CATEGORIES];
-
-    expect(actual).toEqual(expected);
-
-    actual = []; //reset
-
-    r.render(<PortfolioList loadAllPortfolio={customMockLoadAllPortfolio} portfolio={[]} loadedAllItems={true} />);
-    r.getRenderOutput();
-    expected = [];
-
-    expect(actual).toEqual(expected);
   });
 
   it('should not render web, design, other headings when no corresponding portfolio data is provided', () => {

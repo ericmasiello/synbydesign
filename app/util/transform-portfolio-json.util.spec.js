@@ -1,11 +1,11 @@
+'use strict';
 import expect from 'expect';
-import filter from './transform-portfolio-json.util';
-import mockWebPortfolio from '../test-data/portfolio-web.mock.json';
-import mockDesignPortfolio from '../test-data/portfolio-design.mock.json';
-import mockOtherPortfolio from '../test-data/portfolio-other.mock.json';
+import filter, { categoryReducerPartial, addMetaData } from './transform-portfolio-json.util';
+import mockWebPortfolio from '../test-data/portfolio-web.mock';
+import mockDesignPortfolio from '../test-data/portfolio-design.mock';
+import mockOtherPortfolio from '../test-data/portfolio-other.mock';
 
 describe('Transform Portfolio JSON Utility', () => {
-  'use strict';
 
   let actual;
   let expected;
@@ -15,7 +15,26 @@ describe('Transform Portfolio JSON Utility', () => {
     expected = undefined;
   });
 
-  it('should return the the inputted value if its not an array of length greater than zero', ()=>{
+  describe('set meta properties', () => {
+
+    it('should set default values', () => {
+
+      actual = addMetaData({}, null);
+      expected = {
+        meta: {
+          showLiveSite: false,
+          liveSiteUrl: null,
+          stackDesign: false
+        }
+      };
+
+      expect(actual).toEqual(expected);
+
+    });
+
+  });
+
+  it('should return the the inputted value if its not an array of length greater than zero', () => {
 
     actual = filter([]);
     expected = [];

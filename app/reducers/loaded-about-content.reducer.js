@@ -1,12 +1,12 @@
 'use strict';
 import { LOAD_ABOUT_CONTENT } from '../actions/types';
 
-export default (state = '', action = {}) => {
+export default (state = false, action = {}) => {
 
-  switch(action.type) {
+  switch(action.type){
     case LOAD_ABOUT_CONTENT:
-      return action.payload.data.content;
-  }
+      return true;
+    }
 
   return state;
 };

@@ -6,7 +6,7 @@ import { API_URL, WP_SLUGS, API_DOMAIN } from '../configuration/';
  * @description generates an action for loading the about contentfrom the server. This
  * generates a promise using axios.get(). The promise will be resolved automatically
  * and dispatched via the ReduxPromise middleware
- * @returns {{type: LOAD_ABOUT_CONTENT, payload: *}}
+ * @returns {{type: LOAD_CHANGE_LOG, payload: *}}
  */
 const loadChangeLog = () => {
   'use strict';

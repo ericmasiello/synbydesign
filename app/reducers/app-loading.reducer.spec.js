@@ -1,16 +1,16 @@
+'use strict';
 import expect from 'expect';
 import reducer from './app-loading.reducer';
 import { REQUEST_DATA, RECEIVED_DATA } from '../actions/types';
 
 describe('App Loading Reducer', () => {
-  'use strict';
 
   const initialState = {
     activeRequests: 0,
     loadedRequests: 0
   };
 
-  it('should increment active requests when responding to REQUEST_DATA', ()=>{
+  it('should increment active requests when responding to REQUEST_DATA', () => {
 
     const actual = reducer(initialState, {
       type: REQUEST_DATA

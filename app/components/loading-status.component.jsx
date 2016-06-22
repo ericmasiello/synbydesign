@@ -1,22 +1,17 @@
+'use strict';
+
 import React, { Component } from 'react';
 import { findDOMNode, render } from 'react-dom';
 import NProgress from 'nprogress';
 import isAppLoading from '../util/is-app-loading.util';
 
-export default React.createClass({
-
-  propTypes: {
-    appLoading: React.PropTypes.object
-  },
-
+export default class LoadingStatus extends Component {
   componentDidMount() {
-    'use strict';
     this.node = findDOMNode(this);
     this.renderNProgress();
-  },
+  }
 
   renderNProgress() {
-    'use strict';
     //create reference to progress instance
     this.progress = NProgress.configure({});
 
@@ -26,11 +21,9 @@ export default React.createClass({
     // Got this approach from: https://github.com/ryanflorence/react-training/blob/gh-pages/lessons/05-wrapping-dom-libs.md
     // See also: https://github.com/ryanflorence/react-training/blob/gh-pages/code/Dialog/Dialog.js
     render(<div />, this.node);
-  },
+  }
 
   render() {
-    'use strict';
-    //console.log('called render');
     if (this.progress) {
 
       const { loadedRequests,activeRequests } = this.props.appLoading;
@@ -58,4 +51,18 @@ export default React.createClass({
       <div />
     );
   }
-});
+}
+
+LoadingStatus.propTypes = {
+  appLoading: React.PropTypes.shape({
+    activeRequests: React.PropTypes.number.isRequired,
+    loadedRequests: React.PropTypes.number.isRequired
+  })
+};
+
+LoadingStatus.defaultPropTypes = {
+  appLoading: {
+    activeRequests: 0,
+    loadedRequests: 0
+  }
+};

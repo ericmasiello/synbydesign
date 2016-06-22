@@ -1,5 +1,6 @@
+'use strict';
 import React from 'react';
-import { Element } from '@synapsestudios/react-scroll';
+import { Element } from 'react-scroll';
 
 /*
  * Kludge, in order to avoid the screen reader reading content twice (caused by having a tabIndex value set,
@@ -9,7 +10,6 @@ import { Element } from '@synapsestudios/react-scroll';
  */
 
 const ScreenReaderFocusElm = (props) => {
-  'use strict';
   return (
     <Element name={props.elmId} id={props.elmId} tabIndex="-1" {...props}>
       {props.children}

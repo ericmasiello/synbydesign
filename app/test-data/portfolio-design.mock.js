@@ -1,4 +1,5 @@
-[
+/* eslint-disable */
+export default [
   {
     "ID": 219,
     "title": "EXBC @ BNG (Harry R4NS0M) web promo",
