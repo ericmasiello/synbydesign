@@ -22,7 +22,7 @@ describe('Call On Mount HOC', () => {
 
   class SubMockComponent extends MockComponent {
     render() {
-      return (<div>Goodbye World</div>)
+      return (<div>Goodbye World</div>);
     }
   }
 
@@ -76,9 +76,7 @@ describe('Call On Mount HOC', () => {
 
       expect(calledRunOnMountFn).toEqual(expected);
     });
-  })
-
-
+  });
 
   describe('should only call runOnMount in certain circumstances', () => {
 

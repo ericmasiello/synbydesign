@@ -23,8 +23,7 @@ export default function callOnMountHOC() {
         testIfIShouldRunOnMount.call(this) && runOnMount.call(this);
       }
 
-      render() {
-        //console.log('super.render: ', super.render);
+      render() {        
         return isClassComponent ? super.render() : <WrappedComponent />;
       }
     };
