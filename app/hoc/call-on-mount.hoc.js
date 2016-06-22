@@ -15,13 +15,16 @@ export default function callOnMountHOC() {
 
   return function(WrappedComponent) {
 
+    const isClassComponent = Object.getPrototypeOf(WrappedComponent) === Component;
+    WrappedComponent = !isClassComponent ? Component : WrappedComponent;
+
     return class CallOnMountEnhancer extends WrappedComponent {
       componentWillMount() {
         testIfIShouldRunOnMount.call(this) && runOnMount.call(this);
       }
 
-      render() {
-        return super.render();
+      render() {        
+        return isClassComponent ? super.render() : <WrappedComponent />;
       }
     };
   };

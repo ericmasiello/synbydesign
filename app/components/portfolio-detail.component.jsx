@@ -74,7 +74,10 @@ export default class PortfolioDetail extends Component {
 PortfolioDetail.propTypes = {
   portfolio: React.PropTypes.array.isRequired,
   params: React.PropTypes.shape({
-    id: React.PropTypes.string.isRequired
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number
+    ]).isRequired
   }).isRequired
 };
 

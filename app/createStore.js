@@ -45,7 +45,7 @@ const middleware = [
   ReduxPromise
 ];
 
-if(__DEV__) {
+if(process.env.NODE_ENV === 'development') {
   middleware.push(mockData);
 }
 

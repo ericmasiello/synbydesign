@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import LoadingStatusContainer from '../containers/loading-status.container';
 import isAppLoading from '../util/is-app-loading.util';
 import { Link } from 'react-router';
-import Scroll from '@synapsestudios/react-scroll';
+import Scroll from 'react-scroll';
 import { UI_IDS } from '../configuration';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
-const ScrollLink = Scroll.Link;
-
+const { Link: ScrollLink } = Scroll;
 
 /** Class representing the App */
 export default class App extends Component {

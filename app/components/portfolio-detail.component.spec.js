@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -16,7 +17,6 @@ import mockDesignPortfolio from '../test-data/portfolio-design.mock';
 import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
 
 describe('PortfolioDetail', () => {
-  'use strict';
 
   let requestedID = null;
   let r;

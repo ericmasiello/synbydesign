@@ -75,3 +75,7 @@ PortfolioList.propTypes = {
   loadedAllItems: React.PropTypes.bool.isRequired,
   loadAllPortfolio: React.PropTypes.func.isRequired
 };
+
+PortfolioList.defaultProps = {
+  loadedAllItems: true
+};

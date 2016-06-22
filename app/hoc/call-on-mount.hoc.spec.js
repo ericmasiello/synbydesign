@@ -14,8 +14,20 @@ describe('Call On Mount HOC', () => {
   let calledTestFn = false;
   let calledRunOnMountFn = false;
   let EnhancedComponent;
+  class MockComponent extends React.Component {
+    render() {
+      return (<div>Hello World</div>);
+    }
+  }
+
+  class SubMockComponent extends MockComponent {
+    render() {
+      return (<div>Goodbye World</div>);
+    }
+  }
 
   beforeEach(()=> {
+
   });
 
   afterEach(()=>{
@@ -27,16 +39,43 @@ describe('Call On Mount HOC', () => {
     EnhancedComponent = undefined;
   });
 
-  it('should call runOnMount method if its the only argument', () => {
-    EnhancedComponent = callOnMountHOC(function() {
-      calledRunOnMountFn = true;
-    })(<div>Hello world</div>);
+  describe('should call runOnMount method if its the only argument', () => {
 
-    r = TestUtils.createRenderer();
-    r.render(<EnhancedComponent />);
-    expected = true;
+    it('will work on components built by extending React.Component', () => {
+      EnhancedComponent = callOnMountHOC(function() {
+        calledRunOnMountFn = true;
+      })(MockComponent);
 
-    expect(calledRunOnMountFn).toEqual(expected);
+      r = TestUtils.createRenderer();
+      r.render(<EnhancedComponent />);
+      expected = true;
+
+      expect(calledRunOnMountFn).toEqual(expected);
+    });
+
+    it('will work on components that extend another component', () => {
+      EnhancedComponent = callOnMountHOC(function() {
+        calledRunOnMountFn = true;
+      })(SubMockComponent);
+
+      r = TestUtils.createRenderer();
+      r.render(<EnhancedComponent />);
+      expected = true;
+
+      expect(calledRunOnMountFn).toEqual(expected);
+    });
+
+    it('will work on funcitonal components', () => {
+      EnhancedComponent = callOnMountHOC(function() {
+        calledRunOnMountFn = true;
+      })(<div>I'm functional</div>);
+
+      r = TestUtils.createRenderer();
+      r.render(<EnhancedComponent />);
+      expected = true;
+
+      expect(calledRunOnMountFn).toEqual(expected);
+    });
   });
 
   describe('should only call runOnMount in certain circumstances', () => {

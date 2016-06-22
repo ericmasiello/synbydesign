@@ -82,8 +82,9 @@ if (TARGET === 'start' || !TARGET) {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
-        __DEV__: true,
-        __PROD__: false
+        'process.env': {
+          'NODE_ENV': JSON.stringify('development') //weird hack
+        }
       })
     ]
   });
@@ -119,7 +120,7 @@ if (TARGET === 'build'){
       ),
       new webpack.DefinePlugin({
         'process.env': {
-          //this affects react lib size
+          //this affects react lib size (make smaller)
           'NODE_ENV': JSON.stringify('production') //weird hack
         }
       }),
@@ -127,10 +128,6 @@ if (TARGET === 'build'){
         compress: {
           warnings: false
         }
-      }),
-      new webpack.DefinePlugin({
-        __DEV__: false,
-        __PROD__: true
       })
     ]
   });

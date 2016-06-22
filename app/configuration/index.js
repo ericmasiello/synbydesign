@@ -19,6 +19,4 @@ export const WP_SLUGS = {
   CHANGE_LOG: 'change-log'
 };
 
-var __PROD__ = __PROD__ || false;
-
-export const API_DOMAIN = !__DEV__ ? 'http://www.synbydesign.com' : '';
+export const API_DOMAIN = process.env.NODE_ENV === 'production' ? 'http://www.synbydesign.com' : '';
