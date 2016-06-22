@@ -82,8 +82,10 @@ if (TARGET === 'start' || !TARGET) {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
-        __DEV__: true,
-        __PROD__: false
+        'process.env': {
+          //this affects react lib size
+          'NODE_ENV': JSON.stringify('development') //weird hack
+        }
       })
     ]
   });
@@ -127,10 +129,6 @@ if (TARGET === 'build'){
         compress: {
           warnings: false
         }
-      }),
-      new webpack.DefinePlugin({
-        __DEV__: false,
-        __PROD__: true
       })
     ]
   });
