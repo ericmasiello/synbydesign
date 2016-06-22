@@ -25,7 +25,7 @@ describe('Logo', () => {
   });
 
   it('should render as an h1 tag', () => {
-    r.render(<Logo />);
+    r.render(<Logo logoID="the-id" />);
     actual = r.getRenderOutput();
     expected = 'h1';
 
@@ -48,9 +48,15 @@ describe('Logo', () => {
         <Link to="/" id="the-id">
           <span>
             <span className="visually-hidden">Back to Syn By Design home page</span>
-            <svg className={`logo  logo__head  logo--detail`} dangerouslySetInnerHTML={{__html: '<use xlink:href="#syn-logo" />'}}/>
-            <svg className={`logo  logo__title  logo--detail`} dangerouslySetInnerHTML={{__html: '<use xlink:href="#syn-title" />'}}/>
-            <svg className={`logo  logo__slogan  logo--detail`} dangerouslySetInnerHTML={{__html: '<use xlink:href="#syn-slogan" />'}}/>
+            <svg className={`logo  logo__head  logo--detail`}>
+              <use href="#syn-logo" />
+            </svg>
+            <svg className={`logo  logo__title  logo--detail`}>
+              <use href="#syn-title" />
+            </svg>
+            <svg className={`logo  logo__slogan  logo--detail`}>
+              <use href="#syn-slogan" />
+            </svg>
           </span>
         </Link>);
     });
@@ -59,7 +65,7 @@ describe('Logo', () => {
   describe('should set the the default view', ()=>{
 
     beforeEach(()=>{
-      r.render(<Logo logoID="the-id"  />);
+      r.render(<Logo logoID="the-id" />);
       actual = r.getRenderOutput();
     });
 

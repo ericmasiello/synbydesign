@@ -1,3 +1,4 @@
+'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
 expect.extend(expectJSX);
@@ -11,7 +12,6 @@ import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
 import { DESIGN_CATEGORIES, OTHER_CATEGORIES, WEB_CATEGORIES, MIX_CATEGORIES } from '../configuration/';
 
 describe('PortfolioList', () => {
-  'use strict';
 
   const mockLoadAllPortfolio = function(){};
   const WebTitle = <h1 className="h3  text-center">Web Design &amp; Development</h1>;

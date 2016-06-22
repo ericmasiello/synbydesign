@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import {UI_IDS} from '../configuration';
 import Logo from './logo.component';
-import Scroll from '@synapsestudios/react-scroll';
-const ScrollLink = Scroll.Link;
+import Scroll from 'react-scroll';
+const { Link: ScrollLink } = Scroll;
 
 export default class Navigation extends Component {
 
@@ -72,5 +72,9 @@ export default class Navigation extends Component {
 };
 
 Navigation.propTypes = {
-  view: React.PropTypes.oneOf(['detail', 'home']).isRequired
+  view: React.PropTypes.oneOf(['detail', 'home'])
+};
+
+Navigation.defaultProps = {
+  viw: 'home'
 };
