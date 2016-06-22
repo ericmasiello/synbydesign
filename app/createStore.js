@@ -24,6 +24,10 @@ import mockOther from './test-data/portfolio-other.mock';
 import mockWeb from './test-data/portfolio-web.mock';
 import mockAbout from './test-data/about.mock';
 
+const isDevMode = () => {
+  return process.env.NODE_ENV === 'development';
+};
+
 const logger = createLogger();
 
 const mockData = createMockMiddleware({
@@ -38,14 +42,20 @@ const mockData = createMockMiddleware({
   }
 });
 
-const middleware = [
-  logger,
+let middleware = [];
+
+if(isDevMode()) {
+  middleware.push(logger);
+}
+
+middleware = [
+  ...middleware,
   promiseDispatcherMiddleware(REQUEST_DATA, RECEIVED_DATA),
   loadedAllDispatcherMiddleware(LOAD_PORTFOLIO_ALL, LOADED_ALL_PORTFOLIO),
   ReduxPromise
 ];
 
-if(process.env.NODE_ENV === 'development') {
+if(isDevMode()) {
   middleware.push(mockData);
 }
 
@@ -54,15 +64,18 @@ const enhancer = compose(
   devTools()
 );
 
-export default createStore(reducers, {
-  appLoading: {
-    activeRequests: 0,
-    loadedRequests: 0
+export default createStore(
+  reducers, {
+    appLoading: {
+      activeRequests: 0,
+      loadedRequests: 0
+    },
+    aboutContent: '',
+    loadedAboutContent: false,
+    portfolio: [],
+    loadedAllItems: false,
+    changeLog: [],
+    loadedChangeLog: false
   },
-  aboutContent: '',
-  loadedAboutContent: false,
-  portfolio: [],
-  loadedAllItems: false,
-  changeLog: [],
-  loadedChangeLog: false
-}, enhancer);
+  enhancer
+);
