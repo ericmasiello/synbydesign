@@ -32,11 +32,12 @@ export default class Navigation extends Component {
           <Logo view={view} logoID={UI_IDS.logo} />
         </li>
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__about">
-          <ScrollLink href="#" to={UI_IDS.about} smooth={true} duration={500} className="pill" onClick={this.scrollTo.bind(this, UI_IDS.about)}>About</ScrollLink>
+          <ScrollLink href="#" to={UI_IDS.about} smooth={true} duration={500} className="pill"
+            onClick={this.scrollTo.bind(this, UI_IDS.about)}>About</ScrollLink>
         </li>
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__portfolio">
           <ScrollLink href="#" to={UI_IDS.portfolioList} smooth={true} duration={500} className="pill"
-                onClick={this.scrollTo.bind(this, UI_IDS.portfolioList)}>Portfolio</ScrollLink>
+            onClick={this.scrollTo.bind(this, UI_IDS.portfolioList)}>Portfolio</ScrollLink>
         </li>
         <li role="presentation" className="col-xs-12  col-sm  masthead__nav__linked-in">
           <a href="https://www.linkedin.com/in/ericmasiello" className="pill">LinkedIn</a>

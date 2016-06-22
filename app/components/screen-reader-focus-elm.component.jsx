@@ -11,9 +11,9 @@ import { Element } from '@synapsestudios/react-scroll';
 
 const ScreenReaderFocusElm = (props) => {
   return (
-    <Element name={props.elmId} id={props.elmId} tabIndex="-1" {...props}>
+    <div name={props.elmId} id={props.elmId} tabIndex="-1" {...props}>
       {props.children}
-    </Element>
+    </div>
   );
 };
 

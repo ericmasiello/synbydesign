@@ -83,7 +83,6 @@ if (TARGET === 'start' || !TARGET) {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin({
         'process.env': {
-          //this affects react lib size
           'NODE_ENV': JSON.stringify('development') //weird hack
         }
       })
@@ -121,7 +120,7 @@ if (TARGET === 'build'){
       ),
       new webpack.DefinePlugin({
         'process.env': {
-          //this affects react lib size
+          //this affects react lib size (make smaller)
           'NODE_ENV': JSON.stringify('production') //weird hack
         }
       }),
