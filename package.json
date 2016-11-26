@@ -5,7 +5,7 @@
   "main": "app/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint .eslintrc.js --ext [js,jsx] --cache --ignore-pattern !.eslintrc.js"
+    "lint": "eslint app/actions .eslintrc.js --ext [js,jsx] --cache --ignore-pattern !.eslintrc.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "eslint-plugin-react": "^6.7.1"
   },
   "dependencies": {
+    "axios": "^0.15.2",
     "babel-eslint": "^7.1.1"
   }
 }

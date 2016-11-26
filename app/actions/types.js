@@ -1,4 +1,3 @@
-'use strict';
 export const REQUEST_DATA = 'REQUEST_DATA';
 export const RECEIVED_DATA = 'RECEIVED_DATA';
 export const LOAD_PORTFOLIO_ALL = 'LOAD_PORTFOLIO_ALL';

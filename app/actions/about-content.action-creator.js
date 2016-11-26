@@ -1,6 +1,5 @@
-'use strict';
-import { LOAD_ABOUT_CONTENT } from './types';
 import axios from 'axios';
+import { LOAD_ABOUT_CONTENT } from './types';
 import { API_URL, API_DOMAIN } from '../configuration/';
 
 /**
@@ -15,8 +14,8 @@ const loadAboutContent = () => {
 
   return {
     type: LOAD_ABOUT_CONTENT,
-    payload: request
+    payload: request,
   };
 };
 
-export {loadAboutContent};
+export { loadAboutContent };

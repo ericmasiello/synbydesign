@@ -1,6 +1,5 @@
-'use strict';
-import { LOAD_PORTFOLIO_ALL, LOAD_PORTFOLIO_DETAIL } from './types';
 import axios from 'axios';
+import { LOAD_PORTFOLIO_ALL, LOAD_PORTFOLIO_DETAIL } from './types';
 import { API_URL, API_DOMAIN } from '../configuration/';
 
 /**
@@ -16,7 +15,7 @@ const loadAllPortfolio = (categories) => {
 
   return {
     type: LOAD_PORTFOLIO_ALL,
-    payload: request
+    payload: request,
   };
 };
 
@@ -27,14 +26,14 @@ const loadAllPortfolio = (categories) => {
  * @param {number} id of portfolio item
  * @returns {{type: LOAD_PORTFOLIO_DETAIL, payload: *}}
  */
-const loadSelectedPortfolio = (id) => {  
+const loadSelectedPortfolio = (id) => {
   const URI = `${API_DOMAIN}${API_URL}/posts/${id}`;
   const request = axios.get(URI);
 
   return {
     type: LOAD_PORTFOLIO_DETAIL,
-    payload: request
+    payload: request,
   };
 };
 
-export {loadAllPortfolio, loadSelectedPortfolio};
+export { loadAllPortfolio, loadSelectedPortfolio };

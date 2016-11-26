@@ -1,6 +1,5 @@
-'use strict';
-import { LOAD_CHANGE_LOG } from './types';
 import axios from 'axios';
+import { LOAD_CHANGE_LOG } from './types';
 import { API_URL, WP_SLUGS, API_DOMAIN } from '../configuration/';
 
 /**
@@ -15,8 +14,8 @@ const loadChangeLog = () => {
 
   return {
     type: LOAD_CHANGE_LOG,
-    payload: request
+    payload: request,
   };
 };
 
-export {loadChangeLog};
+export { loadChangeLog };
