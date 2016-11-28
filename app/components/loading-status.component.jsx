@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component } from 'react';
 import { findDOMNode, render } from 'react-dom';
 import NProgress from 'nprogress';
@@ -12,7 +10,7 @@ export default class LoadingStatus extends Component {
   }
 
   renderNProgress() {
-    //create reference to progress instance
+    // create reference to progress instance
     this.progress = NProgress.configure({});
 
     // start a new React render tree with our node and the children
@@ -25,8 +23,7 @@ export default class LoadingStatus extends Component {
 
   render() {
     if (this.progress) {
-
-      const { loadedRequests,activeRequests } = this.props.appLoading;
+      const { loadedRequests, activeRequests } = this.props.appLoading;
       const isLoading = isAppLoading(this.props.appLoading);
 
       /**
@@ -34,16 +31,11 @@ export default class LoadingStatus extends Component {
        * plugin yet, we need to call .start() to add it ot the DOM
        */
       if (isLoading === true && this.progress.isRendered() === false) {
-
         this.progress.start();
-
       } else if (isLoading === false) {
-
         this.progress.done();
-
       } else {
-
-        this.progress.inc(loadedRequests/activeRequests);
+        this.progress.inc(loadedRequests / activeRequests);
       }
     }
 
@@ -56,13 +48,13 @@ export default class LoadingStatus extends Component {
 LoadingStatus.propTypes = {
   appLoading: React.PropTypes.shape({
     activeRequests: React.PropTypes.number.isRequired,
-    loadedRequests: React.PropTypes.number.isRequired
-  })
+    loadedRequests: React.PropTypes.number.isRequired,
+  }),
 };
 
 LoadingStatus.defaultPropTypes = {
   appLoading: {
     activeRequests: 0,
-    loadedRequests: 0
-  }
+    loadedRequests: 0,
+  },
 };

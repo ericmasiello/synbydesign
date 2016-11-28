@@ -1,4 +1,3 @@
-'use strict';
 import expect from 'expect';
 import middleware from './promise-dispatcher.middleware';
 
@@ -6,27 +5,28 @@ describe('Promise Dispatcher Middleware', () => {
   let calledBeginCount = 0;
   let calledEndCount = 0;
 
-  const mockNext = function(action){};
+  const mockNext = () => {};
 
   const mockStore = {
-    dispatch(action){
-      switch(action.type){
-      case 'BEGIN':
-        calledBeginCount++;
-        break;
-      case 'END':
-        calledEndCount++;
-        break;
+    dispatch(action) {
+      switch (action.type) {
+        case 'BEGIN':
+          calledBeginCount += 1;
+          break;
+        case 'END':
+          calledEndCount += 1;
+          break;
+        default:
+          break;
       }
-    }
+    },
   };
 
   const m = middleware('BEGIN', 'END')(mockStore)(mockNext);
 
   it('should ignore actions without promises as payloads', () => {
-
     m({
-      type: 'WHATEVER'
+      type: 'WHATEVER',
     });
 
     expect(calledBeginCount).toEqual(0);
@@ -35,8 +35,8 @@ describe('Promise Dispatcher Middleware', () => {
     m({
       type: 'WHATEVER',
       payload: {
-        foo: 'bar'
-      }
+        foo: 'bar',
+      },
     });
 
     expect(calledBeginCount).toEqual(0);
@@ -44,23 +44,21 @@ describe('Promise Dispatcher Middleware', () => {
   });
 
   it('should send actions when a promises is the payload', (done) => {
-
-    const promise = new Promise(function(resolve, reject) {
+    const promise = new Promise((resolve) => {
       resolve('Resolving promise');
     });
 
     m({
       type: 'SOMETHING_WITH_A_PROMISE',
-      payload: promise
+      payload: promise,
     });
 
     expect(calledBeginCount).toEqual(1);
     expect(calledEndCount).toEqual(0);
 
-    promise.then(function(){
+    promise.then(() => {
       expect(calledEndCount).toEqual(1);
       done();
     });
   });
-
 });

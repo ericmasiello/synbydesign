@@ -1,12 +1,12 @@
-'use strict';
 import React from 'react';
+import classnames from 'classnames';
 import { Link } from 'react-router';
 
-const Logo = ( props ) => {
-
-  const { logoID, view } = props;
-  const isDetail = (view === 'detail') ? true : false;
-  const cssClass = isDetail ? 'logo--detail' : '';
+const Logo = ({ logoID, view }) => {
+  const isDetail = (view === 'detail');
+  const cssClass = classnames({
+    'logo--detail': isDetail,
+  });
   const content = (
     <span>
       { isDetail
@@ -26,7 +26,7 @@ const Logo = ( props ) => {
   );
 
   return (
-    <h1 className="masthead__logo__title" id={ isDetail ? '' : logoID}>
+    <h1 className="masthead__logo__title" id={isDetail ? '' : logoID}>
       { isDetail ? <Link to="/" id={logoID}>{content}</Link> : content }
     </h1>
   );
@@ -38,7 +38,7 @@ Logo.propTypes = {
 };
 
 Logo.defaultProps = {
-  view: 'home'
+  view: 'home',
 };
 
 export default Logo;

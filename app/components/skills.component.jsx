@@ -1,31 +1,29 @@
-'use strict';
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const Skills = (props) => {
+const Skills = ({ bulletClassNames, skills, classNames, title }) => {
+  let bullet = typeof bulletClassNames === 'string' ? bulletClassNames : '';
+  bullet = `${bulletClassNames} bullet`;
 
-  let bulletClassNames = typeof props.bulletClassNames === 'string' ? props.bulletClassNames : '';
-  bulletClassNames = `${bulletClassNames} bullet`;
+  const skillsNode = (skills) ? skills.map(skill => (<li key={skill} role="presentation">
+    <span className={bullet} aria-hidden="true" />{` ${skill}`}
+  </li>)) : null;
 
-  const skills = ( props.skills ) ? props.skills.map((skill)=> {
-    return (<li key={skill} role="presentation">
-      <span className={bulletClassNames} aria-hidden="true"></span>{' ' + skill}
-    </li>);
-  }) : null;
-
-  if( !skills ){
-    return <div></div>;
+  if (!skills) {
+    return <div />;
   }
 
-  return (<ul className={props.classNames} aria-label={'Skills used to make ' + props.title}>
-    {skills}
-  </ul>);
+  return (
+    <ul className={classNames} aria-label={`Skills used to make ${title}`}>
+      {skillsNode}
+    </ul>
+  );
 };
 
 Skills.propTypes = {
-  bulletClassNames: React.PropTypes.string,
-  classNames: React.PropTypes.string,
-  skills: React.PropTypes.array,
-  title: React.PropTypes.string
+  bulletClassNames: PropTypes.string,
+  classNames: PropTypes.string,
+  skills: PropTypes.arrayOf(PropTypes.string),
+  title: PropTypes.string,
 };
 
 export default Skills;

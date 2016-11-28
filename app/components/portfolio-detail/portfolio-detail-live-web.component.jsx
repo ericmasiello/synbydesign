@@ -1,14 +1,24 @@
-'use strict';
-import React, { Component } from 'react';
+/* global window */
+import React, { PropTypes, Component } from 'react';
+import portfolioItemPropTypes from './portfolio-item.propTypes';
 import Skills from '../skills.component';
 
-export default class PortfolioDetailLiveWeb extends Component {
+const getCSSClassNameByMode = (prefix, mode) => {
+  switch (mode) {
+    case 'tablet':
+    case 'phone':
+      return `${prefix}--${mode}`;
+    default:
+      return '';
+  }
+};
 
-  constructor(props){
+export default class PortfolioDetailLiveWeb extends Component {
+  constructor(props) {
     super(props);
     this.state = {
       mode: 'desktop',
-      enableLiveSite: false
+      enableLiveSite: false,
     };
 
     this.changeMode = this.changeMode.bind(this);
@@ -16,101 +26,103 @@ export default class PortfolioDetailLiveWeb extends Component {
     this.mql = window.matchMedia(`(min-width: ${this.props.liveSiteMinWidthMQ}px)`);
   }
 
-  handleMediaChange(mediaQueryList) {
-    this.setState({enableLiveSite: mediaQueryList.matches});
-  }
-
-  componentDidMount(){
+  componentDidMount() {
     this.mql.addListener(this.handleMediaChange);
     this.handleMediaChange(this.mql);
   }
 
-  componentWillUnmount(){
-
+  componentWillUnmount() {
     this.mql.removeListener(this.handleMediaChange);
   }
 
-  changeMode(setMode){
-
+  changeMode(setMode) {
     const mode = setMode;
     return (e) => {
       e.preventDefault();
-      this.setState({mode});
+      this.setState({ mode });
     };
   }
 
-  getCSSClassNameByMode(prefix, mode){
-
-    switch(mode){
-    case 'tablet':
-    case 'phone':
-      return `${prefix}--${mode}`;
-    }
-
-    return '';
+  handleMediaChange(mediaQueryList) {
+    this.setState({
+      enableLiveSite: mediaQueryList.matches,
+    });
   }
 
-  render(){
-
+  render() {
     const { portfolioItem } = this.props;
 
     const devices = [{
       label: 'Phone',
       icon: '<use xlink:href="#phone" />',
-      changeFn: this.changeMode('phone')
-    },{
+      changeFn: this.changeMode('phone'),
+    }, {
       label: 'Tablet',
       icon: '<use xlink:href="#tablet" />',
-      changeFn: this.changeMode('tablet')
-    },{
+      changeFn: this.changeMode('tablet'),
+    }, {
       label: 'Desktop',
       icon: '<use xlink:href="#desktop" />',
-      changeFn: this.changeMode('desktop')
+      changeFn: this.changeMode('desktop'),
     }];
 
     return (
       <div className="col-xs">
         <h1 className="mtn  text-center"><span className="portfolio__title__detail-text">{portfolioItem.title}</span></h1>
-        <div className={`portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs portfolio__live-site ${this.getCSSClassNameByMode('portfolio__live-site', this.state.mode)}`}
-             role="tabpanel">
+        <div
+          className={`portfolio__item  portfolio__item--full  mtxl  mbxl container-fluid first-xs portfolio__live-site ${getCSSClassNameByMode('portfolio__live-site', this.state.mode)}`}
+          role="tabpanel"
+        >
           {this.state.enableLiveSite ? (
-            <iframe src={portfolioItem.meta.liveSiteUrl}
-                    title={`Live embedded site of ${portfolioItem.title}`}
-                    className={`portfolio__live-site__content ${this.getCSSClassNameByMode('portfolio__live-site__content', this.state.mode)}`}>
-            </iframe>
+            <iframe
+              src={portfolioItem.meta.liveSiteUrl}
+              title={`Live embedded site of ${portfolioItem.title}`}
+              className={`portfolio__live-site__content ${getCSSClassNameByMode('portfolio__live-site__content', this.state.mode)}`}
+            />
           ) : (
-            <img className="portfolio__img  portfolio__img--detail" src={portfolioItem.fullSizeImage.path}
-                 alt={portfolioItem.fullSizeImage.altText}/>
+            <img
+              className="portfolio__img  portfolio__img--detail" src={portfolioItem.fullSizeImage.path}
+              alt={portfolioItem.fullSizeImage.altText}
+            />
           )}
         </div>
         {this.state.enableLiveSite ? (
           <div className="text-center  portfolio__live__devices mbxl" role="tablist">
-            {devices.map((device)=>{
-
+            {devices.map((device) => {
               const isSelected = this.state.mode === device.label.toLowerCase();
 
               return (
-                <a key={device.label} className={`portfolio__live__device ${isSelected ? 'portfolio__live__device--selected' : ''}`}
-                   href="#"
-                   role="tab"
-                   aria-label={`Update embedded site to ${device.label.toLowerCase()} view`}
-                   aria-selected={`${isSelected ? 'true' : 'false'}`}
-                   onClick={device.changeFn}>
+                <button
+                  key={device.label} className={`portfolio__live__device ${isSelected ? 'portfolio__live__device--selected' : ''}`}
+                  role="tab"
+                  aria-label={`Update embedded site to ${device.label.toLowerCase()} view`}
+                  aria-selected={isSelected}
+                  onClick={device.changeFn}
+                >
                   {device.label}
-                  <svg className={`portfolio__live__device__icon
-                                    portfolio__live__device__icon--${device.label.toLowerCase()}
-                                    ${isSelected ? 'portfolio__live__device__icon--selected' : ''}`}
-                       dangerouslySetInnerHTML={{__html: device.icon}}/>
-                </a>
+                  <svg
+                    className={`portfolio__live__device__icon
+                      portfolio__live__device__icon--${device.label.toLowerCase()}
+                      ${isSelected ? 'portfolio__live__device__icon--selected' : ''}`}
+                    dangerouslySetInnerHTML={{ __html: device.icon }}
+                  />
+                </button>
               );
             })}
           </div>
-        ) : ( null )}
-        <Skills classNames="h4  list-unstyled  text-center"
-                bulletClassNames="hide"
-                title={portfolioItem.title}
-                skills={portfolioItem.skills}/>
+        ) : (null)}
+        <Skills
+          classNames="h4  list-unstyled  text-center"
+          bulletClassNames="hide"
+          title={portfolioItem.title}
+          skills={portfolioItem.skills}
+        />
       </div>
     );
   }
 }
+
+PortfolioDetailLiveWeb.propTypes = {
+  liveSiteMinWidthMQ: PropTypes.number.isRequired,
+  ...portfolioItemPropTypes,
+};

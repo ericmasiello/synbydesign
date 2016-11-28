@@ -1,4 +1,3 @@
-'use strict';
 export const TITLE = 'Syn By Design - Eric Masiello\'s portfolio';
 export const UI_IDS = {
   logo: 'logo',
@@ -6,7 +5,7 @@ export const UI_IDS = {
   about: 'about',
   portfolioList: 'portfolioList',
   portfolioDetail: 'portfolioDetail',
-  changeLog: 'changeLog'
+  changeLog: 'changeLog',
 };
 
 export const API_URL = '/wp/wp-json';
@@ -17,8 +16,10 @@ export const WEB_CATEGORIES = ['web'];
 export const MIX_CATEGORIES = ['mix'];
 export const MIN_LIVE_SITE_BROWSER_WIDTH_MQ = 890;
 export const WP_SLUGS = {
-  CHANGE_LOG: 'change-log'
+  CHANGE_LOG: 'change-log',
 };
 
-//dynamically load value based on `process.env.NODE_ENV`
-export const API_DOMAIN = require('./api-domain.' + process.env.NODE_ENV);
+// dynamically load value based on `process.env.NODE_ENV`
+/* eslint-disable global-require, import/no-dynamic-require */
+export const API_DOMAIN = require(`./api-domain.${process.env.NODE_ENV}`);
+/* eslint-enable global-require, import/no-dynamic-require */

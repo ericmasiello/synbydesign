@@ -1,24 +1,23 @@
-'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
-expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
 import callOnMountHOC from './call-on-mount.hoc';
 
-describe('Call On Mount HOC', () => {
+expect.extend(expectJSX);
 
+describe('Call On Mount HOC', () => {
   let r;
-  let actual;
   let expected;
-  let calledTestFn = false;
   let calledRunOnMountFn = false;
   let EnhancedComponent;
+  /* eslint-disable react/prefer-stateless-function */
   class MockComponent extends React.Component {
     render() {
       return (<div>Hello World</div>);
     }
   }
+  /* eslint-enable react/prefer-stateless-function */
 
   class SubMockComponent extends MockComponent {
     render() {
@@ -26,23 +25,20 @@ describe('Call On Mount HOC', () => {
     }
   }
 
-  beforeEach(()=> {
+  beforeEach(() => {
 
   });
 
-  afterEach(()=>{
+  afterEach(() => {
     r = undefined;
-    actual = undefined;
     expected = undefined;
-    calledTestFn = false;
     calledRunOnMountFn = false;
     EnhancedComponent = undefined;
   });
 
   describe('should call runOnMount method if its the only argument', () => {
-
     it('will work on components built by extending React.Component', () => {
-      EnhancedComponent = callOnMountHOC(function() {
+      EnhancedComponent = callOnMountHOC(() => {
         calledRunOnMountFn = true;
       })(MockComponent);
 
@@ -54,7 +50,7 @@ describe('Call On Mount HOC', () => {
     });
 
     it('will work on components that extend another component', () => {
-      EnhancedComponent = callOnMountHOC(function() {
+      EnhancedComponent = callOnMountHOC(() => {
         calledRunOnMountFn = true;
       })(SubMockComponent);
 
@@ -66,9 +62,9 @@ describe('Call On Mount HOC', () => {
     });
 
     it('will work on funcitonal components', () => {
-      EnhancedComponent = callOnMountHOC(function() {
+      EnhancedComponent = callOnMountHOC(() => {
         calledRunOnMountFn = true;
-      })(<div>I'm functional</div>);
+      })(<div>I am functional</div>);
 
       r = TestUtils.createRenderer();
       r.render(<EnhancedComponent />);
@@ -79,12 +75,8 @@ describe('Call On Mount HOC', () => {
   });
 
   describe('should only call runOnMount in certain circumstances', () => {
-
     it('if first test method returns true', () => {
-
-      EnhancedComponent = callOnMountHOC(function() {
-        return true;
-      }, function() {
+      EnhancedComponent = callOnMountHOC(() => true, () => {
         calledRunOnMountFn = true;
       })(<div>Hello world</div>);
 
@@ -96,10 +88,7 @@ describe('Call On Mount HOC', () => {
     });
 
     it('if first test method returns true', () => {
-
-      EnhancedComponent = callOnMountHOC(function() {
-        return false;
-      }, function() {
+      EnhancedComponent = callOnMountHOC(() => false, () => {
         calledRunOnMountFn = true;
       })(<div>Hello world</div>);
 

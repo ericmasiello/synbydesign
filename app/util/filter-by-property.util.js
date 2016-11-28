@@ -1,13 +1,8 @@
-'use strict';
 /**
  * Filter By Property Util
  * @param property
  * @returns {Function}
  */
-export default ( property ) => {  
+const filterByPropertyUtil = property => item => (item[property] === true);
 
-  return (item) => {
-
-    return (item[property] === true);
-  };
-};
+export default filterByPropertyUtil;

@@ -1,16 +1,14 @@
-'use strict';
 import { REQUEST_DATA, RECEIVED_DATA } from '../actions/types';
 
 export default (state = {
   activeRequests: 0,
-  loadedRequests: 0
+  loadedRequests: 0,
 }, action = {}) => {
-
-  switch(action.type) {
+  switch (action.type) {
     case REQUEST_DATA:
       return {
         activeRequests: state.activeRequests + 1,
-        loadedRequests: state.loadedRequests
+        loadedRequests: state.loadedRequests,
       };
     case RECEIVED_DATA:
 
@@ -19,18 +17,18 @@ export default (state = {
        then we can just reset our object to say there are no
        active requests
        */
-      if( state.activeRequests === state.loadedRequests + 1 ){
+      if (state.activeRequests === state.loadedRequests + 1) {
         return {
           activeRequests: 0,
-          loadedRequests: 0
+          loadedRequests: 0,
         };
       }
 
       return {
         activeRequests: state.activeRequests,
-        loadedRequests: state.loadedRequests + 1
+        loadedRequests: state.loadedRequests + 1,
       };
+    default:
+      return state;
   }
-
-  return state;
 };

@@ -1,13 +1,11 @@
-'use strict';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
-expect.extend(expectJSX);
 import TestUtils from 'react-addons-test-utils';
 import React from 'react';
-import PortfolioDetail from './../components/portfolio-detail.component';
 import DocumentTitle from 'react-document-title';
+import PortfolioDetail from './../components/portfolio-detail.component';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
-import PortfolioDetailDefault from './portfolio-detail/portfolio-detail-default.component.jsx';
+import PortfolioDetailDefault from './portfolio-detail/portfolio-detail-default.component';
 import PortfolioDetailLiveWeb from './portfolio-detail/portfolio-detail-live-web.component';
 import PortfolioDetailStackDesign from './portfolio-detail/portfolio-detail-stack-design.component';
 import PortfolioDetailSVG from './portfolio-detail/portfolio-detail-svg.component';
@@ -16,29 +14,26 @@ import mockWebPortfolio from '../test-data/portfolio-web.mock';
 import mockDesignPortfolio from '../test-data/portfolio-design.mock';
 import transformPortfolioJSONUtil from '../util/transform-portfolio-json.util';
 
-describe('PortfolioDetail', () => {
+expect.extend(expectJSX);
 
-  let requestedID = null;
+describe('PortfolioDetail', () => {
   let r;
   let actual;
-  let expected;
 
-  afterEach(()=>{
-    requestedID = null;
+  afterEach(() => {
     r = undefined;
     actual = undefined;
-    expected = undefined;
   });
 
-  const mockLoadSelectedPortfolio = (ID) => {
-    requestedID = ID;
-  };
+  const mockLoadSelectedPortfolio = () => {};
 
-  it('should render a node with a portfolio-detail CSS class name', ()=>{
+  it('should render a node with a portfolio-detail CSS class name', () => {
     r = TestUtils.createRenderer();
-    r.render(<PortfolioDetail loadedAllItems={false}
-                              loadSelectedPortfolio={mockLoadSelectedPortfolio}
-                              params={{id: 5}} />);
+    r.render(<PortfolioDetail
+      loadedAllItems={false}
+      loadSelectedPortfolio={mockLoadSelectedPortfolio}
+      params={{ id: 5 }}
+    />);
 
     actual = r.getRenderOutput();
     expect(actual.type).toEqual('section');
@@ -46,95 +41,107 @@ describe('PortfolioDetail', () => {
   });
 
   it('should set the document title', () => {
-
     r = TestUtils.createRenderer();
-    r.render(<PortfolioDetail loadedAllItems={true}
-                              portfolio={[]}
-                              params={{id: 5}} />);
+    r.render(<PortfolioDetail
+      loadedAllItems
+      portfolio={[]}
+      params={{ id: 5 }}
+    />);
 
     actual = r.getRenderOutput();
-    expect(actual).toIncludeJSX(<DocumentTitle title={`Loading... ${TITLE}`}/>);
+    expect(actual).toIncludeJSX(<DocumentTitle title={`Loading... ${TITLE}`} />);
 
-    let mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
+    const mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
     r = TestUtils.createRenderer();
-    r.render(<PortfolioDetail loadedAllItems={true}
-                              portfolio={[mockPortfolioItem]}
-                              params={{id: mockPortfolioItem.ID}} />);
+    r.render(<PortfolioDetail
+      loadedAllItems
+      portfolio={[mockPortfolioItem]}
+      params={{ id: mockPortfolioItem.ID }}
+    />);
 
     actual = r.getRenderOutput();
-    expect(actual).toIncludeJSX(<DocumentTitle title={`${mockPortfolioItem.title} - ${TITLE}`}/>);
+    expect(actual).toIncludeJSX(<DocumentTitle title={`${mockPortfolioItem.title} - ${TITLE}`} />);
   });
 
   it('should set the screen reader focus element', () => {
-
     r = TestUtils.createRenderer();
-    r.render(<PortfolioDetail loadedAllItems={true}
-                              portfolio={[]}
-                              params={{id: 5}} />);
+    r.render(<PortfolioDetail
+      loadedAllItems
+      portfolio={[]}
+      params={{ id: 5 }}
+    />);
 
     actual = r.getRenderOutput();
-    expect(actual).toIncludeJSX(<ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail} className="no-focus-ring"/>);
+    expect(actual).toIncludeJSX(<ScreenReaderFocusElm elmId={UI_IDS.portfolioDetail} className="no-focus-ring" />);
   });
 
-  describe('should render the appropriate page contents', ()=>{
-
-    it('should render the default detail view', ()=>{
-
-      let mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
-      mockPortfolioItem.meta = {}; //no meta props so should use default
+  describe('should render the appropriate page contents', () => {
+    it('should render the default detail view', () => {
+      const mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
+      mockPortfolioItem.meta = {}; // no meta props so should use default
 
       r = TestUtils.createRenderer();
-      r.render(<PortfolioDetail loadedAllItems={true}
-                                portfolio={[mockPortfolioItem]}
-                                params={{id: mockPortfolioItem.ID}} />);
+      r.render(<PortfolioDetail
+        loadedAllItems
+        portfolio={[mockPortfolioItem]}
+        params={{ id: mockPortfolioItem.ID }}
+      />);
 
       actual = r.getRenderOutput();
       expect(actual).toIncludeJSX(<PortfolioDetailDefault portfolioItem={mockPortfolioItem} />);
     });
 
-    it('should render the SVG view', ()=>{
-
-      let mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
+    it('should render the SVG view', () => {
+      const mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
       mockPortfolioItem.meta = {
-        svg: (<svg></svg>)
+        svg: (<svg />),
       };
 
       r = TestUtils.createRenderer();
-      r.render(<PortfolioDetail loadedAllItems={true}
-                                portfolio={[mockPortfolioItem]}
-                                params={{id: mockPortfolioItem.ID}} />);
+      r.render(<PortfolioDetail
+        loadedAllItems
+        portfolio={[mockPortfolioItem]}
+        params={{ id: mockPortfolioItem.ID }}
+      />);
 
       actual = r.getRenderOutput();
       expect(actual).toIncludeJSX(<PortfolioDetailSVG portfolioItem={mockPortfolioItem} />);
     });
 
-    it('should render the live web view', ()=>{
-
-      let mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
+    it('should render the live web view', () => {
+      const mockPortfolioItem = [...transformPortfolioJSONUtil(mockWebPortfolio)][0];
       mockPortfolioItem.meta = {
-        showLiveSite: true
+        showLiveSite: true,
       };
 
       r = TestUtils.createRenderer();
-      r.render(<PortfolioDetail loadedAllItems={true}
-                                portfolio={[mockPortfolioItem]}
-                                params={{id: mockPortfolioItem.ID}} />);
+      r.render(<PortfolioDetail
+        loadedAllItems
+        portfolio={[mockPortfolioItem]}
+        params={{ id: mockPortfolioItem.ID }}
+      />);
 
       actual = r.getRenderOutput();
-      expect(actual).toIncludeJSX(<PortfolioDetailLiveWeb liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ} portfolioItem={mockPortfolioItem} />);
+      expect(actual).toIncludeJSX(
+        <PortfolioDetailLiveWeb
+          liveSiteMinWidthMQ={MIN_LIVE_SITE_BROWSER_WIDTH_MQ}
+          portfolioItem={mockPortfolioItem}
+        />,
+      );
     });
 
-    it('should render the stack design view', ()=>{
-
-      let mockPortfolioItem = [...transformPortfolioJSONUtil(mockDesignPortfolio)][0];
+    it('should render the stack design view', () => {
+      const mockPortfolioItem = [...transformPortfolioJSONUtil(mockDesignPortfolio)][0];
       mockPortfolioItem.meta = {
-        stackDesign: true
+        stackDesign: true,
       };
 
       r = TestUtils.createRenderer();
-      r.render(<PortfolioDetail loadedAllItems={true}
-                                portfolio={[mockPortfolioItem]}
-                                params={{id: mockPortfolioItem.ID}} />);
+      r.render(<PortfolioDetail
+        loadedAllItems
+        portfolio={[mockPortfolioItem]}
+        params={{ id: mockPortfolioItem.ID }}
+      />);
 
       actual = r.getRenderOutput();
       expect(actual).toIncludeJSX(<PortfolioDetailStackDesign portfolioItem={mockPortfolioItem} />);

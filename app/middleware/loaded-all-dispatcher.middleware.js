@@ -1,15 +1,15 @@
-'use strict';
-export default (listenForActionType, dispatchActionUponLoadedType) => store => next => action => { //eslint-disable-line strict
+/* eslint-disable max-len */
+ const loadedAllDispatcherMiddleware = (listenForActionType, dispatchActionUponLoadedType) => store => next => (action) => {
+   /* eslint-enable max-len */
+   if (action.type === listenForActionType && action.payload && typeof action.payload.then === 'function') {
+     action.payload.then(() => {
+       store.dispatch({
+         type: dispatchActionUponLoadedType,
+       });
+     });
+   }
 
-  if( action.type === listenForActionType && action.payload && typeof action.payload.then == 'function'){
+   return next(action);
+ };
 
-    action.payload.then(() =>{
-
-      store.dispatch({
-        type: dispatchActionUponLoadedType
-      });
-    });
-  }
-
-  return next(action);
-};
+ export default loadedAllDispatcherMiddleware;

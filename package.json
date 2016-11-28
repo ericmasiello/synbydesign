@@ -5,7 +5,7 @@
   "main": "app/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint app/actions .eslintrc.js --ext [js,jsx] --cache --ignore-pattern !.eslintrc.js"
+    "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache --ignore-pattern !.eslintrc.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,24 @@
   },
   "dependencies": {
     "axios": "^0.15.2",
-    "babel-eslint": "^7.1.1"
+    "babel-eslint": "^7.1.1",
+    "classnames": "^2.2.5",
+    "expect": "^1.20.2",
+    "expect-jsx": "^2.6.0",
+    "extract-image-props-from-html-string": "^0.2.3",
+    "nprogress": "^0.2.0",
+    "react": "^15.4.1",
+    "react-addons-test-utils": "^15.4.1",
+    "react-document-title": "^2.0.2",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
+    "react-scroll": "^1.4.4",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-promise": "^0.5.3",
+    "redux-promise-mock": "^0.1.1",
+    "remote-redux-devtools": "^0.5.4",
+    "synbydesign.design": "^0.3.1"
   }
 }

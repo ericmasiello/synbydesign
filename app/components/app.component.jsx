@@ -1,68 +1,66 @@
-'use strict';
-import React, { Component } from 'react';
-import LoadingStatusContainer from '../containers/loading-status.container';
-import isAppLoading from '../util/is-app-loading.util';
+/* global window, document */
+import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 import { Link } from 'react-router';
 import Scroll from 'react-scroll';
+import LoadingStatusContainer from '../containers/loading-status.container';
+import isAppLoading from '../util/is-app-loading.util';
 import { UI_IDS } from '../configuration';
 import ScreenReaderFocusElm from './screen-reader-focus-elm.component';
+
 const { Link: ScrollLink } = Scroll;
 
+/**
+ * Back to top method. Used to jump the user back to the top of the page.
+ */
+const backToTop = () => {
+  document.getElementById(UI_IDS.appContents).focus();
+};
+
 /** Class representing the App */
-export default class App extends Component {
-
-  /**
-   * Back to top method. Used to jump the user back to the top of the page.
-   */
-  backToTop(){
-    document.getElementById(UI_IDS.appContents).focus();
-  }
-
-  /**
-   * Render method used to generate the entire application tree. Ths is the parent
-   * component to all other components for the site
-   * @returns {XML}
-   */
-  render() {
-
-    const clsName = isAppLoading(this.props.appLoading) ? 'page-loading' : 'page-loading page-loading--done';
-    const isChangeLog = window.location.hash.substr(1).indexOf('changelog') > -1;
-
-    return (
-      <ScreenReaderFocusElm elmId={UI_IDS.appContents} className="no-focus-ring">
-        <div aria-atomic="true"
-             aria-live="polite"
-             aria-busy={isAppLoading(this.props.appLoading)}>
-          <LoadingStatusContainer />
-          <div className={clsName}>
-            { this.props.children }
-            <div className="text-center mtl">
-              { !isChangeLog ? (
-                <div>
-                  <Link to="/changelog">
-                    Change Log
-                  </Link>
-                </div>
-              ) : (<div></div>) }
-              <ScrollLink href="#" onClick={this.backToTop} to={UI_IDS.appContents} spy={true} smooth={true} duration={500}>Back to Top</ScrollLink>
+const App = ({ appLoading, children }) => (
+  <ScreenReaderFocusElm elmId={UI_IDS.appContents} className="no-focus-ring">
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      aria-busy={isAppLoading(appLoading)}
+    >
+      <LoadingStatusContainer />
+      <div
+        className={classnames({
+          'page-loading': isAppLoading(appLoading),
+          'page-loading page-loading--done': !isAppLoading(appLoading),
+        })}
+      >
+        { children }
+        <div className="text-center mtl">
+          { !window.location.hash.substr(1).indexOf('changelog') > -1 ? (
+            <div>
+              <Link to="/changelog">
+                Change Log
+              </Link>
             </div>
-          </div>
+          ) : (<div />) }
+          <ScrollLink href="#" onClick={backToTop} to={UI_IDS.appContents} spy smooth duration={500}>Back to Top</ScrollLink>
         </div>
-      </ScreenReaderFocusElm>
-    );
-  }
-}
+      </div>
+    </div>
+  </ScreenReaderFocusElm>
+);
 
 App.propTypes = {
-  appLoading: React.PropTypes.shape({
+  appLoading: PropTypes.shape({
     activeRequests: React.PropTypes.number.isRequired,
-    loadedRequests: React.PropTypes.number.isRequired
-  })
+    loadedRequests: React.PropTypes.number.isRequired,
+  }),
+  children: PropTypes.node,
 };
 
 App.defaultPropTypes = {
   appLoading: {
     activeRequests: 0,
-    loadedRequests: 0
-  }
+    loadedRequests: 0,
+  },
 };
+
+export default App;

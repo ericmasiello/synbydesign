@@ -1,4 +1,3 @@
-'use strict';
 import React from 'react';
 import { Link } from 'react-router';
 import Skills from './skills.component';
@@ -14,12 +13,16 @@ const PortfolioItem = (props) => {
         <span className="h4  portfolio__title">
           <span className="portfolio__title__text">{title}</span>
         </span>
-        <img className={`portfolio__img  ${(featuredImagePath.search(/(\.svg)$/)) > -1 ? 'portfolio__img--svg' : ''}`}
-             src={featuredImagePath} alt={altAttr}/>
+        <img
+          className={`portfolio__img  ${(featuredImagePath.search(/(\.svg)$/)) > -1 ? 'portfolio__img--svg' : ''}`}
+          src={featuredImagePath} alt={altAttr}
+        />
       </Link>
-      <Skills title={title}
-              classNames="skills  small"
-              skills={skills}/>
+      <Skills
+        title={title}
+        classNames="skills  small"
+        skills={skills}
+      />
     </li>
   );
 };
@@ -29,8 +32,8 @@ PortfolioItem.propTypes = {
     ID: React.PropTypes.number.isRequired,
     title: React.PropTypes.string.isRequired,
     featuredImagePath: React.PropTypes.string.isRequired,
-    skills: React.PropTypes.array.isRequired
-  }).isRequired
+    skills: React.PropTypes.array.isRequired,
+  }).isRequired,
 };
 
 export default PortfolioItem;
