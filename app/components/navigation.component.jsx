@@ -6,7 +6,7 @@ import Logo from './logo.component';
 
 const { Link: ScrollLink } = Scroll;
 
-const scrollTo = (scrollToID) => {
+const scrollTo = scrollToID => () => {
   window.setTimeout(() => {
     document.getElementById(scrollToID).focus();
   }, 0);

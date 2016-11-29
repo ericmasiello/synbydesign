@@ -8,8 +8,7 @@ import { UI_IDS } from '../configuration';
 
 expect.extend(expectJSX);
 
-// FIXME
-xdescribe('Navigation', () => {
+describe('Navigation', () => {
   let r;
   let actual;
 
