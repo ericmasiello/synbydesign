@@ -1,30 +1,31 @@
+'use strict';
 import React, { Component } from 'react';
 
-export default function callOnMountHOC(...rest) {
-  const args = [...rest];
+export default function callOnMountHOC() {
+
+  const args = [...arguments];
   let testIfIShouldRunOnMount = () => true;
   let runOnMount = () => true;
 
-  if (args.length === 1) {
+  if(args.length === 1) {
     runOnMount = args[0];
-  } else if (args.length === 2) {
+  } else if( args.length === 2){
     testIfIShouldRunOnMount = args[0];
     runOnMount = args[1];
   }
 
-  return function callOnMountHOCInner(WrappedComponent) {
+  return function(WrappedComponent) {
+
     const isClassComponent = Object.getPrototypeOf(WrappedComponent) === Component;
-    const RenderWrappedComponent = !isClassComponent ? Component : WrappedComponent;
+    WrappedComponent = !isClassComponent ? Component : WrappedComponent;
 
     return class CallOnMountEnhancer extends WrappedComponent {
       componentWillMount() {
-        if (testIfIShouldRunOnMount.call(this)) {
-          runOnMount.call(this);
-        }
+        testIfIShouldRunOnMount.call(this) && runOnMount.call(this);
       }
 
       render() {
-        return isClassComponent ? super.render() : <RenderWrappedComponent />;
+        return isClassComponent ? super.render() : <WrappedComponent />;
       }
     };
   };
