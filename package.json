@@ -4,6 +4,7 @@
   "description": "React front-end for Syn By Design blog",
   "main": "app/index.jsx",
   "scripts": {
+    "dev": "webpack-dev-server",
     "test": "NODE_ENV=development mocha './app/**/*.spec.js' --compilers js:babel-core/register",
     "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache --ignore-pattern !.eslintrc.js"
   },
@@ -14,11 +15,23 @@
   "author": "Eric Masiello <eric.j.masiello@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-loader": "^6.2.8",
+    "css-loader": "^0.26.0",
     "eslint": "^3.11.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.7.1"
+    "eslint-plugin-react": "^6.7.1",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.13.0",
+    "postcss-loader": "^1.1.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^1.0.2",
+    "webpack-validator": "^2.2.9"
   },
   "dependencies": {
     "axios": "^0.15.2",
