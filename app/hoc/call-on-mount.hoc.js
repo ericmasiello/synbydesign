@@ -24,7 +24,7 @@ export default function callOnMountHOC(...rest) {
       }
 
       render() {
-        return isClassComponent ? super.render() : <RenderWrappedComponent />;
+        return isClassComponent ? super.render() : <WrappedComponent />;
       }
     };
   };
