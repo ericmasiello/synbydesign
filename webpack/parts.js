@@ -83,6 +83,18 @@ exports.setupIcons = paths => ({
   }
 });
 
+exports.setupImages = paths => ({
+  module: {
+    loaders: [
+      {
+        test: /\.(png|jpg|svg$)$/,
+        loader: 'url?limit=25000',
+        include: paths
+      }
+    ]
+  }
+});
+
 exports.setupCSS = paths => ({
   module: {
     loaders: [

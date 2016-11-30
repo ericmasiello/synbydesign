@@ -10,13 +10,14 @@ const parts = require('./webpack/parts');
 const TARGET = process.env.npm_lifecycle_event || 'dev';
 const PATHS = {
   build: path.join(__dirname, 'build/'),
-  script: path.join(__dirname, 'app'),
+  app: path.join(__dirname, 'app'),
+  design: path.join(__dirname, 'node_modules/synbydesign.design')
 };
 
 const common = merge(
   {
     entry: {
-      app: PATHS.script
+      app: PATHS.app
     },
     output: {
       path: PATHS.build,
@@ -46,8 +47,9 @@ const common = merge(
       'react/lib/ReactContext': true
     },
   },
-  parts.setupBabel([PATHS.script]),
-  parts.setupCSS()
+  parts.setupBabel([PATHS.app]),
+  parts.setupCSS([PATHS.design, PATHS.app]),
+  parts.setupImages([PATHS.design, PATHS.app])
 );
 
 let config;
@@ -64,7 +66,7 @@ switch (TARGET) {
     config = merge(
       common,
       parts.setupSourceMaps(),
-      // parts.setupESLint([PATHS.script]),
+      // parts.setupESLint([PATHS.app]),
       parts.devServer(PATHS.build, {
         proxy: [
           {
