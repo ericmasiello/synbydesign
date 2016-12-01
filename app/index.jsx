@@ -1,5 +1,7 @@
+// @flow
 /* global document */
 /* eslint-disable import/extensions */
+// $FlowFixMe
 import 'synbydesign.design';
 /* eslint-enable import/extensions */
 import React from 'react';
@@ -12,6 +14,9 @@ import PortfolioDetail from './containers/portfolio-detail.container';
 import ChangeLog from './containers/change-log.container';
 import NotFound from './components/not-found.component';
 import store from './createStore';
+import sayHi from './test-flow';
+
+sayHi('Syn By Design');
 
 render(
   <Provider store={store}>
