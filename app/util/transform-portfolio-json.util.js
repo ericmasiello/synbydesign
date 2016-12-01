@@ -27,7 +27,7 @@ export const addMetaData = (portfolioItem, meta) => Object.assign(portfolioItem,
   },
 } : {}));
 
-export default (portfolioList) => {
+const transformPortfolioJSONUtil = (portfolioList) => {
   if (!portfolioList || typeof portfolioList !== 'object' || portfolioList.length === 0) {
     return portfolioList;
   }
@@ -61,3 +61,5 @@ export default (portfolioList) => {
     }, item.custom_meta);
   });
 };
+
+export default transformPortfolioJSONUtil;
