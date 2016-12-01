@@ -1,0 +1,13 @@
+[version]
+^0.36.0
+
+[ignore]
+.*/node_modules/react-side-effect/node_modules/fbjs/flow/include/PromiseMap.js
+.*/node_modules/react-side-effect/node_modules/fbjs/flow/include/fetchWithRetries.js
+
+[libs]
+flow-typed
+
+[include]
+./app
+.*/node_modules/*
