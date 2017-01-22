@@ -4,10 +4,6 @@
 node_modules
 npm-debug.log
 
-# Wordpress directory
-wp
-_archive
-bower_components
 dist
 .tmp
 build
