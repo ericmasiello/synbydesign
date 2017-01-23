@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node ./bin/www.js",
     "dev": "nodemon ./bin/www.js",
+    "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache",
     "jsdoc": "rm -rf ./jsdoc && find app -type f -name '*.js' -o -name '*.jsx'| xargs jsdoc -c ./conf.json",
     "flow:typed": "flow-typed install",
     "flow:start": "flow start",
@@ -26,6 +27,14 @@
     "synbydesign.design": "^0.3.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-config-ericmasiello": "1.0.0-alpha.1",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
     "flow-typed": "^2.0.0",
     "jsdoc": "^3.4.0",
