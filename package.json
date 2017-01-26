@@ -27,13 +27,15 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "request": "^2.79.0",
     "synbydesign.design": "^0.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "eslint": "^3.13.0",
-    "eslint-config-ericmasiello": "1.0.0-beta.1",
+    "eslint-config-ericmasiello": "1.0.0-beta.2",
     "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
