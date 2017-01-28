@@ -13,7 +13,8 @@
     "flow:typed": "flow-typed install",
     "flow:start": "flow start",
     "flow:stop": "flow stop",
-    "flow:check": "flow check"
+    "flow:check": "flow check",
+    "test": "mocha ./test/.setup.js 'test/**/*.test.js'"
   },
   "author": "",
   "license": "ISC",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "chai": "^3.5.0",
     "eslint": "^3.13.0",
     "eslint-config-ericmasiello": "1.0.0",
     "eslint-plugin-flowtype": "^2.30.0",
@@ -43,6 +45,9 @@
     "flow-bin": "^0.38.0",
     "flow-typed": "^2.0.0",
     "jsdoc": "^3.4.0",
-    "nodemon": "^1.11.0"
+    "mocha": "^3.2.0",
+    "nock": "^9.0.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
   }
 }
