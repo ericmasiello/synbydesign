@@ -11,10 +11,4 @@ router.get('/', (req: express$Request, res: express$Response) => {
   });
 });
 
-// const router = express.Router();
-
-// router.get('/', (req, res) => {
-//   res.send('Hello world');
-// });
-
 module.exports = router;
