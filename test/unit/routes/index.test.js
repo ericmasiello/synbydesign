@@ -1,8 +1,8 @@
-const supertest = require('supertest');
-const { expect } = require('chai');
-const nock = require('nock');
-const app = require('../../../app');
-const { SYN_BY_DESIGN_ROUTE } = require('../../../config');
+import supertest from 'supertest';
+import { expect } from 'chai';
+import nock from 'nock';
+import app from '../../../app';
+import { SYN_BY_DESIGN_ROUTE } from '../../../config';
 
 describe('routes', function () {
   let request;
