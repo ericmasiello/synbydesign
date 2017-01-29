@@ -7,7 +7,10 @@ const router: express$Router = express.Router();
 
 router.get('/', (req: express$Request, res: express$Response) => {
   request.get(`${SYN_BY_DESIGN_ROUTE}/data.json`, (err, resp, body) => {
-    res.send(JSON.parse(body));
+    // res.send(JSON.parse(body));
+    res.render('index', {
+      data: JSON.parse(body),
+    });
   });
 });
 
