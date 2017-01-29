@@ -1,6 +1,7 @@
 import supertest from 'supertest';
 import { expect } from 'chai';
 import nock from 'nock';
+import cheerio from 'cheerio';
 import app from '../../../app';
 import { SYN_BY_DESIGN_ROUTE } from '../../../config';
 
@@ -9,9 +10,9 @@ describe('routes', function () {
   const dataStub = {
     whatsup: 'dog',
   };
-  beforeEach(function () {
+  beforeEach(() => {
     nock(SYN_BY_DESIGN_ROUTE)
-      .get(`/data.json`)
+      .get('/data.json')
       .reply(200, dataStub);
 
     request = supertest(app)
@@ -20,11 +21,13 @@ describe('routes', function () {
       .set('Accept', 'test/plain');
   });
 
-  it('should return a response', function (done) {
+  it('should render hello world', function (done) {
     request
       .expect(200)
-      .expect(function (res) {        
-        expect(JSON.parse(res.text)).to.deep.equal(dataStub);
+      .expect(function (res) {
+        const $ = cheerio.load(res.text);
+        const app = $('#app');
+        expect(app.text().trim()).to.equal('Hello World');
       })
       .end(done);
   });

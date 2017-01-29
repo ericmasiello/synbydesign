@@ -23,6 +23,7 @@
     "babel-preset-env": "^1.1.8",
     "babel-register": "^6.22.0",
     "body-parser": "^1.16.0",
+    "cheerio": "^0.22.0",
     "connect-flash": "^0.1.1",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.5",
