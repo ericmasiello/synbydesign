@@ -14,7 +14,8 @@
     "flow:start": "flow start",
     "flow:stop": "flow stop",
     "flow:check": "flow check",
-    "test": "nyc mocha ./test/.setup.js 'test/**/*.test.js'"
+    "test": "nyc mocha ./test/.setup.js 'test/**/*.test.js'",
+    "validate": "npm-run-all --parallel flow:check lint test"
   },
   "author": "",
   "license": "ISC",
@@ -72,6 +73,7 @@
     "mocha": "^3.2.0",
     "nock": "^9.0.2",
     "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
     "supertest": "^2.0.1"
   }

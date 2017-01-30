@@ -2,3 +2,6 @@
 # see: https://github.com/eslint/eslint/issues/4828
 !**/*.eslintrc.js
 flow-typed
+data
+coverage
+.nyc_output
