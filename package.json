@@ -15,7 +15,8 @@
     "flow:stop": "flow stop",
     "flow:check": "flow check",
     "test": "nyc mocha ./test/.setup.js 'test/**/*.test.js'",
-    "validate": "npm-run-all --parallel flow:check lint test"
+    "validate": "npm-run-all --parallel flow:check lint test",
+    "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
   "author": "",
   "license": "ISC",
@@ -61,6 +62,7 @@
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "chai": "^3.5.0",
+    "codecov": "^1.0.1",
     "eslint": "^3.13.0",
     "eslint-config-ericmasiello": "1.1.0",
     "eslint-plugin-flowtype": "^2.30.0",
