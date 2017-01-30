@@ -12,11 +12,18 @@ const result = stub.map(({
 }) => {
   const $ = cheerio.load(content);
   const $img = $('img').attr('class', '');
+  const { mix_url, stack_design, svg, track_list, website_url } = custom_meta;
   return ({
     title,
-    custom_meta,
     // featured_image,
-    content: $img.wrap('<div></div>').parent().html(),
+    meta: {
+      stack_design,
+      mix_url,
+      track_list,
+      website_url,
+      is_svg: !!svg,
+    },
+    image: svg || $img.wrap('<div></div>').parent().html(),
     source,
     category: terms.category.map(category => category.slug),
     tags: Array.isArray(terms.post_tag) ? terms.post_tag.map(tag => tag.name) : [],
