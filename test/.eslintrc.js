@@ -1,5 +1,5 @@
 module.exports = {
   extends: [
-    'eslint-config-ericmasiello/react',
+    'eslint-config-ericmasiello/mocha',
   ],
 };

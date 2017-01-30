@@ -25,9 +25,10 @@ describe('routes', function () {
     request
       .expect(200)
       .expect(function (res) {
+        // console.log(res.text);
         const $ = cheerio.load(res.text);
-        const app = $('#app');
-        expect(app.text().trim()).to.equal('Hello World');
+        const $app = $('#app');
+        expect($app.text().trim()).to.equal('Hello World');
       })
       .end(done);
   });
