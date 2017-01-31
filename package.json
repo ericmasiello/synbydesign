@@ -61,7 +61,8 @@
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "request": "^2.79.0",
-    "synbydesign.design": "^0.3.1"
+    "synbydesign.design": "^0.3.1",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
