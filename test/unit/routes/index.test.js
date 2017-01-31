@@ -12,7 +12,7 @@ describe('routes', function () {
   };
   beforeEach(() => {
     nock(SYN_BY_DESIGN_ROUTE)
-      .get('/data.json')
+      .get('/portfolio.json')
       .reply(200, dataStub);
 
     request = supertest(app)
