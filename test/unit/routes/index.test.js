@@ -21,14 +21,22 @@ describe('routes', function () {
       .set('Accept', 'test/plain');
   });
 
-  it('should render hello world', function (done) {
+  it('should render div#app', function (done) {
     request
       .expect(200)
       .expect(function (res) {
-        // console.log(res.text);
         const $ = cheerio.load(res.text);
-        const $app = $('#app');
-        expect($app.text().trim()).to.equal('Hello World');
+        expect($('#app')).to.have.length(1);
+      })
+      .end(done);
+  });
+
+  it('should render a script tag with redux state', function (done) {
+    request
+      .expect(200)
+      .expect(function (res) {
+        const $ = cheerio.load(res.text);
+        expect($('script').text().includes('window.__PRELOADED_DATA__')).to.be.true;
       })
       .end(done);
   });
