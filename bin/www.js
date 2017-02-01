@@ -1,5 +1,4 @@
 /* @flow */
-// FIXME: Should only do this in dev env
 require('../config/babel');
 const winston = require('winston');
 const app = require('../server');

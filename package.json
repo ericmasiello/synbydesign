@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node ./bin/www.js",
-    "dev": "nodemon ./bin/www.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./bin/www.js",
     "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache",
     "jsdoc": "rm -rf ./jsdoc && find app -type f -name '*.js' -o -name '*.jsx'| xargs jsdoc -c ./conf.json",
     "flow:typed": "flow-typed install",
@@ -51,6 +51,7 @@
     "body-parser": "^1.16.0",
     "cheerio": "^0.22.0",
     "connect-flash": "^0.1.1",
+    "cross-env": "^3.1.4",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
@@ -82,6 +83,7 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "webpack": "^2.2.1"
   }
 }
