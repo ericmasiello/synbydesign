@@ -8,8 +8,8 @@ const request = Promise.promisify(req);
 
 const service = {};
 
-service.fetchAll = function fetchAll() {
-  const url = `${SYN_BY_DESIGN_ROUTE}/portfolio.json`;
+service.fetch = function fetchAll() {
+  const url = `${SYN_BY_DESIGN_ROUTE}/about.json`;
   winston.info(`Requesting ${url}`);
   return request(url)
     .then(({ body }) => {
