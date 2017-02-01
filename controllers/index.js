@@ -2,15 +2,15 @@
 import { renderToString } from 'react-dom/server';
 import React from 'react';
 import { Provider } from 'react-redux';
-import AppContainer from '../domains/App';
+import AppContainer from '../app';
 import initStore from '../store';
 
-import fetchAll from '../services/portfolio';
+import portfolioService from '../app/portfolio';
 
 const ctrl = {};
 
 ctrl.index = (req: express$Request, res: express$Response) => {
-  fetchAll()
+  portfolioService.fetchAll()
     .then((portfolio) => {
       const store = initStore({
         portfolio,

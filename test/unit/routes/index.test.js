@@ -2,7 +2,7 @@ import supertest from 'supertest';
 import { expect } from 'chai';
 import nock from 'nock';
 import cheerio from 'cheerio';
-import app from '../../../app';
+import app from '../../../server';
 import { SYN_BY_DESIGN_ROUTE } from '../../../config';
 
 describe('routes', function () {

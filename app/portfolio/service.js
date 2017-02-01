@@ -2,11 +2,13 @@
 import req from 'request';
 import Promise from 'bluebird';
 import winston from 'winston';
-import { SYN_BY_DESIGN_ROUTE } from '../config';
+import { SYN_BY_DESIGN_ROUTE } from '../../config';
 
 const request = Promise.promisify(req);
 
-function fetchAll() {
+const service = {};
+
+service.fetchAll = function fetchAll() {
   const url = `${SYN_BY_DESIGN_ROUTE}/portfolio.json`;
   winston.info(`Requesting ${url}`);
   return request(url)
@@ -20,4 +22,4 @@ function fetchAll() {
     });
 }
 
-export default fetchAll;
+export default service;
