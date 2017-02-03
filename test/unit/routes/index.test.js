@@ -2,8 +2,8 @@ import supertest from 'supertest';
 import { expect } from 'chai';
 import nock from 'nock';
 import cheerio from 'cheerio';
-import app from '../../../server';
-import { SYN_BY_DESIGN_ROUTE } from '../../../config';
+import app from '../../../app/server';
+import { SYN_BY_DESIGN_ROUTE } from '../../../app/config';
 
 describe('routes', function () {
   let request;
@@ -13,6 +13,10 @@ describe('routes', function () {
   beforeEach(() => {
     nock(SYN_BY_DESIGN_ROUTE)
       .get('/portfolio.json')
+      .reply(200, dataStub);
+
+    nock(SYN_BY_DESIGN_ROUTE)
+      .get('/about.json')
       .reply(200, dataStub);
 
     request = supertest(app)

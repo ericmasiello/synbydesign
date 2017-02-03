@@ -1,8 +1,8 @@
 /* @flow */
-require('../config/babel');
+require('../app/config/babel');
 const winston = require('winston');
-const app = require('../server');
-const PORT = require('../config').PORT;
+const app = require('../app/server');
+const PORT = require('../app/config').PORT;
 
 app.set('port', PORT);
 

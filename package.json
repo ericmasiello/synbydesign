@@ -14,7 +14,7 @@
     "flow:start": "flow start",
     "flow:stop": "flow stop",
     "flow:check": "flow check",
-    "test": "nyc mocha ./test/.setup.js 'test/**/*.test.js'",
+    "test": "cross-env NODE_ENV=test nyc mocha ./test/.setup.js 'test/**/*.test.js'",
     "validate": "npm-run-all --parallel flow:check lint test",
     "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
@@ -33,7 +33,7 @@
     "include": [],
     "exclude": [
       "flow-typed",
-      "config",
+      "app/config",
       "data",
       "test",
       "**/*.test.jsx",

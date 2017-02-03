@@ -4,11 +4,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import Promise from 'bluebird';
 import winston from 'winston';
-import AppContainer from '../app';
-import initStore from '../store';
+import AppContainer from '../../client';
+import initStore from '../../store';
 
-import portfolioService from '../app/portfolio';
-import aboutService from '../app/about';
+import portfolioService from '../../shared/portfolio';
+import aboutService from '../../shared/about';
 
 const ctrl = {};
 

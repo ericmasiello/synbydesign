@@ -1,1 +1,1 @@
-require('../config/babel');
+require('../app/config/babel');

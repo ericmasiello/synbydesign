@@ -1,6 +1,6 @@
 /* @flow */
 import React, { PropTypes } from 'react';
-import type { AppProps } from '../types';
+import type { AppProps } from '../../types';
 
 export default function App({ portfolio }: AppProps) {
   return (
