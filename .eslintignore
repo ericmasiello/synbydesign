@@ -5,3 +5,4 @@ flow-typed
 data
 coverage
 .nyc_output
+build
