@@ -9,4 +9,4 @@ coverage
 .nyc_output
 
 jsdoc
-bin
+build

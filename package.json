@@ -6,9 +6,9 @@
     "node": "6.9.4"
   },
   "scripts": {
-    "build:server": "webpack --config webpack.config.server.js -p",
+    "build:server": "babel --out-dir build app",
     "prestart": "yarn build:server",
-    "start": "cross-env NODE_ENV=production node ./bin/www.js",
+    "start": "cross-env NODE_ENV=production node ./build",
     "dev": "cross-env NODE_ENV=development nodemon ./app",
     "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache",
     "jsdoc": "rm -rf ./jsdoc && find app -type f -name '*.js' -o -name '*.jsx'| xargs jsdoc -c ./conf.json",
@@ -68,8 +68,8 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.22.2",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
     "chai": "^3.5.0",
     "codecov": "^1.0.1",
     "eslint": "^3.13.0",
@@ -86,7 +86,6 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
-    "supertest": "^2.0.1",
-    "webpack": "^2.2.1"
+    "supertest": "^2.0.1"
   }
 }
