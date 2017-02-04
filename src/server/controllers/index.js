@@ -7,8 +7,8 @@ import winston from 'winston';
 import AppContainer from '../../client';
 import initStore from '../../store';
 
-import portfolioService from '../../shared/portfolio';
-import aboutService from '../../shared/about';
+import portfolioService from '../services/portfolio';
+import aboutService from '../services/about';
 
 const ctrl = {};
 
