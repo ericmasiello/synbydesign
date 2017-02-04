@@ -6,4 +6,5 @@ export type RootState = {
 
 export type AppProps = {
   portfolio: string[],
+  children: any, //FIXME: should be a React node
 };
