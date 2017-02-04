@@ -2,8 +2,8 @@ import supertest from 'supertest';
 import { expect } from 'chai';
 import nock from 'nock';
 import cheerio from 'cheerio';
-import app from '../../../app/server';
-import { SYN_BY_DESIGN_ROUTE } from '../../../app/config';
+import app from '../../../src/server';
+import { SYN_BY_DESIGN_ROUTE } from '../../../src/config';
 
 describe('routes', function () {
   let request;
