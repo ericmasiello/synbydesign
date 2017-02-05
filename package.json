@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build:ui": "webpack",
+    "watch:ui": "npm run build:ui && webpack --watch",
     "build:server": "babel --out-dir build src",
     "prestart": "npm run build:server",
     "start": "cross-env NODE_ENV=production node ./build",
@@ -77,6 +78,8 @@
     "babel-eslint": "^7.1.1",
     "chai": "^3.5.0",
     "codecov": "^1.0.1",
+    "css-loader": "^0.26.1",
+    "css-modules-require-hook": "^4.0.5",
     "eslint": "^3.13.0",
     "eslint-config-ericmasiello": "1.1.0",
     "eslint-plugin-flowtype": "^2.30.0",
@@ -91,6 +94,7 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
+    "style-loader": "^0.13.1",
     "supertest": "^2.0.1"
   }
 }
