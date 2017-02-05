@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import Promise from 'bluebird';
 import winston from 'winston';
-// import AppContainer from '../../app/App'; // FIXME - need to load routes (index.js)
 import initStore from '../../store';
 import routes from '../../routes';
 
