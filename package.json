@@ -8,7 +8,7 @@
   "scripts": {
     "build:ui": "webpack",
     "build:server": "babel --out-dir build src",
-    "prestart": "npm run build:ui && npm run build:server",
+    "prestart": "npm run build:server",
     "start": "cross-env NODE_ENV=production node ./build",
     "dev": "cross-env NODE_ENV=development nodemon ./src",
     "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache",
