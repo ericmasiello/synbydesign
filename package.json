@@ -44,6 +44,8 @@
     ]
   },
   "dependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.22.0",
     "babel-preset-env": "^1.1.8",
@@ -67,12 +69,11 @@
     "redux": "^3.6.0",
     "request": "^2.79.0",
     "synbydesign.design": "^0.3.1",
+    "webpack": "^2.2.1",
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
     "chai": "^3.5.0",
     "codecov": "^1.0.1",
     "eslint": "^3.13.0",
@@ -89,7 +90,6 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
-    "supertest": "^2.0.1",
-    "webpack": "^2.2.1"
+    "supertest": "^2.0.1"
   }
 }
