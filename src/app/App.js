@@ -18,19 +18,19 @@ export function App({
     <div>
       <h1>Welcome!</h1>
       <Link to="/">Home</Link> | <Link to="/detail">Detail</Link>
-      {portfolio.map(item => <li key={`item-${item}`}>{item}</li>)}
+      {portfolio.map(item => <li key={`item-${item.title}`}>{item.title}</li>)}
       {children}
     </div>
   );
 }
 
 App.propTypes = {
-  portfolio: PropTypes.arrayOf(PropTypes.string).isRequired,
+  portfolio: PropTypes.arrayOf(PropTypes.object).isRequired,
   children: PropTypes.node,
 };
 
 App.defaultProps = {
-  portfolio: ['These', 'are', 'defaults'],
+  portfolio: [],
   children: null,
 };
 
