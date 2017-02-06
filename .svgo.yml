@@ -3,7 +3,6 @@ plugins:
   - removeDimensions: true
   - removeAttrs:
       attrs:
-        - 'id'
         - 'path:class'
         - 'path:fill-rule'
         - 'path:clip-rule'
