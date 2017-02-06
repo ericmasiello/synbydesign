@@ -10,3 +10,4 @@ coverage
 jsdoc
 build
 public/dist
+views/sprite.svg
