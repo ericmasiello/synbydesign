@@ -1,6 +1,9 @@
 plugins:
   - removeStyleElement: true
   - removeDimensions: true
+  - cleanupIDs: false
+  - removeUnknownsAndDefaults:
+      SVGid: false
   - removeAttrs:
       attrs:
         - 'path:class'
