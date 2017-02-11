@@ -7,17 +7,20 @@ import { SYN_BY_DESIGN_ROUTE } from '../../../src/config';
 
 describe('routes', function () {
   let request;
-  const dataStub = {
-    whatsup: 'dog',
+  const stub = {
+    portfolio: [{
+      title: 'The title',
+    }],
+    about: 'Learn about me',
   };
   beforeEach(() => {
     nock(SYN_BY_DESIGN_ROUTE)
       .get('/portfolio.json')
-      .reply(200, dataStub);
+      .reply(200, JSON.stringify(stub.portfolio));
 
     nock(SYN_BY_DESIGN_ROUTE)
       .get('/about.json')
-      .reply(200, dataStub);
+      .reply(200, JSON.stringify(stub.about));
 
     request = supertest(app)
       .get('/')
