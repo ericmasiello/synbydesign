@@ -17,7 +17,7 @@ export function App({
   return (
     <div>
       <h1>Welcome!</h1>
-      <Link to="/">Home</Link> | <Link to="/detail">Detail</Link>
+      <Link to="/">Home</Link> | <Link to="/detail/r-m-r-software-solutions-logo">Detail</Link>
       {portfolio.map(item => <li key={`item-${item.title}`}>{item.title}</li>)}
       {children}
     </div>

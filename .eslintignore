@@ -6,3 +6,5 @@ data
 coverage
 .nyc_output
 build
+coverage
+public/dist

@@ -1,6 +1,8 @@
 /* @flow */
 export type RootState = {
-  portfolio: string[],
+  selectedPortfolioId?: string,
+  portfolio: Portfolio[],
+  about?: string,
 };
 
 
@@ -34,3 +36,20 @@ export type PortfolioAction = {|
   type: string,
   payload: Portfolio[],
 |};
+
+export type PortfolioService = {
+  fetchAll: () => Promise<Portfolio[]>,
+  fetchById: (id: string) => Promise<Portfolio>,
+};
+
+export type AboutService = {
+  fetch: () => Promise<string>,
+};
+
+export type LoadPortfolio = () => Promise<Portfolio[]>;
+
+export type DetailComponentProps = {
+  params: {
+    id: string,
+  },
+};
