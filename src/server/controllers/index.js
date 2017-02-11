@@ -13,7 +13,28 @@ import aboutService from '../services/about';
 import type {
   About,
   Portfolio,
+  RootState,
 } from '../../../types';
+
+function renderUIWithStoreData(
+  res: express$Response,
+  props: Object,
+  storeData: RootState): void {
+  const store = initStore(storeData);
+
+  // if we got props, that means we found a valid component to render
+  // for the given route
+  const html = renderToString(
+    <Provider store={store}>
+      <RouterContext {...props} />
+    </Provider>,
+  );
+  // render `index.ejs`, but pass in the markup we want it to display
+  res.render('index', {
+    html,
+    data: store.getState(),
+  });
+}
 
 const ctrl = {};
 
@@ -22,22 +43,9 @@ ctrl.detail = (req: express$Request, res: express$Response, props: Object) => {
     .then((portfolioItem: ?Portfolio) => {
       winston.log('Controller detail response portfolioItem:', props.params.id, portfolioItem);
 
-      const store = initStore({
+      renderUIWithStoreData(res, props, {
         selectedPortfolioId: props.params.id,
         portfolio: portfolioItem ? [portfolioItem] : [],
-      });
-
-      // if we got props, that means we found a valid component to render
-      // for the given route
-      const html = renderToString(
-        <Provider store={store}>
-          <RouterContext {...props} />
-        </Provider>,
-      );
-      // render `index.ejs`, but pass in the markup we want it to display
-      res.render('index', {
-        html,
-        data: store.getState(),
       });
     })
     .catch((err) => {
@@ -55,22 +63,9 @@ ctrl.index = (req: express$Request, res: express$Response, props: Object) => {
     winston.log('Controller Index response portfolio:', portfolio);
     winston.log('Controller Index response about:', about);
 
-    const store = initStore({
+    renderUIWithStoreData(res, props, {
       portfolio,
       about: about.content,
-    });
-
-    // if we got props, that means we found a valid component to render
-    // for the given route
-    const html = renderToString(
-      <Provider store={store}>
-        <RouterContext {...props} />
-      </Provider>,
-    );
-    // render `index.ejs`, but pass in the markup we want it to display
-    res.render('index', {
-      html,
-      data: store.getState(),
     });
   })
   .catch((err) => {
