@@ -3,7 +3,9 @@ import req from 'request';
 import Promise from 'bluebird';
 import winston from 'winston';
 import { SYN_BY_DESIGN_ROUTE } from '../../../config';
-import type { AboutService } from '../../../../types';
+import type {
+  AboutService,
+} from '../../../../types';
 
 const request = Promise.promisify(req);
 

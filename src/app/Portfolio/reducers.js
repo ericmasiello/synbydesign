@@ -10,12 +10,12 @@ import type {
 } from '../../../types';
 
 const defaultPortfolioAction = {
-  type: '',
+  type: LOAD_PORTFOLIO,
   payload: [],
 };
 
 const defaultSelectedPortfolioAction = {
-  type: '',
+  type: SELECT_PORTFOLIO_ID,
   payload: null,
 };
 

@@ -10,12 +10,16 @@ import routes from '../../routes';
 
 import portfolioService from '../services/portfolio';
 import aboutService from '../services/about';
+import type {
+  About,
+  Portfolio,
+} from '../../../types';
 
 const ctrl = {};
 
 ctrl.detail = (req: express$Request, res: express$Response, props: Object) => {
   portfolioService.fetchById(props.params.id)
-    .then((portfolioItem) => {
+    .then((portfolioItem: Portfolio) => {
       winston.log('Controller detail response portfolioItem:', props.params.id, portfolioItem);
 
       const store = initStore({
@@ -47,13 +51,13 @@ ctrl.index = (req: express$Request, res: express$Response, props: Object) => {
     portfolioService.fetchAll(),
     aboutService.fetch(),
   ])
-  .spread((portfolio, about) => {
+  .spread((portfolio: Portfolio[], about: About) => {
     winston.log('Controller Index response portfolio:', portfolio);
     winston.log('Controller Index response about:', about);
 
     const store = initStore({
       portfolio,
-      about,
+      about: about.content,
     });
 
     // if we got props, that means we found a valid component to render
