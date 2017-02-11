@@ -34,7 +34,7 @@ export type Portfolio = {|
 
 export type PortfolioService = {
   fetchAll: () => Promise<Portfolio[]>,
-  fetchById: (id: string) => Promise<Portfolio>,
+  fetchById: (id: string) => Promise<?Portfolio>,
 };
 
 export type AboutService = {

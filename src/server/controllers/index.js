@@ -19,12 +19,12 @@ const ctrl = {};
 
 ctrl.detail = (req: express$Request, res: express$Response, props: Object) => {
   portfolioService.fetchById(props.params.id)
-    .then((portfolioItem: Portfolio) => {
+    .then((portfolioItem: ?Portfolio) => {
       winston.log('Controller detail response portfolioItem:', props.params.id, portfolioItem);
 
       const store = initStore({
         selectedPortfolioId: props.params.id,
-        portfolio: [portfolioItem],
+        portfolio: portfolioItem ? [portfolioItem] : [],
       });
 
       // if we got props, that means we found a valid component to render
