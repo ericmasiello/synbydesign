@@ -32,11 +32,6 @@ export type Portfolio = {|
   }
 |};
 
-export type PortfolioAction = {|
-  type: string,
-  payload: Portfolio[],
-|};
-
 export type PortfolioService = {
   fetchAll: () => Promise<Portfolio[]>,
   fetchById: (id: string) => Promise<Portfolio>,
@@ -52,4 +47,14 @@ export type DetailComponentProps = {
   params: {
     id: string,
   },
+};
+
+export type PortfolioAction = {|
+  type: string,
+  payload: Portfolio[],
+|};
+
+export type SelectedPortfolioAction = {
+  type: string,
+  payload: ?string,
 };

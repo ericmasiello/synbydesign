@@ -1,17 +1,40 @@
 /* @flow */
-import { LOAD_PORTFOLIO } from './actions';
-import type { Portfolio, PortfolioAction } from '../../../types';
+import {
+  LOAD_PORTFOLIO,
+  SELECT_PORTFOLIO_ID,
+} from './actions';
+import type {
+  Portfolio,
+  PortfolioAction,
+  SelectedPortfolioAction,
+} from '../../../types';
 
-const defaultAction = {
+const defaultPortfolioAction = {
   type: '',
   payload: [],
 };
 
-export default function portfolioReducer(
+const defaultSelectedPortfolioAction = {
+  type: '',
+  payload: null,
+};
+
+export function portfolioReducer(
   state: Portfolio[] = [],
-  action: PortfolioAction = defaultAction) {
+  action: PortfolioAction = defaultPortfolioAction) {
   switch (action.type) {
     case LOAD_PORTFOLIO:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+export function selectedPortfolioIdReducer(
+  state: ?string = null,
+  action: SelectedPortfolioAction = defaultSelectedPortfolioAction) {
+  switch (action.type) {
+    case SELECT_PORTFOLIO_ID:
       return action.payload;
     default:
       return state;

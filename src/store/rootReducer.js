@@ -1,9 +1,12 @@
 /* @flow */
 import { combineReducers } from 'redux';
-import portfolioReducer from '../app/Portfolio/reducers';
+import {
+  portfolioReducer,
+  selectedPortfolioIdReducer,
+} from '../app/Portfolio/reducers';
 
 export default combineReducers({
-  selectedPortfolioId: () => 'some-id-value',
+  selectedPortfolioId: selectedPortfolioIdReducer,
   portfolio: portfolioReducer,
   about: () => 'About me!',
 });
