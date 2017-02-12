@@ -16,7 +16,7 @@
     "dev": "cross-env NODE_ENV=development npm-run-all --parallel watch:server watch:ui",
     "lint": "eslint . .eslintrc.js --ext [js,jsx] --cache",
     "jsdoc": "rm -rf ./jsdoc && find src -type f -name '*.js' -o -name '*.jsx'| xargs jsdoc -c ./conf.json",
-    "flow:typed": "flow-typed install",
+    "flow:update": "flow-typed install",
     "flow:start": "flow start",
     "flow:stop": "flow stop",
     "flow:check": "flow check",

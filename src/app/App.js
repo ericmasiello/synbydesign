@@ -34,4 +34,4 @@ App.defaultProps = {
   children: null,
 };
 
-export default connect(mapStateToProps, [])(App);
+export default connect(mapStateToProps)(App);
