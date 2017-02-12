@@ -5,7 +5,6 @@ export type RootState = {
   about?: string,
 };
 
-
 export type AppProps = {
   portfolio: Portfolio[],
   children: any, // FIXME: should be a React node
@@ -49,6 +48,11 @@ export type DetailComponentProps = {
   },
 };
 
+export type Action = {|
+  type: string,
+  payload?: any,
+|};
+
 export type PortfolioAction = {|
   type: LoadPortfolioActionType,
   payload: Portfolio[],
@@ -70,4 +74,8 @@ export type LoadAboutActionType = 'LOAD_ABOUT';
 
 export type About = {
   content: string,
+};
+
+export type AboutComponentProps = {
+  loadAbout: Function,
 };
