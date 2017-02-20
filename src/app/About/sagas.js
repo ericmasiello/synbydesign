@@ -14,7 +14,8 @@ import type {
 
 const Api = {
   fetchAbout(): Promise<About> {
-    return axios.get('https://dl.dropboxusercontent.com/u/4825781/synbydesign/about.json')
+    // FIXME!
+    return axios.get('http://localhost:4000/api/v1/about')
       .then(({ data }) => {
         const response: About = data;
         console.log('Repsonse', response);

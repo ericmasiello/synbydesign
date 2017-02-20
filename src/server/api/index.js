@@ -1,9 +1,9 @@
 /* @flow */
 import express from 'express';
-import ctrl from '../controllers';
+import aboutCtrl from './controllers/about';
 
 const router: express$Router = express.Router();
 
-router.get('*', ctrl.all);
+router.get('/about', aboutCtrl.index);
 
 module.exports = router;
