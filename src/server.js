@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const MORGAN_CONFIG = require('./config').MORGAN_CONFIG;
 
-const routes = require('./server/routes');
+const routes = require('./server/ui/routes');
 
 const app = express();
 
