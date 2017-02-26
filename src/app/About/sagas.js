@@ -15,7 +15,7 @@ import type {
 const Api = {
   fetchAbout(): Promise<About> {
     // FIXME!
-    return axios.get('http://localhost:4000/api/v1/about')
+    return axios.get('/api/v1/about')
       .then(({ data }) => {
         const response: About = data;
         console.log('Repsonse', response);
