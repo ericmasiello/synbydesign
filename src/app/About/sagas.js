@@ -1,6 +1,4 @@
 /* @flow */
-// FIXME: this should be handled elsewhere
-import 'babel-polyfill';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import {
