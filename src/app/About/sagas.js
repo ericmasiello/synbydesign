@@ -10,22 +10,21 @@ import {
 } from './actions';
 import type {
   About,
+  Action,
 } from '../../../types';
 
-const Api = {
+export const Api = {
   fetchAbout(): Promise<About> {
-    // FIXME!
     return axios.get('/api/v1/about')
       .then(({ data }) => {
         const response: About = data;
-        console.log('Repsonse', response);
         return response;
       });
   },
 };
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchAbout() {
+export function* fetchAbout(): Generator<Action, void, About> {
   try {
     const about = yield call(Api.fetchAbout);
     yield put({
