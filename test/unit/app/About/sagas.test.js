@@ -3,10 +3,8 @@ import {
   call,
   put,
 } from 'redux-saga/effects';
-import {
-  fetchAbout,
-  Api,
-} from '../../../../src/app/About/sagas';
+import fetchAbout from '../../../../src/app/About/sagas';
+import Api from '../../../../src/app/api';
 import {
   LOAD_ABOUT_SUCCEEDED,
   LOAD_ABOUT_FAILED,
@@ -36,6 +34,6 @@ describe('About Sagas', function () {
     expect(generator.throw(error).value).to.deep.equal(put({
       type: LOAD_ABOUT_FAILED,
       message: 'An error occurred',
-    }))
+    }));
   });
 });
