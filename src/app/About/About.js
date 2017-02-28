@@ -1,16 +1,24 @@
 /* @flow */
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import type {
   AboutComponentProps,
 } from '../../../types';
 
-export default function About({ loadAbout }: AboutComponentProps) {
-  loadAbout();
-  return (
-    <div>Learn about me!</div>
-  );
-}
+export default class About extends Component {
+  static defaultProps: {
+    about: 'Hello!',
+  };
 
-About.propTypes = {
-  loadAbout: PropTypes.func.isRequired,
-};
+  componentDidMount() {
+    this.props.loadAbout();
+  }
+
+  props: AboutComponentProps;
+
+  render() {
+    const { about } = this.props;
+    return (
+      <div dangerouslySetInnerHTML={{ __html: about }} />
+    );
+  }
+}

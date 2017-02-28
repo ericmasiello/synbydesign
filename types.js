@@ -78,4 +78,5 @@ export type About = {
 
 export type AboutComponentProps = {
   loadAbout: Function,
+  about: string,
 };
