@@ -53,9 +53,8 @@ export type Action = {|
   payload?: any,
 |};
 
-export type PortfolioAction = {|
+export type LoadPortfolioAction = {|
   type: LoadPortfolioActionType,
-  payload: Portfolio[],
 |};
 
 export type SelectedPortfolioAction = {|

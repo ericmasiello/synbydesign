@@ -1,11 +1,12 @@
 /* @flow */
 import {
   LOAD_PORTFOLIO,
+  LOAD_PORTFOLIO_SUCCEEDED,
   SELECT_PORTFOLIO_ID,
 } from './actions';
 import type {
   Portfolio,
-  PortfolioAction,
+  Action,
   SelectedPortfolioAction,
 } from '../../../types';
 
@@ -21,9 +22,9 @@ const defaultSelectedPortfolioAction = {
 
 export function portfolioReducer(
   state: Portfolio[] = [],
-  action: PortfolioAction = defaultPortfolioAction) {
+  action: Action = defaultPortfolioAction) {
   switch (action.type) {
-    case LOAD_PORTFOLIO:
+    case LOAD_PORTFOLIO_SUCCEEDED:
       return action.payload;
     default:
       return state;

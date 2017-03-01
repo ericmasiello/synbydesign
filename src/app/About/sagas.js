@@ -13,11 +13,9 @@ import type {
 } from '../../../types';
 import Api from '../api';
 
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
+// worker Saga: will be fired on LOAD_ABOUT actions
 function* fetchAbout(): Generator<Action, void, About> {
   try {
-    // FIXME: this is getting called twice!
-    console.log('calling fetchAbout generator');
     const about = yield call(Api.fetchAbout);
     yield put({
       type: LOAD_ABOUT_SUCCEEDED,

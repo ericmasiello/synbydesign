@@ -1,7 +1,9 @@
 /* @flow */
 import { takeLatest } from 'redux-saga/effects';
 import { LOAD_ABOUT } from '../app/About/actions';
+import { LOAD_PORTFOLIO } from '../app/Portfolio/actions';
 import fetchAbout from '../app/About/sagas';
+import fetchPortfolio from '../app/Portfolio/sagas';
 /*
   Alternatively you may use takeLatest.
 
@@ -11,6 +13,7 @@ import fetchAbout from '../app/About/sagas';
 */
 function* sagas(): Generator<Object, void, void> {
   yield takeLatest(LOAD_ABOUT, fetchAbout);
+  yield takeLatest(LOAD_PORTFOLIO, fetchPortfolio);
 }
 
 export default sagas;
