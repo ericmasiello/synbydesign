@@ -5,10 +5,6 @@ import type {
 } from '../../../types';
 
 export default class About extends Component {
-  static defaultProps: {
-    about: 'Hello!',
-  };
-
   componentDidMount() {
     this.props.loadAbout();
   }
@@ -17,6 +13,7 @@ export default class About extends Component {
 
   render() {
     const { about } = this.props;
+
     return (
       <div dangerouslySetInnerHTML={{ __html: about }} />
     );
