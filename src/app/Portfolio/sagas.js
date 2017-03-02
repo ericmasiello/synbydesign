@@ -33,7 +33,9 @@ export function* fetchPortfolio(): Generator<Action, void, Portfolio[]> {
 
 export function* fetchPortfolioDetail(): Generator<Action, void, Portfolio> {
   try {
-    const portfolioDetail: Portfolio = yield call(Api.fetchPortfolio);
+    // FIXME: need to pass the id to Api.fetchPortfolioById
+    debugger;
+    const portfolioDetail: Portfolio = yield call(Api.fetchPortfolioById);
     yield put({
       type: LOAD_PORTFOLIO_DETAIL_SUCCEEDED,
       payload: portfolioDetail,

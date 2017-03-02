@@ -3,6 +3,14 @@ export type RootState = {
   selectedPortfolioId?: string,
   portfolio: Portfolio[],
   about?: string,
+  loadingCount?: number,
+};
+
+export type RootStateReducer = {
+  selectedPortfolioId: Function,
+  portfolio: Function,
+  about: Function,
+  loadingCount: Function,
 };
 
 export type AppProps = {
@@ -42,10 +50,12 @@ export type AboutService = {
 
 export type LoadPortfolio = () => Promise<Portfolio[]>;
 
-export type DetailComponentProps = {
+export type PortfolioDetailComponentProps = {
   params: {
     id: string,
   },
+  portfolioDetail: Portfolio,
+  loadPortfolioDetail: Function,
 };
 
 export type Action = {|

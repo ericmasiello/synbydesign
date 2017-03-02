@@ -2,7 +2,7 @@
 // import React from 'react';
 import AppContainer from './app/App';
 import Home from './app/Home';
-import Detail from './app/Detail';
+import { PortfolioDetailContainer } from './app/Portfolio';
 
 const routes = {
   path: '',
@@ -14,7 +14,7 @@ const routes = {
     },
     {
       path: '/detail/:id',
-      component: Detail,
+      component: PortfolioDetailContainer,
     },
   ],
 };
