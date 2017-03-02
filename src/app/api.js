@@ -10,8 +10,15 @@ const Api = {
         return response;
       });
   },
-  fetchPortfolio(): Promise<Portfolio> {
+  fetchPortfolio(): Promise<Portfolio[]> {
     return axios.get('/api/v1/portfolio')
+      .then(({ data }) => {
+        const response: Portfolio[] = data;
+        return response;
+      });
+  },
+  fetchPortfolioById(id: string): Promise<Portfolio> {
+    return axios.get(`/api/v1/portfolio/${id}`)
       .then(({ data }) => {
         const response: Portfolio = data;
         return response;

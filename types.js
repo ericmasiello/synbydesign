@@ -53,24 +53,6 @@ export type Action = {|
   payload?: any,
 |};
 
-export type LoadPortfolioAction = {|
-  type: LoadPortfolioActionType,
-|};
-
-export type SelectedPortfolioAction = {|
-  type: SelectPortfolioIdActionType,
-  payload: ?string,
-|};
-
-export type AboutAction = {|
-  type: LoadAboutActionType,
-  payload: string,
-|};
-
-export type LoadPortfolioActionType = 'LOAD_PORTFOLIO';
-export type SelectPortfolioIdActionType = 'SELECT_PORTFOLIO_ID';
-export type LoadAboutActionType = 'LOAD_ABOUT';
-
 export type About = {
   content: string,
 };

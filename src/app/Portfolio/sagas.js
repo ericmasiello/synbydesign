@@ -6,6 +6,8 @@ import {
 import {
   LOAD_PORTFOLIO_SUCCEEDED,
   LOAD_PORTFOLIO_FAILED,
+  LOAD_PORTFOLIO_DETAIL_SUCCEEDED,
+  LOAD_PORTFOLIO_DETAIL_FAILED,
 } from './actions';
 import type {
   Portfolio,
@@ -14,9 +16,9 @@ import type {
 import Api from '../api';
 
 // worker Saga: will be fired on LOAD_PORTFOLIO actions
-function* fetchPortfolio(): Generator<Action, void, Portfolio> {
+export function* fetchPortfolio(): Generator<Action, void, Portfolio[]> {
   try {
-    const portfolio = yield call(Api.fetchPortfolio);
+    const portfolio: Portfolio[] = yield call(Api.fetchPortfolio);
     yield put({
       type: LOAD_PORTFOLIO_SUCCEEDED,
       payload: portfolio,
@@ -28,4 +30,18 @@ function* fetchPortfolio(): Generator<Action, void, Portfolio> {
     });
   }
 }
-export default fetchPortfolio;
+
+export function* fetchPortfolioDetail(): Generator<Action, void, Portfolio> {
+  try {
+    const portfolioDetail: Portfolio = yield call(Api.fetchPortfolio);
+    yield put({
+      type: LOAD_PORTFOLIO_DETAIL_SUCCEEDED,
+      payload: portfolioDetail,
+    });
+  } catch (e) {
+    yield put({
+      type: LOAD_PORTFOLIO_DETAIL_FAILED,
+      message: e.message,
+    });
+  }
+}
