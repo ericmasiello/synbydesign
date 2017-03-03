@@ -15,7 +15,6 @@ import type {
 } from '../../../types';
 import Api from '../api';
 
-// worker Saga: will be fired on LOAD_PORTFOLIO actions
 export function* fetchPortfolio(): Generator<Action, void, Portfolio[]> {
   try {
     const portfolio: Portfolio[] = yield call(Api.fetchPortfolio);
