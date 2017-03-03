@@ -20,31 +20,17 @@
     "flow:start": "flow start",
     "flow:stop": "flow stop",
     "flow:check": "flow check",
-    "test": "cross-env NODE_ENV=test nyc mocha ./test/.setup.js 'test/**/*.test.js'",
+    "test": "jest",
     "validate": "npm-run-all --parallel flow:check lint test",
     "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
-  "author": "",
+  "author": "Eric Masiello",
   "license": "ISC",
-  "nyc": {
-    "check-coverage": true,
-    "branches": 80,
-    "functions": 80,
-    "lines": 80,
-    "statements": 80,
-    "reporter": [
-      "text",
-      "lcov"
-    ],
-    "include": [],
-    "exclude": [
-      "flow-typed",
-      "src/config",
-      "data",
-      "test",
-      "**/*.test.jsx",
-      "**/*.test.js"
-    ]
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -81,6 +67,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "chai": "^3.5.0",
     "codecov": "^1.0.1",
@@ -96,12 +83,11 @@
     "flow-typed": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-svg-sprite": "^1.3.6",
-    "jsdoc": "^3.4.0",
-    "mocha": "^3.2.0",
+    "jest": "^19.0.2",
     "nock": "^9.0.2",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
-    "nyc": "^10.1.2",
+    "regenerator-runtime": "^0.10.3",
     "style-loader": "^0.13.1",
     "supertest": "^2.0.1",
     "svgo": "^0.7.2"
