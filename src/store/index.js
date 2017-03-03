@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './rootReducer';
 import type { RootState } from '../../types';
-import rootSagas from './rootSagas';
+import rootSagas from './sagaWatchers';
 
 export default function initializeStore(state: RootState) {
   /*

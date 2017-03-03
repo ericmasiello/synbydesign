@@ -2,8 +2,8 @@
 import { takeLatest } from 'redux-saga/effects';
 import { LOAD_ABOUT } from '../app/About/actions';
 import { LOAD_PORTFOLIO, LOAD_PORTFOLIO_DETAIL } from '../app/Portfolio/actions';
-import fetchAbout from '../app/About/sagas';
-import { fetchPortfolio, fetchPortfolioDetail } from '../app/Portfolio/sagas';
+import fetchAbout from '../app/About/sagaSubroutines';
+import { fetchPortfolio, fetchPortfolioDetail } from '../app/Portfolio/sagaSubroutines';
 /*
   Alternatively you may use takeLatest.
 

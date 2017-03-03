@@ -20,6 +20,8 @@ export function loadPortfolio(): Action {
 export function loadPortfolioDetail(): Action {
   return {
     type: LOAD_PORTFOLIO_DETAIL,
+    // FIXME:
+    payload: 'r-m-r-software-solutions-logo',
   };
 }
 
