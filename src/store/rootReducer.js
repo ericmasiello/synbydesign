@@ -1,13 +1,17 @@
 /* @flow */
-import { combineReducers } from 'redux';
+import type { RootStateReducer } from '../../types';
 import {
   portfolioReducer,
   selectedPortfolioIdReducer,
 } from '../app/Portfolio/reducers';
 import aboutReducer from '../app/About/reducers';
+import loadingCountReducer from '../app/Loading/reducers';
 
-export default combineReducers({
+const rootReducer: RootStateReducer = {
   selectedPortfolioId: selectedPortfolioIdReducer,
   portfolio: portfolioReducer,
   about: aboutReducer,
-});
+  loadingCount: loadingCountReducer,
+};
+
+export default rootReducer;

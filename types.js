@@ -3,8 +3,15 @@ export type RootState = {
   selectedPortfolioId?: string,
   portfolio: Portfolio[],
   about?: string,
+  loadingCount?: number,
 };
 
+export type RootStateReducer = {
+  selectedPortfolioId: Function,
+  portfolio: Function,
+  about: Function,
+  loadingCount: Function,
+};
 
 export type AppProps = {
   portfolio: Portfolio[],
@@ -43,31 +50,29 @@ export type AboutService = {
 
 export type LoadPortfolio = () => Promise<Portfolio[]>;
 
-export type DetailComponentProps = {
+export type PortfolioDetailComponentProps = {
   params: {
     id: string,
   },
+  portfolioDetail: Portfolio,
+  loadPortfolioDetail: Function,
 };
 
-export type PortfolioAction = {|
-  type: LoadPortfolioActionType,
-  payload: Portfolio[],
-|};
+export type PortfolioListComponentProps = {
+  loadPortfolio: Function,
+  portfolio: Portfolio[],
+};
 
-export type SelectedPortfolioAction = {|
-  type: SelectPortfolioIdActionType,
-  payload: ?string,
+export type Action = {|
+  type: string,
+  payload?: any,
 |};
-
-export type AboutAction = {|
-  type: LoadAboutActionType,
-  payload: string,
-|};
-
-export type LoadPortfolioActionType = 'LOAD_PORTFOLIO';
-export type SelectPortfolioIdActionType = 'SELECT_PORTFOLIO_ID';
-export type LoadAboutActionType = 'LOAD_ABOUT';
 
 export type About = {
   content: string,
+};
+
+export type AboutComponentProps = {
+  loadAbout: Function,
+  about: string,
 };

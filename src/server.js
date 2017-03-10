@@ -5,7 +5,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const MORGAN_CONFIG = require('./config').MORGAN_CONFIG;
 
-const routes = require('./server/routes');
+const uiRoutes = require('./server/ui');
+const apiRoutes = require('./server/api');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({
   extended: false, // makes parsing simpler and more secure
 }));
 
-app.use('/', routes);
+app.use('/api/v1', apiRoutes);
+app.use('/', uiRoutes);
 
 module.exports = app;

@@ -1,12 +1,13 @@
 /* @flow */
 import {
   LOAD_PORTFOLIO,
+  LOAD_PORTFOLIO_SUCCEEDED,
+  LOAD_PORTFOLIO_DETAIL_SUCCEEDED,
   SELECT_PORTFOLIO_ID,
 } from './actions';
 import type {
   Portfolio,
-  PortfolioAction,
-  SelectedPortfolioAction,
+  Action,
 } from '../../../types';
 
 const defaultPortfolioAction = {
@@ -21,18 +22,32 @@ const defaultSelectedPortfolioAction = {
 
 export function portfolioReducer(
   state: Portfolio[] = [],
-  action: PortfolioAction = defaultPortfolioAction) {
+  action: Action = defaultPortfolioAction) {
   switch (action.type) {
-    case LOAD_PORTFOLIO:
+    case LOAD_PORTFOLIO_SUCCEEDED:
       return action.payload;
+    case LOAD_PORTFOLIO_DETAIL_SUCCEEDED:
+      // FIXME: this will need to be refined in the event portfolio list is already hydrated
+      // we don't want to just tack on duplicates at the end of the list
+      return [...state, action.payload];
     default:
       return state;
   }
 }
 
+// FIXME: process should be
+/*
+  go to detail page
+  set the SELECT_PORTFOLIO_ID
+  check to see if value comes back,
+  if empty, then call the detail action
+  then check to see if data comes back
+  if not, then there isn't a matching record
+  // NOTE: this thing needs to also respond to LOAD_PORTFOLIO_DETAIL_SUCCEEDED type
+*/
 export function selectedPortfolioIdReducer(
   state: ?string = null,
-  action: SelectedPortfolioAction = defaultSelectedPortfolioAction) {
+  action: Action = defaultSelectedPortfolioAction) {
   switch (action.type) {
     case SELECT_PORTFOLIO_ID:
       return action.payload;

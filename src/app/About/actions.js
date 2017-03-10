@@ -1,12 +1,13 @@
 /* @flow */
 import type {
-  AboutAction,
-  LoadAboutActionType,
+  Action,
 } from '../../../types';
 
-export const LOAD_ABOUT: LoadAboutActionType = 'LOAD_ABOUT';
+export const LOAD_ABOUT: string = 'LOAD_ABOUT';
+export const LOAD_ABOUT_SUCCEEDED: string = 'LOAD_ABOUT_SUCCEEDED';
+export const LOAD_ABOUT_FAILED: string = 'LOAD_ABOUT_FAILED';
 
-export function loadAbout(): AboutAction {
+export function loadAbout(): Action {
   return {
     type: LOAD_ABOUT,
     payload: '', // FIXME

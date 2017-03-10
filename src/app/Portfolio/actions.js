@@ -1,22 +1,31 @@
 /* @flow */
 import type {
-  PortfolioAction,
-  SelectedPortfolioAction,
-  LoadPortfolioActionType,
-  SelectPortfolioIdActionType,
+  Action,
 } from '../../../types';
 
-export const LOAD_PORTFOLIO: LoadPortfolioActionType = 'LOAD_PORTFOLIO';
-export const SELECT_PORTFOLIO_ID: SelectPortfolioIdActionType = 'SELECT_PORTFOLIO_ID';
+export const LOAD_PORTFOLIO: string = 'LOAD_PORTFOLIO';
+export const LOAD_PORTFOLIO_SUCCEEDED: string = 'LOAD_PORTFOLIO_SUCCEEDED';
+export const LOAD_PORTFOLIO_FAILED: string = 'LOAD_PORTFOLIO_FAILED';
+export const LOAD_PORTFOLIO_DETAIL: string = 'LOAD_PORTFOLIO_DETAIL';
+export const LOAD_PORTFOLIO_DETAIL_SUCCEEDED: string = 'LOAD_PORTFOLIO_DETAIL_SUCCEEDED';
+export const LOAD_PORTFOLIO_DETAIL_FAILED: string = 'LOAD_PORTFOLIO_DETAIL_FAILED';
+export const SELECT_PORTFOLIO_ID: string = 'SELECT_PORTFOLIO_ID';
 
-export function loadPortfolio(): PortfolioAction {
+export function loadPortfolio(): Action {
   return {
     type: LOAD_PORTFOLIO,
-    payload: [], // FIXME
   };
 }
 
-export function selectedPortfolioById(id: string): SelectedPortfolioAction {
+export function loadPortfolioDetail(): Action {
+  return {
+    type: LOAD_PORTFOLIO_DETAIL,
+    // FIXME:
+    payload: 'r-m-r-software-solutions-logo',
+  };
+}
+
+export function selectedPortfolioById(id: string): Action {
   return {
     type: SELECT_PORTFOLIO_ID,
     payload: id,

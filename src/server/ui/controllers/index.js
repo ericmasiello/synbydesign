@@ -5,16 +5,16 @@ import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import Promise from 'bluebird';
 import winston from 'winston';
-import initStore from '../../store';
-import routes from '../../routes';
+import initStore from '../../../store';
+import routes from '../../../ui-routes';
 
-import portfolioService from '../services/portfolio';
-import aboutService from '../services/about';
+import portfolioService from '../../services/portfolio';
+import aboutService from '../../services/about';
 import type {
   About,
   Portfolio,
   RootState,
-} from '../../../types';
+} from '../../../../types';
 
 function renderUIWithStoreData(
   res: express$Response,

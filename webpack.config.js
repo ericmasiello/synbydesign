@@ -2,12 +2,13 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './src/client',
+    app: ['babel-polyfill', './src/client'],
   },
   output: {
     path: path.resolve(__dirname, 'public/dist'),
     filename: '[name].js',
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {

@@ -1,6 +1,6 @@
 /* @flow */
 import express from 'express';
-import ctrl from '../controllers';
+import ctrl from './controllers';
 
 const router: express$Router = express.Router();
 

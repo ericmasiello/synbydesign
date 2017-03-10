@@ -1,21 +1,22 @@
 /* @flow */
 import {
   LOAD_ABOUT,
+  LOAD_ABOUT_SUCCEEDED,
 } from './actions';
 import type {
-  AboutAction,
+  Action,
 } from '../../../types';
 
-const defaultAboutAction = {
+const defaultAboutAction: Action = {
   type: LOAD_ABOUT,
   payload: '',
 };
 
 export default function aboutReducer(
   state: string = '',
-  action: AboutAction = defaultAboutAction) {
+  action: Action = defaultAboutAction) {
   switch (action.type) {
-    case LOAD_ABOUT:
+    case LOAD_ABOUT_SUCCEEDED:
       return action.payload;
     default:
       return state;
