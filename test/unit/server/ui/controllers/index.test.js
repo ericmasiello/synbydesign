@@ -1,5 +1,4 @@
 import supertest from 'supertest';
-import { expect } from 'chai';
 import nock from 'nock';
 import cheerio from 'cheerio';
 import app from '../../../../../src/server';
@@ -33,7 +32,7 @@ describe('routes', function () {
       .expect(200)
       .expect(function (res) {
         const $ = cheerio.load(res.text);
-        expect($('#app')).to.have.length(1);
+        expect($('#app')).toHaveLength(1);
       })
       .end(done);
   });
@@ -43,7 +42,7 @@ describe('routes', function () {
       .expect(200)
       .expect(function (res) {
         const $ = cheerio.load(res.text);
-        expect($('script').text().includes('window.__PRELOADED_DATA__')).to.be.true;
+        expect($('script').text().includes('window.__PRELOADED_DATA__')).toBeTruthy();
       })
       .end(done);
   });

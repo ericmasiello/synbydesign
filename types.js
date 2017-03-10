@@ -58,6 +58,11 @@ export type PortfolioDetailComponentProps = {
   loadPortfolioDetail: Function,
 };
 
+export type PortfolioListComponentProps = {
+  loadPortfolio: Function,
+  portfolio: Portfolio[],
+};
+
 export type Action = {|
   type: string,
   payload?: any,

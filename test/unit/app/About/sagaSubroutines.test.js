@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import {
   call,
   put,
@@ -12,16 +11,16 @@ import {
 
 describe('About Sagas', function () {
   it('should work', function () {
-    expect(true).to.equal(true);
+    expect(true).toEqual(true);
   });
 
   it('should fetch about content', function () {
     const generator = fetchAbout();
-    expect(generator.next().value).to.deep.equal(call(Api.fetchAbout));
+    expect(generator.next().value).toEqual(call(Api.fetchAbout));
     const aboutResponse = {
       content: 'Hello world',
     };
-    expect(generator.next(aboutResponse).value).to.deep.equal(put({
+    expect(generator.next(aboutResponse).value).toEqual(put({
       type: LOAD_ABOUT_SUCCEEDED,
       payload: 'Hello world',
     }));
@@ -29,9 +28,9 @@ describe('About Sagas', function () {
 
   it('should fail to fetch about content', function () {
     const generator = fetchAbout();
-    expect(generator.next().value).to.deep.equal(call(Api.fetchAbout));
+    expect(generator.next().value).toEqual(call(Api.fetchAbout));
     const error = new Error('An error occurred');
-    expect(generator.throw(error).value).to.deep.equal(put({
+    expect(generator.throw(error).value).toEqual(put({
       type: LOAD_ABOUT_FAILED,
       message: 'An error occurred',
     }));

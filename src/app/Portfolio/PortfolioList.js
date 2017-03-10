@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import type { PortfolioListComponentProps } from '../../../types';
 
 export default class PortfolioList extends Component {
 
@@ -6,7 +7,7 @@ export default class PortfolioList extends Component {
     this.props.loadPortfolio();
   }
 
-  // props: AboutComponentProps;
+  props: PortfolioListComponentProps;
 
   render() {
     const { portfolio } = this.props;
