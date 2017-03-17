@@ -88,6 +88,7 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "regenerator-runtime": "^0.10.3",
+    "sinon": "^2.0.0",
     "style-loader": "^0.13.1",
     "supertest": "^2.0.1",
     "svgo": "^0.7.2"
