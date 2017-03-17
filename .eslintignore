@@ -8,3 +8,5 @@ coverage
 build
 coverage
 public/dist
+# *.test.js
+# gulpfile.js

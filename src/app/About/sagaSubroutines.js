@@ -8,15 +8,15 @@ import {
   LOAD_ABOUT_FAILED,
 } from './actions';
 import type {
-  About,
-  Action,
+  Syn$About,
+  Syn$Action,
 } from '../../../types';
 import Api from '../api';
 
 // worker Saga: will be fired on LOAD_ABOUT actions
-function* fetchAbout(): Generator<Action, void, About> {
+function* fetchAbout(): Generator<Syn$Action, void, Syn$About> {
   try {
-    const about = yield call(Api.fetchAbout);
+    const about: Syn$About = yield call(Api.fetchAbout);
     yield put({
       type: LOAD_ABOUT_SUCCEEDED,
       payload: about.content,

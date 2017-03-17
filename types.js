@@ -1,78 +1,84 @@
 /* @flow */
-export type RootState = {
-  selectedPortfolioId?: string,
-  portfolio: Portfolio[],
+export type Syn$RootState = {
   about?: string,
   loadingCount?: number,
+  portfolio: Syn$Portfolio[],
+  selectedPortfolioId?: string,
 };
 
-export type RootStateReducer = {
-  selectedPortfolioId: Function,
-  portfolio: Function,
+export type Syn$RootStateReducer = {
   about: Function,
   loadingCount: Function,
+  portfolio: Function,
+  selectedPortfolioId: Function,
 };
 
-export type AppProps = {
-  portfolio: Portfolio[],
-  children: any, // FIXME: should be a React node
+export type Syn$AppProps = {
+  children: React$Element<any>,
+  portfolio: Syn$Portfolio[],
 };
 
-type PortfolioMeta = {
-  stackDesign: boolean,
+type Syn$PortfolioMeta = {
+  isSVG: boolean,
   mixUrl: string,
+  stackDesign: boolean,
   trackList: string,
   websiteUrl: string,
-  isSVG: boolean,
 };
 
-export type Portfolio = {|
-  title: string,
-  meta: ?PortfolioMeta,
+export type Syn$Portfolio = {|
   category: string[],
-  tags: string[],
-  svgSource: ?string,
   imagePaths: {
     full: {
       url: string,
     },
-  }
+  },
+  meta: ?Syn$PortfolioMeta,
+  svgSource: ?string,
+  tags: string[],
+  title: string,
 |};
 
-export type PortfolioService = {
-  fetchAll: () => Promise<Portfolio[]>,
-  fetchById: (id: string) => Promise<?Portfolio>,
+export type Syn$PortfolioService = {
+  fetchAll: () => Promise<Syn$Portfolio[]>,
+  fetchById: (id: string) => Promise<?Syn$Portfolio>,
 };
 
-export type AboutService = {
-  fetch: () => Promise<About>,
+export type Syn$AboutService = {
+  fetch: () => Promise<Syn$About>,
 };
 
-export type LoadPortfolio = () => Promise<Portfolio[]>;
+export type Syn$LoadPortfolio = () => Promise<Syn$Portfolio[]>;
 
-export type PortfolioDetailComponentProps = {
+export type Syn$PortfolioDetailComponentProps = {
+  loadPortfolioDetail: (portfolio: Syn$Portfolio) => Syn$Action,
   params: {
     id: string,
   },
-  portfolioDetail: Portfolio,
-  loadPortfolioDetail: Function,
+  portfolioDetail: Syn$Portfolio,
 };
 
-export type PortfolioListComponentProps = {
+export type Syn$PortfolioListComponentProps = {
   loadPortfolio: Function,
-  portfolio: Portfolio[],
+  portfolio: Syn$Portfolio[],
 };
 
-export type Action = {|
-  type: string,
+export type Syn$Action = {|
   payload?: any,
+  type: string,
 |};
 
-export type About = {
+export type Syn$About = {
   content: string,
 };
 
-export type AboutComponentProps = {
-  loadAbout: Function,
+export type Syn$AboutComponentProps = {
   about: string,
+  loadAbout: Function,
+};
+
+export type Syn$Api = {
+  fetchAbout: () => Promise<Syn$About>,
+  fetchPortfolio: () => Promise<Syn$Portfolio[]>,
+  fetchPortfolioById: (id: string) => Promise<Syn$Portfolio>,
 };

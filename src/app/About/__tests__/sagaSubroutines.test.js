@@ -9,12 +9,12 @@ import {
   LOAD_ABOUT_FAILED,
 } from '../../../../src/app/About/actions';
 
-describe('About Sagas', function () {
-  it('should work', function () {
+describe('About Sagas', () => {
+  it('should work', () => {
     expect(true).toEqual(true);
   });
 
-  it('should fetch about content', function () {
+  it('should fetch about content', () => {
     const generator = fetchAbout();
     expect(generator.next().value).toEqual(call(Api.fetchAbout));
     const aboutResponse = {
@@ -26,7 +26,7 @@ describe('About Sagas', function () {
     }));
   });
 
-  it('should fail to fetch about content', function () {
+  it('should fail to fetch about content', () => {
     const generator = fetchAbout();
     expect(generator.next().value).toEqual(call(Api.fetchAbout));
     const error = new Error('An error occurred');

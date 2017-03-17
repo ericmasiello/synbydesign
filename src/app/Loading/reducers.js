@@ -1,5 +1,5 @@
 /* @flow */
-import type { Action } from '../../../types';
+import type { Syn$Action } from '../../../types';
 import {
   LOAD_ABOUT,
   LOAD_ABOUT_SUCCEEDED,
@@ -14,13 +14,13 @@ import {
   LOAD_PORTFOLIO_DETAIL_SUCCEEDED,
 } from '../Portfolio/actions';
 
-const defaultAction: Action = {
+const defaultAction: Syn$Action = {
   type: '',
 };
 
 export default function loadingCountReducer(
   state: number = 0,
-  action: Action = defaultAction) {
+  action: Syn$Action = defaultAction) {
   switch (action.type) {
     case LOAD_ABOUT:
     case LOAD_PORTFOLIO:

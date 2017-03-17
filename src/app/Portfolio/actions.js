@@ -1,6 +1,7 @@
 /* @flow */
 import type {
-  Action,
+  Syn$Action,
+  Syn$Portfolio,
 } from '../../../types';
 
 export const LOAD_PORTFOLIO: string = 'LOAD_PORTFOLIO';
@@ -11,21 +12,20 @@ export const LOAD_PORTFOLIO_DETAIL_SUCCEEDED: string = 'LOAD_PORTFOLIO_DETAIL_SU
 export const LOAD_PORTFOLIO_DETAIL_FAILED: string = 'LOAD_PORTFOLIO_DETAIL_FAILED';
 export const SELECT_PORTFOLIO_ID: string = 'SELECT_PORTFOLIO_ID';
 
-export function loadPortfolio(): Action {
+export function loadPortfolio(): Syn$Action {
   return {
     type: LOAD_PORTFOLIO,
   };
 }
 
-export function loadPortfolioDetail(): Action {
+export function loadPortfolioDetail(id: string): Syn$Action {
   return {
     type: LOAD_PORTFOLIO_DETAIL,
-    // FIXME:
-    payload: 'r-m-r-software-solutions-logo',
+    payload: id,
   };
 }
 
-export function selectedPortfolioById(id: string): Action {
+export function selectedPortfolioById(id: string): Syn$Action {
   return {
     type: SELECT_PORTFOLIO_ID,
     payload: id,

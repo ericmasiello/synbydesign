@@ -4,17 +4,17 @@ import {
   LOAD_ABOUT_SUCCEEDED,
 } from './actions';
 import type {
-  Action,
+  Syn$Action,
 } from '../../../types';
 
-const defaultAboutAction: Action = {
+const defaultAboutAction: Syn$Action = {
   type: LOAD_ABOUT,
   payload: '',
 };
 
 export default function aboutReducer(
   state: string = '',
-  action: Action = defaultAboutAction) {
+  action: Syn$Action = defaultAboutAction) {
   switch (action.type) {
     case LOAD_ABOUT_SUCCEEDED:
       return action.payload;

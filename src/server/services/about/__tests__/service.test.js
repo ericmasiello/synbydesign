@@ -1,24 +1,12 @@
-import sinon from 'sinon';
-import Promise from 'bluebird';
-
+/* @flow */
 import aboutService from '../service';
-import request from '../req';
+import aboutData from '../../../../data/about.json';
 
-describe.only('About Service', () => {
+describe('About Service', () => {
   describe('#fetch', () => {
-    beforeEach(() => {
-      sinon.stub(request, 'fetch', Promise.resolve(JSON.stringify({
-        body: {
-          hello: 'world',
-        },
-      })));
-    });
-    afterEach(() => {
-      request.fetch.restore();
-    });
     it('should fetch about.json', (done) => {
-      aboutService.fetch().then(() => {
-        expect(true).toBe(true);
+      aboutService.fetch().then((result) => {
+        expect(result).toEqual(aboutData);
         done();
       });
     });

@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react';
 // import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import type { AppProps } from '../../types';
+import type { Syn$AppProps } from '../../types';
 
 // function mapStateToProps({ portfolio }) {
 //   return {
@@ -12,7 +12,7 @@ import type { AppProps } from '../../types';
 
 export default function App({
   children,
-}: AppProps) {
+}: Syn$AppProps) {
   return (
     <div>
       <h1>Welcome!</h1>

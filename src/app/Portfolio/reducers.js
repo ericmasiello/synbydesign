@@ -6,8 +6,8 @@ import {
   SELECT_PORTFOLIO_ID,
 } from './actions';
 import type {
-  Portfolio,
-  Action,
+  Syn$Portfolio,
+  Syn$Action,
 } from '../../../types';
 
 const defaultPortfolioAction = {
@@ -21,8 +21,8 @@ const defaultSelectedPortfolioAction = {
 };
 
 export function portfolioReducer(
-  state: Portfolio[] = [],
-  action: Action = defaultPortfolioAction) {
+  state: Syn$Portfolio[] = [],
+  action: Syn$Action = defaultPortfolioAction) {
   switch (action.type) {
     case LOAD_PORTFOLIO_SUCCEEDED:
       return action.payload;
@@ -47,7 +47,7 @@ export function portfolioReducer(
 */
 export function selectedPortfolioIdReducer(
   state: ?string = null,
-  action: Action = defaultSelectedPortfolioAction) {
+  action: Syn$Action = defaultSelectedPortfolioAction) {
   switch (action.type) {
     case SELECT_PORTFOLIO_ID:
       return action.payload;

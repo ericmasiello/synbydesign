@@ -1,26 +1,30 @@
 /* @flow */
 import axios from 'axios';
-import type { About, Portfolio } from '../../types';
+import type {
+  Syn$Api,
+  Syn$About,
+  Syn$Portfolio,
+} from '../../types';
 
-const Api = {
-  fetchAbout(): Promise<About> {
+const Api: Syn$Api = {
+  fetchAbout() {
     return axios.get('/api/v1/about')
       .then(({ data }) => {
-        const response: About = data;
+        const response: Syn$About = data;
         return response;
       });
   },
-  fetchPortfolio(): Promise<Portfolio[]> {
+  fetchPortfolio() {
     return axios.get('/api/v1/portfolio')
       .then(({ data }) => {
-        const response: Portfolio[] = data;
+        const response: Syn$Portfolio[] = data;
         return response;
       });
   },
-  fetchPortfolioById(id: string): Promise<Portfolio> {
-    return axios.get(`/api/v1/portfolio/${id}`)
+  fetchPortfolioById(id: string) {
+    return axios.get('/api/v1/portfolio/' + id)
       .then(({ data }) => {
-        const response: Portfolio = data;
+        const response: Syn$Portfolio = data;
         return response;
       });
   },

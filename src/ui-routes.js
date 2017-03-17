@@ -13,7 +13,7 @@ const routes = {
       component: Home,
     },
     {
-      path: '/detail/:id',
+      path: '/detail/:detailId',
       component: PortfolioDetailContainer,
     },
   ],

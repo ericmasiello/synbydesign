@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import type { PortfolioListComponentProps } from '../../../types';
+import type { Syn$PortfolioListComponentProps } from '../../../types';
 
 export default class PortfolioList extends Component {
 
@@ -7,7 +7,7 @@ export default class PortfolioList extends Component {
     this.props.loadPortfolio();
   }
 
-  props: PortfolioListComponentProps;
+  props: Syn$PortfolioListComponentProps;
 
   render() {
     const { portfolio } = this.props;

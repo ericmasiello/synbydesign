@@ -11,15 +11,15 @@ import routes from '../../../ui-routes';
 import portfolioService from '../../services/portfolio';
 import aboutService from '../../services/about';
 import type {
-  About,
-  Portfolio,
-  RootState,
+  Syn$About,
+  Syn$Portfolio,
+  Syn$RootState,
 } from '../../../../types';
 
 function renderUIWithStoreData(
   res: express$Response,
   props: Object,
-  storeData: RootState): void {
+  storeData: Syn$RootState): void {
   const store = initStore(storeData);
 
   // if we got props, that means we found a valid component to render
@@ -40,7 +40,7 @@ const ctrl = {};
 
 ctrl.detail = (req: express$Request, res: express$Response, props: Object) => {
   portfolioService.fetchById(props.params.id)
-    .then((portfolioItem: ?Portfolio) => {
+    .then((portfolioItem: ?Syn$Portfolio) => {
       winston.log('Controller detail response portfolioItem:', props.params.id, portfolioItem);
 
       renderUIWithStoreData(res, props, {
@@ -59,7 +59,7 @@ ctrl.index = (req: express$Request, res: express$Response, props: Object) => {
     portfolioService.fetchAll(),
     aboutService.fetch(),
   ])
-  .spread((portfolio: Portfolio[], about: About) => {
+  .spread((portfolio: Syn$Portfolio[], about: Syn$About) => {
     winston.log('Controller Index response portfolio:', portfolio);
     winston.log('Controller Index response about:', about);
 

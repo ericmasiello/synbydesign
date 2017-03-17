@@ -1,33 +1,20 @@
 /* @flow */
-// import req from 'request';
-// import Promise from 'bluebird';
 import winston from 'winston';
-import { SYN_BY_DESIGN_ROUTE } from '../../../config';
+import Promise from 'bluebird';
 import type {
-  AboutService,
+  Syn$AboutService,
 } from '../../../../types';
+import aboutData from '../../../data/about.json';
 
-import aboutData from '../../../data/about';
-
-// const request = Promise.promisify(req);
-
-import request from './req';
-
-const service: AboutService = {
+const service: Syn$AboutService = {
   fetch() {
-    // const url = `${SYN_BY_DESIGN_ROUTE}/about.json`;
-    console.log(`Requesting ${url}`);
-    winston.info(`Requesting ${url}`);
-    Promise.resolve(aboutData);
-    // return request.fetch(url)
-    //   .then(({ body }) => {
-    //     console.log('The body =', body);
-    //     return JSON.parse(body);
-    //   })
-    //   .catch((err) => {
-    //     winston.error(err);
-    //     throw new Error(err);
-    //   });
+    winston.info('Requesting data from about service');
+    return Promise
+      .resolve(aboutData)
+      .catch((err) => {
+        winston.error(err);
+        throw new Error(err);
+      });
   },
 };
 

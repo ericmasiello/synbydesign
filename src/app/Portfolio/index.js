@@ -4,15 +4,15 @@ import PortfolioList from './PortfolioList';
 import PortfolioDetail from './PortfolioDetail';
 import { loadPortfolio, loadPortfolioDetail } from './actions';
 import getPortfolioId from '../../util/portfolio';
-import type { RootState } from '../../../types';
+import type { Syn$RootState } from '../../../types';
 
-function mapStateToPropsForList({ portfolio }: RootState) {
+function mapStateToPropsForList({ portfolio }: Syn$RootState) {
   return {
     portfolio,
   };
 }
 
-function mapStateToPropsForDetail(state: RootState) {
+function mapStateToPropsForDetail(state: Syn$RootState) {
   // FIXME: this shoudl go into a selector
   return {
     portfolioDetail: state.portfolio ?

@@ -1,5 +1,5 @@
 /* @flow */
-import type { RootStateReducer } from '../../types';
+import type { Syn$RootStateReducer } from '../../types';
 import {
   portfolioReducer,
   selectedPortfolioIdReducer,
@@ -7,7 +7,7 @@ import {
 import aboutReducer from '../app/About/reducers';
 import loadingCountReducer from '../app/Loading/reducers';
 
-const rootReducer: RootStateReducer = {
+const rootReducer: Syn$RootStateReducer = {
   selectedPortfolioId: selectedPortfolioIdReducer,
   portfolio: portfolioReducer,
   about: aboutReducer,

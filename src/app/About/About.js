@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import type {
-  AboutComponentProps,
+  Syn$AboutComponentProps,
 } from '../../../types';
 
 export default class About extends Component {
@@ -9,10 +9,10 @@ export default class About extends Component {
     this.props.loadAbout();
   }
 
-  props: AboutComponentProps;
+  props: Syn$AboutComponentProps;
 
   render() {
-    const { about } = this.props;
+    const { about }: { about: string } = this.props;
 
     return (
       <div dangerouslySetInnerHTML={{ __html: about }} />

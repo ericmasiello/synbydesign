@@ -10,14 +10,14 @@ import {
   LOAD_PORTFOLIO_DETAIL_FAILED,
 } from './actions';
 import type {
-  Portfolio,
-  Action,
+  Syn$Portfolio,
+  Syn$Action,
 } from '../../../types';
 import Api from '../api';
 
-export function* fetchPortfolio(): Generator<Action, void, Portfolio[]> {
+export function* fetchPortfolio(): Generator<Syn$Action, void, Syn$Portfolio[]> {
   try {
-    const portfolio: Portfolio[] = yield call(Api.fetchPortfolio);
+    const portfolio: Syn$Portfolio[] = yield call(Api.fetchPortfolio);
     yield put({
       type: LOAD_PORTFOLIO_SUCCEEDED,
       payload: portfolio,
@@ -30,9 +30,11 @@ export function* fetchPortfolio(): Generator<Action, void, Portfolio[]> {
   }
 }
 
-export function* fetchPortfolioDetail(action: Action): Generator<Action, void, Portfolio> {
+export function* fetchPortfolioDetail(
+  action: Syn$Action,
+): Generator<Syn$Action, void, Syn$Portfolio> {
   try {
-    const portfolioDetail: Portfolio = yield call(Api.fetchPortfolioById, action.payload);
+    const portfolioDetail: Syn$Portfolio = yield call(Api.fetchPortfolioById, action.payload);
     yield put({
       type: LOAD_PORTFOLIO_DETAIL_SUCCEEDED,
       payload: portfolioDetail,
