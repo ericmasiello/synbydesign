@@ -1,7 +1,6 @@
 /* @flow */
 import type {
   Syn$Action,
-  Syn$Portfolio,
 } from '../../../types';
 
 export const LOAD_PORTFOLIO: string = 'LOAD_PORTFOLIO';

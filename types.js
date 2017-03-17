@@ -51,7 +51,7 @@ export type Syn$AboutService = {
 export type Syn$LoadPortfolio = () => Promise<Syn$Portfolio[]>;
 
 export type Syn$PortfolioDetailComponentProps = {
-  loadPortfolioDetail: (portfolio: Syn$Portfolio) => Syn$Action,
+  loadPortfolioDetail: (id: string) => Syn$Action,
   params: {
     id: string,
   },

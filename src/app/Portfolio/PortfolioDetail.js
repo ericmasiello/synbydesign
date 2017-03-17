@@ -10,8 +10,11 @@ export default class PortfolioDetail extends Component {
       loadPortfolioDetail,
       params,
     } = this.props;
+
+    const id: string = params.id;
+
     if (!portfolioDetail) {
-      loadPortfolioDetail(params.detailId);
+      loadPortfolioDetail(id);
     }
   }
   props: Syn$PortfolioDetailComponentProps;
@@ -20,7 +23,7 @@ export default class PortfolioDetail extends Component {
     console.log('Inside PortfolioDetail Component', 'portfolioDetail', portfolioDetail);
     return (
       <div className={styles.detail}>
-        This is the detail view! {params.detailId}
+        This is the detail view! {params.id}
       </div>
     );
   }

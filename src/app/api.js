@@ -22,7 +22,7 @@ const Api: Syn$Api = {
       });
   },
   fetchPortfolioById(id: string) {
-    return axios.get('/api/v1/portfolio/' + id)
+    return axios.get(`/api/v1/portfolio/${id}`)
       .then(({ data }) => {
         const response: Syn$Portfolio = data;
         return response;
