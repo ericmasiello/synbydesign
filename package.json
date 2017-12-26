@@ -1,7 +1,7 @@
 {
-  "name": "isomorphic-typescript-react-redux-starter",
-  "version": "1.0.0",
-  "description": "Server side rendering project",
+  "name": "syn-by-design",
+  "version": "3.0.0",
+  "description": "Eric Masiello's portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
