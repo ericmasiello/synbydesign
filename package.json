@@ -20,7 +20,8 @@
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
     "clean": "rimraf public; rimraf views",
-    "prepush": "npm-run-all --parallel test:coverage lint"
+    "validate": "npm-run-all --parallel test:coverage lint",
+    "prepush": "npm run validate"
   },
   "author": "",
   "license": "ISC",
