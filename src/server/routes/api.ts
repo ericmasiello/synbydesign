@@ -1,7 +1,14 @@
 import { Router } from 'express';
-import { proxyController } from '../controllers/apiControllers';
+import {
+  proxyController,
+  portofolioController,
+  portofolioDetailController,
+} from '../controllers/apiControllers';
 
 const router = Router();
+
+router.get('/portfolio', portofolioController);
+router.get('/portfolio/:id', portofolioDetailController);
 
 router.get('*', proxyController);
 

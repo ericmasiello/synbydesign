@@ -1,10 +1,5 @@
 declare module 'express-http-proxy';
 
-declare module "*.json" {
-  const value: any;
-  export default value;
-}
-
 declare module '*.jpg' {
   const value: any;
   export = value;
@@ -18,6 +13,37 @@ declare module '*.png' {
 declare module '*.svg' {
   const value: any;
   export = value;
+}
+
+interface ImagePath {
+  url: string;
+  width?: number;
+  height?: number;
+}
+
+interface RawPortfolio {
+  title: string;
+  description?: string;
+  meta?: {
+    stackDesign?: boolean;
+    mixUrl?: string;
+    trackList?: string[];
+    websiteUrl?: string;
+    isSVG: boolean;
+  };
+  category: string[];
+  tags: string[];
+  svgSource?: string;
+  imagePaths: {
+    full?: ImagePath;
+    medium?: ImagePath;
+    thumbnail?: ImagePath;
+    large?: ImagePath;
+  };
+}
+
+interface Portfolio extends RawPortfolio {
+  id: string;
 }
 
 type Auth = AuthToken | null | false;
