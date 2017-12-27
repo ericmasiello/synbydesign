@@ -25,7 +25,7 @@ module.exports = merge({
         use: 'awesome-typescript-loader',
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g)$/i,
         include: [PATHS.src],
         use: [
           'file-loader',
@@ -33,6 +33,10 @@ module.exports = merge({
             loader: 'image-webpack-loader',
           },
         ],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader'
       },
     ]
   }
