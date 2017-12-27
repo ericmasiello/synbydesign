@@ -20,9 +20,9 @@ export const Header: React.SFC<Props> = ({ auth, className }) => {
 
   return (
     <nav className={className}>
-      <Logo to="/">
-        Starter App
-      </Logo>
+      <Link to="/">
+        <Logo />
+      </Link>
       <HeaderList className="right">
         <HeaderListItem>
           <Link to="/users">Users</Link>

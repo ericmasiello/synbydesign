@@ -1,12 +1,22 @@
+import * as React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import * as logo from '../images/synbydesignlogo.svg';
 
-const Logo = styled(Link)`
-  color: #fff;
-  font-size: 2.1rem;
-  line-height: 1.1;
+interface Props {
+  className?: string;
+}
+
+export const Logo: React.SFC<Props> = ({ className }) => (
+  <div
+    className={className}
+    dangerouslySetInnerHTML={{ __html: logo }}
+  />
+);
+
+export default styled(Logo)`
+  svg {
+    fill: #fff;
+    stroke: #fff;
+    height: 40px;
+  }
 `;
-
-Logo.displayName = 'Logo';
-
-export default Logo;
