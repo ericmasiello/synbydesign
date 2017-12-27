@@ -1341,3 +1341,280 @@ Array [
   },
 ]
 `;
+
+exports[`list should not allow page index to exceed page number 1`] = `
+Array [
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "Deep Focus iPhone comps",
+    "id": "deep-foc-us-mobile",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 1420,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone.jpg",
+        "width": 1900,
+      },
+      "large": Object {
+        "height": 765,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-1024x765.jpg",
+        "width": 1024,
+      },
+      "medium": Object {
+        "height": 224,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-300x224.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "",
+    },
+    "tags": Array [
+      "CSS",
+      "Design",
+      "jQuery Mobile",
+    ],
+    "title": "Deep Foc.us Mobile",
+  },
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "cannedesign",
+    "id": "catherine-anne-design",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 267,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1.jpg",
+        "width": 400,
+      },
+      "medium": Object {
+        "height": 200,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-300x200.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "",
+    },
+    "tags": Array [
+      "CSS/SCSS",
+      "JavaScript",
+      "jQuery",
+      "Mobile/Responsive Design",
+      "Wordpress Custom Theme",
+    ],
+    "title": "Catherine Anne Design",
+  },
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "Deep Foc.us screen shot",
+    "id": "deep-foc-us",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 293,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus.jpg",
+        "width": 440,
+      },
+      "medium": Object {
+        "height": 200,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-300x200.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "",
+    },
+    "tags": Array [
+      "CSS/SCSS",
+      "HTML5",
+      "UX Consulting",
+      "Visual Design",
+      "Wordpress Custom Theme",
+      "Wordpress Plugin",
+    ],
+    "title": "Deep Foc.us",
+  },
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "Sage Dragon screen shot",
+    "id": "sage-dragon",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 293,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon.jpg",
+        "width": 440,
+      },
+      "medium": Object {
+        "height": 200,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-300x200.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "http://projects.synbydesign.com/sagedragon/",
+    },
+    "tags": Array [
+      "CSS/SCSS",
+      "JavaScript",
+      "jQuery",
+      "Mobile/Responsive Design",
+      "Wordpress Custom Theme",
+    ],
+    "title": "Sage Dragon",
+  },
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "88 DC screen shot",
+    "id": "eighty-eight-dc",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 293,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88.jpg",
+        "width": 440,
+      },
+      "medium": Object {
+        "height": 200,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-300x200.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "http://www.eightyeightdc.com/",
+    },
+    "tags": Array [
+      "CSS/SCSS",
+      "Mobile/Responsive Design",
+      "Wordpress Custom Theme",
+    ],
+    "title": "Eighty Eight DC",
+  },
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "exbc",
+    "id": "expansion-broadcast",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 293,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc.jpg",
+        "width": 440,
+      },
+      "medium": Object {
+        "height": 200,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-300x200.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "",
+    },
+    "tags": Array [
+      "Mobile/Responsive Design",
+      "Wordpress Custom Theme",
+      "Wordpress Plugin",
+    ],
+    "title": "Expansion Broadcast",
+  },
+  Object {
+    "category": Array [
+      "web",
+    ],
+    "description": "sigmaperfgroup",
+    "id": "sigma-performance-group",
+    "imagePaths": Object {
+      "full": Object {
+        "height": 900,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup.jpg",
+        "width": 1000,
+      },
+      "medium": Object {
+        "height": 270,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-300x270.jpg",
+        "width": 300,
+      },
+      "thumbnail": Object {
+        "height": 150,
+        "url": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-150x150.jpg",
+        "width": 150,
+      },
+    },
+    "meta": Object {
+      "isSVG": false,
+      "mixUrl": "",
+      "stackDesign": false,
+      "trackList": Array [],
+      "websiteUrl": "",
+    },
+    "tags": Array [
+      "(X)HTML",
+      "CSS",
+      "Design/Branding",
+      "PHP",
+    ],
+    "title": "Sigma Performance Group",
+  },
+]
+`;

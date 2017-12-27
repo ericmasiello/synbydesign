@@ -27,6 +27,16 @@ describe('list', () => {
     ]);
   });
 
+  test('should not allow page index to exceed page number', () => {
+    return list({
+      pageNumber: 50,
+      pageSize: 10,
+    }).then(result => {
+      expect(result).toMatchSnapshot();
+      expect(result.length).toBeLessThanOrEqual(10);
+    });
+  });
+
   test('should match a single category', () => {
     return list({
       categories: ['flyers']
@@ -89,6 +99,14 @@ describe('list', () => {
         ).toBeGreaterThan(-1);
       });
     })
+  });
+
+  test.only('should return an empty list if no matching results are found', () => {
+    return list({
+      searchTerm: 'This does not exist!'
+    }).then(result => {
+      expect(result).toEqual([]);
+    });
   });
 });
 

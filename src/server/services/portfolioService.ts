@@ -48,9 +48,19 @@ export function list(options: {
     return (item.title.search(searchTerm) >= 0 || 
       (item.description && item.description.search(searchTerm) >= 0)
     );
-  })
+  });
 
-  return Promise.resolve(_.chunk(list, pageSize)[pageNumber]);
+  const pages = _.chunk(list, pageSize);
+
+  if (pages.length === 0) {
+    return Promise.resolve([]);
+  }
+
+  if (pageNumber >= pages.length) {
+    return Promise.resolve(pages[pages.length - 1]);
+  }
+
+  return Promise.resolve(pages[pageNumber]);
 }
 
 export function getById(id: string): Promise<Portfolio | undefined> {
