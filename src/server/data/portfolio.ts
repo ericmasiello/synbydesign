@@ -1,3 +1,4 @@
+// tslint:disable max-line-length
 const PortfolioList: RawPortfolio[] = [
   {
     title: 'R.M.R. Software Solutions Logo',
@@ -977,5 +978,6 @@ const PortfolioList: RawPortfolio[] = [
     },
   },
 ];
+// tslint:enable max-line-length
 
 export default PortfolioList;

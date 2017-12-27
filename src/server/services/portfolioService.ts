@@ -1,6 +1,5 @@
 import portfolioList from '../data/portfolio';
 import * as _ from 'lodash';
-import portfolio from '../data/portfolio';
 
 function titleToId(title: string): string {
   return _.kebabCase(title).trim();
@@ -12,11 +11,11 @@ function matchListFilter(filters: string[], filterKey: string) {
       return true;
     }
 
-    const matches = filters.map(filter => {
+    const matches = filters.map((filter) => {
       return (item[filterKey] as string[]).indexOf(filter) > -1;
     }).reduce((acc, current) => {
       return acc || current;
-    }, false);
+    },        false);
 
     return matches;
   });
@@ -44,8 +43,8 @@ export function list(options: {
   }))
   .filter(matchListFilter(categories, 'category'))
   .filter(matchListFilter(tags, 'tags'))
-  .filter(item => {
-    return (item.title.search(searchTerm) >= 0 || 
+  .filter((item) => {
+    return (item.title.search(searchTerm) >= 0 ||
       (item.description && item.description.search(searchTerm) >= 0)
     );
   });

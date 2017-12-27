@@ -20,7 +20,7 @@ export const portofolioController = (req: Request, res: Response) => {
     tags,
     s: searchTerm,
     pageSize,
-    pageNumber
+    pageNumber,
   } = req.query;
 
   return list({
@@ -29,15 +29,15 @@ export const portofolioController = (req: Request, res: Response) => {
     searchTerm,
     pageNumber,
     pageSize,
-  }).then(items => res.json(items))
+  }).then(items => res.json(items));
 };
 
 export const portofolioDetailController = (req: Request, res: Response) => {
   const id = req.param('id');
-  return getById(id).then(item => {
+  return getById(id).then((item) => {
     if (!item) {
       res.status(404);
     }
-    return res.json(item)
+    return res.json(item);
   });
 };
