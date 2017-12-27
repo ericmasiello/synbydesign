@@ -43,6 +43,7 @@ interface RawPortfolio {
 }
 
 interface Portfolio extends RawPortfolio {
+  [key: string]: any;
   id: string;
 }
 
