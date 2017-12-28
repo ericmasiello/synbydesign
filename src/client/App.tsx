@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { renderRoutes, RouteConfig } from 'react-router-config';
-import { Store } from 'redux';
 import { injectGlobal } from 'styled-components';
 import Header from './components/Header';
-import { fetchCurrentUser } from './actions';
 import base from './styles/base';
 import helpers from './styles/helpers';
 
@@ -29,7 +27,4 @@ const App: React.SFC<Props> = ({ route }) => {
 
 export default {
   component: App,
-  loadData: ({ dispatch }: Store<Auth>) => {
-    return dispatch(fetchCurrentUser());
-  },
 };

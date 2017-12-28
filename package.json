@@ -32,7 +32,6 @@
     "concurrently": "3.5.0",
     "ejs": "~2.5.7",
     "express": "4.15.4",
-    "express-http-proxy": "1.0.6",
     "image-webpack-loader": "~3.4.2",
     "lodash": "~4.17.4",
     "react": "16.0.0",

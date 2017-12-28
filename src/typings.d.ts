@@ -1,5 +1,3 @@
-declare module 'express-http-proxy';
-
 declare module '*.jpg' {
   const value: any;
   export = value;
@@ -54,16 +52,9 @@ interface TypeMap {
 
 // Old stuff below...
 
-type Auth = AuthToken | null | false;
-
 interface AppState {
   users: User[];
-  admins: User[];
-  auth: Auth;
-}
-
-interface AuthToken {
-  googleId: string;
+  portfolioItems: Portfolio[];
 }
 
 interface Context {

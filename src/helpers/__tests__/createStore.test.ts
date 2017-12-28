@@ -6,11 +6,10 @@ import * as redux from 'redux';
 test('create a store with default state', () => {
   const axiosInstance = axios.create();
   const store = createStore(axiosInstance);
-  const result: any = store.getState();
+  const result: AppState = store.getState();
 
   expect(result.users).toHaveLength(0);
-  expect(result.admins).toHaveLength(0);
-  expect(result.auth).toBe(null);
+  expect(result.portfolioItems).toHaveLength(0);
 });
 
 test('create a store with initialized state', () => {
@@ -20,20 +19,21 @@ test('create a store with initialized state', () => {
       id: '123',
       name: 'Eric',
     }],
-    admins: [{
-      id: '456',
-      name: 'Hyun',
+    portfolioItems: [{
+      id: 'the-id',
+      title: 'The title',
+      category: [],
+      tags: [],
+      imagePaths: {},
     }],
-    auth: false,
   };
 
   const axiosInstance = axios.create();
   const store = createStore(axiosInstance, state);
-  const result: any = store.getState();
+  const result: AppState = store.getState();
 
   expect(result.users).toEqual(state.users);
-  expect(result.admins).toEqual(state.admins);
-  expect(result.auth).toBe(false);
+  expect(result.portfolioItems).toEqual(state.portfolioItems);
 });
 
 describe('axios instance', () => {

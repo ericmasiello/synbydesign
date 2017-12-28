@@ -5,8 +5,7 @@ import reducers from '../client/reducers';
 
 const defaultIntialState = {
   users: [],
-  admins: [],
-  auth: null,
+  portfolioItems: [],
 };
 
 export default (

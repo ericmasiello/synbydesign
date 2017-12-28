@@ -2,9 +2,7 @@ import * as React from 'react';
 import { Store } from 'redux';
 import App from './App';
 import HomePage from './pages/HomePage';
-import UsersListPage from './pages/UsersListPage';
 import NotFoundPage from './pages/NotFoundPage';
-import AdminsListPage from './pages/AdminsListPage';
 import { RouteConfig } from 'react-router-config';
 
 export interface RouteConfigWithLoadData extends RouteConfig {
@@ -22,14 +20,10 @@ const Routes: RouteConfigWithLoadData[] = [
         path: '/',
         exact: true,
       },
-      {
-        ...AdminsListPage,
-        path: '/admins',
-      },
-      {
-        ...UsersListPage,
-        path: '/users',
-      },
+      // {
+      //   ...UsersListPage,
+      //   path: '/users',
+      // },
       {
         ...NotFoundPage,
       },
