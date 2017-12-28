@@ -19,6 +19,13 @@ interface ImagePath {
   height?: number;
 }
 
+interface ImagePaths {
+  full?: ImagePath;
+  medium?: ImagePath;
+  thumbnail?: ImagePath;
+  large?: ImagePath;
+}
+
 interface RawPortfolio {
   title: string;
   description?: string;
@@ -32,12 +39,7 @@ interface RawPortfolio {
   category: string[];
   tags: string[];
   svgSource?: string;
-  imagePaths: {
-    full?: ImagePath;
-    medium?: ImagePath;
-    thumbnail?: ImagePath;
-    large?: ImagePath;
-  };
+  imagePaths: ImagePaths;
 }
 
 interface Portfolio extends RawPortfolio {

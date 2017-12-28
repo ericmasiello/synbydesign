@@ -1,21 +1,23 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import Item from './Portfolio/PortfolioItem';
 
-interface Props {
+interface PortfolioGalleryProps {
   className?: string;
   items: Portfolio[];
 }
 
-const PortfolioGallery: React.SFC<Props> = (props) => {
+const PortfolioGallery: React.SFC<PortfolioGalleryProps> = ((props) => {
   return (
-    <div>
-      The gallery
+    <ul>
       {props.items.map(item => (
-        <div key={item.id}>{item.title}</div>
+        <li key={item.id}>
+          <Item {...item} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
-};
+});
 
 PortfolioGallery.displayName = 'PortfolioGallery';
 
