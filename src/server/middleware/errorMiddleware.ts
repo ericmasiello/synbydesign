@@ -1,10 +1,18 @@
-import { BoomError } from 'boom';
+import * as boom from 'boom';
 import { Request, Response, NextFunction } from 'express';
 import logger from '../utils/logger';
 
-const errorMiddleware = (err: BoomError, req: Request, res: Response, next: NextFunction) => {
-  logger.error(JSON.stringify(err.output.payload));
-  return res.status(err.output.statusCode).json(err.output.payload);
+const errorMiddleware = (err: boom.BoomError | Error, req: Request, res: Response, next: NextFunction) => {
+  const error = err as boom.BoomError;
+  if (error && error.isBoom) {
+    logger.error(JSON.stringify(error.output.payload));
+    return res.status(error.output.statusCode).json(error.output.payload);
+  }
+  logger.error(err.message);
+  return res.status(500).json({
+    name: err.name,
+    message: err.message,
+  });
 };
 
 export default errorMiddleware;
