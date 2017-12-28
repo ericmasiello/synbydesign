@@ -78,7 +78,7 @@ describe('portofolioDetailController', () => {
     (getById as jest.Mock<{}>).mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
-    mockReq.param = jest.fn(() => 'the-id');
+    mockReq.params = { id: 'the-id' };
 
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
@@ -92,7 +92,7 @@ describe('portofolioDetailController', () => {
     (getById as jest.Mock<{}>).mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
-    mockReq.param = jest.fn(() => 'the-id');
+    mockReq.params = { id: 'the-id' };
 
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
@@ -106,7 +106,7 @@ describe('portofolioDetailController', () => {
     (getById as jest.Mock<{}>).mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
-    mockReq.param = jest.fn(() => 'the-id');
+    mockReq.params = { id: 'the-id' };
 
     const mockRes = {} as Response;
 

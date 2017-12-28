@@ -23,7 +23,7 @@ export const portofolioController = (req: Request, res: Response, next: NextFunc
 };
 
 export const portofolioDetailController = (req: Request, res: Response, next: NextFunction) => {
-  const id = req.param('id');
+  const id = req.params.id;
   return getById(id).then((item) => {
     if (!item) {
       return next(boom.notFound('Portfolio item does not exist'));
