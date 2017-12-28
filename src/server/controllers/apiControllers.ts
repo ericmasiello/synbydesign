@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import * as boom from 'boom';
 import { list, getById } from '../services/portfolioService';
 
-export const portofolioController = (req: Request, res: Response) => {
+export const portofolioController = (req: Request, res: Response, next: NextFunction) => {
   const {
     categories,
     tags,
@@ -17,7 +17,9 @@ export const portofolioController = (req: Request, res: Response) => {
     searchTerm,
     pageNumber,
     pageSize,
-  }).then(items => res.json(items));
+  })
+  .then(items => res.json(items))
+  .catch((error: Error) => next(boom.badImplementation(error.message)));
 };
 
 export const portofolioDetailController = (req: Request, res: Response, next: NextFunction) => {

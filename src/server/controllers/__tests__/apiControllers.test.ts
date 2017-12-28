@@ -13,22 +13,27 @@ const mockGetByIdResponse: Portfolio = {
   imagePaths: {},
 };
 
-describe('portofolioController', () => {
-  const mockList = jest.fn(() => Promise.resolve(mockListResponse));
-  (list as jest.Mock<{}>).mockImplementation(mockList);
+const mockNext = jest.fn() as NextFunction;
 
+describe('portofolioController', () => {
   test('should send response as json', async () => {
+    const mockList = jest.fn(() => Promise.resolve(mockListResponse));
+    (list as jest.Mock<{}>).mockImplementation(mockList);
+
     const mockReq = {} as Request;
     mockReq.query = {};
 
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
 
-    await portofolioController(mockReq, mockRes);
+    await portofolioController(mockReq, mockRes, mockNext);
     expect(mockRes.json).toBeCalledWith(mockListResponse);
   });
 
   test('should pass query params to list method', async () => {
+    const mockList = jest.fn(() => Promise.resolve(mockListResponse));
+    (list as jest.Mock<{}>).mockImplementation(mockList);
+
     const mockReq = {} as Request;
     const query = {
       categories: ['a', 'b', 'c'],
@@ -42,7 +47,7 @@ describe('portofolioController', () => {
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
 
-    await portofolioController(mockReq, mockRes);
+    await portofolioController(mockReq, mockRes, mockNext);
     expect(list).toBeCalledWith({
       categories: ['a', 'b', 'c'],
       tags: ['d', 'e', 'f'],
@@ -50,6 +55,20 @@ describe('portofolioController', () => {
       pageSize: 20,
       pageNumber: 5,
     });
+  });
+
+  test('should send an error response', async () => {
+    const mockList = jest.fn(() => Promise.reject(new Error('some error')));
+    (list as jest.Mock<{}>).mockImplementation(mockList);
+
+    const mockReq = {} as Request;
+    mockReq.query = {};
+
+    const mockRes = {} as Response;
+    mockRes.json = jest.fn();
+
+    await portofolioController(mockReq, mockRes, mockNext);
+    expect(mockNext).toBeCalledWith(boom.badImplementation('some error'));
   });
 });
 
@@ -63,8 +82,6 @@ describe('portofolioDetailController', () => {
 
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
-
-    const mockNext = jest.fn() as NextFunction;
 
     await portofolioDetailController(mockReq, mockRes, mockNext);
     expect(getById).toBeCalledWith('the-id');
@@ -80,8 +97,6 @@ describe('portofolioDetailController', () => {
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
 
-    const mockNext = jest.fn() as NextFunction;
-
     await portofolioDetailController(mockReq, mockRes, mockNext);
     expect(mockRes.json).toBeCalledWith(mockGetByIdResponse);
   });
@@ -94,8 +109,6 @@ describe('portofolioDetailController', () => {
     mockReq.param = jest.fn(() => 'the-id');
 
     const mockRes = {} as Response;
-
-    const mockNext = jest.fn() as NextFunction;
 
     await portofolioDetailController(mockReq, mockRes, mockNext);
     expect(mockNext).toBeCalledWith(boom.notFound('Portfolio item does not exist'));
