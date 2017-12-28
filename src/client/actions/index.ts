@@ -1,5 +1,5 @@
 import { ThunkActionCreator } from '../../types.d';
-import { dispatcher } from '../../helpers/actions';
+import { dispatcher } from '../../utils/actions';
 
 export const FETCH_USERS = 'fetch_users';
 export const FETCH_PORTFOLIO_ITEMS = 'FETCH_PORTFOLIO_ITEMS';

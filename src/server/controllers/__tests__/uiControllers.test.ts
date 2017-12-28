@@ -3,11 +3,11 @@ import { matchRoutes } from 'react-router-config';
 import axios from 'axios';
 import uiRootController from '../uiControllers';
 import renderer from '../../utils/renderer';
-import createStore from '../../../helpers/createStore';
+import createStore from '../../../utils/createStore';
 import Routes from '../../../client/Routes';
 jest.mock('react-router-config');
 jest.mock('../../utils/renderer');
-jest.mock('../../../helpers/createStore');
+jest.mock('../../../utils/createStore');
 jest.mock('axios');
 
 const matchedRoutesWithLoadData = [

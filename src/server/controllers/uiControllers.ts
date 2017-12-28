@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { Store } from 'redux';
 import { matchRoutes } from 'react-router-config';
 import axios, { AxiosInstance } from 'axios';
-import createStore from '../../helpers/createStore';
+import createStore from '../../utils/createStore';
 import Routes, { RouteConfigWithLoadData } from '../../client/Routes';
 import renderer from '../utils/renderer';
 

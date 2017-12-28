@@ -3,7 +3,7 @@ import * as express from 'express';
 import { ServerStyleSheet } from 'styled-components';
 import { renderToString } from 'react-dom/server';
 import axios from 'axios';
-import createStore from '../../../helpers/createStore';
+import createStore from '../../../utils/createStore';
 
 jest.mock('react-helmet', () => {
   const obj: any = { Helmet: {} };
