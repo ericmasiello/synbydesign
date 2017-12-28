@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import * as logo from '../images/synbydesignlogo.svg';
+import { pxToRem } from '../styles/utils';
+import { COLORS } from '../styles/vars';
 
 interface Props {
   className?: string;
@@ -15,8 +17,8 @@ export const Logo: React.SFC<Props> = ({ className }) => (
 
 export default styled(Logo)`
   svg {
-    fill: #fff;
-    stroke: #fff;
-    height: 40px;
+    fill: ${COLORS.logo};
+    stroke: ${COLORS.logo};
+    height: ${pxToRem(40)};
   }
 `;

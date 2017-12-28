@@ -1,21 +1,22 @@
+import { baseFont, headerFont } from './utils';
+import { COLORS } from './vars';
 
 /* tslint:disable max-line-length */
 export default `
-  html {
-    line-height: 1.5;
-    font-family: Helvetica, sans-serif;
-    color: rgba(0,0,0,0.87);
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400');
 
-    @media only screen and (min-width: 0) {
-      font-size: 14px;
-    }
+  html {
+    ${baseFont()}
+    color: ${COLORS.base};
+    line-height: 1.5;
+    font-size: 14px;
 
     @media only screen and (min-width: 992px) {
-      font-size: 14.5px;
+      font-size: 15px;
     }
 
     @media only screen and (min-width: 1200px) {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 
@@ -24,31 +25,17 @@ export default `
   }
 
   h1, h2, h3, h4, h5, h6 {
+    ${headerFont()}
     font-weight: 400;
     line-height: 1.1;
-  }
-
-  h3 {
-    font-size: 2.92rem;
-    line-height: 110%;
-    margin: 1.46rem 0 1.168rem 0;
   }
 
   a {
     background-color: transparent;
     text-decoration: none;
-    color: #039be5;
+    color: ${COLORS.link};
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-  }
-
-  ul:not(.browser-default) {
-    padding-left: 0;
-    list-style-type: none;
-
-    > li {
-      list-style-type: none;
-    }
   }
 `;
 /* tslint:enable max-line-length */

@@ -47,6 +47,13 @@ interface Portfolio extends RawPortfolio {
   id: string;
 }
 
+type TypeSize = [number, number];
+interface TypeMap {
+  [x: string]: TypeSize;
+}
+
+// Old stuff below...
+
 type Auth = AuthToken | null | false;
 
 interface AppState {

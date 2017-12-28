@@ -1,56 +1,38 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Logo from './Logo';
-import { HeaderList, HeaderListItem } from './HeaderList';
-import * as bgImage from '../images/background.jpg';
+import Nav from './Nav';
+import { pxToRem } from '../styles/utils';
+import { maxWidth, horizontalPadding } from '../styles/vars';
 
 interface Props {
-  auth: Auth;
   className?: string;
 }
 
-export const Header: React.SFC<Props> = ({ auth, className }) => {
-  const authButton = auth ? (
-    <a href="/api/logout">Logout</a>
-  ) : (
-    <a href="/api/auth/google">Login</a>
-  );
-
+export const Header: React.SFC<Props> = ({ className }) => {
   return (
-    <nav className={className}>
+    <header className={className}>
       <Link to="/">
         <Logo />
       </Link>
-      <HeaderList className="right">
-        <HeaderListItem>
-          <Link to="/users">Users</Link>
-        </HeaderListItem>
-        <HeaderListItem>
-          <Link to="/admins">Admins</Link>
-        </HeaderListItem>
-        <HeaderListItem>{authButton}</HeaderListItem>
-      </HeaderList>
-    </nav>
+      <Nav />
+    </header>
   );
 };
 
-function mapStateToProps({ auth }: Props) {
-  return { auth };
-}
+Header.displayName = 'Header';
 
-export default connect(mapStateToProps)(styled(Header)`
-  color: #fff;
+export default styled(Header)`
+  padding: 1rem ${pxToRem(horizontalPadding)};
+  max-width: ${pxToRem(maxWidth)};
+  margin: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-image: url(${bgImage});
-  background-size: cover;
-  width: 100%;
-  min-height: 56px;
 
-  @media only screen and (min-width: 601px) {
-    min-height: 100px;
+  @media(min-width: ${pxToRem(850)}) {
+    flex-direction: row;
+    justify-content: space-between;
   }
-`);
+`;
