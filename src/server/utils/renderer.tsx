@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 import { Request } from 'express';
 import { Store } from 'redux';
 import { ServerStyleSheet } from 'styled-components';
-import Routes from '../client/Routes';
+import Routes from '../../client/Routes';
 
 export default (req: Request, store: Store<AppState>, context: object) => {
 

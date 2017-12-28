@@ -3,7 +3,7 @@ import * as express from 'express';
 import { ServerStyleSheet } from 'styled-components';
 import { renderToString } from 'react-dom/server';
 import axios from 'axios';
-import createStore from '../createStore';
+import createStore from '../../../helpers/createStore';
 
 jest.mock('react-helmet', () => {
   const obj: any = { Helmet: {} };
@@ -14,7 +14,7 @@ jest.mock('react-helmet', () => {
   return obj;
 });
 
-jest.mock('../../client/Routes', () => ([]));
+jest.mock('../../../client/Routes', () => ([]));
 jest.mock('styled-components');
 jest.mock('react-dom/server');
 

@@ -2,11 +2,11 @@ import { Request, Response } from 'express';
 import { matchRoutes } from 'react-router-config';
 import axios from 'axios';
 import uiRootController from '../uiControllers';
-import renderer from '../../../helpers/renderer';
+import renderer from '../../utils/renderer';
 import createStore from '../../../helpers/createStore';
 import Routes from '../../../client/Routes';
 jest.mock('react-router-config');
-jest.mock('../../../helpers/renderer');
+jest.mock('../../utils/renderer');
 jest.mock('../../../helpers/createStore');
 jest.mock('axios');
 

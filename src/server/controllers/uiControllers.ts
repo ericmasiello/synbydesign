@@ -4,7 +4,7 @@ import { matchRoutes } from 'react-router-config';
 import axios, { AxiosInstance } from 'axios';
 import createStore from '../../helpers/createStore';
 import Routes, { RouteConfigWithLoadData } from '../../client/Routes';
-import renderer from '../../helpers/renderer';
+import renderer from '../utils/renderer';
 
 // TODO: move this to helper
 let axiosInstance: AxiosInstance | undefined;
