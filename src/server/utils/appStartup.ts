@@ -1,4 +1,4 @@
-import app from '../server/app';
+import app from '../app';
 
 const appStartup = () => console.log(`Listening on port: ${app.get('port')}`);
 

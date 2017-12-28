@@ -1,6 +1,6 @@
 import '../index';
 import app from '../server/app';
-import appStartup from '../helpers/appStartup';
+import appStartup from '../server/utils/appStartup';
 jest.mock('../server/app');
 
 const mockListen = jest.fn();

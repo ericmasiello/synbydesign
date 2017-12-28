@@ -1,6 +1,6 @@
 import appStartup from '../appStartup';
-import app from '../../server/app';
-jest.mock('../../server/app');
+import app from '../../app';
+jest.mock('../../app');
 
 let originalLog: any;
 app.get = jest.fn(() => '1234');
