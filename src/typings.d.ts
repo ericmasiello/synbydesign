@@ -26,16 +26,18 @@ interface ImagePaths {
   large?: ImagePath;
 }
 
+interface PortfolioMeta {
+  stackDesign?: boolean;
+  mixUrl?: string;
+  trackList?: string[];
+  websiteUrl?: string;
+  isSVG: boolean;
+}
+
 interface RawPortfolio {
   title: string;
   description?: string;
-  meta?: {
-    stackDesign?: boolean;
-    mixUrl?: string;
-    trackList?: string[];
-    websiteUrl?: string;
-    isSVG: boolean;
-  };
+  meta?: PortfolioMeta;
   category: string[];
   tags: string[];
   svgSource?: string;

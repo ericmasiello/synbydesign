@@ -5,6 +5,7 @@ import { pxToRem, type, headerFont } from '../styles/utils';
 import { maxWidth, horizontalPadding, TYPE_SIZE } from '../styles/vars';
 
 const largeBreakPoint = 850;
+const typeOffset = TYPE_SIZE.jumbo[0] * 0.8;
 
 interface Props {
   className?: string;
@@ -16,7 +17,7 @@ const HeroCopy = styled.div`
   max-width: 6em;
 
   @media (min-width: ${pxToRem(largeBreakPoint)}) {
-    bottom: ${pxToRem(TYPE_SIZE.jumbo[0] * -0.8)};
+    bottom: ${pxToRem(typeOffset * -1)};
   }
 `;
 
@@ -42,5 +43,6 @@ export default styled(Hero)`
 
   @media (min-width: ${pxToRem(largeBreakPoint)}) {
     padding-top: ${pxToRem(140)};
+    margin-bottom: ${pxToRem(typeOffset)};
   }
 `;

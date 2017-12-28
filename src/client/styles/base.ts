@@ -1,4 +1,4 @@
-import { baseFont, headerFont } from './utils';
+import { baseFont, headerFont, pxToRem } from './utils';
 import { COLORS } from './vars';
 
 /* tslint:disable max-line-length */
@@ -6,22 +6,31 @@ export default `
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400');
 
   html {
+    box-sizing: border-box;
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  html {
     ${baseFont()}
     color: ${COLORS.base};
-    line-height: 1.35;
-    font-size: 14px;
-
-    @media only screen and (min-width: 992px) {
-      font-size: 15px;
-    }
-
-    @media only screen and (min-width: 1200px) {
-      font-size: 16px;
-    }
+    font-size: 100%;
   }
 
   body {
     margin: 0;
+    font-size: ${pxToRem(14)};
+    line-height: 1.35;
+
+    @media only screen and (min-width: 992px) {
+      font-size: ${pxToRem(15)};
+    }
+
+    @media only screen and (min-width: 1200px) {
+      font-size: ${pxToRem(16)};
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -36,6 +45,16 @@ export default `
     color: ${COLORS.link};
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    vertical-align: middle;
+    border: 0;
   }
 `;
 /* tslint:enable max-line-length */

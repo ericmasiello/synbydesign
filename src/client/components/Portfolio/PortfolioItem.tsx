@@ -1,9 +1,19 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import PortfolioItemSVG from './PortfolioItemSVG';
 import PortfolioItemStackImage from './PortfolioItemStackImage';
 import PortfolioItemImage from './PortfolioItemImage';
 
-interface Props extends Portfolio {}
+interface Props {
+  className?: string;
+  title: string;
+  description?: string;
+  meta?: PortfolioMeta;
+  category: string[];
+  tags: string[];
+  svgSource?: string;
+  imagePaths: ImagePaths;
+}
 
 const getImagePath = (imagePaths: ImagePaths): ImagePath | undefined => {
   if (imagePaths.large) {
@@ -19,24 +29,20 @@ const getImagePath = (imagePaths: ImagePaths): ImagePath | undefined => {
 
 const Item: React.SFC<Props> = (props) => {
   if (props.meta && props.meta.isSVG && props.svgSource) {
-    return <PortfolioItemSVG svgSource={props.svgSource} />;
-  }
-
-  const preferredImagePath = getImagePath(props.imagePaths);
-
-  if (props.meta && props.meta.stackDesign && preferredImagePath) {
     return (
-      <PortfolioItemStackImage
-        imagePath={preferredImagePath.url}
-        width={preferredImagePath.width}
-        height={preferredImagePath.height}
+      <PortfolioItemSVG
+        className={props.className}
+        svgSource={props.svgSource}
       />
     );
   }
 
+  const preferredImagePath = getImagePath(props.imagePaths);
+
   if (preferredImagePath) {
     return (
       <PortfolioItemImage
+        className={props.className}
         imagePath={preferredImagePath.url}
         width={preferredImagePath.width}
         height={preferredImagePath.height}
@@ -47,5 +53,7 @@ const Item: React.SFC<Props> = (props) => {
   return null;
 };
 
-export default Item;
+export default styled(Item)`
+
+`;
 

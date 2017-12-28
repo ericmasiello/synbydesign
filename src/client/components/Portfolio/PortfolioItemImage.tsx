@@ -9,21 +9,13 @@ interface Props {
 }
 
 const Image = styled.img`
-  max-width: 200px;
-  position: relative;
-  z-index: 3;
+  width: 100%;
+  height: auto;
+  filter: grayscale(1);
+  transition: filter 0.2s, transform 0.2s;
 
-  &:not(:first-child) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotate(2deg);
-    z-index: 2;
-  }
-
-  &:nth-child(3) {
-    transform: rotate(3deg);
-    z-index: 1;
+  &:hover {
+    filter: grayscale(0);
   }
 `;
 
@@ -31,12 +23,12 @@ Image.displayName = 'PortfolioItemImage.Image';
 
 const PortfolioItemImage: React.SFC<Props> = (props) => {
   return (
-    <div className={props.className}>
-      <Image src={props.imagePath} />
-    </div>
+    <Image src={props.imagePath} className={props.className} />
   );
 };
 
 PortfolioItemImage.displayName = 'PortfolioItemImage';
 
-export default styled(PortfolioItemImage)``;
+export default styled(PortfolioItemImage)`
+  overflow: hidden;
+`;

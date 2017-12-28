@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Image = styled.img`
-  max-width: 200px;
+  max-width: 100%;
   position: relative;
   z-index: 3;
 
