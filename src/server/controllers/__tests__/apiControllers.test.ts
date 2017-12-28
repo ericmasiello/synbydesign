@@ -1,4 +1,5 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
+import * as boom from 'boom';
 import { portofolioController, portofolioDetailController } from '../apiControllers';
 import { list, getById } from '../../services/portfolioService';
 jest.mock('../../services/portfolioService');
@@ -63,7 +64,9 @@ describe('portofolioDetailController', () => {
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
 
-    await portofolioDetailController(mockReq, mockRes);
+    const mockNext = jest.fn() as NextFunction;
+
+    await portofolioDetailController(mockReq, mockRes, mockNext);
     expect(getById).toBeCalledWith('the-id');
   });
 
@@ -77,7 +80,9 @@ describe('portofolioDetailController', () => {
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
 
-    await portofolioDetailController(mockReq, mockRes);
+    const mockNext = jest.fn() as NextFunction;
+
+    await portofolioDetailController(mockReq, mockRes, mockNext);
     expect(mockRes.json).toBeCalledWith(mockGetByIdResponse);
   });
 
@@ -89,11 +94,10 @@ describe('portofolioDetailController', () => {
     mockReq.param = jest.fn(() => 'the-id');
 
     const mockRes = {} as Response;
-    mockRes.send = jest.fn();
-    mockRes.status = jest.fn().mockReturnThis();
 
-    await portofolioDetailController(mockReq, mockRes);
-    expect(mockRes.status).toBeCalledWith(404);
-    expect(mockRes.send).toBeCalled();
+    const mockNext = jest.fn() as NextFunction;
+
+    await portofolioDetailController(mockReq, mockRes, mockNext);
+    expect(mockNext).toBeCalledWith(boom.notFound('Portfolio item does not exist'));
   });
 });

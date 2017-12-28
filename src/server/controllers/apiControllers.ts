@@ -1,4 +1,5 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
+import * as boom from 'boom';
 import { list, getById } from '../services/portfolioService';
 
 export const portofolioController = (req: Request, res: Response) => {
@@ -19,11 +20,11 @@ export const portofolioController = (req: Request, res: Response) => {
   }).then(items => res.json(items));
 };
 
-export const portofolioDetailController = (req: Request, res: Response) => {
+export const portofolioDetailController = (req: Request, res: Response, next: NextFunction) => {
   const id = req.param('id');
   return getById(id).then((item) => {
     if (!item) {
-      return res.status(404).send();
+      return next(boom.notFound('Portfolio item does not exist'));
     }
     return res.json(item);
   });
