@@ -6,10 +6,8 @@ import uiRouter from './routes/ui';
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
-app.use('/api', apiRouter);
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-app.get('*', uiRouter);
 
 app.use('/api', apiRouter);
 app.use('*', uiRouter);
