@@ -8,7 +8,7 @@ export default `
   html {
     ${baseFont()}
     color: ${COLORS.base};
-    line-height: 1.5;
+    line-height: 1.35;
     font-size: 14px;
 
     @media only screen and (min-width: 992px) {
