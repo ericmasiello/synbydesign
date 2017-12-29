@@ -8,7 +8,7 @@ import { ThunkActionCreator } from '../../types.d';
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
   className?: string;
-  // portfolioItems: Portfolio[];
+  portfolio: Portfolio;
   match: {
     params: {
       id: string;
@@ -23,18 +23,21 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   render() {
-    console.log('The props', this.props);
     return (
       <div className={this.props.className}>
         This is the detail page {this.props.match.params.id}
+        <pre>
+          {JSON.stringify(this.props.portfolio)}
+        </pre>
       </div>
     );
   }
 }
 
-function mapStateToProps(state: AppState) {
-  // return { portfolioItems };
-  return {};
+function mapStateToProps(state: AppState, props: Props) {
+  return {
+    portfolio: state.portfolioItems.find(item => item.id === props.match.params.id),
+  };
 }
 
 const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
