@@ -64,6 +64,10 @@ const PortfolioGallery: React.SFC<PortfolioGalleryProps> = ((props) => {
 
 PortfolioGallery.displayName = 'PortfolioGallery';
 
+PortfolioGallery.defaultProps = {
+  items: [],
+};
+
 export default styled(PortfolioGallery)`
   max-width: ${pxToRem(maxWidth)};
   padding: 0 ${pxToRem(horizontalPadding - itemPadding)};

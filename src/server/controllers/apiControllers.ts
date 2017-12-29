@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import * as boom from 'boom';
 import { list, getById } from '../services/portfolioService';
+import logger from '../utils/logger';
 
 export const portofolioController = (req: Request, res: Response, next: NextFunction) => {
   const {
@@ -10,6 +11,8 @@ export const portofolioController = (req: Request, res: Response, next: NextFunc
     pageSize,
     pageNumber,
   } = req.query;
+
+  logger.info('Requesting portfolio list with:', req.query);
 
   return list({
     categories,
@@ -24,6 +27,9 @@ export const portofolioController = (req: Request, res: Response, next: NextFunc
 
 export const portofolioDetailController = (req: Request, res: Response, next: NextFunction) => {
   const id = req.params.id;
+
+  logger.info('Requesting portfolio detail with id:', id);
+
   return getById(id).then((item) => {
     if (!item) {
       return next(boom.notFound('Portfolio item does not exist'));

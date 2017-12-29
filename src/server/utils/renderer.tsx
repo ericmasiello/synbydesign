@@ -9,8 +9,11 @@ import { Request } from 'express';
 import { Store } from 'redux';
 import { ServerStyleSheet } from 'styled-components';
 import Routes from '../../client/Routes';
+import logger from '../utils/logger';
 
 export default (req: Request, store: Store<AppState>, context: object) => {
+
+  logger.info('Calling renderer with path', req.path, 'and context', context);
 
   const app = (
     <Provider store={store}>

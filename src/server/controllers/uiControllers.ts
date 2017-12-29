@@ -5,14 +5,17 @@ import axios, { AxiosInstance } from 'axios';
 import createStore from '../../utils/createStore';
 import Routes, { RouteConfigWithLoadData } from '../../client/Routes';
 import renderer from '../utils/renderer';
+import logger from '../utils/logger';
 
 // TODO: move this to helper
 let axiosInstance: AxiosInstance | undefined;
 
 const getApiInstance = (req: Request) => {
   if (!axiosInstance) {
+    const baseURL = `${req.protocol}://${req.get('host')}/api`;
+    logger.info('Creating axios instance with url', baseURL);
     axiosInstance = axios.create({
-      baseURL: `${req.protocol}://${req.get('host')}${req.originalUrl}api`,
+      baseURL: `${req.protocol}://${req.get('host')}/api`,
     });
   }
 
@@ -20,34 +23,42 @@ const getApiInstance = (req: Request) => {
 };
 
 const uiRootController = (req: Request, res: Response) => {
+  logger.info('Calling ui controller with path', req.baseUrl);
+
   const store = <Store<AppState>>createStore(getApiInstance(req));
-  const promises = <Promise<{}>[]>matchRoutes(Routes, req.path)
+
+  const promises = <Promise<{}>[]>matchRoutes(Routes, req.baseUrl)
     .map((matchedRoute) => {
+      logger.info('Found matching route:', matchedRoute.match);
       const route = <RouteConfigWithLoadData>matchedRoute.route;
       if (route.loadData) {
-        return route.loadData(store);
+        return route.loadData(store, matchedRoute.match.params);
       }
       return null;
     })
     .map((promise) => {
       if (promise) {
         return new Promise((resolve, reject) => {
-          promise.then(resolve).catch(resolve);
+          return promise.then(resolve).catch(resolve);
         });
       }
     });
 
   return Promise.all(promises).then(() => {
+    logger.info('Done loading all promises');
     const context: Context = {};
     const { html, head, state } = renderer(req, store, context);
 
     if (context.url) {
+      logger.warn('Redirecting to', context.url);
       return res.redirect(301, context.url);
     }
     if (context.notFound) {
+      logger.warn('Context not found');
       res.status(404);
     }
 
+    logger.info('Rendering view');
     res.render('index', { html, head, state });
   });
 };

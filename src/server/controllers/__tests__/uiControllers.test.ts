@@ -17,6 +17,9 @@ const matchedRoutesWithLoadData = [
         foo: 'bar',
       })),
     },
+    match: {
+      params: {},
+    },
   },
 ];
 
@@ -40,7 +43,7 @@ const mockAxios = {};
 (axios.create as jest.Mock<{}>).mockImplementation(jest.fn(() => mockAxios));
 
 const req = {} as Request;
-req.path = '/the/path';
+req.baseUrl = '/the/path';
 req.get = jest.fn();
 
 const res = {} as Response;
@@ -58,7 +61,7 @@ test('should call createStore with axios instance', () => {
 test('should call matchRoutes', () => {
   (matchRoutes as jest.Mock<{}>).mockImplementation(() => matchedRoutesWithLoadData);
   return uiRootController(req, res).then(() => {
-    expect(matchRoutes).toBeCalledWith(Routes, req.path);
+    expect(matchRoutes).toBeCalledWith(Routes, req.baseUrl);
   });
 });
 
@@ -67,7 +70,8 @@ describe('send rendered response', () => {
     (matchRoutes as jest.Mock<{}>).mockImplementation(() => matchedRoutesWithLoadData);
     return uiRootController(req, res).then(() => {
       expect(res.render).toBeCalledWith('index', rendered);
-      expect(matchedRoutesWithLoadData[0].route.loadData).toBeCalledWith(store);
+      expect(matchedRoutesWithLoadData[0].route.loadData)
+        .toBeCalledWith(store, matchedRoutesWithLoadData[0].match.params);
     });
   });
   test('should support routes without custom data to load', () => {
