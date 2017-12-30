@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { getImagePath, showSVG } from '../../utils/portfolioImage';
 import PortfolioItemSVG from './PortfolioItemSVG';
 import PortfolioItemImage from './PortfolioItemImage';
-import { getImagePath, showSVG } from '../../utils/portfolioImage';
 
 interface Props {
   className?: string;
@@ -14,7 +14,7 @@ interface Props {
   imagePaths: ImagePaths;
 }
 
-const Item: React.SFC<Props> = (props) => {
+const Detail: React.SFC<Props> = (props) => {
   if (showSVG(props)) {
     return (
       <PortfolioItemSVG
@@ -40,4 +40,4 @@ const Item: React.SFC<Props> = (props) => {
   return null;
 };
 
-export default Item;
+export default Detail;

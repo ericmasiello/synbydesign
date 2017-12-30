@@ -4,6 +4,7 @@ import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
+import PortfolioDetail from '../components/Portfolio/PortfolioDetail';
 
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
@@ -26,9 +27,9 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
     return (
       <div className={this.props.className}>
         This is the detail page {this.props.match.params.id}
-        <pre>
-          {JSON.stringify(this.props.portfolio)}
-        </pre>
+        <PortfolioDetail
+          {...this.props.portfolio}
+        />
       </div>
     );
   }
