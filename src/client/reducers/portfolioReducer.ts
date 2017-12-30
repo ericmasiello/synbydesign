@@ -7,7 +7,10 @@ const portfolioReducer: Reducer<Portfolio[]> = (state = [], action) => {
   }
 
   if (action.type === FETCH_PORTFOLIO_DETAIL && !action.error) {
-    return [...state, action.payload.data];
+    const newItem = action.payload.data;
+    if (!state.find(item => item.id === newItem.id)) {
+      return [...state, action.payload.data];
+    }
   }
   return state;
 };
