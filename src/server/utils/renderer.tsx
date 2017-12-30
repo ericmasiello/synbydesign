@@ -11,13 +11,13 @@ import { ServerStyleSheet } from 'styled-components';
 import Routes from '../../client/Routes';
 import logger from '../utils/logger';
 
-export default (req: Request, store: Store<AppState>, context: object) => {
+export default (url: string, store: Store<AppState>, context: object) => {
 
-  logger.info('Calling renderer with path:', req.baseUrl, 'and context:', context);
+  logger.info('Calling renderer with path:', url, 'and context:', context);
 
   const app = (
     <Provider store={store}>
-      <StaticRouter location={req.baseUrl} context={context}>
+      <StaticRouter location={url} context={context}>
         <div>{renderRoutes(Routes)}</div>
       </StaticRouter>
     </Provider>

@@ -23,11 +23,12 @@ const getApiInstance = (req: Request) => {
 };
 
 const uiRootController = (req: Request, res: Response) => {
-  logger.info('Calling ui controller with path', req.baseUrl);
+  const url = req.baseUrl;
+  logger.info('Calling ui controller with path', url);
 
   const store = <Store<AppState>>createStore(getApiInstance(req));
 
-  const promises = <Promise<{}>[]>matchRoutes(Routes, req.baseUrl)
+  const promises = <Promise<{}>[]>matchRoutes(Routes, url)
     .map((matchedRoute) => {
       logger.info('Found matching route:', matchedRoute.match);
       const route = <RouteConfigWithLoadData>matchedRoute.route;
@@ -47,7 +48,7 @@ const uiRootController = (req: Request, res: Response) => {
   return Promise.all(promises).then(() => {
     logger.info('Done loading all promises');
     const context: Context = {};
-    const { html, head, state } = renderer(req, store, context);
+    const { html, head, state } = renderer(url, store, context);
 
     if (context.url) {
       logger.warn('Redirecting to', context.url);

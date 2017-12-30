@@ -28,11 +28,10 @@ jest.mock('react-dom/server');
 (renderToString as jest.Mock<{}>).mockImplementation(jest.fn(() => '<html />'));
 
 test('should render head as a string', () => {
-  const req = {} as express.Request;
-  req.get = jest.fn();
+  const url = '/';
   const axiosInstance = axios.create();
   const store = createStore(axiosInstance);
-  const { head } = renderer(req, store, {});
+  const { head } = renderer(url, store, {});
 
   expect(head.trim()).toEqual([
     '<title>The title</title>',
@@ -42,21 +41,19 @@ test('should render head as a string', () => {
 });
 
 test('should render html as a string', () => {
-  const req = {} as express.Request;
-  req.get = jest.fn();
+  const url = '/';
   const axiosInstance = axios.create();
   const store = createStore(axiosInstance);
-  const { html } = renderer(req, store, {});
+  const { html } = renderer(url, store, {});
 
   expect(html).toEqual('<html />');
 });
 
 test('should render state as a string', () => {
-  const req = {} as express.Request;
-  req.get = jest.fn();
+  const url = '/';
   const axiosInstance = axios.create();
   const store = createStore(axiosInstance);
-  const { state } = renderer(req, store, {});
+  const { state } = renderer(url, store, {});
 
   expect(state).toEqual(JSON.stringify(store.getState()));
 });
