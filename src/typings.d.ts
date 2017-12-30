@@ -26,12 +26,18 @@ interface ImagePaths {
   large?: ImagePath;
 }
 
+interface PortfolioThumbMeta {
+  size?: string;
+  position?: string;
+}
+
 interface PortfolioMeta {
   stackDesign?: boolean;
   mixUrl?: string;
   trackList?: string[];
   websiteUrl?: string;
   isSVG: boolean;
+  thumb?: PortfolioThumbMeta;
 }
 
 interface RawPortfolio {
@@ -42,6 +48,7 @@ interface RawPortfolio {
   tags: string[];
   svgSource?: string;
   imagePaths: ImagePaths;
+  featured?: boolean;
 }
 
 interface Portfolio extends RawPortfolio {

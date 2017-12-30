@@ -6,6 +6,7 @@ import { pxToRem } from '../styles/utils';
 import { maxWidth, horizontalPadding } from '../styles/vars';
 
 const itemPadding = 16;
+const gridItemSize = 300;
 
 interface PortfolioGalleryProps {
   className?: string;
@@ -13,32 +14,63 @@ interface PortfolioGalleryProps {
 }
 
 const Grid = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(${pxToRem(gridItemSize)}, 1fr));
+  grid-auto-flow: dense;
 `;
 
 Grid.displayName = 'PortfolioGallery.Grid';
 
-const GridItem = styled.li`
-  display: flex;
-  padding: ${pxToRem(itemPadding)};
-`;
+interface GridItemsProps {
+  className?: string;
+  featured?: boolean;
+}
+
+const GridItem: React.SFC<GridItemsProps> = props => (
+  <li className={props.className}>{props.children}</li>
+);
 
 GridItem.displayName = 'PortfolioGallery.GridItem';
 
-const GridLink = styled(Link)`
+const StyledGridItem = styled(GridItem)`
+  display: flex;
+  padding: ${pxToRem(itemPadding)};
+  ${(props) => {
+    return props.featured ? `
+      grid-column: auto / span 2;
+      grid-row: auto / span 2;
+    ` : '';
+  }}
+`;
+
+interface GridLinkProps {
+  className?: string;
+  featured?: boolean;
+  to: string;
+}
+
+const GridLink: React.SFC<GridLinkProps> = props => (
+  <Link
+    className={props.className}
+    to={props.to}
+  >
+    {props.children}
+  </Link>
+);
+
+GridLink.displayName = 'PortfolioGallery.GridLink';
+
+const StyledGridLink = styled(GridLink)`
   display: flex;
   align-items: flex-start;
   justify-content: center;
   position: relative;
-  max-width: 300px;
-  max-height: 205px;
   overflow: hidden;
   border: 10px solid #d4cfd1;
   border-radius: 3px;
   background-color: #e0dcde;
-  width: 30rem;
-  height: 20.5rem;
+  width: 100%;
+  height: ${props => props.featured ? 'auto' : pxToRem(gridItemSize)};
   transition: transform 0.2s;
 
   &:hover {
@@ -46,17 +78,15 @@ const GridLink = styled(Link)`
   }
 `;
 
-GridLink.displayName = 'PortfolioGallery.GridLink';
-
 const PortfolioGallery: React.SFC<PortfolioGalleryProps> = ((props) => {
   return (
     <Grid className={props.className}>
       {props.items.map(item => (
-        <GridItem key={item.id}>
-          <GridLink to={`/portfolio/${item.id}`}>
+        <StyledGridItem key={item.id} featured={item.featured}>
+          <StyledGridLink to={`/portfolio/${item.id}`} featured={item.featured}>
             <Item {...item} />
-          </GridLink>
-        </GridItem>
+          </StyledGridLink>
+        </StyledGridItem>
       ))}
     </Grid>
   );

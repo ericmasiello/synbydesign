@@ -60,6 +60,7 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'EXBC @ BNG (Harry R4NS0M) web promo',
     description: 'EXBC at BNG with Harry Ransom web promo',
+    featured: true,
     meta: {
       stackDesign: true,
       mixUrl: '',
@@ -159,6 +160,7 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Anarchostar',
     description: 'anarchostar',
+    featured: true,
     meta: {
       stackDesign: false,
       mixUrl: '',
@@ -198,6 +200,7 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Just 4 Heads flyer',
     description: 'Just 4 Heads flyer',
+    featured: true,
     meta: {
       stackDesign: true,
       mixUrl: '',
@@ -297,6 +300,7 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Petrol Distal flyer',
     description: 'Petrol Distal flyer',
+    featured: true,
     meta: {
       stackDesign: true,
       mixUrl: '',
@@ -363,6 +367,7 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Deep Foc.us Takeover at Sonic Butter flyer',
     description: 'Deep Foc.us Takeover at Sonic Butter flyer',
+    featured: true,
     meta: {
       stackDesign: true,
       mixUrl: '',
@@ -429,12 +434,16 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Expansion Barcast flyer',
     description: 'Expansion Barcast flyer',
+    featured: true,
     meta: {
       stackDesign: true,
       mixUrl: '',
       trackList: [],
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        size: 'contain',
+      },
     },
     category: [
       'flyers',
@@ -582,6 +591,10 @@ const PortfolioList: RawPortfolio[] = [
       trackList: [],
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        size: '100%',
+        position: '0',
+      },
     },
     category: [
       'logos',

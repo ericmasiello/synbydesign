@@ -12,6 +12,7 @@ interface Props {
   tags: string[];
   svgSource?: string;
   imagePaths: ImagePaths;
+  featured?: boolean;
 }
 
 const Item: React.SFC<Props> = (props) => {
@@ -31,8 +32,9 @@ const Item: React.SFC<Props> = (props) => {
       <PortfolioItemImage
         className={props.className}
         imagePath={preferredImagePath.url}
-        width={preferredImagePath.width}
-        height={preferredImagePath.height}
+        featured={props.featured}
+        size={props.meta && props.meta.thumb && props.meta.thumb.size}
+        position={props.meta && props.meta.thumb && props.meta.thumb.position}
       />
     );
   }

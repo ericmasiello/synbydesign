@@ -31,8 +31,6 @@ const Detail: React.SFC<Props> = (props) => {
       <PortfolioItemImage
         className={props.className}
         imagePath={preferredImagePath.url}
-        width={preferredImagePath.width}
-        height={preferredImagePath.height}
       />
     );
   }

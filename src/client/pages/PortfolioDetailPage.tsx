@@ -23,6 +23,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
     this.props.fetchPortfolioDetail(this.props.match.params.id);
   }
 
+  // TODO: Make the header of the page use the active image as a background image
   render() {
     return (
       <div className={this.props.className}>
