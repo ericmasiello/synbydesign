@@ -16,7 +16,9 @@ interface Props {
 export class HomePage extends React.Component<Props, {}> {
   componentDidMount() {
     // TODO: only fetch if we don't have the data
-    this.props.fetchPortfolioItems();
+    if (this.props.portfolioItems.length <= 1) {
+      this.props.fetchPortfolioItems();
+    }
   }
 
   render() {
