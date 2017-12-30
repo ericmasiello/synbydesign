@@ -195,6 +195,7 @@ Array [
       "flyers",
     ],
     "description": "EXBC at BNG with Harry Ransom web promo",
+    "featured": true,
     "id": "exbc-bng-harry-r-4-ns-0-m-web-promo",
     "imagePaths": Object {
       "full": Object {
@@ -294,6 +295,7 @@ Array [
       "web",
     ],
     "description": "anarchostar",
+    "featured": true,
     "id": "anarchostar",
     "imagePaths": Object {
       "full": Object {
@@ -333,6 +335,7 @@ Array [
       "flyers",
     ],
     "description": "Just 4 Heads flyer",
+    "featured": true,
     "id": "just-4-heads-flyer",
     "imagePaths": Object {
       "full": Object {
@@ -432,6 +435,7 @@ Array [
       "flyers",
     ],
     "description": "Petrol Distal flyer",
+    "featured": true,
     "id": "petrol-distal-flyer",
     "imagePaths": Object {
       "full": Object {
@@ -498,6 +502,7 @@ Array [
       "flyers",
     ],
     "description": "Deep Foc.us Takeover at Sonic Butter flyer",
+    "featured": true,
     "id": "deep-foc-us-takeover-at-sonic-butter-flyer",
     "imagePaths": Object {
       "full": Object {
@@ -564,6 +569,7 @@ Array [
       "flyers",
     ],
     "description": "Expansion Barcast flyer",
+    "featured": true,
     "id": "expansion-barcast-flyer",
     "imagePaths": Object {
       "full": Object {
@@ -591,6 +597,9 @@ Array [
       "isSVG": false,
       "mixUrl": "",
       "stackDesign": true,
+      "thumb": Object {
+        "size": "contain",
+      },
       "trackList": Array [],
       "websiteUrl": "",
     },
@@ -733,6 +742,10 @@ Array [
       "isSVG": false,
       "mixUrl": "",
       "stackDesign": false,
+      "thumb": Object {
+        "position": "0",
+        "size": "100%",
+      },
       "trackList": Array [],
       "websiteUrl": "",
     },
@@ -1036,6 +1049,7 @@ Array [
       "flyers",
     ],
     "description": "EXBC at BNG with Harry Ransom web promo",
+    "featured": true,
     "id": "exbc-bng-harry-r-4-ns-0-m-web-promo",
     "imagePaths": Object {
       "full": Object {
@@ -1135,6 +1149,7 @@ Array [
       "web",
     ],
     "description": "anarchostar",
+    "featured": true,
     "id": "anarchostar",
     "imagePaths": Object {
       "full": Object {
@@ -1179,6 +1194,7 @@ Array [
       "flyers",
     ],
     "description": "Just 4 Heads flyer",
+    "featured": true,
     "id": "just-4-heads-flyer",
     "imagePaths": Object {
       "full": Object {
@@ -1278,6 +1294,7 @@ Array [
       "flyers",
     ],
     "description": "Petrol Distal flyer",
+    "featured": true,
     "id": "petrol-distal-flyer",
     "imagePaths": Object {
       "full": Object {
