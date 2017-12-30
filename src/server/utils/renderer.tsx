@@ -13,11 +13,11 @@ import logger from '../utils/logger';
 
 export default (req: Request, store: Store<AppState>, context: object) => {
 
-  logger.info('Calling renderer with path', req.path, 'and context', context);
+  logger.info('Calling renderer with path:', req.baseUrl, 'and context:', context);
 
   const app = (
     <Provider store={store}>
-      <StaticRouter location={req.path} context={context}>
+      <StaticRouter location={req.baseUrl} context={context}>
         <div>{renderRoutes(Routes)}</div>
       </StaticRouter>
     </Provider>
