@@ -28,7 +28,7 @@ GridItem.displayName = 'PortfolioGallery.GridItem';
 
 const GridLink = styled(Link)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
   max-width: 300px;
