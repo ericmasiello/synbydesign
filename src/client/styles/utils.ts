@@ -1,8 +1,4 @@
-export const pxToRem = (value: number | string, base = 16): string => {
-  if (typeof value === 'string') {
-    return `${parseFloat(value.replace(/[^0-9.]/g, '')) / base}rem`;
-  }
-
+export const pxToRem = (value: number, base = 16): string => {
   return `${(value / base)}rem`;
 };
 

@@ -18,5 +18,5 @@ interface Props {
 }
 
 export const showSVG = ({ meta = {}, svgSource }: Props = {}) => {
-  return meta && meta.isSVG && svgSource;
+  return !!(meta.isSVG && svgSource);
 };
