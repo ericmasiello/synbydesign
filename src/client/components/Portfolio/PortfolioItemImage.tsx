@@ -16,6 +16,11 @@ const PortfolioItemImage: React.SFC<Props> = props => (
 PortfolioItemImage.displayName = 'PortfolioItemImage';
 
 const StyledPortfoioItemImage = styled(PortfolioItemImage)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
   background-image: ${props => `url('${props.imagePath}')`};
   background-position: ${props => !props.featured ? `${props.position}` : 'center'};

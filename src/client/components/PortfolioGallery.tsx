@@ -7,6 +7,7 @@ import { maxWidth, horizontalPadding } from '../styles/vars';
 
 const itemPadding = 16;
 const gridItemSize = 300;
+const gridFullSize = 800;
 
 interface PortfolioGalleryProps {
   className?: string;
@@ -15,6 +16,7 @@ interface PortfolioGalleryProps {
 
 const Grid = styled.ul`
   display: grid;
+  list-style-type: none;
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(gridItemSize)}, 1fr));
   grid-auto-flow: dense;
 `;
@@ -37,8 +39,10 @@ const StyledGridItem = styled(GridItem)`
   padding: ${pxToRem(itemPadding)};
   ${(props) => {
     return props.featured ? `
-      grid-column: auto / span 2;
-      grid-row: auto / span 2;
+      @media(min-width: ${pxToRem(gridFullSize)}) {
+        grid-column: auto / span 2;
+        grid-row: auto / span 2;
+      }
     ` : '';
   }}
 `;
@@ -61,16 +65,18 @@ const GridLink: React.SFC<GridLinkProps> = props => (
 GridLink.displayName = 'PortfolioGallery.GridLink';
 
 const StyledGridLink = styled(GridLink)`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   position: relative;
   overflow: hidden;
   border: 10px solid #d4cfd1;
   border-radius: 3px;
   background-color: #e0dcde;
   width: 100%;
-  height: ${props => props.featured ? 'auto' : pxToRem(gridItemSize)};
+  min-height: ${pxToRem(gridItemSize)};
+  ${props => props.featured ? `
+  @media(min-width: ${pxToRem(gridFullSize)}) {
+    height: 100%;
+  }
+  ` : ''}
   transition: transform 0.2s;
 
   &:hover {
