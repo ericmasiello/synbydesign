@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
 import PortfolioDetail from '../components/Portfolio/PortfolioDetail';
@@ -27,6 +28,10 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   render() {
     return (
       <div className={this.props.className}>
+        <Helmet>
+          <title>{this.props.portfolio.title}</title>
+          <meta property="og:title" content={this.props.portfolio.title} />
+        </Helmet>
         This is the detail page {this.props.match.params.id}
         <PortfolioDetail
           {...this.props.portfolio}
