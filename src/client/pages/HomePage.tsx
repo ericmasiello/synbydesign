@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchPortfolioItems } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/PortfolioGallery';
+import Header from '../components/Header';
 import { ThunkActionCreator } from '../../types.d';
 
 interface Props {
@@ -24,6 +25,7 @@ export class HomePage extends React.Component<Props, {}> {
   render() {
     return (
       <div className={this.props.className}>
+        <Header />
         <Hero />
         <PortfolioGallery
           items={this.props.portfolioItems}

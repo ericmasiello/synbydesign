@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
-import PortfolioDetail from '../components/Portfolio/PortfolioDetail';
+import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
+import Header from '../components/Header';
+import { getImagePath, showSVG } from '../utils/portfolioImage';
 
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
@@ -24,7 +26,23 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
     this.props.fetchPortfolioDetail(this.props.match.params.id);
   }
 
-  // TODO: Make the header of the page use the active image as a background image
+  getDetailView() {
+    const preferredImagePath = getImagePath(this.props.portfolio.imagePaths);
+
+    if (preferredImagePath) {
+      return (
+        <div>
+          <Header imagePath={preferredImagePath.url} />
+          <PortfolioDetailImage
+            imagePath={preferredImagePath.url}
+          />
+        </div>
+      );
+    }
+
+    return <div>This is the detail page {this.props.match.params.id}</div>;
+  }
+
   render() {
     return (
       <div className={this.props.className}>
@@ -32,10 +50,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <title>{this.props.portfolio.title}</title>
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
-        This is the detail page {this.props.match.params.id}
-        <PortfolioDetail
-          {...this.props.portfolio}
-        />
+        {this.getDetailView()}
       </div>
     );
   }
