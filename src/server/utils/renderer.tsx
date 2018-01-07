@@ -18,7 +18,7 @@ export default (url: string, store: Store<AppState>, context: object) => {
   const app = (
     <Provider store={store}>
       <StaticRouter location={url} context={context}>
-        <div>{renderRoutes(Routes)}</div>
+        {renderRoutes(Routes)}
       </StaticRouter>
     </Provider>
   );

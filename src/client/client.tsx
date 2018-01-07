@@ -21,7 +21,7 @@ const store = createStore(
 export const client = (
   <Provider store={store}>
     <BrowserRouter>
-      <div>{renderRoutes(Routes)}</div>
+      {renderRoutes(Routes)}
     </BrowserRouter>
   </Provider>
 );
