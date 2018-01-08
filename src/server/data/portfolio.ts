@@ -694,7 +694,100 @@ const PortfolioList: RawPortfolio[] = [
       originalUrl: 'https://s3.amazonaws.com/synbydesign/sigmaperfgroup-original.jpg',
       title: '',
       description: '',
-      priority:0,
+      priority: 0,
+    }],
+  },
+  {
+    title: 'Deep Foc.us Logo',
+    description: 'Deep Foc.us music blog logo',
+    meta: {
+      stackDesign: false,
+      mixUrl: '',
+      trackList: [],
+      websiteUrl: '',
+      isSVG: false,
+    },
+    category: [
+      'logos',
+    ],
+    tags: [],
+    imagePaths: [{
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-logo1-original.jpg',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
+  },
+  {
+    title: 'Incognito Logo',
+    description: 'Logo for Incognito electronic events and production service',
+    meta: {
+      stackDesign: false,
+      mixUrl: '',
+      trackList: [],
+      websiteUrl: '',
+      isSVG: false,
+    },
+    category: [
+      'logos',
+    ],
+    tags: [],
+    imagePaths: [{
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/incognito-original.jpg',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
+  },
+  {
+    title: 'Stencil',
+    description: 'Vistaprint Digital Component Library',
+    featured: true,
+    meta: {
+      stackDesign: false,
+      mixUrl: '',
+      trackList: [],
+      websiteUrl: '',
+      isSVG: false,
+    },
+    category: [
+      'website',
+    ],
+    tags: [
+      'Component Library',
+      'React',
+      'SCSS',
+    ],
+    imagePaths: [{
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-original.png',
+      title: '',
+      description: '',
+      priority: 1,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-original.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-original.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-original.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-original.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-original.png',
+      title: '',
+      description: '',
+      priority: 0,
     }],
   },
 ];
