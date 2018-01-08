@@ -40,7 +40,9 @@ function mapStateToProps({ portfolioItems }: AppState) {
 }
 
 export default {
-  loadData: ({ dispatch }: Store<Portfolio[]>) => dispatch(fetchPortfolioItems()),
+  loadData: ({ dispatch }: Store<Portfolio[]>) => dispatch(fetchPortfolioItems({
+    pageSize: 100,
+  })),
   component: styled(connect(mapStateToProps, { fetchPortfolioItems })(HomePage))`
 
   `,

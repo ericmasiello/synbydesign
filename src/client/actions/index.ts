@@ -9,9 +9,13 @@ export const fetchUsers: ThunkActionCreator<User[]> = () =>
   async (dispatch, getState, api) =>
     dispatcher<User[]>(dispatch, FETCH_USERS)(api.get('/users'));
 
-export const fetchPortfolioItems: ThunkActionCreator<Portfolio[]> = () =>
+export const fetchPortfolioItems: ThunkActionCreator<Portfolio[]> = ({
+  pageSize = 20,
+}: {
+  pageSize?: number,
+} = {}) =>
   async (dispatch, getState, api) =>
-    dispatcher<Portfolio[]>(dispatch, FETCH_PORTFOLIO_ITEMS)(api.get('/portfolio'));
+    dispatcher<Portfolio[]>(dispatch, FETCH_PORTFOLIO_ITEMS)(api.get(`/portfolio?pageSize=${pageSize}`));
 
 export const fetchPortfolioDetail: ThunkActionCreator<Portfolio> = (id: string) =>
   async (dispatch, getState, api) =>
