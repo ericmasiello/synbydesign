@@ -11,7 +11,7 @@ interface Props {
   category: string[];
   tags: string[];
   svgSource?: string;
-  imagePaths: ImagePaths;
+  imagePaths: PortfolioImage[];
   featured?: boolean;
 }
 
@@ -31,7 +31,7 @@ const Item: React.SFC<Props> = (props) => {
     return (
       <PortfolioItemImage
         className={props.className}
-        imagePath={preferredImagePath.url}
+        imagePath={preferredImagePath}
         featured={props.featured}
         size={props.meta && props.meta.thumb && props.meta.thumb.size}
         position={props.meta && props.meta.thumb && props.meta.thumb.position}

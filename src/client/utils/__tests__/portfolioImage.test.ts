@@ -5,55 +5,28 @@ import {
 
 describe('getImagePath', () => {
   it('should prefer the large image path', () => {
-    const imagePaths: ImagePaths = {
-      large: {
-        url: '/path/to/large.jpg',
-      },
-      full: {
-        url: '/path/to/full.jpg',
-      },
-      medium: {
-        url: '/path/to/medium.jpg',
-      },
-    };
+    const imagePaths: PortfolioImage[] = [{
+      largeUrl: '/path/to/large.jpg',
+      originalUrl: '/path/to/full.jpg',
+      mediumUrl: '/path/to/medium.jpg',
+    }];
 
     const result = getImagePath(imagePaths);
-    expect(result).toEqual({
-      url: '/path/to/large.jpg',
-    });
+    expect(result).toEqual('/path/to/large.jpg');
   });
 
-  it('should fall back to full when large is not avaialble', () => {
-    const imagePaths: ImagePaths = {
-      full: {
-        url: '/path/to/full.jpg',
-      },
-      medium: {
-        url: '/path/to/medium.jpg',
-      },
-    };
+  it('should fall back to full when large is not available', () => {
+    const imagePaths: PortfolioImage[] = [{
+      originalUrl: '/path/to/full.jpg',
+      mediumUrl: '/path/to/medium.jpg',
+    }];
 
     const result = getImagePath(imagePaths);
-    expect(result).toEqual({
-      url: '/path/to/full.jpg',
-    });
-  });
-
-  it('should fall back to medium when large and full are not avaialble', () => {
-    const imagePaths: ImagePaths = {
-      medium: {
-        url: '/path/to/medium.jpg',
-      },
-    };
-
-    const result = getImagePath(imagePaths);
-    expect(result).toEqual({
-      url: '/path/to/medium.jpg',
-    });
+    expect(result).toEqual('/path/to/full.jpg');
   });
 
   it('should return no value when no valid image paths exist', () => {
-    const imagePaths: ImagePaths = {};
+    const imagePaths: PortfolioImage[] = [];
 
     const result = getImagePath(imagePaths);
     expect(result).toEqual(undefined);

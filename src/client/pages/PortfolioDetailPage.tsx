@@ -7,7 +7,7 @@ import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import Header from '../components/Header';
-import { getImagePath, showSVG } from '../utils/portfolioImage';
+import { getImagePath } from '../utils/portfolioImage';
 
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
@@ -32,9 +32,9 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
     if (preferredImagePath) {
       return (
         <div>
-          <Header imagePath={preferredImagePath.url} />
+          <Header imagePath={preferredImagePath} />
           <PortfolioDetailImage
-            imagePath={preferredImagePath.url}
+            imagePath={preferredImagePath}
           />
         </div>
       );

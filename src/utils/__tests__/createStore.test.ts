@@ -24,7 +24,7 @@ test('create a store with initialized state', () => {
       title: 'The title',
       category: [],
       tags: [],
-      imagePaths: {},
+      imagePaths: [],
     }],
   };
 

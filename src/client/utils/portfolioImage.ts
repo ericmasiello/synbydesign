@@ -1,12 +1,18 @@
-export const getImagePath = (imagePaths: ImagePaths): ImagePath | undefined => {
-  if (imagePaths.large) {
-    return imagePaths.large;
+export const getImagePath = (imagePaths: PortfolioImage[]): string | undefined => {
+  const path: PortfolioImage | undefined = imagePaths[0];
+
+  if (!path) {
+    return;
   }
-  if (imagePaths.full) {
-    return imagePaths.full;
+
+  if (path.largeUrl) {
+    return path.largeUrl;
   }
-  if (imagePaths.medium) {
-    return imagePaths.medium;
+  if (path.originalUrl) {
+    return path.originalUrl;
+  }
+  if (path.mediumUrl) {
+    return path.mediumUrl;
   }
 };
 

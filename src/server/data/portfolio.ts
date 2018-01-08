@@ -1,4 +1,5 @@
 // tslint:disable max-line-length
+
 const PortfolioList: RawPortfolio[] = [
   {
     title: 'R.M.R. Software Solutions Logo',
@@ -51,11 +52,12 @@ const PortfolioList: RawPortfolio[] = [
           </g>
         </g>
       </svg>`,
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2016/01/RMR-Logo-Final.svg',
-      },
-    },
+    imagePaths: [{
+      originalUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2016/01/RMR-Logo-Final.svg',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
   },
   {
     title: 'EXBC @ BNG (Harry R4NS0M) web promo',
@@ -72,23 +74,14 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23.png',
-        width: 950,
-        height: 950,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-150x150.png',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-300x300.png',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{
+      originalUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23.png',
+      mediumUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-300x300.png',
+      thumbUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-150x150.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
   },
   {
     title: 'EXBC @ BNG (Posers) web promo',
@@ -104,23 +97,14 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26.png',
-        width: 950,
-        height: 950,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-150x150.png',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-300x300.png',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{
+      originalUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26.png',
+      mediumUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-300x300.png',
+      thumbUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-150x150.png',
+      title: '',
+      description:'',
+      priority: 0,
+    }],
   },
   {
     title: 'Deinfamous sticker',
@@ -136,27 +120,18 @@ const PortfolioList: RawPortfolio[] = [
       'illustration',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2.jpg',
-        width: 1000,
-        height: 1000,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{
+      originalUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2.jpg',
+      mediumUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-300x300.jpg',
+      thumbUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-150x150.jpg',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
   },
   {
     title: 'Anarchostar',
-    description: 'anarchostar',
+    description: 'Web site for electronic music label Anarchostar',
     featured: true,
     meta: {
       stackDesign: false,
@@ -175,23 +150,15 @@ const PortfolioList: RawPortfolio[] = [
       'Wordpress Custom Theme',
       'Wordpress Plugin',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/anarchostar1.jpg',
-        width: 440,
-        height: 293,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/anarchostar1-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/anarchostar1-300x200.jpg',
-        width: 300,
-        height: 200,
-      },
-    },
+    imagePaths: [{
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-200px.jpg',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
   },
   {
     title: 'Just 4 Heads flyer',
@@ -208,23 +175,14 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color.png',
-        width: 1000,
-        height: 1000,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-150x150.png',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-300x300.png',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{
+      originalUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color.png',
+      mediumUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-300x300.png',
+      thumbUrl: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-150x150.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
   },
   {
     title: 'Petrol V.I.V.I.K flyer',
@@ -240,23 +198,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek.jpg',
-        width: 1000,
-        height: 1000,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'EXBC web promo',
@@ -272,23 +214,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo.jpg',
-        width: 800,
-        height: 800,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Petrol Distal flyer',
@@ -305,23 +231,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal.jpg',
-        width: 1000,
-        height: 1000,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Petrol Goth-Trad flyer',
@@ -337,23 +247,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad.jpg',
-        width: 1000,
-        height: 1000,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Deep Foc.us Takeover at Sonic Butter flyer',
@@ -370,23 +264,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover.jpg',
-        width: 600,
-        height: 600,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'EXBC Takeover at Sonic Butter flyer',
@@ -402,23 +280,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover.jpg',
-        width: 600,
-        height: 600,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Expansion Barcast flyer',
@@ -438,28 +300,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22.jpg',
-        width: 680,
-        height: 1040,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-196x300.jpg',
-        width: 196,
-        height: 300,
-      },
-      large: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-670x1024.jpg',
-        width: 670,
-        height: 1024,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22.jpg',largeUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-670x1024.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-196x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Petrol General flyer',
@@ -475,28 +316,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier.jpg',
-        width: 1500,
-        height: 1038,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-300x208.jpg',
-        width: 300,
-        height: 208,
-      },
-      large: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-1024x709.jpg',
-        width: 1024,
-        height: 709,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier.jpg',largeUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-1024x709.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-300x208.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Petrol flyer',
@@ -512,28 +332,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol.jpg',
-        width: 1060,
-        height: 1060,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-      large: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-1024x1024.jpg',
-        width: 1024,
-        height: 1024,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol.jpg',largeUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-1024x1024.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'IllEffect/Erictronica business cards',
@@ -549,23 +348,7 @@ const PortfolioList: RawPortfolio[] = [
       'business-cards',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card.jpg',
-        width: 850,
-        height: 700,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card-300x247.jpg',
-        width: 300,
-        height: 247,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card-300x247.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'EXBC logo',
@@ -585,23 +368,7 @@ const PortfolioList: RawPortfolio[] = [
       'logos',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo.jpg',
-        width: 800,
-        height: 800,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo-300x300.jpg',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo-300x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'EXBC vs. Dirtbox Radio flyer',
@@ -617,23 +384,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox.jpg',
-        width: 684,
-        height: 1000,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox-205x300.jpg',
-        width: 205,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox-205x300.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Thnk DFRNT flyer',
@@ -649,23 +400,7 @@ const PortfolioList: RawPortfolio[] = [
       'flyers',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square.png',
-        width: 700,
-        height: 700,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square-150x150.png',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square-300x300.png',
-        width: 300,
-        height: 300,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square.png',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square-300x300.png',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square-150x150.png',title:'',description:'',priority:0 }],
   },
   {
     title: 'Chocolate Milk Logo',
@@ -681,23 +416,7 @@ const PortfolioList: RawPortfolio[] = [
       'logos',
     ],
     tags: [],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk.jpg',
-        width: 738,
-        height: 618,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk-300x251.jpg',
-        width: 300,
-        height: 251,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk-300x251.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Deep Foc.us Mobile',
@@ -717,28 +436,7 @@ const PortfolioList: RawPortfolio[] = [
       'Design',
       'jQuery Mobile',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone.jpg',
-        width: 1900,
-        height: 1420,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-300x224.jpg',
-        width: 300,
-        height: 224,
-      },
-      large: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-1024x765.jpg',
-        width: 1024,
-        height: 765,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone.jpg',largeUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-1024x765.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-300x224.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Catherine Anne Design',
@@ -760,23 +458,7 @@ const PortfolioList: RawPortfolio[] = [
       'Mobile/Responsive Design',
       'Wordpress Custom Theme',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1.jpg',
-        width: 400,
-        height: 267,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-300x200.jpg',
-        width: 300,
-        height: 200,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-300x200.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Deep Foc.us',
@@ -799,23 +481,7 @@ const PortfolioList: RawPortfolio[] = [
       'Wordpress Custom Theme',
       'Wordpress Plugin',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus.jpg',
-        width: 440,
-        height: 293,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-300x200.jpg',
-        width: 300,
-        height: 200,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-300x200.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Sage Dragon',
@@ -837,23 +503,7 @@ const PortfolioList: RawPortfolio[] = [
       'Mobile/Responsive Design',
       'Wordpress Custom Theme',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon.jpg',
-        width: 440,
-        height: 293,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-300x200.jpg',
-        width: 300,
-        height: 200,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-300x200.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Eighty Eight DC',
@@ -873,23 +523,7 @@ const PortfolioList: RawPortfolio[] = [
       'Mobile/Responsive Design',
       'Wordpress Custom Theme',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88.jpg',
-        width: 440,
-        height: 293,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-300x200.jpg',
-        width: 300,
-        height: 200,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-300x200.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Expansion Broadcast',
@@ -909,23 +543,7 @@ const PortfolioList: RawPortfolio[] = [
       'Wordpress Custom Theme',
       'Wordpress Plugin',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc.jpg',
-        width: 440,
-        height: 293,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-300x200.jpg',
-        width: 300,
-        height: 200,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-300x200.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-150x150.jpg',title:'',description:'',priority:0 }],
   },
   {
     title: 'Sigma Performance Group',
@@ -946,23 +564,7 @@ const PortfolioList: RawPortfolio[] = [
       'Design/Branding',
       'PHP',
     ],
-    imagePaths: {
-      full: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup.jpg',
-        width: 1000,
-        height: 900,
-      },
-      thumbnail: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-150x150.jpg',
-        width: 150,
-        height: 150,
-      },
-      medium: {
-        url: 'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-300x270.jpg',
-        width: 300,
-        height: 270,
-      },
-    },
+    imagePaths: [{ originalUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup.jpg',mediumUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-300x270.jpg',thumbUrl:'http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-150x150.jpg',title:'',description:'',priority:0 }],
   },
 ];
 // tslint:enable max-line-length

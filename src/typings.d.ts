@@ -13,19 +13,6 @@ declare module '*.svg' {
   export = value;
 }
 
-interface ImagePath {
-  url: string;
-  width?: number;
-  height?: number;
-}
-
-interface ImagePaths {
-  full?: ImagePath;
-  medium?: ImagePath;
-  thumbnail?: ImagePath;
-  large?: ImagePath;
-}
-
 interface PortfolioThumbMeta {
   size?: string;
   position?: string;
@@ -40,6 +27,16 @@ interface PortfolioMeta {
   thumb?: PortfolioThumbMeta;
 }
 
+interface PortfolioImage {
+  originalUrl: string;
+  largeUrl?: string;
+  mediumUrl?: string;
+  thumbUrl?: string;
+  title?: string;
+  description?: string;
+  priority?: number;
+}
+
 interface RawPortfolio {
   title: string;
   description?: string;
@@ -47,7 +44,7 @@ interface RawPortfolio {
   category: string[];
   tags: string[];
   svgSource?: string;
-  imagePaths: ImagePaths;
+  imagePaths: PortfolioImage[];
   featured?: boolean;
 }
 
