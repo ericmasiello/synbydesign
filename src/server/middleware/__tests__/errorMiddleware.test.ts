@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import * as boom from 'boom';
 import errorMiddleware from '../errorMiddleware';
-import { error } from 'util';
 
 const next = jest.fn() as NextFunction;
 
