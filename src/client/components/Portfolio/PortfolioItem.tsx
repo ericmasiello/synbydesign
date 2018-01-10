@@ -25,7 +25,7 @@ const Item: React.SFC<Props> = (props) => {
     );
   }
 
-  const preferredImagePath = getImagePath(props.imagePaths);
+  const preferredImagePath = getImagePath(props.imagePaths, props.featured);
 
   if (preferredImagePath) {
     return (

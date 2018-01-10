@@ -1,14 +1,14 @@
-export const getImagePath = (imagePaths: PortfolioImage[]): string | undefined => {
+export const getImagePath = (imagePaths: PortfolioImage[], featured = false): string | undefined => {
   const path: PortfolioImage | undefined = imagePaths[0];
 
   if (!path) {
     return;
   }
 
-  if (path.largeUrl) {
+  if (featured && path.largeUrl) {
     return path.largeUrl;
   }
-  if (path.originalUrl) {
+  if (featured && path.originalUrl) {
     return path.originalUrl;
   }
   if (path.mediumUrl) {
