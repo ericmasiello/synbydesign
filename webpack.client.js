@@ -4,9 +4,19 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const htmlPlugin = new HtmlWebpackPlugin({
+const indexPage = new HtmlWebpackPlugin({
   template: `!!raw-loader!${path.join(process.cwd(), 'src/index.template.ejs')}`,
   filename: path.resolve(__dirname, 'views/index.ejs'),
+  minify: {
+    removeComments: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+  },
+});
+
+const errorPage = new HtmlWebpackPlugin({
+  template: `!!raw-loader!${path.join(process.cwd(), 'src/error.template.ejs')}`,
+  filename: path.resolve(__dirname, 'views/error.ejs'),
   minify: {
     removeComments: true,
     collapseWhitespace: true,
@@ -30,7 +40,8 @@ const config = {
   },
 
   plugins: [
-    htmlPlugin,
+    indexPage,
+    errorPage,
   ],
 };
 

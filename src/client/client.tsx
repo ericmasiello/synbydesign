@@ -26,7 +26,11 @@ export const client = (
   </Provider>
 );
 
-ReactDOM.hydrate(
-  client,
-  document.querySelector('#root'),
-);
+const root = document.getElementById('root');
+
+if (root) {
+  ReactDOM.hydrate(
+    client,
+    root,
+  );
+}
