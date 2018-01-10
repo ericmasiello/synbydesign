@@ -1,5 +1,7 @@
-import portfolioList from '../data/portfolio';
+import rawPortfolioList from '../data/portfolio';
 import * as _ from 'lodash';
+
+const portfolioList = rawPortfolioToPortfolio(rawPortfolioList);
 
 function titleToId(title: string): string {
   return _.kebabCase(title).trim();
@@ -21,6 +23,13 @@ function matchListFilter(filters: string[], filterKey: string) {
   });
 }
 
+function rawPortfolioToPortfolio(rawList: RawPortfolio[]): Portfolio[] {
+  return rawList.map(item => ({
+    id: titleToId(item.title),
+    ...item,
+  }));
+}
+
 export function list(options: {
   categories?: string[];
   tags?: string[];
@@ -37,10 +46,7 @@ export function list(options: {
     pageNumber = 0,
   } = options;
 
-  const list = portfolioList.map(item => ({
-    id: titleToId(item.title),
-    ...item,
-  }))
+  const list = portfolioList
   .filter(matchListFilter(categories, 'category'))
   .filter(matchListFilter(tags, 'tags'))
   .filter((item) => {
@@ -63,5 +69,5 @@ export function list(options: {
 }
 
 export function getById(id: string): Promise<Portfolio | undefined> {
-  return list().then(items => items.find(item => item.id === id));
+  return Promise.resolve(portfolioList.find(item => item.id === id));
 }
