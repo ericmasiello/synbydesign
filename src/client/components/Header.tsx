@@ -8,12 +8,10 @@ import { maxWidth, horizontalPadding } from '../styles/vars';
 
 const HeaderBackgroundImage = styled.img`
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   z-index: 1;
-  filter: grayscale(.85);
-  transform: translateY(-50%);
 `;
 
 HeaderBackgroundImage.displayName = 'Header.BackgroundImage';
@@ -24,6 +22,7 @@ const HeaderContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem ${pxToRem(horizontalPadding)};
 
   @media(min-width: ${pxToRem(850)}) {
     flex-direction: row;
@@ -41,9 +40,18 @@ interface Props {
 
 export const Header: React.SFC<Props> = ({ className, imagePath }) => {
   return (
-    <header className={className}>
+    <header
+      className={className}
+      style={{
+        minHeight: imagePath ? pxToRem(600) : 0,
+      }}
+    >
       {imagePath && <HeaderBackgroundImage src={imagePath} alt="" />}
-      <HeaderContent>
+      <HeaderContent
+        style={{
+          backgroundColor: imagePath ? 'rgba(255, 255, 255, 0.65)' : 'transparent',
+        }}
+      >
         <Link to="/">
           <Logo />
         </Link>
@@ -57,7 +65,6 @@ Header.displayName = 'Header';
 
 export default styled(Header)`
   position: relative;
-  padding: 1rem ${pxToRem(horizontalPadding)};
   max-width: ${pxToRem(maxWidth)};
   margin: auto;
   overflow: hidden;
