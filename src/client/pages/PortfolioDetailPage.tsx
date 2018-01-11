@@ -12,17 +12,19 @@ import { pxToRem } from '../styles/utils';
 
 const gridItemSize = 300;
 
+// const PortfolioDetailGalleryItem = styled.li`
+//   grid-column: auto / span 4;
+
+//   &:nth-child(2n),
+//   &:nth-child(3n) {
+//     grid-column: auto / span 6;
+//   }
+
+//   &:nth-child(4n) {
+//     grid-column: auto / span 4;
+//   }
+// `;
 const PortfolioDetailGalleryItem = styled.li`
-  grid-column: auto / span 4;
-
-  &:nth-child(2n),
-  &:nth-child(3n) {
-    grid-column: auto / span 6;
-  }
-
-  &:nth-child(4n) {
-    grid-column: auto / span 4;
-  }
 `;
 
 PortfolioDetailGalleryItem.displayName = 'PortfolioDetailGallery.Item';
@@ -32,7 +34,7 @@ interface PortfolioDetailGalleryProps {
   className?: string;
 }
 
-const PortfolioDetailGallery = styled(((props) => {
+const PortfolioDetailGallery: React.SFC<PortfolioDetailGalleryProps> = (props) => {
   return (
     <ul className={props.className}>
       {props.paths.map(path => (
@@ -42,9 +44,11 @@ const PortfolioDetailGallery = styled(((props) => {
       ))}
     </ul>
   );
-}) as React.SFC<PortfolioDetailGalleryProps>)`
+};
+
+const StyledPortfolioDetailGallery = styled(PortfolioDetailGallery)`
   display: grid;
-  grid-template-columns: repeat(10, 10%);
+  grid-template-columns: repeat(${props => `${props.paths.length}, ${100 / props.paths.length}%`});
   grid-auto-flow: dense;
   list-style-type: none;
   margin: 0;
@@ -72,14 +76,17 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   getImagePaths(excludeImage: PortfolioImage) {
-    const images = this.props.portfolio.imagePaths.filter(imagePath => imagePath !== excludeImage);
-    return getImagePaths(images);
+    let images = [excludeImage];
+    // if there are more than 1 image, exclude duplicates
+    if (this.props.portfolio.imagePaths.length > 1) {
+      images = this.props.portfolio.imagePaths.filter(imagePath => imagePath !== excludeImage);
+    }
+    return images;
   }
 
-  getDetailView(paths: string[]) {
-
-    if (paths.length > 0) {
-      return <PortfolioDetailGallery paths={paths} />;
+  getDetailView(paths: PortfolioImage[]) {
+    if (paths.length > 1) {
+      return <StyledPortfolioDetailGallery paths={getImagePaths(paths)} />;
     }
 
     return (
@@ -117,7 +124,5 @@ const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
 
 export default {
   loadData,
-  component: styled(connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage))`
-
-  `,
+  component: connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage),
 };

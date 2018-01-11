@@ -1,15 +1,36 @@
 import * as React from 'react';
+import styled from 'styled-components';
+import { pxToRem } from '../../styles/utils';
 
 interface Props {
   className?: string;
-  imagePath: string;
+  imagePath: PortfolioImage;
   featured?: boolean;
   size?: string;
   position?: string;
 }
 
-const PortfolioDetailImage: React.SFC<Props> = (props) => {
-  return <div>Detail</div>;
+export const PortfolioDetailImage: React.SFC<Props> = (props) => {
+  return (
+    <article className={props.className}>
+      <img src={props.imagePath.originalUrl} alt="FIXME" />
+    </article>
+  );
 };
 
-export default PortfolioDetailImage;
+const StyledPortfolioDetailImage = styled(PortfolioDetailImage)`
+  margin-top: ${pxToRem(-150)};
+  position: relative;
+  z-index: 2;
+  text-align: center;
+
+  img {
+    margin: auto;
+    display: inline-block;
+    border: ${pxToRem(20)} solid #fff;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+    max-width: 80%;
+  }
+`;
+
+export default StyledPortfolioDetailImage;
