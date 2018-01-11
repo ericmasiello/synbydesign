@@ -4,9 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import Nav from './Nav';
 import { pxToRem } from '../styles/utils';
-import { maxWidth, horizontalPadding } from '../styles/vars';
-
-const showBGImageMediaQuery = pxToRem(500);
+import { maxWidth, horizontalPadding, showBGImageMediaQuery } from '../styles/vars';
 
 interface HeaderContentProps {
   className?: string;
@@ -26,7 +24,7 @@ const StyledHeaderContent = styled(HeaderContent)`
   flex-direction: column;
   align-items: center;
   padding: 1rem ${pxToRem(horizontalPadding)};
-  background-color: ${props => props.highlight ? 'rgba(255, 255, 255, 0.65)' : 'transparent'};
+  background-color: ${props => props.highlight ? 'rgba(255, 255, 255, 0.90)' : 'transparent'};
 
   @media(min-width: ${pxToRem(850)}) {
     flex-direction: row;
@@ -64,7 +62,25 @@ export default styled(Header)`
   position: relative;
   max-width: ${pxToRem(maxWidth)};
   margin: auto;
-  min-height: ${(props => props.imagePath ? pxToRem(600) : '0')};
+  overflow: hidden;
+
+  ${(props) => {
+    if (props.imagePath) {
+      return `@media (min-width: ${pxToRem(showBGImageMediaQuery)}) {
+        min-height: ${pxToRem(600)};
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 2;
+          bottom: 0;
+          width: 100%;
+          height: ${pxToRem(200)};
+          background: linear-gradient(to bottom, transparent 0%, #fff 100%);
+        }
+      }`;
+    }
+    return '';
+  }}
 
   .bg {
     position: absolute;
@@ -74,9 +90,9 @@ export default styled(Header)`
     bottom: 0;
     z-index: 1;
     ${/* TODO: only apply filter when you want the header in certain cases */ ``}
-    ${/* filter: blur(3px) grayscale(40%); */ ``}
+    filter: blur(1px) grayscale(70%) opacity(0.7);
 
-    @media (min-width: ${showBGImageMediaQuery}) {
+    @media (min-width: ${pxToRem(showBGImageMediaQuery)}) {
       background-image: ${props => props.imagePath ? `url('${props.imagePath}')` : 'none'};
       background-size: cover;
       background-position: 50%;
