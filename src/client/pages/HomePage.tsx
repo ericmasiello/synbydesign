@@ -8,6 +8,10 @@ import PortfolioGallery from '../components/PortfolioGallery';
 import Header from '../components/Header';
 import { ThunkActionCreator } from '../../types.d';
 
+const pageRequest = {
+  pageSize: 100,
+};
+
 interface Props {
   fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
   className?: string;
@@ -18,7 +22,7 @@ export class HomePage extends React.Component<Props, {}> {
   componentDidMount() {
     // TODO: only fetch if we don't have the data
     if (this.props.portfolioItems.length <= 1) {
-      this.props.fetchPortfolioItems();
+      this.props.fetchPortfolioItems(pageRequest);
     }
   }
 
@@ -40,9 +44,7 @@ function mapStateToProps({ portfolioItems }: AppState) {
 }
 
 export default {
-  loadData: ({ dispatch }: Store<Portfolio[]>) => dispatch(fetchPortfolioItems({
-    pageSize: 100,
-  })),
+  loadData: ({ dispatch }: Store<Portfolio[]>) => dispatch(fetchPortfolioItems(pageRequest)),
   component: styled(connect(mapStateToProps, { fetchPortfolioItems })(HomePage))`
 
   `,
