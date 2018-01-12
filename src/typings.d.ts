@@ -27,10 +27,15 @@ interface PortfolioMeta {
   thumb?: PortfolioThumbMeta;
 }
 
+interface FeaturedStyles {
+  backgroundPosition?: string;
+}
+
 interface PortfolioImageMeta {
   isExcludedFromGallery?: boolean;
   isFeaturedImage?: boolean;
   isDisplayedWithoutFilters?: boolean;
+  featuredStyles?: FeaturedStyles; 
 }
 
 interface PortfolioImage {

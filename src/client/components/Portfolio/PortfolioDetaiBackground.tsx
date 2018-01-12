@@ -6,6 +6,7 @@ interface Props {
   className?: string;
   imagePath?: string;
   ignoreFilters?: boolean;
+  featuredStyles?: FeaturedStyles;
 }
 
 const height = 600;
@@ -32,7 +33,12 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
   z-index: 1;
   background-image: ${props => props.imagePath ? `url('${props.imagePath}')` : 'none'};
   background-size: cover;
-  background-position: 50%;
+  background-position: ${({ featuredStyles }) => {
+    if (featuredStyles && featuredStyles.backgroundPosition) {
+      return featuredStyles.backgroundPosition;
+    }
+    return '50%';
+  }};
 
   ${(props) => {
     if (props.ignoreFilters) {
