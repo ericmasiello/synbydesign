@@ -17,5 +17,3 @@ export const TYPE_SIZE: TypeMap = {
   jumbo: [60, 1.1],
 };
 
-export const showBGImageMediaQuery = 500;
-

@@ -26,14 +26,38 @@ export const getImagePaths = (imagePaths: PortfolioImage[]): string[] => {
   return imagePaths.map(partial).filter(path => path !== undefined) as string[];
 };
 
-export const getHighestPriorityImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
-  // maybe should sort by priority instead of just looking for priority == 1?
-  const topPriority = imagePaths.find(path => path.priority === 1);
-
-  const path = topPriority || imagePaths[0];
-
-  return path;
+export const getGalleryImages = (imagePaths: PortfolioImage[]): PortfolioImage[] => {
+  return imagePaths.filter((path) => {
+    if (path.meta && path.meta.isExcludedFromGallery) {
+      return false;
+    }
+    return true;
+  });
 };
+
+export const getFeaturedImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
+  const featuredImagePaths = imagePaths.filter((path) => {
+    if (path.meta && path.meta.isFeaturedImage) {
+      return true;
+    }
+    return false;
+  });
+
+  if (featuredImagePaths.length > 1) {
+    return featuredImagePaths[0];
+  }
+
+  return imagePaths[0];
+};
+
+// export const getHighestPriorityImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
+//   // maybe should sort by priority instead of just looking for priority == 1?
+//   const topPriority = imagePaths.find(path => path.priority === 1);
+
+//   const path = topPriority || imagePaths[0];
+
+//   return path;
+// };
 
 interface Props {
   meta?: {

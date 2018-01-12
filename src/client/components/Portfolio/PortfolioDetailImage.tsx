@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { pxToRem } from '../../styles/utils';
-import { showBGImageMediaQuery } from '../../styles/vars';
 
 interface Props {
   className?: string;
@@ -20,13 +19,8 @@ export const PortfolioDetailImage: React.SFC<Props> = (props) => {
 };
 
 const StyledPortfolioDetailImage = styled(PortfolioDetailImage)`
-  position: relative;
-  z-index: 2;
   text-align: center;
-
-  @media(min-width: ${pxToRem(showBGImageMediaQuery)}) {
-    margin-top: ${pxToRem(-150)};
-  }
+  margin-top: ${pxToRem(50)};
 
   img {
     margin: auto;

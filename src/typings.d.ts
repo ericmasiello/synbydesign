@@ -27,6 +27,12 @@ interface PortfolioMeta {
   thumb?: PortfolioThumbMeta;
 }
 
+interface PortfolioImageMeta {
+  isExcludedFromGallery: boolean;
+  isFeaturedImage: boolean;
+  isDisplayedWithoutFilters: boolean;
+}
+
 interface PortfolioImage {
   originalUrl: string;
   largeUrl?: string;
@@ -35,6 +41,7 @@ interface PortfolioImage {
   title?: string;
   description?: string;
   priority?: number;
+  meta?: PortfolioImageMeta;
 }
 
 interface RawPortfolio {

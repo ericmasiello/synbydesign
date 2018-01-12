@@ -7,7 +7,8 @@ import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import Header from '../components/Header';
-import { getImagePaths, getHighestPriorityImage } from '../utils/portfolioImage';
+import PortfolioDetaiBackground from '../components/Portfolio/PortfolioDetaiBackground';
+import { getImagePaths, getGalleryImages, getFeaturedImage } from '../utils/portfolioImage';
 import { pxToRem } from '../styles/utils';
 
 const gridItemSize = 300;
@@ -51,7 +52,7 @@ const StyledPortfolioDetailGallery = styled(PortfolioDetailGallery)`
   grid-template-columns: repeat(${props => `${props.paths.length}, ${100 / props.paths.length}%`});
   grid-auto-flow: dense;
   list-style-type: none;
-  margin: 0;
+  margin: ${pxToRem(480)} 0 0;
   padding: 0;
 `;
 
@@ -75,15 +76,6 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
     this.props.fetchPortfolioDetail(this.props.match.params.id);
   }
 
-  getImagePaths(excludeImage: PortfolioImage) {
-    let images = [excludeImage];
-    // if there are more than 1 image, exclude duplicates
-    if (this.props.portfolio.imagePaths.length > 1) {
-      images = this.props.portfolio.imagePaths.filter(imagePath => imagePath !== excludeImage);
-    }
-    return images;
-  }
-
   getDetailView(paths: PortfolioImage[]) {
     if (paths.length > 1) {
       return <StyledPortfolioDetailGallery paths={getImagePaths(paths)} />;
@@ -97,8 +89,8 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   render() {
-    const featuredImage = getHighestPriorityImage(this.props.portfolio.imagePaths);
-    const galleryImagesPaths = this.getImagePaths(featuredImage);
+    const featuredImage = getFeaturedImage(this.props.portfolio.imagePaths);
+    const galleryImagesPaths = getGalleryImages(this.props.portfolio.imagePaths);
 
     return (
       <div className={this.props.className}>
@@ -106,8 +98,14 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <title>{this.props.portfolio.title}</title>
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
-        <Header imagePath={featuredImage.originalUrl} />
-        {this.getDetailView(galleryImagesPaths)}
+        <PortfolioDetaiBackground
+          imagePath={featuredImage.originalUrl}
+          ignoreFilters={(featuredImage.meta && featuredImage.meta.isDisplayedWithoutFilters)}
+        />
+        <div className="content">
+          <Header />
+          {this.getDetailView(galleryImagesPaths)}
+        </div>
       </div>
     );
   }
@@ -124,5 +122,10 @@ const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
 
 export default {
   loadData,
-  component: connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage),
+  component: styled(connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage))`
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+  `,
 };
