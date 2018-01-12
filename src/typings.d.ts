@@ -28,9 +28,9 @@ interface PortfolioMeta {
 }
 
 interface PortfolioImageMeta {
-  isExcludedFromGallery: boolean;
-  isFeaturedImage: boolean;
-  isDisplayedWithoutFilters: boolean;
+  isExcludedFromGallery?: boolean;
+  isFeaturedImage?: boolean;
+  isDisplayedWithoutFilters?: boolean;
 }
 
 interface PortfolioImage {
