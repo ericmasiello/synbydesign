@@ -18,6 +18,8 @@ export const PortfolioDetailImage: React.SFC<Props> = (props) => {
   );
 };
 
+PortfolioDetailImage.displayName = 'Portfolio.DetailImage';
+
 const StyledPortfolioDetailImage = styled(PortfolioDetailImage)`
   text-align: center;
   margin-top: ${pxToRem(50)};
