@@ -1,6 +1,87 @@
 // tslint:disable max-line-length
 
+// TODO: group petrol flyers
+// TODO: group EXBC promo flyers
+// TODO: group up deep focus website, iphone, and logo
+// TODO: group up EXBC website and logo
+// TODO: Get a better featured image for catherine design
+// TOOD: possibly group up bump n grind flyers
+
 const PortfolioList: RawPortfolio[] = [
+  {
+    title: 'Stencil',
+    description: 'Vistaprint Digital Component Library',
+    featured: true,
+    meta: {
+      stackDesign: false,
+      mixUrl: '',
+      trackList: [],
+      websiteUrl: '',
+      isSVG: false,
+    },
+    category: [
+      'website',
+    ],
+    tags: [
+      'Component Library',
+      'React',
+      'SCSS',
+    ],
+    imagePaths: [{
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-200px.png',
+      title: '',
+      description: '',
+      priority: 1,
+      meta: {
+        isExcludedFromGallery: true,
+        isFeaturedImage: true,
+        isDisplayedWithoutFilters: true,
+      },
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-200px.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-200px.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-200px.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-200px.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-200px.png',
+      title: '',
+      description: '',
+      priority: 0,
+    }],
+  },
   {
     title: 'R.M.R. Software Solutions Logo',
     meta: {
@@ -829,80 +910,6 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'https://s3.amazonaws.com/synbydesign/incognito-700px.jpg',
       mediumUrl: 'https://s3.amazonaws.com/synbydesign/incognito-450px.jpg',
       thumbUrl: 'https://s3.amazonaws.com/synbydesign/incognito-200px.jpg',
-      title: '',
-      description: '',
-      priority: 0,
-    }],
-  },
-  {
-    title: 'Stencil',
-    description: 'Vistaprint Digital Component Library',
-    featured: true,
-    meta: {
-      stackDesign: false,
-      mixUrl: '',
-      trackList: [],
-      websiteUrl: '',
-      isSVG: false,
-    },
-    category: [
-      'website',
-    ],
-    tags: [
-      'Component Library',
-      'React',
-      'SCSS',
-    ],
-    imagePaths: [{
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-original.png',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-700px.png',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-450px.png',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-splash-200px.png',
-      title: '',
-      description: '',
-      priority: 1,
-      meta: {
-        isExcludedFromGallery: true,
-        isFeaturedImage: true,
-        isDisplayedWithoutFilters: true,
-      },
-    }, {
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-original.png',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-700px.png',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-450px.png',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-200px.png',
-      title: '',
-      description: '',
-      priority: 0,
-    }, {
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-original.png',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-700px.png',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-450px.png',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-colors-200px.png',
-      title: '',
-      description: '',
-      priority: 0,
-    }, {
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-original.png',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-700px.png',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-450px.png',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-home-200px.png',
-      title: '',
-      description: '',
-      priority: 0,
-    }, {
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-original.png',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-700px.png',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-450px.png',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-media-cards-200px.png',
-      title: '',
-      description: '',
-      priority: 0,
-    }, {
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-original.png',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-700px.png',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-450px.png',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-package-cards-200px.png',
       title: '',
       description: '',
       priority: 0,
