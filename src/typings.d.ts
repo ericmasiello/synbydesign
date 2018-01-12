@@ -29,12 +29,13 @@ interface PortfolioMeta {
 
 interface FeaturedStyles {
   backgroundPosition?: string;
+  filter?: string;
+  applyGradient?: boolean;
 }
 
 interface PortfolioImageMeta {
   isExcludedFromGallery?: boolean;
   isFeaturedImage?: boolean;
-  isDisplayedWithoutFilters?: boolean;
   featuredStyles?: FeaturedStyles; 
 }
 

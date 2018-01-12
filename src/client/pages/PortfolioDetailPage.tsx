@@ -101,7 +101,6 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
         <PortfolioDetaiBackground
           imagePath={featuredImage.originalUrl}
           featuredStyles={featuredImage.meta && featuredImage.meta.featuredStyles}
-          ignoreFilters={featuredImage.meta && featuredImage.meta.isDisplayedWithoutFilters}
         />
         <div className="content">
           <Header />

@@ -38,7 +38,10 @@ const PortfolioList: RawPortfolio[] = [
       meta: {
         isExcludedFromGallery: true,
         isFeaturedImage: true,
-        isDisplayedWithoutFilters: true,
+        featuredStyles: {
+          filter: 'none',
+          applyGradient: false,
+        },
       },
     }, {
       originalUrl: 'https://s3.amazonaws.com/synbydesign/stencil/stencil-buttons-original.png',
@@ -278,6 +281,9 @@ const PortfolioList: RawPortfolio[] = [
       meta: {
         isExcludedFromGallery: true,
         isFeaturedImage: true,
+        featuredStyles: {
+          filter: 'blur(1px) grayscale(20%) opacity(0.7)',
+        },
       },
     }],
   },
