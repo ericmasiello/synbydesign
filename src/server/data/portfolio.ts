@@ -546,13 +546,28 @@ const PortfolioList: RawPortfolio[] = [
     ],
     tags: [],
     imagePaths: [{
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/exbclogo-original.jpg',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/exbclogo-700px.jpg',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/exbclogo-450px.jpg',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/exbclogo-200px.jpg',
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-200px.jpg',
       title: '',
       description: '',
       priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-sketch-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-sketch-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-sketch-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/exbc/exbc-logo-sketch-200px.jpg',
+      title: '',
+      description: '',
+      priority: 0,
+      meta: {
+        isExcludedFromGallery: true,
+        isFeaturedImage: true,
+        featuredStyles: {
+          backgroundPosition: '50% -374px',
+        },
+      },
     }],
   },
   {
