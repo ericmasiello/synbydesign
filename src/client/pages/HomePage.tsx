@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import { fetchPortfolioItems } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/PortfolioGallery';
@@ -29,6 +30,10 @@ export class HomePage extends React.Component<Props, {}> {
   render() {
     return (
       <div className={this.props.className}>
+        <Helmet>
+          <title>Syn By Design: Eric Masiello's Portfolio</title>
+          <meta property="og:title" content="Syn By Design: Eric Masiello's Portfolio" />
+        </Helmet>
         <Header />
         <Hero />
         <PortfolioGallery
