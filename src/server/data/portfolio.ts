@@ -267,6 +267,18 @@ const PortfolioList: RawPortfolio[] = [
       title: '',
       description: '',
       priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/Just4Heads-color-bg-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/Just4Heads-color-bg-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/Just4Heads-color-bg-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/Just4Heads-color-bg-200px.png',
+      title: '',
+      description: '',
+      priority: 0,
+      meta: {
+        isExcludedFromGallery: true,
+        isFeaturedImage: true,
+      },
     }],
   },
   {
