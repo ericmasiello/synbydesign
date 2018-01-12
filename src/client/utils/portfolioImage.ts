@@ -43,7 +43,7 @@ export const getFeaturedImage = (imagePaths: PortfolioImage[]): PortfolioImage =
     return false;
   });
 
-  if (featuredImagePaths.length > 1) {
+  if (featuredImagePaths.length > 0) {
     return featuredImagePaths[0];
   }
 
