@@ -2,9 +2,7 @@
 
 // TODO: group petrol flyers
 // TODO: group EXBC promo flyers
-// TODO: group up deep focus website, iphone, and logo
 // TODO: group up EXBC website and logo
-// TODO: Get a better featured image for catherine design
 // TOOD: possibly group up bump n grind flyers
 
 const PortfolioList: RawPortfolio[] = [
@@ -657,34 +655,6 @@ const PortfolioList: RawPortfolio[] = [
     }],
   },
   {
-    title: 'Deep Foc.us Mobile',
-    description: 'Deep Focus iPhone comps',
-    meta: {
-      stackDesign: false,
-      mixUrl: '',
-      trackList: [],
-      websiteUrl: '',
-      isSVG: false,
-    },
-    category: [
-      'web',
-    ],
-    tags: [
-      'CSS',
-      'Design',
-      'jQuery Mobile',
-    ],
-    imagePaths: [{
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-iphone-original.jpg',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-iphone-700px.jpg',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-iphone-450px.jpg',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-iphone-200px.jpg',
-      title: '',
-      description: '',
-      priority: 0,
-    }],
-  },
-  {
     title: 'Catherine Anne Design',
     description: 'cannedesign',
     meta: {
@@ -724,7 +694,7 @@ const PortfolioList: RawPortfolio[] = [
   },
   {
     title: 'Deep Foc.us',
-    description: 'Deep Foc.us screen shot',
+    description: 'Deep Foc.us music blog.',
     meta: {
       stackDesign: false,
       mixUrl: '',
@@ -734,6 +704,7 @@ const PortfolioList: RawPortfolio[] = [
     },
     category: [
       'web',
+      'design',
     ],
     tags: [
       'CSS/SCSS',
@@ -742,15 +713,54 @@ const PortfolioList: RawPortfolio[] = [
       'Visual Design',
       'Wordpress Custom Theme',
       'Wordpress Plugin',
+      'Design',
+      'jQuery Mobile',
+      'logo',
     ],
     imagePaths: [{
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus1-original.jpg',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus1-700px.jpg',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus1-450px.jpg',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus1-200px.jpg',
-      title: '',
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-home-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-home-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-home-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-home-200px.jpg',
+      title: 'Deep Foc.us Desktop Design',
       description: '',
       priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-iphone-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-iphone-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-iphone-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-iphone-200px.jpg',
+      title: 'Deep Foc.us Mobile Design',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-with-gradient-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-with-gradient-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-with-gradient-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-with-gradient-200px.jpg',
+      title: 'Deep Foc.us Logo Design with gradient backdrop',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-original.png',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-700px.png',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-450px.png',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-logo-200px.png',
+      title: 'Deep Foc.us Logo Design',
+      description: '',
+      priority: 0,
+    }, {
+      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-gradient-original.jpg',
+      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-gradient-700px.jpg',
+      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-gradient-450px.jpg',
+      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus/deepfocus-gradient-200px.jpg',
+      title: 'Gradient design',
+      description: '',
+      priority: 0,
+      meta: {
+        isFeaturedImage: true,
+        isExcludedFromGallery: true,
+      },
     }],
   },
   {
@@ -895,30 +905,6 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'https://s3.amazonaws.com/synbydesign/sigmaperfgroup-700px.jpg',
       mediumUrl: 'https://s3.amazonaws.com/synbydesign/sigmaperfgroup-450px.jpg',
       thumbUrl: 'https://s3.amazonaws.com/synbydesign/sigmaperfgroup-200px.jpg',
-      title: '',
-      description: '',
-      priority: 0,
-    }],
-  },
-  {
-    title: 'Deep Foc.us Logo',
-    description: 'Deep Foc.us music blog logo',
-    meta: {
-      stackDesign: false,
-      mixUrl: '',
-      trackList: [],
-      websiteUrl: '',
-      isSVG: false,
-    },
-    category: [
-      'logos',
-    ],
-    tags: [],
-    imagePaths: [{
-      originalUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-logo1-original.jpg',
-      largeUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-logo1-700px.jpg',
-      mediumUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-logo1-450px.jpg',
-      thumbUrl: 'https://s3.amazonaws.com/synbydesign/deepfocus-logo1-200px.jpg',
       title: '',
       description: '',
       priority: 0,
