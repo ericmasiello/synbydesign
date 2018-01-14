@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { pxToRem } from '../../styles/utils';
 import { getGalleryImages } from '../../utils/portfolioImage';
 
 interface PortfolioDetailGalleryGridProps {
@@ -33,7 +32,6 @@ interface PortfolioDetailGalleryProps {
 
 export const PortfolioDetailGallery: React.SFC<PortfolioDetailGalleryProps> = (props) => {
   const galleryImagesPaths = getGalleryImages(props.portfolio.imagePaths);
-  const { title, description = '' } = props.portfolio;
   return (
     <article className={props.className}>
       <StyledPortfolioDetailGalleryGrid imageCount={galleryImagesPaths.length}>

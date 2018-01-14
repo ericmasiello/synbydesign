@@ -10,8 +10,7 @@ import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetaiBackground from '../components/Portfolio/PortfolioDetaiBackground';
 import PortfolioDetailGallery from '../components/Portfolio/PortfolioDetailGallery';
 import PortfolioDetailHero from '../components/Portfolio/PortfolioDetailHero';
-import { getImagePaths, getGalleryImages, getBackgroundImage, getHeroImage } from '../utils/portfolioImage';
-import { pxToRem } from '../styles/utils';
+import { getGalleryImages, getBackgroundImage, getHeroImage } from '../utils/portfolioImage';
 
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
