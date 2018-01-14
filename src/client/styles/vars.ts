@@ -23,7 +23,7 @@ export const TYPE_SIZE: TypeMap = {
   t4: [unitToPx(1.5), scaler],
   t3: [unitToPx(2), 1.2],
   t2: [unitToPx(2.5), 1.2],
-  t1: [unitToPx(3), 1.2],
+  t1: [unitToPx(3), 1.1],
   jumbo: [unitToPx(4), 1.1],
 };
 

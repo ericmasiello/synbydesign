@@ -1,15 +1,22 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
-import { pxToRem } from '../../styles/utils';
+import { pxToRem, type } from '../../styles/utils';
 import { PageContainer } from '../../styles/extensions';
+import { TYPE_SIZE } from '../../styles/vars';
 
 const minHeight = 600;
 
 const Title = styled.h1`
+  ${type(TYPE_SIZE.t1)}
   text-transform: uppercase;
+  margin: 0;
 `;
-const Description = styled.div``;
+const Description = styled.div`
+  &:first-line {
+    ${type(TYPE_SIZE.t4)}
+  }
+`;
 
 const Content = PageContainer.extend`
   text-align: center;
