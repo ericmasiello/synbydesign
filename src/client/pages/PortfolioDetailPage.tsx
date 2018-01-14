@@ -7,7 +7,7 @@ import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
 import Header from '../components/Header';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
-import PortfolioDetaiBackground from '../components/Portfolio/PortfolioDetaiBackground';
+import PortfolioDetailBackground from '../components/Portfolio/PortfolioDetailBackground';
 import PortfolioDetailGallery from '../components/Portfolio/PortfolioDetailGallery';
 import PortfolioDetailHero from '../components/Portfolio/PortfolioDetailHero';
 import { getGalleryImages, getBackgroundImage, getHeroImage } from '../utils/portfolioImage';
@@ -53,7 +53,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
         {bgImage && (
-          <PortfolioDetaiBackground
+          <PortfolioDetailBackground
             imagePath={bgImage.originalUrl}
             styles={bgImage.meta && bgImage.meta.backgroundStyles}
           />

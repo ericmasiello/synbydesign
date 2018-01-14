@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import PortfolioDetaiBackground from './PortfolioDetaiBackground';
+import PortfolioDetailBackground from './PortfolioDetailBackground';
 import { pxToRem } from '../../styles/utils';
 import { PageContainer } from '../../styles/extensions';
 
@@ -33,7 +33,7 @@ export const PortfolioDetailHero: React.SFC<Props> = (props) => {
   return (
     <div className={className}>
       <HeroImageContainer>
-        <PortfolioDetaiBackground
+        <PortfolioDetailBackground
           imagePath={imagePath}
           styles={{
             filter: 'none',
