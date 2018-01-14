@@ -89,7 +89,6 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   render() {
-    const featuredImage = getFeaturedImage(this.props.portfolio.imagePaths);
     const galleryImagesPaths = getGalleryImages(this.props.portfolio.imagePaths);
 
     return (
@@ -99,8 +98,8 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
         <PortfolioDetaiBackground
-          imagePath={featuredImage.originalUrl}
-          featuredStyles={featuredImage.meta && featuredImage.meta.featuredStyles}
+          imagePath={bgImage.originalUrl}
+          styles={bgImage.meta && bgImage.meta.backgroundStyles}
         />
         <div className="content">
           <Header />

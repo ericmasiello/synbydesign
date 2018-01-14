@@ -5,12 +5,12 @@ import { pxToRem } from '../../styles/utils';
 interface Props {
   className?: string;
   imagePath?: string;
-  featuredStyles?: FeaturedStyles;
+  styles?: BackgroundStyles;
 }
 
 const height = 600;
 
-const defaultStyles: FeaturedStyles = {
+const defaultStyles: BackgroundStyles = {
   filter: 'blur(1px) grayscale(70%) opacity(0.7)',
   backgroundPosition: '50%',
   applyGradient: true,
@@ -25,14 +25,14 @@ export const PortfolioDetailBackground: React.SFC<Props> = (props) => {
 
 PortfolioDetailBackground.defaultProps = {
   imagePath: 'none',
-  featuredStyles: defaultStyles,
+  styles: defaultStyles,
 };
 
 PortfolioDetailBackground.displayName = 'Portfolio.DetailBackground';
 
 const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
   ${(props) => {
-    const featuredStyles = Object.assign({}, defaultStyles, props.featuredStyles);
+    const styles = Object.assign({}, defaultStyles, props.styles);
     return `
       position: absolute;
       top: 0;
@@ -42,9 +42,9 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
       z-index: 1;
       background-image: url('${props.imagePath}');
       background-size: cover;
-      background-position: ${featuredStyles!.backgroundPosition!};
-      filter: ${featuredStyles!.filter!};
-      ${featuredStyles.applyGradient ? `
+      background-position: ${styles!.backgroundPosition!};
+      filter: ${styles!.filter!};
+      ${styles.applyGradient ? `
         &::after {
           content: '';
           position: absolute;

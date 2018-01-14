@@ -35,9 +35,9 @@ export const getGalleryImages = (imagePaths: PortfolioImage[]): PortfolioImage[]
   });
 };
 
-export const getFeaturedImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
+export const getBackgroundImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
   const featuredImagePaths = imagePaths.filter((path) => {
-    if (path.meta && path.meta.isFeaturedImage) {
+    if (path.meta && path.meta.isBackgroundImage) {
       return true;
     }
     return false;

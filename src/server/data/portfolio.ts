@@ -35,8 +35,8 @@ const PortfolioList: RawPortfolio[] = [
       priority: 1,
       meta: {
         isExcludedFromGallery: true,
-        isFeaturedImage: true,
-        featuredStyles: {
+        isBackgroundImage: true,
+        backgroundStyles: {
           filter: 'none',
           applyGradient: false,
         },
@@ -278,8 +278,8 @@ const PortfolioList: RawPortfolio[] = [
       priority: 0,
       meta: {
         isExcludedFromGallery: true,
-        isFeaturedImage: true,
-        featuredStyles: {
+        isBackgroundImage: true,
+        backgroundStyles: {
           filter: 'blur(1px) grayscale(20%) opacity(0.7)',
         },
       },
@@ -567,8 +567,8 @@ const PortfolioList: RawPortfolio[] = [
       priority: 0,
       meta: {
         isExcludedFromGallery: true,
-        isFeaturedImage: true,
-        featuredStyles: {
+        isBackgroundImage: true,
+        backgroundStyles: {
           backgroundPosition: '50% -374px',
         },
       },
@@ -758,7 +758,7 @@ const PortfolioList: RawPortfolio[] = [
       description: '',
       priority: 0,
       meta: {
-        isFeaturedImage: true,
+        isBackgroundImage: true,
         isExcludedFromGallery: true,
       },
     }],

@@ -27,7 +27,7 @@ interface PortfolioMeta {
   thumb?: PortfolioThumbMeta;
 }
 
-interface FeaturedStyles {
+interface BackgroundStyles {
   backgroundPosition?: string;
   filter?: string;
   applyGradient?: boolean;
@@ -35,8 +35,8 @@ interface FeaturedStyles {
 
 interface PortfolioImageMeta {
   isExcludedFromGallery?: boolean;
-  isFeaturedImage?: boolean;
-  featuredStyles?: FeaturedStyles; 
+  isBackgroundImage?: boolean;
+  backgroundStyles?: BackgroundStyles; 
 }
 
 interface PortfolioImage {
