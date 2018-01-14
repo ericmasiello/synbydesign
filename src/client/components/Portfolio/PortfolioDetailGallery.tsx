@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { getGalleryImages } from '../../utils/portfolioImage';
+import { pageContainer } from '../../styles/extensions';
 
 interface PortfolioDetailGalleryGridProps {
   className?: string;
@@ -48,6 +49,7 @@ export const PortfolioDetailGallery: React.SFC<PortfolioDetailGalleryProps> = (p
 PortfolioDetailGallery.displayName = 'Portfolio.DetailGallery';
 
 const StyledPortfolioDetailGallery = styled(PortfolioDetailGallery)`
+  ${pageContainer}
 `;
 
 export default StyledPortfolioDetailGallery;
