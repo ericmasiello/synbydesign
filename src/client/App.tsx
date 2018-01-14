@@ -2,11 +2,9 @@ import * as React from 'react';
 import { renderRoutes, RouteConfig } from 'react-router-config';
 import { injectGlobal } from 'styled-components';
 import base from './styles/base';
-import helpers from './styles/helpers';
 
 injectGlobal`
   ${base}
-  ${helpers}
 `;
 
 interface Props {
