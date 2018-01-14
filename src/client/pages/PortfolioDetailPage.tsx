@@ -51,10 +51,12 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <title>{this.props.portfolio.title}</title>
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
-        <PortfolioDetaiBackground
-          imagePath={bgImage.originalUrl}
-          styles={bgImage.meta && bgImage.meta.backgroundStyles}
-        />
+        {bgImage && (
+          <PortfolioDetaiBackground
+            imagePath={bgImage.originalUrl}
+            styles={bgImage.meta && bgImage.meta.backgroundStyles}
+          />
+        )}
         <div className="content">
           <Header />
           {this.getDetailView(this.props.portfolio)}

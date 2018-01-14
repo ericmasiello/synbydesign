@@ -33,10 +33,11 @@ interface BackgroundStyles {
   applyGradient?: boolean;
 }
 
+type ImageUsage = 'hero' | 'background' | 'gallery';
+
 interface PortfolioImageMeta {
-  isExcludedFromGallery?: boolean;
-  isBackgroundImage?: boolean;
-  backgroundStyles?: BackgroundStyles; 
+  backgroundStyles?: BackgroundStyles;
+  usage: ImageUsage[];
 }
 
 interface PortfolioImage {

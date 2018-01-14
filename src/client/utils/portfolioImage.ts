@@ -28,36 +28,45 @@ export const getImagePaths = (imagePaths: PortfolioImage[]): string[] => {
 
 export const getGalleryImages = (imagePaths: PortfolioImage[]): PortfolioImage[] => {
   return imagePaths.filter((path) => {
-    if (path.meta && path.meta.isExcludedFromGallery) {
-      return false;
+    if (path.meta && path.meta.usage) {
+      return path.meta.usage.indexOf('gallery') > -1;
     }
+
+    // if usage is not defined, assume it goes in the gallery
     return true;
   });
 };
 
-export const getBackgroundImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
-  const featuredImagePaths = imagePaths.filter((path) => {
-    if (path.meta && path.meta.isBackgroundImage) {
-      return true;
+export const getHeroImage = (imagePaths: PortfolioImage[]): PortfolioImage | undefined => {
+  return imagePaths.filter((path) => {
+    if (path.meta && path.meta.usage) {
+      return path.meta.usage.indexOf('hero') > -1;
     }
     return false;
-  });
-
-  if (featuredImagePaths.length > 0) {
-    return featuredImagePaths[0];
-  }
-
-  return imagePaths[0];
+  })[0];
 };
 
-// export const getHighestPriorityImage = (imagePaths: PortfolioImage[]): PortfolioImage => {
-//   // maybe should sort by priority instead of just looking for priority == 1?
-//   const topPriority = imagePaths.find(path => path.priority === 1);
+export const getBackgroundImage = (imagePaths: PortfolioImage[]): PortfolioImage | undefined => {
+  const bgImagePath = imagePaths.filter((path) => {
+    if (path.meta && path.meta.usage) {
+      return path.meta.usage.indexOf('background') > -1;
+    }
+    return false;
+  })[0];
 
-//   const path = topPriority || imagePaths[0];
+  if (bgImagePath) {
+    return bgImagePath;
+  }
 
-//   return path;
-// };
+  // If a bg image was not defined and there exists a hero
+  // image, return undefined
+  if (getHeroImage(imagePaths)) {
+    return undefined;
+  }
+
+  // Default behavior is use the first image
+  return imagePaths[0];
+};
 
 interface Props {
   meta?: {
