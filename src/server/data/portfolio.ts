@@ -21,6 +21,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: 'https://websdev.github.io/stencil/',
       isSVG: false,
+      showTitle: false,
     },
     category: [
       'development',

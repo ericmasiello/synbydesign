@@ -65,6 +65,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
               imagePath={heroImage.originalUrl}
               title={this.props.portfolio.title}
               description={this.props.portfolio.description}
+              hideTitle={this.props.portfolio.meta && !this.props.portfolio.meta.showTitle}
             />
           )}
           {this.getDetailView(this.props.portfolio)}

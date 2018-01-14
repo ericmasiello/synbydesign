@@ -23,6 +23,7 @@ interface PortfolioMeta {
   websiteUrl?: string;
   isSVG: boolean;
   thumb?: PortfolioThumbMeta;
+  showTitle?: boolean;
 }
 
 interface BackgroundStyles {

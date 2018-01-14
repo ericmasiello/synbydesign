@@ -2,23 +2,37 @@ import * as React from 'react';
 import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
 import { pxToRem, type } from '../../styles/utils';
-import { PageContainer } from '../../styles/extensions';
+import { pageContainer, visuallyHidden } from '../../styles/extensions';
 import { TYPE_SIZE } from '../../styles/vars';
 
 const minHeight = 600;
 
-const Title = styled.h1`
+interface TitleProps {
+  className?: string;
+  hide?: boolean;
+}
+
+const Title: React.SFC<TitleProps> = ({ className, children, hide, ...rest }) => (
+  <h1 className={className} hidden={hide} {...rest}>
+    {children}
+  </h1>
+);
+
+const StyledTitle = styled(Title)`
   ${type(TYPE_SIZE.t1)}
   text-transform: uppercase;
   margin: 0;
+  ${props => props.hide ? visuallyHidden : ''}
 `;
+
 const Description = styled.div`
   &:first-line {
     ${type(TYPE_SIZE.t4)}
   }
 `;
 
-const Content = PageContainer.extend`
+const Content = styled.div`
+  ${pageContainer}
   text-align: center;
   margin-bottom: ${pxToRem(50)};
 `;
@@ -33,12 +47,13 @@ interface Props {
   imagePath: string;
   title: string;
   description?: string;
+  hideTitle?: boolean;
 }
 
 export const PortfolioDetailHero: React.SFC<Props> = (props) => {
-  const { title, className, imagePath, description = '' } = props;
+  const { title, className, imagePath, description = '', hideTitle, ...rest } = props;
   return (
-    <div className={className}>
+    <div className={className} {...rest}>
       <HeroImageContainer>
         <PortfolioDetailBackground
           imagePath={imagePath}
@@ -49,7 +64,7 @@ export const PortfolioDetailHero: React.SFC<Props> = (props) => {
         />
       </HeroImageContainer>
       <Content>
-        <Title>{title}</Title>
+        <StyledTitle hide={hideTitle}>{title}</StyledTitle>
         <Description dangerouslySetInnerHTML={{ __html: description }} />
       </Content>
     </div>
