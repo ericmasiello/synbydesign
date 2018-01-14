@@ -10,13 +10,18 @@ const PortfolioList: RawPortfolio[] = [
     title: 'Stencil',
     description: `<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
     Namely, it services our product pages by exposing commonly used UI assets prebaked, reusable, React components.
-    Stencil was built in close collaboration with the design team within Vistaprint Digital and its usage has been widely adopted.</p>`,
+    Stencil was built in close collaboration with the design team within Vistaprint Digital and its usage has been widely adopted.</p>
+    <p>While building Stencil I served as UI architect and primary contributor. My experience with building component libraries
+    informed much of the CSS design. We follow BEM with a strong emphasis on shallow selectors. This design is critical for scaling CSS.
+    We encapsulated each of these UI components into React components that can be easily imported and customized by other developers.
+    </p>
+    `,
     featured: true,
     meta: {
       stackDesign: false,
       mixUrl: '',
       trackList: [],
-      websiteUrl: '',
+      websiteUrl: 'https://websdev.github.io/stencil/',
       isSVG: false,
     },
     category: [
