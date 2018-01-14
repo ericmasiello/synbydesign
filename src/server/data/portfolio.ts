@@ -8,7 +8,9 @@
 const PortfolioList: RawPortfolio[] = [
   {
     title: 'Stencil',
-    description: 'Vistaprint Digital Component Library',
+    description: `<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
+    Namely, it services our product pages by exposing commonly used UI assets prebaked, reusable, React components.
+    Stencil was built in close collaboration with the design team within Vistaprint Digital and its usage has been widely adopted.</p>`,
     featured: true,
     meta: {
       stackDesign: false,
@@ -18,7 +20,7 @@ const PortfolioList: RawPortfolio[] = [
       isSVG: false,
     },
     category: [
-      'website',
+      'development',
     ],
     tags: [
       'Component Library',
@@ -30,7 +32,7 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-700px.png',
       mediumUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-450px.png',
       thumbUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-200px.png',
-      title: '',
+      title: 'Stencil Splash Screen and Logo',
       description: '',
       priority: 1,
       meta: {
@@ -46,7 +48,7 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-700px.png',
       mediumUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-450px.png',
       thumbUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-200px.png',
-      title: '',
+      title: 'Stencil Button Documentation',
       description: '',
       priority: 0,
     }, {
@@ -54,7 +56,7 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-700px.png',
       mediumUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-450px.png',
       thumbUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-200px.png',
-      title: '',
+      title: 'Stencil Color Palette Documentation',
       description: '',
       priority: 0,
     }, {
@@ -62,7 +64,7 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-700px.png',
       mediumUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-450px.png',
       thumbUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-200px.png',
-      title: '',
+      title: 'Stencil Documentation Home Page',
       description: '',
       priority: 0,
     }, {
@@ -70,7 +72,7 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-700px.png',
       mediumUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-450px.png',
       thumbUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-200px.png',
-      title: '',
+      title: 'Stencil Media Cards Documentation',
       description: '',
       priority: 0,
     }, {
@@ -78,7 +80,7 @@ const PortfolioList: RawPortfolio[] = [
       largeUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-700px.png',
       mediumUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-450px.png',
       thumbUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-200px.png',
-      title: '',
+      title: 'Stencil Package Cards Documentation',
       description: '',
       priority: 0,
     }],
