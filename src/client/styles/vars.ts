@@ -13,7 +13,17 @@ export const COLORS = {
   logo: '#3b3b3b',
 };
 
+const scaler = 1.414;
+
+const unitToPx = (unit: number): number => unit * 16;
+
 export const TYPE_SIZE: TypeMap = {
-  jumbo: [60, 1.1],
+  small: [unitToPx(0.75), scaler],
+  base: [unitToPx(1), scaler],
+  t4: [unitToPx(1.5), scaler],
+  t3: [unitToPx(2), 1.2],
+  t2: [unitToPx(2.5), 1.2],
+  t1: [unitToPx(3), 1.2],
+  jumbo: [unitToPx(4), 1.1],
 };
 
