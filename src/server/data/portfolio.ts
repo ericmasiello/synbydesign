@@ -19,8 +19,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: 'https://websdev.github.io/stencil/',
       isSVG: false,
     },
@@ -89,8 +87,6 @@ const PortfolioList: RawPortfolio[] = [
     title: 'R.M.R. Software Solutions Logo',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: true,
     },
@@ -149,8 +145,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -173,8 +167,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'EXBC @ BNG (Posers) web promo',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -197,8 +189,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Illustration and sticker for Deinfamous',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -222,8 +212,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: 'http://projects.synbydesign.com/anarchostar/',
       isSVG: false,
     },
@@ -253,8 +241,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -291,8 +277,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'petrol-vivek',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -315,8 +299,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'EXBC Web Promo',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -340,8 +322,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -364,8 +344,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Petrol Goth-Trad flyer',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -389,8 +367,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -413,8 +389,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'EXBC Takeover at Sonic Butter flyer',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -438,8 +412,6 @@ const PortfolioList: RawPortfolio[] = [
     featured: true,
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
       thumb: {
@@ -465,8 +437,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Petrol General Flyer',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -489,8 +459,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Petrol flyer',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -513,8 +481,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'IllEffect/Erictronica business cards',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -537,8 +503,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'EXBC logo',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
       thumb: {
@@ -579,8 +543,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'EXBC vs. Dirtbox Radio flyer',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -603,8 +565,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'thnkdfrnt',
     meta: {
       stackDesign: true,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -635,8 +595,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Chocolatemilk Logo',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -659,8 +617,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'cannedesign',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -697,8 +653,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Deep Foc.us music blog.',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -767,8 +721,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Sage Dragon screen shot',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: 'http://projects.synbydesign.com/sagedragon/',
       isSVG: false,
     },
@@ -813,8 +765,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Eighty Eight DC',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: 'http://www.eightyeightdc.com/',
       isSVG: false,
     },
@@ -857,8 +807,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'exbc',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -885,8 +833,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'sigmaperfgroup',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },
@@ -914,8 +860,6 @@ const PortfolioList: RawPortfolio[] = [
     description: 'Logo for Incognito electronic events and production service',
     meta: {
       stackDesign: false,
-      mixUrl: '',
-      trackList: [],
       websiteUrl: '',
       isSVG: false,
     },

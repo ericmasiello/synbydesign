@@ -20,8 +20,6 @@ interface PortfolioThumbMeta {
 
 interface PortfolioMeta {
   stackDesign?: boolean;
-  mixUrl?: string;
-  trackList?: string[];
   websiteUrl?: string;
   isSVG: boolean;
   thumb?: PortfolioThumbMeta;
