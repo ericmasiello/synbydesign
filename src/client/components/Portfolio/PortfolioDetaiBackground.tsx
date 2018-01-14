@@ -4,7 +4,7 @@ import { pxToRem } from '../../styles/utils';
 
 interface Props {
   className?: string;
-  imagePath?: string;
+  imagePath: string;
   styles?: BackgroundStyles;
 }
 
@@ -16,15 +16,11 @@ const defaultStyles: BackgroundStyles = {
   applyGradient: true,
 };
 
-export const PortfolioDetailBackground: React.SFC<Props> = (props) => {
-  if (props.imagePath) {
-    return <div className={props.className} />;
-  }
-  return null;
-};
+export const PortfolioDetailBackground: React.SFC<Props> = props => (
+  <div className={props.className} />
+);
 
 PortfolioDetailBackground.defaultProps = {
-  imagePath: 'none',
   styles: defaultStyles,
 };
 

@@ -9,7 +9,8 @@ import Header from '../components/Header';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetaiBackground from '../components/Portfolio/PortfolioDetaiBackground';
 import PortfolioDetailGallery from '../components/Portfolio/PortfolioDetailGallery';
-import { getImagePaths, getGalleryImages, getBackgroundImage } from '../utils/portfolioImage';
+import PortfolioDetailHero from '../components/Portfolio/PortfolioDetailHero';
+import { getImagePaths, getGalleryImages, getBackgroundImage, getHeroImage } from '../utils/portfolioImage';
 import { pxToRem } from '../styles/utils';
 
 interface Props {
@@ -44,6 +45,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
 
   render() {
     const bgImage = getBackgroundImage(this.props.portfolio.imagePaths);
+    const heroImage = getHeroImage(this.props.portfolio.imagePaths);
 
     return (
       <div className={this.props.className}>
@@ -59,6 +61,13 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
         )}
         <div className="content">
           <Header />
+          {heroImage && (
+            <PortfolioDetailHero
+              imagePath={heroImage.originalUrl}
+              title={this.props.portfolio.title}
+              description={this.props.portfolio.description}
+            />
+          )}
           {this.getDetailView(this.props.portfolio)}
         </div>
       </div>

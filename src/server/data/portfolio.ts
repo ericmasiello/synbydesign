@@ -37,10 +37,6 @@ const PortfolioList: RawPortfolio[] = [
       priority: 1,
       meta: {
         usage: ['hero'],
-        backgroundStyles: {
-          filter: 'none',
-          applyGradient: false,
-        },
       },
     }, {
       originalUrl: 'http://d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-original.png',
