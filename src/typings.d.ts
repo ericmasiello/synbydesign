@@ -19,7 +19,7 @@ interface PortfolioThumbMeta {
 }
 
 interface DetailMeta {
-  grid?: string[],
+  grid?: string[];
 }
 
 interface PortfolioMeta {

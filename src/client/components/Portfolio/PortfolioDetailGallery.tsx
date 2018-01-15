@@ -42,16 +42,6 @@ const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
   grid-gap: ${pxToRem(gapSize)};
 `;
 
-const getGalleryImageUrlByTotalCount = (totalGalleryItems: number) =>
-  (imagePath: PortfolioImage): string => {
-    if (totalGalleryItems > 2 && imagePath.mediumUrl) {
-      return imagePath.mediumUrl;
-    }
-
-    return imagePath.originalUrl;
-  };
-
-
 const PortfolioDetailGalleryGridItem = styled.li`
   img {
     width: 100%;
@@ -66,7 +56,6 @@ interface PortfolioDetailGalleryProps {
 
 export const PortfolioDetailGallery: React.SFC<PortfolioDetailGalleryProps> = (props) => {
   const galleryImagesPaths = getGalleryImages(props.portfolio.imagePaths);
-  const getGalleryImage = getGalleryImageUrlByTotalCount(galleryImagesPaths.length);
   const meta = props.portfolio.meta;
   return (
     <article className={props.className}>
