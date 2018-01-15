@@ -14,6 +14,7 @@ const defaultStyles: BackgroundStyles = {
   filter: 'blur(1px) grayscale(70%) opacity(0.7)',
   backgroundPosition: '50%',
   applyGradient: true,
+  size: 'cover',
 };
 
 export const PortfolioDetailBackground: React.SFC<Props> = props => (
@@ -37,7 +38,7 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
       height: ${pxToRem(height)};
       z-index: 1;
       background-image: url('${props.imagePath}');
-      background-size: cover;
+      background-size: ${styles!.size};
       background-position: ${styles!.backgroundPosition!};
       filter: ${styles!.filter!};
       ${styles.applyGradient ? `

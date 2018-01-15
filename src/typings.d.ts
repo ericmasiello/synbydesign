@@ -30,6 +30,7 @@ interface BackgroundStyles {
   backgroundPosition?: string;
   filter?: string;
   applyGradient?: boolean;
+  size?: string;
 }
 
 type ImageUsage = 'hero' | 'background' | 'gallery';

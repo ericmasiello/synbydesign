@@ -61,6 +61,7 @@ export const PortfolioDetailHero: React.SFC<Props> = (props) => {
           styles={{
             filter: 'none',
             applyGradient: false,
+            size: '80%',
           }}
         />
       </HeroImageContainer>
