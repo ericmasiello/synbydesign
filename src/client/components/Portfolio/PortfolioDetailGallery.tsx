@@ -15,14 +15,22 @@ const PortfolioDetailGalleryGrid: React.SFC<PortfolioDetailGalleryGridProps> = p
 
 PortfolioDetailGalleryGrid.displayName = 'Portfolio.DetailGallery.Grid';
 
+const gapSize = pxToRem(20);
+
+const calculateGridColumnSize = (total: number, gap: string = '0'): string => {
+  const size = 100 / total;
+  return `calc(${size}% - ${gap})`;
+};
+
 const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
   display: grid;
-  grid-template-columns: repeat(${props => `${props.imageCount}, ${100 / props.imageCount}%`});
+  grid-template-columns: repeat(${props =>
+    `${props.imageCount}, ${calculateGridColumnSize(props.imageCount, gapSize)}`});
   grid-auto-flow: dense;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  grid-gap: ${pxToRem(20)};
+  grid-gap: ${gapSize};
 `;
 
 const getGalleryImageUrlByTotalCount = (totalGalleryItems: number) =>
@@ -67,7 +75,7 @@ PortfolioDetailGallery.displayName = 'Portfolio.DetailGallery';
 
 const StyledPortfolioDetailGallery = styled(PortfolioDetailGallery)`
   ${pageContainer}
-  margin: ${pxToRem(300)} auto 0;
+  margin: auto;
 `;
 
 export default StyledPortfolioDetailGallery;

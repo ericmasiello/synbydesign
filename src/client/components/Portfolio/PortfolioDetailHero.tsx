@@ -34,7 +34,7 @@ const Description = styled.div`
 const Content = styled.div`
   ${pageContainer}
   text-align: center;
-  margin-bottom: ${pxToRem(50)};
+  margin: 0 auto ${pxToRem(50)};
 `;
 
 const HeroImageContainer = styled.div`
