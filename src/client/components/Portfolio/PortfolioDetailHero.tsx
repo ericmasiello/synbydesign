@@ -27,13 +27,14 @@ const StyledTitle = styled(Title)`
 
 const Description = styled.div`
   &:first-line {
-    ${type(TYPE_SIZE.t4)}
+    ${type(TYPE_SIZE.t3)}
   }
 `;
 
 const Content = styled.div`
   ${pageContainer}
-  text-align: center;
+  ${type(TYPE_SIZE.t4)}
+  max-width: 65em;
   margin: 0 auto ${pxToRem(50)};
 `;
 
