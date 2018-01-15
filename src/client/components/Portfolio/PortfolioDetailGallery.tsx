@@ -17,15 +17,9 @@ PortfolioDetailGalleryGrid.displayName = 'Portfolio.DetailGallery.Grid';
 
 const gapSize = pxToRem(20);
 
-const calculateGridColumnSize = (total: number, gap: string = '0'): string => {
-  const size = 100 / total;
-  return `calc(${size}% - ${gap})`;
-};
-
 const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
   display: grid;
-  grid-template-columns: repeat(${props =>
-    `${props.imageCount}, ${calculateGridColumnSize(props.imageCount, gapSize)}`});
+  grid-template-columns: repeat(2, calc(50% - ${gapSize}));
   grid-auto-flow: dense;
   list-style-type: none;
   margin: 0;
@@ -63,7 +57,12 @@ export const PortfolioDetailGallery: React.SFC<PortfolioDetailGalleryProps> = (p
       <StyledPortfolioDetailGalleryGrid imageCount={galleryImagesPaths.length}>
         {galleryImagesPaths.map(path => (
           <PortfolioDetailGalleryGridItem key={path.originalUrl}>
-            <img src={getGalleryImage(path)} alt={path.description || path.title} />
+            <picture>
+              <source srcSet={path.originalUrl} media={`(min-width: ${pxToRem(700)})`} />
+              <source srcSet={path.largeUrl} media={`(min-width: ${pxToRem(450)})`} />
+              <source srcSet={path.mediumUrl} media={`(min-width: ${pxToRem(200)})`} />
+              <img src={path.thumbUrl} alt={path.description || path.title} />
+            </picture>
           </PortfolioDetailGalleryGridItem>
         ))}
       </StyledPortfolioDetailGalleryGrid>
