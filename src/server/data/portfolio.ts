@@ -620,6 +620,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: '',
       isSVG: false,
+      detail: {
+        grid: ['70%', '30%'],
+      },
     },
     category: [
       'web',

@@ -18,12 +18,17 @@ interface PortfolioThumbMeta {
   position?: string;
 }
 
+interface DetailMeta {
+  grid?: string[],
+}
+
 interface PortfolioMeta {
   stackDesign?: boolean;
   websiteUrl?: string;
   isSVG: boolean;
   thumb?: PortfolioThumbMeta;
   showTitle?: boolean;
+  detail?: DetailMeta;
 }
 
 interface BackgroundStyles {
