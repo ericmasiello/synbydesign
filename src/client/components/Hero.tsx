@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Muted from './Muted';
+import Highlighted from './Highlighted';
 import { pxToRem, type, headerFont } from '../styles/utils';
 import { maxWidth, horizontalPadding, TYPE_SIZE } from '../styles/vars';
 
@@ -25,7 +26,7 @@ const Hero: React.SFC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <HeroCopy>
-        <Muted>Freelance</Muted> Developer, Teacher &amp; Consultant
+        <Muted>Freelance</Muted> <Highlighted>Developer</Highlighted>, Teacher &amp; Consultant
       </HeroCopy>
     </div>
   );
