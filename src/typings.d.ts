@@ -29,6 +29,7 @@ interface PortfolioMeta {
   thumb?: PortfolioThumbMeta;
   showTitle?: boolean;
   detail?: DetailMeta;
+  highlightColor?: string;
 }
 
 interface BackgroundStyles {

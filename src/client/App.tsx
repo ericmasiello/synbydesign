@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { renderRoutes, RouteConfig } from 'react-router-config';
 import styled, { injectGlobal } from 'styled-components';
+import { connect } from 'react-redux';
 import * as tinyColor from 'tinycolor2';
 import base from './styles/base';
 import { COLORS } from './styles/vars';
@@ -15,21 +16,41 @@ interface Props {
     routes: RouteConfig[];
   };
   className?: string;
+  portfolio?: Portfolio;
+  location: {
+    pathname: string;
+  };
 }
 
-const App: React.SFC<Props> = ({ route, className  }) => {
-  return (
-    <div className={className}>
-      {renderRoutes(route.routes)}
-    </div>
-  );
-};
+const App: React.SFC<Props> = ({ route, className  }) => (
+  <div className={className}>
+    {renderRoutes(route.routes)}
+  </div>
+);
+
+function mapStateToProps(state: AppState, props: Props) {
+  const match = /\/portfolio\/(\S+)/g.exec(props.location.pathname);
+  if (match) {
+    const [ignore, id] = match;
+    return {
+      portfolio: state.portfolioItems.find(item => item.id === id),
+    };
+  }
+
+  return {};
+}
 
 export default {
-  component: styled(App)`
-    border: 1.8vmin solid ${tinyColor(COLORS.highlight).setAlpha(0.8).toRgbString()};
+  component: connect(mapStateToProps)(styled(App)`
+    ${({ portfolio }) => {
+      let color = tinyColor(COLORS.highlight).setAlpha(0.8).toRgbString();
+      if (portfolio && portfolio.meta && portfolio.meta.highlightColor) {
+        color = portfolio.meta.highlightColor;
+      }
+      return `border: 1.8vmin solid ${color};`;
+    }}
     padding-top: ${pxToRem(30)};
     padding-bottom: ${pxToRem(30)};
     min-height: 100vh;
-  `,
+  `),
 };
