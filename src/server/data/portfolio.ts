@@ -172,7 +172,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
-      highlightColor: 'rgba(198, 141, 102, 0.8)',
+      highlightColor: 'rgba(198, 141, 102, 0.5)',
     },
     category: [
       'flyers',
@@ -330,7 +330,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
-      highlightColor: 'rgba(235, 193, 7, 0.8)',
+      highlightColor: 'rgba(235, 193, 7, 0.6)',
     },
     category: [
       'flyers',
