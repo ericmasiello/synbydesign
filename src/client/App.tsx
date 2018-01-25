@@ -51,5 +51,6 @@ export default {
     }}
     padding-bottom: ${pxToRem(30)};
     min-height: 100vh;
+    transition: border-color 1s;
   `),
 };

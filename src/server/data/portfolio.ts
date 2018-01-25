@@ -149,6 +149,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      highlightColor: 'rgba(142, 131, 232, 0.8)',
     },
     category: [
       'flyers',
@@ -171,6 +172,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      highlightColor: 'rgba(198, 141, 102, 0.8)',
     },
     category: [
       'flyers',
@@ -216,6 +218,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: 'http://projects.synbydesign.com/anarchostar/',
       isSVG: false,
+      highlightColor: 'rgba(231, 26, 33, 0.8)',
     },
     category: [
       'web',
@@ -245,6 +248,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      highlightColor: 'rgba(26, 189, 205, 0.8)',
     },
     category: [
       'flyers',
@@ -326,6 +330,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      highlightColor: 'rgba(235, 193, 7, 0.8)',
     },
     category: [
       'flyers',
