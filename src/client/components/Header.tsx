@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import Nav from './Nav';
 import HeaderContent from './HeaderContent';
+import { headerSpacing } from '../styles/vars';
 
 interface Props {
   className?: string;
@@ -28,4 +29,6 @@ Header.displayName = 'Header';
 
 export default styled(Header)`
   background-color: rgba(255, 255, 255, 0.90);
+  margin-top: ${headerSpacing};
+  margin-bottom: ${headerSpacing};
 `;

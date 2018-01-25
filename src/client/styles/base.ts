@@ -1,5 +1,5 @@
 import { baseFont, headerFont, pxToRem } from './utils';
-import { COLORS } from './vars';
+import { COLORS, bodyWeight } from './vars';
 
 /* tslint:disable max-line-length */
 export default `
@@ -23,6 +23,7 @@ export default `
     margin: 0;
     font-size: ${pxToRem(14)};
     line-height: 1.35;
+    font-weight: ${bodyWeight};
 
     @media only screen and (min-width: 992px) {
       font-size: ${pxToRem(15)};

@@ -49,7 +49,6 @@ export default {
       }
       return `border: ${pageBorderWidth} solid ${color};`;
     }}
-    padding-top: ${pxToRem(30)};
     padding-bottom: ${pxToRem(30)};
     min-height: 100vh;
   `),

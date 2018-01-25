@@ -16,6 +16,8 @@ export const Logo: React.SFC<Props> = ({ className }) => (
 );
 
 export default styled(Logo)`
+  display: flex;
+
   svg {
     fill: ${COLORS.logo};
     stroke: ${COLORS.logo};
