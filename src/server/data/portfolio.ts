@@ -249,6 +249,7 @@ const PortfolioList: RawPortfolio[] = [
       websiteUrl: '',
       isSVG: false,
       highlightColor: 'rgba(26, 189, 205, 0.8)',
+      // TODO: Add dynamic page bg color: #FCFBFC
     },
     category: [
       'flyers',
