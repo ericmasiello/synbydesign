@@ -4,6 +4,7 @@ const highlight = '#c90044';
 
 export const maxWidth = 1600;
 export const horizontalPadding = 40;
+export const pageBorderWidth = '1.8vmin';
 
 export const COLORS = {
   base: '#424141',

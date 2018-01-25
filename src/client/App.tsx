@@ -4,7 +4,7 @@ import styled, { injectGlobal } from 'styled-components';
 import { connect } from 'react-redux';
 import * as tinyColor from 'tinycolor2';
 import base from './styles/base';
-import { COLORS } from './styles/vars';
+import { COLORS, pageBorderWidth } from './styles/vars';
 import { pxToRem } from './styles/utils';
 
 injectGlobal`
@@ -47,7 +47,7 @@ export default {
       if (portfolio && portfolio.meta && portfolio.meta.highlightColor) {
         color = portfolio.meta.highlightColor;
       }
-      return `border: 1.8vmin solid ${color};`;
+      return `border: ${pageBorderWidth} solid ${color};`;
     }}
     padding-top: ${pxToRem(30)};
     padding-bottom: ${pxToRem(30)};

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { pxToRem } from '../../styles/utils';
+import { pageBorderWidth } from '../../styles/vars';
 
 interface Props {
   className?: string;
@@ -33,8 +34,8 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
     return `
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
+      left: -${pageBorderWidth};
+      right: -${pageBorderWidth};
       height: ${pxToRem(height)};
       z-index: 1;
       background-image: url('${props.imagePath}');
