@@ -87,6 +87,8 @@ const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
 export default {
   loadData,
   component: styled(connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage))`
+    position: relative;
+
     .content {
       position: relative;
       z-index: 2;
