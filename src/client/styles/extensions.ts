@@ -17,3 +17,8 @@ export const visuallyHidden = `
   width: 1px!important;
   overflow: hidden;
 `;
+
+export const borderedImage = `
+  border: ${pxToRem(20)} solid #fff;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
+`;

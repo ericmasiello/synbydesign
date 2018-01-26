@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { getGalleryImages } from '../../utils/portfolioImage';
-import { pageContainer } from '../../styles/extensions';
+import { pageContainer, borderedImage } from '../../styles/extensions';
 import { pxToRem } from '../../styles/utils';
 
 interface PortfolioDetailGalleryGridProps {
@@ -44,6 +44,7 @@ const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
 
 const PortfolioDetailGalleryGridItem = styled.li`
   img {
+    ${borderedImage}
     width: 100%;
   }
 `;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { pxToRem } from '../../styles/utils';
+import { borderedImage } from '../../styles/extensions';
 
 interface Props {
   className?: string;
@@ -25,10 +26,9 @@ const StyledPortfolioDetailImage = styled(PortfolioDetailImage)`
   margin-top: ${pxToRem(50)};
 
   img {
+    ${borderedImage}
     margin: auto;
     display: inline-block;
-    border: ${pxToRem(20)} solid #fff;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.25));
     max-width: 80%;
   }
 `;
