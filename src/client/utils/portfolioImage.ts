@@ -58,12 +58,6 @@ export const getBackgroundImage = (imagePaths: PortfolioImage[]): PortfolioImage
     return bgImagePath;
   }
 
-  // If a bg image was not defined and there exists a hero
-  // image, return undefined
-  if (getHeroImage(imagePaths)) {
-    return undefined;
-  }
-
   // Default behavior is use the first image
   return imagePaths[0];
 };

@@ -43,8 +43,8 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   render() {
-    const bgImage = getBackgroundImage(this.props.portfolio.imagePaths);
     const heroImage = getHeroImage(this.props.portfolio.imagePaths);
+    const bgImage = getBackgroundImage(this.props.portfolio.imagePaths);
 
     return (
       <div className={this.props.className}>
@@ -52,7 +52,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <title>{this.props.portfolio.title}</title>
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
-        {bgImage && (
+        {!heroImage && bgImage && (
           <PortfolioDetailBackground
             imagePath={bgImage.originalUrl}
             styles={bgImage.meta && bgImage.meta.backgroundStyles}
