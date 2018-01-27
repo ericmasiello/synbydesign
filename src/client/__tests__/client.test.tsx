@@ -1,10 +1,19 @@
 import * as ReactDOM from 'react-dom';
-import { client } from '../client';
 jest.mock('react-dom');
 
+let root: Element;
+
+beforeEach(() => {
+  root = document.createElement('div');
+  root.id = 'root';
+  document.querySelector('body')!.appendChild(root);
+});
+
+afterEach(() => {
+  document.querySelector('body')!.removeChild(root);
+});
+
 test('should call hydrate', () => {
-  expect(ReactDOM.hydrate).toBeCalledWith(
-    client,
-    document.querySelector('#root'),
-  );
+  require('../client');
+  expect(ReactDOM.hydrate).toBeCalled();
 });
