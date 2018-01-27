@@ -31,6 +31,7 @@ const App: React.SFC<Props> = ({ route, className  }) => (
 function mapStateToProps(state: AppState, props: Props) {
   const match = /\/portfolio\/(\S+)/g.exec(props.location.pathname);
   if (match) {
+    // tslint:disable-next-line no-unused-variable
     const [ignore, id] = match;
     return {
       portfolio: state.portfolioItems.find(item => item.id === id),
