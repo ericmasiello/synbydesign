@@ -4,6 +4,95 @@ exports[`list it should return default paginated data when no filters are applie
 Array [
   Object {
     "category": Array [
+      "development",
+    ],
+    "description": "<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
+    Namely, it services our product pages by exposing commonly used UI assets prebaked, reusable, React components.
+    Stencil was built in close collaboration with the design team within Vistaprint Digital and its usage has been widely adopted.</p>
+    <p>While building Stencil I served as UI architect and primary contributor. My experience with building component libraries
+    informed much of the CSS design. We follow BEM with a strong emphasis on shallow selectors. This design is critical for scaling CSS.
+    We encapsulated each of these UI components into React components that can be easily imported and customized by other developers.
+    </p>
+    ",
+    "featured": true,
+    "id": "stencil",
+    "imagePaths": Array [
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-450px.png",
+        "meta": Object {
+          "usage": Array [
+            "hero",
+          ],
+        },
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-original.png",
+        "priority": 1,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-200px.png",
+        "title": "Stencil Splash Screen and Logo",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-200px.png",
+        "title": "Stencil Button Documentation",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-200px.png",
+        "title": "Stencil Color Palette Documentation",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-200px.png",
+        "title": "Stencil Documentation Home Page",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-200px.png",
+        "title": "Stencil Media Cards Documentation",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-200px.png",
+        "title": "Stencil Package Cards Documentation",
+      },
+    ],
+    "meta": Object {
+      "highlightColor": "rgba(60, 61, 66, 0.7)",
+      "isSVG": false,
+      "showTitle": false,
+      "stackDesign": false,
+      "websiteUrl": "https://websdev.github.io/stencil/",
+    },
+    "tags": Array [
+      "Component Library",
+      "React",
+      "SCSS",
+    ],
+    "title": "Stencil",
+  },
+  Object {
+    "category": Array [
       "logos",
     ],
     "id": "r-m-r-software-solutions-logo",
@@ -17,9 +106,7 @@ Array [
     ],
     "meta": Object {
       "isSVG": true,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "svgSource": "
@@ -203,18 +290,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(142, 131, 232, 0.8)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -229,18 +316,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(198, 141, 102, 0.5)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -255,18 +342,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -282,19 +368,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "largeUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-700px.jpg",
-        "mediumUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-450px.jpg",
-        "originalUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-original.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-original.jpg",
         "priority": 0,
-        "thumbUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-200px.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(231, 26, 33, 0.8)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
     },
     "tags": Array [
@@ -316,18 +401,35 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-200px.png",
+        "title": "",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-450px.png",
+        "meta": Object {
+          "backgroundStyles": Object {
+            "filter": "blur(1px) grayscale(20%) opacity(0.7)",
+          },
+          "usage": Array [
+            "background",
+          ],
+        },
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(26, 189, 205, 0.8)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -342,18 +444,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -368,18 +469,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -395,18 +495,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(235, 193, 7, 0.6)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -421,18 +521,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -448,18 +547,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deep-focus-sonic-butter-takeover-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -474,18 +572,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-sonic-butter-takeover-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -501,22 +598,20 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "largeUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-670x1024.jpg",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-196x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/expansion-barcast-2012-06-22-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/expansion-barcast-2012-06-22-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/expansion-barcast-2012-06-22-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/expansion-barcast-2012-06-22-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/expansion-barcast-2012-06-22-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
       "thumb": Object {
         "size": "contain",
       },
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -531,19 +626,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "largeUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-1024x709.jpg",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-300x208.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-general-flier-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -558,19 +651,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "largeUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-1024x1024.jpg",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -585,18 +676,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card-300x247.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-business-card-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-business-card-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-business-card-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-business-card-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-business-card-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -611,22 +701,38 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbclogo-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-200px.jpg",
+        "title": "",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-sketch-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-sketch-450px.jpg",
+        "meta": Object {
+          "backgroundStyles": Object {
+            "backgroundPosition": "50% -374px",
+          },
+          "usage": Array [
+            "background",
+          ],
+        },
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-sketch-original.jpg",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc/exbc-logo-sketch-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
       "thumb": Object {
         "position": "0",
         "size": "100%",
       },
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -641,18 +747,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox-205x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-vs-dirtbox-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -667,54 +772,125 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/thnkdfrnt-square-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-200px.jpg",
+        "title": "",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-original.jpg",
+        "priority": 1,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
     "title": "Thnk DFRNT flyer",
-  },
-  Object {
-    "category": Array [
-      "logos",
-    ],
-    "description": "Chocolatemilk Logo",
-    "id": "chocolate-milk-logo",
-    "imagePaths": Array [
-      Object {
-        "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk-300x251.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk.jpg",
-        "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/chocolatemilk-150x150.jpg",
-        "title": "",
-      },
-    ],
-    "meta": Object {
-      "isSVG": false,
-      "mixUrl": "",
-      "stackDesign": false,
-      "trackList": Array [],
-      "websiteUrl": "",
-    },
-    "tags": Array [],
-    "title": "Chocolate Milk Logo",
   },
 ]
 `;
 
 exports[`list it should return pagintated results 1`] = `
 Array [
+  Object {
+    "category": Array [
+      "development",
+    ],
+    "description": "<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
+    Namely, it services our product pages by exposing commonly used UI assets prebaked, reusable, React components.
+    Stencil was built in close collaboration with the design team within Vistaprint Digital and its usage has been widely adopted.</p>
+    <p>While building Stencil I served as UI architect and primary contributor. My experience with building component libraries
+    informed much of the CSS design. We follow BEM with a strong emphasis on shallow selectors. This design is critical for scaling CSS.
+    We encapsulated each of these UI components into React components that can be easily imported and customized by other developers.
+    </p>
+    ",
+    "featured": true,
+    "id": "stencil",
+    "imagePaths": Array [
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-450px.png",
+        "meta": Object {
+          "usage": Array [
+            "hero",
+          ],
+        },
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-original.png",
+        "priority": 1,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-200px.png",
+        "title": "Stencil Splash Screen and Logo",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-buttons-200px.png",
+        "title": "Stencil Button Documentation",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-colors-200px.png",
+        "title": "Stencil Color Palette Documentation",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-home-200px.png",
+        "title": "Stencil Documentation Home Page",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-media-cards-200px.png",
+        "title": "Stencil Media Cards Documentation",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-package-cards-200px.png",
+        "title": "Stencil Package Cards Documentation",
+      },
+    ],
+    "meta": Object {
+      "highlightColor": "rgba(60, 61, 66, 0.7)",
+      "isSVG": false,
+      "showTitle": false,
+      "stackDesign": false,
+      "websiteUrl": "https://websdev.github.io/stencil/",
+    },
+    "tags": Array [
+      "Component Library",
+      "React",
+      "SCSS",
+    ],
+    "title": "Stencil",
+  },
   Object {
     "category": Array [
       "logos",
@@ -730,9 +906,7 @@ Array [
     ],
     "meta": Object {
       "isSVG": true,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "svgSource": "
@@ -916,18 +1090,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/10/exbc_live_promo_2015-10-23-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(142, 131, 232, 0.8)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -942,18 +1116,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/06/exbc_live_promo_2015-06-26-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(198, 141, 102, 0.5)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -968,23 +1142,27 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deinfamous-sticker-cover-2-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deinfamous-sticker-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
     "title": "Deinfamous sticker",
   },
+]
+`;
+
+exports[`list it should return pagintated results 2`] = `
+Array [
   Object {
     "category": Array [
       "web",
@@ -995,19 +1173,18 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "largeUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-700px.jpg",
-        "mediumUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-450px.jpg",
-        "originalUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-original.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-original.jpg",
         "priority": 0,
-        "thumbUrl": "https://s3.amazonaws.com/synbydesign/anarchostar/anarchostar-200px.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(231, 26, 33, 0.8)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
     },
     "tags": Array [
@@ -1019,11 +1196,6 @@ Array [
     ],
     "title": "Anarchostar",
   },
-]
-`;
-
-exports[`list it should return pagintated results 2`] = `
-Array [
   Object {
     "category": Array [
       "flyers",
@@ -1034,18 +1206,35 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-300x300.png",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color.png",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/Just4Heads-color-150x150.png",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-200px.png",
+        "title": "",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-450px.png",
+        "meta": Object {
+          "backgroundStyles": Object {
+            "filter": "blur(1px) grayscale(20%) opacity(0.7)",
+          },
+          "usage": Array [
+            "background",
+          ],
+        },
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(26, 189, 205, 0.8)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -1060,18 +1249,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-vivek-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -1086,18 +1274,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/exbc-promo-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
@@ -1113,48 +1300,22 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-distal-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
+      "highlightColor": "rgba(235, 193, 7, 0.6)",
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": true,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [],
     "title": "Petrol Distal flyer",
-  },
-  Object {
-    "category": Array [
-      "flyers",
-    ],
-    "description": "Petrol Goth-Trad flyer",
-    "id": "petrol-goth-trad-flyer",
-    "imagePaths": Array [
-      Object {
-        "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-300x300.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad.jpg",
-        "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/petrol-gothtrad-150x150.jpg",
-        "title": "",
-      },
-    ],
-    "meta": Object {
-      "isSVG": false,
-      "mixUrl": "",
-      "stackDesign": true,
-      "trackList": Array [],
-      "websiteUrl": "",
-    },
-    "tags": Array [],
-    "title": "Petrol Goth-Trad flyer",
   },
 ]
 `;
@@ -1163,34 +1324,28 @@ exports[`list should not allow page index to exceed page number 1`] = `
 Array [
   Object {
     "category": Array [
-      "web",
+      "logos",
     ],
-    "description": "Deep Focus iPhone comps",
-    "id": "deep-foc-us-mobile",
+    "description": "Chocolatemilk Logo",
+    "id": "chocolate-milk-logo",
     "imagePaths": Array [
       Object {
         "description": "",
-        "largeUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-1024x765.jpg",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-300x224.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/deepfocus-iphone-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
-    "tags": Array [
-      "CSS",
-      "Design",
-      "jQuery Mobile",
-    ],
-    "title": "Deep Foc.us Mobile",
+    "tags": Array [],
+    "title": "Chocolate Milk Logo",
   },
   Object {
     "category": Array [
@@ -1201,18 +1356,32 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-300x200.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/02/cannedesign1-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-200px.png",
+        "title": "",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-200px.png",
         "title": "",
       },
     ],
     "meta": Object {
+      "detail": Object {
+        "grid": Array [
+          "70%",
+          "30%",
+        ],
+      },
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [
@@ -1227,24 +1396,65 @@ Array [
   Object {
     "category": Array [
       "web",
+      "design",
     ],
-    "description": "Deep Foc.us screen shot",
+    "description": "Deep Foc.us music blog.",
     "id": "deep-foc-us",
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-300x200.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/deepfocus-150x150.jpg",
-        "title": "",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-200px.jpg",
+        "title": "Deep Foc.us Desktop Design",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-original.jpg",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-200px.jpg",
+        "title": "Deep Foc.us Mobile Design",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-original.jpg",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-200px.jpg",
+        "title": "Deep Foc.us Logo Design with gradient backdrop",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-200px.png",
+        "title": "Deep Foc.us Logo Design",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-450px.jpg",
+        "meta": Object {
+          "usage": Array [
+            "background",
+          ],
+        },
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-original.jpg",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-200px.jpg",
+        "title": "Gradient design",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [
@@ -1254,6 +1464,9 @@ Array [
       "Visual Design",
       "Wordpress Custom Theme",
       "Wordpress Plugin",
+      "Design",
+      "jQuery Mobile",
+      "logo",
     ],
     "title": "Deep Foc.us",
   },
@@ -1266,18 +1479,35 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-300x200.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/sagedragon-150x150.jpg",
-        "title": "",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-200px.png",
+        "title": "Sage Dragon (Desktop)",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-original.png",
+        "priority": 1,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-200px.png",
+        "title": "Sage Dragon (Tablet)",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-200px.png",
+        "title": "Sage Dragon (Mobile)",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "http://projects.synbydesign.com/sagedragon/",
     },
     "tags": Array [
@@ -1293,23 +1523,40 @@ Array [
     "category": Array [
       "web",
     ],
-    "description": "88 DC screen shot",
+    "description": "Eighty Eight DC",
     "id": "eighty-eight-dc",
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-300x200.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-original.png",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/88-150x150.jpg",
-        "title": "",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-200px.png",
+        "title": "Eighty Eight DC Homepage",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-700px.png",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-450px.png",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-original.png",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-200px.png",
+        "title": "Eighty Eight DC Topic Category Page",
+      },
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-original.jpg",
+        "priority": 1,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-200px.jpg",
+        "title": "Eighty Eight DC Topic Posts Page",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "http://www.eightyeightdc.com/",
     },
     "tags": Array [
@@ -1328,18 +1575,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-300x200.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/03/exbc-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [
@@ -1358,18 +1604,17 @@ Array [
     "imagePaths": Array [
       Object {
         "description": "",
-        "mediumUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-300x270.jpg",
-        "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup.jpg",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-original.jpg",
         "priority": 0,
-        "thumbUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2015/05/sigmaperfgroup-150x150.jpg",
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-200px.jpg",
         "title": "",
       },
     ],
     "meta": Object {
       "isSVG": false,
-      "mixUrl": "",
       "stackDesign": false,
-      "trackList": Array [],
       "websiteUrl": "",
     },
     "tags": Array [
@@ -1379,6 +1624,31 @@ Array [
       "PHP",
     ],
     "title": "Sigma Performance Group",
+  },
+  Object {
+    "category": Array [
+      "logos",
+    ],
+    "description": "Logo for Incognito electronic events and production service",
+    "id": "incognito-logo",
+    "imagePaths": Array [
+      Object {
+        "description": "",
+        "largeUrl": "//d2ltmid28ikt18.cloudfront.net/incognito-700px.jpg",
+        "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/incognito-450px.jpg",
+        "originalUrl": "//d2ltmid28ikt18.cloudfront.net/incognito-original.jpg",
+        "priority": 0,
+        "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/incognito-200px.jpg",
+        "title": "",
+      },
+    ],
+    "meta": Object {
+      "isSVG": false,
+      "stackDesign": false,
+      "websiteUrl": "",
+    },
+    "tags": Array [],
+    "title": "Incognito Logo",
   },
 ]
 `;
