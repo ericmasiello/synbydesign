@@ -13,11 +13,8 @@ export const getImagePath = (imagePaths: PortfolioImage | PortfolioImage[], feat
   if (featured && path.largeUrl) {
     return path.largeUrl;
   }
-  if (featured && path.originalUrl) {
+  if (path.originalUrl) {
     return path.originalUrl;
-  }
-  if (path.mediumUrl) {
-    return path.mediumUrl;
   }
 };
 

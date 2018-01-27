@@ -4,14 +4,14 @@ import {
 } from '../portfolioImage';
 
 describe('getImagePath', () => {
-  it('should prefer the large image path', () => {
+  it('should prefer the large image path for featured images', () => {
     const imagePaths: PortfolioImage[] = [{
       largeUrl: '/path/to/large.jpg',
       originalUrl: '/path/to/full.jpg',
       mediumUrl: '/path/to/medium.jpg',
     }];
 
-    const result = getImagePath(imagePaths);
+    const result = getImagePath(imagePaths, true);
     expect(result).toEqual('/path/to/large.jpg');
   });
 
