@@ -10,7 +10,7 @@ const mockGetByIdResponse: Portfolio = {
   title: 'The Title',
   category: [],
   tags: [],
-  imagePaths: {},
+  imagePaths: [],
 };
 
 const mockNext = jest.fn() as NextFunction;

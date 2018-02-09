@@ -1,5 +1,4 @@
 import renderer from '../renderer';
-import * as express from 'express';
 import { ServerStyleSheet } from 'styled-components';
 import { renderToString } from 'react-dom/server';
 import axios from 'axios';

@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import * as serialize from 'serialize-javascript';
 import { Helmet } from 'react-helmet';
-import { Request } from 'express';
 import { Store } from 'redux';
 import { ServerStyleSheet } from 'styled-components';
 import Routes from '../../client/Routes';
@@ -18,7 +17,7 @@ export default (url: string, store: Store<AppState>, context: object) => {
   const app = (
     <Provider store={store}>
       <StaticRouter location={url} context={context}>
-        <div>{renderRoutes(Routes)}</div>
+        {renderRoutes(Routes)}
       </StaticRouter>
     </Provider>
   );

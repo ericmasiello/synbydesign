@@ -48,19 +48,24 @@ const uiRootController = (req: Request, res: Response) => {
   return Promise.all(promises).then(() => {
     logger.info('Done loading all promises');
     const context: Context = {};
-    const { html, head, state } = renderer(url, store, context);
+    try {
+      const { html, head, state } = renderer(url, store, context);
 
-    if (context.url) {
-      logger.warn('Redirecting to', context.url);
-      return res.redirect(301, context.url);
-    }
-    if (context.notFound) {
-      logger.warn('Context not found');
-      res.status(404);
-    }
+      if (context.url) {
+        logger.warn('Redirecting to', context.url);
+        return res.redirect(301, context.url);
+      }
+      if (context.notFound) {
+        logger.warn('Context not found');
+        res.status(404);
+      }
 
-    logger.info('Rendering view');
-    res.render('index', { html, head, state });
+      logger.info('Rendering view');
+      res.render('index', { html, head, state });
+    } catch (error) {
+      logger.error('Rendering error view', error);
+      res.render('error', { html: '' });
+    }
   });
 };
 

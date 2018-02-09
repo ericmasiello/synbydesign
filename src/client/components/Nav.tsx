@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import withAnimatedLink from './hocs/animatedLink';
+import { mediumWeight } from '../styles/vars';
 
 const NavLink = withAnimatedLink();
 
@@ -20,6 +21,7 @@ NavList.displayName = 'NavList';
 const NavListItem = styled.li`
   padding: 1rem;
   text-transform: uppercase;
+  font-weight: ${mediumWeight};
 
   &:first-child {
     padding-left: 0;

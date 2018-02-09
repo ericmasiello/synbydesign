@@ -1,30 +1,57 @@
 import * as React from 'react';
 import { renderRoutes, RouteConfig } from 'react-router-config';
-import { injectGlobal } from 'styled-components';
-import Header from './components/Header';
+import styled, { injectGlobal } from 'styled-components';
+import { connect } from 'react-redux';
+import * as tinyColor from 'tinycolor2';
 import base from './styles/base';
-import helpers from './styles/helpers';
+import { COLORS, pageBorderWidth } from './styles/vars';
+import { pxToRem } from './styles/utils';
 
 injectGlobal`
   ${base}
-  ${helpers}
 `;
 
 interface Props {
   route: {
     routes: RouteConfig[];
   };
+  className?: string;
+  portfolio?: Portfolio;
+  location: {
+    pathname: string;
+  };
 }
 
-const App: React.SFC<Props> = ({ route }) => {
-  return (
-    <div>
-      <Header />
-      {renderRoutes(route.routes)}
-    </div>
-  );
-};
+const App: React.SFC<Props> = ({ route, className  }) => (
+  <div className={className}>
+    {renderRoutes(route.routes)}
+  </div>
+);
+
+function mapStateToProps(state: AppState, props: Props) {
+  const match = /\/portfolio\/(\S+)/g.exec(props.location.pathname);
+  if (match) {
+    // tslint:disable-next-line no-unused-variable
+    const [ignore, id] = match;
+    return {
+      portfolio: state.portfolioItems.find(item => item.id === id),
+    };
+  }
+
+  return {};
+}
 
 export default {
-  component: App,
+  component: connect(mapStateToProps)(styled(App)`
+    ${({ portfolio }) => {
+      let color = tinyColor(COLORS.highlight).setAlpha(0.8).toRgbString();
+      if (portfolio && portfolio.meta && portfolio.meta.highlightColor) {
+        color = portfolio.meta.highlightColor;
+      }
+      return `border: ${pageBorderWidth} solid ${color};`;
+    }}
+    padding-bottom: ${pxToRem(30)};
+    min-height: 100vh;
+    transition: border-color 1s;
+  `),
 };

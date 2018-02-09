@@ -13,31 +13,48 @@ declare module '*.svg' {
   export = value;
 }
 
-interface ImagePath {
-  url: string;
-  width?: number;
-  height?: number;
-}
-
-interface ImagePaths {
-  full?: ImagePath;
-  medium?: ImagePath;
-  thumbnail?: ImagePath;
-  large?: ImagePath;
-}
-
 interface PortfolioThumbMeta {
   size?: string;
   position?: string;
 }
 
+interface DetailMeta {
+  grid?: string[];
+}
+
 interface PortfolioMeta {
   stackDesign?: boolean;
-  mixUrl?: string;
-  trackList?: string[];
   websiteUrl?: string;
   isSVG: boolean;
   thumb?: PortfolioThumbMeta;
+  showTitle?: boolean;
+  detail?: DetailMeta;
+  highlightColor?: string;
+}
+
+interface BackgroundStyles {
+  backgroundPosition?: string;
+  filter?: string;
+  applyGradient?: boolean;
+  size?: string;
+}
+
+type ImageUsage = 'hero' | 'background' | 'gallery';
+
+interface PortfolioImageMeta {
+  backgroundStyles?: BackgroundStyles;
+  usage: ImageUsage[];
+}
+
+interface PortfolioImage {
+  originalUrl: string;
+  largeUrl?: string;
+  mediumUrl?: string;
+  thumbUrl?: string;
+  title?: string;
+  description?: string;
+  priority?: number;
+  meta?: PortfolioImageMeta;
 }
 
 interface RawPortfolio {
@@ -47,7 +64,7 @@ interface RawPortfolio {
   category: string[];
   tags: string[];
   svgSource?: string;
-  imagePaths: ImagePaths;
+  imagePaths: PortfolioImage[];
   featured?: boolean;
 }
 

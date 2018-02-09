@@ -12,6 +12,10 @@ const mockRoute = {
   routes: (['route 1', 'route 2', 'route 3'] as RouteConfig[]),
 };
 
+const location = {
+  pathname: '/path/to/thing',
+};
+
 const {
   component: App,
 } = appDefault;
@@ -26,7 +30,7 @@ describe('App', () => {
     const wrapper = mount(
       <Provider store={storeMocker()}>
         <BrowserRouter>
-          <App route={mockRoute} />
+          <App route={mockRoute} location={location} />
         </BrowserRouter>
       </Provider>,
     );
@@ -37,7 +41,7 @@ describe('App', () => {
     mount(
       <Provider store={storeMocker()}>
         <BrowserRouter>
-          <App route={mockRoute} />
+          <App route={mockRoute} location={location} />
         </BrowserRouter>
       </Provider>,
     );

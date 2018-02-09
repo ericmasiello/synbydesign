@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
 import Nav from './Nav';
-import { pxToRem } from '../styles/utils';
-import { maxWidth, horizontalPadding } from '../styles/vars';
+import HeaderContent from './HeaderContent';
+import { headerSpacing } from '../styles/vars';
 
 interface Props {
   className?: string;
@@ -12,11 +12,15 @@ interface Props {
 
 export const Header: React.SFC<Props> = ({ className }) => {
   return (
-    <header className={className}>
-      <Link to="/">
-        <Logo />
-      </Link>
-      <Nav />
+    <header
+      className={className}
+    >
+      <HeaderContent>
+        <Link to="/">
+          <Logo />
+        </Link>
+        <Nav />
+      </HeaderContent>
     </header>
   );
 };
@@ -24,15 +28,7 @@ export const Header: React.SFC<Props> = ({ className }) => {
 Header.displayName = 'Header';
 
 export default styled(Header)`
-  padding: 1rem ${pxToRem(horizontalPadding)};
-  max-width: ${pxToRem(maxWidth)};
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media(min-width: ${pxToRem(850)}) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  background-color: rgba(255, 255, 255, 0.90);
+  margin-top: ${headerSpacing};
+  margin-bottom: ${headerSpacing};
 `;
