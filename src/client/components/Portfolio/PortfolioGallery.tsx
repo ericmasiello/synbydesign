@@ -20,7 +20,7 @@ interface DefaultProps {
 const PortfolioGallery: React.SFC<Props> = ((props) => {
   const { items, tag: Tag, className, ...rest } = props as Props & DefaultProps;
   return (
-    <Tag className={className}>
+    <Tag className={className} {...rest}>
       {items.map(item => (
         <GalleryItem key={item.id} featured={item.featured}>
           <GalleryLink to={`/portfolio/${item.id}`} featured={item.featured}>

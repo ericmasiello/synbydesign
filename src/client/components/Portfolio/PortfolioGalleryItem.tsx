@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { pxToRem } from '../../styles/utils';
 import { GALLERY } from '../../styles/vars';
 
-interface Props extends React.HTMLProps<HTMLLIElement> {
+interface Props {
   className?: string;
   featured?: boolean;
   tag?: Tag;
@@ -12,8 +12,6 @@ interface Props extends React.HTMLProps<HTMLLIElement> {
 interface DefaultProps {
   tag: Tag;
 }
-
-type PropsWithDefaults = Props & DefaultProps;
 
 export const GalleryItem: React.SFC<Props> = (props) => {
   const { tag: Tag, featured, ...rest } = props as Props & DefaultProps;
