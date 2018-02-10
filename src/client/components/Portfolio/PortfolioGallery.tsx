@@ -3,11 +3,8 @@ import styled from 'styled-components';
 import Item from './PortfolioItem';
 import { Link } from 'react-router-dom';
 import { pxToRem } from '../../styles/utils';
-import { maxWidth, horizontalPadding } from '../../styles/vars';
-
-const itemPadding = 16;
-const gridItemSize = 300;
-const gridFullSize = 800;
+import { maxWidth, horizontalPadding, GALLERY } from '../../styles/vars';
+import GalleryItem from './PortfolioGalleryItem';
 
 interface PortfolioGalleryProps {
   className?: string;
@@ -17,35 +14,11 @@ interface PortfolioGalleryProps {
 const Grid = styled.ul`
   display: grid;
   list-style-type: none;
-  grid-template-columns: repeat(auto-fit, minmax(${pxToRem(gridItemSize)}, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(${pxToRem(GALLERY.minItemSize)}, 1fr));
   grid-auto-flow: dense;
 `;
 
 Grid.displayName = 'PortfolioGallery.Grid';
-
-interface GridItemsProps {
-  className?: string;
-  featured?: boolean;
-}
-
-const GridItem: React.SFC<GridItemsProps> = props => (
-  <li className={props.className}>{props.children}</li>
-);
-
-GridItem.displayName = 'PortfolioGallery.GridItem';
-
-const StyledGridItem = styled(GridItem)`
-  display: flex;
-  padding: ${pxToRem(itemPadding)};
-  ${(props) => {
-    return props.featured ? `
-      @media(min-width: ${pxToRem(gridFullSize)}) {
-        grid-column: auto / span 2;
-        grid-row: auto / span 2;
-      }
-    ` : '';
-  }}
-`;
 
 interface GridLinkProps {
   className?: string;
@@ -71,9 +44,9 @@ const StyledGridLink = styled(GridLink)`
   border-radius: 3px;
   background-color: #e0dcde;
   width: 100%;
-  min-height: ${pxToRem(gridItemSize)};
+  min-height: ${pxToRem(GALLERY.minItemSize)};
   ${props => props.featured ? `
-  @media(min-width: ${pxToRem(gridFullSize)}) {
+  @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
     height: 100%;
   }
   ` : ''}
@@ -88,11 +61,11 @@ const PortfolioGallery: React.SFC<PortfolioGalleryProps> = ((props) => {
   return (
     <Grid className={props.className}>
       {props.items.map(item => (
-        <StyledGridItem key={item.id} featured={item.featured}>
+        <GalleryItem key={item.id} featured={item.featured}>
           <StyledGridLink to={`/portfolio/${item.id}`} featured={item.featured}>
             <Item {...item} />
           </StyledGridLink>
-        </StyledGridItem>
+        </GalleryItem>
       ))}
     </Grid>
   );
@@ -106,6 +79,6 @@ PortfolioGallery.defaultProps = {
 
 export default styled(PortfolioGallery)`
   max-width: ${pxToRem(maxWidth)};
-  padding: 0 ${pxToRem(horizontalPadding - itemPadding)};
+  padding: 0 ${pxToRem(horizontalPadding - GALLERY.itemPadding)};
   margin: 0 auto;
 `;

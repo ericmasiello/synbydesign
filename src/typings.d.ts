@@ -13,6 +13,8 @@ declare module '*.svg' {
   export = value;
 }
 
+type Tag = React.SFC<any> | React.ComponentClass<any> & string;
+
 interface PortfolioThumbMeta {
   size?: string;
   position?: string;
