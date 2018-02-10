@@ -7,11 +7,21 @@ interface Props {
   featured?: boolean;
   size?: string;
   position?: string;
+  tag?: Tag;
 }
 
-const PortfolioItemImage: React.SFC<Props> = props => (
-  <div className={props.className} />
-);
+interface DefaultProps {
+  tag: Tag;
+}
+
+const PortfolioItemImage: React.SFC<Props> = (props) => {
+  const { tag: Tag, imagePath, featured, size, position, ...rest } = props as Props & DefaultProps;
+  return <Tag {...rest}/>;
+};
+
+PortfolioItemImage.defaultProps = {
+  tag: 'div',
+} as DefaultProps;
 
 PortfolioItemImage.displayName = 'PortfolioItemImage';
 
