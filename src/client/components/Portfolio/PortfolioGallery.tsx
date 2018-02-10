@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Item from './Portfolio/PortfolioItem';
+import Item from './PortfolioItem';
 import { Link } from 'react-router-dom';
-import { pxToRem } from '../styles/utils';
-import { maxWidth, horizontalPadding } from '../styles/vars';
+import { pxToRem } from '../../styles/utils';
+import { maxWidth, horizontalPadding } from '../../styles/vars';
 
 const itemPadding = 16;
 const gridItemSize = 300;
