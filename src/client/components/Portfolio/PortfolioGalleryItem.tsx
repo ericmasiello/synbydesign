@@ -15,18 +15,18 @@ interface DefaultProps {
 
 type PropsWithDefaults = Props & DefaultProps;
 
-export const GridItem: React.SFC<Props> = (props) => {
+export const GalleryItem: React.SFC<Props> = (props) => {
   const { tag: Tag, featured, ...rest } = props as Props & DefaultProps;
   return <Tag {...rest} />;
 };
 
-GridItem.defaultProps = {
+GalleryItem.defaultProps = {
   tag: 'li',
 } as DefaultProps;
 
-GridItem.displayName = 'PortfolioGallery.GridItem';
+GalleryItem.displayName = 'PortfolioGallery.Item';
 
-const StyledGridItem = styled(GridItem)`
+export default styled(GalleryItem)`
   display: flex;
   padding: ${pxToRem(GALLERY.itemPadding)};
   ${(props) => {
@@ -38,5 +38,3 @@ const StyledGridItem = styled(GridItem)`
     ` : '';
   }}
 `;
-
-export default StyledGridItem;
