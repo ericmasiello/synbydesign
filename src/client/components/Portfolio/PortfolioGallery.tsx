@@ -7,7 +7,6 @@ import GalleryItem from './PortfolioGalleryItem';
 import GalleryLink from './PortfolioGalleryLink';
 
 interface Props {
-  className?: string;
   items: Portfolio[];
   tag?: Tag;
 }
@@ -17,10 +16,10 @@ interface DefaultProps {
   tag: Tag;
 }
 
-const PortfolioGallery: React.SFC<Props> = ((props) => {
-  const { items, tag: Tag, className, ...rest } = props as Props & DefaultProps;
+export const PortfolioGallery: React.SFC<Props> = (props) => {
+  const { items, tag: Tag, ...rest } = props as Props & DefaultProps;
   return (
-    <Tag className={className} {...rest}>
+    <Tag {...rest}>
       {items.map(item => (
         <GalleryItem key={item.id} featured={item.featured}>
           <GalleryLink to={`/portfolio/${item.id}`} featured={item.featured}>
@@ -30,7 +29,7 @@ const PortfolioGallery: React.SFC<Props> = ((props) => {
       ))}
     </Tag>
   );
-});
+};
 
 PortfolioGallery.displayName = 'PortfolioGallery';
 
