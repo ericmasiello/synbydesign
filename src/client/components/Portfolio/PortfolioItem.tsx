@@ -33,8 +33,10 @@ const Item: React.SFC<Props> = (props) => {
         className={props.className}
         imagePath={preferredImagePath}
         featured={props.featured}
-        size={props.meta && props.meta.thumb && props.meta.thumb.size}
+        fit={props.meta && props.meta.thumb && props.meta.thumb.fit}
+        alt={props.title}
         position={props.meta && props.meta.thumb && props.meta.thumb.position}
+
       />
     );
   }

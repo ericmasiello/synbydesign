@@ -25,13 +25,12 @@ GalleryItem.defaultProps = {
 GalleryItem.displayName = 'PortfolioGallery.Item';
 
 export default styled(GalleryItem)`
-  display: flex;
   padding: ${pxToRem(GALLERY.itemPadding)};
   ${(props) => {
     return props.featured ? `
       @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
-        grid-column: auto / span 2;
-        grid-row: auto / span 2;
+        grid-column: span 2;
+        grid-row: span 2;
       }
     ` : '';
   }}

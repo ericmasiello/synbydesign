@@ -17,18 +17,12 @@ export const PortfolioGalleryLink: React.SFC<Props> = (props) => {
 PortfolioGalleryLink.displayName = 'PortfolioGallery.Link';
 
 export default styled(PortfolioGalleryLink)`
-  position: relative;
+  display: block;
   overflow: hidden;
+  height: 100%;
   border: 10px solid #d4cfd1;
   border-radius: 3px;
   background-color: #e0dcde;
-  width: 100%;
-  min-height: ${pxToRem(GALLERY.minItemSize)};
-  ${props => props.featured ? `
-  @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
-    height: 100%;
-  }
-  ` : ''}
   transition: transform 0.2s;
 
   &:hover {

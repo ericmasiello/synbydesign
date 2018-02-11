@@ -197,6 +197,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        position: '50% 50%',
+      },
     },
     category: [
       'illustration',
@@ -310,6 +313,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        position: '50% 50%',
+      },
     },
     category: [
       'flyers',
@@ -425,7 +431,7 @@ const PortfolioList: RawPortfolio[] = [
       websiteUrl: '',
       isSVG: false,
       thumb: {
-        size: 'contain',
+        fit: 'contain',
       },
     },
     category: [
@@ -471,6 +477,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        position: '50% 50%',
+      },
     },
     category: [
       'flyers',
@@ -516,8 +525,7 @@ const PortfolioList: RawPortfolio[] = [
       websiteUrl: '',
       isSVG: false,
       thumb: {
-        size: '100%',
-        position: '0',
+        position: '50% 50%',
       },
     },
     category: [
@@ -875,6 +883,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        position: '0 100%',
+      },
     },
     category: [
       'logos',

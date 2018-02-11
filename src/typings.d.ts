@@ -16,7 +16,7 @@ declare module '*.svg' {
 type Tag = React.SFC<any> | React.ComponentClass<any> & string;
 
 interface PortfolioThumbMeta {
-  size?: string;
+  fit?: 'cover' | 'contain' | 'fill' | 'inherit' | 'initial' | 'none' | 'scale-down' | 'unset';
   position?: string;
 }
 

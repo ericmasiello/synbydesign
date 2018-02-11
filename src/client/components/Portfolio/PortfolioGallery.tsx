@@ -46,4 +46,5 @@ export default styled(PortfolioGallery)`
   list-style-type: none;
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(GALLERY.minItemSize)}, 1fr));
   grid-auto-flow: dense;
+  grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
 `;
