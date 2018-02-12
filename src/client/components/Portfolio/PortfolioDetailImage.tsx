@@ -6,9 +6,6 @@ import { borderedImage } from '../../styles/extensions';
 interface Props {
   className?: string;
   imagePath: PortfolioImage;
-  featured?: boolean;
-  size?: string;
-  position?: string;
 }
 
 export const PortfolioDetailImage: React.SFC<Props> = (props) => {

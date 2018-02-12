@@ -12,7 +12,6 @@ interface Props {
   tags: string[];
   svgSource?: string;
   imagePaths: PortfolioImage[];
-  featured?: boolean;
 }
 
 const Item: React.SFC<Props> = (props) => {
@@ -25,16 +24,17 @@ const Item: React.SFC<Props> = (props) => {
     );
   }
 
-  const preferredImagePath = getImagePath(props.imagePaths, props.featured);
+  const preferredImagePath = getImagePath(props.imagePaths);
 
   if (preferredImagePath) {
     return (
       <PortfolioItemImage
         className={props.className}
         imagePath={preferredImagePath}
-        featured={props.featured}
-        size={props.meta && props.meta.thumb && props.meta.thumb.size}
+        fit={props.meta && props.meta.thumb && props.meta.thumb.fit}
+        alt={props.title}
         position={props.meta && props.meta.thumb && props.meta.thumb.position}
+
       />
     );
   }

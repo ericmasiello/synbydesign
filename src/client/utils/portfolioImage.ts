@@ -1,4 +1,4 @@
-export const getImagePath = (imagePaths: PortfolioImage | PortfolioImage[], featured = false): string | undefined => {
+export const getImagePath = (imagePaths: PortfolioImage | PortfolioImage[]): string | undefined => {
   let path;
   if (Array.isArray(imagePaths)) {
     path = imagePaths[0];
@@ -10,7 +10,7 @@ export const getImagePath = (imagePaths: PortfolioImage | PortfolioImage[], feat
     return;
   }
 
-  if (featured && path.largeUrl) {
+  if (path.largeUrl) {
     return path.largeUrl;
   }
   if (path.originalUrl) {
@@ -19,7 +19,7 @@ export const getImagePath = (imagePaths: PortfolioImage | PortfolioImage[], feat
 };
 
 export const getImagePaths = (imagePaths: PortfolioImage[]): string[] => {
-  const partial = (path: PortfolioImage) => getImagePath(path, false);
+  const partial = (path: PortfolioImage) => getImagePath(path);
   return imagePaths.map(partial).filter(path => path !== undefined) as string[];
 };
 

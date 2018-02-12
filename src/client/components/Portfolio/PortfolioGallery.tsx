@@ -20,13 +20,18 @@ export const PortfolioGallery: React.SFC<Props> = (props) => {
   const { items, tag: Tag, ...rest } = props as Props & DefaultProps;
   return (
     <Tag {...rest}>
-      {items.map(item => (
-        <GalleryItem key={item.id} featured={item.featured}>
-          <GalleryLink to={`/portfolio/${item.id}`} featured={item.featured}>
-            <Item {...item} />
-          </GalleryLink>
-        </GalleryItem>
-      ))}
+      {items.map((item) => {
+        const row = item.meta && item.meta.thumb && item.meta.thumb.row;
+        const column = item.meta && item.meta.thumb && item.meta.thumb.column;
+
+        return (
+          <GalleryItem key={item.id} row={row} column={column}>
+            <GalleryLink to={`/portfolio/${item.id}`}>
+              <Item {...item} />
+            </GalleryLink>
+          </GalleryItem>
+        );
+      })}
     </Tag>
   );
 };
@@ -46,4 +51,5 @@ export default styled(PortfolioGallery)`
   list-style-type: none;
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(GALLERY.minItemSize)}, 1fr));
   grid-auto-flow: dense;
+  grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
 `;

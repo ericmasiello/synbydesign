@@ -16,8 +16,10 @@ declare module '*.svg' {
 type Tag = React.SFC<any> | React.ComponentClass<any> & string;
 
 interface PortfolioThumbMeta {
-  size?: string;
+  fit?: 'cover' | 'contain' | 'fill' | 'inherit' | 'initial' | 'none' | 'scale-down' | 'unset';
   position?: string;
+  column?: string;
+  row?: string;
 }
 
 interface DetailMeta {
@@ -67,7 +69,6 @@ interface RawPortfolio {
   tags: string[];
   svgSource?: string;
   imagePaths: PortfolioImage[];
-  featured?: boolean;
 }
 
 interface Portfolio extends RawPortfolio {
