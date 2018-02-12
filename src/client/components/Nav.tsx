@@ -1,9 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import withAnimatedLink from './hocs/animatedLink';
+import AnimatedLink from './AnimatedLink';
 import { mediumWeight } from '../styles/vars';
-
-const NavLink = withAnimatedLink();
 
 interface Props {
   className?: string;
@@ -38,11 +36,11 @@ const Nav: React.SFC<Props> = ({ className }) => {
   return (
     <nav className={className}>
       <NavList>
-        <NavListItem><NavLink href="#selected">Selected Work</NavLink></NavListItem>
-        <NavListItem><NavLink href="#resume">Resume</NavLink></NavListItem>
-        <NavListItem><NavLink href="#services">Services</NavLink></NavListItem>
-        <NavListItem><NavLink href="#about">About</NavLink></NavListItem>
-        <NavListItem><NavLink href="#contact">Contact</NavLink></NavListItem>
+        <NavListItem><AnimatedLink href="#selected">Selected Work</AnimatedLink></NavListItem>
+        <NavListItem><AnimatedLink href="#resume">Resume</AnimatedLink></NavListItem>
+        <NavListItem><AnimatedLink href="#services">Services</AnimatedLink></NavListItem>
+        <NavListItem><AnimatedLink href="#about">About</AnimatedLink></NavListItem>
+        <NavListItem><AnimatedLink href="#contact">Contact</AnimatedLink></NavListItem>
       </NavList>
     </nav>
   );
