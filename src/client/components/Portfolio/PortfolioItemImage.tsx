@@ -19,12 +19,6 @@ const PortfolioItemImage: React.SFC<Props> = (props) => {
 PortfolioItemImage.displayName = 'PortfolioItemImage';
 
 export default styled(PortfolioItemImage)`
-  ${(props) => {
-    if (props.position !== undefined) {
-      console.log('props', props);
-    }
-    return '';
-  }}
   width: 100%;
   height: 100%;
   object-fit: cover;
