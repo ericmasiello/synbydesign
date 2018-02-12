@@ -5,13 +5,11 @@ import { pxToRem } from '../../styles/utils';
 import { GALLERY } from '../../styles/vars';
 
 interface Props {
-  featured?: boolean;
   to: string;
 }
 
 export const PortfolioGalleryLink: React.SFC<Props> = (props) => {
-  const { featured, ...rest } = props;
-  return <Link {...rest} />;
+  return <Link {...props} />;
 };
 
 PortfolioGalleryLink.displayName = 'PortfolioGallery.Link';

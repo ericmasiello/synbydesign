@@ -18,13 +18,16 @@ const PortfolioList: RawPortfolio[] = [
     We encapsulated each of these UI components into React components that can be easily imported and customized by other developers.
     </p>
     `,
-    featured: true,
     meta: {
       stackDesign: false,
       websiteUrl: 'https://websdev.github.io/stencil/',
       isSVG: false,
       showTitle: false,
       highlightColor: 'rgba(60, 61, 66, 0.7)',
+      thumb: {
+        row: 'span 2',
+        column: 'span 2',
+      },
     },
     category: [
       'development',
@@ -146,12 +149,15 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'EXBC @ BNG (Harry R4NS0M) web promo',
     description: 'EXBC at BNG with Harry Ransom web promo',
-    featured: true,
     meta: {
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
       highlightColor: 'rgba(142, 131, 232, 0.8)',
+      thumb: {
+        row: 'span 2',
+        column: 'span 2',
+      },
     },
     category: [
       'flyers',
@@ -218,12 +224,15 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Anarchostar',
     description: 'Web site for electronic music label Anarchostar',
-    featured: true,
     meta: {
       stackDesign: false,
       websiteUrl: 'http://projects.synbydesign.com/anarchostar/',
       isSVG: false,
       highlightColor: 'rgba(231, 26, 33, 0.8)',
+      thumb: {
+        row: 'span 4',
+        column: 'span 2',
+      },
     },
     category: [
       'web',
@@ -248,12 +257,15 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Just 4 Heads flyer',
     description: 'Just 4 Heads flyer',
-    featured: true,
     meta: {
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
       highlightColor: 'rgba(26, 189, 205, 0.8)',
+      thumb: {
+        row: 'span 2',
+        column: 'span 2',
+      },
       // TODO: Add dynamic page bg color: #FCFBFC
     },
     category: [
@@ -334,12 +346,15 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Petrol Distal flyer',
     description: 'Petrol Distal flyer',
-    featured: true,
     meta: {
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
       highlightColor: 'rgba(235, 193, 7, 0.6)',
+      thumb: {
+        row: 'span 2',
+        column: 'span 2',
+      },
     },
     category: [
       'flyers',
@@ -380,11 +395,14 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Deep Foc.us Takeover at Sonic Butter flyer',
     description: 'Deep Foc.us Takeover at Sonic Butter flyer',
-    featured: true,
     meta: {
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        row: 'span 2',
+        column: 'span 2',
+      },
     },
     category: [
       'flyers',
@@ -425,13 +443,14 @@ const PortfolioList: RawPortfolio[] = [
   {
     title: 'Expansion Barcast flyer',
     description: 'Expansion Barcast flyer',
-    featured: true,
     meta: {
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
       thumb: {
         fit: 'contain',
+        row: 'span 3',
+        column: 'span 2',
       },
     },
     category: [
@@ -563,6 +582,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        row: 'span 2',
+      },
     },
     category: [
       'flyers',
@@ -585,6 +607,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: true,
       websiteUrl: '',
       isSVG: false,
+      thumb: {
+        column: 'span 2',
+      },
     },
     category: [
       'flyers',
@@ -639,6 +664,9 @@ const PortfolioList: RawPortfolio[] = [
       isSVG: false,
       detail: {
         grid: ['70%', '30%'],
+      },
+      thumb: {
+        row: 'span 3',
       },
     },
     category: [
@@ -744,6 +772,9 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: 'http://projects.synbydesign.com/sagedragon/',
       isSVG: false,
+      thumb: {
+        row: 'span 3',
+      },
     },
     category: [
       'web',

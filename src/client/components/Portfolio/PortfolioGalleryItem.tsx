@@ -5,7 +5,8 @@ import { GALLERY } from '../../styles/vars';
 
 interface Props {
   className?: string;
-  featured?: boolean;
+  row?: string;
+  column?: string;
   tag?: Tag;
 }
 
@@ -14,7 +15,7 @@ interface DefaultProps {
 }
 
 export const GalleryItem: React.SFC<Props> = (props) => {
-  const { tag: Tag, featured, ...rest } = props as Props & DefaultProps;
+  const { tag: Tag, row, column, ...rest } = props as Props & DefaultProps;
   return <Tag {...rest} />;
 };
 
@@ -27,11 +28,14 @@ GalleryItem.displayName = 'PortfolioGallery.Item';
 export default styled(GalleryItem)`
   padding: ${pxToRem(GALLERY.itemPadding)};
   ${(props) => {
-    return props.featured ? `
+    let styles = props.column ? `
       @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
-        grid-column: span 2;
-        grid-row: span 2;
+        grid-column: ${props.column};
       }
     ` : '';
+    styles = `${styles}${props.row ? `
+      grid-row: ${props.row};
+    ` : ''}`;
+    return styles;
   }}
 `;
