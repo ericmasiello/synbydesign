@@ -18,9 +18,9 @@ export const visuallyHidden = `
   overflow: hidden;
 `;
 
-export const shadow = 'filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.25));';
+export const shadow = (blur = '2px') => `filter: drop-shadow(0 0 ${blur} rgba(0, 0, 0, 0.25));`;
 
 export const borderedImage = `
-  ${shadow}
+  ${shadow()}
   border: ${pxToRem(20)} solid #fff;
 `;
