@@ -18,7 +18,11 @@ export const visuallyHidden = `
   overflow: hidden;
 `;
 
-export const shadow = (blur = '2px') => `filter: drop-shadow(0 0 ${blur} rgba(0, 0, 0, 0.25));`;
+// TODO: refactor this into something more sensible
+// maybe composeFilters() or something like that
+// since it takes a list of filters
+export const shadow = (blur = '2px', otherFilters = '') =>
+  `filter: drop-shadow(0 0 ${blur} rgba(0, 0, 0, 0.25)) ${otherFilters};`;
 
 export const borderedImage = `
   ${shadow()}
