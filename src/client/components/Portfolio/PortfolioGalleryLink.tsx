@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { pxToRem } from '../../styles/utils';
-import { GALLERY } from '../../styles/vars';
 
 interface Props {
   to: string;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Item from './PortfolioItem';
 import { pxToRem } from '../../styles/utils';
-import { maxWidth, horizontalPadding, GALLERY } from '../../styles/vars';
+import { maxWidth, GALLERY } from '../../styles/vars';
 import GalleryItem from './PortfolioGalleryItem';
 import GalleryLink from './PortfolioGalleryLink';
 
@@ -45,11 +45,12 @@ PortfolioGallery.defaultProps = {
 
 export default styled(PortfolioGallery)`
   max-width: ${pxToRem(maxWidth)};
-  padding: 0 ${pxToRem(horizontalPadding - GALLERY.itemPadding)};
+  padding: 0;
   margin: 0 auto;
   display: grid;
   list-style-type: none;
   grid-template-columns: repeat(auto-fit, minmax(${pxToRem(GALLERY.minItemSize)}, 1fr));
   grid-auto-flow: dense;
   grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
+  grid-gap: ${pxToRem(GALLERY.itemPadding)};
 `;

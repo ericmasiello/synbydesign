@@ -26,7 +26,6 @@ GalleryItem.defaultProps = {
 GalleryItem.displayName = 'PortfolioGallery.Item';
 
 export default styled(GalleryItem)`
-  padding: ${pxToRem(GALLERY.itemPadding)};
   ${(props) => {
     let styles = props.column ? `
       @media(min-width: ${pxToRem(GALLERY.fullSize)}) {

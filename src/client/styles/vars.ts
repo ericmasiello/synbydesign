@@ -35,7 +35,7 @@ export const mediumWeight = 500;
 export const boldWeight = 600;
 
 export const GALLERY = Object.freeze({
-  itemPadding: 8,
+  itemPadding: 16,
   minItemSize: 300,
   fullSize: 800,
 });

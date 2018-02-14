@@ -13,7 +13,7 @@ declare module '*.svg' {
   export = value;
 }
 
-type Tag = React.ComponentType<any> | keyof React.ReactHTML
+type Tag = React.ComponentType<any> | keyof React.ReactHTML;
 
 interface PortfolioThumbMeta {
   fit?: 'cover' | 'contain' | 'fill' | 'inherit' | 'initial' | 'none' | 'scale-down' | 'unset';
