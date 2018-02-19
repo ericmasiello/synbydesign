@@ -3,14 +3,14 @@ import thunk from 'redux-thunk';
 import { AxiosInstance } from 'axios';
 import reducers from '../client/reducers';
 
-const defaultIntialState = {
-  users: [],
+const defaultInitialState = {
+  resume: {} as Resume,
   portfolioItems: [],
 };
 
 export default (
   axiosInstance: AxiosInstance,
-  initialState: AppState = defaultIntialState,
+  initialState: AppState = defaultInitialState,
   composeEnhancers = compose,
 ) => {
   const store = createStore(

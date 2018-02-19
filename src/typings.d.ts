@@ -81,10 +81,28 @@ interface TypeMap {
   [x: string]: TypeSize;
 }
 
-// Old stuff below...
+interface FetchPortfolioItemsParams {
+  pageSize?: number;
+}
+
+interface ProfessionalExperience {}
+
+interface FreelanceExperience {}
+
+interface Education {}
+
+interface Resume {
+  name: string;
+  title: string;
+  lead: string;
+  skills?: string[];
+  professionalExperience?: ProfessionalExperience[];
+  freelanceExperience?: FreelanceExperience[];
+  education?: Education[];
+}
 
 interface AppState {
-  users: User[];
+  resume: Resume;
   portfolioItems: Portfolio[];
 }
 
@@ -93,16 +111,7 @@ interface Context {
   notFound?: boolean;
 }
 
-interface User {
-  id: string;
-  name: string;
-}
-
-interface Window {
+interface AppWindow extends Window {
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
   INITIAL_STATE?: any;
-}
-
-interface RequireAuthHOC {
-  (ChildComponent: React.ComponentType<any>): React.ComponentType<any>;
 }

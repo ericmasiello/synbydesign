@@ -1,24 +1,18 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import homePage, { HomePage } from '../HomePage';
+import { HomePage } from '../HomePage';
 import { ThunkActionCreator } from '../../../types.d';
 
-const StyledHomePage = homePage.component;
-const stubFetch = jest.fn() as ThunkActionCreator<Portfolio[]>;
+const stubFetchPortfolio = jest.fn() as ThunkActionCreator<Portfolio[]>;
+const stubFetchResume = jest.fn() as ThunkActionCreator<Resume>;
 
 test('should render HomePage', () => {
   const wrapper = shallow(
     <HomePage
       portfolioItems={[]}
-      fetchPortfolioItems={stubFetch}
+      fetchPortfolioItems={stubFetchPortfolio}
+      fetchResume={stubFetchResume}
     />,
-  );
-  expect(wrapper).toHaveLength(1);
-});
-
-test('should render styled HomePage', () => {
-  const wrapper = shallow(
-    <StyledHomePage />,
   );
   expect(wrapper).toHaveLength(1);
 });

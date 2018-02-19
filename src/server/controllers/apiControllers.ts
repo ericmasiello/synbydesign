@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import * as boom from 'boom';
 import { list, getById } from '../services/portfolioService';
+import { getResume } from '../services/resumeService';
 import logger from '../utils/logger';
 
 export const portofolioController = (req: Request, res: Response, next: NextFunction) => {
@@ -37,3 +38,11 @@ export const portofolioDetailController = (req: Request, res: Response, next: Ne
     return res.json(item);
   });
 };
+
+export const resumeController = (req: Request, res: Response, next: NextFunction) => {
+  logger.info('Requesting resume');
+  return getResume()
+    .then(resume => res.json(resume))
+    .catch((error: Error) => next(boom.badImplementation(error.message)));
+};
+

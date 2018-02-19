@@ -1,8 +1,8 @@
 import { combineReducers, Reducer } from 'redux';
-import usersReducer from './usersReducer';
 import portfolioReducer from './portfolioReducer';
+import resumeReducer from './resumeReducer';
 
 export default <Reducer<AppState>>combineReducers({
-  users: usersReducer,
+  resume: resumeReducer,
   portfolioItems: portfolioReducer,
 });

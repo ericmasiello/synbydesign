@@ -14,8 +14,8 @@ const axiosInstance = axios.create({
 
 const store = createStore(
   axiosInstance,
-  window.INITIAL_STATE,
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__,
+  (window as AppWindow).INITIAL_STATE,
+  (window as AppWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__,
 );
 
 export const client = (

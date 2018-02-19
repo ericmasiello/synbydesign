@@ -8,17 +8,18 @@ test('create a store with default state', () => {
   const store = createStore(axiosInstance);
   const result: AppState = store.getState();
 
-  expect(result.users).toHaveLength(0);
+  expect(result.resume).toEqual({});
   expect(result.portfolioItems).toHaveLength(0);
 });
 
 test('create a store with initialized state', () => {
 
   const state: AppState = {
-    users: [{
-      id: '123',
+    resume: {
       name: 'Eric',
-    }],
+      title: 'Developer',
+      lead: 'To be the best',
+    },
     portfolioItems: [{
       id: 'the-id',
       title: 'The title',
@@ -32,7 +33,7 @@ test('create a store with initialized state', () => {
   const store = createStore(axiosInstance, state);
   const result: AppState = store.getState();
 
-  expect(result.users).toEqual(state.users);
+  expect(result.resume).toEqual(state.resume);
   expect(result.portfolioItems).toEqual(state.portfolioItems);
 });
 

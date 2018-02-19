@@ -1,20 +1,20 @@
 import * as React from 'react';
-import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { fetchPortfolioItems } from '../actions';
+import { fetchPortfolioItems, fetchResume } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
 import Header from '../components/Header';
 import { ThunkActionCreator } from '../../types.d';
 
-const pageRequest = {
+const pageRequest: FetchPortfolioItemsParams = {
   pageSize: 100,
 };
 
 interface Props {
   fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
+  fetchResume: ThunkActionCreator<Resume>;
   className?: string;
   portfolioItems: Portfolio[];
 }
@@ -49,8 +49,11 @@ function mapStateToProps({ portfolioItems }: AppState) {
 }
 
 export default {
-  loadData: ({ dispatch }: Store<Portfolio[]>) => dispatch(fetchPortfolioItems(pageRequest)),
-  component: styled(connect(mapStateToProps, { fetchPortfolioItems })(HomePage))`
-
-  `,
+  loadData: ({ dispatch }: Store<Portfolio[]>) => (
+    Promise.all([
+      dispatch(fetchResume()),
+      dispatch(fetchPortfolioItems(pageRequest)),
+    ])
+  ),
+  component: connect(mapStateToProps, { fetchPortfolioItems, fetchResume })(HomePage),
 };
