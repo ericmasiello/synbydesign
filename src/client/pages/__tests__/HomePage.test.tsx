@@ -10,6 +10,7 @@ test('should render HomePage', () => {
   const wrapper = shallow(
     <HomePage
       portfolioItems={[]}
+      resume={{} as Resume}
       fetchPortfolioItems={stubFetchPortfolio}
       fetchResume={stubFetchResume}
     />,

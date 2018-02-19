@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import isEmpty from 'lodash-es/isEmpty';
 import { fetchPortfolioItems, fetchResume } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
@@ -17,6 +18,7 @@ interface Props {
   fetchResume: ThunkActionCreator<Resume>;
   className?: string;
   portfolioItems: Portfolio[];
+  resume: Resume;
 }
 
 export class HomePage extends React.Component<Props, {}> {
@@ -24,6 +26,9 @@ export class HomePage extends React.Component<Props, {}> {
     // TODO: only fetch if we don't have the data
     if (this.props.portfolioItems.length <= 1) {
       this.props.fetchPortfolioItems(pageRequest);
+    }
+    if (isEmpty(this.props.resume)) {
+      this.props.fetchResume();
     }
   }
 
@@ -44,8 +49,8 @@ export class HomePage extends React.Component<Props, {}> {
   }
 }
 
-function mapStateToProps({ portfolioItems }: AppState) {
-  return { portfolioItems };
+function mapStateToProps({ portfolioItems, resume }: AppState) {
+  return { portfolioItems, resume };
 }
 
 export default {

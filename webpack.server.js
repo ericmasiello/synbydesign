@@ -19,7 +19,9 @@ const config = {
     path: path.resolve(__dirname, 'build')
   },
 
-  externals: [webpackNodeExternals()]
+  externals: [webpackNodeExternals({
+    whitelist: [/^lodash/]
+  })]
 };
 
 module.exports = merge(baseConfig, config);

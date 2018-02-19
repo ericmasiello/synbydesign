@@ -1,10 +1,11 @@
 import rawPortfolioList from '../data/portfolio';
-import * as _ from 'lodash';
+import kebabCase from 'lodash-es/kebabCase';
+import chunk from 'lodash-es/chunk';
 
 const portfolioList = rawPortfolioToPortfolio(rawPortfolioList);
 
 function titleToId(title: string): string {
-  return _.kebabCase(title).trim();
+  return kebabCase(title).trim();
 }
 
 function matchListFilter(filters: string[], filterKey: string) {
@@ -55,7 +56,7 @@ export function list(options: {
     );
   });
 
-  const pages = _.chunk(list, pageSize);
+  const pages = chunk(list, pageSize);
 
   if (pages.length === 0) {
     return Promise.resolve([]);
