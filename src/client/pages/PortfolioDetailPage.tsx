@@ -10,7 +10,11 @@ import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetailBackground from '../components/Portfolio/PortfolioDetailBackground';
 import PortfolioDetailGallery from '../components/Portfolio/PortfolioDetailGallery';
 import PortfolioDetailHero from '../components/Portfolio/PortfolioDetailHero';
-import { getGalleryImages, getBackgroundImage, getHeroImage } from '../utils/portfolioImage';
+import {
+  getGalleryImages,
+  getBackgroundImage,
+  getHeroImage,
+} from '../utils/portfolioImage';
 
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
@@ -30,16 +34,14 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   getDetailView(portfolio: Portfolio) {
-    const galleryImagesPaths = getGalleryImages(this.props.portfolio.imagePaths);
+    const galleryImagesPaths = getGalleryImages(
+      this.props.portfolio.imagePaths,
+    );
     if (galleryImagesPaths.length > 1) {
       return <PortfolioDetailGallery portfolio={portfolio} />;
     }
 
-    return (
-      <PortfolioDetailImage
-        imagePath={galleryImagesPaths[0]}
-      />
-    );
+    return <PortfolioDetailImage imagePath={galleryImagesPaths[0]} />;
   }
 
   render() {
@@ -52,12 +54,13 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
           <title>{this.props.portfolio.title}</title>
           <meta property="og:title" content={this.props.portfolio.title} />
         </Helmet>
-        {!heroImage && bgImage && (
-          <PortfolioDetailBackground
-            imagePath={bgImage.originalUrl}
-            styles={bgImage.meta && bgImage.meta.backgroundStyles}
-          />
-        )}
+        {!heroImage &&
+          bgImage && (
+            <PortfolioDetailBackground
+              imagePath={bgImage.originalUrl}
+              styles={bgImage.meta && bgImage.meta.backgroundStyles}
+            />
+          )}
         <div className="content">
           <Header />
           {heroImage && (
@@ -65,7 +68,10 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
               imagePath={heroImage.originalUrl}
               title={this.props.portfolio.title}
               description={this.props.portfolio.description}
-              hideTitle={this.props.portfolio.meta && !this.props.portfolio.meta.showTitle}
+              hideTitle={
+                this.props.portfolio.meta &&
+                !this.props.portfolio.meta.showTitle
+              }
             />
           )}
           {this.getDetailView(this.props.portfolio)}
@@ -77,7 +83,9 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
 
 function mapStateToProps(state: AppState, props: Props) {
   return {
-    portfolio: state.portfolioItems.find(item => item.id === props.match.params.id),
+    portfolio: state.portfolioItems.find(
+      item => item.id === props.match.params.id,
+    ),
   };
 }
 
@@ -86,7 +94,9 @@ const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
 
 export default {
   loadData,
-  component: styled(connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage))`
+  component: styled(
+    connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage),
+  )`
     position: relative;
 
     .content {

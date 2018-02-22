@@ -29,7 +29,7 @@ const Image = styled.img`
 
 Image.displayName = 'PortfolioItemStackImage.Image';
 
-const PortfolioItemStackImage: React.SFC<Props> = (props) => {
+const PortfolioItemStackImage: React.SFC<Props> = props => {
   return (
     <div className={props.className}>
       <Image src={props.imagePath} />

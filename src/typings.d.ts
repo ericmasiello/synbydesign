@@ -16,7 +16,15 @@ declare module '*.svg' {
 type Tag = React.ComponentType<any> | keyof React.ReactHTML;
 
 interface PortfolioThumbMeta {
-  fit?: 'cover' | 'contain' | 'fill' | 'inherit' | 'initial' | 'none' | 'scale-down' | 'unset';
+  fit?:
+    | 'cover'
+    | 'contain'
+    | 'fill'
+    | 'inherit'
+    | 'initial'
+    | 'none'
+    | 'scale-down'
+    | 'unset';
   position?: string;
   column?: string;
   row?: string;

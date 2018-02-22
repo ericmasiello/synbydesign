@@ -28,7 +28,7 @@ PortfolioDetailBackground.defaultProps = {
 PortfolioDetailBackground.displayName = 'Portfolio.DetailBackground';
 
 const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
-  ${(props) => {
+  ${props => {
     const styles = Object.assign({}, defaultStyles, props.styles);
     return `
       position: absolute;
@@ -41,7 +41,9 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
       background-size: ${styles!.size};
       background-position: ${styles!.backgroundPosition!};
       filter: ${styles!.filter!};
-      ${styles.applyGradient ? `
+      ${
+        styles.applyGradient
+          ? `
         &::after {
           content: '';
           position: absolute;
@@ -51,9 +53,11 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
           height: ${pxToRem(200)};
           background: linear-gradient(to bottom, transparent 0%, #fff 100%);
         }
-      ` : ''}
+      `
+          : ''
+      }
     `;
-  }}
+  }};
 `;
 
 export default StyledPortfolioDetailBackground;

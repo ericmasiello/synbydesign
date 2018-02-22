@@ -11,7 +11,6 @@ import Routes from '../../client/Routes';
 import logger from '../utils/logger';
 
 export default (url: string, store: Store<AppState>, context: object) => {
-
   logger.info('Calling renderer with path:', url, 'and context:', context);
 
   const app = (

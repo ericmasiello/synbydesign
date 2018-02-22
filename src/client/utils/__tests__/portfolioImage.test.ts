@@ -1,25 +1,26 @@
-import {
-  getImagePath,
-  showSVG,
-} from '../portfolioImage';
+import { getImagePath, showSVG } from '../portfolioImage';
 
 describe('getImagePath', () => {
   it('should prefer the large image path', () => {
-    const imagePaths: PortfolioImage[] = [{
-      largeUrl: '/path/to/large.jpg',
-      originalUrl: '/path/to/full.jpg',
-      mediumUrl: '/path/to/medium.jpg',
-    }];
+    const imagePaths: PortfolioImage[] = [
+      {
+        largeUrl: '/path/to/large.jpg',
+        originalUrl: '/path/to/full.jpg',
+        mediumUrl: '/path/to/medium.jpg',
+      },
+    ];
 
     const result = getImagePath(imagePaths);
     expect(result).toEqual('/path/to/large.jpg');
   });
 
   it('should fall back to original when large is not available', () => {
-    const imagePaths: PortfolioImage[] = [{
-      originalUrl: '/path/to/full.jpg',
-      mediumUrl: '/path/to/medium.jpg',
-    }];
+    const imagePaths: PortfolioImage[] = [
+      {
+        originalUrl: '/path/to/full.jpg',
+        mediumUrl: '/path/to/medium.jpg',
+      },
+    ];
 
     const result = getImagePath(imagePaths);
     expect(result).toEqual('/path/to/full.jpg');
@@ -38,7 +39,9 @@ describe('showSVG', () => {
     expect(showSVG()).toBe(false);
     expect(showSVG({ svgSource: 'someSVG' })).toBe(false);
     expect(showSVG({ meta: {}, svgSource: 'someSVG' })).toBe(false);
-    expect(showSVG({ meta: { isSVG: false }, svgSource: 'someSVG' })).toBe(false);
+    expect(showSVG({ meta: { isSVG: false }, svgSource: 'someSVG' })).toBe(
+      false,
+    );
   });
 
   it('should not show SVG when svgSource is not set', () => {

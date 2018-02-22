@@ -9,10 +9,7 @@ interface Props {
 }
 
 export const Logo: React.SFC<Props> = ({ className }) => (
-  <div
-    className={className}
-    dangerouslySetInnerHTML={{ __html: logo }}
-  />
+  <div className={className} dangerouslySetInnerHTML={{ __html: logo }} />
 );
 
 export default styled(Logo)`

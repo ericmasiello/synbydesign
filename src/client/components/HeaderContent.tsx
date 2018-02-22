@@ -8,9 +8,7 @@ interface Props {
 }
 
 export const HeaderContent: React.SFC<Props> = props => (
-  <div className={props.className}>
-    {props.children}
-  </div>
+  <div className={props.className}>{props.children}</div>
 );
 
 HeaderContent.displayName = 'Header.Content';
@@ -23,7 +21,7 @@ const StyledHeaderContent = styled(HeaderContent)`
   padding: 1rem ${pxToRem(horizontalPadding)};
   margin: auto;
 
-  @media(min-width: ${pxToRem(850)}) {
+  @media (min-width: ${pxToRem(850)}) {
     flex-direction: row;
     justify-content: space-between;
   }

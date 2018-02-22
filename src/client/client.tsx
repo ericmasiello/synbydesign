@@ -20,17 +20,12 @@ const store = createStore(
 
 export const client = (
   <Provider store={store}>
-    <BrowserRouter>
-      {renderRoutes(Routes)}
-    </BrowserRouter>
+    <BrowserRouter>{renderRoutes(Routes)}</BrowserRouter>
   </Provider>
 );
 
 const root = document.getElementById('root');
 
 if (root) {
-  ReactDOM.hydrate(
-    client,
-    root,
-  );
+  ReactDOM.hydrate(client, root);
 }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as tinyColor from 'tinycolor2';
 import { COLORS } from '../styles/vars';
 
-interface Props extends React.HTMLProps<HTMLLinkElement>  {
+interface Props extends React.HTMLProps<HTMLLinkElement> {
   borderColor?: string;
   linkColor?: string;
   hoverLinkColor?: string;
@@ -17,8 +17,14 @@ interface DefaultProps {
   tag: Tag;
 }
 
-const AnimatedLink: React.SFC<Props> = (props) => {
-  const { tag: Tag, borderColor, linkColor, hoverLinkColor, ...rest } = props as Props & DefaultProps;
+const AnimatedLink: React.SFC<Props> = props => {
+  const {
+    tag: Tag,
+    borderColor,
+    linkColor,
+    hoverLinkColor,
+    ...rest
+  } = props as Props & DefaultProps;
   return <Tag {...rest} />;
 };
 
@@ -27,12 +33,14 @@ AnimatedLink.displayName = 'AnimatedLink';
 AnimatedLink.defaultProps = {
   borderColor: COLORS.link,
   linkColor: COLORS.link,
-  hoverLinkColor: tinyColor(COLORS.link).darken(10).toRgbString(),
+  hoverLinkColor: tinyColor(COLORS.link)
+    .darken(10)
+    .toRgbString(),
   tag: 'a',
 } as DefaultProps;
 
 export default styled(AnimatedLink)`
-  ${(props) => {
+  ${props => {
     const mergedProps = Object.assign({}, AnimatedLink.defaultProps, props);
     return `
       position: relative;
@@ -59,5 +67,5 @@ export default styled(AnimatedLink)`
         }
       }
     `;
-  }}
+  }};
 `;

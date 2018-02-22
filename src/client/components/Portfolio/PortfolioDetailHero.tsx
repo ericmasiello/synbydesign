@@ -12,30 +12,31 @@ interface TitleProps {
   hide?: boolean;
 }
 
-const Title: React.SFC<TitleProps> = ({ className, children, hide, ...rest }) => (
+const Title: React.SFC<TitleProps> = ({
+  className,
+  children,
+  hide,
+  ...rest
+}) => (
   <h1 className={className} hidden={hide} {...rest}>
     {children}
   </h1>
 );
 
 const StyledTitle = styled(Title)`
-  ${type(TYPE_SIZE.t1)}
-  text-transform: uppercase;
+  ${type(TYPE_SIZE.t1)} text-transform: uppercase;
   margin: 0;
-  ${props => props.hide ? visuallyHidden : ''}
+  ${props => (props.hide ? visuallyHidden : '')};
 `;
 
 const Description = styled.div`
   &:first-line {
-    ${type(TYPE_SIZE.t4)}
-    font-weight: ${mediumWeight};
+    ${type(TYPE_SIZE.t4)} font-weight: ${mediumWeight};
   }
 `;
 
 const Content = styled.div`
-  ${pageContainer}
-  ${type(TYPE_SIZE.t5)}
-  max-width: 65em;
+  ${pageContainer} ${type(TYPE_SIZE.t5)} max-width: 65em;
   margin: 0 auto ${pxToRem(50)};
 `;
 
@@ -52,8 +53,15 @@ interface Props {
   hideTitle?: boolean;
 }
 
-export const PortfolioDetailHero: React.SFC<Props> = (props) => {
-  const { title, className, imagePath, description = '', hideTitle, ...rest } = props;
+export const PortfolioDetailHero: React.SFC<Props> = props => {
+  const {
+    title,
+    className,
+    imagePath,
+    description = '',
+    hideTitle,
+    ...rest
+  } = props;
   return (
     <div className={className} {...rest}>
       <HeroImageContainer>
@@ -76,7 +84,6 @@ export const PortfolioDetailHero: React.SFC<Props> = (props) => {
 
 PortfolioDetailHero.displayName = 'Portfolio.DetailHero';
 
-const StyledPortfolioDetailHero = styled(PortfolioDetailHero)`
-`;
+const StyledPortfolioDetailHero = styled(PortfolioDetailHero)``;
 
 export default StyledPortfolioDetailHero;

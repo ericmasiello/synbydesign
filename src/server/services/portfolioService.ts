@@ -9,19 +9,21 @@ function titleToId(title: string): string {
 }
 
 function matchListFilter(filters: string[], filterKey: string) {
-  return ((item: Portfolio) => {
+  return (item: Portfolio) => {
     if (filters.length === 0) {
       return true;
     }
 
-    const matches = filters.map((filter) => {
-      return (item[filterKey] as string[]).indexOf(filter) > -1;
-    }).reduce((acc, current) => {
-      return acc || current;
-    },        false);
+    const matches = filters
+      .map(filter => {
+        return (item[filterKey] as string[]).indexOf(filter) > -1;
+      })
+      .reduce((acc, current) => {
+        return acc || current;
+      }, false);
 
     return matches;
-  });
+  };
 }
 
 function rawPortfolioToPortfolio(rawList: RawPortfolio[]): Portfolio[] {
@@ -31,14 +33,15 @@ function rawPortfolioToPortfolio(rawList: RawPortfolio[]): Portfolio[] {
   }));
 }
 
-export function list(options: {
-  categories?: string[];
-  tags?: string[];
-  searchTerm?: string;
-  pageSize?: number;
-  pageNumber?: number;
-} = {}): Promise<Portfolio[]> {
-
+export function list(
+  options: {
+    categories?: string[];
+    tags?: string[];
+    searchTerm?: string;
+    pageSize?: number;
+    pageNumber?: number;
+  } = {},
+): Promise<Portfolio[]> {
   const {
     categories = [],
     tags = [],
@@ -48,13 +51,14 @@ export function list(options: {
   } = options;
 
   const list = portfolioList
-  .filter(matchListFilter(categories, 'category'))
-  .filter(matchListFilter(tags, 'tags'))
-  .filter((item) => {
-    return (item.title.search(searchTerm) >= 0 ||
-      (item.description && item.description.search(searchTerm) >= 0)
-    );
-  });
+    .filter(matchListFilter(categories, 'category'))
+    .filter(matchListFilter(tags, 'tags'))
+    .filter(item => {
+      return (
+        item.title.search(searchTerm) >= 0 ||
+        (item.description && item.description.search(searchTerm) >= 0)
+      );
+    });
 
   const pages = chunk(list, pageSize);
 

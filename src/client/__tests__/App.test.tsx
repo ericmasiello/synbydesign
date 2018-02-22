@@ -9,16 +9,14 @@ jest.mock('react-router-config');
 jest.mock('../actions/');
 
 const mockRoute = {
-  routes: (['route 1', 'route 2', 'route 3'] as RouteConfig[]),
+  routes: ['route 1', 'route 2', 'route 3'] as RouteConfig[],
 };
 
 const location = {
   pathname: '/path/to/thing',
 };
 
-const {
-  component: App,
-} = appDefault;
+const { component: App } = appDefault;
 
 const storeMocker = () => {
   const mockReducer = (state: any = {}) => state;

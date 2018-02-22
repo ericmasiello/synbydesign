@@ -14,7 +14,7 @@ interface DefaultProps {
   tag: Tag;
 }
 
-export const GalleryItem: React.SFC<Props> = (props) => {
+export const GalleryItem: React.SFC<Props> = props => {
   const { tag: Tag, row, column, ...rest } = props as Props & DefaultProps;
   return <Tag {...rest} />;
 };
@@ -26,15 +26,21 @@ GalleryItem.defaultProps = {
 GalleryItem.displayName = 'PortfolioGallery.Item';
 
 export default styled(GalleryItem)`
-  ${(props) => {
-    let styles = props.column ? `
+  ${props => {
+    let styles = props.column
+      ? `
       @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
         grid-column: ${props.column};
       }
-    ` : '';
-    styles = `${styles}${props.row ? `
+    `
+      : '';
+    styles = `${styles}${
+      props.row
+        ? `
       grid-row: ${props.row};
-    ` : ''}`;
+    `
+        : ''
+    }`;
     return styles;
-  }}
+  }};
 `;

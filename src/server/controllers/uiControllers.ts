@@ -29,7 +29,7 @@ const uiRootController = (req: Request, res: Response) => {
   const store = <Store<AppState>>createStore(getApiInstance(req));
 
   const promises = <Promise<{}>[]>matchRoutes(Routes, url)
-    .map((matchedRoute) => {
+    .map(matchedRoute => {
       logger.info('Found matching route:', matchedRoute.match);
       const route = <RouteConfigWithLoadData>matchedRoute.route;
       if (route.loadData) {
@@ -37,7 +37,7 @@ const uiRootController = (req: Request, res: Response) => {
       }
       return null;
     })
-    .map((promise) => {
+    .map(promise => {
       if (promise) {
         return new Promise((resolve, reject) => {
           return promise.then(resolve).catch(resolve);

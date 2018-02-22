@@ -37,13 +37,14 @@ export class HomePage extends React.Component<Props, {}> {
       <div className={this.props.className}>
         <Helmet>
           <title>Syn By Design: Eric Masiello's Portfolio</title>
-          <meta property="og:title" content="Syn By Design: Eric Masiello's Portfolio" />
+          <meta
+            property="og:title"
+            content="Syn By Design: Eric Masiello's Portfolio"
+          />
         </Helmet>
         <Header />
         <Hero />
-        <PortfolioGallery
-          items={this.props.portfolioItems}
-        />
+        <PortfolioGallery items={this.props.portfolioItems} />
       </div>
     );
   }
@@ -54,11 +55,12 @@ function mapStateToProps({ portfolioItems, resume }: AppState) {
 }
 
 export default {
-  loadData: ({ dispatch }: Store<Portfolio[]>) => (
+  loadData: ({ dispatch }: Store<Portfolio[]>) =>
     Promise.all([
       dispatch(fetchResume()),
       dispatch(fetchPortfolioItems(pageRequest)),
-    ])
+    ]),
+  component: connect(mapStateToProps, { fetchPortfolioItems, fetchResume })(
+    HomePage,
   ),
-  component: connect(mapStateToProps, { fetchPortfolioItems, fetchResume })(HomePage),
 };

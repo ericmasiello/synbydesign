@@ -8,7 +8,7 @@ interface Props {
   to: string;
 }
 
-export const PortfolioGalleryLink: React.SFC<Props> = (props) => {
+export const PortfolioGalleryLink: React.SFC<Props> = props => {
   return <Link {...props} />;
 };
 
