@@ -34,11 +34,12 @@ function mapStateToProps(state: AppState, props: Props) {
     // tslint:disable-next-line no-unused-variable
     const [ignore, id] = match;
     return {
+      ...props,
       portfolio: state.portfolioItems.find(item => item.id === id),
     };
   }
 
-  return {};
+  return props;
 }
 
 export default {
