@@ -2,24 +2,19 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Muted from './Muted';
 import Highlighted from './Highlighted';
-import { pxToRem, type, headerFont } from '../styles/utils';
-import { maxWidth, horizontalPadding, TYPE_SIZE } from '../styles/vars';
-
-const largeBreakPoint = 850;
-const typeOffset = TYPE_SIZE.jumbo[0] * 0.8;
+import HeroCopy from './HeroCopy';
+import { pxToRem, type } from '../styles/utils';
+import {
+  maxWidth,
+  horizontalPadding,
+  TYPE_SIZE,
+  HERO,
+  MEDIA_QUERIES,
+} from '../styles/vars';
 
 interface Props {
   className?: string;
 }
-
-const HeroCopy = styled.div`
-  ${headerFont()} position: relative;
-  max-width: 6em;
-
-  @media (min-width: ${pxToRem(largeBreakPoint)}) {
-    bottom: ${pxToRem(typeOffset * -1)};
-  }
-`;
 
 const Hero: React.SFC<Props> = ({ className }) => {
   return (
@@ -41,8 +36,8 @@ export default styled(Hero)`
   max-width: ${pxToRem(maxWidth)};
   margin: auto;
 
-  @media (min-width: ${pxToRem(largeBreakPoint)}) {
+  @media (min-width: ${pxToRem(MEDIA_QUERIES.large)}) {
     padding-top: ${pxToRem(140)};
-    margin-bottom: ${pxToRem(typeOffset)};
+    margin-bottom: ${pxToRem(HERO.typeOffset)};
   }
 `;

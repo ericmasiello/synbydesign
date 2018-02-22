@@ -5,11 +5,6 @@ const unitToPx = (unit: number): number => unit * 16;
 const highlight = '#c90044';
 const borderColor = '#d4cfd1';
 
-export const maxWidth = 1600;
-export const horizontalPadding = 40;
-export const pageBorderWidth = '1vmin';
-export const headerSpacing = '1.5vh';
-
 export const COLORS = {
   base: '#424141',
   muted: '#787575',
@@ -36,6 +31,7 @@ export const TYPE_SIZE: TypeMap = {
   jumbo: [unitToPx(4), 1.1],
 };
 
+// type properties
 export const bodyWeight = 300;
 export const mediumWeight = 500;
 export const boldWeight = 600;
@@ -44,4 +40,19 @@ export const GALLERY = Object.freeze({
   itemPadding: 16,
   minItemSize: 300,
   fullSize: 800,
+});
+
+export const MEDIA_QUERIES = Object.freeze({
+  large: 850,
+});
+
+// spacing and sizing
+export const maxWidth = 1600;
+export const horizontalPadding = 40;
+export const pageBorderWidth = '1vmin';
+export const headerSpacing = '1.5vh';
+
+// page/component values
+export const HERO = Object.freeze({
+  typeOffset: TYPE_SIZE.jumbo[0] * 0.8,
 });
