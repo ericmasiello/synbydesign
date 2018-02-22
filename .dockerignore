@@ -1,0 +1,11 @@
+.dockerignore
+.eslintcache
+.git
+.gitattributes
+.gitignore
+.nvmrc
+Dockerfile
+README.md
+node_modules
+build
+public
