@@ -1,6 +1,9 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint-config-airbnb"],
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
   "rules": {
     "arrow-parens": false,
     "arrow-return-shorthand": [false],
@@ -8,7 +11,6 @@
     "import-blacklist": [true, "rxjs"],
     "import-name": false,
     "interface-over-type-literal": false,
-    "max-line-length": [true, 120],
     "member-access": false,
     "member-ordering": [true, {"order": "fields-first"}],
     "newline-before-return": false,
@@ -19,7 +21,6 @@
     "no-null-keyword": false,
     "no-require-imports": false,
     "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": true,
     "no-this-assignment": [true, {"allow-destructuring": true}],
     "no-unused-variable": [true, "react"],
     "object-literal-sort-keys": false,
@@ -30,7 +31,6 @@
     "ordered-imports": [false],
     "prefer-method-signature": false,
     "prefer-template": [true, "allow-single-concat"],
-    "quotemark": [true, "single", "jsx-double"],
     "strict-boolean-expressions": false,
     "triple-equals": [true, "allow-null-check"],
     "typedef": [true,"parameter", "property-declaration"],
