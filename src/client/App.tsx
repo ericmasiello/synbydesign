@@ -22,10 +22,8 @@ interface Props {
   };
 }
 
-const App: React.SFC<Props> = ({ route, className  }) => (
-  <div className={className}>
-    {renderRoutes(route.routes)}
-  </div>
+const App: React.SFC<Props> = ({ route, className }) => (
+  <div className={className}>{renderRoutes(route.routes)}</div>
 );
 
 function mapStateToProps(state: AppState, props: Props) {
@@ -45,13 +43,14 @@ function mapStateToProps(state: AppState, props: Props) {
 export default {
   component: connect(mapStateToProps)(styled(App)`
     ${({ portfolio }) => {
-      let color = tinyColor(COLORS.highlight).setAlpha(0.8).toRgbString();
+      let color = tinyColor(COLORS.highlight)
+        .setAlpha(0.8)
+        .toRgbString();
       if (portfolio && portfolio.meta && portfolio.meta.highlightColor) {
         color = portfolio.meta.highlightColor;
       }
       return `border: ${pageBorderWidth} solid ${color};`;
-    }}
-    padding-bottom: ${pxToRem(30)};
+    }} padding-bottom: ${pxToRem(30)};
     min-height: 100vh;
     transition: border-color 1s;
   `),

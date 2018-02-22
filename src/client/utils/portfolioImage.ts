@@ -1,4 +1,6 @@
-export const getImagePath = (imagePaths: PortfolioImage | PortfolioImage[]): string | undefined => {
+export const getImagePath = (
+  imagePaths: PortfolioImage | PortfolioImage[],
+): string | undefined => {
   let path;
   if (Array.isArray(imagePaths)) {
     path = imagePaths[0];
@@ -23,8 +25,10 @@ export const getImagePaths = (imagePaths: PortfolioImage[]): string[] => {
   return imagePaths.map(partial).filter(path => path !== undefined) as string[];
 };
 
-export const getGalleryImages = (imagePaths: PortfolioImage[]): PortfolioImage[] => {
-  return imagePaths.filter((path) => {
+export const getGalleryImages = (
+  imagePaths: PortfolioImage[],
+): PortfolioImage[] => {
+  return imagePaths.filter(path => {
     if (path.meta && path.meta.usage) {
       return path.meta.usage.indexOf('gallery') > -1;
     }
@@ -34,8 +38,10 @@ export const getGalleryImages = (imagePaths: PortfolioImage[]): PortfolioImage[]
   });
 };
 
-export const getHeroImage = (imagePaths: PortfolioImage[]): PortfolioImage | undefined => {
-  return imagePaths.filter((path) => {
+export const getHeroImage = (
+  imagePaths: PortfolioImage[],
+): PortfolioImage | undefined => {
+  return imagePaths.filter(path => {
     if (path.meta && path.meta.usage) {
       return path.meta.usage.indexOf('hero') > -1;
     }
@@ -43,8 +49,10 @@ export const getHeroImage = (imagePaths: PortfolioImage[]): PortfolioImage | und
   })[0];
 };
 
-export const getBackgroundImage = (imagePaths: PortfolioImage[]): PortfolioImage | undefined => {
-  const bgImagePath = imagePaths.filter((path) => {
+export const getBackgroundImage = (
+  imagePaths: PortfolioImage[],
+): PortfolioImage | undefined => {
+  const bgImagePath = imagePaths.filter(path => {
     if (path.meta && path.meta.usage) {
       return path.meta.usage.indexOf('background') > -1;
     }

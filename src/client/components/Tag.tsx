@@ -5,7 +5,7 @@ interface Props {
   className?: string;
 }
 
-const Tag: React.SFC<Props> = (props) => {
+const Tag: React.SFC<Props> = props => {
   const { tag: Tag = 'span', className, children, ...rest } = props;
   return (
     <Tag className={className} {...rest}>

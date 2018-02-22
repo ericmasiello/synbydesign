@@ -3,7 +3,6 @@ import apiRouter from './routes/api';
 import uiRouter from './routes/ui';
 import errorMiddleware from './middleware/errorMiddleware';
 
-
 const app = express();
 
 app.set('port', process.env.PORT || 3000);

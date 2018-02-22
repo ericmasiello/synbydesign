@@ -1,6 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import * as boom from 'boom';
-import { portofolioController, portofolioDetailController } from '../apiControllers';
+import {
+  portofolioController,
+  portofolioDetailController,
+} from '../apiControllers';
 import { list, getById } from '../../services/portfolioService';
 jest.mock('../../services/portfolioService');
 
@@ -111,6 +114,8 @@ describe('portofolioDetailController', () => {
     const mockRes = {} as Response;
 
     await portofolioDetailController(mockReq, mockRes, mockNext);
-    expect(mockNext).toBeCalledWith(boom.notFound('Portfolio item does not exist'));
+    expect(mockNext).toBeCalledWith(
+      boom.notFound('Portfolio item does not exist'),
+    );
   });
 });

@@ -12,9 +12,7 @@ interface Props {
 
 export const Header: React.SFC<Props> = ({ className }) => {
   return (
-    <header
-      className={className}
-    >
+    <header className={className}>
       <HeaderContent>
         <Link to="/">
           <Logo />
@@ -28,7 +26,7 @@ export const Header: React.SFC<Props> = ({ className }) => {
 Header.displayName = 'Header';
 
 export default styled(Header)`
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.9);
   margin-top: ${headerSpacing};
   margin-bottom: ${headerSpacing};
 `;

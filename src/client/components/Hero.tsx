@@ -13,8 +13,7 @@ interface Props {
 }
 
 const HeroCopy = styled.div`
-  ${headerFont()}
-  position: relative;
+  ${headerFont()} position: relative;
   max-width: 6em;
 
   @media (min-width: ${pxToRem(largeBreakPoint)}) {
@@ -26,7 +25,8 @@ const Hero: React.SFC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <HeroCopy>
-        <Muted>Freelance</Muted> <Highlighted>Developer</Highlighted>, Teacher &amp; Consultant
+        <Muted>Freelance</Muted> <Highlighted>Developer</Highlighted>, Teacher
+        &amp; Consultant
       </HeroCopy>
     </div>
   );
@@ -35,8 +35,7 @@ const Hero: React.SFC<Props> = ({ className }) => {
 Hero.displayName = 'Hero';
 
 export default styled(Hero)`
-  ${type(TYPE_SIZE.jumbo)}
-  background-color: #e4e4e4;
+  ${type(TYPE_SIZE.jumbo)} background-color: #e4e4e4;
   text-transform: uppercase;
   padding: 1rem ${pxToRem(horizontalPadding)};
   max-width: ${pxToRem(maxWidth)};

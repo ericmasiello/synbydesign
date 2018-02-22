@@ -18,4 +18,3 @@ test('should log the port the app is running on', () => {
   appStartup();
   expect(console.log).toBeCalledWith('Listening on port: 1234');
 });
-

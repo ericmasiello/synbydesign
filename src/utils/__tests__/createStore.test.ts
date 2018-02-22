@@ -13,20 +13,21 @@ test('create a store with default state', () => {
 });
 
 test('create a store with initialized state', () => {
-
   const state: AppState = {
     resume: {
       name: 'Eric',
       title: 'Developer',
       lead: 'To be the best',
     },
-    portfolioItems: [{
-      id: 'the-id',
-      title: 'The title',
-      category: [],
-      tags: [],
-      imagePaths: [],
-    }],
+    portfolioItems: [
+      {
+        id: 'the-id',
+        title: 'The title',
+        category: [],
+        tags: [],
+        imagePaths: [],
+      },
+    ],
   };
 
   const axiosInstance = axios.create();
@@ -38,7 +39,6 @@ test('create a store with initialized state', () => {
 });
 
 describe('axios instance', () => {
-
   let originalThunkWithExtraArgument: any;
   let originalApplyMiddleware: any;
 

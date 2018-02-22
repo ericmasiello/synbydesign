@@ -8,18 +8,22 @@ jest.mock('react-helmet', () => {
   const obj: any = { Helmet: {} };
   obj.Helmet.renderStatic = jest.fn(() => ({
     title: { toString: jest.fn(() => '<title>The title</title>') },
-    meta: { toString: jest.fn(() => '<meta name="meta" description="the meta">') },
+    meta: {
+      toString: jest.fn(() => '<meta name="meta" description="the meta">'),
+    },
   }));
   return obj;
 });
 
-jest.mock('../../../client/Routes', () => ([]));
+jest.mock('../../../client/Routes', () => []);
 jest.mock('styled-components');
 jest.mock('react-dom/server');
 
 (ServerStyleSheet as any).mockImplementation(() => {
   const sheet: any = {};
-  sheet.getStyleTags = jest.fn(() => '<link rel="stylesheet" href="/link/to/styles.css" />');
+  sheet.getStyleTags = jest.fn(
+    () => '<link rel="stylesheet" href="/link/to/styles.css" />',
+  );
   sheet.collectStyles = jest.fn();
   return sheet;
 });
@@ -32,11 +36,13 @@ test('should render head as a string', () => {
   const store = createStore(axiosInstance);
   const { head } = renderer(url, store, {});
 
-  expect(head.trim()).toEqual([
-    '<title>The title</title>',
-    '<meta name="meta" description="the meta">',
-    '<link rel="stylesheet" href="/link/to/styles.css" />',
-  ].join('\n'));
+  expect(head.trim()).toEqual(
+    [
+      '<title>The title</title>',
+      '<meta name="meta" description="the meta">',
+      '<link rel="stylesheet" href="/link/to/styles.css" />',
+    ].join('\n'),
+  );
 });
 
 test('should render html as a string', () => {

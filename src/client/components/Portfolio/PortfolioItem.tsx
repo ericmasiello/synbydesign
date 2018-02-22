@@ -14,7 +14,7 @@ interface Props {
   imagePaths: PortfolioImage[];
 }
 
-const Item: React.SFC<Props> = (props) => {
+const Item: React.SFC<Props> = props => {
   if (showSVG(props)) {
     return (
       <PortfolioItemSVG
@@ -34,7 +34,6 @@ const Item: React.SFC<Props> = (props) => {
         fit={props.meta && props.meta.thumb && props.meta.thumb.fit}
         alt={props.title}
         position={props.meta && props.meta.thumb && props.meta.thumb.position}
-
       />
     );
   }

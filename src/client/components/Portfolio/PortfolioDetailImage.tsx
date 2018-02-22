@@ -8,7 +8,7 @@ interface Props {
   imagePath: PortfolioImage;
 }
 
-export const PortfolioDetailImage: React.SFC<Props> = (props) => {
+export const PortfolioDetailImage: React.SFC<Props> = props => {
   return (
     <article className={props.className}>
       <img src={props.imagePath.originalUrl} alt="FIXME" />
@@ -23,8 +23,7 @@ const StyledPortfolioDetailImage = styled(PortfolioDetailImage)`
   margin-top: ${pxToRem(50)};
 
   img {
-    ${borderedImage}
-    margin: auto;
+    ${borderedImage} margin: auto;
     display: inline-block;
     max-width: 80%;
   }

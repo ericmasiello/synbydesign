@@ -16,11 +16,11 @@ interface DefaultProps {
   tag: Tag;
 }
 
-export const PortfolioGallery: React.SFC<Props> = (props) => {
+export const PortfolioGallery: React.SFC<Props> = props => {
   const { items, tag: Tag, ...rest } = props as Props & DefaultProps;
   return (
     <Tag {...rest}>
-      {items.map((item) => {
+      {items.map(item => {
         const row = item.meta && item.meta.thumb && item.meta.thumb.row;
         const column = item.meta && item.meta.thumb && item.meta.thumb.column;
 
@@ -49,7 +49,10 @@ export default styled(PortfolioGallery)`
   margin: 0 auto;
   display: grid;
   list-style-type: none;
-  grid-template-columns: repeat(auto-fit, minmax(${pxToRem(GALLERY.minItemSize)}, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(${pxToRem(GALLERY.minItemSize)}, 1fr)
+  );
   grid-auto-flow: dense;
   grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
   grid-gap: ${pxToRem(GALLERY.itemPadding)};

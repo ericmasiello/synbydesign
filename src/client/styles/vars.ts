@@ -14,9 +14,13 @@ export const COLORS = {
   base: '#424141',
   muted: '#787575',
   highlight,
-  link: tinyColor(highlight).setAlpha(0.6).toRgbString(),
+  link: tinyColor(highlight)
+    .setAlpha(0.6)
+    .toRgbString(),
   logo: '#3b3b3b',
-  galleryBorder: tinyColor(borderColor).setAlpha(0.5).toRgbString(),
+  galleryBorder: tinyColor(borderColor)
+    .setAlpha(0.5)
+    .toRgbString(),
   galleryBorderHighlight: borderColor,
   galleryBg: '#e0dcde',
 };

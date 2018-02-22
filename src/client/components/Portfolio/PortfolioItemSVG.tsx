@@ -6,7 +6,7 @@ interface Props {
   svgSource: string;
 }
 
-const PortfolioItemSVG: React.SFC<Props> = (props) => {
+const PortfolioItemSVG: React.SFC<Props> = props => {
   return (
     <div
       className={props.className}
@@ -18,7 +18,8 @@ const PortfolioItemSVG: React.SFC<Props> = (props) => {
 PortfolioItemSVG.displayName = 'PortfolioItemSVG';
 
 export default styled(PortfolioItemSVG)`
-  &, svg {
+  &,
+  svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
