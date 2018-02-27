@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface Props {
-  tag?: string;
+  tag?: Tag;
   className?: string;
 }
 
