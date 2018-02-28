@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Tag from './Tag';
+import ProfessionalExperienceRole from './ProfessionalExperienceRole';
 
 interface Props extends ProfessionalExperience {
   className?: string;
@@ -9,6 +10,7 @@ interface Props extends ProfessionalExperience {
 
 interface DefaultProps {
   tag: Tag;
+  accomplishments: string[];
 }
 
 export const ProfessionalExperience: React.SFC<Props> = props => {
@@ -23,21 +25,22 @@ export const ProfessionalExperience: React.SFC<Props> = props => {
     <Tag className={className} {...rest}>
       <hgroup>
         <h1>{organization}</h1>
-        {roles.map(role => (
-          <React.Fragment key={role.title}>
-            <h2>{role.title}</h2>
-            <p>
-              {role.yearFrom} &mdash; {role.yearTo}
-            </p>
-          </React.Fragment>
-        ))}
+        <ProfessionalExperienceRole roles={roles} />
       </hgroup>
+      <section>
+        <ul>
+          {accomplishments.map(accomplishment => (
+            <li key={accomplishment}>{accomplishment}</li>
+          ))}
+        </ul>
+      </section>
     </Tag>
   );
 };
 
 ProfessionalExperience.defaultProps = {
   tag: 'article',
+  accomplishments: [],
 } as DefaultProps;
 
 ProfessionalExperience.displayName = 'ProfessionalExperience';

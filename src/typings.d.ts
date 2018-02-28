@@ -95,7 +95,7 @@ interface FetchPortfolioItemsParams {
 
 interface ProfessionalRole {
   title: string;
-  yearFrom?: string;
+  yearFrom: string;
   yearTo?: string;
 }
 
