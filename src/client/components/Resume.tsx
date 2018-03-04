@@ -4,6 +4,7 @@ import Tag from './Tag';
 import ResumeHeader from './ResumeHeader';
 import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
+import RelatedExperience from './RelatedExperience';
 
 interface Props extends Resume {
   className?: string;
@@ -12,6 +13,7 @@ interface Props extends Resume {
 
 interface DefaultProps {
   professionalExperience: ProfessionalExperience[];
+  relatedExperience: RelatedExperience[];
   tag: Tag;
 }
 
@@ -43,6 +45,9 @@ export const Resume: React.SFC<Props> = props => {
       </section>
       <section>
         <h2>Freelance &amp; Related Experience</h2>
+        {relatedExperience.map(experience => (
+          <RelatedExperience key={experience.title} {...experience} />
+        ))}
       </section>
     </Tag>
   );
@@ -51,6 +56,7 @@ export const Resume: React.SFC<Props> = props => {
 Resume.defaultProps = {
   tag: 'section',
   professionalExperience: [],
+  relatedExperience: [],
 } as DefaultProps;
 
 Resume.displayName = 'Resume';
