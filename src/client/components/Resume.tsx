@@ -24,7 +24,7 @@ export const Resume: React.SFC<Props> = props => {
     lead,
     skills,
     professionalExperience,
-    freelanceExperience,
+    relatedExperience,
     education,
     ...rest
   } = props as Props & DefaultProps;
@@ -40,6 +40,9 @@ export const Resume: React.SFC<Props> = props => {
             {...experience}
           />
         ))}
+      </section>
+      <section>
+        <h2>Freelance &amp; Related Experience</h2>
       </section>
     </Tag>
   );

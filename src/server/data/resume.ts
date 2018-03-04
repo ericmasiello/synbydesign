@@ -106,8 +106,88 @@ const resume: Resume = {
       ],
     },
   ],
-  freelanceExperience: [],
-  education: [],
+  relatedExperience: [
+    {
+      title: 'Packt Publishing <em>Mastering React Native</em> Book',
+      role: {
+        title: 'Author',
+      },
+      meta: 'Release January 2017',
+      accomplishments: [
+        'Teach front-end web developers how to create mobile applications for iOS and Android using React Native',
+      ],
+    },
+    {
+      title: 'General Assembly',
+      role: {
+        title: 'Instructor',
+        yearFrom: '2017',
+      },
+      accomplishments: [
+        'Teach students how to build web sites using HTML5, CSS, JavaScript, and jQuery',
+      ],
+    },
+    {
+      title: 'Packt Publishing <em>Mastering React.js</em> Video',
+      role: {
+        title: 'Technical Reviewer',
+        yearFrom: '2015',
+      },
+      accomplishments: [
+        'Provide insight and assess technical accuracy of video content and offer suggestions to improve relevance for an audiences new to React programming',
+      ],
+    },
+    {
+      title: 'Syn By Design',
+      website: {
+        url: 'http://synbydesign.com',
+      },
+      role: {
+        title: 'Developer, Designer',
+        yearFrom: '2018',
+      },
+      accomplishments: [
+        'React, Redux, ES2015+, Webpack, HTML5, Styled Components, REST API, responsive design',
+      ],
+    },
+    {
+      title: 'Anarchostar',
+      website: {
+        url: 'http://anarchostar.com',
+        disabled: true,
+      },
+      role: {
+        title: 'Developer, Designer',
+        yearFrom: '2015',
+      },
+      accomplishments: [
+        'Parallax, Wordpress theme, Custom Wordpress Soundcloud plugin, Responsive design',
+      ],
+    },
+  ],
+  education: [
+    {
+      institution: 'University of Maryland, Baltimore County',
+      location: 'Catonsville, MD',
+      year: '2003',
+      degree: 'Bachelor of Science Information Systems Management',
+    },
+    {
+      institution: 'Chain React Conference',
+      year: '2017',
+      location: 'Portland, OR',
+    },
+    {
+      institution: 'Scrum Alliance',
+      degree: 'Certified ScrumMaster',
+      year: '2017',
+    },
+    {
+      institution: "Steven Krug's Usability Testing Workshop",
+      year: '2009',
+      location: 'Washington, DC',
+    },
+  ],
 };
 
 export default resume;
