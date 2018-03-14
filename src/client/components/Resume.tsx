@@ -5,6 +5,7 @@ import ResumeHeader from './ResumeHeader';
 import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
 import RelatedExperience from './RelatedExperience';
+import EducationExperience from './EducationExperience';
 
 interface Props extends Resume {
   className?: string;
@@ -14,6 +15,7 @@ interface Props extends Resume {
 interface DefaultProps {
   professionalExperience: ProfessionalExperience[];
   relatedExperience: RelatedExperience[];
+  education: Education[];
   tag: Tag;
 }
 
@@ -49,6 +51,10 @@ export const Resume: React.SFC<Props> = props => {
           <RelatedExperience key={experience.title} {...experience} />
         ))}
       </section>
+      <section>
+        <h2>Education &amp; Training</h2>
+        {education.map(edu => <EducationExperience {...edu} />)}
+      </section>
     </Tag>
   );
 };
@@ -57,6 +63,7 @@ Resume.defaultProps = {
   tag: 'section',
   professionalExperience: [],
   relatedExperience: [],
+  education: [],
 } as DefaultProps;
 
 Resume.displayName = 'Resume';

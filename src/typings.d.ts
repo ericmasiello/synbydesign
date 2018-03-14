@@ -128,7 +128,6 @@ interface Education {
   location?: string;
   year?: string;
   degree?: string;
-  meta?: string;
 }
 
 interface Resume {
