@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<span
+  className={undefined}
+>
+  <h1>
+    School Name
+  </h1>
+  <div />
+</span>
+`;

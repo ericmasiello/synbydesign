@@ -22,7 +22,8 @@ export const EducationExperience: React.SFC<Props> = props => {
     <Tag className={className} {...rest}>
       <h1>{institution}</h1>
       <div>
-        {location && <p>{location}</p>} {year && <span>{year}</span>}
+        {location && <p>{location}</p>}
+        {year && <span>{year}</span>}
       </div>
       {degree && <p>{degree}</p>}
     </Tag>
