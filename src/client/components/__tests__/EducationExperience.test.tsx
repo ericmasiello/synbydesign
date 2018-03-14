@@ -3,12 +3,12 @@ import * as renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { EducationExperience } from '../EducationExperience';
 
-const edu: Education = {
+const base: Education = {
   institution: 'School Name',
 };
 
 it('should render', () => {
-  const component = renderer.create(<EducationExperience {...edu} />);
+  const component = renderer.create(<EducationExperience {...base} />);
   const tree = component.toJSON();
 
   expect(tree).toMatchSnapshot();
@@ -16,7 +16,7 @@ it('should render', () => {
 
 it('should display additional classes', () => {
   const wrapper = shallow(
-    <EducationExperience {...edu} className="my-class" />,
+    <EducationExperience {...base} className="my-class" />,
   );
 
   expect(wrapper.hasClass('my-class')).toBe(true);
@@ -24,7 +24,7 @@ it('should display additional classes', () => {
 
 it('should render location', () => {
   const wrapper = shallow(
-    <EducationExperience {...edu} location="The location" />,
+    <EducationExperience {...base} location="The location" />,
   );
 
   expect(
@@ -36,7 +36,7 @@ it('should render location', () => {
 });
 
 it('should render the year', () => {
-  const wrapper = shallow(<EducationExperience {...edu} year="2018" />);
+  const wrapper = shallow(<EducationExperience {...base} year="2018" />);
 
   expect(
     wrapper
@@ -48,7 +48,7 @@ it('should render the year', () => {
 
 it('should render degree', () => {
   const wrapper = shallow(
-    <EducationExperience {...edu} degree="Master of None" />,
+    <EducationExperience {...base} degree="Master of None" />,
   );
 
   expect(
