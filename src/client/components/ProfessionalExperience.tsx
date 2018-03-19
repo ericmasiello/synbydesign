@@ -27,13 +27,15 @@ export const ProfessionalExperience: React.SFC<Props> = props => {
         <h1>{organization}</h1>
         <ProfessionalExperienceRole roles={roles} />
       </hgroup>
-      <section>
-        <ul>
-          {accomplishments.map(accomplishment => (
-            <li key={accomplishment}>{accomplishment}</li>
-          ))}
-        </ul>
-      </section>
+      {accomplishments.length > 0 && (
+        <section>
+          <ul>
+            {accomplishments.map(accomplishment => (
+              <li key={accomplishment}>{accomplishment}</li>
+            ))}
+          </ul>
+        </section>
+      )}
     </Tag>
   );
 };
