@@ -11,6 +11,7 @@ interface Props extends ProfessionalExperience {
 interface DefaultProps {
   tag: Tag;
   accomplishments: string[];
+  roles: ProfessionalRole[];
 }
 
 export const ProfessionalExperience: React.SFC<Props> = props => {
@@ -25,7 +26,9 @@ export const ProfessionalExperience: React.SFC<Props> = props => {
     <Tag className={className} {...rest}>
       <hgroup>
         <h1>{organization}</h1>
-        <ProfessionalExperienceRole roles={roles} />
+        {roles.map(role => (
+          <ProfessionalExperienceRole {...role} key={role.title} />
+        ))}
       </hgroup>
       {accomplishments.length > 0 && (
         <section>
@@ -43,6 +46,7 @@ export const ProfessionalExperience: React.SFC<Props> = props => {
 ProfessionalExperience.defaultProps = {
   tag: 'article',
   accomplishments: [],
+  roles: [],
 } as DefaultProps;
 
 ProfessionalExperience.displayName = 'ProfessionalExperience';

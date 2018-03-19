@@ -39,11 +39,19 @@ it('should render roles', () => {
       yearFrom: '2001',
       yearTo: '2020',
     },
+    {
+      title: 'Title 2',
+      yearFrom: '2020',
+      yearTo: '2031',
+    },
   ];
   const wrapper = shallow(<ProfessionalExperience {...base} roles={roles} />);
-  const professionalExperience = wrapper.find(ProfessionalExperienceRole);
+  const professionalExperienceRoles = wrapper.find(ProfessionalExperienceRole);
 
-  expect(professionalExperience.props().roles).toEqual(roles);
+  expect(professionalExperienceRoles).toHaveLength(roles.length);
+  professionalExperienceRoles.forEach((professionalExperienceRole, i) => {
+    expect(professionalExperienceRole.props()).toEqual(roles[i]);
+  });
 });
 
 it('should render accomplishments', () => {

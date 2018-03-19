@@ -1,12 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  roles?: ProfessionalRole[];
-}
-
-interface DefaultProps {
-  roles: ProfessionalRole[];
+export interface Props extends ProfessionalRole {
+  className?: string;
 }
 
 function getTimeline(yearFrom: string, yearTo: string = 'Present') {
@@ -18,22 +14,14 @@ function getTimeline(yearFrom: string, yearTo: string = 'Present') {
 }
 
 export const ProfessionalExperienceRole: React.SFC<Props> = props => {
-  const { roles } = props as Props & DefaultProps;
+  const { className, title, yearFrom, yearTo, ...rest } = props;
   return (
-    <React.Fragment>
-      {roles.map(role => (
-        <React.Fragment key={role.title}>
-          <h2>{role.title}</h2>
-          {getTimeline(role.yearFrom, role.yearTo)}
-        </React.Fragment>
-      ))}
-    </React.Fragment>
+    <div className={className} {...rest}>
+      <h2>{title}</h2>
+      {getTimeline(yearFrom, yearTo)}
+    </div>
   );
 };
-
-ProfessionalExperienceRole.defaultProps = {
-  roles: [] as ProfessionalRole[],
-} as DefaultProps;
 
 ProfessionalExperienceRole.displayName = 'ProfessionalExperience.Role';
 
