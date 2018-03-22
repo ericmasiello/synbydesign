@@ -12,6 +12,7 @@ interface TitleProps {
   hide?: boolean;
 }
 
+// FIXME: should use Type1 here but need to figure out how to pass down hidden attribute
 const Title: React.SFC<TitleProps> = ({
   className,
   children,
@@ -37,7 +38,8 @@ const Description = styled.div`
 `;
 
 const Content = styled.div`
-  ${pageContainer} ${type(TYPE_SIZE.t5)};
+  ${pageContainer};
+  ${type(TYPE_SIZE.t5)};
   max-width: 65em;
   margin: 0 auto ${pxToRem(50)};
 `;

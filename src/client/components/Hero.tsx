@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import Muted from './Muted';
 import Highlighted from './Highlighted';
 import HeroCopy from './HeroCopy';
+import TypeJumbo from './TypeJumbo';
 import { pxToRem } from '../styles/utils';
-import { type } from '../styles/mixins';
 import {
   maxWidth,
   horizontalPadding,
-  TYPE_SIZE,
   HERO,
   MEDIA_QUERIES,
 } from '../styles/vars';
@@ -19,19 +18,19 @@ interface Props {
 
 const Hero: React.SFC<Props> = ({ className }) => {
   return (
-    <div className={className}>
+    <TypeJumbo tag="div" className={className}>
       <HeroCopy>
         <Muted>Freelance</Muted> <Highlighted>Developer</Highlighted>, Teacher
         &amp; Consultant
       </HeroCopy>
-    </div>
+    </TypeJumbo>
   );
 };
 
 Hero.displayName = 'Hero';
 
 export default styled(Hero)`
-  ${type(TYPE_SIZE.jumbo)} background-color: #e4e4e4;
+  background-color: #e4e4e4;
   text-transform: uppercase;
   padding: 1rem ${pxToRem(horizontalPadding)};
   max-width: ${pxToRem(maxWidth)};
