@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import { EducationExperience } from '../EducationExperience';
+import { Props, EducationExperience } from '../EducationExperience';
 
-const base: Education = {
+const base: Props = {
   institution: 'School Name',
 };
 
@@ -20,6 +20,26 @@ it('should display additional classes', () => {
   );
 
   expect(wrapper.hasClass('my-class')).toBe(true);
+});
+
+it('should render additional props', () => {
+  const wrapper = shallow(
+    <EducationExperience {...base} data-test="my-attribute" />,
+  );
+
+  expect(wrapper.find('[data-test="my-attribute"]')).toHaveLength(1);
+});
+
+it('should render as a <section> by default', () => {
+  const wrapper = shallow(<EducationExperience {...base} />);
+
+  expect(wrapper.type()).toBe('section');
+});
+
+it('should render as a custom tag', () => {
+  const wrapper = shallow(<EducationExperience {...base} tag="span" />);
+
+  expect(wrapper.type()).toBe('span');
 });
 
 it('should render location', () => {

@@ -1,16 +1,18 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Tag from './Tag';
 
-interface Props extends Education {
+export interface Props extends Education {
   className?: string;
   tag?: Tag;
 }
 
-interface DefaultProps {}
+interface DefaultProps {
+  tag: Tag;
+}
 
 export const EducationExperience: React.SFC<Props> = props => {
   const {
+    tag: Tag,
     className,
     institution,
     location,
@@ -29,5 +31,9 @@ export const EducationExperience: React.SFC<Props> = props => {
     </Tag>
   );
 };
+
+EducationExperience.defaultProps = {
+  tag: 'section',
+} as DefaultProps;
 
 export default styled(EducationExperience)``;
