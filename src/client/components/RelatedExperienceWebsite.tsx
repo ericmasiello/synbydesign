@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface Props extends Website {
+export interface Props extends Website {
   className?: string;
 }
 
@@ -11,14 +11,15 @@ interface DefaultProps {
 
 export const RelatedExperienceWebsite: React.SFC<Props> = props => {
   const { title, url, disabled, ...rest } = props as Props & DefaultProps;
+  const Tag = disabled ? 'span' : 'a';
+  const tagProps = {
+    href: !disabled ? url : undefined,
+  };
 
-  if (disabled) {
-    return <span {...rest}>{title || url}</span>;
-  }
   return (
-    <a href={url} {...rest}>
+    <Tag {...tagProps} {...rest}>
       {title || url}
-    </a>
+    </Tag>
   );
 };
 
