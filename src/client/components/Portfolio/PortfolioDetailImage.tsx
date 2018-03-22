@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { pxToRem } from '../../styles/utils';
-import { borderedImage } from '../../styles/extensions';
+import { borderedImage } from '../../styles/mixins';
 
 interface Props {
   className?: string;

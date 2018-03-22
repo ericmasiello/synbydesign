@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import Muted from './Muted';
 import Highlighted from './Highlighted';
 import HeroCopy from './HeroCopy';
-import { pxToRem, type } from '../styles/utils';
+import { pxToRem } from '../styles/utils';
+import { type } from '../styles/mixins';
 import {
   maxWidth,
   horizontalPadding,

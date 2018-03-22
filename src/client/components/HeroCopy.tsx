@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { pxToRem, headerFont } from '../styles/utils';
+import { pxToRem } from '../styles/utils';
+import { headerFont } from '../styles/mixins';
 import { MEDIA_QUERIES, HERO } from '../styles/vars';
 
 const HeroCopy = styled.div`

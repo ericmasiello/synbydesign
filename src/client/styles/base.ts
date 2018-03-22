@@ -1,4 +1,5 @@
-import { baseFont, headerFont, pxToRem } from './utils';
+import { pxToRem } from './utils';
+import { baseFont, headerFont } from './mixins';
 import { COLORS, bodyWeight } from './vars';
 
 /* tslint:disable max-line-length */

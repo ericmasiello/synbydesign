@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
-import { pxToRem, type } from '../../styles/utils';
-import { pageContainer, visuallyHidden } from '../../styles/extensions';
+import { pxToRem } from '../../styles/utils';
+import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
 import { TYPE_SIZE, mediumWeight } from '../../styles/vars';
 
 const minHeight = 600;

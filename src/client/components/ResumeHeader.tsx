@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { type, scaleToRem } from '../styles/utils';
+import { scaleToRem } from '../styles/utils';
+import { type } from '../styles/mixins';
 import { COLORS, TYPE_SIZE } from '../styles/vars';
 
 interface Props {
