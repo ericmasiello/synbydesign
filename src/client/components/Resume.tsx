@@ -34,7 +34,10 @@ export const Resume: React.SFC<Props> = props => {
   return (
     <Tag className={className} {...rest}>
       <ResumeHeader name={name} title={title} lead={lead} />
-      <ResumeSkills title="Technical Skills" skills={skills} />
+      <section>
+        <h2>Technical Skills</h2>
+        <ResumeSkills skills={skills} />
+      </section>
       <section>
         <h2>Professional Experience</h2>
         {professionalExperience.map(experience => (
