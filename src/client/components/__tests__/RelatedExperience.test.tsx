@@ -25,6 +25,26 @@ it('should display additional classes', () => {
   expect(wrapper.hasClass('my-class')).toBe(true);
 });
 
+it('should render additional props', () => {
+  const wrapper = shallow(
+    <RelatedExperience {...base} data-test="my-attribute" />,
+  );
+
+  expect(wrapper.find('[data-test="my-attribute"]')).toHaveLength(1);
+});
+
+it('should render as a <article> by default', () => {
+  const wrapper = shallow(<RelatedExperience {...base} />);
+
+  expect(wrapper.type()).toBe('article');
+});
+
+it('should render as a custom tag', () => {
+  const wrapper = shallow(<RelatedExperience {...base} tag="span" />);
+
+  expect(wrapper.type()).toBe('span');
+});
+
 it('should render title', () => {
   const wrapper = shallow(<RelatedExperience {...base} />);
 

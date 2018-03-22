@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Tag from './Tag';
 
 interface Props {
   title?: string;
@@ -16,10 +15,10 @@ interface DefaultProps {
 }
 
 export const ResumeSkills: React.SFC<Props> = props => {
-  const { tag, title, skills, className, ...rest } = props as Props &
+  const { tag: Tag, title, skills, className, ...rest } = props as Props &
     DefaultProps;
   return (
-    <Tag tag={tag} className={className} {...rest}>
+    <Tag className={className} {...rest}>
       <h2>{title}</h2>
       <ul>{skills.map(skill => <li key={skill}>{skill}</li>)}</ul>
     </Tag>

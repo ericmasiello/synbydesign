@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Tag from './Tag';
 import RelatedExperienceWebsite from './RelatedExperienceWebsite';
 
 export interface Props extends RelatedExperience {
@@ -15,6 +14,7 @@ interface DefaultProps {
 
 export const RelatedExperience: React.SFC<Props> = props => {
   const {
+    tag: Tag,
     title,
     meta,
     role,

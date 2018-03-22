@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Tag from './Tag';
 import ResumeHeader from './ResumeHeader';
 import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
@@ -21,7 +20,7 @@ interface DefaultProps {
 
 export const Resume: React.SFC<Props> = props => {
   const {
-    tag,
+    tag: Tag,
     className,
     name,
     title,
@@ -33,7 +32,7 @@ export const Resume: React.SFC<Props> = props => {
     ...rest
   } = props as Props & DefaultProps;
   return (
-    <Tag tag={tag} className={className} {...rest}>
+    <Tag className={className} {...rest}>
       <ResumeHeader name={name} title={title} lead={lead} />
       <ResumeSkills title="Technical Skills" skills={skills} />
       <section>

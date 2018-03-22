@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Tag from './Tag';
 
 interface Props {
   name: string;
@@ -15,10 +14,10 @@ interface DefaultProps {
 }
 
 export const ResumeHeader: React.SFC<Props> = props => {
-  const { tag, className, name, title, lead, ...rest } = props as Props &
+  const { tag: Tag, className, name, title, lead, ...rest } = props as Props &
     DefaultProps;
   return (
-    <Tag tag={tag} className={className} {...rest}>
+    <Tag className={className} {...rest}>
       <h1>{name}</h1>
       <h2>{title}</h2>
       <p>{lead}</p>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Tag from './Tag';
 import ProfessionalExperienceRole from './ProfessionalExperienceRole';
 
 interface Props extends ProfessionalExperience {
@@ -16,6 +15,7 @@ interface DefaultProps {
 
 export const ProfessionalExperience: React.SFC<Props> = props => {
   const {
+    tag: Tag,
     organization,
     roles,
     accomplishments,
