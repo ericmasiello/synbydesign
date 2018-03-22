@@ -1,6 +1,6 @@
 import * as tinyColor from 'tinycolor2';
 
-const scaler = 1.6;
+export const scaler = 1.6;
 const unitToPx = (unit: number): number => unit * 16;
 const highlight = '#c90044';
 const borderColor = '#d4cfd1';
