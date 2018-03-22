@@ -52,7 +52,9 @@ export const Resume: React.SFC<Props> = props => {
       </section>
       <section>
         <h2>Education &amp; Training</h2>
-        {education.map(edu => <EducationExperience {...edu} />)}
+        {education.map(edu => (
+          <EducationExperience key={edu.institution} {...edu} />
+        ))}
       </section>
     </Tag>
   );
