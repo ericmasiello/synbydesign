@@ -24,7 +24,8 @@ const Title: React.SFC<TitleProps> = ({
 );
 
 const StyledTitle = styled(Title)`
-  ${type(TYPE_SIZE.t1)} text-transform: uppercase;
+  ${type(TYPE_SIZE.t1)};
+  text-transform: uppercase;
   margin: 0;
   ${props => (props.hide ? visuallyHidden : '')};
 `;
@@ -36,7 +37,8 @@ const Description = styled.div`
 `;
 
 const Content = styled.div`
-  ${pageContainer} ${type(TYPE_SIZE.t5)} max-width: 65em;
+  ${pageContainer} ${type(TYPE_SIZE.t5)};
+  max-width: 65em;
   margin: 0 auto ${pxToRem(50)};
 `;
 
