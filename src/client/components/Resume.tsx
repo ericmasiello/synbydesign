@@ -5,6 +5,7 @@ import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
 import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
+import Type5 from './Type5';
 
 interface Props extends Resume {
   className?: string;
@@ -35,11 +36,15 @@ export const Resume: React.SFC<Props> = props => {
     <Tag className={className} {...rest}>
       <ResumeHeader name={name} title={title} lead={lead} />
       <section>
-        <h2>Technical Skills</h2>
+        <Type5 tag="h2" className="resume__title">
+          Technical Skills
+        </Type5>
         <ResumeSkills skills={skills} />
       </section>
       <section>
-        <h2>Professional Experience</h2>
+        <Type5 tag="h2" className="resume__title">
+          Professional Experience
+        </Type5>
         {professionalExperience.map(experience => (
           <ProfessionalExperience
             key={experience.organization}
@@ -48,13 +53,17 @@ export const Resume: React.SFC<Props> = props => {
         ))}
       </section>
       <section>
-        <h2>Freelance &amp; Related Experience</h2>
+        <Type5 tag="h2" className="resume__title">
+          Freelance &amp; Related Experience
+        </Type5>
         {relatedExperience.map(experience => (
           <RelatedExperience key={experience.title} {...experience} />
         ))}
       </section>
       <section>
-        <h2>Education &amp; Training</h2>
+        <Type5 tag="h2" className="resume__title">
+          Education &amp; Training
+        </Type5>
         {education.map(edu => (
           <EducationExperience key={edu.institution} {...edu} />
         ))}
@@ -75,4 +84,8 @@ Resume.displayName = 'Resume';
 export default styled(Resume)`
   border: 1px solid #ccc;
   padding: 5px;
+
+  .resume__title {
+    text-transform: uppercase;
+  }
 `;

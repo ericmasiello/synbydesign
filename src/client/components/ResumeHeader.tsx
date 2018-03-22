@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { scaleToRem } from '../styles/utils';
-import { type } from '../styles/mixins';
-import { COLORS, TYPE_SIZE } from '../styles/vars';
+import { COLORS } from '../styles/vars';
+import Type3 from './Type3';
+import Type5 from './Type5';
 
 interface Props {
   name: string;
@@ -21,9 +22,13 @@ export const ResumeHeader: React.SFC<Props> = props => {
     DefaultProps;
   return (
     <Tag className={className} {...rest}>
-      <h1 className="name">{name}</h1>
-      <h2 className="title">{title}</h2>
-      <p className="lead">{lead}</p>
+      <Type3 tag="h1" className="resume-header__name">
+        {name}
+      </Type3>
+      <Type5 tag="h2" className="resume-header__title">
+        {title}
+      </Type5>
+      <p className="resume-header__lead">{lead}</p>
     </Tag>
   );
 };
@@ -35,19 +40,17 @@ ResumeHeader.defaultProps = {
 ResumeHeader.displayName = 'Resume.Header';
 
 export default styled(ResumeHeader)`
-  .name {
-    ${type(TYPE_SIZE.t3)};
+  .resume-header__name {
     margin-bottom: 0;
   }
 
-  .title {
-    ${type(TYPE_SIZE.t5)};
+  .resume-header__title {
     margin-top: 0;
     margin-bottom: ${scaleToRem(0.25)};
     color: ${COLORS.highlight};
   }
 
-  .lead {
+  .resume-header__lead {
     margin-top: 0;
   }
 `;
