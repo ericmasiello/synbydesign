@@ -32,9 +32,16 @@ export const TYPE_SIZE: TypeMap = {
 };
 
 // type properties
-export const bodyWeight = 300;
-export const mediumWeight = 500;
-export const boldWeight = 600;
+export const HEADER_WEIGHTS = {
+  medium: 400,
+  bold: 700,
+};
+
+export const BODY_WEIGHTS = {
+  light: 300,
+  medium: 400,
+  bold: 600,
+};
 
 export const GALLERY = Object.freeze({
   itemPadding: 16,

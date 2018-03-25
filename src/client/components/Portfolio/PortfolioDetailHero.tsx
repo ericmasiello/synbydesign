@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
 import { pxToRem } from '../../styles/utils';
 import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
-import { TYPE_SIZE, mediumWeight } from '../../styles/vars';
+import { TYPE_SIZE, HEADER_WEIGHTS } from '../../styles/vars';
 
 const minHeight = 600;
 
@@ -33,7 +33,8 @@ const StyledTitle = styled(Title)`
 
 const Description = styled.div`
   &:first-line {
-    ${type(TYPE_SIZE.t4)} font-weight: ${mediumWeight};
+    ${type(TYPE_SIZE.t4)};
+    font-weight: ${HEADER_WEIGHTS.medium};
   }
 `;
 

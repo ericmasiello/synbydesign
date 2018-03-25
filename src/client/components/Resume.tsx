@@ -7,7 +7,7 @@ import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
 import TypeBase from './TypeBase';
 import { pxToRem } from '../styles/utils';
-import { maxWidth, COLORS } from '../styles/vars';
+import { maxWidth, COLORS, HEADER_WEIGHTS } from '../styles/vars';
 
 interface Props extends Resume {
   className?: string;
@@ -126,7 +126,7 @@ export default styled(Resume)`
 
   .resume__title {
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: ${HEADER_WEIGHTS.bold};
     margin-bottom: 0.5rem;
   }
 `;

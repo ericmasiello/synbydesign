@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ProfessionalExperienceRole from './ProfessionalExperienceRole';
 import PlainList from './PlainList';
 import Type5 from './Type5';
+import { HEADER_WEIGHTS } from '../styles/vars';
 
 interface Props extends ProfessionalExperience {
   className?: string;
@@ -62,6 +63,6 @@ export default styled(ProfessionalExperience)`
 
   .professional-experience__org {
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: ${HEADER_WEIGHTS.bold};
   }
 `;

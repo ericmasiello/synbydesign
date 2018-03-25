@@ -5,7 +5,7 @@ import PlainList from './PlainList';
 import TypeBase from './TypeBase';
 import TypeSmall from './TypeSmall';
 import Muted from './Muted';
-import { COLORS } from '../styles/vars';
+import { COLORS, HEADER_WEIGHTS } from '../styles/vars';
 
 export interface Props extends RelatedExperience {
   className?: string;
@@ -86,7 +86,7 @@ export default styled(RelatedExperience)`
   }
 
   .related-experience__title__content {
-    font-weight: 600;
+    font-weight: ${HEADER_WEIGHTS.bold};
   }
 
   .related-experience__meta {
