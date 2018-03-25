@@ -33,6 +33,7 @@ export const RelatedExperience: React.SFC<Props> = props => {
       <hgroup>
         <TypeBase tag="h1" data-title className="related-experience__title">
           <span
+            className="related-experience__title__content"
             data-title-content
             dangerouslySetInnerHTML={{ __html: title }}
           />{' '}
@@ -82,6 +83,9 @@ export default styled(RelatedExperience)`
 
   .related-experience__title {
     margin-bottom: 0;
+  }
+
+  .related-experience__title__content {
     font-weight: 600;
   }
 

@@ -10,6 +10,7 @@ exports[`should render 1`] = `
       data-title={true}
     >
       <span
+        className="related-experience__title__content"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Title",
