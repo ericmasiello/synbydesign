@@ -64,7 +64,10 @@ export const Resume: React.SFC<Props> = props => {
           Freelance &amp; Related Experience
         </TypeBase>
         {relatedExperience.map(experience => (
-          <RelatedExperience key={experience.title} {...experience} />
+          <RelatedExperience
+            key={`${experience.title}${experience.role!.yearFrom}`}
+            {...experience}
+          />
         ))}
       </section>
       <section className="resume__education">

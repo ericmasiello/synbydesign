@@ -109,6 +109,16 @@ const resume: Resume = {
   ],
   relatedExperience: [
     {
+      title: 'General Assembly',
+      role: {
+        title: 'Instructor',
+        yearFrom: '2018',
+      },
+      accomplishments: [
+        'Teach students how to build web sites using HTML5, CSS, JavaScript, and jQuery',
+      ],
+    },
+    {
       title: 'Packt Publishing <em>Mastering React Native</em> Book',
       role: {
         title: 'Author',
@@ -124,9 +134,7 @@ const resume: Resume = {
         title: 'Instructor',
         yearFrom: '2017',
       },
-      accomplishments: [
-        'Teach students how to build web sites using HTML5, CSS, JavaScript, and jQuery',
-      ],
+      accomplishments: [],
     },
     {
       title: 'Packt Publishing <em>Mastering React.js</em> Video',
