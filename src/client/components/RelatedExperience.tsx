@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import RelatedExperienceWebsite from './RelatedExperienceWebsite';
+import PlainList from './PlainList';
 
 export interface Props extends RelatedExperience {
   className?: string;
@@ -36,11 +37,11 @@ export const RelatedExperience: React.SFC<Props> = props => {
       </hgroup>
       {accomplishments.length > 0 && (
         <section>
-          <ul>
+          <PlainList>
             {accomplishments.map(accomplishment => (
               <li key={accomplishment}>{accomplishment}</li>
             ))}
-          </ul>
+          </PlainList>
         </section>
       )}
     </Tag>

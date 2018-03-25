@@ -34,22 +34,22 @@ const bulletSpace = pxToRem(15);
 
 export default styled(ResumeSkills)`
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 1rem;
   padding: 0;
 
   > li {
     position: relative;
     display: inline-block;
 
-    &:not(:first-child) {
-      padding-left: ${bulletSpace};
+    &:not(:last-child) {
+      padding-right: ${bulletSpace};
 
-      &::before {
+      &::after {
         content: '\00B7';
         position: absolute;
         width: ${bulletSpace};
         top: 0;
-        left: 0;
+        right: 0;
         bottom: 0;
         display: inline-flex;
         align-items: center;

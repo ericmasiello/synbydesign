@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import {
   ProfessionalExperienceRole,
   Props,
@@ -35,21 +35,19 @@ it('should render additional props', () => {
 });
 
 it('should render title', () => {
-  const wrapper = shallow(<ProfessionalExperienceRole {...base} />);
+  const wrapper = mount(<ProfessionalExperienceRole {...base} />);
 
-  expect(wrapper.find('h2').text()).toEqual(base.title);
+  expect(wrapper.find('h2.role__title').text()).toEqual(base.title);
 });
 
 it('should render timeline when still employed', () => {
-  const wrapper = shallow(<ProfessionalExperienceRole {...base} />);
+  const wrapper = mount(<ProfessionalExperienceRole {...base} />);
 
   expect(wrapper.text()).toContain('2017 — Present');
 });
 
 it('should render timeline when still employed', () => {
-  const wrapper = shallow(
-    <ProfessionalExperienceRole {...base} yearTo="2018" />,
-  );
+  const wrapper = mount(<ProfessionalExperienceRole {...base} yearTo="2018" />);
 
   expect(wrapper.text()).toContain('2017 — 2018');
 });

@@ -5,7 +5,9 @@ import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
 import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
-import Type5 from './Type5';
+import TypeBase from './TypeBase';
+import { pxToRem } from '../styles/utils';
+import { maxWidth, COLORS } from '../styles/vars';
 
 interface Props extends Resume {
   className?: string;
@@ -34,17 +36,22 @@ export const Resume: React.SFC<Props> = props => {
   } = props as Props & DefaultProps;
   return (
     <Tag className={className} {...rest}>
-      <ResumeHeader name={name} title={title} lead={lead} />
-      <section>
-        <Type5 tag="h2" className="resume__title">
+      <ResumeHeader
+        name={name}
+        title={title}
+        lead={lead}
+        className="resume__header"
+      />
+      <section className="resume__skills">
+        <TypeBase tag="h2" className="resume__title">
           Technical Skills
-        </Type5>
+        </TypeBase>
         <ResumeSkills skills={skills} />
       </section>
-      <section>
-        <Type5 tag="h2" className="resume__title">
+      <section className="resume__experience">
+        <TypeBase tag="h2" className="resume__title">
           Professional Experience
-        </Type5>
+        </TypeBase>
         {professionalExperience.map(experience => (
           <ProfessionalExperience
             key={experience.organization}
@@ -52,18 +59,18 @@ export const Resume: React.SFC<Props> = props => {
           />
         ))}
       </section>
-      <section>
-        <Type5 tag="h2" className="resume__title">
+      <section className="resume__freelance">
+        <TypeBase tag="h2" className="resume__title">
           Freelance &amp; Related Experience
-        </Type5>
+        </TypeBase>
         {relatedExperience.map(experience => (
           <RelatedExperience key={experience.title} {...experience} />
         ))}
       </section>
-      <section>
-        <Type5 tag="h2" className="resume__title">
+      <section className="resume__education">
+        <TypeBase tag="h2" className="resume__title">
           Education &amp; Training
-        </Type5>
+        </TypeBase>
         {education.map(edu => (
           <EducationExperience key={edu.institution} {...edu} />
         ))}
@@ -82,10 +89,41 @@ Resume.defaultProps = {
 Resume.displayName = 'Resume';
 
 export default styled(Resume)`
-  border: 1px solid #ccc;
-  padding: 5px;
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'skills skills'
+    'experience freelance'
+    'experience education';
+  grid-gap: 1.25rem 2rem;
+  max-width: ${pxToRem(maxWidth)};
+  margin: 0 auto;
+
+  .resume__header {
+    grid-area: header;
+  }
+
+  .resume__skills {
+    grid-area: skills;
+  }
+
+  .resume__experience {
+    grid-area: experience;
+    border-right: 1px solid ${COLORS.galleryBorder};
+    padding-right: 1rem;
+  }
+
+  .resume__freelance {
+    grid-area: freelance;
+  }
+
+  .resume__education {
+    grid-area: education;
+  }
 
   .resume__title {
     text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 `;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { ProfessionalExperience } from '../ProfessionalExperience';
 import ProfessionalExperienceRole from '../ProfessionalExperienceRole';
 
@@ -45,11 +45,11 @@ it('should render as a custom tag', () => {
 });
 
 it('should render the organization', () => {
-  const wrapper = shallow(
-    <ProfessionalExperience {...base} className="my-class" />,
-  );
+  const wrapper = mount(<ProfessionalExperience {...base} />);
 
-  expect(wrapper.find('h1').text()).toBe(base.organization);
+  expect(wrapper.find('h1.professional-experience__org').text()).toBe(
+    base.organization,
+  );
 });
 
 it('should render roles', () => {

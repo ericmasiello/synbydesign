@@ -5,7 +5,9 @@ exports[`should render 1`] = `
   className={undefined}
 >
   <hgroup>
-    <h1>
+    <h1
+      className="professional-experience__org sc-ifAKCX eUdGbB"
+    >
       Company Name
     </h1>
   </hgroup>

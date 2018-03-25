@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import ProfessionalExperienceRole from './ProfessionalExperienceRole';
+import PlainList from './PlainList';
+import Type5 from './Type5';
 
 interface Props extends ProfessionalExperience {
   className?: string;
@@ -25,18 +27,20 @@ export const ProfessionalExperience: React.SFC<Props> = props => {
   return (
     <Tag className={className} {...rest}>
       <hgroup>
-        <h1>{organization}</h1>
+        <Type5 tag="h1" className="professional-experience__org">
+          {organization}
+        </Type5>
         {roles.map(role => (
           <ProfessionalExperienceRole {...role} key={role.title} />
         ))}
       </hgroup>
       {accomplishments.length > 0 && (
         <section>
-          <ul>
+          <PlainList>
             {accomplishments.map(accomplishment => (
               <li key={accomplishment}>{accomplishment}</li>
             ))}
-          </ul>
+          </PlainList>
         </section>
       )}
     </Tag>
@@ -51,4 +55,13 @@ ProfessionalExperience.defaultProps = {
 
 ProfessionalExperience.displayName = 'ProfessionalExperience';
 
-export default styled(ProfessionalExperience)``;
+export default styled(ProfessionalExperience)`
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .professional-experience__org {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+`;

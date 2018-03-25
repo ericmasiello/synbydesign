@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { scaleToRem } from '../styles/utils';
 import { COLORS } from '../styles/vars';
 import Type3 from './Type3';
 import Type5 from './Type5';
@@ -45,12 +44,7 @@ export default styled(ResumeHeader)`
   }
 
   .resume-header__title {
-    margin-top: 0;
-    margin-bottom: ${scaleToRem(0.25)};
+    margin-bottom: 0.25rem;
     color: ${COLORS.highlight};
-  }
-
-  .resume-header__lead {
-    margin-top: 0;
   }
 `;

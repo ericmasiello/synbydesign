@@ -15,7 +15,7 @@ export default `
   }
 
   html {
-    ${baseFont()}
+    ${baseFont()};
     color: ${COLORS.base};
     font-size: 100%;
   }
@@ -36,9 +36,14 @@ export default `
   }
 
   h1, h2, h3, h4, h5, h6 {
-    ${headerFont()}
+    ${headerFont()};
     font-weight: 400;
     line-height: 1.1;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   a {

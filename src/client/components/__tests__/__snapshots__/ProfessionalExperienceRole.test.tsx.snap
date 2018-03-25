@@ -4,10 +4,14 @@ exports[`should render 1`] = `
 <div
   className={undefined}
 >
-  <h2>
+  <h2
+    className="role__title sc-bdVaJa dMfHKH"
+  >
     Company Man
   </h2>
-  <p>
+  <p
+    className="role__timeline sc-bwzfXH eJKuVq"
+  >
     2017
      — 
     Present
