@@ -2,6 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import RelatedExperienceWebsite from './RelatedExperienceWebsite';
 import PlainList from './PlainList';
+import TypeBase from './TypeBase';
+import TypeSmall from './TypeSmall';
+import Muted from './Muted';
+import { COLORS } from '../styles/vars';
 
 export interface Props extends RelatedExperience {
   className?: string;
@@ -27,13 +31,29 @@ export const RelatedExperience: React.SFC<Props> = props => {
   return (
     <Tag className={className} {...rest}>
       <hgroup>
-        <h1>
-          <span dangerouslySetInnerHTML={{ __html: title }} />{' '}
-          {role.yearFrom && <React.Fragment>({role.yearFrom})</React.Fragment>}
-        </h1>
-        {meta && <p>{meta}</p>}
-        <h2>{role.title}</h2>
-        {website && <RelatedExperienceWebsite {...website} />}
+        <TypeBase tag="h1" data-title className="related-experience__title">
+          <span
+            data-title-content
+            dangerouslySetInnerHTML={{ __html: title }}
+          />{' '}
+          {role.yearFrom && (
+            <TypeSmall tag={Muted}>({role.yearFrom})</TypeSmall>
+          )}
+        </TypeBase>
+        {meta && (
+          <TypeSmall tag="p" data-meta className="related-experience__meta">
+            {meta}
+          </TypeSmall>
+        )}
+        <TypeBase tag="h2" data-role-title className="related-experience__role">
+          {role.title}
+        </TypeBase>
+        {website && (
+          <RelatedExperienceWebsite
+            {...website}
+            className="related-experience__website"
+          />
+        )}
       </hgroup>
       {accomplishments.length > 0 && (
         <section>
@@ -55,4 +75,27 @@ RelatedExperience.defaultProps = {
 
 RelatedExperience.displayName = 'RelatedExperience';
 
-export default styled(RelatedExperience)``;
+export default styled(RelatedExperience)`
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .related-experience__title {
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+
+  .related-experience__meta {
+    margin-bottom: 0;
+  }
+
+  .related-experience__role {
+    color: ${COLORS.highlight};
+    margin-bottom: 0.5rem;
+  }
+
+  .related-experience__website {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+`;

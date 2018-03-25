@@ -5,17 +5,24 @@ exports[`should render 1`] = `
   className={undefined}
 >
   <hgroup>
-    <h1>
+    <h1
+      className="related-experience__title sc-htpNat kPUtmc"
+      data-title={true}
+    >
       <span
         dangerouslySetInnerHTML={
           Object {
             "__html": "Title",
           }
         }
+        data-title-content={true}
       />
        
     </h1>
-    <h2>
+    <h2
+      className="related-experience__role sc-htpNat kPUtmc"
+      data-role-title={true}
+    >
       Role title
     </h2>
   </hgroup>
