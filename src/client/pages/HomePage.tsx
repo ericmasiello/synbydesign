@@ -20,6 +20,7 @@ interface Props {
   className?: string;
   portfolioItems: Portfolio[];
   resume: Resume;
+  existsMorePortfolioItems: boolean;
 }
 
 export class HomePage extends React.Component<Props, {}> {
@@ -45,15 +46,21 @@ export class HomePage extends React.Component<Props, {}> {
         </Helmet>
         <Header />
         <Hero />
-        <PortfolioGallery items={this.props.portfolioItems} />
+        <PortfolioGallery
+          items={this.props.portfolioItems}
+          displayMore={this.props.existsMorePortfolioItems}
+        />
         <Resume {...this.props.resume} />
       </div>
     );
   }
 }
 
-function mapStateToProps({ portfolioItems, resume }: AppState) {
-  return { portfolioItems, resume };
+function mapStateToProps({ portfolioItems, resume, ui }: AppState) {
+  const portfolioMeta = ui.portfolio;
+  const existsMorePortfolioItems =
+    portfolioMeta.currentPageNumber < portfolioMeta.totalPages;
+  return { portfolioItems, resume, existsMorePortfolioItems };
 }
 
 export default {

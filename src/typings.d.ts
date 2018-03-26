@@ -140,9 +140,23 @@ interface Resume {
   education?: Education[];
 }
 
+interface UIPortfolioMeta {
+  currentPageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  filterCategories: string;
+  filterTags: string;
+  filterSearchTerm: string;
+}
+
+interface UIMeta {
+  portfolio: UIPortfolioMeta;
+}
+
 interface AppState {
   resume: Resume;
   portfolioItems: Portfolio[];
+  ui: UIMeta;
 }
 
 interface Context {

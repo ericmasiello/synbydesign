@@ -9,7 +9,13 @@ export const portofolioController = (
   res: Response,
   next: NextFunction,
 ) => {
-  const { categories, tags, s: searchTerm, pageSize, pageNumber } = req.query;
+  const {
+    categories,
+    tags,
+    s: searchTerm,
+    pageSize,
+    pageNumber = 0,
+  } = req.query;
 
   logger.info('Requesting portfolio list with:', req.query);
 
@@ -20,7 +26,18 @@ export const portofolioController = (
     pageNumber,
     pageSize,
   })
-    .then(items => res.json(items))
+    .then(result =>
+      res
+        .set({
+          _currentpagenumber: result.currentPageNumber,
+          _pagesize: result.pageSize,
+          _totalpages: result.totalPages,
+          _filtercategories: result.filterCategories,
+          _filtertags: result.filterTags,
+          _filtersearchterm: result.filterSearchTerm,
+        })
+        .json(result.items),
+    )
     .catch((error: Error) => next(boom.badImplementation(error.message)));
 };
 

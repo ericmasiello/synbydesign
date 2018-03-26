@@ -9,6 +9,7 @@ import GalleryLink from './PortfolioGalleryLink';
 interface Props {
   items: Portfolio[];
   tag?: Tag;
+  displayMore: boolean;
 }
 
 interface DefaultProps {
@@ -17,7 +18,8 @@ interface DefaultProps {
 }
 
 export const PortfolioGallery: React.SFC<Props> = props => {
-  const { items, tag: Tag, ...rest } = props as Props & DefaultProps;
+  const { items, tag: Tag, displayMore, ...rest } = props as Props &
+    DefaultProps;
   return (
     <Tag {...rest}>
       {items.map(item => {
@@ -32,6 +34,11 @@ export const PortfolioGallery: React.SFC<Props> = props => {
           </GalleryItem>
         );
       })}
+      {displayMore && (
+        <li className="more">
+          <button>More</button>
+        </li>
+      )}
     </Tag>
   );
 };
@@ -56,4 +63,9 @@ export default styled(PortfolioGallery)`
   grid-auto-flow: dense;
   grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
   grid-gap: ${pxToRem(GALLERY.itemPadding)};
+
+  .more {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
 `;
