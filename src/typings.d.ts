@@ -93,7 +93,11 @@ interface FetchPortfolioItemsParams {
   pageSize?: number;
 }
 
-interface ProfessionalRole {
+interface ProfessionalRole extends Role {
+  yearFrom: string;
+}
+
+interface Role {
   title: string;
   yearFrom?: string;
   yearTo?: string;
@@ -105,19 +109,25 @@ interface ProfessionalExperience {
   accomplishments?: string[];
 }
 
-interface FreelanceExperience {
+interface Website {
+  url: string;
+  title?: string;
+  disabled?: boolean;
+}
+
+interface RelatedExperience {
   title: string;
   meta?: string;
-  year?: string;
-  role: ProfessionalRole;
+  website?: Website;
+  role: Role;
   accomplishments: string[];
 }
 
 interface Education {
   institution: string;
+  location?: string;
   year?: string;
   degree?: string;
-  meta?: string;
 }
 
 interface Resume {
@@ -126,7 +136,7 @@ interface Resume {
   lead: string;
   skills?: string[];
   professionalExperience?: ProfessionalExperience[];
-  freelanceExperience?: FreelanceExperience[];
+  relatedExperience?: RelatedExperience[];
   education?: Education[];
 }
 

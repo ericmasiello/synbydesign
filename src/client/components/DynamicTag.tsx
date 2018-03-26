@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 interface Props {
-  tag?: string;
+  tag?: Tag;
   className?: string;
 }
 
-const Tag: React.SFC<Props> = props => {
+const DynamicTag: React.SFC<Props> = props => {
   const { tag: Tag = 'span', className, children, ...rest } = props;
   return (
     <Tag className={className} {...rest}>
@@ -14,4 +14,6 @@ const Tag: React.SFC<Props> = props => {
   );
 };
 
-export default Tag;
+DynamicTag.displayName = 'DynamicTag';
+
+export default DynamicTag;

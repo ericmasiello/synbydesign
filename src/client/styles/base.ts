@@ -1,9 +1,18 @@
-import { baseFont, headerFont, pxToRem } from './utils';
-import { COLORS, bodyWeight } from './vars';
+import { pxToRem } from './utils';
+import { baseFont, headerFont } from './mixins';
+import { COLORS, BODY_WEIGHTS, HEADER_WEIGHTS } from './vars';
+
+const getNumericWeights = (weights: { [x: string]: number }): string => {
+  return Object.keys(weights)
+    .map(key => weights[key])
+    .join(',');
+};
 
 /* tslint:disable max-line-length */
 export default `
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css?family=Lato:${getNumericWeights(
+  HEADER_WEIGHTS,
+)}|Source+Sans+Pro:${getNumericWeights(BODY_WEIGHTS)}');
 
   html {
     box-sizing: border-box;
@@ -14,7 +23,7 @@ export default `
   }
 
   html {
-    ${baseFont()}
+    ${baseFont()};
     color: ${COLORS.base};
     font-size: 100%;
   }
@@ -23,7 +32,7 @@ export default `
     margin: 0;
     font-size: ${pxToRem(14)};
     line-height: 1.35;
-    font-weight: ${bodyWeight};
+    font-weight: ${BODY_WEIGHTS.light};
 
     @media only screen and (min-width: 992px) {
       font-size: ${pxToRem(15)};
@@ -35,9 +44,14 @@ export default `
   }
 
   h1, h2, h3, h4, h5, h6 {
-    ${headerFont()}
-    font-weight: 400;
+    ${headerFont()};
+    font-weight: ${HEADER_WEIGHTS.medium};
     line-height: 1.1;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   a {

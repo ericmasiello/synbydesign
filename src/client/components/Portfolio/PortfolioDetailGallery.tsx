@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { getGalleryImages } from '../../utils/portfolioImage';
-import { pageContainer, borderedImage } from '../../styles/extensions';
+import { pageContainer, borderedImage } from '../../styles/mixins';
 import { pxToRem } from '../../styles/utils';
 
 interface PortfolioDetailGalleryGridProps {

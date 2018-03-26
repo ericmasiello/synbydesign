@@ -7,10 +7,11 @@ import { fetchPortfolioItems, fetchResume } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
 import Header from '../components/Header';
+import Resume from '../components/Resume';
 import { ThunkActionCreator } from '../../types.d';
 
 const pageRequest: FetchPortfolioItemsParams = {
-  pageSize: 100,
+  pageSize: 10,
 };
 
 interface Props {
@@ -45,6 +46,7 @@ export class HomePage extends React.Component<Props, {}> {
         <Header />
         <Hero />
         <PortfolioGallery items={this.props.portfolioItems} />
+        <Resume {...this.props.resume} />
       </div>
     );
   }

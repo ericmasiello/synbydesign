@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
-import { pxToRem, type } from '../../styles/utils';
-import { pageContainer, visuallyHidden } from '../../styles/extensions';
-import { TYPE_SIZE, mediumWeight } from '../../styles/vars';
+import { pxToRem } from '../../styles/utils';
+import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
+import { TYPE_SIZE, HEADER_WEIGHTS } from '../../styles/vars';
 
 const minHeight = 600;
 
@@ -12,6 +12,7 @@ interface TitleProps {
   hide?: boolean;
 }
 
+// FIXME: should use Type1 here but need to figure out how to pass down hidden attribute
 const Title: React.SFC<TitleProps> = ({
   className,
   children,
@@ -24,19 +25,23 @@ const Title: React.SFC<TitleProps> = ({
 );
 
 const StyledTitle = styled(Title)`
-  ${type(TYPE_SIZE.t1)} text-transform: uppercase;
+  ${type(TYPE_SIZE.t1)};
+  text-transform: uppercase;
   margin: 0;
   ${props => (props.hide ? visuallyHidden : '')};
 `;
 
 const Description = styled.div`
   &:first-line {
-    ${type(TYPE_SIZE.t4)} font-weight: ${mediumWeight};
+    ${type(TYPE_SIZE.t4)};
+    font-weight: ${HEADER_WEIGHTS.medium};
   }
 `;
 
 const Content = styled.div`
-  ${pageContainer} ${type(TYPE_SIZE.t5)} max-width: 65em;
+  ${pageContainer};
+  ${type(TYPE_SIZE.t5)};
+  max-width: 65em;
   margin: 0 auto ${pxToRem(50)};
 `;
 

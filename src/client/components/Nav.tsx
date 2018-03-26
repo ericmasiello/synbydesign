@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import AnimatedLink from './AnimatedLink';
-import { mediumWeight } from '../styles/vars';
+import { BODY_WEIGHTS } from '../styles/vars';
 
 interface Props {
   className?: string;
@@ -19,7 +19,7 @@ NavList.displayName = 'NavList';
 const NavListItem = styled.li`
   padding: 1rem;
   text-transform: uppercase;
-  font-weight: ${mediumWeight};
+  font-weight: ${BODY_WEIGHTS.bold};
 
   &:first-child {
     padding-left: 0;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Tag from './Tag';
+import DynamicTag from './DynamicTag';
 import { COLORS } from '../styles/vars';
 
-const Highlighted = styled(Tag)`
+const Highlighted = styled(DynamicTag)`
   color: ${COLORS.highlight};
 `;
 

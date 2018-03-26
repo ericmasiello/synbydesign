@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { COLORS } from '../../styles/vars';
-import { shadow } from '../../styles/extensions';
+import { shadow } from '../../styles/mixins';
 
 interface Props {
   to: string;
