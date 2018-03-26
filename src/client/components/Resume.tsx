@@ -7,7 +7,12 @@ import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
 import TypeBase from './TypeBase';
 import { pxToRem } from '../styles/utils';
-import { maxWidth, COLORS, HEADER_WEIGHTS } from '../styles/vars';
+import {
+  maxWidth,
+  COLORS,
+  HEADER_WEIGHTS,
+  MEDIA_QUERIES,
+} from '../styles/vars';
 
 interface Props extends Resume {
   className?: string;
@@ -94,13 +99,23 @@ Resume.displayName = 'Resume';
 export default styled(Resume)`
   display: grid;
   grid-template-areas:
-    'header header'
-    'skills skills'
-    'experience freelance'
-    'experience education';
+    'header'
+    'skills'
+    'experience'
+    'freelance'
+    'education';
   grid-gap: 1.25rem 2rem;
   max-width: ${pxToRem(maxWidth)};
   margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: ${pxToRem(MEDIA_QUERIES.xlarge)}) {
+    grid-template-areas:
+      'header header'
+      'skills skills'
+      'experience freelance'
+      'experience education';
+  }
 
   .resume__header {
     grid-area: header;

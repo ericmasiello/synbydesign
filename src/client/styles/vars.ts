@@ -51,6 +51,7 @@ export const GALLERY = Object.freeze({
 
 export const MEDIA_QUERIES = Object.freeze({
   large: 850,
+  xlarge: 1000,
 });
 
 // spacing and sizing
