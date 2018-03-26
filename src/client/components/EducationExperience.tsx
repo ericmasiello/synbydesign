@@ -1,5 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import Muted from './Muted';
+import TypeSmall from './TypeSmall';
+import TypeBase from './TypeBase';
+import { HEADER_WEIGHTS } from '../styles/vars';
 
 export interface Props extends Education {
   className?: string;
@@ -22,12 +26,18 @@ export const EducationExperience: React.SFC<Props> = props => {
   } = props as Props & DefaultProps;
   return (
     <Tag className={className} {...rest}>
-      <h1>{institution}</h1>
-      <div>
-        {location && <p>{location}</p>}
-        {year && <span>{year}</span>}
-      </div>
-      {degree && <p>{degree}</p>}
+      <TypeBase tag="h1" className="education__title">
+        {institution}
+        <div className="education__meta" data-meta>
+          {location && <>{`${location} `}</>}
+          {year && (
+            <TypeSmall tag={Muted} data-year>
+              ({year})
+            </TypeSmall>
+          )}
+        </div>
+      </TypeBase>
+      {degree && <p data-degree>{degree}</p>}
     </Tag>
   );
 };
@@ -36,4 +46,12 @@ EducationExperience.defaultProps = {
   tag: 'section',
 } as DefaultProps;
 
-export default styled(EducationExperience)``;
+export default styled(EducationExperience)`
+  .education__title {
+    font-weight: ${HEADER_WEIGHTS.bold};
+  }
+
+  .education__meta {
+    font-weight: ${HEADER_WEIGHTS.medium};
+  }
+`;

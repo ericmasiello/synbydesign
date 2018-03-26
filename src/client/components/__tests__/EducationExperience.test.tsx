@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { Props, EducationExperience } from '../EducationExperience';
 
 const base: Props = {
@@ -49,21 +49,21 @@ it('should render location', () => {
 
   expect(
     wrapper
-      .find('div')
+      .find('[data-meta]')
       .text()
       .trim(),
   ).toBe('The location');
 });
 
 it('should render the year', () => {
-  const wrapper = shallow(<EducationExperience {...base} year="2018" />);
+  const wrapper = mount(<EducationExperience {...base} year="2018" />);
 
   expect(
     wrapper
-      .find('div')
+      .find('span[data-year]')
       .text()
       .trim(),
-  ).toBe('2018');
+  ).toBe('(2018)');
 });
 
 it('should render degree', () => {
@@ -73,7 +73,7 @@ it('should render degree', () => {
 
   expect(
     wrapper
-      .find('p')
+      .find('[data-degree]')
       .text()
       .trim(),
   ).toBe('Master of None');

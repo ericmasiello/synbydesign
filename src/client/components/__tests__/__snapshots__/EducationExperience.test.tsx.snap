@@ -4,9 +4,14 @@ exports[`should render 1`] = `
 <section
   className={undefined}
 >
-  <h1>
+  <h1
+    className="education__title sc-htpNat kPUtmc"
+  >
     School Name
+    <div
+      className="education__meta"
+      data-meta={true}
+    />
   </h1>
-  <div />
 </section>
 `;

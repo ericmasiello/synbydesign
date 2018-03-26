@@ -190,6 +190,7 @@ const resume: Resume = {
       institution: 'Scrum Alliance',
       degree: 'Certified ScrumMaster',
       year: '2017',
+      location: 'Washington, DC',
     },
     {
       institution: "Steven Krug's Usability Testing Workshop",
