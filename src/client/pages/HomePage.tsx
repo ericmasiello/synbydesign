@@ -10,8 +10,9 @@ import Header from '../components/Header';
 import Resume from '../components/Resume';
 import { ThunkActionCreator } from '../../types.d';
 
-const pageRequest: FetchPortfolioItemsParams = {
+const pageRequest: PortfolioRequestParams = {
   pageSize: 10,
+  requestedPageNumber: 1,
 };
 
 interface Props {
@@ -21,18 +22,33 @@ interface Props {
   portfolioItems: Portfolio[];
   resume: Resume;
   existsMorePortfolioItems: boolean;
+  currentPageNumber: number;
 }
 
 export class HomePage extends React.Component<Props, {}> {
   componentDidMount() {
     // TODO: only fetch if we don't have the data
     if (this.props.portfolioItems.length <= 1) {
-      this.props.fetchPortfolioItems(pageRequest);
+      this.loadInitialPortfolioPage();
     }
     if (isEmpty(this.props.resume)) {
       this.props.fetchResume();
     }
   }
+
+  loadInitialPortfolioPage = () => {
+    this.props.fetchPortfolioItems({
+      pageSize: pageRequest.pageSize,
+      requestedPageNumber: 1,
+    });
+  };
+
+  loadNextPortfolioPage = () => {
+    this.props.fetchPortfolioItems({
+      pageSize: pageRequest.pageSize,
+      requestedPageNumber: this.props.currentPageNumber + 1,
+    });
+  };
 
   render() {
     return (
@@ -49,6 +65,7 @@ export class HomePage extends React.Component<Props, {}> {
         <PortfolioGallery
           items={this.props.portfolioItems}
           displayMore={this.props.existsMorePortfolioItems}
+          onClickLoadMore={this.loadNextPortfolioPage}
         />
         <Resume {...this.props.resume} />
       </div>
@@ -60,7 +77,12 @@ function mapStateToProps({ portfolioItems, resume, ui }: AppState) {
   const portfolioMeta = ui.portfolio;
   const existsMorePortfolioItems =
     portfolioMeta.currentPageNumber < portfolioMeta.totalPages;
-  return { portfolioItems, resume, existsMorePortfolioItems };
+  return {
+    portfolioItems,
+    resume,
+    existsMorePortfolioItems,
+    currentPageNumber: portfolioMeta.currentPageNumber,
+  };
 }
 
 export default {

@@ -10,6 +10,7 @@ interface Props {
   items: Portfolio[];
   tag?: Tag;
   displayMore: boolean;
+  onClickLoadMore: () => void;
 }
 
 interface DefaultProps {
@@ -18,8 +19,13 @@ interface DefaultProps {
 }
 
 export const PortfolioGallery: React.SFC<Props> = props => {
-  const { items, tag: Tag, displayMore, ...rest } = props as Props &
-    DefaultProps;
+  const {
+    items,
+    tag: Tag,
+    displayMore,
+    onClickLoadMore,
+    ...rest
+  } = props as Props & DefaultProps;
   return (
     <Tag {...rest}>
       {items.map(item => {
@@ -36,7 +42,7 @@ export const PortfolioGallery: React.SFC<Props> = props => {
       })}
       {displayMore && (
         <li className="more">
-          <button>More</button>
+          <button onClick={onClickLoadMore}>More</button>
         </li>
       )}
     </Tag>

@@ -1,4 +1,5 @@
 import { Reducer } from 'redux';
+import uniqBy from 'lodash-es/uniqBy';
 import { FETCH_PORTFOLIO_ITEMS, FETCH_PORTFOLIO_DETAIL } from '../actions';
 
 const defaultPortfolioMeta: UIPortfolioMeta = {
@@ -32,7 +33,7 @@ export const portfolioMetaReducer: Reducer<UIPortfolioMeta> = (
 
 export const portfolioReducer: Reducer<Portfolio[]> = (state = [], action) => {
   if (action.type === FETCH_PORTFOLIO_ITEMS && !action.error) {
-    return action.payload.data;
+    return uniqBy([...state, ...action.payload.data], 'id');
   }
 
   if (action.type === FETCH_PORTFOLIO_DETAIL && !action.error) {

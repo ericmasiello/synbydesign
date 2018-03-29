@@ -33,16 +33,6 @@ function rawPortfolioToPortfolio(rawList: RawPortfolio[]): Portfolio[] {
   }));
 }
 
-interface PortfolioFilterResult {
-  items: Portfolio[];
-  currentPageNumber: number;
-  pageSize: number;
-  totalPages: number;
-  filterCategories: string[];
-  filterTags: string[];
-  filterSearchTerm: string;
-}
-
 export function list(
   options: {
     categories?: string[];
@@ -56,8 +46,8 @@ export function list(
     categories = [],
     tags = [],
     searchTerm = '',
-    pageSize = 20,
-    pageNumber = 0,
+    pageSize = 10,
+    pageNumber = 1,
   } = options;
 
   const result: PortfolioFilterResult = {
@@ -94,7 +84,7 @@ export function list(
     return Promise.resolve(result);
   }
 
-  result.items = pages[pageNumber];
+  result.items = pages[pageNumber - 1];
 
   return Promise.resolve(result);
 }
