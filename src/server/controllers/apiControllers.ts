@@ -41,7 +41,7 @@ export const portofolioController = (
           _totalpages: result.totalPages.toString(),
           _filtercategories: result.filterCategories.join(','),
           _filtertags: result.filterTags.join(','),
-          _filtersearchterm: result.filterSearchTerm.toString(),
+          _filtersearchterm: result.filterSearchTerm,
         } as PortfolioResponseParams)
         .json(result.items),
     )

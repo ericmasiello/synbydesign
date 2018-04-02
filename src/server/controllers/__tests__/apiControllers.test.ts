@@ -7,8 +7,7 @@ import {
 import { list, getById } from '../../services/portfolioService';
 jest.mock('../../services/portfolioService');
 
-const mockListResponse: Portfolio[] = [];
-const mockGetByIdResponse: Portfolio = {
+const mockPortfolioItem: Portfolio = {
   id: 'the-id',
   title: 'The Title',
   category: [],
@@ -16,10 +15,20 @@ const mockGetByIdResponse: Portfolio = {
   imagePaths: [],
 };
 
+const mockListResponse: PortfolioFilterResult = {
+  items: [mockPortfolioItem],
+  currentPageNumber: 1,
+  pageSize: 10,
+  totalPages: 1,
+  filterCategories: ['filter 1', 'filter 2'],
+  filterTags: ['tag 1', 'tags 2'],
+  filterSearchTerm: 'search term filter',
+};
+
 const mockNext = jest.fn() as NextFunction;
 
 describe('portofolioController', () => {
-  test('should send response as json', async () => {
+  fit('should send response as json', async () => {
     const mockList = jest.fn(() => Promise.resolve(mockListResponse));
     (list as jest.Mock<{}>).mockImplementation(mockList);
 
@@ -28,9 +37,18 @@ describe('portofolioController', () => {
 
     const mockRes = {} as Response;
     mockRes.json = jest.fn();
+    mockRes.set = jest.fn().mockReturnThis();
 
     await portofolioController(mockReq, mockRes, mockNext);
-    expect(mockRes.json).toBeCalledWith(mockListResponse);
+    expect(mockRes.set).toBeCalledWith({
+      _currentpagenumber: mockListResponse.currentPageNumber.toString(),
+      _pagesize: mockListResponse.pageSize.toString(),
+      _totalpages: mockListResponse.totalPages.toString(),
+      _filtercategories: mockListResponse.filterCategories.join(','),
+      _filtertags: mockListResponse.filterTags.join(','),
+      _filtersearchterm: mockListResponse.filterSearchTerm,
+    });
+    expect(mockRes.json).toBeCalledWith(mockListResponse.items);
   });
 
   test('should pass query params to list method', async () => {
@@ -77,7 +95,7 @@ describe('portofolioController', () => {
 
 describe('portofolioDetailController', () => {
   test('should pass the param id to getById', async () => {
-    const mockGetById = jest.fn(() => Promise.resolve(mockGetByIdResponse));
+    const mockGetById = jest.fn(() => Promise.resolve(mockPortfolioItem));
     (getById as jest.Mock<{}>).mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
@@ -91,7 +109,7 @@ describe('portofolioDetailController', () => {
   });
 
   test('should send response as json', async () => {
-    const mockGetById = jest.fn(() => Promise.resolve(mockGetByIdResponse));
+    const mockGetById = jest.fn(() => Promise.resolve(mockPortfolioItem));
     (getById as jest.Mock<{}>).mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
@@ -101,7 +119,7 @@ describe('portofolioDetailController', () => {
     mockRes.json = jest.fn();
 
     await portofolioDetailController(mockReq, mockRes, mockNext);
-    expect(mockRes.json).toBeCalledWith(mockGetByIdResponse);
+    expect(mockRes.json).toBeCalledWith(mockPortfolioItem);
   });
 
   test('should respond with a 404 when item is not found', async () => {
