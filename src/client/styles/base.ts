@@ -16,6 +16,7 @@ export default `
 
   html {
     box-sizing: border-box;
+    background-color: ${COLORS.bg};
   }
 
   *, *::before, *::after {
@@ -41,6 +42,19 @@ export default `
     @media only screen and (min-width: 1200px) {
       font-size: ${pxToRem(16)};
     }
+  }
+
+  input, textarea, select, button {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+
+  input[type=button],
+  input[type=submit],
+  input[type=reset],
+  button {
+    cursor: pointer;
   }
 
   h1, h2, h3, h4, h5, h6 {

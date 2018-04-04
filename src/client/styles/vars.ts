@@ -6,6 +6,7 @@ const highlight = '#c90044';
 const borderColor = '#d4cfd1';
 
 export const COLORS = {
+  bg: '#fff',
   base: '#424141',
   muted: '#787575',
   highlight,
