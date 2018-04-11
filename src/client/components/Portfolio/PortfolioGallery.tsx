@@ -5,6 +5,8 @@ import { pxToRem } from '../../styles/utils';
 import { maxWidth, GALLERY } from '../../styles/vars';
 import GalleryItem from './PortfolioGalleryItem';
 import GalleryLink from './PortfolioGalleryLink';
+import GalleryViewMoreItem from './PortfolioGalleryViewMoreItem';
+
 import Button from '../Button';
 
 interface Props {
@@ -42,14 +44,9 @@ export const PortfolioGallery: React.SFC<Props> = props => {
         );
       })}
       {displayMore && (
-        <li className="portfolio-gallery__more">
-          <Button
-            className="portfolio-gallery__more-button"
-            onClick={onClickLoadMore}
-          >
-            More
-          </Button>
-        </li>
+        <GalleryViewMoreItem>
+          <Button onClick={onClickLoadMore}>View more</Button>
+        </GalleryViewMoreItem>
       )}
     </Tag>
   );
@@ -76,13 +73,7 @@ export default styled(PortfolioGallery)`
   grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
   grid-gap: ${pxToRem(GALLERY.itemPadding)};
 
-  .portfolio-gallery__more {
-    grid-column-start: 1;
-    grid-column-end: -1;
-    text-align: center;
-  }
-
-  .portfolio-gallery__more-button {
-    padding: 1rem 2.5rem;
+  ${Button} {
+    padding: 1.5rem 4.5rem;
   }
 `;
