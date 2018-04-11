@@ -4,25 +4,25 @@ describe('list', () => {
   test('it should return default paginated data when no filters are applied', () => {
     return list().then(result => {
       expect(result).toMatchSnapshot();
-      expect(result).toHaveLength(20);
+      expect(result.items).toHaveLength(10);
     });
   });
 
   test('it should return pagintated results', () => {
     return Promise.all([
       list({
-        pageNumber: 0,
-        pageSize: 5,
-      }).then(result => {
-        expect(result).toMatchSnapshot();
-        expect(result).toHaveLength(5);
-      }),
-      list({
         pageNumber: 1,
         pageSize: 5,
       }).then(result => {
         expect(result).toMatchSnapshot();
-        expect(result).toHaveLength(5);
+        expect(result.items).toHaveLength(5);
+      }),
+      list({
+        pageNumber: 2,
+        pageSize: 5,
+      }).then(result => {
+        expect(result).toMatchSnapshot();
+        expect(result.items).toHaveLength(5);
       }),
     ]);
   });
@@ -33,7 +33,7 @@ describe('list', () => {
       pageSize: 10,
     }).then(result => {
       expect(result).toMatchSnapshot();
-      expect(result.length).toBeLessThanOrEqual(10);
+      expect(result.items.length).toBeLessThanOrEqual(10);
     });
   });
 
@@ -41,8 +41,8 @@ describe('list', () => {
     return list({
       categories: ['flyers'],
     }).then(result => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach(item => {
+      expect(result.items.length).toBeGreaterThan(0);
+      result.items.forEach(item => {
         expect(item.category.indexOf('flyers')).toBeGreaterThan(-1);
       });
     });
@@ -52,8 +52,8 @@ describe('list', () => {
     return list({
       categories: ['flyers', 'logos'],
     }).then(result => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach(item => {
+      expect(result.items.length).toBeGreaterThan(0);
+      result.items.forEach(item => {
         expect(
           item.category.indexOf('logos') > -1 ||
             item.category.indexOf('flyers') > -1,
@@ -66,8 +66,8 @@ describe('list', () => {
     return list({
       tags: ['CSS'],
     }).then(result => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach(item => {
+      expect(result.items.length).toBeGreaterThan(0);
+      result.items.forEach(item => {
         expect(item.tags.indexOf('CSS')).toBeGreaterThan(-1);
       });
     });
@@ -77,8 +77,8 @@ describe('list', () => {
     return list({
       tags: ['CSS', 'JavaScript'],
     }).then(result => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach(item => {
+      expect(result.items.length).toBeGreaterThan(0);
+      result.items.forEach(item => {
         expect(
           item.tags.indexOf('CSS') > -1 || item.tags.indexOf('JavaScript') > -1,
         ).toBe(true);
@@ -90,8 +90,8 @@ describe('list', () => {
     return list({
       searchTerm: 'Foc.us',
     }).then(result => {
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach(item => {
+      expect(result.items.length).toBeGreaterThan(0);
+      result.items.forEach(item => {
         expect(
           item.title.search('Foc.us') ||
             (item.description && item.description.search('Foc.us')),
@@ -104,7 +104,7 @@ describe('list', () => {
     return list({
       searchTerm: 'This does not exist!',
     }).then(result => {
-      expect(result).toEqual([]);
+      expect(result.items).toEqual([]);
     });
   });
 });

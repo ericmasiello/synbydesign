@@ -9,10 +9,12 @@ const stubFetchResume = jest.fn() as ThunkActionCreator<Resume>;
 test('should render HomePage', () => {
   const wrapper = shallow(
     <HomePage
-      portfolioItems={[]}
-      resume={{} as Resume}
       fetchPortfolioItems={stubFetchPortfolio}
       fetchResume={stubFetchResume}
+      portfolioItems={[]}
+      resume={{} as Resume}
+      existsMorePortfolioItems={false}
+      currentPageNumber={1}
     />,
   );
   expect(wrapper).toHaveLength(1);

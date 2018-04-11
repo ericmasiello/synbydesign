@@ -1,4 +1,9 @@
-import { ThunkActionCreator } from '../../types.d';
+import * as queryString from 'query-string';
+import {
+  ThunkActionCreator,
+  PortfolioThunkActionCreator,
+  PortfolioDetailThunkActionCreator,
+} from '../../types.d';
 import { dispatcher } from '../../utils/actions';
 
 export const FETCH_PORTFOLIO_ITEMS = 'FETCH_PORTFOLIO_ITEMS';
@@ -11,16 +16,34 @@ export const fetchResume: ThunkActionCreator<any> = () => async (
   api,
 ) => dispatcher<Portfolio[]>(dispatch, FETCH_RESUME)(api.get(`/resume`));
 
-export const fetchPortfolioItems: ThunkActionCreator<Portfolio[]> = (
-  params: FetchPortfolioItemsParams,
-) => async (dispatch, getState, api) =>
-  dispatcher<Portfolio[]>(dispatch, FETCH_PORTFOLIO_ITEMS)(
-    api.get(`/portfolio?pageSize=${params.pageSize}`),
-  );
+export const fetchPortfolioItems: PortfolioThunkActionCreator<Portfolio[]> = (
+  params: PortfolioRequestParams,
+) => {
+  const {
+    requestedPageNumber,
+    pageSize,
+    categories = [],
+    tags = [],
+    searchTerm,
+  } = params;
 
-export const fetchPortfolioDetail: ThunkActionCreator<Portfolio> = (
-  id: string,
-) => async (dispatch, getState, api) =>
+  const query = queryString.stringify({
+    requestedPageNumber,
+    pageSize,
+    categores: categories.join(','),
+    tags: tags.join(','),
+    searchTerm,
+  });
+
+  return async (dispatch, getState, api) =>
+    dispatcher<Portfolio[]>(dispatch, FETCH_PORTFOLIO_ITEMS)(
+      api.get(`/portfolio?${query}`),
+    );
+};
+
+export const fetchPortfolioDetail: PortfolioDetailThunkActionCreator<
+  Portfolio
+> = (id: string) => async (dispatch, getState, api) =>
   dispatcher<Portfolio>(dispatch, FETCH_PORTFOLIO_DETAIL)(
     api.get(`/portfolio/${id}`),
   );

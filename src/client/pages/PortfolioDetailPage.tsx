@@ -81,6 +81,15 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 }
 
+export const StyledPortfolioDetailPage = styled(PortfolioDetailPage)`
+  position: relative;
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+`;
+
 function mapStateToProps(state: AppState, props: Props) {
   return {
     portfolio: state.portfolioItems.find(
@@ -94,14 +103,7 @@ const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
 
 export default {
   loadData,
-  component: styled(
-    connect(mapStateToProps, { fetchPortfolioDetail })(PortfolioDetailPage),
-  )`
-    position: relative;
-
-    .content {
-      position: relative;
-      z-index: 2;
-    }
-  `,
+  component: connect(mapStateToProps, { fetchPortfolioDetail })(
+    StyledPortfolioDetailPage,
+  ),
 };

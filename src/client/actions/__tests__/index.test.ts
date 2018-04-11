@@ -27,6 +27,7 @@ describe('fetchResume', () => {
       .then(() => {
         expect(dispatch).toBeCalledWith({
           type: actions.FETCH_RESUME,
+          meta: {},
           payload: mockResume,
         });
       });

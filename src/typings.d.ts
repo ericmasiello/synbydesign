@@ -89,8 +89,39 @@ interface TypeMap {
   [x: string]: TypeSize;
 }
 
-interface FetchPortfolioItemsParams {
+interface PortfolioRequestParams {
   pageSize?: number;
+  requestedPageNumber?: number;
+  categories?: string[];
+  tags?: string[];
+  searchTerm?: string;
+}
+
+interface PortfolioReceivedParams {
+  pageSize?: string;
+  requestedPageNumber?: string;
+  categories?: string;
+  tags?: string;
+  searchTerm?: string;
+}
+
+interface PortfolioFilterResult {
+  items: Portfolio[];
+  currentPageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  filterCategories: string[];
+  filterTags: string[];
+  filterSearchTerm: string;
+}
+
+interface PortfolioResponseParams {
+  _pagesize?: string;
+  _currentpagenumber?: string;
+  _totalpages?: string;
+  _filtercategories?: string;
+  _filtertags?: string;
+  _filtersearchterm?: string;
 }
 
 interface ProfessionalRole extends Role {
@@ -140,9 +171,23 @@ interface Resume {
   education?: Education[];
 }
 
+interface UIPortfolioMeta {
+  currentPageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  filterCategories: string;
+  filterTags: string;
+  filterSearchTerm: string;
+}
+
+interface UIMeta {
+  portfolio: UIPortfolioMeta;
+}
+
 interface AppState {
   resume: Resume;
   portfolioItems: Portfolio[];
+  ui: UIMeta;
 }
 
 interface Context {

@@ -6,6 +6,16 @@ import reducers from '../client/reducers';
 const defaultInitialState = {
   resume: {} as Resume,
   portfolioItems: [],
+  ui: {
+    portfolio: {
+      currentPageNumber: 0,
+      pageSize: 0,
+      totalPages: 0,
+      filterCategories: '',
+      filterTags: '',
+      filterSearchTerm: '',
+    },
+  },
 };
 
 export default (

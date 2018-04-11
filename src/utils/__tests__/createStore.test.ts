@@ -28,6 +28,16 @@ test('create a store with initialized state', () => {
         imagePaths: [],
       },
     ],
+    ui: {
+      portfolio: {
+        currentPageNumber: 1,
+        pageSize: 10,
+        totalPages: 1,
+        filterCategories: '',
+        filterTags: '',
+        filterSearchTerm: '',
+      },
+    },
   };
 
   const axiosInstance = axios.create();

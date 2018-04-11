@@ -41,14 +41,24 @@ export function list(
     pageSize?: number;
     pageNumber?: number;
   } = {},
-): Promise<Portfolio[]> {
+): Promise<PortfolioFilterResult> {
   const {
     categories = [],
     tags = [],
     searchTerm = '',
-    pageSize = 20,
-    pageNumber = 0,
+    pageSize = 10,
+    pageNumber = 1,
   } = options;
+
+  const result: PortfolioFilterResult = {
+    items: [],
+    currentPageNumber: pageNumber,
+    pageSize: pageSize,
+    totalPages: 0,
+    filterCategories: categories,
+    filterTags: tags,
+    filterSearchTerm: searchTerm,
+  };
 
   const list = portfolioList
     .filter(matchListFilter(categories, 'category'))
@@ -63,14 +73,20 @@ export function list(
   const pages = chunk(list, pageSize);
 
   if (pages.length === 0) {
-    return Promise.resolve([]);
+    return Promise.resolve(result);
   }
+
+  result.totalPages = pages.length;
 
   if (pageNumber >= pages.length) {
-    return Promise.resolve(pages[pages.length - 1]);
+    result.items = pages[pages.length - 1];
+    result.currentPageNumber = pages.length;
+    return Promise.resolve(result);
   }
 
-  return Promise.resolve(pages[pageNumber]);
+  result.items = pages[pageNumber - 1];
+
+  return Promise.resolve(result);
 }
 
 export function getById(id: string): Promise<Portfolio | undefined> {
