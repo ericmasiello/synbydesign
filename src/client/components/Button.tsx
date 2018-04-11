@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as tinyColor from 'tinycolor2';
 import { COLORS, BODY_WEIGHTS } from '../styles/vars';
 
-interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
+export interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
   className?: string;
   href?: string;
   tag?: Tag;
@@ -27,6 +27,8 @@ export const Button: React.SFC<Props> = props => {
 Button.defaultProps = {
   tag: 'button',
 } as DefaultProps;
+
+Button.displayName = 'Button';
 
 const StyledButton = styled(Button)`
   border: 1px solid ${COLORS.base};
