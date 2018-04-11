@@ -28,7 +28,7 @@ const mockListResponse: PortfolioFilterResult = {
 const mockNext = jest.fn() as NextFunction;
 
 describe('portofolioController', () => {
-  fit('should send response as json', async () => {
+  test('should send response as json', async () => {
     const mockList = jest.fn(() => Promise.resolve(mockListResponse));
     (list as jest.Mock<{}>).mockImplementation(mockList);
 
@@ -57,11 +57,11 @@ describe('portofolioController', () => {
 
     const mockReq = {} as Request;
     const query = {
-      categories: ['a', 'b', 'c'],
-      tags: ['d', 'e', 'f'],
-      s: 'Search term',
-      pageSize: 20,
-      pageNumber: 5,
+      categories: 'a,b,c',
+      tags: 'd,e,f',
+      searchTerm: 'Search term',
+      pageSize: '20',
+      requestedPageNumber: '5',
     };
     mockReq.query = query;
 
