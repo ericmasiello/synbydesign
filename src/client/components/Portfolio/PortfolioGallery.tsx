@@ -9,7 +9,7 @@ import GalleryViewMoreItem from './PortfolioGalleryViewMoreItem';
 
 import Button from '../Button';
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLElement> {
   items: Portfolio[];
   tag?: Tag;
   displayMore: boolean;
