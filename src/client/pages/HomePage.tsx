@@ -63,11 +63,12 @@ export class HomePage extends React.Component<Props, {}> {
         <Header />
         <Hero />
         <PortfolioGallery
+          id="gallery"
           items={this.props.portfolioItems}
           displayMore={this.props.existsMorePortfolioItems}
           onClickLoadMore={this.loadNextPortfolioPage}
         />
-        <Resume {...this.props.resume} />
+        <Resume {...this.props.resume} id="resume" />
       </div>
     );
   }

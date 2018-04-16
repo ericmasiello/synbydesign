@@ -15,8 +15,8 @@ test('create a store with default state', () => {
 test('create a store with initialized state', () => {
   const state: AppState = {
     resume: {
-      name: 'Eric',
-      title: 'Developer',
+      ownerName: 'Eric',
+      ownerTitle: 'Developer',
       lead: 'To be the best',
     },
     portfolioItems: [
