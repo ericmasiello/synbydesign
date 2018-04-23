@@ -14,7 +14,7 @@ import {
   MEDIA_QUERIES,
 } from '../styles/vars';
 
-interface Props extends Resume {
+interface Props extends React.HTMLProps<HTMLElement>, Resume {
   className?: string;
   tag?: Tag;
 }
@@ -30,8 +30,8 @@ export const Resume: React.SFC<Props> = props => {
   const {
     tag: Tag,
     className,
-    name,
-    title,
+    ownerName,
+    ownerTitle,
     lead,
     skills,
     professionalExperience,
@@ -42,8 +42,8 @@ export const Resume: React.SFC<Props> = props => {
   return (
     <Tag className={className} {...rest}>
       <ResumeHeader
-        name={name}
-        title={title}
+        ownerName={ownerName}
+        ownerTitle={ownerTitle}
         lead={lead}
         className="resume__header"
       />
@@ -87,14 +87,14 @@ export const Resume: React.SFC<Props> = props => {
   );
 };
 
+Resume.displayName = 'Resume';
+
 Resume.defaultProps = {
   tag: 'section',
   professionalExperience: [],
   relatedExperience: [],
   education: [],
 } as DefaultProps;
-
-Resume.displayName = 'Resume';
 
 export default styled(Resume)`
   display: grid;

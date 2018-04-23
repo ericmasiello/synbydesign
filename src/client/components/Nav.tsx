@@ -32,30 +32,44 @@ const NavListItem = styled.li`
 
 NavListItem.displayName = 'NavListItem';
 
-const Nav: React.SFC<Props> = ({ className }) => {
-  return (
-    <nav className={className}>
-      <NavList>
-        <NavListItem>
-          <AnimatedLink href="#selected">Selected Work</AnimatedLink>
-        </NavListItem>
-        <NavListItem>
-          <AnimatedLink href="#resume">Resume</AnimatedLink>
-        </NavListItem>
-        <NavListItem>
-          <AnimatedLink href="#services">Services</AnimatedLink>
-        </NavListItem>
-        <NavListItem>
-          <AnimatedLink href="#about">About</AnimatedLink>
-        </NavListItem>
-        <NavListItem>
-          <AnimatedLink href="#contact">Contact</AnimatedLink>
-        </NavListItem>
-      </NavList>
-    </nav>
-  );
-};
+class Nav extends React.Component<Props> {
+  static displayName = 'Nav';
 
-Nav.displayName = 'Nav';
+  scrollTo(event: React.MouseEvent<HTMLLinkElement>) {
+    event.preventDefault();
+    const elm = event.currentTarget;
+    const hash: string = (elm as any).hash;
+
+    const targetElm = document.querySelector(hash);
+    if (!targetElm) {
+      return;
+    }
+    window.scroll({
+      top: targetElm.getBoundingClientRect().top,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  render() {
+    const { className } = this.props;
+    return (
+      <nav className={className}>
+        <NavList>
+          <NavListItem>
+            <AnimatedLink href="#gallery" onClick={this.scrollTo}>
+              Selected Work
+            </AnimatedLink>
+          </NavListItem>
+          <NavListItem>
+            <AnimatedLink href="#resume" onClick={this.scrollTo}>
+              Resume
+            </AnimatedLink>
+          </NavListItem>
+        </NavList>
+      </nav>
+    );
+  }
+}
 
 export default styled(Nav)``;

@@ -162,8 +162,8 @@ interface Education {
 }
 
 interface Resume {
-  name: string;
-  title: string;
+  ownerName: string;
+  ownerTitle: string;
   lead: string;
   skills?: string[];
   professionalExperience?: ProfessionalExperience[];

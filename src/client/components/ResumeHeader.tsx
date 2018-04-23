@@ -5,8 +5,8 @@ import Type3 from './Type3';
 import Type5 from './Type5';
 
 interface Props {
-  name: string;
-  title: string;
+  ownerName: string;
+  ownerTitle: string;
   lead: string;
   className?: string;
   tag?: Tag;
@@ -17,15 +17,21 @@ interface DefaultProps {
 }
 
 export const ResumeHeader: React.SFC<Props> = props => {
-  const { tag: Tag, className, name, title, lead, ...rest } = props as Props &
-    DefaultProps;
+  const {
+    tag: Tag,
+    className,
+    ownerName,
+    ownerTitle,
+    lead,
+    ...rest
+  } = props as Props & DefaultProps;
   return (
     <Tag className={className} {...rest}>
       <Type3 tag="h1" className="resume-header__name">
-        {name}
+        {ownerName}
       </Type3>
       <Type5 tag="h2" className="resume-header__title">
-        {title}
+        {ownerTitle}
       </Type5>
       <p className="resume-header__lead">{lead}</p>
     </Tag>

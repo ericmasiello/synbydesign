@@ -3,8 +3,8 @@ import { AxiosInstance } from 'axios';
 import { Dispatch } from 'redux';
 
 const mockResume: Resume = {
-  name: 'Eric',
-  title: 'Developer',
+  ownerName: 'Eric',
+  ownerTitle: 'Developer',
   lead: 'To be the best',
 };
 const error = new Error('There was an error :(');
