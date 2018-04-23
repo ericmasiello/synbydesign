@@ -5,6 +5,8 @@ import TypeSmall from './TypeSmall';
 import { TYPE_SIZE, COLORS } from '../styles/vars';
 import { pxToRem } from '../styles/utils';
 
+const TIMELINE_IN_MARGIN = '115rem';
+
 export interface Props extends ProfessionalRole {
   className?: string;
 }
@@ -38,14 +40,20 @@ export default styled(ProfessionalExperienceRole)`
 
   .role__title {
     color: ${COLORS.highlight};
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+
+    @media (min-width: ${TIMELINE_IN_MARGIN}) {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .role__timeline {
-    position: absolute;
-    top: 0;
-    left: -1rem;
-    transform: translateX(-100%);
-    line-height: ${computeLineHeight(TYPE_SIZE.base)};
+    @media (min-width: ${TIMELINE_IN_MARGIN}) {
+      position: absolute;
+      top: 0;
+      left: -1rem;
+      transform: translateX(-100%);
+      line-height: ${computeLineHeight(TYPE_SIZE.base)};
+    }
   }
 `;
