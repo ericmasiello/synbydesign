@@ -8,6 +8,13 @@ import axios from 'axios';
 import Routes from './Routes';
 import createStore from '../utils/createStore';
 
+// @ts-ignore
+import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
+
+if ('serviceWorker' in navigator) {
+  runtime.register();
+}
+
 const axiosInstance = axios.create({
   baseURL: '/api',
 });
