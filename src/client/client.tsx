@@ -5,11 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
 import axios from 'axios';
-import Routes from './Routes';
-import createStore from '../utils/createStore';
-
 // @ts-ignore
 import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import Routes from './Routes';
+import createStore from '../utils/createStore';
 
 if ('serviceWorker' in navigator) {
   runtime.register();

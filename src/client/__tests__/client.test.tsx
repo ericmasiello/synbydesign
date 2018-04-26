@@ -1,5 +1,6 @@
 import * as ReactDOM from 'react-dom';
 jest.mock('react-dom');
+jest.mock('serviceworker-webpack-plugin/lib/runtime', () => null);
 
 let root: Element;
 
