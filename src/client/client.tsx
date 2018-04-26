@@ -9,6 +9,7 @@ import axios from 'axios';
 import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import Routes from './Routes';
 import createStore from '../utils/createStore';
+import Offline from './components/Offline';
 
 if ('serviceWorker' in navigator) {
   runtime.register();
@@ -31,7 +32,10 @@ export const client = (
 );
 
 const root = document.getElementById('root');
+const offlineRoot = document.getElementById('offline-root');
 
 if (root) {
   ReactDOM.hydrate(client, root);
+} else if (offlineRoot) {
+  ReactDOM.render(<Offline />, offlineRoot);
 }

@@ -1,7 +1,7 @@
 /// <reference path="../serviceworker.d.ts" />
 import { composeCacheName, CACHE_PREFIX } from './utils/swCache';
 
-const CACHE_VERSION = 4;
+const CACHE_VERSION = 1;
 const CACHE_NAME = composeCacheName(CACHE_VERSION);
 
 interface ServiceWorkerEvent extends ExtendableEvent {
@@ -19,6 +19,23 @@ self.addEventListener('install', (e: Event) => {
   (event as ExtendableEvent).waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(WEBPACK_BUNDLES);
+    }),
+  );
+});
+
+self.addEventListener('fetch', (e: Event) => {
+  const event = e as ServiceWorkerEvent;
+  event.respondWith(
+    fetch(event.request).catch(() => {
+      return caches.match(event.request).then(response => {
+        if (response) {
+          return response;
+        }
+        // @ts-ignore
+        if (event.request.headers.get('accept').includes('text/html')) {
+          return caches.match('/offline.html');
+        }
+      });
     }),
   );
 });
