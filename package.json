@@ -133,7 +133,8 @@
       "/test/",
       "/src/typings.d.ts",
       "/src/global.d.ts",
-      "/src/types.d.ts"
+      "/src/types.d.ts",
+      "/src/serviceworker.d.ts"
     ],
     "coverageThreshold": {
       "global": {
