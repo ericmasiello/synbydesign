@@ -89,6 +89,7 @@
     "raw-loader": "~0.5.1",
     "react-test-renderer": "~16.3.1",
     "rimraf": "~2.6.2",
+    "serviceworker-webpack-plugin": "~0.2.3",
     "svg-inline-loader": "~0.8.0",
     "ts-jest": "~22.4.2",
     "tslint": "~5.9.1",
@@ -132,7 +133,8 @@
       "/test/",
       "/src/typings.d.ts",
       "/src/global.d.ts",
-      "/src/types.d.ts"
+      "/src/types.d.ts",
+      "/src/serviceworker.d.ts"
     ],
     "coverageThreshold": {
       "global": {

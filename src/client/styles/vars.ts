@@ -65,3 +65,13 @@ export const headerSpacing = '1.5vh';
 export const HERO = Object.freeze({
   typeOffset: TYPE_SIZE.jumbo[0] * 0.8,
 });
+
+const getNumericWeights = (weights: { [x: string]: number }): string => {
+  return Object.keys(weights)
+    .map(key => weights[key])
+    .join(',');
+};
+
+export const FONT_URL = `https://fonts.googleapis.com/css?family=Lato:${getNumericWeights(
+  HEADER_WEIGHTS,
+)}|Source+Sans+Pro:${getNumericWeights(BODY_WEIGHTS)}`;

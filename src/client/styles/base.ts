@@ -1,18 +1,10 @@
 import { pxToRem } from './utils';
 import { baseFont, headerFont } from './mixins';
-import { COLORS, BODY_WEIGHTS, HEADER_WEIGHTS } from './vars';
-
-const getNumericWeights = (weights: { [x: string]: number }): string => {
-  return Object.keys(weights)
-    .map(key => weights[key])
-    .join(',');
-};
+import { COLORS, BODY_WEIGHTS, HEADER_WEIGHTS, FONT_URL } from './vars';
 
 /* tslint:disable max-line-length */
 export default `
-@import url('https://fonts.googleapis.com/css?family=Lato:${getNumericWeights(
-  HEADER_WEIGHTS,
-)}|Source+Sans+Pro:${getNumericWeights(BODY_WEIGHTS)}');
+@import url('${FONT_URL}');
 
   html {
     box-sizing: border-box;
