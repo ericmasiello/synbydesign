@@ -1,6 +1,6 @@
-# Isomorphic React App
+# Syn By Design
 
-> This repo was based off the work of @StephenGrider https://github.com/StephenGrider/ReactSSRCasts
+This repository is my personal portfolio and includes my resume.
 
 ### Get Started
 
