@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Meta from '../components/Meta';
 import Header from '../components/Header';
 import Logo from '../components/Logo';
+import Offline from '../components/Offline';
 
 interface Props extends React.HTMLProps<HTMLElement> {
   className?: string;
@@ -15,9 +16,7 @@ export const OfflinePage: React.SFC<Props> = ({ className }) => {
       <Header>
         <Logo />
       </Header>
-      <div>
-        <h1>Sorry, we're offline right now.</h1>
-      </div>
+      <Offline />
     </div>
   );
 };
