@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
-import Header from '../components/Header';
+import Header from '../components/HeaderOnline';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetailBackground from '../components/Portfolio/PortfolioDetailBackground';
 import PortfolioDetailGallery from '../components/Portfolio/PortfolioDetailGallery';

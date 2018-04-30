@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import isEmpty from 'lodash-es/isEmpty';
 import { fetchPortfolioItems, fetchResume } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
-import Header from '../components/Header';
+import Header from '../components/HeaderOnline';
 import Resume from '../components/Resume';
+import Meta from '../components/Meta';
 import { ThunkActionCreator } from '../../types.d';
 
 const pageRequest: PortfolioRequestParams = {
@@ -53,13 +53,7 @@ export class HomePage extends React.Component<Props, {}> {
   render() {
     return (
       <div className={this.props.className}>
-        <Helmet>
-          <title>Syn By Design: Eric Masiello's Portfolio</title>
-          <meta
-            property="og:title"
-            content="Syn By Design: Eric Masiello's Portfolio"
-          />
-        </Helmet>
+        <Meta />
         <Header />
         <Hero />
         <PortfolioGallery
