@@ -1,7 +1,8 @@
 /// <reference path="../serviceworker.d.ts" />
 import { composeCacheName, CACHE_PREFIX } from './utils/swCache';
+import { FONT_URL } from './styles/vars';
 
-const CACHE_VERSION = 1;
+const CACHE_VERSION = 2;
 const CACHE_NAME = composeCacheName(CACHE_VERSION);
 
 interface ServiceWorkerEvent extends ExtendableEvent {
@@ -9,10 +10,13 @@ interface ServiceWorkerEvent extends ExtendableEvent {
   respondWith: (arg: Promise<any>) => void;
 }
 
-// serviceWorkerOption is made available globally
-// via 'serviceworker-webpack-plugin'
-// @ts-ignore
-const WEBPACK_BUNDLES: string[] = serviceWorkerOption.assets;
+const WEBPACK_BUNDLES: string[] = [
+  // serviceWorkerOption is made available globally
+  // via 'serviceworker-webpack-plugin'
+  // @ts-ignore
+  ...serviceWorkerOption.assets,
+  FONT_URL,
+];
 
 self.addEventListener('install', (e: Event) => {
   const event = e as ServiceWorkerEvent;
