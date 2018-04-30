@@ -23,7 +23,7 @@ Offline.displayName = 'Offline';
 
 export default styled(Offline)`
   max-width: ${pxToRem(maxWidth)};
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   padding: 0 2.5rem;
 
@@ -35,7 +35,6 @@ export default styled(Offline)`
   }
 
   @media (min-width: ${pxToRem(MEDIA_QUERIES.large)}) {
-    text-align: left;
     display: flex;
     align-items: center;
 
