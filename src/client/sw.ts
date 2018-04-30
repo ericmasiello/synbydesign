@@ -2,7 +2,7 @@
 import { composeCacheName, CACHE_PREFIX } from './utils/swCache';
 import { FONT_URL } from './styles/vars';
 
-const CACHE_VERSION = 2;
+const CACHE_VERSION = 3;
 const CACHE_NAME = composeCacheName(CACHE_VERSION);
 
 interface ServiceWorkerEvent extends ExtendableEvent {
