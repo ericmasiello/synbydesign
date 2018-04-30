@@ -1,8 +1,22 @@
-# Syn By Design
-This site is built using React, Reflux, Backbone, Wordpress, and the WP Rest API.
+# Isomorphic React App
 
-## To get running:
-* run `npm install`
-* for develop, run `npm start`
-* to just lint, run `npm run lint`
-* to build (and lint), run `npm run build`
+> This repo was based off the work of @StephenGrider https://github.com/StephenGrider/ReactSSRCasts
+
+### Get Started
+
+```
+npm i
+```
+
+### Run development server
+
+```
+npm run dev
+```
+
+### Build and run in production
+
+```
+npm run build
+npm start
+```

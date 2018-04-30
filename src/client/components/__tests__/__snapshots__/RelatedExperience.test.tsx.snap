@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<article
+  className={undefined}
+>
+  <hgroup>
+    <h1
+      className="related-experience__title sc-htpNat kPUtmc"
+      data-title={true}
+    >
+      <span
+        className="related-experience__title__content"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Title",
+          }
+        }
+        data-title-content={true}
+      />
+       
+    </h1>
+    <h2
+      className="related-experience__role sc-htpNat kPUtmc"
+      data-role-title={true}
+    >
+      Role title
+    </h2>
+  </hgroup>
+</article>
+`;
