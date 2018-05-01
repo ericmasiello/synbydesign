@@ -28,6 +28,10 @@ self.addEventListener('install', (e: Event) => {
   );
 });
 
+// TODO: implement the fallback to default image pattern for images that cannot be loaded if you are offline
+// this may require creating an offline image or svg that can be loaded in place of images
+// might want to use the offline.svg that exists in OfflineIcon.tsx
+
 self.addEventListener('fetch', (e: Event) => {
   const event = e as ServiceWorkerEvent;
   event.respondWith(
