@@ -31,16 +31,6 @@ const errorPage = new HtmlWebpackPlugin({
   },
 });
 
-const offlinePage = new HtmlWebpackPlugin({
-  template: `!!raw-loader!${path.join(process.cwd(), 'src/offline.html')}`,
-  filename: path.resolve(__dirname, 'public/offline.html'),
-  minify: {
-    removeComments: true,
-    collapseWhitespace: true,
-    conservativeCollapse: true,
-  },
-});
-
 const serviceWorker = new ServiceWorkerWebpackPlugin({
   entry: path.join(__dirname, 'src/client/sw.ts'),
 });
@@ -60,7 +50,7 @@ const config = {
     publicPath: '/',
   },
 
-  plugins: [indexPage, errorPage, offlinePage, serviceWorker],
+  plugins: [indexPage, errorPage, serviceWorker],
 };
 
 const extractBundles = bundles => ({
