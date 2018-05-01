@@ -2,7 +2,7 @@
 import { composeCacheName, CACHE_PREFIX } from './utils/swCache';
 import { FONT_URL } from './styles/vars';
 
-const CACHE_VERSION = 3;
+const CACHE_VERSION = 1;
 const CACHE_NAME = composeCacheName(CACHE_VERSION);
 
 interface ServiceWorkerEvent extends ExtendableEvent {
@@ -16,6 +16,7 @@ const WEBPACK_BUNDLES: string[] = [
   // @ts-ignore
   ...serviceWorkerOption.assets,
   FONT_URL,
+  '/', // store the home page
 ];
 
 self.addEventListener('install', (e: Event) => {
@@ -31,13 +32,29 @@ self.addEventListener('fetch', (e: Event) => {
   const event = e as ServiceWorkerEvent;
   event.respondWith(
     fetch(event.request).catch(() => {
+      console.log('-------------');
+      console.log('failing to fetch', event.request);
       return caches.match(event.request).then(response => {
+        console.log(
+          'was response found in cache for',
+          event.request,
+          '? response = ',
+          response,
+        );
         if (response) {
           return response;
         }
+        console.log(
+          'headers for',
+          event.request,
+          // @ts-ignore
+          event.request.headers.get('accept').includes('text/html'),
+        );
         // @ts-ignore
         if (event.request.headers.get('accept').includes('text/html')) {
-          return caches.match('/offline.html');
+          const offline = caches.match('/');
+          console.log('returning offline', offline);
+          return offline;
         }
       });
     }),
