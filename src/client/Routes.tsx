@@ -4,6 +4,7 @@ import App from './App';
 import HomePage from './pages/HomePage';
 import PortfolioDetailPage from './pages/PortfolioDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
+import OfflinePage from './pages/OfflinePage';
 import { RouteConfig } from 'react-router-config';
 
 export interface RouteConfigWithLoadData extends RouteConfig {
@@ -24,6 +25,10 @@ const Routes: RouteConfigWithLoadData[] = [
       {
         ...PortfolioDetailPage,
         path: '/portfolio/:id',
+      },
+      {
+        ...OfflinePage,
+        path: '/offline',
       },
       {
         ...NotFoundPage,

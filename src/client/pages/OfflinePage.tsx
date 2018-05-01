@@ -23,7 +23,7 @@ export const OfflinePage: React.SFC<Props> = ({ className }) => {
 
 OfflinePage.displayName = 'OfflinePage';
 
-export default styled(OfflinePage)`
+const StyledOfflinePage = styled(OfflinePage)`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,3 +34,7 @@ export default styled(OfflinePage)`
     margin-top: 0;
   }
 `;
+
+export default {
+  component: StyledOfflinePage,
+};
