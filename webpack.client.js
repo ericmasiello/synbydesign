@@ -4,6 +4,8 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const indexPage = new HtmlWebpackPlugin({
   template: `!!raw-loader!${path.join(
@@ -35,6 +37,17 @@ const serviceWorker = new ServiceWorkerWebpackPlugin({
   entry: path.join(__dirname, 'src/client/sw.ts'),
 });
 
+const copyWebpackPlugin = new CopyWebpackPlugin([
+  {
+    from: 'src/client/images',
+    to: '',
+  },
+]);
+
+const imageMinPlugin = new ImageminPlugin({
+  test: /\.(jpe?g|png|gif|svg)$/i,
+});
+
 const config = {
   // Tell webpack the root file of our
   // server application
@@ -50,7 +63,13 @@ const config = {
     publicPath: '/',
   },
 
-  plugins: [indexPage, errorPage, serviceWorker],
+  plugins: [
+    indexPage,
+    errorPage,
+    serviceWorker,
+    copyWebpackPlugin,
+    imageMinPlugin,
+  ],
 };
 
 const extractBundles = bundles => ({
