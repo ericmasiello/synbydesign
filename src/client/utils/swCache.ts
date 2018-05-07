@@ -3,37 +3,22 @@ export const CACHE_PREFIX = 'syn-cache-v';
 export const composeCacheName = (version: number) =>
   `${CACHE_PREFIX}${version}`;
 
-// FIXME: this name isn't really descriptive of what's going on.
-// technically this is respond with cache, falling back to network
-// fallbacking to default cached response
-//
-// Possible way to make this composable:
-/*
-  respondFromCache(event)
-    .then(respondeFromNetwork(event))
-    .then(cacheNetworkResponse)
-    .catch(fallbackToCachedResponse(OFFLINE_IMAGE_PLACEHOLDER))
-*/
-export const fallbackFromCache = (activeCacheName: string) => (
-  event: ServiceWorkerEvent,
-  cachedFallbackResponsePath: string,
-) => {
-  return caches.open(activeCacheName).then(cache => {
-    return cache.match(event.request).then(cacheResponse => {
-      return (
-        cacheResponse ||
-        fetch(event.request)
-          .then(networkResponse => {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          })
-          .catch(() => {
-            return cache.match(cachedFallbackResponsePath);
-          })
-      );
-    });
+export const getMatchingCachedResponseWithCache = (activeCacheName: string) => (
+  req: Request | string,
+) => caches.open(activeCacheName).then(cache => cache.match(req));
+
+export const cacheResponseWithCache = (activeCacheName: string) => (
+  req: Request | string,
+) => (res: Response) =>
+  caches.open(activeCacheName).then(cache => {
+    cache.put(req, res.clone());
+    return res;
   });
-};
+
+export const respondWithFallbackFromCache = (activeCacheName: string) => (
+  fallbackPath: string,
+) => () =>
+  caches.open(activeCacheName).then(cache => cache.match(fallbackPath));
 
 export const deleteInactiveCaches = (activeCacheName: string) => {
   return caches.keys().then(cacheNames => {
