@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+// const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
@@ -33,9 +33,9 @@ const errorPage = new HtmlWebpackPlugin({
   },
 });
 
-const serviceWorker = new ServiceWorkerWebpackPlugin({
-  entry: path.join(__dirname, 'src/client/sw.ts'),
-});
+// const serviceWorker = new ServiceWorkerWebpackPlugin({
+//   entry: path.join(__dirname, 'src/client/sw.ts'),
+// });
 
 const copyWebpackPlugin = new CopyWebpackPlugin([
   {
@@ -66,28 +66,28 @@ const config = {
   plugins: [
     indexPage,
     errorPage,
-    serviceWorker,
+    // serviceWorker,
     copyWebpackPlugin,
     imageMinPlugin,
   ],
 };
 
-const extractBundles = bundles => ({
-  plugins: bundles.map(
-    bundle => new webpack.optimize.CommonsChunkPlugin(bundle),
-  ),
-});
+// const extractBundles = bundles => ({
+//   plugins: bundles.map(
+//     bundle => new webpack.optimize.CommonsChunkPlugin(bundle),
+//   ),
+// });
 
 module.exports = merge(
   baseConfig,
   config,
-  extractBundles([
-    {
-      name: 'vendor',
-      minChunks: ({ resource }) =>
-        resource &&
-        resource.indexOf('node_modules') >= 0 &&
-        resource.match(/\.js$/),
-    },
-  ]),
+  // extractBundles([
+  //   {
+  //     name: 'vendor',
+  //     minChunks: ({ resource }) =>
+  //       resource &&
+  //       resource.indexOf('node_modules') >= 0 &&
+  //       resource.match(/\.js$/),
+  //   },
+  // ]),
 );
