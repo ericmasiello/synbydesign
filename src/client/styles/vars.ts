@@ -44,6 +44,10 @@ export const BODY_WEIGHTS = {
   bold: 600,
 };
 
+export const PAGE = Object.freeze({
+  bottomPadding: 30,
+});
+
 export const GALLERY = Object.freeze({
   itemPadding: 16,
   minItemSize: 300,

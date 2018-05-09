@@ -199,3 +199,8 @@ interface AppWindow extends Window {
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
   INITIAL_STATE?: any;
 }
+
+interface ServiceWorkerEvent extends ExtendableEvent {
+  request: Request;
+  respondWith: (arg: Promise<any>) => void;
+}

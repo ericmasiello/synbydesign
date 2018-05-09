@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import notFound from '../NotFoundPage';
-
-const NotFoundPage = notFound.component;
+import { NotFoundPage } from '../NotFoundPage';
 
 test('should render', () => {
   const wrapper = shallow(<NotFoundPage />);

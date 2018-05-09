@@ -4,6 +4,8 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const indexPage = new HtmlWebpackPlugin({
   template: `!!raw-loader!${path.join(
@@ -31,18 +33,19 @@ const errorPage = new HtmlWebpackPlugin({
   },
 });
 
-const offlinePage = new HtmlWebpackPlugin({
-  template: `!!raw-loader!${path.join(process.cwd(), 'src/offline.html')}`,
-  filename: path.resolve(__dirname, 'public/offline.html'),
-  minify: {
-    removeComments: true,
-    collapseWhitespace: true,
-    conservativeCollapse: true,
-  },
-});
-
 const serviceWorker = new ServiceWorkerWebpackPlugin({
   entry: path.join(__dirname, 'src/client/sw.ts'),
+});
+
+const copyWebpackPlugin = new CopyWebpackPlugin([
+  {
+    from: 'src/client/images',
+    to: '',
+  },
+]);
+
+const imageMinPlugin = new ImageminPlugin({
+  test: /\.(jpe?g|png|gif|svg)$/i,
 });
 
 const config = {
@@ -60,7 +63,13 @@ const config = {
     publicPath: '/',
   },
 
-  plugins: [indexPage, errorPage, offlinePage, serviceWorker],
+  plugins: [
+    indexPage,
+    errorPage,
+    serviceWorker,
+    copyWebpackPlugin,
+    imageMinPlugin,
+  ],
 };
 
 const extractBundles = bundles => ({
