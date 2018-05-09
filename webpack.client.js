@@ -63,6 +63,12 @@ const config = {
     publicPath: '/',
   },
 
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+
   plugins: [
     indexPage,
     errorPage,
@@ -72,22 +78,4 @@ const config = {
   ],
 };
 
-// const extractBundles = bundles => ({
-//   plugins: bundles.map(
-//     bundle => new webpack.optimize.CommonsChunkPlugin(bundle),
-//   ),
-// });
-
-module.exports = merge(
-  baseConfig,
-  config,
-  // extractBundles([
-  //   {
-  //     name: 'vendor',
-  //     minChunks: ({ resource }) =>
-  //       resource &&
-  //       resource.indexOf('node_modules') >= 0 &&
-  //       resource.match(/\.js$/),
-  //   },
-  // ]),
-);
+module.exports = merge(baseConfig, config);
