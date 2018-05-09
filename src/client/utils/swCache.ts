@@ -20,9 +20,9 @@ export const respondWithFallbackFromCache = (activeCacheName: string) => (
 ) => () =>
   caches.open(activeCacheName).then(cache => cache.match(fallbackPath));
 
-export const deleteInactiveCaches = (activeCacheName: string) => {
-  return caches.keys().then(cacheNames => {
-    return Promise.all(
+export const deleteInactiveCaches = (activeCacheName: string) =>
+  caches.keys().then(cacheNames =>
+    Promise.all(
       cacheNames.map(cacheName => {
         if (
           activeCacheName !== cacheName &&
@@ -32,6 +32,5 @@ export const deleteInactiveCaches = (activeCacheName: string) => {
         }
         return false;
       }),
-    );
-  });
-};
+    ),
+  );

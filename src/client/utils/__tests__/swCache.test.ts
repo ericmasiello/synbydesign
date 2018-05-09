@@ -89,3 +89,74 @@ describe('cacheResponseWithCache', () => {
     expect(result).toEqual(mockRes);
   });
 });
+
+describe('respondWithFallbackFromCache', () => {
+  const mockCache = {
+    match: jest.fn().mockImplementation(() => Promise.resolve('the match')),
+  };
+
+  beforeEach(() => {
+    mockCache.match.mockClear();
+
+    // @ts-ignore
+    window.caches = {
+      open: jest.fn().mockImplementation(() => Promise.resolve(mockCache)),
+    };
+  });
+
+  test('it opens the cache', async () => {
+    const mockCacheName = 'myMockCache';
+    await swCache.respondWithFallbackFromCache(mockCacheName)('/fallback')();
+
+    expect(window.caches.open).toBeCalledWith(mockCacheName);
+  });
+
+  test('it finds matching fallback within the cache', async () => {
+    const mockCacheName = 'myMockCache';
+    await swCache.respondWithFallbackFromCache(mockCacheName)('/fallback')();
+
+    expect(mockCache.match).toBeCalledWith('/fallback');
+  });
+
+  test('it should return the matching cache value', async () => {
+    const mockCacheName = 'myMockCache';
+    const result = await swCache.respondWithFallbackFromCache(mockCacheName)(
+      '/fallback',
+    )();
+
+    expect(result).toEqual('the match');
+  });
+});
+
+describe('deleteInactiveCaches', () => {
+  const inactiveCacheNames = [
+    `${swCache.CACHE_PREFIX}1`,
+    `${swCache.CACHE_PREFIX}2`,
+    'some-other-random-cache',
+    `${swCache.CACHE_PREFIX}3`,
+    `${swCache.CACHE_PREFIX}5`,
+  ];
+
+  beforeEach(() => {
+    // @ts-ignore
+    window.caches = {
+      keys: jest
+        .fn()
+        .mockImplementation(() => Promise.resolve(inactiveCacheNames)),
+      delete: jest.fn(),
+    };
+  });
+
+  test('deletes any caches with the same prefix except the active one', async () => {
+    const mockActiveCacheName = `${swCache.CACHE_PREFIX}4`;
+    await swCache.deleteInactiveCaches(mockActiveCacheName);
+
+    expect((window.caches.delete as jest.Mock<{}>).mock.calls).toHaveLength(4);
+    expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}1`);
+    expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}2`);
+    expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}3`);
+    expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}5`);
+    expect(window.caches.delete).not.toBeCalledWith(`${swCache.CACHE_PREFIX}4`);
+    expect(window.caches.delete).not.toBeCalledWith('some-other-random-cache');
+  });
+});
