@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash-es/isEmpty';
@@ -8,6 +9,8 @@ import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
 import Header from '../components/HeaderOnline';
 import Resume from '../components/Resume';
 import Meta from '../components/Meta';
+import Button from '../components/Button';
+import { pxToRem } from '../styles/utils';
 import { ThunkActionCreator } from '../../types.d';
 
 const pageRequest: PortfolioRequestParams = {
@@ -56,12 +59,10 @@ export class HomePage extends React.Component<Props, {}> {
         <Meta />
         <Header />
         <Hero />
-        <PortfolioGallery
-          id="gallery"
-          items={this.props.portfolioItems}
-          displayMore={this.props.existsMorePortfolioItems}
-          onClickLoadMore={this.loadNextPortfolioPage}
-        />
+        <PortfolioGallery id="gallery" items={this.props.portfolioItems} />
+        {this.props.existsMorePortfolioItems && (
+          <Button onClick={this.loadNextPortfolioPage}>View more</Button>
+        )}
         <Resume {...this.props.resume} id="resume" />
       </div>
     );
@@ -80,6 +81,18 @@ function mapStateToProps({ portfolioItems, resume, ui }: AppState) {
   };
 }
 
+const StyledHomePage = styled(HomePage)`
+  ${Button} {
+    display: block;
+    margin: ${pxToRem(20)} auto 0;
+    padding: 1.5rem 4.5rem;
+  }
+
+  ${Resume} {
+    margin-top: ${pxToRem(20)};
+  }
+`;
+
 export default {
   loadData: ({ dispatch }: Store<Portfolio[]>) =>
     Promise.all([
@@ -87,6 +100,6 @@ export default {
       dispatch(fetchPortfolioItems(pageRequest)),
     ]),
   component: connect(mapStateToProps, { fetchPortfolioItems, fetchResume })(
-    HomePage,
+    StyledHomePage,
   ),
 };

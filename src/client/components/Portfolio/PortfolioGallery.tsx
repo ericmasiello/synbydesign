@@ -5,15 +5,10 @@ import { pxToRem } from '../../styles/utils';
 import { maxWidth, GALLERY } from '../../styles/vars';
 import GalleryItem from './PortfolioGalleryItem';
 import GalleryLink from './PortfolioGalleryLink';
-import GalleryViewMoreItem from './PortfolioGalleryViewMoreItem';
-
-import Button from '../Button';
 
 interface Props extends React.HTMLProps<HTMLElement> {
   items: Portfolio[];
   tag?: Tag;
-  displayMore: boolean;
-  onClickLoadMore: () => void;
 }
 
 interface DefaultProps {
@@ -22,13 +17,7 @@ interface DefaultProps {
 }
 
 export const PortfolioGallery: React.SFC<Props> = props => {
-  const {
-    items,
-    tag: Tag,
-    displayMore,
-    onClickLoadMore,
-    ...rest
-  } = props as Props & DefaultProps;
+  const { items, tag: Tag, ...rest } = props as Props & DefaultProps;
   return (
     <Tag {...rest}>
       {items.map(item => {
@@ -43,11 +32,6 @@ export const PortfolioGallery: React.SFC<Props> = props => {
           </GalleryItem>
         );
       })}
-      {displayMore && (
-        <GalleryViewMoreItem>
-          <Button onClick={onClickLoadMore}>View more</Button>
-        </GalleryViewMoreItem>
-      )}
     </Tag>
   );
 };
@@ -72,8 +56,4 @@ export default styled(PortfolioGallery)`
   grid-auto-flow: dense;
   grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
   grid-gap: ${pxToRem(GALLERY.itemPadding)};
-
-  ${Button} {
-    padding: 1.5rem 4.5rem;
-  }
 `;
