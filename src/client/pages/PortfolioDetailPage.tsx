@@ -7,6 +7,7 @@ import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
 import Header from '../components/HeaderOnline';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
+import PortfolioDetailSVG from '../components/Portfolio/PortfolioDetailSVG';
 import PortfolioDetailBackground from '../components/Portfolio/PortfolioDetailBackground';
 import PortfolioDetailGallery from '../components/Portfolio/PortfolioDetailGallery';
 import PortfolioDetailHero from '../components/Portfolio/PortfolioDetailHero';
@@ -34,6 +35,10 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
   }
 
   getDetailView(portfolio: Portfolio) {
+    if (portfolio.svgSource) {
+      return <PortfolioDetailSVG svgSource={portfolio.svgSource} />;
+    }
+
     const galleryImagesPaths = getGalleryImages(
       this.props.portfolio.imagePaths,
     );
