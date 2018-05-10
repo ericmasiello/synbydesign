@@ -10,8 +10,10 @@ import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import Routes from './Routes';
 import createStore from '../utils/createStore';
 
-if ('serviceWorker' in navigator) {
-  runtime.register();
+if (process.env.NODE_ENV !== 'development') {
+  if ('serviceWorker' in navigator) {
+    runtime.register();
+  }
 }
 
 const axiosInstance = axios.create({
