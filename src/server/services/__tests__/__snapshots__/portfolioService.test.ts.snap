@@ -103,15 +103,8 @@ Object {
       "category": Array [
         "logos",
       ],
-      "id": "r-m-r-software-solutions-logo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2016/01/RMR-Logo-Final.svg",
-          "priority": 0,
-          "title": "",
-        },
-      ],
+      "id": "rmr-software-solutions",
+      "imagePaths": Array [],
       "meta": Object {
         "isSVG": true,
         "stackDesign": false,
@@ -286,14 +279,14 @@ Object {
         </g>
       </svg>",
       "tags": Array [],
-      "title": "R.M.R. Software Solutions Logo",
+      "title": "RMR Software Solutions",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "EXBC at BNG with Harry Ransom web promo",
-      "id": "exbc-bng-harry-r-4-ns-0-m-web-promo",
+      "id": "exbc-at-bng-harry-r-4-ns-0-m-web-promo",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -316,7 +309,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "EXBC @ BNG (Harry R4NS0M) web promo",
+      "title": "EXBC at BNG Harry R4NS0M web promo",
     },
     Object {
       "category": Array [
@@ -647,15 +640,8 @@ Object {
       "category": Array [
         "logos",
       ],
-      "id": "r-m-r-software-solutions-logo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "originalUrl": "http://www.synbydesign.com/wp/wp-content/uploads/2016/01/RMR-Logo-Final.svg",
-          "priority": 0,
-          "title": "",
-        },
-      ],
+      "id": "rmr-software-solutions",
+      "imagePaths": Array [],
       "meta": Object {
         "isSVG": true,
         "stackDesign": false,
@@ -830,14 +816,14 @@ Object {
         </g>
       </svg>",
       "tags": Array [],
-      "title": "R.M.R. Software Solutions Logo",
+      "title": "RMR Software Solutions",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "EXBC at BNG with Harry Ransom web promo",
-      "id": "exbc-bng-harry-r-4-ns-0-m-web-promo",
+      "id": "exbc-at-bng-harry-r-4-ns-0-m-web-promo",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -860,7 +846,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "EXBC @ BNG (Harry R4NS0M) web promo",
+      "title": "EXBC at BNG Harry R4NS0M web promo",
     },
     Object {
       "category": Array [

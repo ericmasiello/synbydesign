@@ -111,8 +111,8 @@ describe('list', () => {
 
 describe('getById', () => {
   test('should return a portfolio item if a match is found', () => {
-    return getById('r-m-r-software-solutions-logo').then(result => {
-      expect((result as Portfolio).id).toBe('r-m-r-software-solutions-logo');
+    return getById('rmr-software-solutions').then(result => {
+      expect((result as Portfolio).id).toBe('rmr-software-solutions');
     });
   });
   test('should return undefined if a match is not found', () => {

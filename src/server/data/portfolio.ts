@@ -92,7 +92,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'R.M.R. Software Solutions Logo',
+    title: 'RMR Software Solutions',
     meta: {
       stackDesign: false,
       websiteUrl: '',
@@ -138,18 +138,10 @@ const PortfolioList: RawPortfolio[] = [
           </g>
         </g>
       </svg>`,
-    imagePaths: [
-      {
-        originalUrl:
-          'http://www.synbydesign.com/wp/wp-content/uploads/2016/01/RMR-Logo-Final.svg',
-        title: '',
-        description: '',
-        priority: 0,
-      },
-    ],
+    imagePaths: [],
   },
   {
-    title: 'EXBC @ BNG (Harry R4NS0M) web promo',
+    title: 'EXBC at BNG Harry R4NS0M web promo',
     description: 'EXBC at BNG with Harry Ransom web promo',
     meta: {
       stackDesign: true,
