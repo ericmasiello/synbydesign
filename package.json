@@ -4,8 +4,10 @@
   "description": "Eric Masiello's portfolio",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "predev": "npm run dev:build-server",
+    "dev": "npm-run-all --parallel dev:server dev:watch-server dev:watch-client",
     "build": "run-s prod:*",
+    "clean": "rimraf public; rimraf views",
     "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
     "dev:build-server": "npm run build-server -- --mode development",
     "dev:watch-server": "npm run build-server -- --mode development --watch",
@@ -24,11 +26,9 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
-    "clean": "rimraf public; rimraf views",
     "validate": "npm-run-all --parallel test:coverage lint",
     "precommit": "lint-staged",
-    "prepush": "npm run validate",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "prepush": "npm run validate"
   },
   "author": "Eric Masiello",
   "license": "ISC",
