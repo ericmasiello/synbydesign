@@ -1,10 +1,11 @@
 import * as React from 'react';
 import styled, { StyledComponentClass } from 'styled-components';
-import { type } from '../styles/mixins';
+import { type, scalableType } from '../styles/mixins';
 
 export interface Props {
   className?: string;
   tag: Tag;
+  scale?: boolean;
 }
 
 interface ReturnType {
@@ -20,7 +21,7 @@ interface ReturnType {
 
 export default function makeTypeComponent(typeSize: TypeSize): ReturnType {
   const Type: React.SFC<Props> = props => {
-    const { tag: Tag, className, children, ...rest } = props;
+    const { tag: Tag, className, scale, children, ...rest } = props;
     return (
       <Tag className={className} {...rest}>
         {children}
@@ -31,7 +32,7 @@ export default function makeTypeComponent(typeSize: TypeSize): ReturnType {
   Type.displayName = `Type(${typeSize})`;
 
   const StyledType = styled(Type)`
-    ${type(typeSize)};
+    ${props => (props.scale ? scalableType(typeSize) : type(typeSize))};
   `;
 
   return {
