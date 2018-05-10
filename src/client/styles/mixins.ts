@@ -36,5 +36,24 @@ export const type = (typeDef: TypeSize): string => {
   `;
 };
 
+export const scalableType = (
+  [maxSize, lineHeight]: TypeSize,
+  minSize: number = 16,
+) => {
+  const relativeScaler = 10;
+  return `
+    font-size: 10vw;
+    line-height: ${lineHeight};
+
+    @media(max-width: ${pxToRem(minSize * relativeScaler)}) {
+      font-size: ${pxToRem(minSize)};
+    }
+
+    @media(min-width: ${pxToRem(maxSize * relativeScaler)}) {
+      font-size: ${pxToRem(maxSize)};
+    }
+  `;
+};
+
 export const baseFont = () => `font-family: 'Source Sans Pro', sans-serif;`;
 export const headerFont = () => `font-family: 'Lato', sans-serif;`;
