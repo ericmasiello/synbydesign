@@ -127,8 +127,11 @@ export default styled(Resume)`
 
   .resume__experience {
     grid-area: experience;
-    border-right: 1px solid ${COLORS.galleryBorder};
-    padding-right: 1rem;
+
+    @media (min-width: ${pxToRem(MEDIA_QUERIES.xlarge)}) {
+      border-right: 1px solid ${COLORS.galleryBorder};
+      padding-right: 1rem;
+    }
   }
 
   .resume__freelance {
