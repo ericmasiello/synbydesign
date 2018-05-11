@@ -42,6 +42,10 @@ const copyWebpackPlugin = new CopyWebpackPlugin([
     from: 'src/client/images',
     to: '',
   },
+  {
+    from: 'src/client/favicon/',
+    to: '',
+  },
 ]);
 
 const imageMinPlugin = new ImageminPlugin({
