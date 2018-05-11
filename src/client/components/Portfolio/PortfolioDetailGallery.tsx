@@ -30,7 +30,10 @@ const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
     if (props.grid) {
       return composeGrid(props.grid, gapSize);
     }
-    return `repeat(2, calc(50% - ${pxToRem(gapSize)}))`;
+    return `repeat(
+      auto-fit,
+      minmax(${pxToRem(300)}, 1fr)
+    )`;
   }};
   grid-auto-flow: dense;
   list-style-type: none;
