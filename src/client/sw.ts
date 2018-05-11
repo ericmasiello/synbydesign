@@ -34,6 +34,8 @@ const CACHED_FILES: string[] = [
   OFFLINE_IMAGE_PLACEHOLDER,
   // store the home page
   HOMEPAGE,
+  // store favicon
+  '/favicon.ico',
 ];
 
 self.addEventListener('install', (e: Event) => {
