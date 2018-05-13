@@ -1,7 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { pxToRem } from '../styles/utils';
-import { maxWidth, horizontalPadding, MEDIA_QUERIES } from '../styles/vars';
+import {
+  maxWidth,
+  horizontalPadding,
+  MEDIA_QUERIES,
+  headerSpacing,
+} from '../styles/vars';
 
 interface Props {
   className?: string;
@@ -18,7 +23,7 @@ const StyledHeaderContent = styled(HeaderContent)`
   flex-direction: column;
   align-items: center;
   max-width: ${pxToRem(maxWidth)};
-  padding: 1rem ${pxToRem(horizontalPadding)};
+  padding: calc(1rem + ${headerSpacing}) ${pxToRem(horizontalPadding)};
   margin: auto;
 
   @media (min-width: ${pxToRem(MEDIA_QUERIES.large)}) {

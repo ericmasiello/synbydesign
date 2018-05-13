@@ -17,7 +17,7 @@ const NavList = styled.ul`
 NavList.displayName = 'NavList';
 
 const NavListItem = styled.li`
-  padding: 1rem;
+  padding-right: 1rem;
   text-transform: uppercase;
   font-weight: ${BODY_WEIGHTS.bold};
 
