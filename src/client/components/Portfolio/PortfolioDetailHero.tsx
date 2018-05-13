@@ -6,8 +6,6 @@ import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
 import { TYPE_SIZE, HEADER_WEIGHTS } from '../../styles/vars';
 import Type1 from '../Type1';
 
-const minHeight = 600;
-
 interface TitleProps {
   className?: string;
   hide?: boolean;
@@ -46,8 +44,10 @@ const Content = styled.div`
 `;
 
 const HeroImageContainer = styled.div`
-  min-height: ${pxToRem(minHeight)};
   position: relative;
+  min-height: 0;
+  height: 80vw;
+  max-height: 80vh;
 `;
 
 interface Props {
