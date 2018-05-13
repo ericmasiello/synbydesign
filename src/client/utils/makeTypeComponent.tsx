@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { StyledComponentClass } from 'styled-components';
 import { type, scalableType } from '../styles/mixins';
 
-export interface Props {
+export interface Props extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   tag: Tag;
   scale?: boolean;

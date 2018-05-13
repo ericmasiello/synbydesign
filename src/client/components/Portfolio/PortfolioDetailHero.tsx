@@ -4,6 +4,7 @@ import PortfolioDetailBackground from './PortfolioDetailBackground';
 import { pxToRem } from '../../styles/utils';
 import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
 import { TYPE_SIZE, HEADER_WEIGHTS } from '../../styles/vars';
+import Type1 from '../Type1';
 
 const minHeight = 600;
 
@@ -12,16 +13,15 @@ interface TitleProps {
   hide?: boolean;
 }
 
-// FIXME: should use Type1 here but need to figure out how to pass down hidden attribute
 const Title: React.SFC<TitleProps> = ({
   className,
   children,
   hide,
   ...rest
 }) => (
-  <h1 className={className} hidden={hide} {...rest}>
+  <Type1 tag="h1" className={className} hidden={hide} {...rest}>
     {children}
-  </h1>
+  </Type1>
 );
 
 const StyledTitle = styled(Title)`
