@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
 import { pxToRem } from '../../styles/utils';
 import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
-import { TYPE_SIZE, HEADER_WEIGHTS } from '../../styles/vars';
+import { TYPE_SIZE, HEADER_WEIGHTS, COLORS } from '../../styles/vars';
 import Type1 from '../Type1';
 
 interface TitleProps {
@@ -30,9 +30,16 @@ const StyledTitle = styled(Title)`
 `;
 
 const Description = styled.div`
+  margin-top: 2rem;
+
   &:first-line {
     ${type(TYPE_SIZE.t4)};
     font-weight: ${HEADER_WEIGHTS.medium};
+  }
+
+  blockquote {
+    border-left: 1px solid ${COLORS.base};
+    padding-left: 1rem;
   }
 `;
 
