@@ -9,6 +9,73 @@ Object {
   "items": Array [
     Object {
       "category": Array [
+        "publications",
+      ],
+      "description": "
+      <blockquote>
+        <p>Leverage frontend development skills to build impressive iOS and Android applications with React Native.</p>
+      </blockquote>
+      <p>I coauthored <i>Mastering React Native</i> with my co-instructor from General Assembly, Jacob Friedman. When asked by Packt to write this book,
+      I had zero experience as a professional writer but was excited to share my optimism for React Native with the developer community.
+      I, like many developers, come from a web/JavaScript background. I&rsquo;ve worked with other &ldquo;JS to Native&rdquo; frameworks
+      but always found myself disappointed with the result. React Native offers something different: write your UI using the familiar,
+      declarative syntax of JSX and React but still achieve near-native app performance.
+      </p>
+    ",
+      "id": "mastering-react-native",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-200px.png",
+          "title": "Mastering React Native - front cover",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-200px.png",
+          "title": "Mastering React Native - back cover",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-450px.png",
+          "meta": Object {
+            "backgroundStyles": Object {
+              "size": "20%",
+            },
+            "usage": Array [
+              "hero",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-200px.png",
+          "title": "Mastering React Native - front and back cover with crop marks",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "#3B5588",
+        "isSVG": false,
+        "showTitle": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "https://www.amazon.com/Mastering-React-Native-Eric-Masiello/dp/1785885782/ref=sr_1_1_sspa?ie=UTF8&qid=1519501994&sr=8-1-spons&keywords=mastering+react+native&psc=1",
+      },
+      "tags": Array [],
+      "title": "Mastering React Native",
+    },
+    Object {
+      "category": Array [
         "development",
       ],
       "description": "<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
@@ -500,36 +567,6 @@ Object {
       },
       "tags": Array [],
       "title": "EXBC web promo",
-    },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "Petrol Distal flyer",
-      "id": "petrol-distal-flyer",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(235, 193, 7, 0.6)",
-        "isSVG": false,
-        "stackDesign": true,
-        "thumb": Object {
-          "column": "span 2",
-          "row": "span 2",
-        },
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "Petrol Distal flyer",
     },
   ],
   "pageSize": 10,
@@ -546,6 +583,73 @@ Object {
   "items": Array [
     Object {
       "category": Array [
+        "publications",
+      ],
+      "description": "
+      <blockquote>
+        <p>Leverage frontend development skills to build impressive iOS and Android applications with React Native.</p>
+      </blockquote>
+      <p>I coauthored <i>Mastering React Native</i> with my co-instructor from General Assembly, Jacob Friedman. When asked by Packt to write this book,
+      I had zero experience as a professional writer but was excited to share my optimism for React Native with the developer community.
+      I, like many developers, come from a web/JavaScript background. I&rsquo;ve worked with other &ldquo;JS to Native&rdquo; frameworks
+      but always found myself disappointed with the result. React Native offers something different: write your UI using the familiar,
+      declarative syntax of JSX and React but still achieve near-native app performance.
+      </p>
+    ",
+      "id": "mastering-react-native",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-200px.png",
+          "title": "Mastering React Native - front cover",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-200px.png",
+          "title": "Mastering React Native - back cover",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-450px.png",
+          "meta": Object {
+            "backgroundStyles": Object {
+              "size": "20%",
+            },
+            "usage": Array [
+              "hero",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-200px.png",
+          "title": "Mastering React Native - front and back cover with crop marks",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "#3B5588",
+        "isSVG": false,
+        "showTitle": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "https://www.amazon.com/Mastering-React-Native-Eric-Masiello/dp/1785885782/ref=sr_1_1_sspa?ie=UTF8&qid=1519501994&sr=8-1-spons&keywords=mastering+react+native&psc=1",
+      },
+      "tags": Array [],
+      "title": "Mastering React Native",
+    },
+    Object {
+      "category": Array [
         "development",
       ],
       "description": "<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
@@ -874,6 +978,19 @@ Object {
       "tags": Array [],
       "title": "EXBC @ BNG (Posers) web promo",
     },
+  ],
+  "pageSize": 5,
+  "totalPages": 6,
+}
+`;
+
+exports[`list it should return pagintated results 2`] = `
+Object {
+  "currentPageNumber": 2,
+  "filterCategories": Array [],
+  "filterSearchTerm": "",
+  "filterTags": Array [],
+  "items": Array [
     Object {
       "category": Array [
         "illustration",
@@ -902,19 +1019,6 @@ Object {
       "tags": Array [],
       "title": "Deinfamous sticker",
     },
-  ],
-  "pageSize": 5,
-  "totalPages": 6,
-}
-`;
-
-exports[`list it should return pagintated results 2`] = `
-Object {
-  "currentPageNumber": 2,
-  "filterCategories": Array [],
-  "filterSearchTerm": "",
-  "filterTags": Array [],
-  "items": Array [
     Object {
       "category": Array [
         "web",
@@ -1051,36 +1155,6 @@ Object {
       "tags": Array [],
       "title": "EXBC web promo",
     },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "Petrol Distal flyer",
-      "id": "petrol-distal-flyer",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(235, 193, 7, 0.6)",
-        "isSVG": false,
-        "stackDesign": true,
-        "thumb": Object {
-          "column": "span 2",
-          "row": "span 2",
-        },
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "Petrol Distal flyer",
-    },
   ],
   "pageSize": 5,
   "totalPages": 6,
@@ -1094,6 +1168,43 @@ Object {
   "filterSearchTerm": "",
   "filterTags": Array [],
   "items": Array [
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "thnkdfrnt",
+      "id": "thnk-dfrnt-flyer",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-200px.jpg",
+          "title": "",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-original.jpg",
+          "priority": 1,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-200px.jpg",
+          "title": "",
+        },
+      ],
+      "meta": Object {
+        "isSVG": false,
+        "stackDesign": true,
+        "thumb": Object {
+          "column": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Thnk DFRNT flyer",
+    },
     Object {
       "category": Array [
         "logos",

@@ -9,6 +9,69 @@ const DATA_URL = process.env.DATA_URL || '//d2ltmid28ikt18.cloudfront.net';
 
 const PortfolioList: RawPortfolio[] = [
   {
+    title: 'Mastering React Native',
+    description: `
+      <blockquote>
+        <p>Leverage frontend development skills to build impressive iOS and Android applications with React Native.</p>
+      </blockquote>
+      <p>I coauthored <i>Mastering React Native</i> with my co-instructor from General Assembly, Jacob Friedman. When asked by Packt to write this book,
+      I had zero experience as a professional writer but was excited to share my optimism for React Native with the developer community.
+      I, like many developers, come from a web/JavaScript background. I&rsquo;ve worked with other &ldquo;JS to Native&rdquo; frameworks
+      but always found myself disappointed with the result. React Native offers something different: write your UI using the familiar,
+      declarative syntax of JSX and React but still achieve near-native app performance.
+      </p>
+    `,
+    meta: {
+      stackDesign: false,
+      websiteUrl:
+        'https://www.amazon.com/Mastering-React-Native-Eric-Masiello/dp/1785885782/ref=sr_1_1_sspa?ie=UTF8&qid=1519501994&sr=8-1-spons&keywords=mastering+react+native&psc=1',
+      isSVG: false,
+      showTitle: false,
+      highlightColor: '#3B5588',
+      thumb: {
+        row: 'span 2',
+        column: 'span 2',
+      },
+    },
+    category: ['publications'],
+    tags: [],
+    imagePaths: [
+      {
+        originalUrl: `${DATA_URL}/master-react-native-front-original.png`,
+        largeUrl: `${DATA_URL}/master-react-native-front-700px.png`,
+        mediumUrl: `${DATA_URL}/master-react-native-front-450px.png`,
+        thumbUrl: `${DATA_URL}/master-react-native-front-200px.png`,
+        title: 'Mastering React Native - front cover',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: `${DATA_URL}/master-react-native-back-original.png`,
+        largeUrl: `${DATA_URL}/master-react-native-back-700px.png`,
+        mediumUrl: `${DATA_URL}/master-react-native-back-450px.png`,
+        thumbUrl: `${DATA_URL}/master-react-native-back-200px.png`,
+        title: 'Mastering React Native - back cover',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: `${DATA_URL}/master-react-native-print-marks-original.png`,
+        largeUrl: `${DATA_URL}/master-react-native-print-marks-700px.png`,
+        mediumUrl: `${DATA_URL}/master-react-native-print-marks-450px.png`,
+        thumbUrl: `${DATA_URL}/master-react-native-print-marks-200px.png`,
+        title: 'Mastering React Native - front and back cover with crop marks',
+        description: '',
+        priority: 0,
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            size: '20%',
+          },
+        },
+      },
+    ],
+  },
+  {
     title: 'Stencil',
     description: `<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
     Namely, it services our product pages by exposing commonly used UI assets prebaked, reusable, React components.
