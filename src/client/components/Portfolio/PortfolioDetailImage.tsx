@@ -11,7 +11,9 @@ interface Props {
 export const PortfolioDetailImage: React.SFC<Props> = props => {
   return (
     <article className={props.className}>
-      <img src={props.imagePath.originalUrl} alt="FIXME" />
+      <a href={props.imagePath.originalUrl}>
+        <img src={props.imagePath.originalUrl} alt="FIXME" />
+      </a>
     </article>
   );
 };
@@ -22,10 +24,15 @@ const StyledPortfolioDetailImage = styled(PortfolioDetailImage)`
   text-align: center;
   margin-top: ${pxToRem(50)};
 
+  a {
+    display: inline-block;
+  }
+
   img {
     ${borderedImage} margin: auto;
     display: inline-block;
-    max-width: 80%;
+    width: 100%;
+    max-width: ${pxToRem(1000)};
   }
 `;
 

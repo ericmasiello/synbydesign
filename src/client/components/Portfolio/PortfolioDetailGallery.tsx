@@ -35,6 +35,19 @@ const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
       minmax(${pxToRem(300)}, 1fr)
     )`;
   }};
+
+  @media (min-width: ${pxToRem(450)}) {
+    ${props => {
+      if (!props.grid) {
+        return `
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(${pxToRem(400)}, 1fr)
+        )`;
+      }
+      return '';
+    }};
+  }
   grid-auto-flow: dense;
   list-style-type: none;
   margin: 0;
@@ -43,6 +56,10 @@ const StyledPortfolioDetailGalleryGrid = styled(PortfolioDetailGalleryGrid)`
 `;
 
 const PortfolioDetailGalleryGridItem = styled.li`
+  a {
+    display: inline-block;
+  }
+
   img {
     ${borderedImage} width: 100%;
   }
@@ -66,21 +83,23 @@ export const PortfolioDetailGallery: React.SFC<
       >
         {galleryImagesPaths.map(path => (
           <PortfolioDetailGalleryGridItem key={path.originalUrl}>
-            <picture>
-              <source
-                srcSet={path.originalUrl}
-                media={`(min-width: ${pxToRem(700)})`}
-              />
-              <source
-                srcSet={path.largeUrl}
-                media={`(min-width: ${pxToRem(450)})`}
-              />
-              <source
-                srcSet={path.mediumUrl}
-                media={`(min-width: ${pxToRem(200)})`}
-              />
-              <img src={path.thumbUrl} alt={path.description || path.title} />
-            </picture>
+            <a href={path.originalUrl}>
+              <picture>
+                <source
+                  srcSet={path.originalUrl}
+                  media={`(min-width: ${pxToRem(700)})`}
+                />
+                <source
+                  srcSet={path.largeUrl}
+                  media={`(min-width: ${pxToRem(450)})`}
+                />
+                <source
+                  srcSet={path.mediumUrl}
+                  media={`(min-width: ${pxToRem(200)})`}
+                />
+                <img src={path.thumbUrl} alt={path.description || path.title} />
+              </picture>
+            </a>
           </PortfolioDetailGalleryGridItem>
         ))}
       </StyledPortfolioDetailGalleryGrid>
