@@ -8,6 +8,7 @@ const Meta: React.SFC<{}> = () => (
       property="og:title"
       content="Syn By Design: Eric Masiello's Portfolio"
     />
+    <meta name="apple-mobile-web-app-title" content="Syn By Design" />
   </Helmet>
 );
 
