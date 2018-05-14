@@ -14,7 +14,7 @@ const PortfolioList: RawPortfolio[] = [
       <blockquote>
         <p>Leverage frontend development skills to build impressive iOS and Android applications with React Native.</p>
       </blockquote>
-      <p>I coauthored <i>Mastering React Native</i> with my co-instructor from General Assembly, Jacob Friedman. When asked by Packt to write this book,
+      <p>I coauthored <i>Mastering React Native</i> with my co-instructor from General Assembly, Jacob Friedmann. When asked by Packt to write this book,
       I had zero experience as a professional writer but was excited to share my optimism for React Native with the developer community.
       I, like many developers, come from a web/JavaScript background. I&rsquo;ve worked with other &ldquo;JS to Native&rdquo; frameworks
       but always found myself disappointed with the result. React Native offers something different: write your UI using the familiar,
