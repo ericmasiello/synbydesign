@@ -22,7 +22,9 @@ export default (url: string, store: Store<AppState>, context: object) => {
   );
 
   const sheet = new ServerStyleSheet();
-  const html = renderToString(sheet.collectStyles(app));
+  const html = `<main id="root">${renderToString(
+    sheet.collectStyles(app),
+  )}</main>`;
   const styleTags = sheet.getStyleTags();
   const helmet = Helmet.renderStatic();
 
