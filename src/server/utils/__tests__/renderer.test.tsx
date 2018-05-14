@@ -45,13 +45,13 @@ test('should render head as a string', () => {
   );
 });
 
-test('should render html as a string', () => {
+test('should render html as a string inside an element with id="root"', () => {
   const url = '/';
   const axiosInstance = axios.create();
   const store = createStore(axiosInstance);
   const { html } = renderer(url, store, {});
 
-  expect(html).toEqual('<html />');
+  expect(html).toEqual('<main id="root"><html /></main>');
 });
 
 test('should render state as a string', () => {
