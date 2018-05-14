@@ -7,6 +7,7 @@ import {
   MEDIA_QUERIES,
   headerSpacing,
 } from '../styles/vars';
+import Nav from './Nav';
 
 interface Props {
   className?: string;
@@ -26,9 +27,17 @@ const StyledHeaderContent = styled(HeaderContent)`
   padding: calc(1rem + ${headerSpacing}) ${pxToRem(horizontalPadding)};
   margin: auto;
 
+  ${Nav} {
+    margin-top: 1rem;
+  }
+
   @media (min-width: ${pxToRem(MEDIA_QUERIES.large)}) {
     flex-direction: row;
     justify-content: space-between;
+
+    ${Nav} {
+      margin-top: 0;
+    }
   }
 `;
 
