@@ -3,25 +3,23 @@ import styled from 'styled-components';
 import PortfolioDetailBackground from './PortfolioDetailBackground';
 import { pxToRem } from '../../styles/utils';
 import { pageContainer, visuallyHidden, type } from '../../styles/mixins';
-import { TYPE_SIZE, HEADER_WEIGHTS } from '../../styles/vars';
-
-const minHeight = 600;
+import { TYPE_SIZE, HEADER_WEIGHTS, COLORS } from '../../styles/vars';
+import Type1 from '../Type1';
 
 interface TitleProps {
   className?: string;
   hide?: boolean;
 }
 
-// FIXME: should use Type1 here but need to figure out how to pass down hidden attribute
 const Title: React.SFC<TitleProps> = ({
   className,
   children,
   hide,
   ...rest
 }) => (
-  <h1 className={className} hidden={hide} {...rest}>
+  <Type1 tag="h1" className={className} hidden={hide} {...rest}>
     {children}
-  </h1>
+  </Type1>
 );
 
 const StyledTitle = styled(Title)`
@@ -32,9 +30,16 @@ const StyledTitle = styled(Title)`
 `;
 
 const Description = styled.div`
+  margin-top: 2rem;
+
   &:first-line {
     ${type(TYPE_SIZE.t4)};
     font-weight: ${HEADER_WEIGHTS.medium};
+  }
+
+  blockquote {
+    border-left: 1px solid ${COLORS.base};
+    padding-left: 1rem;
   }
 `;
 
@@ -46,8 +51,10 @@ const Content = styled.div`
 `;
 
 const HeroImageContainer = styled.div`
-  min-height: ${pxToRem(minHeight)};
   position: relative;
+  min-height: 0;
+  height: 80vw;
+  max-height: 80vh;
 `;
 
 interface Props {

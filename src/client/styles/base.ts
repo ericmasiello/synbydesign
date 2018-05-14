@@ -77,5 +77,9 @@ export default `
     vertical-align: middle;
     border: 0;
   }
+
+  blockquote {
+    margin: 0;
+  }
 `;
 /* tslint:enable max-line-length */

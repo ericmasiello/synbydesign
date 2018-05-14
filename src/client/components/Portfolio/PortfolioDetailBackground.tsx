@@ -8,8 +8,6 @@ interface Props {
   styles?: BackgroundStyles;
 }
 
-const height = 600;
-
 const defaultStyles: BackgroundStyles = {
   filter: 'blur(1px) grayscale(70%) opacity(0.7)',
   backgroundPosition: '50%',
@@ -35,7 +33,8 @@ const StyledPortfolioDetailBackground = styled(PortfolioDetailBackground)`
       top: 0;
       left: 0;
       right: 0;
-      height: ${pxToRem(height)};
+      height: 100%;
+      max-height: 80vw;
       z-index: 1;
       background-image: url('${props.imagePath}');
       background-size: ${styles!.size};
