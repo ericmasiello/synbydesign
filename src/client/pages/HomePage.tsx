@@ -14,7 +14,7 @@ import { pxToRem } from '../styles/utils';
 import { ThunkActionCreator } from '../../types.d';
 
 const pageRequest: PortfolioRequestParams = {
-  pageSize: 10,
+  pageSize: 8,
   requestedPageNumber: 1,
 };
 
