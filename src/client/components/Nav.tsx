@@ -5,6 +5,7 @@ import { BODY_WEIGHTS } from '../styles/vars';
 
 interface Props {
   className?: string;
+  offsetElement: HTMLElement | null;
 }
 
 const NavList = styled.ul`
@@ -35,7 +36,7 @@ NavListItem.displayName = 'NavListItem';
 class Nav extends React.Component<Props> {
   static displayName = 'Nav';
 
-  scrollTo(event: React.MouseEvent<HTMLLinkElement>) {
+  scrollTo = (event: React.MouseEvent<HTMLLinkElement>) => {
     event.preventDefault();
     const elm = event.currentTarget;
     const hash: string = (elm as any).hash;
@@ -44,12 +45,17 @@ class Nav extends React.Component<Props> {
     if (!targetElm) {
       return;
     }
+
+    const offset = this.props.offsetElement
+      ? this.props.offsetElement.clientHeight
+      : 0;
+
     window.scroll({
-      top: targetElm.getBoundingClientRect().top,
+      top: (targetElm as HTMLElement).offsetTop - offset,
       left: 0,
       behavior: 'smooth',
     });
-  }
+  };
 
   render() {
     const { className } = this.props;
