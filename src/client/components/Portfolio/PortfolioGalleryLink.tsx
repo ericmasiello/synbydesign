@@ -29,6 +29,6 @@ export default styled(PortfolioGalleryLink)`
     transform: scale(1.035);
     border: 10px solid ${COLORS.galleryBorderHighlight};
     ${shadow('1px', 'grayscale(0)')};
-    z-index: 9999;
+    z-index: 1000;
   }
 `;

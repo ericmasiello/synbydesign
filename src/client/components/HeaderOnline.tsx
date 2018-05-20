@@ -5,6 +5,7 @@ import { withRouter, match } from 'react-router';
 import Header from './Header';
 import Logo from './Logo';
 import Nav from './Nav';
+import Sticky from './Sticky';
 
 interface Props {
   match: match<any>;
@@ -12,16 +13,35 @@ interface Props {
   history: H.History;
 }
 
-export const HeaderOnline: React.SFC<Props> = props => {
-  return (
-    <Header>
-      <Link to="/">
-        <Logo />
-      </Link>
-      {props.location.pathname === '/' ? <Nav /> : null}
-    </Header>
-  );
-};
+export class HeaderOnline extends React.Component<Props> {
+  header: HTMLElement | null;
+
+  constructor(props: Props) {
+    super(props);
+    this.header = null;
+  }
+
+  setRef = (elm: HTMLElement) => {
+    this.header = elm;
+  };
+
+  render() {
+    return (
+      <Sticky
+        render={stick => (
+          <Header stick={stick} setRef={this.setRef}>
+            <Link to="/">
+              <Logo />
+            </Link>
+            {this.props.location.pathname === '/' ? (
+              <Nav offsetElement={this.header} />
+            ) : null}
+          </Header>
+        )}
+      />
+    );
+  }
+}
 
 Header.displayName = 'HeaderOnline';
 

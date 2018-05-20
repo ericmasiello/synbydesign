@@ -154,8 +154,8 @@ Object {
         "showTitle": false,
         "stackDesign": false,
         "thumb": Object {
-          "column": "span 2",
-          "row": "span 2",
+          "column": "span 3",
+          "row": "span 3",
         },
         "websiteUrl": "https://websdev.github.io/stencil/",
       },
@@ -165,6 +165,223 @@ Object {
         "SCSS",
       ],
       "title": "Stencil",
+    },
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "",
+      "id": "expansion-broadcast-at-bump-n-grind",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-450px.png",
+          "meta": Object {
+            "usage": Array [
+              "hero",
+              "gallery",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-original.png",
+          "priority": 1,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-200px.png",
+          "title": "EXBC at BNG Harry R4NS0M web promo",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-200px.png",
+          "title": "EXBC @ BNG (Posers) web promo",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "rgba(142, 131, 232, 0.8)",
+        "isSVG": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Expansion Broadcast at Bump N Grind",
+    },
+    Object {
+      "category": Array [
+        "web",
+      ],
+      "description": "Web site for electronic music label Anarchostar",
+      "id": "anarchostar",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-200px.jpg",
+          "title": "",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "rgba(231, 26, 33, 0.8)",
+        "isSVG": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 4",
+        },
+        "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
+      },
+      "tags": Array [
+        "HTML5 Audio",
+        "Mobile/Responsive Design",
+        "Parallax",
+        "Wordpress Custom Theme",
+        "Wordpress Plugin",
+      ],
+      "title": "Anarchostar",
+    },
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "",
+      "id": "sonic-butter-flyers",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-200px.png",
+          "title": "Just 4 Heads flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-450px.png",
+          "meta": Object {
+            "backgroundStyles": Object {
+              "filter": "blur(1px) grayscale(20%) opacity(0.7)",
+            },
+            "usage": Array [
+              "background",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-200px.png",
+          "title": "Just 4 Heads flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-200px.jpg",
+          "title": "Deep Foc.us Takeover at Sonic Butter flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-200px.jpg",
+          "title": "EXBC Takeover at Sonic Butter flyer",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "rgba(26, 189, 205, 0.8)",
+        "isSVG": false,
+        "stackDesign": true,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Sonic Butter flyers",
+    },
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "",
+      "id": "petrol-flyers",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-200px.jpg",
+          "title": "Petrol Distal flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-200px.jpg",
+          "title": "Petrol V.I.V.I.K flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-200px.jpg",
+          "title": "Petrol Goth-Trad flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-200px.jpg",
+          "title": "Petrol General flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-450px.jpg",
+          "meta": Object {
+            "usage": Array [
+              "hero",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-200px.jpg",
+          "title": "Petrol flyer",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "#EA9190",
+        "isSVG": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Petrol flyers",
     },
     Object {
       "category": Array [
@@ -350,62 +567,6 @@ Object {
     },
     Object {
       "category": Array [
-        "flyers",
-      ],
-      "description": "EXBC at BNG with Harry Ransom web promo",
-      "id": "exbc-at-bng-harry-r-4-ns-0-m-web-promo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-200px.png",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(142, 131, 232, 0.8)",
-        "isSVG": false,
-        "stackDesign": true,
-        "thumb": Object {
-          "column": "span 2",
-          "row": "span 2",
-        },
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "EXBC at BNG Harry R4NS0M web promo",
-    },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "EXBC @ BNG (Posers) web promo",
-      "id": "exbc-bng-posers-web-promo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-200px.png",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(198, 141, 102, 0.5)",
-        "isSVG": false,
-        "stackDesign": true,
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "EXBC @ BNG (Posers) web promo",
-    },
-    Object {
-      "category": Array [
         "illustration",
       ],
       "description": "Illustration and sticker for Deinfamous",
@@ -434,139 +595,80 @@ Object {
     },
     Object {
       "category": Array [
-        "web",
-      ],
-      "description": "Web site for electronic music label Anarchostar",
-      "id": "anarchostar",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(231, 26, 33, 0.8)",
-        "isSVG": false,
-        "stackDesign": false,
-        "thumb": Object {
-          "column": "span 2",
-          "row": "span 4",
-        },
-        "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
-      },
-      "tags": Array [
-        "HTML5 Audio",
-        "Mobile/Responsive Design",
-        "Parallax",
-        "Wordpress Custom Theme",
-        "Wordpress Plugin",
-      ],
-      "title": "Anarchostar",
-    },
-    Object {
-      "category": Array [
         "flyers",
       ],
-      "description": "Just 4 Heads flyer",
-      "id": "just-4-heads-flyer",
+      "description": "EXBC vs. Dirtbox Radio flyer",
+      "id": "exbc-vs-dirtbox-radio-flyer",
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-original.png",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-original.jpg",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-200px.png",
-          "title": "",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-450px.png",
-          "meta": Object {
-            "backgroundStyles": Object {
-              "filter": "blur(1px) grayscale(20%) opacity(0.7)",
-            },
-            "usage": Array [
-              "background",
-            ],
-          },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-200px.png",
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-200px.jpg",
           "title": "",
         },
       ],
       "meta": Object {
-        "highlightColor": "rgba(26, 189, 205, 0.8)",
         "isSVG": false,
         "stackDesign": true,
         "thumb": Object {
-          "column": "span 2",
           "row": "span 2",
         },
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Just 4 Heads flyer",
+      "title": "EXBC vs. Dirtbox Radio flyer",
     },
     Object {
       "category": Array [
-        "flyers",
+        "web",
       ],
-      "description": "petrol-vivek",
-      "id": "petrol-v-i-v-i-k-flyer",
+      "description": "cannedesign",
+      "id": "catherine-anne-design",
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-original.jpg",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-original.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-200px.jpg",
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-desktop-200px.png",
+          "title": "",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/cannedesign-mobile-200px.png",
           "title": "",
         },
       ],
       "meta": Object {
-        "isSVG": false,
-        "stackDesign": true,
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "Petrol V.I.V.I.K flyer",
-    },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "EXBC Web Promo",
-      "id": "exbc-web-promo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-200px.jpg",
-          "title": "",
+        "detail": Object {
+          "grid": Array [
+            "70%",
+            "30%",
+          ],
         },
-      ],
-      "meta": Object {
         "isSVG": false,
-        "stackDesign": true,
+        "stackDesign": false,
         "thumb": Object {
-          "position": "50% 50%",
+          "row": "span 3",
         },
         "websiteUrl": "",
       },
-      "tags": Array [],
-      "title": "EXBC web promo",
+      "tags": Array [
+        "CSS/SCSS",
+        "JavaScript",
+        "jQuery",
+        "Mobile/Responsive Design",
+        "Wordpress Custom Theme",
+      ],
+      "title": "Catherine Anne Design",
     },
   ],
   "pageSize": 10,
@@ -728,8 +830,8 @@ Object {
         "showTitle": false,
         "stackDesign": false,
         "thumb": Object {
-          "column": "span 2",
-          "row": "span 2",
+          "column": "span 3",
+          "row": "span 3",
         },
         "websiteUrl": "https://websdev.github.io/stencil/",
       },
@@ -739,6 +841,236 @@ Object {
         "SCSS",
       ],
       "title": "Stencil",
+    },
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "",
+      "id": "expansion-broadcast-at-bump-n-grind",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-450px.png",
+          "meta": Object {
+            "usage": Array [
+              "hero",
+              "gallery",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-original.png",
+          "priority": 1,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-200px.png",
+          "title": "EXBC at BNG Harry R4NS0M web promo",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-200px.png",
+          "title": "EXBC @ BNG (Posers) web promo",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "rgba(142, 131, 232, 0.8)",
+        "isSVG": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Expansion Broadcast at Bump N Grind",
+    },
+    Object {
+      "category": Array [
+        "web",
+      ],
+      "description": "Web site for electronic music label Anarchostar",
+      "id": "anarchostar",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-200px.jpg",
+          "title": "",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "rgba(231, 26, 33, 0.8)",
+        "isSVG": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 4",
+        },
+        "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
+      },
+      "tags": Array [
+        "HTML5 Audio",
+        "Mobile/Responsive Design",
+        "Parallax",
+        "Wordpress Custom Theme",
+        "Wordpress Plugin",
+      ],
+      "title": "Anarchostar",
+    },
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "",
+      "id": "sonic-butter-flyers",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-450px.png",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-200px.png",
+          "title": "Just 4 Heads flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-700px.png",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-450px.png",
+          "meta": Object {
+            "backgroundStyles": Object {
+              "filter": "blur(1px) grayscale(20%) opacity(0.7)",
+            },
+            "usage": Array [
+              "background",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-original.png",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-200px.png",
+          "title": "Just 4 Heads flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deep-focus-sonic-butter-takeover-200px.jpg",
+          "title": "Deep Foc.us Takeover at Sonic Butter flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-sonic-butter-takeover-200px.jpg",
+          "title": "EXBC Takeover at Sonic Butter flyer",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "rgba(26, 189, 205, 0.8)",
+        "isSVG": false,
+        "stackDesign": true,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Sonic Butter flyers",
+    },
+  ],
+  "pageSize": 5,
+  "totalPages": 5,
+}
+`;
+
+exports[`list it should return pagintated results 2`] = `
+Object {
+  "currentPageNumber": 2,
+  "filterCategories": Array [],
+  "filterSearchTerm": "",
+  "filterTags": Array [],
+  "items": Array [
+    Object {
+      "category": Array [
+        "flyers",
+      ],
+      "description": "",
+      "id": "petrol-flyers",
+      "imagePaths": Array [
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-distal-200px.jpg",
+          "title": "Petrol Distal flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-200px.jpg",
+          "title": "Petrol V.I.V.I.K flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-gothtrad-200px.jpg",
+          "title": "Petrol Goth-Trad flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-general-flier-200px.jpg",
+          "title": "Petrol General flyer",
+        },
+        Object {
+          "description": "",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-450px.jpg",
+          "meta": Object {
+            "usage": Array [
+              "hero",
+            ],
+          },
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-original.jpg",
+          "priority": 0,
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-200px.jpg",
+          "title": "Petrol flyer",
+        },
+      ],
+      "meta": Object {
+        "highlightColor": "#EA9190",
+        "isSVG": false,
+        "stackDesign": false,
+        "thumb": Object {
+          "column": "span 2",
+          "row": "span 2",
+        },
+        "websiteUrl": "",
+      },
+      "tags": Array [],
+      "title": "Petrol flyers",
     },
     Object {
       "category": Array [
@@ -924,75 +1256,6 @@ Object {
     },
     Object {
       "category": Array [
-        "flyers",
-      ],
-      "description": "EXBC at BNG with Harry Ransom web promo",
-      "id": "exbc-at-bng-harry-r-4-ns-0-m-web-promo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-10-23-200px.png",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(142, 131, 232, 0.8)",
-        "isSVG": false,
-        "stackDesign": true,
-        "thumb": Object {
-          "column": "span 2",
-          "row": "span 2",
-        },
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "EXBC at BNG Harry R4NS0M web promo",
-    },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "EXBC @ BNG (Posers) web promo",
-      "id": "exbc-bng-posers-web-promo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc_live_promo_2015-06-26-200px.png",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(198, 141, 102, 0.5)",
-        "isSVG": false,
-        "stackDesign": true,
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "EXBC @ BNG (Posers) web promo",
-    },
-  ],
-  "pageSize": 5,
-  "totalPages": 6,
-}
-`;
-
-exports[`list it should return pagintated results 2`] = `
-Object {
-  "currentPageNumber": 2,
-  "filterCategories": Array [],
-  "filterSearchTerm": "",
-  "filterTags": Array [],
-  "items": Array [
-    Object {
-      "category": Array [
         "illustration",
       ],
       "description": "Illustration and sticker for Deinfamous",
@@ -1021,214 +1284,31 @@ Object {
     },
     Object {
       "category": Array [
-        "web",
-      ],
-      "description": "Web site for electronic music label Anarchostar",
-      "id": "anarchostar",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/anarchostar/anarchostar-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "highlightColor": "rgba(231, 26, 33, 0.8)",
-        "isSVG": false,
-        "stackDesign": false,
-        "thumb": Object {
-          "column": "span 2",
-          "row": "span 4",
-        },
-        "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
-      },
-      "tags": Array [
-        "HTML5 Audio",
-        "Mobile/Responsive Design",
-        "Parallax",
-        "Wordpress Custom Theme",
-        "Wordpress Plugin",
-      ],
-      "title": "Anarchostar",
-    },
-    Object {
-      "category": Array [
         "flyers",
       ],
-      "description": "Just 4 Heads flyer",
-      "id": "just-4-heads-flyer",
+      "description": "EXBC vs. Dirtbox Radio flyer",
+      "id": "exbc-vs-dirtbox-radio-flyer",
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-original.png",
+          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-700px.jpg",
+          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-450px.jpg",
+          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-original.jpg",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-200px.png",
-          "title": "",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-450px.png",
-          "meta": Object {
-            "backgroundStyles": Object {
-              "filter": "blur(1px) grayscale(20%) opacity(0.7)",
-            },
-            "usage": Array [
-              "background",
-            ],
-          },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/Just4Heads-color-bg-200px.png",
+          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-vs-dirtbox-200px.jpg",
           "title": "",
         },
       ],
       "meta": Object {
-        "highlightColor": "rgba(26, 189, 205, 0.8)",
         "isSVG": false,
         "stackDesign": true,
         "thumb": Object {
-          "column": "span 2",
           "row": "span 2",
         },
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Just 4 Heads flyer",
-    },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "petrol-vivek",
-      "id": "petrol-v-i-v-i-k-flyer",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/petrol-vivek-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": true,
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "Petrol V.I.V.I.K flyer",
-    },
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "EXBC Web Promo",
-      "id": "exbc-web-promo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/exbc-promo-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": true,
-        "thumb": Object {
-          "position": "50% 50%",
-        },
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "EXBC web promo",
-    },
-  ],
-  "pageSize": 5,
-  "totalPages": 6,
-}
-`;
-
-exports[`list should not allow page index to exceed page number 1`] = `
-Object {
-  "currentPageNumber": 3,
-  "filterCategories": Array [],
-  "filterSearchTerm": "",
-  "filterTags": Array [],
-  "items": Array [
-    Object {
-      "category": Array [
-        "flyers",
-      ],
-      "description": "thnkdfrnt",
-      "id": "thnk-dfrnt-flyer",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt-200px.jpg",
-          "title": "",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-original.jpg",
-          "priority": 1,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/thnkdfrnt1-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": true,
-        "thumb": Object {
-          "column": "span 2",
-        },
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "Thnk DFRNT flyer",
-    },
-    Object {
-      "category": Array [
-        "logos",
-      ],
-      "description": "Chocolatemilk Logo",
-      "id": "chocolate-milk-logo",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/chocolatemilk-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": false,
-        "websiteUrl": "",
-      },
-      "tags": Array [],
-      "title": "Chocolate Milk Logo",
+      "title": "EXBC vs. Dirtbox Radio flyer",
     },
     Object {
       "category": Array [
@@ -1279,241 +1359,19 @@ Object {
       ],
       "title": "Catherine Anne Design",
     },
-    Object {
-      "category": Array [
-        "web",
-        "design",
-      ],
-      "description": "Deep Foc.us music blog.",
-      "id": "deep-foc-us",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-home-200px.jpg",
-          "title": "Deep Foc.us Desktop Design",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-iphone-200px.jpg",
-          "title": "Deep Foc.us Mobile Design",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-with-gradient-200px.jpg",
-          "title": "Deep Foc.us Logo Design with gradient backdrop",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-logo-200px.png",
-          "title": "Deep Foc.us Logo Design",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-450px.jpg",
-          "meta": Object {
-            "usage": Array [
-              "background",
-            ],
-          },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/deepfocus/deepfocus-gradient-200px.jpg",
-          "title": "Gradient design",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": false,
-        "websiteUrl": "",
-      },
-      "tags": Array [
-        "CSS/SCSS",
-        "HTML5",
-        "UX Consulting",
-        "Visual Design",
-        "Wordpress Custom Theme",
-        "Wordpress Plugin",
-        "Design",
-        "jQuery Mobile",
-        "logo",
-      ],
-      "title": "Deep Foc.us",
-    },
-    Object {
-      "category": Array [
-        "web",
-      ],
-      "description": "Sage Dragon screen shot",
-      "id": "sage-dragon",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-desktop-200px.png",
-          "title": "Sage Dragon (Desktop)",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-original.png",
-          "priority": 1,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-tablet-200px.png",
-          "title": "Sage Dragon (Tablet)",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sagedragon/sagedragon-mobile-200px.png",
-          "title": "Sage Dragon (Mobile)",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": false,
-        "thumb": Object {
-          "row": "span 3",
-        },
-        "websiteUrl": "http://projects.synbydesign.com/sagedragon/",
-      },
-      "tags": Array [
-        "CSS/SCSS",
-        "JavaScript",
-        "jQuery",
-        "Mobile/Responsive Design",
-        "Wordpress Custom Theme",
-      ],
-      "title": "Sage Dragon",
-    },
-    Object {
-      "category": Array [
-        "web",
-      ],
-      "description": "Eighty Eight DC",
-      "id": "eighty-eight-dc",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-homepage-200px.png",
-          "title": "Eighty Eight DC Homepage",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-original.png",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-category-200px.png",
-          "title": "Eighty Eight DC Topic Category Page",
-        },
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-original.jpg",
-          "priority": 1,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/eightyeight/eightyeightdc-posts-200px.jpg",
-          "title": "Eighty Eight DC Topic Posts Page",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": false,
-        "websiteUrl": "http://www.eightyeightdc.com/",
-      },
-      "tags": Array [
-        "CSS/SCSS",
-        "Mobile/Responsive Design",
-        "Wordpress Custom Theme",
-      ],
-      "title": "Eighty Eight DC",
-    },
-    Object {
-      "category": Array [
-        "web",
-      ],
-      "description": "exbc",
-      "id": "expansion-broadcast",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/expansionbroadcast-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": false,
-        "websiteUrl": "",
-      },
-      "tags": Array [
-        "Mobile/Responsive Design",
-        "Wordpress Custom Theme",
-        "Wordpress Plugin",
-      ],
-      "title": "Expansion Broadcast",
-    },
-    Object {
-      "category": Array [
-        "web",
-      ],
-      "description": "sigmaperfgroup",
-      "id": "sigma-performance-group",
-      "imagePaths": Array [
-        Object {
-          "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-700px.jpg",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-450px.jpg",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-original.jpg",
-          "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/sigmaperfgroup-200px.jpg",
-          "title": "",
-        },
-      ],
-      "meta": Object {
-        "isSVG": false,
-        "stackDesign": false,
-        "websiteUrl": "",
-      },
-      "tags": Array [
-        "(X)HTML",
-        "CSS",
-        "Design/Branding",
-        "PHP",
-      ],
-      "title": "Sigma Performance Group",
-    },
+  ],
+  "pageSize": 5,
+  "totalPages": 5,
+}
+`;
+
+exports[`list should not allow page index to exceed page number 1`] = `
+Object {
+  "currentPageNumber": 3,
+  "filterCategories": Array [],
+  "filterSearchTerm": "",
+  "filterTags": Array [],
+  "items": Array [
     Object {
       "category": Array [
         "logos",
