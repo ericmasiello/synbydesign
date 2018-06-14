@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { COLORS } from '../../styles/vars';
+import { pxToRem } from '../../styles/utils';
+import { COLORS, GALLERY } from '../../styles/vars';
 import { shadow } from '../../styles/mixins';
 
 interface Props {
@@ -24,6 +25,14 @@ export default styled(PortfolioGalleryLink)`
   border-radius: 3px;
   background-color: ${COLORS.galleryBg};
   transition: transform 0.2s, border-color 0.2s, filter 0.2s;
+
+  @media (min-width: ${pxToRem(GALLERY.minItemSize * 2)}) {
+    max-height: ${pxToRem(GALLERY.minItemSize * 1.5)};
+  }
+
+  @media (min-width: ${pxToRem(GALLERY.minItemSize * 3)}) {
+    max-height: none;
+  }
 
   &:hover {
     transform: scale(1.035);

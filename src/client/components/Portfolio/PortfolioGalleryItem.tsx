@@ -26,21 +26,23 @@ GalleryItem.defaultProps = {
 GalleryItem.displayName = 'PortfolioGallery.Item';
 
 export default styled(GalleryItem)`
-  ${props => {
-    let styles = props.column
-      ? `
-      @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
-        grid-column: ${props.column};
-      }
-    `
-      : '';
-    styles = `${styles}${
-      props.row
+  @media (min-width: ${pxToRem(GALLERY.minItemSize * 3)}) {
+    ${props => {
+      let styles = props.column
         ? `
-      grid-row: ${props.row};
-    `
-        : ''
-    }`;
-    return styles;
-  }};
+        @media(min-width: ${pxToRem(GALLERY.fullSize)}) {
+          grid-column: ${props.column};
+        }
+      `
+        : '';
+      styles = `${styles}${
+        props.row
+          ? `
+        grid-row: ${props.row};
+      `
+          : ''
+      }`;
+      return styles;
+    }};
+  }
 `;

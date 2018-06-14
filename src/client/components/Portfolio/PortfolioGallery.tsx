@@ -47,13 +47,20 @@ export default styled(PortfolioGallery)`
   max-width: ${pxToRem(maxWidth)};
   padding: 0;
   margin: 0 auto;
-  display: grid;
   list-style-type: none;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(${pxToRem(GALLERY.minItemSize)}, 1fr)
-  );
-  grid-auto-flow: dense;
-  grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
-  grid-gap: ${pxToRem(GALLERY.itemPadding)};
+
+  @media (min-width: ${pxToRem(GALLERY.minItemSize * 2)}) {
+    display: grid;
+    grid-gap: ${pxToRem(GALLERY.itemPadding)};
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ${pxToRem(GALLERY.minItemSize * 3)}) {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(${pxToRem(GALLERY.minItemSize)}, 1fr)
+    );
+    grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
+  }
 `;
