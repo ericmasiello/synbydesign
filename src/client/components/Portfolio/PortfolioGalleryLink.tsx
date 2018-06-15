@@ -16,7 +16,7 @@ export const PortfolioGalleryLink: React.SFC<Props> = props => {
 PortfolioGalleryLink.displayName = 'PortfolioGallery.Link';
 
 export default styled(PortfolioGalleryLink)`
-  ${shadow('1px', 'grayscale(0.65)')};
+  ${shadow('1px')};
   position: relative;
   display: block;
   overflow: hidden;
@@ -35,9 +35,9 @@ export default styled(PortfolioGalleryLink)`
   }
 
   &:hover {
-    transform: scale(1.035);
+    transform: scale(1.01);
     border: 10px solid ${COLORS.galleryBorderHighlight};
-    ${shadow('1px', 'grayscale(0)')};
+    ${shadow('1px')};
     z-index: 1000;
   }
 `;
