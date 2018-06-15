@@ -52,6 +52,14 @@ self.addEventListener('fetch', (e: Event) => {
   const acceptHeaders = event.request.headers.get('accept');
   const requestURL = new URL(event.request.url);
 
+  // Ensure analytics requests are not cached
+  if (
+    requestURL.host === 'www.google-analytics.com' ||
+    requestURL.host === 'www.googletagmanager.com'
+  ) {
+    return event.respondWith(fetch(event.request));
+  }
+
   // Images
   // return immediately if value is cached
   // else make a network request and cache response
