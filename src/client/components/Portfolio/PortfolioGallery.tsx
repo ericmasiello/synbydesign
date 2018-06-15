@@ -5,6 +5,7 @@ import { pxToRem } from '../../styles/utils';
 import { maxWidth, GALLERY } from '../../styles/vars';
 import GalleryItem from './PortfolioGalleryItem';
 import GalleryLink from './PortfolioGalleryLink';
+import Heart from '../Heart';
 
 interface Props extends React.HTMLProps<HTMLElement> {
   items: Portfolio[];
@@ -28,6 +29,13 @@ export const PortfolioGallery: React.SFC<Props> = props => {
           <GalleryItem key={item.id} row={row} column={column}>
             <GalleryLink to={`/portfolio/${item.id}`}>
               <Item {...item} />
+              <Heart
+                data-id={item.id}
+                onClick={event => {
+                  event.preventDefault();
+                  console.log('clicked it!');
+                }}
+              />
             </GalleryLink>
           </GalleryItem>
         );
@@ -62,5 +70,11 @@ export default styled(PortfolioGallery)`
       minmax(${pxToRem(GALLERY.minItemSize)}, 1fr)
     );
     grid-auto-rows: ${pxToRem(GALLERY.minItemSize)};
+  }
+
+  ${Heart} {
+    position: absolute;
+    bottom: ${pxToRem(5)};
+    right: ${pxToRem(5)};
   }
 `;
