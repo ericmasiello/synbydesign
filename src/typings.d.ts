@@ -84,6 +84,8 @@ interface Portfolio extends RawPortfolio {
   id: string;
 }
 
+type Like = string;
+
 type TypeSize = [number, number];
 interface TypeMap {
   [x: string]: TypeSize;

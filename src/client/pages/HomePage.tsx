@@ -12,6 +12,7 @@ import Meta from '../components/Meta';
 import Button from '../components/Button';
 import { pxToRem } from '../styles/utils';
 import { ThunkActionCreator } from '../../types.d';
+import likes from '../state/likes/index';
 
 const pageRequest: PortfolioRequestParams = {
   pageSize: 8,
@@ -21,6 +22,7 @@ const pageRequest: PortfolioRequestParams = {
 interface Props {
   fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
   fetchResume: ThunkActionCreator<Resume>;
+  fetchLikes: ThunkActionCreator<Like[]>;
   className?: string;
   portfolioItems: Portfolio[];
   resume: Resume;
@@ -37,6 +39,8 @@ export class HomePage extends React.Component<Props, {}> {
     if (isEmpty(this.props.resume)) {
       this.props.fetchResume();
     }
+
+    this.props.fetchLikes();
   }
 
   loadInitialPortfolioPage = () => {
@@ -99,7 +103,9 @@ export default {
       dispatch(fetchResume()),
       dispatch(fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(mapStateToProps, { fetchPortfolioItems, fetchResume })(
-    StyledHomePage,
-  ),
+  component: connect(mapStateToProps, {
+    fetchPortfolioItems,
+    fetchResume,
+    fetchLikes: likes.fetchLikes,
+  })(StyledHomePage),
 };

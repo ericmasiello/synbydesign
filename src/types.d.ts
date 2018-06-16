@@ -1,5 +1,6 @@
 import { ThunkAction } from 'redux-thunk';
 import { AxiosInstance } from 'axios';
+import { AnyAction } from 'redux';
 
 export type ThunkActionCreator<S> = (
   ...args: any[]
@@ -12,3 +13,7 @@ export type PortfolioThunkActionCreator<S> = (
 export type PortfolioDetailThunkActionCreator<S> = (
   id: string,
 ) => ThunkAction<Promise<any>, S, AxiosInstance>;
+
+export interface LikeAction extends AnyAction {
+  payload: Like[];
+}
