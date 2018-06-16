@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash-es/isEmpty';
-import { fetchPortfolioItems, fetchResume } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
 import Header from '../components/HeaderOnline';
@@ -12,7 +11,9 @@ import Meta from '../components/Meta';
 import Button from '../components/Button';
 import { pxToRem } from '../styles/utils';
 import { ThunkActionCreator } from '../../types.d';
-import likes from '../state/likes/index';
+import likes from '../state/likes';
+import resume from '../state/resume';
+import portfolio from '../state/portfolio';
 
 const pageRequest: PortfolioRequestParams = {
   pageSize: 8,
@@ -100,12 +101,12 @@ const StyledHomePage = styled(HomePage)`
 export default {
   loadData: ({ dispatch }: Store<Portfolio[]>) =>
     Promise.all([
-      dispatch(fetchResume()),
-      dispatch(fetchPortfolioItems(pageRequest)),
+      dispatch(resume.fetchResume()),
+      dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
   component: connect(mapStateToProps, {
-    fetchPortfolioItems,
-    fetchResume,
+    fetchPortfolioItems: portfolio.fetchPortfolioItems,
+    fetchResume: resume.fetchResume,
     fetchLikes: likes.fetchLikes,
   })(StyledHomePage),
 };

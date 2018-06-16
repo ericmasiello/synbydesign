@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { AxiosInstance } from 'axios';
-import reducers from '../client/reducers';
+import reducers from '../client/state';
 
 const defaultInitialState = {
   resume: {} as Resume,

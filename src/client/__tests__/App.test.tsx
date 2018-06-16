@@ -6,7 +6,6 @@ import { createStore } from 'redux';
 import appDefault from '../App';
 import { renderRoutes, RouteConfig } from 'react-router-config';
 jest.mock('react-router-config');
-jest.mock('../actions/');
 
 const mockRoute = {
   routes: ['route 1', 'route 2', 'route 3'] as RouteConfig[],

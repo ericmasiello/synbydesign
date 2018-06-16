@@ -1,10 +1,10 @@
 import { ThunkActionCreator, LikeAction } from '../../../types.d';
-import { FETCH_LIKES } from './types';
+import * as types from './types';
 
 export const LOCAL_STORAGE_KEY = 'SYN_BY_DESIGN:LIKES';
 
 export const fetchLikesActionCreator = (likes: Like[]): LikeAction => ({
-  type: FETCH_LIKES,
+  type: types.FETCH_LIKES,
   payload: likes,
 });
 
