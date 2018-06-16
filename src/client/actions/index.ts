@@ -8,7 +8,7 @@ import { dispatcher } from '../../utils/actions';
 
 export const FETCH_PORTFOLIO_ITEMS = 'FETCH_PORTFOLIO_ITEMS';
 export const FETCH_PORTFOLIO_DETAIL = 'FETCH_PORTFOLIO_DETAIL';
-export const FETCH_RESUME = 'fetch_resume';
+export const FETCH_RESUME = 'FETCH_RESUME';
 
 export const fetchResume: ThunkActionCreator<any> = () => async (
   dispatch,
