@@ -24,8 +24,9 @@ interface Props {
   fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
   fetchResume: ThunkActionCreator<Resume>;
   fetchLikes: ThunkActionCreator<Like[]>;
+  addLike: ThunkActionCreator<Like>;
   className?: string;
-  portfolioItems: Portfolio[];
+  portfolioItems: LikedPortfolio[];
   resume: Resume;
   existsMorePortfolioItems: boolean;
   currentPageNumber: number;
@@ -64,7 +65,11 @@ export class HomePage extends React.Component<Props, {}> {
         <Meta />
         <Header />
         <Hero />
-        <PortfolioGallery id="gallery" items={this.props.portfolioItems} />
+        <PortfolioGallery
+          id="gallery"
+          items={this.props.portfolioItems}
+          addLike={this.props.addLike}
+        />
         {this.props.existsMorePortfolioItems && (
           <Button onClick={this.loadNextPortfolioPage}>View more</Button>
         )}
@@ -74,13 +79,14 @@ export class HomePage extends React.Component<Props, {}> {
   }
 }
 
-function mapStateToProps({ portfolioItems, resume, ui }: AppState) {
-  const portfolioMeta = ui.portfolio;
+function mapStateToProps(state: AppState) {
+  const portfolioMeta = state.ui.portfolio;
   const existsMorePortfolioItems =
     portfolioMeta.currentPageNumber < portfolioMeta.totalPages;
+
   return {
-    portfolioItems,
-    resume,
+    portfolioItems: portfolio.likedPortfolioItemsSelector(state),
+    resume: state.resume,
     existsMorePortfolioItems,
     currentPageNumber: portfolioMeta.currentPageNumber,
   };
@@ -108,5 +114,6 @@ export default {
     fetchPortfolioItems: portfolio.fetchPortfolioItems,
     fetchResume: resume.fetchResume,
     fetchLikes: likes.fetchLikes,
+    addLike: likes.addLike,
   })(StyledHomePage),
 };

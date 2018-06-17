@@ -84,6 +84,10 @@ interface Portfolio extends RawPortfolio {
   id: string;
 }
 
+interface LikedPortfolio extends Portfolio {
+  liked: boolean;
+}
+
 type Like = string;
 
 type TypeSize = [number, number];
@@ -190,6 +194,7 @@ interface AppState {
   resume: Resume;
   portfolioItems: Portfolio[];
   ui: UIMeta;
+  likes: Like[];
 }
 
 interface Context {

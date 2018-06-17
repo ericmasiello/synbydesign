@@ -1,23 +1,21 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 import Item from './PortfolioItem';
 import { pxToRem } from '../../styles/utils';
 import { maxWidth, GALLERY } from '../../styles/vars';
 import GalleryItem from './PortfolioGalleryItem';
 import GalleryLink from './PortfolioGalleryLink';
 import Heart from '../Heart';
-import likes from '../../state/likes/';
 import { ThunkActionCreator } from '../../../types';
 
 interface Props extends React.HTMLProps<HTMLElement> {
-  items: Portfolio[];
+  items: LikedPortfolio[];
   tag?: Tag;
   addLike: ThunkActionCreator<Like>;
 }
 
 interface DefaultProps {
-  items: Portfolio[];
+  items: LikedPortfolio[];
   tag: Tag;
 }
 
@@ -39,6 +37,7 @@ export const PortfolioGallery: React.SFC<Props> = props => {
                   event.preventDefault();
                   addLike(item.id);
                 }}
+                selected={item.liked}
               />
             </GalleryLink>
           </GalleryItem>
@@ -51,11 +50,11 @@ export const PortfolioGallery: React.SFC<Props> = props => {
 PortfolioGallery.displayName = 'PortfolioGallery';
 
 PortfolioGallery.defaultProps = {
-  items: [] as Portfolio[],
+  items: [] as LikedPortfolio[],
   tag: 'ul',
 } as DefaultProps;
 
-const StyledPortfolioGallery = styled(PortfolioGallery)`
+export default styled(PortfolioGallery)`
   max-width: ${pxToRem(maxWidth)};
   padding: 0;
   margin: 0 auto;
@@ -82,9 +81,3 @@ const StyledPortfolioGallery = styled(PortfolioGallery)`
     right: ${pxToRem(5)};
   }
 `;
-
-const mapStateToProps = () => ({});
-
-export default connect(mapStateToProps, { addLike: likes.addLike })(
-  StyledPortfolioGallery,
-);

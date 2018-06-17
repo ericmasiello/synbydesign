@@ -16,6 +16,7 @@ const defaultInitialState = {
       filterSearchTerm: '',
     },
   },
+  likes: [],
 };
 
 export default (

@@ -16,6 +16,7 @@ HeartIcon.displayName = 'HeartIcon';
 
 interface Props extends React.HTMLProps<HTMLButtonElement> {
   tag?: Tag;
+  selected?: boolean;
   className?: string;
 }
 
@@ -41,6 +42,8 @@ export const Heart: React.SFC<Props> = props => {
   );
 };
 
+Heart.displayName = 'Heart';
+
 Heart.defaultProps = {
   tag: 'button',
 } as DefaultProps;
@@ -50,6 +53,10 @@ export default styled(Heart)`
   border: none;
   background: none;
   padding: ${pxToRem(10)};
+
+  ${HeartIcon} {
+    ${props => (props.selected ? `fill: ${COLORS.highlight}` : '')};
+  }
 
   &:hover,
   &:focus,
