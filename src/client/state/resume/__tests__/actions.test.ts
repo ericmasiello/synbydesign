@@ -1,4 +1,5 @@
-import * as actions from '../index';
+import * as actions from '../actions';
+import { FETCH_RESUME } from '../types';
 import { AxiosInstance } from 'axios';
 import { Dispatch } from 'redux';
 
@@ -26,7 +27,7 @@ describe('fetchResume', () => {
       .fetchResume()(dispatch, getState, api)
       .then(() => {
         expect(dispatch).toBeCalledWith({
-          type: actions.FETCH_RESUME,
+          type: FETCH_RESUME,
           meta: {},
           payload: mockResume,
         });
@@ -40,7 +41,7 @@ describe('fetchResume', () => {
       .fetchResume()(dispatch, getState, api)
       .then(() => {
         expect(dispatch).toBeCalledWith({
-          type: actions.FETCH_RESUME,
+          type: FETCH_RESUME,
           payload: error,
           error: true,
         });

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { fetchPortfolioDetail } from '../actions';
 import { ThunkActionCreator } from '../../types.d';
 import Header from '../components/HeaderOnline';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
@@ -17,6 +16,7 @@ import {
   getBackgroundImage,
   getHeroImage,
 } from '../utils/portfolioImage';
+import portfolio from '../state/portfolio';
 
 interface Props {
   fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
@@ -107,11 +107,11 @@ function mapStateToProps(state: AppState, props: Props) {
 }
 
 const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
-  dispatch(fetchPortfolioDetail(id));
+  dispatch(portfolio.fetchPortfolioDetail(id));
 
 export default {
   loadData,
-  component: connect(mapStateToProps, { fetchPortfolioDetail })(
-    StyledPortfolioDetailPage,
-  ),
+  component: connect(mapStateToProps, {
+    fetchPortfolioDetail: portfolio.fetchPortfolioDetail,
+  })(StyledPortfolioDetailPage),
 };

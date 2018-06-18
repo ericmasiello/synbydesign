@@ -22,4 +22,10 @@ export default styled(PortfolioItemImage)`
   object-fit: cover;
   object-position: ${props => (props.position ? props.position : '50% 0')};
   transform: scale(1.05);
+  transition: filter 0.2s;
+  filter: grayscale(0.35);
+
+  &:hover {
+    filter: grayscale(0);
+  }
 `;

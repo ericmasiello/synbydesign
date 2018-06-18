@@ -38,6 +38,7 @@ test('create a store with initialized state', () => {
         filterSearchTerm: '',
       },
     },
+    likes: [],
   };
 
   const axiosInstance = axios.create();

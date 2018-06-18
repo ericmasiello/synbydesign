@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash-es/isEmpty';
-import { fetchPortfolioItems, fetchResume } from '../actions';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
 import Header from '../components/HeaderOnline';
@@ -12,6 +11,9 @@ import Meta from '../components/Meta';
 import Button from '../components/Button';
 import { pxToRem } from '../styles/utils';
 import { ThunkActionCreator } from '../../types.d';
+import likes from '../state/likes';
+import resume from '../state/resume';
+import portfolio from '../state/portfolio';
 
 const pageRequest: PortfolioRequestParams = {
   pageSize: 8,
@@ -21,8 +23,10 @@ const pageRequest: PortfolioRequestParams = {
 interface Props {
   fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
   fetchResume: ThunkActionCreator<Resume>;
+  fetchLikes: ThunkActionCreator<Like[]>;
+  addLike: ThunkActionCreator<Like>;
   className?: string;
-  portfolioItems: Portfolio[];
+  portfolioItems: LikedPortfolio[];
   resume: Resume;
   existsMorePortfolioItems: boolean;
   currentPageNumber: number;
@@ -37,6 +41,8 @@ export class HomePage extends React.Component<Props, {}> {
     if (isEmpty(this.props.resume)) {
       this.props.fetchResume();
     }
+
+    this.props.fetchLikes();
   }
 
   loadInitialPortfolioPage = () => {
@@ -59,7 +65,11 @@ export class HomePage extends React.Component<Props, {}> {
         <Meta />
         <Header />
         <Hero />
-        <PortfolioGallery id="gallery" items={this.props.portfolioItems} />
+        <PortfolioGallery
+          id="gallery"
+          items={this.props.portfolioItems}
+          addLike={this.props.addLike}
+        />
         {this.props.existsMorePortfolioItems && (
           <Button onClick={this.loadNextPortfolioPage}>View more</Button>
         )}
@@ -69,13 +79,14 @@ export class HomePage extends React.Component<Props, {}> {
   }
 }
 
-function mapStateToProps({ portfolioItems, resume, ui }: AppState) {
-  const portfolioMeta = ui.portfolio;
+function mapStateToProps(state: AppState) {
+  const portfolioMeta = state.ui.portfolio;
   const existsMorePortfolioItems =
     portfolioMeta.currentPageNumber < portfolioMeta.totalPages;
+
   return {
-    portfolioItems,
-    resume,
+    portfolioItems: portfolio.likedPortfolioItemsSelector(state),
+    resume: state.resume,
     existsMorePortfolioItems,
     currentPageNumber: portfolioMeta.currentPageNumber,
   };
@@ -96,10 +107,13 @@ const StyledHomePage = styled(HomePage)`
 export default {
   loadData: ({ dispatch }: Store<Portfolio[]>) =>
     Promise.all([
-      dispatch(fetchResume()),
-      dispatch(fetchPortfolioItems(pageRequest)),
+      dispatch(resume.fetchResume()),
+      dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(mapStateToProps, { fetchPortfolioItems, fetchResume })(
-    StyledHomePage,
-  ),
+  component: connect(mapStateToProps, {
+    fetchPortfolioItems: portfolio.fetchPortfolioItems,
+    fetchResume: resume.fetchResume,
+    fetchLikes: likes.fetchLikes,
+    addLike: likes.addLike,
+  })(StyledHomePage),
 };

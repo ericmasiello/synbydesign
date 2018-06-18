@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import uniqBy from 'lodash-es/uniqBy';
-import { FETCH_PORTFOLIO_ITEMS, FETCH_PORTFOLIO_DETAIL } from '../actions';
+import * as types from './types';
 
 const defaultPortfolioMeta: UIPortfolioMeta = {
   currentPageNumber: 0,
@@ -15,7 +15,7 @@ export const portfolioMetaReducer: Reducer<UIPortfolioMeta> = (
   state = defaultPortfolioMeta,
   action,
 ) => {
-  if (action.type === FETCH_PORTFOLIO_ITEMS && !action.error) {
+  if (action.type === types.FETCH_PORTFOLIO_ITEMS && !action.error) {
     const meta: UIPortfolioMeta = {
       currentPageNumber: parseInt(action.meta['_currentpagenumber'], 10),
       pageSize: parseInt(action.meta['_pagesize'], 10),
@@ -32,11 +32,11 @@ export const portfolioMetaReducer: Reducer<UIPortfolioMeta> = (
 };
 
 export const portfolioReducer: Reducer<Portfolio[]> = (state = [], action) => {
-  if (action.type === FETCH_PORTFOLIO_ITEMS && !action.error) {
+  if (action.type === types.FETCH_PORTFOLIO_ITEMS && !action.error) {
     return uniqBy([...state, ...action.payload.data], 'id');
   }
 
-  if (action.type === FETCH_PORTFOLIO_DETAIL && !action.error) {
+  if (action.type === types.FETCH_PORTFOLIO_DETAIL && !action.error) {
     const newItem = action.payload.data;
     if (!state.find(item => item.id === newItem.id)) {
       return [...state, action.payload.data];
