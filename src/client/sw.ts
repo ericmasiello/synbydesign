@@ -8,7 +8,7 @@ import {
 } from './utils/swCache';
 import { FONT_URL } from './styles/vars';
 
-const CACHE_VERSION = 2;
+const CACHE_VERSION = process.env.SW_ID || 'UNKNOWN';
 const CACHE_NAME = composeCacheName(CACHE_VERSION);
 const OFFLINE_IMAGE_PLACEHOLDER = '/offline.svg';
 const HOMEPAGE = '/';
@@ -39,6 +39,7 @@ const CACHED_FILES: string[] = [
 ];
 
 self.addEventListener('install', (e: Event) => {
+  skipWaiting();
   const event = e as ServiceWorkerEvent;
   (event as ExtendableEvent).waitUntil(
     caches.open(CACHE_NAME).then(cache => {

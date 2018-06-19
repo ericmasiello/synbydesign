@@ -7,6 +7,10 @@ const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
+const envPlugin = new webpack.DefinePlugin({
+  'process.env.SW_ID': JSON.stringify((new Date()).toISOString()),
+});
+
 const indexPage = new HtmlWebpackPlugin({
   template: `!!raw-loader!${path.join(
     process.cwd(),
@@ -37,8 +41,7 @@ const serviceWorker = new ServiceWorkerWebpackPlugin({
   entry: path.join(__dirname, 'src/client/sw.ts'),
 });
 
-const copyWebpackPlugin = new CopyWebpackPlugin([
-  {
+const copyWebpackPlugin = new CopyWebpackPlugin([{
     from: 'src/client/images',
     to: '',
   },
@@ -79,7 +82,23 @@ const config = {
     serviceWorker,
     copyWebpackPlugin,
     imageMinPlugin,
+    envPlugin,
   ],
 };
 
-module.exports = merge(baseConfig, config);
+const prodConfig = {
+  output: {
+    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
+  },
+}
+
+module.exports = (env, {
+  mode
+}) => {
+  if (mode === 'production') {
+    return merge(baseConfig, config, prodConfig);
+  }
+  return merge(baseConfig, config);
+}

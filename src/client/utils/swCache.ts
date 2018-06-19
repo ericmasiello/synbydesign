@@ -1,6 +1,6 @@
 export const CACHE_PREFIX = 'syn-cache-v';
 
-export const composeCacheName = (version: number) =>
+export const composeCacheName = (version: string) =>
   `${CACHE_PREFIX}${version}`;
 
 export const getMatchingCachedResponseWithCache = (activeCacheName: string) => (
