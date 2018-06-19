@@ -2,7 +2,7 @@ import * as swCache from '../swCache';
 
 describe('composeCacheName', () => {
   it('composes a cache name based on a version number', () => {
-    const result = swCache.composeCacheName(42);
+    const result = swCache.composeCacheName('42');
 
     expect(result).toEqual('syn-cache-v42');
   });
