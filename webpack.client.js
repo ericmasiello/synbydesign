@@ -86,4 +86,19 @@ const config = {
   ],
 };
 
-module.exports = merge(baseConfig, config);
+const prodConfig = {
+  output: {
+    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
+  },
+}
+
+module.exports = (env, {
+  mode
+}) => {
+  if (mode === 'production') {
+    return merge(baseConfig, config, prodConfig);
+  }
+  return merge(baseConfig, config);
+}
