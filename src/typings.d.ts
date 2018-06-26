@@ -211,3 +211,10 @@ interface ServiceWorkerEvent extends ExtendableEvent {
   request: Request;
   respondWith: (arg: Promise<any>) => void;
 }
+
+interface StatusResponse {
+  code: number;
+  message: string;
+}
+
+type LikeAction = 'like' | 'unlike';
