@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { RequestHandler, Request } from 'express';
 import { Store } from 'redux';
 import { matchRoutes } from 'react-router-config';
 import axios, { AxiosInstance } from 'axios';
@@ -22,7 +22,7 @@ const getApiInstance = (req: Request) => {
   return axiosInstance;
 };
 
-const uiRootController = (req: Request, res: Response) => {
+const uiRootController: RequestHandler = (req, res) => {
   const url = req.baseUrl;
   logger.info('Calling ui controller with path', url);
 

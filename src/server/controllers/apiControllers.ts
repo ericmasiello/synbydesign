@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { RequestHandler } from 'express';
 import * as boom from 'boom';
 import { list, getById } from '../services/portfolioService';
 import { getResume } from '../services/resumeService';
@@ -11,11 +11,7 @@ const filterStringToList = (filter: string): string[] => {
   return filter.split(',');
 };
 
-export const portofolioController = (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const portofolioController: RequestHandler = (req, res, next) => {
   const {
     categories = '',
     tags = '',
@@ -48,11 +44,7 @@ export const portofolioController = (
     .catch((error: Error) => next(boom.badImplementation(error.message)));
 };
 
-export const portofolioDetailController = (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const portofolioDetailController: RequestHandler = (req, res, next) => {
   const id = req.params.id;
 
   logger.info('Requesting portfolio detail with id:', id);
@@ -65,11 +57,7 @@ export const portofolioDetailController = (
   });
 };
 
-export const resumeController = (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const resumeController: RequestHandler = (req, res, next) => {
   logger.info('Requesting resume');
   return getResume()
     .then(resume => res.json(resume))
