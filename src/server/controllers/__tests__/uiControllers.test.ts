@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { matchRoutes } from 'react-router-config';
 import axios from 'axios';
 import uiRootController from '../uiControllers';
@@ -48,6 +48,8 @@ req.baseUrl = '/the/path';
 req.get = jest.fn();
 
 const res = {} as Response;
+const next = jest.fn() as NextFunction;
+
 res.render = jest.fn();
 res.redirect = jest.fn();
 res.status = jest.fn();
@@ -56,7 +58,7 @@ test('should call createStore with axios instance', () => {
   (matchRoutes as jest.Mock<{}>).mockImplementation(
     () => matchedRoutesWithLoadData,
   );
-  return uiRootController(req, res).then(() => {
+  return uiRootController(req, res, next).then(() => {
     expect(createStore).toBeCalledWith(mockAxios);
   });
 });
@@ -65,7 +67,7 @@ test('should call matchRoutes', () => {
   (matchRoutes as jest.Mock<{}>).mockImplementation(
     () => matchedRoutesWithLoadData,
   );
-  return uiRootController(req, res).then(() => {
+  return uiRootController(req, res, next).then(() => {
     expect(matchRoutes).toBeCalledWith(Routes, req.baseUrl);
   });
 });
@@ -75,7 +77,7 @@ describe('send rendered response', () => {
     (matchRoutes as jest.Mock<{}>).mockImplementation(
       () => matchedRoutesWithLoadData,
     );
-    return uiRootController(req, res).then(() => {
+    return uiRootController(req, res, next).then(() => {
       expect(res.render).toBeCalledWith('index', rendered);
       expect(matchedRoutesWithLoadData[0].route.loadData).toBeCalledWith(
         store,
@@ -87,7 +89,7 @@ describe('send rendered response', () => {
     (matchRoutes as jest.Mock<{}>).mockImplementation(
       () => matchedRoutesWithoutLoadData,
     );
-    return uiRootController(req, res).then(() => {
+    return uiRootController(req, res, next).then(() => {
       expect(res.render).toBeCalledWith('index', rendered);
     });
   });
@@ -107,7 +109,7 @@ describe('renderer', () => {
         return rendered;
       },
     );
-    return uiRootController(req, res).then(() => {
+    return uiRootController(req, res, next).then(() => {
       expect(res.redirect).toBeCalledWith(301, 'the/url');
     });
   });
@@ -119,7 +121,7 @@ describe('renderer', () => {
         return rendered;
       },
     );
-    return uiRootController(req, res).then(() => {
+    return uiRootController(req, res, next).then(() => {
       expect(res.status).toBeCalledWith(404);
     });
   });
