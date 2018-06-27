@@ -1,0 +1,10 @@
+{
+  "type": "docker",
+  "alias": [
+    "synbydesign.com",
+    "www.synbydesign.com"
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
