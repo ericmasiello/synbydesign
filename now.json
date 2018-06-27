@@ -6,5 +6,11 @@
   ],
   "env": {
     "NODE_ENV": "production"
+  },
+  "scale": {
+    "sfo1": {
+      "min": 1,
+      "max": "auto"
+    }
   }
 }
