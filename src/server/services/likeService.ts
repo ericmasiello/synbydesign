@@ -5,12 +5,17 @@ const createAction = (
   id: string,
   title?: string,
 ): Promise<StatusResponse> => {
-  const GOOGLE_SHEET_URL =
-    'https://script.google.com/macros/s/AKfycbwErydNjqBnj4xo_AHcAro-UziMCuciiMEORMQMuJ-fxhk4XxE/exec';
+  const url = new URL(
+    'https://script.google.com/macros/s/AKfycbwErydNjqBnj4xo_AHcAro-UziMCuciiMEORMQMuJ-fxhk4XxE/exec',
+  );
 
-  const params = `id=${id}&description=${title}&action=${action}`;
+  url.searchParams.set('id', id);
+  url.searchParams.set('action', action);
+  if (title) {
+    url.searchParams.set('description', title);
+  }
 
-  return fetch(`${GOOGLE_SHEET_URL}?${params}`).then(result => {
+  return fetch(url.toString()).then(result => {
     return {
       code: result.status,
       message: result.statusText,
