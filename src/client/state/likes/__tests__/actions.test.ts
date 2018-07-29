@@ -1,0 +1,84 @@
+import * as actions from '../actions';
+import * as types from '../types';
+import * as utils from '../utils';
+import { AxiosInstance } from '../../../../../node_modules/axios';
+jest.mock('../utils');
+
+(utils.getLikes as jest.Mock<{}>).mockImplementation(() => {
+  const s = new Set();
+  s.add('foo');
+  s.add('bar');
+  return s;
+});
+
+describe('fetchLikesActionCreator', () => {
+  test('should return action payload', () => {
+    const likes = ['foo', 'bar'];
+    const result = actions.fetchLikesActionCreator(likes);
+
+    expect(result).toEqual({
+      type: types.FETCH_LIKES,
+      payload: likes,
+    });
+  });
+});
+
+describe('addLikeActionCreator', () => {
+  test('should return action payload', () => {
+    const result = actions.addLikeActionCreator('baz');
+
+    expect(result).toEqual({
+      type: types.ADD_LIKE,
+      payload: 'baz',
+    });
+  });
+});
+
+describe('fetchLikes', () => {
+  test('should dispatch a FETCH_LIKES action with data from storage', () => {
+    const mockDispath = jest.fn();
+    const partial = actions.fetchLikes();
+
+    return partial(mockDispath, jest.fn(), {} as AxiosInstance).then(() => {
+      expect(mockDispath).toBeCalledWith({
+        type: types.FETCH_LIKES,
+        payload: ['foo', 'bar'],
+      });
+    });
+  });
+});
+
+describe('addLike', () => {
+  describe('new like added', () => {
+    beforeEach(() => {
+      (utils.addLike as jest.Mock<{}>).mockImplementation(s => s);
+    });
+
+    test('should dispatch a ADD_LIKE action', () => {
+      const mockDispath = jest.fn();
+      const partial = actions.addLike('baz');
+
+      return partial(mockDispath, jest.fn(), {} as AxiosInstance).then(() => {
+        expect(mockDispath).toBeCalledWith({
+          type: types.ADD_LIKE,
+          payload: 'baz',
+        });
+      });
+    });
+  });
+
+  describe('pre existing like added', () => {
+    beforeEach(() => {
+      (utils.addLike as jest.Mock<{}>).mockImplementation(() => undefined);
+    });
+
+    test('should not dispatch a ADD_LIKE action', () => {
+      const mockDispath = jest.fn();
+      const partial = actions.addLike('baz');
+
+      return partial(mockDispath, jest.fn(), {} as AxiosInstance).then(() => {
+        expect(mockDispath).not.toBeCalled();
+      });
+    });
+  });
+});
