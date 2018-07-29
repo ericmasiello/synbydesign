@@ -1,11 +1,10 @@
-// TODO: Replace with indexedDB as its its non-blocking
+import * as browser from '../../utils/browser';
+// TODO: Replace with indexedDB as its non-blocking
 
 export const LOCAL_STORAGE_KEY = 'SYN_BY_DESIGN:LIKES';
 
-const isBrowser = () => typeof window !== 'undefined';
-
 export const getLikes = (): Set<Like> => {
-  if (!isBrowser()) {
+  if (!browser.isBrowser()) {
     return new Set();
   }
   const value = window.localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -17,7 +16,7 @@ export const getLikes = (): Set<Like> => {
 };
 
 export const addLike = (like: Like): Like | undefined => {
-  if (!isBrowser()) {
+  if (!browser.isBrowser()) {
     return like;
   }
 
