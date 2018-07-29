@@ -3,25 +3,19 @@ import styled from 'styled-components';
 import * as tinyColor from 'tinycolor2';
 import { COLORS, BODY_WEIGHTS } from '../styles/vars';
 
-export interface Props extends React.HTMLAttributes<HTMLAnchorElement> {
-  className?: string;
+export interface Props extends React.HTMLAttributes<HTMLElement> {
   href?: string;
   tag?: Tag;
 }
 
-interface DefaultProps {
+interface DefaultProps extends Props {
   tag: Tag;
 }
 
 export const Button: React.SFC<Props> = props => {
-  const { children, className, tag: Tag, ...rest } = props as Props &
-    DefaultProps;
+  const { tag: Tag, ...rest } = props as DefaultProps;
 
-  return (
-    <Tag className={className} {...rest}>
-      {children}
-    </Tag>
-  );
+  return <Tag {...rest} />;
 };
 
 Button.defaultProps = {
