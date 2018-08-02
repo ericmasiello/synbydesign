@@ -1,3 +1,4 @@
+import to from 'await-to-js';
 import { ThunkActionCreator, LikeAction } from '../../../types.d';
 import * as types from './types';
 import { AnyAction } from 'redux';
@@ -13,15 +14,28 @@ export const addLikeActionCreator = (like: Like): AnyAction => ({
   payload: like,
 });
 
-export const fetchLikes: ThunkActionCreator<Like[]> = () => async dispatch =>
-  dispatch(fetchLikesActionCreator(Array.from(utils.getLikes())));
+export const addLikeActionCreatorError = (error: Error): AnyAction => ({
+  type: types.ADD_LIKE,
+  payload: error,
+  error: true,
+});
 
-export const addLike: ThunkActionCreator<Like> = (
-  like: Like,
-) => async dispatch => {
-  // only dispatch an action if the added like is new
-  // duplicates will not dispatch new actions
+export const fetchLikes: ThunkActionCreator<Like[]> = () => dispatch =>
+  Promise.resolve(
+    dispatch(fetchLikesActionCreator(Array.from(utils.getLikes()))),
+  );
+
+export const addLike: ThunkActionCreator<Like> = (like: Like) => async (
+  dispatch,
+  getState,
+  api,
+) => {
   if (utils.addLike(like)) {
-    return dispatch(addLikeActionCreator(like));
+    dispatch(addLikeActionCreator(like));
+    // tslint:disable-next-line
+    const [err, res] = await to(api.post(`/like/${like}`));
+    if (err) {
+      return dispatch(addLikeActionCreatorError(err));
+    }
   }
 };
