@@ -77,11 +77,15 @@ self.addEventListener('fetch', (e: Event) => {
     );
   }
 
-  // Ajax requests
+  // Ajax GET requests (POST, PUT, DELETE cannot be cached)
   // make fetch request to network
   // if online, return response and cache response
   // else, attempt to return response from cache
-  if (acceptHeaders && acceptHeaders.includes('application/json')) {
+  if (
+    acceptHeaders &&
+    acceptHeaders.includes('application/json') &&
+    event.request.method === 'GET'
+  ) {
     return event.respondWith(
       fetch(event.request)
         .then(res => {
