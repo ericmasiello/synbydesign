@@ -10,7 +10,6 @@ module.exports = merge({
   resolve: {
     extensions: ['.js', '.json', '.ts', '.tsx'],
   },
-  devtool: 'source-map',
   // Tell webpack to run babel on every file it runs through
   module: {
     rules: [
@@ -36,8 +35,8 @@ module.exports = merge({
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader'
+        loader: 'svg-inline-loader',
       },
-    ]
-  }
+    ],
+  },
 });
