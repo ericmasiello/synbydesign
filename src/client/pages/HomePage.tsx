@@ -53,6 +53,9 @@ export class HomePage extends React.Component<Props, {}> {
   };
 
   loadNextPortfolioPage = () => {
+    import('../utils/tracking').then(tracking =>
+      tracking.default('Clicked next page'),
+    );
     this.props.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: this.props.currentPageNumber + 1,
@@ -110,10 +113,13 @@ export default {
       dispatch(resume.fetchResume()),
       dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(mapStateToProps, {
-    fetchPortfolioItems: portfolio.fetchPortfolioItems,
-    fetchResume: resume.fetchResume,
-    fetchLikes: likes.fetchLikes,
-    addLike: likes.addLike,
-  })(StyledHomePage),
+  component: connect(
+    mapStateToProps,
+    {
+      fetchPortfolioItems: portfolio.fetchPortfolioItems,
+      fetchResume: resume.fetchResume,
+      fetchLikes: likes.fetchLikes,
+      addLike: likes.addLike,
+    },
+  )(StyledHomePage),
 };
