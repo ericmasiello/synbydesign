@@ -48,15 +48,44 @@ self.addEventListener('install', (e: Event) => {
   );
 });
 
+interface ServiceWorkerErrorPost {
+  eventName: string;
+  url: string;
+  error: {
+    stack?: string;
+    message: string;
+  };
+}
+
+const createPostErrorWithEvent = (event: ServiceWorkerEvent) => (
+  eventName: string,
+) => (error: Error) => {
+  clients.matchAll().then(clients => {
+    clients.forEach(client => {
+      const message: ServiceWorkerErrorPost = {
+        eventName,
+        url: event.request.url,
+        error: {
+          stack: error.stack,
+          message: error.message,
+        },
+      };
+      client.postMessage(message);
+    });
+  });
+};
+
 self.addEventListener('fetch', (e: Event) => {
   const event = e as ServiceWorkerEvent;
   const acceptHeaders = event.request.headers.get('accept');
   const requestURL = new URL(event.request.url);
+  const createPostError = createPostErrorWithEvent(event);
 
-  // Ensure analytics requests are not cached
+  // Ensure analytics and tracking requests are not cached
   if (
     requestURL.host === 'www.google-analytics.com' ||
-    requestURL.host === 'www.googletagmanager.com'
+    requestURL.host === 'www.googletagmanager.com' ||
+    requestURL.host === 'api.mixpanel.com'
   ) {
     return event.respondWith(fetch(event.request));
   }
@@ -67,13 +96,15 @@ self.addEventListener('fetch', (e: Event) => {
   // else return fall back image
   if (acceptHeaders && acceptHeaders.includes('image/')) {
     return event.respondWith(
-      getMatchingCachedResponse(event.request).then(
-        res =>
-          res ||
-          fetch(event.request)
-            .then(cacheResponse(event.request))
-            .catch(fallbackImage),
-      ),
+      getMatchingCachedResponse(event.request)
+        .then(
+          res =>
+            res ||
+            fetch(event.request)
+              .then(cacheResponse(event.request))
+              .catch(fallbackImage),
+        )
+        .catch(createPostError('manage images')),
     );
   }
 
@@ -94,7 +125,8 @@ self.addEventListener('fetch', (e: Event) => {
         })
         .catch(() => {
           return getMatchingCachedResponse(event.request);
-        }),
+        })
+        .catch(createPostError('ajax requests')),
     );
   }
 
@@ -110,12 +142,16 @@ self.addEventListener('fetch', (e: Event) => {
         ? requestURL.href
         : requestURL.pathname;
     return event.respondWith(
-      getMatchingCachedResponse(event.request).then(res => {
-        // update cache in the event the response has been modified
-        // since last caching
-        fetch(event.request).then(cacheResponse(match));
-        return res;
-      }),
+      getMatchingCachedResponse(event.request)
+        .then(res => {
+          // update cache in the event the response has been modified
+          // since last caching
+          fetch(event.request)
+            .then(cacheResponse(match))
+            .catch(createPostError('CACHED_FILES update'));
+          return res;
+        })
+        .catch(createPostError('CACHED_FILES request')),
     );
   }
 
@@ -131,13 +167,15 @@ self.addEventListener('fetch', (e: Event) => {
   // if value does not exist in cache, return the cached home page
   if (acceptHeaders && acceptHeaders.includes('text/html')) {
     return event.respondWith(
-      fetch(event.request).catch(err => {
-        return getMatchingCachedResponse(event.request).then(cachedResponse => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-          return caches.match(HOMEPAGE);
-        });
+      fetch(event.request).catch(() => {
+        return getMatchingCachedResponse(event.request)
+          .then(cachedResponse => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            return caches.match(HOMEPAGE);
+          })
+          .catch(createPostError('text/html cache response'));
       }),
     );
   }
