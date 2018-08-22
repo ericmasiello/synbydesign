@@ -27,7 +27,6 @@
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
     "validate": "npm-run-all --parallel test:coverage lint",
-    "precommit": "lint-staged",
     "prepush": "npm run validate"
   },
   "author": "Eric Masiello",
@@ -92,7 +91,6 @@
     "imagemin-webpack-plugin": "^2.2.0",
     "jest": "22.4.0",
     "jest-styled-components": "~5.0.1",
-    "lint-staged": "^7.2.0",
     "nodemon": "^1.18.3",
     "npm-run-all": "4.1.2",
     "prettier": "~1.14.0",
@@ -112,13 +110,6 @@
     "webpack-cli": "~3.1.0",
     "webpack-merge": "~4.1.4",
     "webpack-node-externals": "~1.7.2"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint -p tsconfig.json --fix",
-      "prettier --write",
-      "git add"
-    ]
   },
   "jest": {
     "moduleFileExtensions": [
