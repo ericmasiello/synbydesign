@@ -31,9 +31,9 @@ const config = {
         test: /\.tsx?$/,
         include: [base.PATHS.src],
         use: {
-          loader: 'awesome-typescript-loader',
+          loader: 'ts-loader',
           options: {
-            configFileName: 'tsconfig-server.json',
+            configFile: 'tsconfig-server.json',
           },
         },
       },

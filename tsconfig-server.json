@@ -4,7 +4,8 @@
       "lib": ["es6", "dom", "webworker"],
       "strict": true,
       "jsx": "react",
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "sourceMap": true
   },
   "include": [
       "./src/**/*"
