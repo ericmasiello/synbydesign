@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, RouteComponentProps, match } from 'react-router-dom';
+import * as H from 'history';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import appDefault from '../App';
@@ -11,8 +12,12 @@ const mockRoute = {
   routes: ['route 1', 'route 2', 'route 3'] as RouteConfig[],
 };
 
-const location = {
-  pathname: '/path/to/thing',
+const otherProps: RouteComponentProps<any> = {
+  location: {
+    pathname: '/path/to/thing',
+  } as H.Location,
+  match: {} as match<any>,
+  history: {} as H.History,
 };
 
 const { component: App } = appDefault;
@@ -27,7 +32,8 @@ describe('App', () => {
     const wrapper = mount(
       <Provider store={storeMocker()}>
         <BrowserRouter>
-          <App route={mockRoute} location={location} />
+          {/* @ts-ignore */}
+          <App route={mockRoute} {...otherProps} />
         </BrowserRouter>
       </Provider>,
     );
@@ -38,7 +44,7 @@ describe('App', () => {
     mount(
       <Provider store={storeMocker()}>
         <BrowserRouter>
-          <App route={mockRoute} location={location} />
+          <App route={mockRoute} {...otherProps} />
         </BrowserRouter>
       </Provider>,
     );
