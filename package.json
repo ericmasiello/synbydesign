@@ -20,7 +20,7 @@
     "preprod:build-client": "npm run clean",
     "prod:build-client": "webpack --config webpack.client.js --mode production",
     "start": "node build/bundle.js",
-    "lint": "tslint 'src/**/*.ts?(x)' --format stylish -p tsconfig.json",
+    "lint": "tslint 'src/**/*.ts?(x)' --format stylish -p tsconfig-client.json",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "test": "jest",
@@ -112,6 +112,11 @@
     "webpack-node-externals": "~1.7.2"
   },
   "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig-jest.json"
+      }
+    },
     "moduleFileExtensions": [
       "ts",
       "tsx",

@@ -18,7 +18,9 @@ export const ResumeSkills: React.SFC<Props> = props => {
     DefaultProps;
   return (
     <Tag className={className} {...rest}>
-      {skills.map(skill => <li key={skill}>{skill}</li>)}
+      {skills.map(skill => (
+        <li key={skill}>{skill}</li>
+      ))}
     </Tag>
   );
 };
@@ -45,7 +47,7 @@ export default styled(ResumeSkills)`
       padding-right: ${bulletSpace};
 
       &::after {
-        content: '\00B7';
+        content: '\\00B7';
         position: absolute;
         width: ${bulletSpace};
         top: 0;

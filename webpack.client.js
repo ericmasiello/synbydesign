@@ -2,13 +2,13 @@ require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.js');
+const base = require('./webpack.base.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-module.exports = (env, { mode }) => {
+module.exports = (env = {}, { mode }) => {
   const includeServiceWorker =
     mode === 'production' || env.serviceWorker === 'true';
 
@@ -84,6 +84,21 @@ module.exports = (env, { mode }) => {
       },
     },
 
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          include: [base.PATHS.src],
+          use: {
+            loader: 'awesome-typescript-loader',
+            options: {
+              configFileName: 'tsconfig-client.json',
+            },
+          },
+        },
+      ],
+    },
+
     plugins: [
       indexPage,
       errorPage,
@@ -103,7 +118,7 @@ module.exports = (env, { mode }) => {
   };
 
   if (mode === 'production') {
-    return merge(baseConfig, config, prodConfig);
+    return merge(base.config, config, prodConfig);
   }
-  return merge(baseConfig, config);
+  return merge(base.config, config);
 };

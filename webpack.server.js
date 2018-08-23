@@ -1,6 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.js');
+const base = require('./webpack.base.js');
 const webpackNodeExternals = require('webpack-node-externals');
 
 const config = {
@@ -16,12 +16,29 @@ const config = {
   // that is generated
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
   },
 
-  externals: [webpackNodeExternals({
-    whitelist: [/^lodash/]
-  })]
+  externals: [
+    webpackNodeExternals({
+      whitelist: [/^lodash/],
+    }),
+  ],
+
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        include: [base.PATHS.src],
+        use: {
+          loader: 'awesome-typescript-loader',
+          options: {
+            configFileName: 'tsconfig-server.json',
+          },
+        },
+      },
+    ],
+  },
 };
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(base.config, config);

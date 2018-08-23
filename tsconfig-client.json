@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+      "target": "es5",
+      "lib": ["es6", "dom", "webworker"],
+      "strict": true,
+      "jsx": "react",
+      "module": "esnext"
+  },
+  "include": [
+      "./src/**/*"
+  ]
+}
