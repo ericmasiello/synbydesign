@@ -9,20 +9,14 @@ import axios from 'axios';
 import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import createStore from '../utils/createStore';
 import Chrome from './Chrome';
+import Home from './pages/HomePage';
+
+const HomePage = Home.component;
 
 // TODO: move isInitialLoad to redux
 let isInitialLoad = true;
 // TODO: move to separate connected component
 const Loading = () => (isInitialLoad ? null : <div>Loading...</div>);
-
-const HomePage = Loadable({
-  loader: () =>
-    import('./pages/HomePage').then(({ default: Page }) => {
-      isInitialLoad = false;
-      return Page.component;
-    }),
-  loading: Loading,
-});
 
 const PortfolioDetailPage = Loadable({
   loader: () =>
