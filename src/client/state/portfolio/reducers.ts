@@ -33,6 +33,7 @@ export const portfolioMetaReducer: Reducer<UIPortfolioMeta> = (
 
 export const portfolioReducer: Reducer<Portfolio[]> = (state = [], action) => {
   if (action.type === types.FETCH_PORTFOLIO_ITEMS && !action.error) {
+    // TODO: remove uniqBy
     return uniqBy([...state, ...action.payload.data], 'id');
   }
 

@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
-import isEmpty from 'lodash-es/isEmpty';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
 import Header from '../components/HeaderOnline';
@@ -38,7 +37,7 @@ export class HomePage extends React.Component<Props, {}> {
     if (this.props.portfolioItems.length <= 1) {
       this.loadInitialPortfolioPage();
     }
-    if (isEmpty(this.props.resume)) {
+    if (Object.keys(this.props.resume).length === 0) {
       this.props.fetchResume();
     }
 
