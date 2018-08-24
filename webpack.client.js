@@ -80,12 +80,6 @@ module.exports = (env = {}, { mode }) => {
       publicPath: '/',
     },
 
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-      },
-    },
-
     module: {
       rules: [
         {
