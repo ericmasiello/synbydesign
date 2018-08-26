@@ -5,7 +5,8 @@
     "www.synbydesign.com"
   ],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "MIXPANEL_TOKEN": "@mixpanel-prod-api-key"
   },
   "scale": {
     "sfo1": {
