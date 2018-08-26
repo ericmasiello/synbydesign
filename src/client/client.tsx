@@ -10,30 +10,28 @@ import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import createStore from '../utils/createStore';
 import Chrome from './Chrome';
 import Home from './pages/HomePage';
+import Loading from './components/Loading';
 
 const HomePage = Home.component;
 
-// TODO: move isInitialLoad to redux
-let isInitialLoad = true;
-// TODO: move to separate connected component
-const Loading = () => (isInitialLoad ? null : <div>Loading...</div>);
+const loadableConfig = {
+  timeout: 10000,
+  delay: 300,
+  loading: Loading,
+};
 
 const PortfolioDetailPage = Loadable({
   loader: () =>
-    import('./pages/PortfolioDetailPage').then(({ default: Page }) => {
-      isInitialLoad = false;
-      return Page.component;
-    }),
-  loading: Loading,
+    import('./pages/PortfolioDetailPage').then(
+      ({ default: Page }) => Page.component,
+    ),
+  ...loadableConfig,
 });
 
 const NotFoundPage = Loadable({
   loader: () =>
-    import('./pages/NotFoundPage').then(({ default: Page }) => {
-      isInitialLoad = false;
-      return Page.component;
-    }),
-  loading: Loading,
+    import('./pages/NotFoundPage').then(({ default: Page }) => Page.component),
+  ...loadableConfig,
 });
 
 if (process.env.INCLUDE_SW) {
