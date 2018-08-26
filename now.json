@@ -6,7 +6,7 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MIXPANEL_TOKEN": "@mixpanel-prod-api-key"
+    "MIXPANEL_TOKEN": "8269df2261474974f472932a2a433603"
   },
   "scale": {
     "sfo1": {
