@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const now = require('./now.json');
 
 module.exports = (env = {}, { mode }) => {
   const includeServiceWorker =
@@ -15,7 +16,9 @@ module.exports = (env = {}, { mode }) => {
   const envPlugin = new webpack.DefinePlugin({
     'process.env.SW_ID': JSON.stringify(new Date().toISOString()),
     'process.env.INCLUDE_SW': JSON.stringify(includeServiceWorker),
-    'process.env.MIXPANEL_TOKEN': JSON.stringify(process.env.MIXPANEL_TOKEN),
+    'process.env.MIXPANEL_TOKEN': JSON.stringify(
+      process.env.MIXPANEL_TOKEN || now.env.MIXPANEL_TOKEN,
+    ),
   });
 
   const indexPage = new HtmlWebpackPlugin({
