@@ -1,8 +1,11 @@
 {
+  "name": "synbydesign",
   "type": "docker",
   "alias": [
     "synbydesign.com",
-    "www.synbydesign.com"
+    "www.synbydesign.com",
+    "ericmasiello.com",
+    "www.ericmasiello.com"
   ],
   "env": {
     "NODE_ENV": "production",
