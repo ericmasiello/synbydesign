@@ -13,6 +13,15 @@ declare module '*.svg' {
   export = value;
 }
 
+declare module 'mixpanel-browser' {
+  interface Mixpanel {
+    init: (token: string) => void;
+    track: (eventName: string, trackDetails?: object) => void;
+  }
+  const mixpanel: Mixpanel;
+  export = mixpanel;
+}
+
 type Tag = React.ComponentType<any> | keyof React.ReactHTML;
 
 interface PortfolioThumbMeta {

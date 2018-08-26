@@ -1,57 +1,23 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import { renderRoutes, RouteConfig } from 'react-router-config';
-import styled, { injectGlobal } from 'styled-components';
-import { connect } from 'react-redux';
-import * as tinyColor from 'tinycolor2';
-import base from './styles/base';
-import { PAGE, COLORS, pageBorderWidth } from './styles/vars';
-import { pxToRem } from './styles/utils';
+import Chrome from './Chrome';
 
-injectGlobal`
-  ${base}
-`;
-
-interface Props {
+interface Props extends RouteComponentProps<any> {
   route: {
     routes: RouteConfig[];
   };
-  className?: string;
   portfolio?: Portfolio;
-  location: {
-    pathname: string;
-  };
 }
 
-const App: React.SFC<Props> = ({ route, className }) => (
-  <div className={className}>{renderRoutes(route.routes)}</div>
-);
-
-function mapStateToProps(state: AppState, props: Props) {
-  const match = /\/portfolio\/(\S+)/g.exec(props.location.pathname);
-  if (match) {
-    // tslint:disable-next-line no-unused-variable
-    const [ignore, id] = match;
-    return {
-      ...props,
-      portfolio: state.portfolioItems.find(item => item.id === id),
-    };
-  }
-
-  return props;
-}
+const App: React.SFC<Props> = ({ route, portfolio, ...rest }) => {
+  return (
+    <Chrome portfolio={portfolio} {...rest}>
+      {renderRoutes(route.routes)}
+    </Chrome>
+  );
+};
 
 export default {
-  component: connect(mapStateToProps)(styled(App)`
-    ${({ portfolio }) => {
-      let color = tinyColor(COLORS.highlight)
-        .setAlpha(0.8)
-        .toRgbString();
-      if (portfolio && portfolio.meta && portfolio.meta.highlightColor) {
-        color = portfolio.meta.highlightColor;
-      }
-      return `border: ${pageBorderWidth} solid ${color};`;
-    }} padding-bottom: ${pxToRem(PAGE.bottomPadding)};
-    min-height: 100vh;
-    transition: border-color 1s;
-  `),
+  component: App,
 };
