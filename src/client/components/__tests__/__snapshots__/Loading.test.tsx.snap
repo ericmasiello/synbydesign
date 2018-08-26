@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a loading message 1`] = `
+<div>
+  Loading...
+</div>
+`;
+
+exports[`should render an error 1`] = `
+<div>
+  <button
+    className="sc-bdVaJa dRVveR"
+    onClick={[MockFunction]}
+  >
+    Retry
+  </button>
+</div>
+`;
+
+exports[`should render an timeout message 1`] = `
+<div>
+  Hmm. This is taking awhile. 
+  <button
+    className="sc-bdVaJa dRVveR"
+    onClick={[MockFunction]}
+  >
+    Retry?
+  </button>
+</div>
+`;
+
+exports[`should render nothing by default 1`] = `null`;
