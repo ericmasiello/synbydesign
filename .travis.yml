@@ -7,7 +7,8 @@ node_js: 8
 notifications:
   email: false
 script:
-  - npm run validate
+  - npm run lint
+  - npm run test:coverage
 deploy:
   provider: script
   script: now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
