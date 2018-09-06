@@ -1,5 +1,4 @@
 import { Reducer } from 'redux';
-import uniqBy from 'lodash-es/uniqBy';
 import * as types from './types';
 
 export const defaultPortfolioMeta: UIPortfolioMeta = {
@@ -31,10 +30,41 @@ export const portfolioMetaReducer: Reducer<UIPortfolioMeta> = (
   return state;
 };
 
+const dedupePortfolioItems = (
+  portfolioWithPossibleDuplicates: Portfolio[],
+): Portfolio[] => {
+  interface PortfolioMap {
+    [x: string]: number;
+  }
+
+  const uniqueMap = portfolioWithPossibleDuplicates.reduce(
+    (acc, item) => {
+      if (!acc[item.id]) {
+        acc[item.id] = 0;
+      }
+      return acc;
+    },
+    {} as PortfolioMap,
+  );
+
+  return portfolioWithPossibleDuplicates.reduce(
+    (acc, item) => {
+      if (acc.counts[item.id] === 0) {
+        acc.items.push(item);
+        acc.counts[item.id] = 1;
+      }
+      return acc;
+    },
+    {
+      items: [] as Portfolio[],
+      counts: uniqueMap,
+    },
+  ).items;
+};
+
 export const portfolioReducer: Reducer<Portfolio[]> = (state = [], action) => {
   if (action.type === types.FETCH_PORTFOLIO_ITEMS && !action.error) {
-    // TODO: remove uniqBy
-    return uniqBy([...state, ...action.payload.data], 'id');
+    return dedupePortfolioItems([...state, ...action.payload.data]);
   }
 
   if (action.type === types.FETCH_PORTFOLIO_DETAIL && !action.error) {
