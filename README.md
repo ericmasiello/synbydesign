@@ -15,6 +15,10 @@ This repository is my personal portfolio, resume, and playground where I experim
 npm run dev
 ```
 
+#### Running the client locally with a service worker
+
+By default, the service worker is only invoked in a production environment. This typically done by running `npm run prod:build-client`. However, you can force the service worker to run in a dev environment by running `npm run dev:build-client -- --env.serviceWorker=true`.
+
 #### Run development server with VS Code debugging
 
 You'll need to run the client and server builds in watch mode as two separate tasks
@@ -57,4 +61,10 @@ npm run dev:watch-server
 ```
 npm run build
 npm start
+```
+
+### Analyzing Client Bundle
+
+```
+npm run prod:build-client -- --env.analyze=true
 ```
