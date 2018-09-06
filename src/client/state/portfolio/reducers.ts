@@ -31,36 +31,23 @@ export const portfolioMetaReducer: Reducer<UIPortfolioMeta> = (
 };
 
 const dedupePortfolioItems = (
-  portfolioWithPossibleDuplicates: Portfolio[],
-): Portfolio[] => {
-  interface PortfolioMap {
-    [x: string]: number;
-  }
-
-  const uniqueMap = portfolioWithPossibleDuplicates.reduce(
+  portfolioWithPossibleDuplicates: Portfolio[] = [],
+): Portfolio[] =>
+  portfolioWithPossibleDuplicates.reduce(
     (acc, item) => {
-      if (!acc[item.id]) {
-        acc[item.id] = 0;
-      }
-      return acc;
-    },
-    {} as PortfolioMap,
-  );
-
-  return portfolioWithPossibleDuplicates.reduce(
-    (acc, item) => {
-      if (acc.counts[item.id] === 0) {
+      if (!acc.added[item.id]) {
         acc.items.push(item);
-        acc.counts[item.id] = 1;
+        acc.added[item.id] = true;
       }
       return acc;
     },
     {
       items: [] as Portfolio[],
-      counts: uniqueMap,
+      added: {} as {
+        [x: string]: boolean;
+      },
     },
   ).items;
-};
 
 export const portfolioReducer: Reducer<Portfolio[]> = (state = [], action) => {
   if (action.type === types.FETCH_PORTFOLIO_ITEMS && !action.error) {
