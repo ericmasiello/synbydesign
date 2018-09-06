@@ -13,6 +13,11 @@ declare module '*.svg' {
   export = value;
 }
 
+declare module '*.json' {
+  const value: any;
+  export = value;
+}
+
 declare module 'mixpanel-browser' {
   interface Mixpanel {
     init: (token: string) => void;

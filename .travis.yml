@@ -11,3 +11,10 @@ notifications:
   email: false
 script:
   - npm run validate
+deploy:
+- provider: script
+    script: now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      master: true
+# https://zeit.co/docs/continuous-integration/travis

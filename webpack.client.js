@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 const now = require('./now.json');
 
 module.exports = (env = {}, { mode }) => {
@@ -65,6 +67,19 @@ module.exports = (env = {}, { mode }) => {
     test: /\.(jpe?g|png|gif|svg)$/i,
   });
 
+  const plugins = [
+    indexPage,
+    errorPage,
+    serviceWorker,
+    copyWebpackPlugin,
+    imageMinPlugin,
+    envPlugin,
+  ];
+
+  if (env.analyze === 'true') {
+    plugins.push(new BundleAnalyzerPlugin());
+  }
+
   const config = {
     // Tell webpack the root file of our
     // server application
@@ -78,12 +93,6 @@ module.exports = (env = {}, { mode }) => {
       filename: '[name].js',
       path: path.resolve(__dirname, 'public'),
       publicPath: '/',
-    },
-
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-      },
     },
 
     module: {
@@ -101,14 +110,7 @@ module.exports = (env = {}, { mode }) => {
       ],
     },
 
-    plugins: [
-      indexPage,
-      errorPage,
-      serviceWorker,
-      copyWebpackPlugin,
-      imageMinPlugin,
-      envPlugin,
-    ],
+    plugins,
   };
 
   const prodConfig = {

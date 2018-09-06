@@ -6,6 +6,7 @@ import * as tinyColor from 'tinycolor2';
 import base from './styles/base';
 import { PAGE, COLORS, pageBorderWidth } from './styles/vars';
 import { pxToRem } from './styles/utils';
+import * as packageJSON from '../../package.json';
 
 injectGlobal`
   ${base}
@@ -17,8 +18,18 @@ interface Props
   portfolio?: Portfolio;
 }
 
+const Version = styled.small`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: ${pxToRem(2)} ${pxToRem(4)} 0;
+`;
+
 const Chrome: React.SFC<Props> = ({ children, className }) => (
-  <div className={className}>{children}</div>
+  <div className={className}>
+    {children}
+    <Version>v{packageJSON.version}</Version>
+  </div>
 );
 
 function mapStateToProps(state: AppState, props: Props) {
@@ -35,17 +46,30 @@ function mapStateToProps(state: AppState, props: Props) {
   return props;
 }
 
-export default styled(connect(mapStateToProps)(Chrome))`
-  ${({ portfolio }) => {
-    let color = tinyColor(COLORS.highlight)
-      .setAlpha(0.8)
-      .toRgbString();
-    if (portfolio && portfolio.meta && portfolio.meta.highlightColor) {
-      color = portfolio.meta.highlightColor;
-    }
-    return `border: ${pageBorderWidth} solid ${color};`;
-  }};
+const getThemeColor = (props: { portfolio?: Portfolio }) => {
+  if (
+    props.portfolio &&
+    props.portfolio.meta &&
+    props.portfolio.meta.highlightColor
+  ) {
+    return props.portfolio.meta.highlightColor;
+  }
+  return tinyColor(COLORS.highlight)
+    .setAlpha(0.8)
+    .toRgbString();
+};
+
+const StyledChrome = styled(Chrome)`
+  ${props => `border: ${pageBorderWidth} solid ${getThemeColor(props)};`};
   padding-bottom: ${pxToRem(PAGE.bottomPadding)};
   min-height: 100vh;
   transition: border-color 1s;
+  position: relative;
+
+  ${Version} {
+    ${props => `background-color: ${getThemeColor(props)};`};
+    color: ${COLORS.bg};
+  }
 `;
+
+export default connect(mapStateToProps)(StyledChrome);
