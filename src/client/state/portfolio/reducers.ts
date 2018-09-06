@@ -2,7 +2,7 @@ import { Reducer } from 'redux';
 import uniqBy from 'lodash-es/uniqBy';
 import * as types from './types';
 
-const defaultPortfolioMeta: UIPortfolioMeta = {
+export const defaultPortfolioMeta: UIPortfolioMeta = {
   currentPageNumber: 0,
   pageSize: 0,
   totalPages: 0,
