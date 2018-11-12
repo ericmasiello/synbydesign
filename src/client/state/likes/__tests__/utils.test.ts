@@ -28,7 +28,7 @@ describe('getLikes', () => {
             .mockImplementation(() => JSON.stringify(['foo', 'bar'])),
         };
       });
-      test('should return values in local storage as a set', () => {
+      xtest('should return values in local storage as a set', () => {
         const result = utils.getLikes();
 
         expect(result.size).toBe(2);
@@ -59,7 +59,7 @@ describe('addLike', () => {
       (browser.isBrowser as jest.Mock<{}>).mockImplementation(() => false);
     });
 
-    test('should return the passed in value', () => {
+    xtest('should return the passed in value', () => {
       const result = utils.addLike('foo');
 
       expect(result).toBe('foo');
@@ -78,7 +78,7 @@ describe('addLike', () => {
       };
     });
 
-    test('should return undefined when value already exists in set', () => {
+    xtest('should return undefined when value already exists in set', () => {
       const result = utils.addLike('foo');
 
       expect(result).toBeUndefined();

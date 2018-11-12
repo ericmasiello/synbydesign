@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render 1`] = `
-<article
-  className={undefined}
->
+<article>
   <hgroup>
     <h1
       className="professional-experience__org sc-ifAKCX eUdGbB"
