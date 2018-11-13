@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as tinyColor from 'tinycolor2';
@@ -8,7 +8,7 @@ import { PAGE, COLORS, pageBorderWidth } from './styles/vars';
 import { pxToRem } from './styles/utils';
 import * as packageJSON from '../../package.json';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   ${base}
 `;
 
@@ -26,10 +26,13 @@ const Version = styled.small`
 `;
 
 const Chrome: React.SFC<Props> = ({ children, className }) => (
-  <div className={className}>
-    {children}
-    <Version>v{packageJSON.version}</Version>
-  </div>
+  <React.Fragment>
+    <GlobalStyle />
+    <div className={className}>
+      {children}
+      <Version>v{packageJSON.version}</Version>
+    </div>
+  </React.Fragment>
 );
 
 function mapStateToProps(state: AppState, props: Props) {
