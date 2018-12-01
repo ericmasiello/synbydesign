@@ -9,9 +9,7 @@ import {
 } from '../styles/vars';
 import Nav from './Nav';
 
-interface Props {
-  className?: string;
-}
+interface Props extends React.HTMLProps<HTMLDivElement> {}
 
 export const HeaderContent: React.SFC<Props> = props => (
   <div className={props.className}>{props.children}</div>
