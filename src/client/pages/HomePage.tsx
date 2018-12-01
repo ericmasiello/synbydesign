@@ -9,7 +9,6 @@ import Resume from '../components/Resume';
 import Meta from '../components/Meta';
 import Button from '../components/Button';
 import { pxToRem } from '../styles/utils';
-import { ThunkActionCreator } from '../../types.d';
 import likes from '../state/likes';
 import resume from '../state/resume';
 import portfolio from '../state/portfolio';
@@ -20,10 +19,6 @@ const pageRequest: PortfolioRequestParams = {
 };
 
 interface Props {
-  fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
-  fetchResume: ThunkActionCreator<Resume>;
-  fetchLikes: ThunkActionCreator<Like[]>;
-  addLike: ThunkActionCreator<Like>;
   className?: string;
   portfolioItems: LikedPortfolio[];
   resume: Resume;
@@ -38,14 +33,14 @@ export class HomePage extends React.Component<Props, {}> {
       this.loadInitialPortfolioPage();
     }
     if (Object.keys(this.props.resume).length === 0) {
-      this.props.fetchResume();
+      resume.fetchResume();
     }
 
-    this.props.fetchLikes();
+    likes.fetchLikes();
   }
 
   loadInitialPortfolioPage = () => {
-    this.props.fetchPortfolioItems({
+    portfolio.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: 1,
     });
@@ -55,7 +50,7 @@ export class HomePage extends React.Component<Props, {}> {
     import('../utils/tracking').then(tracking =>
       tracking.default('Clicked next page'),
     );
-    this.props.fetchPortfolioItems({
+    portfolio.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: this.props.currentPageNumber + 1,
     });
@@ -70,7 +65,7 @@ export class HomePage extends React.Component<Props, {}> {
         <PortfolioGallery
           id="gallery"
           items={this.props.portfolioItems}
-          addLike={this.props.addLike}
+          addLike={likes.addLike}
         />
         {this.props.existsMorePortfolioItems && (
           <Button onClick={this.loadNextPortfolioPage}>View more</Button>
@@ -112,13 +107,5 @@ export default {
       dispatch(resume.fetchResume()),
       dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(
-    mapStateToProps,
-    {
-      fetchPortfolioItems: portfolio.fetchPortfolioItems,
-      fetchResume: resume.fetchResume,
-      fetchLikes: likes.fetchLikes,
-      addLike: likes.addLike,
-    },
-  )(StyledHomePage),
+  component: connect(mapStateToProps)(StyledHomePage),
 };

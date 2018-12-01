@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { ThunkActionCreator } from '../../types.d';
 import Header from '../components/HeaderOnline';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetailSVG from '../components/Portfolio/PortfolioDetailSVG';
@@ -19,7 +18,6 @@ import {
 import portfolio from '../state/portfolio';
 
 interface Props {
-  fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
   className?: string;
   portfolio?: Portfolio;
   match: {
@@ -32,7 +30,7 @@ interface Props {
 export class PortfolioDetailPage extends React.Component<Props, {}> {
   componentDidMount() {
     // TODO: only fetch if we don't have the data
-    this.props.fetchPortfolioDetail(this.props.match.params.id);
+    portfolio.fetchPortfolioDetail(this.props.match.params.id);
   }
 
   getDetailView(portfolio: Portfolio) {
@@ -113,12 +111,7 @@ function mapStateToProps(state: AppState, props: Props) {
 const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
   dispatch(portfolio.fetchPortfolioDetail(id));
 
-const Component = connect(
-  mapStateToProps,
-  {
-    fetchPortfolioDetail: portfolio.fetchPortfolioDetail,
-  },
-)(StyledPortfolioDetailPage);
+const Component = connect(mapStateToProps)(StyledPortfolioDetailPage);
 
 export default {
   loadData,
