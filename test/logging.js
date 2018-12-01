@@ -1,4 +1,6 @@
-import * as winston from 'winston'
+import logger from '../src/server/utils/logger';
 
-// remove winston logging
-winston.remove(winston.transports.Console);
+// disable winston logging for tests
+logger.transports.forEach(t => {
+  t.silent = true;
+});
