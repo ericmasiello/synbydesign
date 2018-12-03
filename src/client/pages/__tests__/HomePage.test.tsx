@@ -3,9 +3,16 @@ import { shallow } from 'enzyme';
 import { HomePage } from '../HomePage';
 import { ThunkActionCreator } from '../../../types.d';
 
+const fetchPortfolioItems = jest.fn();
+const fetchResume = jest.fn();
+const fetchLikes = jest.fn();
+
 test('should render HomePage', () => {
   const wrapper = shallow(
     <HomePage
+      fetchPortfolioItems={fetchPortfolioItems}
+      fetchResume={fetchResume}
+      fetchLikes={fetchLikes}
       portfolioItems={[]}
       resume={{} as Resume}
       existsMorePortfolioItems={false}

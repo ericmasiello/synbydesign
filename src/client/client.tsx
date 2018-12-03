@@ -50,7 +50,7 @@ const axiosInstance = axios.create({
   baseURL: '/api',
 });
 
-const store = createStore(
+export const store = createStore(
   axiosInstance,
   (window as AppWindow).INITIAL_STATE,
   (window as AppWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__,

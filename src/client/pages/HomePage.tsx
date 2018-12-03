@@ -12,6 +12,7 @@ import { pxToRem } from '../styles/utils';
 import likes from '../state/likes';
 import resume from '../state/resume';
 import portfolio from '../state/portfolio';
+import { PortfolioThunkActionCreator, ThunkActionCreator } from '../../types';
 
 const pageRequest: PortfolioRequestParams = {
   pageSize: 8,
@@ -19,6 +20,10 @@ const pageRequest: PortfolioRequestParams = {
 };
 
 interface Props {
+  // FIXME:
+  fetchPortfolioItems: any;
+  fetchResume: any;
+  fetchLikes: any;
   className?: string;
   portfolioItems: LikedPortfolio[];
   resume: Resume;
@@ -33,14 +38,14 @@ export class HomePage extends React.Component<Props, {}> {
       this.loadInitialPortfolioPage();
     }
     if (Object.keys(this.props.resume).length === 0) {
-      resume.fetchResume();
+      (this.props.fetchResume as ThunkActionCreator<any>)();
     }
 
-    likes.fetchLikes();
+    (this.props.fetchLikes as ThunkActionCreator<Like[]>)();
   }
 
   loadInitialPortfolioPage = () => {
-    portfolio.fetchPortfolioItems({
+    this.props.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: 1,
     });
@@ -50,7 +55,9 @@ export class HomePage extends React.Component<Props, {}> {
     import('../utils/tracking').then(tracking =>
       tracking.default('Clicked next page'),
     );
-    portfolio.fetchPortfolioItems({
+    (this.props.fetchPortfolioItems as PortfolioThunkActionCreator<
+      Portfolio[]
+    >)({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: this.props.currentPageNumber + 1,
     });
@@ -107,5 +114,12 @@ export default {
       dispatch(resume.fetchResume()),
       dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(mapStateToProps)(StyledHomePage),
+  component: connect(
+    mapStateToProps,
+    {
+      fetchPortfolioItems: portfolio.fetchPortfolioItems,
+      fetchResume: resume.fetchResume,
+      fetchLikes: likes.fetchLikes,
+    },
+  )(StyledHomePage),
 };
