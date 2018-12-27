@@ -19,8 +19,7 @@ import portfolio from '../state/portfolio';
 import { PortfolioDetailThunkActionCreator } from '../../types';
 
 interface Props {
-  // FIXME:
-  fetchPortfolioDetail: any;
+  fetchPortfolioDetail: PortfolioDetailThunkActionCreator<Portfolio>;
   className?: string;
   portfolio?: Portfolio;
   match: {
@@ -33,9 +32,7 @@ interface Props {
 export class PortfolioDetailPage extends React.Component<Props, {}> {
   componentDidMount() {
     // TODO: only fetch if we don't have the data
-    (this.props.fetchPortfolioDetail as PortfolioDetailThunkActionCreator<
-      Portfolio
-    >)(this.props.match.params.id);
+    this.props.fetchPortfolioDetail(this.props.match.params.id);
   }
 
   getDetailView(portfolio: Portfolio) {
@@ -116,14 +113,15 @@ function mapStateToProps(state: AppState, props: Props) {
 const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
   dispatch(portfolio.fetchPortfolioDetail(id));
 
-const Component = connect(
+const WrappedComponent = connect(
   mapStateToProps,
   {
     fetchPortfolioDetail: portfolio.fetchPortfolioDetail,
   },
+  // @ts-ignore
 )(StyledPortfolioDetailPage);
 
 export default {
   loadData,
-  component: Component,
+  component: WrappedComponent,
 };

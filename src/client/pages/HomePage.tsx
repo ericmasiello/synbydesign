@@ -20,10 +20,10 @@ const pageRequest: PortfolioRequestParams = {
 };
 
 interface Props {
-  // FIXME:
-  fetchPortfolioItems: any;
-  fetchResume: any;
-  fetchLikes: any;
+  fetchPortfolioItems: PortfolioThunkActionCreator<Portfolio[]>;
+  fetchResume: ThunkActionCreator<any>;
+  fetchLikes: ThunkActionCreator<any>;
+  addLike: ThunkActionCreator<any>;
   className?: string;
   portfolioItems: LikedPortfolio[];
   resume: Resume;
@@ -38,10 +38,10 @@ export class HomePage extends React.Component<Props, {}> {
       this.loadInitialPortfolioPage();
     }
     if (Object.keys(this.props.resume).length === 0) {
-      (this.props.fetchResume as ThunkActionCreator<any>)();
+      this.props.fetchResume();
     }
 
-    (this.props.fetchLikes as ThunkActionCreator<Like[]>)();
+    this.props.fetchLikes();
   }
 
   loadInitialPortfolioPage = () => {
@@ -55,29 +55,35 @@ export class HomePage extends React.Component<Props, {}> {
     import('../utils/tracking').then(tracking =>
       tracking.default('Clicked next page'),
     );
-    (this.props.fetchPortfolioItems as PortfolioThunkActionCreator<
-      Portfolio[]
-    >)({
+    this.props.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: this.props.currentPageNumber + 1,
     });
   };
 
   render() {
+    const {
+      className,
+      portfolioItems,
+      addLike,
+      existsMorePortfolioItems,
+      resume,
+    } = this.props;
+
     return (
-      <div className={this.props.className}>
+      <div className={className}>
         <Meta />
         <Header />
         <Hero />
         <PortfolioGallery
           id="gallery"
-          items={this.props.portfolioItems}
-          addLike={likes.addLike}
+          items={portfolioItems}
+          addLike={addLike}
         />
-        {this.props.existsMorePortfolioItems && (
+        {existsMorePortfolioItems && (
           <Button onClick={this.loadNextPortfolioPage}>View more</Button>
         )}
-        <Resume {...this.props.resume} id="resume" />
+        <Resume {...resume} id="resume" />
       </div>
     );
   }
@@ -108,18 +114,22 @@ const StyledHomePage = styled(HomePage)`
   }
 `;
 
+const WrappedComponent = connect(
+  mapStateToProps,
+  {
+    fetchPortfolioItems: portfolio.fetchPortfolioItems,
+    fetchResume: resume.fetchResume,
+    fetchLikes: likes.fetchLikes,
+    addLike: likes.addLike,
+  },
+  // @ts-ignore
+)(StyledHomePage);
+
 export default {
   loadData: ({ dispatch }: Store<Portfolio[]>) =>
     Promise.all([
       dispatch(resume.fetchResume()),
       dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(
-    mapStateToProps,
-    {
-      fetchPortfolioItems: portfolio.fetchPortfolioItems,
-      fetchResume: resume.fetchResume,
-      fetchLikes: likes.fetchLikes,
-    },
-  )(StyledHomePage),
+  component: WrappedComponent,
 };
