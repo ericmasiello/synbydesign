@@ -12,11 +12,6 @@ export interface Props extends RelatedExperience {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  tag: Tag;
-  accomplishments: string[];
-}
-
 export const RelatedExperience: React.SFC<Props> = props => {
   const {
     tag: Tag,
@@ -27,8 +22,9 @@ export const RelatedExperience: React.SFC<Props> = props => {
     accomplishments,
     className,
     ...rest
-  } = props as Props & DefaultProps;
+  } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       <hgroup>
         <TypeBase tag="h1" data-title className="related-experience__title">
@@ -71,8 +67,7 @@ export const RelatedExperience: React.SFC<Props> = props => {
 
 RelatedExperience.defaultProps = {
   tag: 'article',
-  accomplishments: [],
-} as DefaultProps;
+};
 
 RelatedExperience.displayName = 'RelatedExperience';
 

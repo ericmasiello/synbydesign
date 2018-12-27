@@ -23,6 +23,7 @@ export default function makeTypeComponent(typeSize: TypeSize): ReturnType {
   const Type: React.SFC<Props> = props => {
     const { tag: Tag, className, scale, children, ...rest } = props;
     return (
+      // @ts-ignore
       <Tag className={className} {...rest}>
         {children}
       </Tag>

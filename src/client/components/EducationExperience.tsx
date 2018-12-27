@@ -10,10 +10,6 @@ export interface Props extends Education {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  tag: Tag;
-}
-
 export const EducationExperience: React.SFC<Props> = props => {
   const {
     tag: Tag,
@@ -23,8 +19,9 @@ export const EducationExperience: React.SFC<Props> = props => {
     year,
     degree,
     ...rest
-  } = props as Props & DefaultProps;
+  } = props as Props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       <TypeBase tag="h1" className="education__title">
         {institution}
@@ -44,7 +41,7 @@ export const EducationExperience: React.SFC<Props> = props => {
 
 EducationExperience.defaultProps = {
   tag: 'section',
-} as DefaultProps;
+};
 
 export default styled(EducationExperience)`
   .education__title {

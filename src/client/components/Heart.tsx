@@ -20,14 +20,10 @@ interface Props extends React.HTMLProps<HTMLButtonElement> {
   className?: string;
 }
 
-interface DefaultProps {
-  tag: Tag;
-}
-
 export const Heart: React.SFC<Props> = props => {
-  const { className, tag: Tag, children, ...rest } = props as Props &
-    DefaultProps;
+  const { className, tag: Tag, children, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       <HeartIcon viewBox="-4.75 11.781 10.5 9.5">
         <path
@@ -46,7 +42,7 @@ Heart.displayName = 'Heart';
 
 Heart.defaultProps = {
   tag: 'button',
-} as DefaultProps;
+};
 
 export default styled(Heart)`
   display: inline-flex;

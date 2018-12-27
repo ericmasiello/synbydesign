@@ -11,16 +11,12 @@ interface Props extends React.HTMLProps<HTMLElement> {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  tag: Tag;
-}
-
 const secondaryList = Array.from({ length: 3 }, (v, i) => i);
 
 export const PortfolioDetailSVG: React.SFC<Props> = props => {
-  const { tag: Tag, className, svgSource, ...rest } = props as Props &
-    DefaultProps;
+  const { tag: Tag, className, svgSource, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       <PortfolioItemSVG
         svgSource={svgSource}
@@ -41,7 +37,7 @@ export const PortfolioDetailSVG: React.SFC<Props> = props => {
 
 PortfolioDetailSVG.defaultProps = {
   tag: 'article',
-} as DefaultProps;
+};
 
 PortfolioDetailSVG.displayName = 'Portfolio.DetailSVG';
 

@@ -3,18 +3,11 @@ import styled from 'styled-components';
 import * as tinyColor from 'tinycolor2';
 import { COLORS } from '../styles/vars';
 
-interface Props extends React.HTMLProps<HTMLLinkElement> {
+interface Props extends React.HTMLProps<HTMLAnchorElement> {
   borderColor?: string;
   linkColor?: string;
   hoverLinkColor?: string;
   tag?: Tag;
-}
-
-interface DefaultProps {
-  borderColor: string;
-  linkColor: string;
-  hoverLinkColor: string;
-  tag: Tag;
 }
 
 const AnimatedLink: React.SFC<Props> = props => {
@@ -24,7 +17,8 @@ const AnimatedLink: React.SFC<Props> = props => {
     linkColor,
     hoverLinkColor,
     ...rest
-  } = props as Props & DefaultProps;
+  } = props as Props;
+  // @ts-ignore
   return <Tag {...rest} />;
 };
 
@@ -37,7 +31,7 @@ AnimatedLink.defaultProps = {
     .darken(10)
     .toRgbString(),
   tag: 'a',
-} as DefaultProps;
+};
 
 export default styled(AnimatedLink)`
   ${props => {
