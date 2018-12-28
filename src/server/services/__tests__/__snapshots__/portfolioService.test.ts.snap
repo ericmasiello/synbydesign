@@ -26,26 +26,26 @@ Object {
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-original.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963778/synbydesign/master-react-native-front.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963778/synbydesign/master-react-native-front.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963778/synbydesign/master-react-native-front.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963778/synbydesign/master-react-native-front.png",
           "title": "Mastering React Native - front cover",
         },
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-original.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963776/synbydesign/master-react-native-back.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963776/synbydesign/master-react-native-back.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963776/synbydesign/master-react-native-back.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963776/synbydesign/master-react-native-back.png",
           "title": "Mastering React Native - back cover",
         },
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-450px.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "meta": Object {
             "backgroundStyles": Object {
               "size": "20%",
@@ -54,9 +54,9 @@ Object {
               "hero",
             ],
           },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-original.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "title": "Mastering React Native - front and back cover with crop marks",
         },
       ],
@@ -90,16 +90,16 @@ Object {
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-450px.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963374/synbydesign/stencil-splash.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963374/synbydesign/stencil-splash.png",
           "meta": Object {
             "usage": Array [
               "hero",
             ],
           },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-original.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963374/synbydesign/stencil-splash.png",
           "priority": 1,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963374/synbydesign/stencil-splash.png",
           "title": "Stencil Splash Screen and Logo",
         },
         Object {
@@ -702,26 +702,26 @@ Object {
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-original.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963778/synbydesign/master-react-native-front.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963778/synbydesign/master-react-native-front.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963778/synbydesign/master-react-native-front.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-front-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963778/synbydesign/master-react-native-front.png",
           "title": "Mastering React Native - front cover",
         },
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-450px.png",
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-original.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963776/synbydesign/master-react-native-back.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963776/synbydesign/master-react-native-back.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963776/synbydesign/master-react-native-back.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-back-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963776/synbydesign/master-react-native-back.png",
           "title": "Mastering React Native - back cover",
         },
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-450px.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "meta": Object {
             "backgroundStyles": Object {
               "size": "20%",
@@ -730,9 +730,9 @@ Object {
               "hero",
             ],
           },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-original.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "priority": 0,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/master-react-native-print-marks-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "title": "Mastering React Native - front and back cover with crop marks",
         },
       ],
@@ -766,16 +766,16 @@ Object {
       "imagePaths": Array [
         Object {
           "description": "",
-          "largeUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-700px.png",
-          "mediumUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-450px.png",
+          "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/v1545963374/synbydesign/stencil-splash.png",
+          "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963374/synbydesign/stencil-splash.png",
           "meta": Object {
             "usage": Array [
               "hero",
             ],
           },
-          "originalUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-original.png",
+          "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963374/synbydesign/stencil-splash.png",
           "priority": 1,
-          "thumbUrl": "//d2ltmid28ikt18.cloudfront.net/stencil/stencil-splash-200px.png",
+          "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963374/synbydesign/stencil-splash.png",
           "title": "Stencil Splash Screen and Logo",
         },
         Object {

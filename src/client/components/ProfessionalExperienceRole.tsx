@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import TypeBase from './TypeBase';
 import TypeSmall from './TypeSmall';
+import Muted from './Muted';
 import { TYPE_SIZE, COLORS } from '../styles/vars';
 import { pxToRem } from '../styles/utils';
 
@@ -16,8 +17,10 @@ const computeLineHeight = (size: TypeSize) => {
 };
 
 const getTimeline = (yearFrom: string, yearTo: string = 'Present') => (
-  <TypeSmall tag="p" className="role__timeline">
+  <TypeSmall tag={Muted} className="role__timeline">
+    <span className="role__parentheses">(</span>
     {yearFrom} &mdash; {yearTo}
+    <span className="role__parentheses">)</span>
   </TypeSmall>
 );
 
@@ -26,9 +29,8 @@ export const ProfessionalExperienceRole: React.SFC<Props> = props => {
   return (
     <div className={className} {...rest}>
       <TypeBase tag="h2" className="role__title">
-        {title}
+        {title} {getTimeline(yearFrom, yearTo)}
       </TypeBase>
-      {getTimeline(yearFrom, yearTo)}
     </div>
   );
 };
@@ -40,10 +42,18 @@ export default styled(ProfessionalExperienceRole)`
 
   .role__title {
     color: ${COLORS.highlight};
-    margin-bottom: 0;
+    margin-bottom: 0.25rem;
+  }
 
-    @media (min-width: ${TIMELINE_IN_MARGIN}) {
+  &:nth-last-of-type(1) {
+    .role__title {
       margin-bottom: 0.5rem;
+    }
+  }
+
+  .role__parentheses {
+    @media (min-width: ${TIMELINE_IN_MARGIN}) {
+      display: none;
     }
   }
 

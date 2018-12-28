@@ -37,7 +37,7 @@ it('should render additional props', () => {
 it('should render title', () => {
   const wrapper = mount(<ProfessionalExperienceRole {...base} />);
 
-  expect(wrapper.find('h2.role__title').text()).toEqual(base.title);
+  expect(wrapper.find('h2.role__title').text()).toContain(base.title);
 });
 
 it('should render timeline when still employed', () => {

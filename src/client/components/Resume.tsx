@@ -64,7 +64,9 @@ export const Resume: React.SFC<Props> = props => {
         </TypeBase>
         {relatedExperience.map(experience => (
           <RelatedExperience
-            key={`${experience.title}${experience.role!.yearFrom}`}
+            key={`${experience.title}${experience.role.title}${
+              experience.role!.yearFrom
+            }`}
             {...experience}
           />
         ))}
