@@ -36,7 +36,7 @@ NavListItem.displayName = 'NavListItem';
 class Nav extends React.Component<Props> {
   static displayName = 'Nav';
 
-  scrollTo = (event: React.MouseEvent<HTMLLinkElement>) => {
+  scrollTo = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     const elm = event.currentTarget;
     const hash: string = (elm as any).hash;

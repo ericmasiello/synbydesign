@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { ThunkActionCreator } from '../../types.d';
 import Header from '../components/HeaderOnline';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetailSVG from '../components/Portfolio/PortfolioDetailSVG';
@@ -17,11 +16,12 @@ import {
   getHeroImage,
 } from '../utils/portfolioImage';
 import portfolio from '../state/portfolio';
+import { PortfolioDetailThunkActionCreator } from '../../types';
 
 interface Props {
-  fetchPortfolioDetail: ThunkActionCreator<Portfolio>;
+  fetchPortfolioDetail: PortfolioDetailThunkActionCreator<Portfolio>;
   className?: string;
-  portfolio: Portfolio;
+  portfolio?: Portfolio;
   match: {
     params: {
       id: string;
@@ -40,17 +40,22 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
       return <PortfolioDetailSVG svgSource={portfolio.svgSource} />;
     }
 
-    const galleryImagesPaths = getGalleryImages(
-      this.props.portfolio.imagePaths,
-    );
-    if (galleryImagesPaths.length > 1) {
-      return <PortfolioDetailGallery portfolio={portfolio} />;
-    }
+    if (this.props.portfolio) {
+      const galleryImagesPaths = getGalleryImages(
+        this.props.portfolio.imagePaths,
+      );
+      if (galleryImagesPaths.length > 1) {
+        return <PortfolioDetailGallery portfolio={portfolio} />;
+      }
 
-    return <PortfolioDetailImage imagePath={galleryImagesPaths[0]} />;
+      return <PortfolioDetailImage imagePath={galleryImagesPaths[0]} />;
+    }
   }
 
   render() {
+    if (!this.props.portfolio) {
+      return;
+    }
     const heroImage = getHeroImage(this.props.portfolio.imagePaths);
     const bgImage = getBackgroundImage(this.props.portfolio.imagePaths);
 
@@ -61,13 +66,12 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
             <title>{this.props.portfolio.title}</title>
             <meta property="og:title" content={this.props.portfolio.title} />
           </Helmet>
-          {!heroImage &&
-            bgImage && (
-              <PortfolioDetailBackground
-                imagePath={bgImage.originalUrl}
-                styles={bgImage.meta && bgImage.meta.backgroundStyles}
-              />
-            )}
+          {!heroImage && bgImage && (
+            <PortfolioDetailBackground
+              imagePath={bgImage.originalUrl}
+              styles={bgImage.meta && bgImage.meta.backgroundStyles}
+            />
+          )}
           <div className="content">
             <Header />
             {heroImage && (
@@ -109,9 +113,15 @@ function mapStateToProps(state: AppState, props: Props) {
 const loadData = ({ dispatch }: Store<Portfolio>, { id }: { id: string }) =>
   dispatch(portfolio.fetchPortfolioDetail(id));
 
+const WrappedComponent = connect(
+  mapStateToProps,
+  {
+    fetchPortfolioDetail: portfolio.fetchPortfolioDetail,
+  },
+  // @ts-ignore
+)(StyledPortfolioDetailPage);
+
 export default {
   loadData,
-  component: connect(mapStateToProps, {
-    fetchPortfolioDetail: portfolio.fetchPortfolioDetail,
-  })(StyledPortfolioDetailPage),
+  component: WrappedComponent,
 };

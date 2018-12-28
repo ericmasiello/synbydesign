@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLDivElement> {
   tag?: Tag;
-  className?: string;
 }
 
 const DynamicTag: React.SFC<Props> = props => {
   const { tag: Tag = 'span', className, children, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       {children}
     </Tag>

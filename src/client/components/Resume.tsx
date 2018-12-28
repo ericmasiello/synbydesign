@@ -19,13 +19,6 @@ interface Props extends React.HTMLProps<HTMLElement>, Resume {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  professionalExperience: ProfessionalExperience[];
-  relatedExperience: RelatedExperience[];
-  education: Education[];
-  tag: Tag;
-}
-
 export const Resume: React.SFC<Props> = props => {
   const {
     tag: Tag,
@@ -34,12 +27,13 @@ export const Resume: React.SFC<Props> = props => {
     ownerTitle,
     lead,
     skills,
-    professionalExperience,
-    relatedExperience,
-    education,
+    professionalExperience = [],
+    relatedExperience = [],
+    education = [],
     ...rest
-  } = props as Props & DefaultProps;
+  } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       <ResumeHeader
         ownerName={ownerName}
@@ -91,10 +85,7 @@ Resume.displayName = 'Resume';
 
 Resume.defaultProps = {
   tag: 'section',
-  professionalExperience: [],
-  relatedExperience: [],
-  education: [],
-} as DefaultProps;
+};
 
 export default styled(Resume)`
   display: grid;

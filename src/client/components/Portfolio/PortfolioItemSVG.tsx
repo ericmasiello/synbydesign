@@ -7,14 +7,10 @@ interface Props extends React.HTMLProps<HTMLElement> {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  tag: Tag;
-}
-
 const PortfolioItemSVG: React.SFC<Props> = props => {
-  const { tag: Tag, svgSource, className, ...rest } = props as Props &
-    DefaultProps;
+  const { tag: Tag, svgSource, className, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag
       className={props.className}
       dangerouslySetInnerHTML={{ __html: props.svgSource }}
@@ -25,7 +21,7 @@ const PortfolioItemSVG: React.SFC<Props> = props => {
 
 PortfolioItemSVG.defaultProps = {
   tag: 'div',
-} as DefaultProps;
+};
 
 PortfolioItemSVG.displayName = 'PortfolioItemSVG';
 

@@ -14,14 +14,10 @@ interface Props extends React.HTMLProps<HTMLElement> {
   addLike: ThunkActionCreator<Like>;
 }
 
-interface DefaultProps {
-  items: LikedPortfolio[];
-  tag: Tag;
-}
-
 export const PortfolioGallery: React.SFC<Props> = props => {
-  const { items, tag: Tag, addLike, ...rest } = props as Props & DefaultProps;
+  const { items, tag: Tag, addLike, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag {...rest}>
       {items.map(item => {
         const row = item.meta && item.meta.thumb && item.meta.thumb.row;
@@ -50,9 +46,8 @@ export const PortfolioGallery: React.SFC<Props> = props => {
 PortfolioGallery.displayName = 'PortfolioGallery';
 
 PortfolioGallery.defaultProps = {
-  items: [] as LikedPortfolio[],
   tag: 'ul',
-} as DefaultProps;
+};
 
 export default styled(PortfolioGallery)`
   max-width: ${pxToRem(maxWidth)};

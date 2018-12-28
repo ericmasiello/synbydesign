@@ -10,18 +10,15 @@ interface Props {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  tag: Tag;
-}
-
 export const GalleryItem: React.SFC<Props> = props => {
-  const { tag: Tag, row, column, ...rest } = props as Props & DefaultProps;
+  const { tag: Tag, row, column, ...rest } = props;
+  // @ts-ignore
   return <Tag {...rest} />;
 };
 
 GalleryItem.defaultProps = {
   tag: 'li',
-} as DefaultProps;
+};
 
 GalleryItem.displayName = 'PortfolioGallery.Item';
 

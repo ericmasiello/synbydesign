@@ -9,10 +9,10 @@ import Resume from '../components/Resume';
 import Meta from '../components/Meta';
 import Button from '../components/Button';
 import { pxToRem } from '../styles/utils';
-import { ThunkActionCreator } from '../../types.d';
 import likes from '../state/likes';
 import resume from '../state/resume';
 import portfolio from '../state/portfolio';
+import { PortfolioThunkActionCreator, ThunkActionCreator } from '../../types';
 
 const pageRequest: PortfolioRequestParams = {
   pageSize: 8,
@@ -20,10 +20,10 @@ const pageRequest: PortfolioRequestParams = {
 };
 
 interface Props {
-  fetchPortfolioItems: ThunkActionCreator<Portfolio[]>;
-  fetchResume: ThunkActionCreator<Resume>;
-  fetchLikes: ThunkActionCreator<Like[]>;
-  addLike: ThunkActionCreator<Like>;
+  fetchPortfolioItems: PortfolioThunkActionCreator<Portfolio[]>;
+  fetchResume: ThunkActionCreator<any>;
+  fetchLikes: ThunkActionCreator<any>;
+  addLike: ThunkActionCreator<any>;
   className?: string;
   portfolioItems: LikedPortfolio[];
   resume: Resume;
@@ -62,20 +62,28 @@ export class HomePage extends React.Component<Props, {}> {
   };
 
   render() {
+    const {
+      className,
+      portfolioItems,
+      addLike,
+      existsMorePortfolioItems,
+      resume,
+    } = this.props;
+
     return (
-      <div className={this.props.className}>
+      <div className={className}>
         <Meta />
         <Header />
         <Hero />
         <PortfolioGallery
           id="gallery"
-          items={this.props.portfolioItems}
-          addLike={this.props.addLike}
+          items={portfolioItems}
+          addLike={addLike}
         />
-        {this.props.existsMorePortfolioItems && (
+        {existsMorePortfolioItems && (
           <Button onClick={this.loadNextPortfolioPage}>View more</Button>
         )}
-        <Resume {...this.props.resume} id="resume" />
+        <Resume {...resume} id="resume" />
       </div>
     );
   }
@@ -106,19 +114,22 @@ const StyledHomePage = styled(HomePage)`
   }
 `;
 
+const WrappedComponent = connect(
+  mapStateToProps,
+  {
+    fetchPortfolioItems: portfolio.fetchPortfolioItems,
+    fetchResume: resume.fetchResume,
+    fetchLikes: likes.fetchLikes,
+    addLike: likes.addLike,
+  },
+  // @ts-ignore
+)(StyledHomePage);
+
 export default {
   loadData: ({ dispatch }: Store<Portfolio[]>) =>
     Promise.all([
       dispatch(resume.fetchResume()),
       dispatch(portfolio.fetchPortfolioItems(pageRequest)),
     ]),
-  component: connect(
-    mapStateToProps,
-    {
-      fetchPortfolioItems: portfolio.fetchPortfolioItems,
-      fetchResume: resume.fetchResume,
-      fetchLikes: likes.fetchLikes,
-      addLike: likes.addLike,
-    },
-  )(StyledHomePage),
+  component: WrappedComponent,
 };

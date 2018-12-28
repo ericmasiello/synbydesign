@@ -8,15 +8,10 @@ interface Props {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  skills: string[];
-  tag: Tag;
-}
-
 export const ResumeSkills: React.SFC<Props> = props => {
-  const { tag: Tag, skills, className, ...rest } = props as Props &
-    DefaultProps;
+  const { tag: Tag, skills = [], className, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       {skills.map(skill => (
         <li key={skill}>{skill}</li>
@@ -26,9 +21,8 @@ export const ResumeSkills: React.SFC<Props> = props => {
 };
 
 ResumeSkills.defaultProps = {
-  skills: [],
   tag: 'ul',
-} as DefaultProps;
+};
 
 ResumeSkills.displayName = 'Resume.Skills';
 

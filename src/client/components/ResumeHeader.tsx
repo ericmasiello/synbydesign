@@ -12,20 +12,10 @@ interface Props {
   tag?: Tag;
 }
 
-interface DefaultProps {
-  tag: Tag;
-}
-
 export const ResumeHeader: React.SFC<Props> = props => {
-  const {
-    tag: Tag,
-    className,
-    ownerName,
-    ownerTitle,
-    lead,
-    ...rest
-  } = props as Props & DefaultProps;
+  const { tag: Tag, className, ownerName, ownerTitle, lead, ...rest } = props;
   return (
+    // @ts-ignore
     <Tag className={className} {...rest}>
       <Type3 tag="h1" className="resume-header__name">
         {ownerName}
@@ -40,7 +30,7 @@ export const ResumeHeader: React.SFC<Props> = props => {
 
 ResumeHeader.defaultProps = {
   tag: 'hgroup',
-} as DefaultProps;
+};
 
 ResumeHeader.displayName = 'Resume.Header';
 

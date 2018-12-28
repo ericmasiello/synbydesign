@@ -8,19 +8,15 @@ export interface Props extends React.HTMLAttributes<HTMLElement> {
   tag?: Tag;
 }
 
-interface DefaultProps extends Props {
-  tag: Tag;
-}
-
 export const Button: React.SFC<Props> = props => {
-  const { tag: Tag, ...rest } = props as DefaultProps;
-
+  const { tag: Tag, ...rest } = props;
+  // @ts-ignore
   return <Tag {...rest} />;
 };
 
 Button.defaultProps = {
   tag: 'button',
-} as DefaultProps;
+};
 
 Button.displayName = 'Button';
 

@@ -27,7 +27,7 @@ declare module 'mixpanel-browser' {
   export = mixpanel;
 }
 
-type Tag = React.ComponentType<any> | keyof React.ReactHTML;
+type Tag = React.ReactType;
 
 interface PortfolioThumbMeta {
   fit?:
