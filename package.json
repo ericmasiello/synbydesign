@@ -31,6 +31,7 @@
   "author": "Eric Masiello",
   "license": "ISC",
   "dependencies": {
+    "@sentry/node": "^4.4.2",
     "await-to-js": "~2.1.1",
     "axios": "0.18.0",
     "boom": "~7.3.0",
