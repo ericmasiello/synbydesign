@@ -195,7 +195,13 @@ const PortfolioList: RawPortfolio[] = [
   },
   {
     title: 'Anarchostar',
-    description: 'Web site for electronic music label Anarchostar',
+    description: `<p>Anarchostar was a music label run by founder, DJ Distal. His goal for the site was to build a comicbook-like experience
+      that compliemented the music, with particular tracks pairing with different panels from the comic. The illustrations
+      were done by a Brazilian artist. I partnered with local graphic designers, Catherine Anne, to build the living web experience.</p>
+      <p>In order to make the site maintainable by Distal, I built the site using Wordpress and created a custom parallax theme
+      that supported his original vision.
+      </p>
+      `,
     meta: {
       stackDesign: false,
       websiteUrl: 'http://projects.synbydesign.com/anarchostar/',
