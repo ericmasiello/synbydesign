@@ -62,7 +62,7 @@ const getThemeColor = (props: { portfolio?: Portfolio }) => {
     .toRgbString();
 };
 
-export default styled(connect(mapStateToProps)(Chrome))`
+const StyledChrome = styled(Chrome)`
   ${props => `border: ${pageBorderWidth} solid ${getThemeColor(props)};`};
   padding-bottom: ${pxToRem(PAGE.bottomPadding)};
   min-height: 100vh;
@@ -74,3 +74,6 @@ export default styled(connect(mapStateToProps)(Chrome))`
     color: ${COLORS.bg};
   }
 `;
+
+// @ts-ignore
+export default connect(mapStateToProps)(StyledChrome);
