@@ -294,7 +294,9 @@ const PortfolioList: RawPortfolio[] = [
   },
   {
     title: 'Petrol flyers',
-    description: '',
+    description: `
+      Petrol was a monthly electronic dance music dance event hosted by some close friends and I in Baltimore, Maryland.
+      We brought through many great artists including VIVEK, Goth-Trad, and Photek.`,
     meta: {
       stackDesign: false,
       websiteUrl: '',
