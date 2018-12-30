@@ -83,6 +83,7 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
                   this.props.portfolio.meta &&
                   !this.props.portfolio.meta.showTitle
                 }
+                styles={heroImage.meta && heroImage.meta.backgroundStyles}
               />
             )}
             {this.getDetailView(this.props.portfolio)}
