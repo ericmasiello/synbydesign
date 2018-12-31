@@ -4,7 +4,7 @@ exports[`should render 1`] = `
 <article>
   <hgroup>
     <h1
-      className="professional-experience__org sc-ifAKCX eUdGbB"
+      className="professional-experience__org sc-EHOje fWQtcb"
     >
       Company Name
     </h1>

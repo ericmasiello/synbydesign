@@ -63,6 +63,7 @@ interface Props {
   title: string;
   description?: string;
   hideTitle?: boolean;
+  styles?: BackgroundStyles;
 }
 
 export const PortfolioDetailHero: React.SFC<Props> = props => {
@@ -72,19 +73,13 @@ export const PortfolioDetailHero: React.SFC<Props> = props => {
     imagePath,
     description = '',
     hideTitle,
+    styles,
     ...rest
   } = props;
   return (
     <div className={className} {...rest}>
       <HeroImageContainer>
-        <PortfolioDetailBackground
-          imagePath={imagePath}
-          styles={{
-            filter: 'none',
-            applyGradient: false,
-            size: '80%',
-          }}
-        />
+        <PortfolioDetailBackground imagePath={imagePath} styles={styles} />
       </HeroImageContainer>
       <Content>
         <StyledTitle hide={hideTitle}>{title}</StyledTitle>
@@ -92,6 +87,14 @@ export const PortfolioDetailHero: React.SFC<Props> = props => {
       </Content>
     </div>
   );
+};
+
+PortfolioDetailHero.defaultProps = {
+  styles: {
+    filter: 'none',
+    applyGradient: false,
+    size: '80%',
+  },
 };
 
 PortfolioDetailHero.displayName = 'Portfolio.DetailHero';

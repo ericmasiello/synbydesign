@@ -20,7 +20,7 @@ const Hero: React.SFC<Props> = ({ className }) => {
   return (
     <TypeJumbo tag="div" className={className} scale>
       <HeroCopy>
-        <Muted>Freelance</Muted> <Highlighted>Developer</Highlighted>, Teacher
+        <Muted>Freelance</Muted> <Highlighted>Developer</Highlighted>, Trainer
         &amp; Consultant
       </HeroCopy>
     </TypeJumbo>

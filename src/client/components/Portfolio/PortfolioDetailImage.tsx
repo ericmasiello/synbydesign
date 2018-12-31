@@ -12,7 +12,7 @@ export const PortfolioDetailImage: React.SFC<Props> = props => {
   return (
     <article className={props.className}>
       <a href={props.imagePath.originalUrl}>
-        <img src={props.imagePath.originalUrl} alt="FIXME" />
+        <img src={props.imagePath.originalUrl} alt={props.imagePath.title} />
       </a>
     </article>
   );

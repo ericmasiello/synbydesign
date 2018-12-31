@@ -23,6 +23,11 @@ export const RelatedExperience: React.SFC<Props> = props => {
     className,
     ...rest
   } = props;
+
+  const years =
+    role.yearFrom && role.yearTo
+      ? `${role.yearFrom} — ${role.yearTo}`
+      : role.yearFrom;
   return (
     // @ts-ignore
     <Tag className={className} {...rest}>
@@ -33,9 +38,7 @@ export const RelatedExperience: React.SFC<Props> = props => {
             data-title-content
             dangerouslySetInnerHTML={{ __html: title }}
           />{' '}
-          {role.yearFrom && (
-            <TypeSmall tag={Muted}>({role.yearFrom})</TypeSmall>
-          )}
+          {years && <TypeSmall tag={Muted}>({years})</TypeSmall>}
         </TypeBase>
         {meta && (
           <TypeSmall tag="p" data-meta className="related-experience__meta">

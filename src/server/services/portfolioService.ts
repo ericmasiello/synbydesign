@@ -2,7 +2,26 @@ import rawPortfolioList from '../data/portfolio';
 import kebabCase from 'lodash-es/kebabCase';
 import chunk from 'lodash-es/chunk';
 
+const IMAGE_HOSTING_URL = 'https://res.cloudinary.com/do50usfvq/image/upload';
+const LARGE = 'w_700';
+const MEDIUM = 'w_450';
+const THUMB = 'w_200';
+
 const portfolioList = rawPortfolioToPortfolio(rawPortfolioList);
+
+function composeImagePaths(imagePaths: PortfolioImage[]) {
+  return imagePaths.map(imagePath => {
+    return {
+      ...imagePath,
+      originalUrl: `${IMAGE_HOSTING_URL}/f_auto/${imagePath.originalUrl}`,
+      largeUrl: `${IMAGE_HOSTING_URL}/${LARGE},f_auto/${imagePath.originalUrl}`,
+      mediumUrl: `${IMAGE_HOSTING_URL}/${MEDIUM},f_auto/${
+        imagePath.originalUrl
+      }`,
+      thumbUrl: `${IMAGE_HOSTING_URL}/${THUMB},f_auto/${imagePath.originalUrl}`,
+    };
+  });
+}
 
 function titleToId(title: string): string {
   return kebabCase(title).trim();
@@ -28,8 +47,9 @@ function matchListFilter(filters: string[], filterKey: string) {
 
 function rawPortfolioToPortfolio(rawList: RawPortfolio[]): Portfolio[] {
   return rawList.map(item => ({
-    id: titleToId(item.title),
     ...item,
+    id: titleToId(item.title),
+    imagePaths: composeImagePaths(item.imagePaths),
   }));
 }
 

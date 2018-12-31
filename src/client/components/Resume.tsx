@@ -64,7 +64,9 @@ export const Resume: React.SFC<Props> = props => {
         </TypeBase>
         {relatedExperience.map(experience => (
           <RelatedExperience
-            key={`${experience.title}${experience.role!.yearFrom}`}
+            key={`${experience.title}${experience.role.title}${
+              experience.role!.yearFrom
+            }`}
             {...experience}
           />
         ))}
@@ -98,7 +100,7 @@ export default styled(Resume)`
   grid-gap: 1.25rem 2rem;
   max-width: ${pxToRem(maxWidth)};
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2.5rem;
 
   @media (min-width: ${pxToRem(MEDIA_QUERIES.xlarge)}) {
     grid-template-areas:
