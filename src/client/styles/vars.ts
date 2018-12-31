@@ -79,3 +79,11 @@ const getNumericWeights = (weights: { [x: string]: number }): string => {
 export const FONT_URL = `https://fonts.googleapis.com/css?family=Lato:${getNumericWeights(
   HEADER_WEIGHTS,
 )}|Source+Sans+Pro:${getNumericWeights(BODY_WEIGHTS)}`;
+
+export const FONT_FILES = [
+  'https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2', // 600
+  'https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2', // 400
+  'https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2', // 300
+  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2', // 700
+  'https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXiWtFCc.woff2', // 400
+];

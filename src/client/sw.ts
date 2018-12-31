@@ -6,7 +6,7 @@ import {
   cacheResponseWithCache,
   respondWithFallbackFromCache,
 } from './utils/swCache';
-import { FONT_URL } from './styles/vars';
+import { FONT_URL, FONT_FILES } from './styles/vars';
 
 const CACHE_VERSION = process.env.SW_ID || 'UNKNOWN';
 const CACHE_NAME = composeCacheName(CACHE_VERSION);
@@ -25,11 +25,7 @@ const CACHED_FILES: string[] = [
   ...serviceWorkerOption.assets,
   // store font css and actual fonts
   FONT_URL,
-  'https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2', // 600
-  'https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2', // 400
-  'https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2', // 300
-  'https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2', // 700
-  'https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXiWtFCc.woff2', // 400
+  ...FONT_FILES,
   // store images
   OFFLINE_IMAGE_PLACEHOLDER,
   // store the home page
