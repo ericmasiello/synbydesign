@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Store } from 'redux';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import * as H from 'history';
 import Header from '../components/HeaderOnline';
 import PortfolioDetailImage from '../components/Portfolio/PortfolioDetailImage';
 import PortfolioDetailSVG from '../components/Portfolio/PortfolioDetailSVG';
@@ -27,6 +28,7 @@ interface Props {
       id: string;
     };
   };
+  history: H.History;
 }
 
 export class PortfolioDetailPage extends React.Component<Props, {}> {
@@ -54,7 +56,8 @@ export class PortfolioDetailPage extends React.Component<Props, {}> {
 
   render() {
     if (!this.props.portfolio) {
-      return;
+      this.props.history.replace('/404');
+      return null;
     }
     const heroImage = getHeroImage(this.props.portfolio.imagePaths);
     const bgImage = getBackgroundImage(this.props.portfolio.imagePaths);
