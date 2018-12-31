@@ -1,12 +1,5 @@
 // tslint:disable max-line-length
 
-// TODO: group petrol flyers
-// TODO: group EXBC promo flyers
-// TODO: group up EXBC website and logo
-// TOOD: possibly group up bump n grind flyers
-
-const DATA_URL = process.env.DATA_URL || '//d2ltmid28ikt18.cloudfront.net';
-
 const PortfolioList: RawPortfolio[] = [
   {
     title: 'Mastering React Native',
@@ -37,28 +30,20 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/master-react-native-front-original.png`,
-        largeUrl: `${DATA_URL}/master-react-native-front-700px.png`,
-        mediumUrl: `${DATA_URL}/master-react-native-front-450px.png`,
-        thumbUrl: `${DATA_URL}/master-react-native-front-200px.png`,
+        originalUrl: 'v1545963778/synbydesign/master-react-native-front.png',
         title: 'Mastering React Native - front cover',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/master-react-native-back-original.png`,
-        largeUrl: `${DATA_URL}/master-react-native-back-700px.png`,
-        mediumUrl: `${DATA_URL}/master-react-native-back-450px.png`,
-        thumbUrl: `${DATA_URL}/master-react-native-back-200px.png`,
+        originalUrl: 'v1545963776/synbydesign/master-react-native-back.png',
         title: 'Mastering React Native - back cover',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/master-react-native-print-marks-original.png`,
-        largeUrl: `${DATA_URL}/master-react-native-print-marks-700px.png`,
-        mediumUrl: `${DATA_URL}/master-react-native-print-marks-450px.png`,
-        thumbUrl: `${DATA_URL}/master-react-native-print-marks-200px.png`,
+        originalUrl:
+          'v1545963779/synbydesign/master-react-native-print-marks.png',
         title: 'Mastering React Native - front and back cover with crop marks',
         description: '',
         priority: 0,
@@ -96,10 +81,7 @@ const PortfolioList: RawPortfolio[] = [
     tags: ['Component Library', 'React', 'SCSS'],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/stencil/stencil-splash-original.png`,
-        largeUrl: `${DATA_URL}/stencil/stencil-splash-700px.png`,
-        mediumUrl: `${DATA_URL}/stencil/stencil-splash-450px.png`,
-        thumbUrl: `${DATA_URL}/stencil/stencil-splash-200px.png`,
+        originalUrl: 'v1545963374/synbydesign/stencil-splash.png',
         title: 'Stencil Splash Screen and Logo',
         description: '',
         priority: 1,
@@ -108,46 +90,31 @@ const PortfolioList: RawPortfolio[] = [
         },
       },
       {
-        originalUrl: `${DATA_URL}/stencil/stencil-buttons-original.png`,
-        largeUrl: `${DATA_URL}/stencil/stencil-buttons-700px.png`,
-        mediumUrl: `${DATA_URL}/stencil/stencil-buttons-450px.png`,
-        thumbUrl: `${DATA_URL}/stencil/stencil-buttons-200px.png`,
+        originalUrl: 'v1545963373/synbydesign/stencil-buttons.png',
         title: 'Stencil Button Documentation',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/stencil/stencil-colors-original.png`,
-        largeUrl: `${DATA_URL}/stencil/stencil-colors-700px.png`,
-        mediumUrl: `${DATA_URL}/stencil/stencil-colors-450px.png`,
-        thumbUrl: `${DATA_URL}/stencil/stencil-colors-200px.png`,
+        originalUrl: 'v1545963375/synbydesign/stencil-colors.png',
         title: 'Stencil Color Palette Documentation',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/stencil/stencil-home-original.png`,
-        largeUrl: `${DATA_URL}/stencil/stencil-home-700px.png`,
-        mediumUrl: `${DATA_URL}/stencil/stencil-home-450px.png`,
-        thumbUrl: `${DATA_URL}/stencil/stencil-home-200px.png`,
+        originalUrl: 'v1545963375/synbydesign/stencil-home.png',
         title: 'Stencil Documentation Home Page',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/stencil/stencil-media-cards-original.png`,
-        largeUrl: `${DATA_URL}/stencil/stencil-media-cards-700px.png`,
-        mediumUrl: `${DATA_URL}/stencil/stencil-media-cards-450px.png`,
-        thumbUrl: `${DATA_URL}/stencil/stencil-media-cards-200px.png`,
+        originalUrl: 'v1545963375/synbydesign/stencil-media-cards.png',
         title: 'Stencil Media Cards Documentation',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/stencil/stencil-package-cards-original.png`,
-        largeUrl: `${DATA_URL}/stencil/stencil-package-cards-700px.png`,
-        mediumUrl: `${DATA_URL}/stencil/stencil-package-cards-450px.png`,
-        thumbUrl: `${DATA_URL}/stencil/stencil-package-cards-200px.png`,
+        originalUrl: 'v1545963374/synbydesign/stencil-package-cards.png',
         title: 'Stencil Package Cards Documentation',
         description: '',
         priority: 0,
@@ -171,10 +138,7 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/exbc_live_promo_2015-10-23-original.png`,
-        largeUrl: `${DATA_URL}/exbc_live_promo_2015-10-23-700px.png`,
-        mediumUrl: `${DATA_URL}/exbc_live_promo_2015-10-23-450px.png`,
-        thumbUrl: `${DATA_URL}/exbc_live_promo_2015-10-23-200px.png`,
+        originalUrl: 'v1545963773/synbydesign/exbc_live_promo_2015-10-23.png',
         title: 'EXBC at BNG Harry R4NS0M web promo',
         description: '',
         priority: 1,
@@ -183,10 +147,7 @@ const PortfolioList: RawPortfolio[] = [
         },
       },
       {
-        originalUrl: `${DATA_URL}/exbc_live_promo_2015-06-26-original.png`,
-        largeUrl: `${DATA_URL}/exbc_live_promo_2015-06-26-700px.png`,
-        mediumUrl: `${DATA_URL}/exbc_live_promo_2015-06-26-450px.png`,
-        thumbUrl: `${DATA_URL}/exbc_live_promo_2015-06-26-200px.png`,
+        originalUrl: 'v1545963773/synbydesign/exbc_live_promo_2015-06-26.png',
         title: 'EXBC @ BNG (Posers) web promo',
         description: '',
         priority: 0,
@@ -222,11 +183,29 @@ const PortfolioList: RawPortfolio[] = [
     ],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/anarchostar/anarchostar-original.jpg`,
-        largeUrl: `${DATA_URL}/anarchostar/anarchostar-700px.jpg`,
-        mediumUrl: `${DATA_URL}/anarchostar/anarchostar-450px.jpg`,
-        thumbUrl: `${DATA_URL}/anarchostar/anarchostar-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963766/synbydesign/anarchostar.jpg',
+        title: 'Anarchostar homepage',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: 'v1545963765/synbydesign/anarchostar-tile1.jpg',
+        title: 'Anarchostar homepage hero tile',
+        description: '',
+        priority: 0,
+        meta: {
+          usage: ['hero'],
+        },
+      },
+      {
+        originalUrl: 'v1545963766/synbydesign/anarchostar-tile2.jpg',
+        title: 'Anarchostar homepage spaceship tile',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: 'v1545963765/synbydesign/anarchostar-tile3.jpg',
+        title: 'Anarchostar homepage 3-up tile',
         description: '',
         priority: 0,
       },
@@ -249,19 +228,13 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/Just4Heads-color-original.png`,
-        largeUrl: `${DATA_URL}/Just4Heads-color-700px.png`,
-        mediumUrl: `${DATA_URL}/Just4Heads-color-450px.png`,
-        thumbUrl: `${DATA_URL}/Just4Heads-color-200px.png`,
+        originalUrl: 'v1545963775/synbydesign/Just4Heads-color.png',
         title: 'Just 4 Heads flyer',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/Just4Heads-color-bg-original.png`,
-        largeUrl: `${DATA_URL}/Just4Heads-color-bg-700px.png`,
-        mediumUrl: `${DATA_URL}/Just4Heads-color-bg-450px.png`,
-        thumbUrl: `${DATA_URL}/Just4Heads-color-bg-200px.png`,
+        originalUrl: 'v1545963775/synbydesign/Just4Heads-color-bg.png',
         title: 'Just 4 Heads flyer',
         description: '',
         priority: 0,
@@ -273,19 +246,14 @@ const PortfolioList: RawPortfolio[] = [
         },
       },
       {
-        originalUrl: `${DATA_URL}/deep-focus-sonic-butter-takeover-original.jpg`,
-        largeUrl: `${DATA_URL}/deep-focus-sonic-butter-takeover-700px.jpg`,
-        mediumUrl: `${DATA_URL}/deep-focus-sonic-butter-takeover-450px.jpg`,
-        thumbUrl: `${DATA_URL}/deep-focus-sonic-butter-takeover-200px.jpg`,
+        originalUrl:
+          'v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg',
         title: 'Deep Foc.us Takeover at Sonic Butter flyer',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/exbc-sonic-butter-takeover-original.jpg`,
-        largeUrl: `${DATA_URL}/exbc-sonic-butter-takeover-700px.jpg`,
-        mediumUrl: `${DATA_URL}/exbc-sonic-butter-takeover-450px.jpg`,
-        thumbUrl: `${DATA_URL}/exbc-sonic-butter-takeover-200px.jpg`,
+        originalUrl: 'v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg',
         title: 'EXBC Takeover at Sonic Butter flyer',
         description: '',
         priority: 0,
@@ -311,46 +279,31 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/petrol-distal-original.jpg`,
-        largeUrl: `${DATA_URL}/petrol-distal-700px.jpg`,
-        mediumUrl: `${DATA_URL}/petrol-distal-450px.jpg`,
-        thumbUrl: `${DATA_URL}/petrol-distal-200px.jpg`,
+        originalUrl: 'v1545963780/synbydesign/petrol-distal.jpg',
         title: 'Petrol Distal flyer',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/petrol-vivek-original.jpg`,
-        largeUrl: `${DATA_URL}/petrol-vivek-700px.jpg`,
-        mediumUrl: `${DATA_URL}/petrol-vivek-450px.jpg`,
-        thumbUrl: `${DATA_URL}/petrol-vivek-200px.jpg`,
+        originalUrl: 'v1545963779/synbydesign/petrol-vivek.jpg',
         title: 'Petrol V.I.V.I.K flyer',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/petrol-gothtrad-original.jpg`,
-        largeUrl: `${DATA_URL}/petrol-gothtrad-700px.jpg`,
-        mediumUrl: `${DATA_URL}/petrol-gothtrad-450px.jpg`,
-        thumbUrl: `${DATA_URL}/petrol-gothtrad-200px.jpg`,
+        originalUrl: 'v1545963779/synbydesign/petrol-gothtrad.jpg',
         title: 'Petrol Goth-Trad flyer',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/petrol-general-flier-original.jpg`,
-        largeUrl: `${DATA_URL}/petrol-general-flier-700px.jpg`,
-        mediumUrl: `${DATA_URL}/petrol-general-flier-450px.jpg`,
-        thumbUrl: `${DATA_URL}/petrol-general-flier-200px.jpg`,
+        originalUrl: 'v1545963779/synbydesign/petrol-general-flier.jpg',
         title: 'Petrol General flyer',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/petrol-original.jpg`,
-        largeUrl: `${DATA_URL}/petrol-700px.jpg`,
-        mediumUrl: `${DATA_URL}/petrol-450px.jpg`,
-        thumbUrl: `${DATA_URL}/petrol-200px.jpg`,
+        originalUrl: 'v1545963780/synbydesign/petrol.jpg',
         title: 'Petrol flyer',
         description: '',
         priority: 0,
@@ -424,11 +377,9 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/deinfamous-sticker-original.jpg`,
-        largeUrl: `${DATA_URL}/deinfamous-sticker-700px.jpg`,
-        mediumUrl: `${DATA_URL}/deinfamous-sticker-450px.jpg`,
-        thumbUrl: `${DATA_URL}/deinfamous-sticker-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963770/synbydesign/deinfamous-sticker.jpg',
+        title:
+          'Sticker of DJ Deinfamous next to the original sketch that inspired the sticker',
         description: '',
         priority: 0,
       },
@@ -449,11 +400,9 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/exbc-vs-dirtbox-original.jpg`,
-        largeUrl: `${DATA_URL}/exbc-vs-dirtbox-700px.jpg`,
-        mediumUrl: `${DATA_URL}/exbc-vs-dirtbox-450px.jpg`,
-        thumbUrl: `${DATA_URL}/exbc-vs-dirtbox-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963775/synbydesign/exbc-vs-dirtbox.jpg',
+        title:
+          'EXBC vs. Dirtbox flyer featuring Illeffect, Deinfamous, Whighzeguy, Harry Ranson, Refugee, ODJ, Dave J, Encrytpion, Resonance, and HebeGB',
         description: '',
         priority: 0,
       },
@@ -483,20 +432,14 @@ const PortfolioList: RawPortfolio[] = [
     ],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/cannedesign-desktop-original.png`,
-        largeUrl: `${DATA_URL}/cannedesign-desktop-700px.png`,
-        mediumUrl: `${DATA_URL}/cannedesign-desktop-450px.png`,
-        thumbUrl: `${DATA_URL}/cannedesign-desktop-200px.png`,
-        title: '',
+        originalUrl: 'v1545963772/synbydesign/cannedesign-desktop.png',
+        title: 'Desktop landing page',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/cannedesign-mobile-original.png`,
-        largeUrl: `${DATA_URL}/cannedesign-mobile-700px.png`,
-        mediumUrl: `${DATA_URL}/cannedesign-mobile-450px.png`,
-        thumbUrl: `${DATA_URL}/cannedesign-mobile-200px.png`,
-        title: '',
+        originalUrl: 'v1545963775/synbydesign/cannedesign-mobile.png',
+        title: 'Mobile landing page',
         description: '',
         priority: 0,
       },
@@ -519,11 +462,8 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/expansion-barcast-2012-06-22-original.jpg`,
-        largeUrl: `${DATA_URL}/expansion-barcast-2012-06-22-700px.jpg`,
-        mediumUrl: `${DATA_URL}/expansion-barcast-2012-06-22-450px.jpg`,
-        thumbUrl: `${DATA_URL}/expansion-barcast-2012-06-22-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963775/synbydesign/expansion-barcast-2012-06-22.jpg',
+        title: 'Expansion Barcast flyer',
         description: '',
         priority: 0,
       },
@@ -531,11 +471,16 @@ const PortfolioList: RawPortfolio[] = [
   },
   {
     title: 'Expansion Broadcast',
-    description: '',
+    description: `
+      <p>Expansion Broadcast (EXBC) was a podcast I cofounded and ran with the aid of my crewmates for over 10 years. EXBC went through many iterations. Initially it focused as an internet radio broadcast, then a live Friday evening event, and finally
+      found its calling as a weekly podcast focusing on underground electronic music in the Washington, DC area.</p>
+      <p>I managed the weekly DJ schedule, day-to-day operations, design, and maintenance of the website.</p>
+    `,
     meta: {
-      stackDesign: true,
-      websiteUrl: '',
+      stackDesign: false,
+      websiteUrl: 'http://www.expansionbroadcast.com',
       isSVG: false,
+      highlightColor: '#2e8cc0',
       thumb: {
         fit: 'contain',
         position: '50% 50%',
@@ -543,98 +488,58 @@ const PortfolioList: RawPortfolio[] = [
         column: 'span 2',
       },
     },
-    category: ['flyers', 'web'],
+    category: ['flyers', 'web', 'business-cards', 'logos'],
     tags: [
       'Mobile/Responsive Design',
       'Wordpress Custom Theme',
       'Wordpress Plugin',
+      'Print Design',
     ],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/exbc-promo-original.jpg`,
-        largeUrl: `${DATA_URL}/exbc-promo-700px.jpg`,
-        mediumUrl: `${DATA_URL}/exbc-promo-450px.jpg`,
-        thumbUrl: `${DATA_URL}/exbc-promo-200px.jpg`,
-        title: 'EXBC web promo',
-        description: '',
-        priority: 0,
-      },
-      {
-        originalUrl: `${DATA_URL}/expansionbroadcast-original.jpg`,
-        largeUrl: `${DATA_URL}/expansionbroadcast-700px.jpg`,
-        mediumUrl: `${DATA_URL}/expansionbroadcast-450px.jpg`,
-        thumbUrl: `${DATA_URL}/expansionbroadcast-200px.jpg`,
-        title: '',
-        description: '',
-        priority: 0,
-      },
-    ],
-  },
-  {
-    title: 'IllEffect/Erictronica business cards',
-    description: 'IllEffect/Erictronica business cards',
-    meta: {
-      stackDesign: false,
-      websiteUrl: '',
-      isSVG: false,
-    },
-    category: ['business-cards'],
-    tags: [],
-    imagePaths: [
-      {
-        originalUrl: `${DATA_URL}/exbc-business-card-original.jpg`,
-        largeUrl: `${DATA_URL}/exbc-business-card-700px.jpg`,
-        mediumUrl: `${DATA_URL}/exbc-business-card-450px.jpg`,
-        thumbUrl: `${DATA_URL}/exbc-business-card-200px.jpg`,
-        title: '',
-        description: '',
-        priority: 0,
-      },
-    ],
-  },
-  {
-    title: 'EXBC logo',
-    description: 'EXBC logo',
-    meta: {
-      stackDesign: false,
-      websiteUrl: '',
-      isSVG: false,
-      thumb: {
-        position: '50% 50%',
-      },
-    },
-    category: ['logos'],
-    tags: [],
-    imagePaths: [
-      {
-        originalUrl: `${DATA_URL}/exbc/exbc-logo-original.jpg`,
-        largeUrl: `${DATA_URL}/exbc/exbc-logo-700px.jpg`,
-        mediumUrl: `${DATA_URL}/exbc/exbc-logo-450px.jpg`,
-        thumbUrl: `${DATA_URL}/exbc/exbc-logo-200px.jpg`,
-        title: '',
-        description: '',
-        priority: 0,
-      },
-      {
-        originalUrl: `${DATA_URL}/exbc/exbc-logo-sketch-original.jpg`,
-        largeUrl: `${DATA_URL}/exbc/exbc-logo-sketch-700px.jpg`,
-        mediumUrl: `${DATA_URL}/exbc/exbc-logo-sketch-450px.jpg`,
-        thumbUrl: `${DATA_URL}/exbc/exbc-logo-sketch-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963772/synbydesign/exbc-logo.jpg',
+        title: 'Expansion Broadcast logo',
         description: '',
         priority: 0,
         meta: {
-          usage: ['background'],
-          backgroundStyles: {
-            backgroundPosition: '50% -374px',
-          },
+          usage: ['hero'],
         },
+      },
+      {
+        originalUrl: 'v1546203723/synbydesign/exbc-desktop.png',
+        title: 'Expansion Broadcast desktop website',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: 'v1546204824/synbydesign/exbc-mobile-crop.png',
+        title: 'Expansion Broadcast mobile website',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: 'v1545963774/synbydesign/exbc-business-card.jpg',
+        title: 'Front and back of DJ IllEffect/Erictronica business card',
+        description: '',
+        priority: 0,
+      },
+      {
+        originalUrl: 'v1545963774/synbydesign/exbc-promo.jpg',
+        title: 'EXBC web promo featuring LXSX Frank and Jett Chandon',
+        description: '',
+        priority: 0,
       },
     ],
   },
   {
     title: 'Thnk DFRNT flyer',
-    description: 'thnkdfrnt',
+    description: `
+      <p>Apple Juice was a series of electronic music events in Washington, DC hosted by
+      Harry Ranson, Ray Casil, and I using the alias DJ IllEffect (and occassionally Erictronica). This particular instance of Apple Juice
+      featured international DJ/producer DFRNT. The idea for this flyer design was to blend Apple Computer's old
+      marketing campaign <em>Think Different</em> with DFRNT's peculiar DJ name.
+      </p>
+      `,
     meta: {
       stackDesign: true,
       websiteUrl: '',
@@ -647,22 +552,25 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/thnkdfrnt-original.jpg`,
-        largeUrl: `${DATA_URL}/thnkdfrnt-700px.jpg`,
-        mediumUrl: `${DATA_URL}/thnkdfrnt-450px.jpg`,
-        thumbUrl: `${DATA_URL}/thnkdfrnt-200px.jpg`,
+        originalUrl: 'v1545963729/synbydesign/thnkdfrnt.jpg',
         title: '',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/thnkdfrnt1-original.jpg`,
-        largeUrl: `${DATA_URL}/thnkdfrnt1-700px.jpg`,
-        mediumUrl: `${DATA_URL}/thnkdfrnt1-450px.jpg`,
-        thumbUrl: `${DATA_URL}/thnkdfrnt1-200px.jpg`,
+        originalUrl:
+          'c_crop,h_580,w_580,x_20,y_120/v1545963729/synbydesign/thnk%20dfrnt.jpg',
         title: '',
         description: '',
-        priority: 1,
+        priority: 0,
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            applyGradient: false,
+            filter: 'blur(1px)',
+            size: 'contain',
+          },
+        },
       },
     ],
   },
@@ -678,13 +586,18 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/chocolatemilk-original.jpg`,
-        largeUrl: `${DATA_URL}/chocolatemilk-700px.jpg`,
-        mediumUrl: `${DATA_URL}/chocolatemilk-450px.jpg`,
-        thumbUrl: `${DATA_URL}/chocolatemilk-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963768/synbydesign/chocolatemilk.jpg',
+        title: 'Chocolate Milk flyer featuring 4 cows with a heart and DC flag',
         description: '',
         priority: 0,
+        meta: {
+          usage: ['gallery'],
+          backgroundStyles: {
+            applyGradient: false,
+            filter: 'blur(1px) grayscale(100%)',
+            size: '20%',
+          },
+        },
       },
     ],
   },
@@ -714,58 +627,42 @@ const PortfolioList: RawPortfolio[] = [
     ],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/deepfocus/deepfocus-home-original.jpg`,
-        largeUrl: `${DATA_URL}/deepfocus/deepfocus-home-700px.jpg`,
-        mediumUrl: `${DATA_URL}/deepfocus/deepfocus-home-450px.jpg`,
-        thumbUrl: `${DATA_URL}/deepfocus/deepfocus-home-200px.jpg`,
+        originalUrl: 'v1545963770/synbydesign/deepfocus-home.jpg',
         title: 'Deep Foc.us Desktop Design',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/deepfocus/deepfocus-iphone-original.jpg`,
-        largeUrl: `${DATA_URL}/deepfocus/deepfocus-iphone-700px.jpg`,
-        mediumUrl: `${DATA_URL}/deepfocus/deepfocus-iphone-450px.jpg`,
-        thumbUrl: `${DATA_URL}/deepfocus/deepfocus-iphone-200px.jpg`,
+        originalUrl: 'v1545963769/synbydesign/deepfocus-iphone.jpg',
         title: 'Deep Foc.us Mobile Design',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/deepfocus/deepfocus-logo-with-gradient-original.jpg`,
-        largeUrl: `${DATA_URL}/deepfocus/deepfocus-logo-with-gradient-700px.jpg`,
-        mediumUrl: `${DATA_URL}/deepfocus/deepfocus-logo-with-gradient-450px.jpg`,
-        thumbUrl: `${DATA_URL}/deepfocus/deepfocus-logo-with-gradient-200px.jpg`,
+        originalUrl: 'v1545963769/synbydesign/deepfocus-logo-with-gradient.jpg',
         title: 'Deep Foc.us Logo Design with gradient backdrop',
         description: '',
         priority: 0,
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            filter: 'blur(1px)',
+            size: 'contain',
+            applyGradient: false,
+          },
+        },
       },
       {
-        originalUrl: `${DATA_URL}/deepfocus/deepfocus-logo-original.png`,
-        largeUrl: `${DATA_URL}/deepfocus/deepfocus-logo-700px.png`,
-        mediumUrl: `${DATA_URL}/deepfocus/deepfocus-logo-450px.png`,
-        thumbUrl: `${DATA_URL}/deepfocus/deepfocus-logo-200px.png`,
+        originalUrl: 'v1545963769/synbydesign/deepfocus-logo.png',
         title: 'Deep Foc.us Logo Design',
         description: '',
         priority: 0,
-      },
-      {
-        originalUrl: `${DATA_URL}/deepfocus/deepfocus-gradient-original.jpg`,
-        largeUrl: `${DATA_URL}/deepfocus/deepfocus-gradient-700px.jpg`,
-        mediumUrl: `${DATA_URL}/deepfocus/deepfocus-gradient-450px.jpg`,
-        thumbUrl: `${DATA_URL}/deepfocus/deepfocus-gradient-200px.jpg`,
-        title: 'Gradient design',
-        description: '',
-        priority: 0,
-        meta: {
-          usage: ['background'],
-        },
       },
     ],
   },
   {
     title: 'Sage Dragon',
-    description: 'Sage Dragon screen shot',
+    description: "Sage Dragon's website for the mobile game Spellbroken",
     meta: {
       stackDesign: false,
       websiteUrl: 'http://projects.synbydesign.com/sagedragon/',
@@ -773,6 +670,9 @@ const PortfolioList: RawPortfolio[] = [
       thumb: {
         column: 'span 2',
         row: 'span 2',
+      },
+      detail: {
+        grid: ['50%', '35%', '15%'],
       },
     },
     category: ['web'],
@@ -785,31 +685,37 @@ const PortfolioList: RawPortfolio[] = [
     ],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/sagedragon/sagedragon-desktop-original.png`,
-        largeUrl: `${DATA_URL}/sagedragon/sagedragon-desktop-700px.png`,
-        mediumUrl: `${DATA_URL}/sagedragon/sagedragon-desktop-450px.png`,
-        thumbUrl: `${DATA_URL}/sagedragon/sagedragon-desktop-200px.png`,
+        originalUrl: 'v1545963728/synbydesign/sagedragon-desktop.png',
         title: 'Sage Dragon (Desktop)',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/sagedragon/sagedragon-tablet-original.png`,
-        largeUrl: `${DATA_URL}/sagedragon/sagedragon-tablet-700px.png`,
-        mediumUrl: `${DATA_URL}/sagedragon/sagedragon-tablet-450px.png`,
-        thumbUrl: `${DATA_URL}/sagedragon/sagedragon-tablet-200px.png`,
+        originalUrl: 'v1545963715/synbydesign/sagedragon-tablet.png',
         title: 'Sage Dragon (Tablet)',
         description: '',
         priority: 1,
       },
       {
-        originalUrl: `${DATA_URL}/sagedragon/sagedragon-mobile-original.png`,
-        largeUrl: `${DATA_URL}/sagedragon/sagedragon-mobile-700px.png`,
-        mediumUrl: `${DATA_URL}/sagedragon/sagedragon-mobile-450px.png`,
-        thumbUrl: `${DATA_URL}/sagedragon/sagedragon-mobile-200px.png`,
+        originalUrl: 'v1545963718/synbydesign/sagedragon-mobile.png',
         title: 'Sage Dragon (Mobile)',
         description: '',
         priority: 0,
+      },
+      {
+        originalUrl:
+          'c_crop,e_sharpen:100,h_840,w_1300,y_120/v1545963715/synbydesign/sagedragon-tablet.png',
+        title: '',
+        description: '',
+        priority: 0,
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            size: 'contain',
+            applyGradient: false,
+            filter: 'none',
+          },
+        },
       },
     ],
   },
@@ -820,33 +726,40 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: 'http://www.eightyeightdc.com/',
       isSVG: false,
+      detail: {
+        grid: ['40%', '25%', '35%'],
+      },
     },
     category: ['web'],
     tags: ['CSS/SCSS', 'Mobile/Responsive Design', 'Wordpress Custom Theme'],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/eightyeight/eightyeightdc-homepage-original.png`,
-        largeUrl: `${DATA_URL}/eightyeight/eightyeightdc-homepage-700px.png`,
-        mediumUrl: `${DATA_URL}/eightyeight/eightyeightdc-homepage-450px.png`,
-        thumbUrl: `${DATA_URL}/eightyeight/eightyeightdc-homepage-200px.png`,
+        originalUrl:
+          'c_crop,e_blur:100,h_770,w_1850,x_1650,y_385/v1545963774/synbydesign/eightyeightdc-homepage.png',
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            size: 'cover',
+            applyGradient: false,
+            filter: 'none',
+          },
+        },
+      },
+      {
+        originalUrl:
+          'c_crop,e_blur:100,h_2440,w_2120,x_1500,y_0/v1545963774/synbydesign/eightyeightdc-homepage.png',
         title: 'Eighty Eight DC Homepage',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/eightyeight/eightyeightdc-category-original.png`,
-        largeUrl: `${DATA_URL}/eightyeight/eightyeightdc-category-700px.png`,
-        mediumUrl: `${DATA_URL}/eightyeight/eightyeightdc-category-450px.png`,
-        thumbUrl: `${DATA_URL}/eightyeight/eightyeightdc-category-200px.png`,
+        originalUrl: 'v1545963800/synbydesign/eightyeightdc-category.png',
         title: 'Eighty Eight DC Topic Category Page',
         description: '',
         priority: 0,
       },
       {
-        originalUrl: `${DATA_URL}/eightyeight/eightyeightdc-posts-original.jpg`,
-        largeUrl: `${DATA_URL}/eightyeight/eightyeightdc-posts-700px.jpg`,
-        mediumUrl: `${DATA_URL}/eightyeight/eightyeightdc-posts-450px.jpg`,
-        thumbUrl: `${DATA_URL}/eightyeight/eightyeightdc-posts-200px.jpg`,
+        originalUrl: 'v1545963771/synbydesign/eightyeightdc-posts.jpg',
         title: 'Eighty Eight DC Topic Posts Page',
         description: '',
         priority: 1,
@@ -855,7 +768,7 @@ const PortfolioList: RawPortfolio[] = [
   },
   {
     title: 'Sigma Performance Group',
-    description: 'sigmaperfgroup',
+    description: '',
     meta: {
       stackDesign: false,
       websiteUrl: '',
@@ -870,11 +783,8 @@ const PortfolioList: RawPortfolio[] = [
     tags: ['(X)HTML', 'CSS', 'Design/Branding', 'PHP'],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/sigmaperfgroup-original.jpg`,
-        largeUrl: `${DATA_URL}/sigmaperfgroup-700px.jpg`,
-        mediumUrl: `${DATA_URL}/sigmaperfgroup-450px.jpg`,
-        thumbUrl: `${DATA_URL}/sigmaperfgroup-200px.jpg`,
-        title: '',
+        originalUrl: 'v1545963730/synbydesign/sigmaperfgroup.jpg',
+        title: 'Sigma Performance Group website screenshot',
         description: '',
         priority: 0,
       },
@@ -887,6 +797,7 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: '',
       isSVG: false,
+      highlightColor: '#fcc52d',
       thumb: {
         position: '0 100%',
       },
@@ -895,10 +806,22 @@ const PortfolioList: RawPortfolio[] = [
     tags: [],
     imagePaths: [
       {
-        originalUrl: `${DATA_URL}/incognito-original.jpg`,
-        largeUrl: `${DATA_URL}/incognito-700px.jpg`,
-        mediumUrl: `${DATA_URL}/incognito-450px.jpg`,
-        thumbUrl: `${DATA_URL}/incognito-200px.jpg`,
+        originalUrl: 'v1545963775/synbydesign/incognito.jpg',
+        title: '',
+        description: '',
+        priority: 0,
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            applyGradient: false,
+            size: '20%',
+            filter: 'hue-rotate(90deg)',
+            backgroundPosition: '0 0',
+          },
+        },
+      },
+      {
+        originalUrl: 'v1545963775/synbydesign/incognito.jpg',
         title: '',
         description: '',
         priority: 0,
