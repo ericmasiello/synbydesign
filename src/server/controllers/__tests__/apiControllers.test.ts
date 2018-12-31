@@ -133,7 +133,7 @@ describe('portofolioDetailController', () => {
 
     await portofolioDetailController(mockReq, mockRes, mockNext);
     expect(mockNext).toBeCalledWith(
-      boom.notFound('Portfolio item does not exist'),
+      boom.notFound('Portfolio item does not exist: the-id'),
     );
   });
 });

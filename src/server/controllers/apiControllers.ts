@@ -1,4 +1,5 @@
 import { RequestHandler } from 'express';
+import * as Sentry from '@sentry/node';
 import * as boom from 'boom';
 import { list, getById } from '../services/portfolioService';
 import { getResume } from '../services/resumeService';
@@ -41,7 +42,10 @@ export const portofolioController: RequestHandler = (req, res, next) => {
         } as PortfolioResponseParams)
         .json(result.items),
     )
-    .catch((error: Error) => next(boom.badImplementation(error.message)));
+    .catch((error: Error) => {
+      Sentry.captureException(error);
+      next(boom.badImplementation(error.message));
+    });
 };
 
 export const portofolioDetailController: RequestHandler = (req, res, next) => {
@@ -51,7 +55,8 @@ export const portofolioDetailController: RequestHandler = (req, res, next) => {
 
   return getById(id).then(item => {
     if (!item) {
-      return next(boom.notFound('Portfolio item does not exist'));
+      Sentry.captureMessage(`Portfolio item does not exist: ${id}`);
+      return next(boom.notFound(`Portfolio item does not exist: ${id}`));
     }
     return res.json(item);
   });
@@ -61,5 +66,8 @@ export const resumeController: RequestHandler = (req, res, next) => {
   logger.info('Requesting resume');
   return getResume()
     .then(resume => res.json(resume))
-    .catch((error: Error) => next(boom.badImplementation(error.message)));
+    .catch((error: Error) => {
+      Sentry.captureException(error);
+      next(boom.badImplementation(error.message));
+    });
 };
