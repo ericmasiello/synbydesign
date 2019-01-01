@@ -48,7 +48,9 @@ Object {
           "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "meta": Object {
             "backgroundStyles": Object {
-              "size": "20%",
+              "applyGradient": false,
+              "filter": "none",
+              "size": "50%",
             },
             "usage": Array [
               "hero",
@@ -764,7 +766,9 @@ Object {
           "mediumUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_450,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "meta": Object {
             "backgroundStyles": Object {
-              "size": "20%",
+              "applyGradient": false,
+              "filter": "none",
+              "size": "50%",
             },
             "usage": Array [
               "hero",

@@ -50,7 +50,9 @@ const PortfolioList: RawPortfolio[] = [
         meta: {
           usage: ['hero'],
           backgroundStyles: {
-            size: '20%',
+            size: '50%',
+            applyGradient: false,
+            filter: 'none',
           },
         },
       },
