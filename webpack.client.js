@@ -20,6 +20,9 @@ module.exports = (env = {}, { mode }) => {
     'process.env.MIXPANEL_TOKEN': JSON.stringify(
       process.env.MIXPANEL_TOKEN || now.env.MIXPANEL_TOKEN,
     ),
+    'process.env.SENTRY_CLIENT_DSN': JSON.stringify(
+      process.env.SENTRY_CLIENT_DSN || now.env.SENTRY_CLIENT_DSN,
+    ),
   });
 
   const indexPage = new HtmlWebpackPlugin({

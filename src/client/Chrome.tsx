@@ -2,11 +2,14 @@ import * as React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
+import * as Sentry from '@sentry/browser';
 import * as tinyColor from 'tinycolor2';
 import base from './styles/base';
 import { PAGE, COLORS, pageBorderWidth } from './styles/vars';
 import { pxToRem } from './styles/utils';
 import * as packageJSON from '../../package.json';
+import ErrorBoundry from './components/ErrorBoundry';
+import PageError from './components/PageError';
 
 const GlobalStyle = createGlobalStyle`
   ${base}
@@ -29,7 +32,11 @@ const Chrome: React.SFC<Props> = ({ children, className }) => (
   <React.Fragment>
     <GlobalStyle />
     <div className={className}>
-      {children}
+      <ErrorBoundry
+        render={({ resetError }) => <PageError resetError={resetError} />}
+      >
+        {children}
+      </ErrorBoundry>
       <Version>v{packageJSON.version}</Version>
     </div>
   </React.Fragment>

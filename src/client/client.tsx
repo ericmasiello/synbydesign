@@ -5,12 +5,17 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import * as Loadable from 'react-loadable';
 import axios from 'axios';
+import * as Sentry from '@sentry/browser';
 // @ts-ignore
 import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import createStore from '../utils/createStore';
 import Chrome from './Chrome';
 import Home from './pages/HomePage';
 import Loading from './components/Loading';
+
+Sentry.init({
+  dsn: process.env.SENTRY_CLIENT_DSN,
+});
 
 const HomePage = Home.component;
 
