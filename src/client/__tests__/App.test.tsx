@@ -32,11 +32,11 @@ describe('App', () => {
     const wrapper = mount(
       <Provider store={storeMocker()}>
         <BrowserRouter>
-          {/* @ts-ignore */}
           <App route={mockRoute} {...otherProps} />
         </BrowserRouter>
       </Provider>,
     );
+
     expect(wrapper).toHaveLength(1);
   });
 
