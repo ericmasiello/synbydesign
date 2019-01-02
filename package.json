@@ -1,6 +1,6 @@
 {
   "name": "syn-by-design",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Eric Masiello's portfolio",
   "main": "index.js",
   "scripts": {
