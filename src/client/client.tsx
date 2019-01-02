@@ -42,9 +42,7 @@ const NotFoundPage = Loadable({
 if (process.env.INCLUDE_SW) {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.addEventListener('message', event => {
-      import('./utils/tracking').then(tracking => {
-        tracking.default('service worker error', event.data.error);
-      });
+      Sentry.captureException(event.data.error);
     });
 
     runtime.register();
