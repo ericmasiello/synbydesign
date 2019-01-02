@@ -20,7 +20,6 @@ HeaderContent.displayName = 'Header.Content';
 const StyledHeaderContent = styled(HeaderContent)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: ${pxToRem(maxWidth)};
   padding: calc(1rem + ${headerSpacing}) ${pxToRem(horizontalPadding)};
   margin: auto;

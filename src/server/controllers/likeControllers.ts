@@ -1,5 +1,6 @@
 import { RequestHandler } from 'express';
 import * as boom from 'boom';
+import * as Sentry from '@sentry/node';
 import { getById as portfolioGetById } from '../services/portfolioService';
 import { likeAction, unlikeAction } from '../services/likeService';
 import logger from '../utils/logger';
@@ -25,10 +26,12 @@ export const likeController: RequestHandler = (req, res, next) => {
           });
         })
         .catch((error: boom<any>) => {
+          Sentry.captureException(error);
           next(error);
         });
     })
     .catch((error: Error) => {
+      Sentry.captureException(error);
       next(boom.badImplementation(error.message));
     });
 };
@@ -54,10 +57,12 @@ export const unlikeController: RequestHandler = (req, res, next) => {
           });
         })
         .catch((error: boom<any>) => {
+          Sentry.captureException(error);
           next(error);
         });
     })
     .catch((error: Error) => {
+      Sentry.captureException(error);
       next(boom.badImplementation(error.message));
     });
 };

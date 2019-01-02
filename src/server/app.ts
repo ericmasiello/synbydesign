@@ -8,7 +8,7 @@ import errorMiddleware from './middleware/errorMiddleware';
 const TWO_WEEKS = 1000 * 60 * 60 * 24 * 14;
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN,
+  dsn: process.env.SENTRY_SERVER_DSN,
 });
 
 const app = express();

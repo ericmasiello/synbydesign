@@ -2,6 +2,7 @@ import { RequestHandler, Request } from 'express';
 import { Store } from 'redux';
 import { matchRoutes } from 'react-router-config';
 import axios, { AxiosInstance } from 'axios';
+import * as Sentry from '@sentry/node';
 import createStore from '../../utils/createStore';
 import Routes, { RouteConfigWithLoadData } from '../../client/Routes';
 import renderer from '../utils/renderer';
@@ -39,7 +40,7 @@ const uiRootController: RequestHandler = (req, res) => {
     })
     .map(promise => {
       if (promise) {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
           return promise.then(resolve).catch(resolve);
         });
       }
@@ -63,6 +64,7 @@ const uiRootController: RequestHandler = (req, res) => {
       logger.info('Rendering view');
       res.render('index', { html, head, state });
     } catch (error) {
+      Sentry.captureException(error);
       logger.error('Rendering error view', error);
       res.render('error', { html: '' });
     }
