@@ -28,7 +28,7 @@ const Version = styled.small`
   padding: ${pxToRem(2)} ${pxToRem(4)} 0;
 `;
 
-const Chrome: React.SFC<Props> = ({ children, className }) => (
+const Chrome: React.SFC<Props> = ({ children = null, className }) => (
   <React.Fragment>
     <GlobalStyle />
     <div className={className}>
