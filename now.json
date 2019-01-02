@@ -1,5 +1,6 @@
 {
   "name": "synbydesign",
+  "version": 1,
   "type": "docker",
   "alias": [
     "synbydesign.com",
