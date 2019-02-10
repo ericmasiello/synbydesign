@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import * as Loadable from 'react-loadable';
 import axios from 'axios';
 import * as Sentry from '@sentry/browser';
+import * as LogRocket from 'logrocket';
 // @ts-ignore
 import * as runtime from 'serviceworker-webpack-plugin/lib/runtime';
 import createStore from '../utils/createStore';
@@ -13,8 +14,19 @@ import Chrome from './Chrome';
 import Home from './pages/HomePage';
 import Loading from './components/Loading';
 
+LogRocket.init(process.env.LOGROCKET!);
+
 Sentry.init({
   dsn: process.env.SENTRY_CLIENT_DSN,
+});
+
+Sentry.configureScope(scope => {
+  scope.addEventProcessor(async event => {
+    if (event && event.extra) {
+      event.extra.sessionURL = LogRocket.sessionURL;
+    }
+    return event;
+  });
 });
 
 const HomePage = Home.component;

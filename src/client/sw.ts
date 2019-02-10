@@ -81,7 +81,8 @@ self.addEventListener('fetch', (e: Event) => {
   if (
     requestURL.host === 'www.google-analytics.com' ||
     requestURL.host === 'www.googletagmanager.com' ||
-    requestURL.host === 'api.mixpanel.com'
+    requestURL.host === 'cdn.logrocket.io' ||
+    requestURL.host === 'r.logrocket.io'
   ) {
     return event.respondWith(fetch(event.request));
   }

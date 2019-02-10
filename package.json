@@ -40,7 +40,7 @@
     "ejs": "~2.6.1",
     "express": "~4.16.4",
     "lodash-es": "~4.17.11",
-    "mixpanel-browser": "^2.25.0",
+    "logrocket": "^0.6.19",
     "node-fetch": "~2.3.0",
     "query-string": "~6.2.0",
     "react": "~16.7.0",

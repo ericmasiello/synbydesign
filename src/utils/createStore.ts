@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { AxiosInstance } from 'axios';
+import * as LogRocket from 'logrocket';
 import reducers from '../client/state';
 
 const defaultInitialState = {
@@ -24,10 +25,20 @@ export default (
   initialState: AppState = defaultInitialState,
   composeEnhancers = compose,
 ) => {
+  const applyComposeEnhancers =
+    (typeof window !== 'undefined' &&
+      (window as AppWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    composeEnhancers;
+
   const store = createStore(
     reducers,
     initialState,
-    composeEnhancers(applyMiddleware(thunk.withExtraArgument(axiosInstance))),
+    applyComposeEnhancers(
+      applyMiddleware(
+        thunk.withExtraArgument(axiosInstance),
+        LogRocket.reduxMiddleware(),
+      ),
+    ),
   );
 
   return store;
