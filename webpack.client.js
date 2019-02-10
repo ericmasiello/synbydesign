@@ -23,6 +23,9 @@ module.exports = (env = {}, { mode }) => {
     'process.env.SENTRY_CLIENT_DSN': JSON.stringify(
       process.env.SENTRY_CLIENT_DSN || now.env.SENTRY_CLIENT_DSN,
     ),
+    'process.env.LOGROCKET': JSON.stringify(
+      process.env.LOGROCKET || now.env.LOGROCKET,
+    ),
   });
 
   const indexPage = new HtmlWebpackPlugin({

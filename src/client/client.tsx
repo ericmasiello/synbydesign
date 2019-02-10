@@ -14,7 +14,7 @@ import Chrome from './Chrome';
 import Home from './pages/HomePage';
 import Loading from './components/Loading';
 
-LogRocket.init('nzurcg/syn-by-design-client-dev');
+LogRocket.init(process.env.LOGROCKET!);
 
 Sentry.init({
   dsn: process.env.SENTRY_CLIENT_DSN,
