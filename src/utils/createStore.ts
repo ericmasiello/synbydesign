@@ -27,8 +27,7 @@ export default (
 ) => {
   const applyComposeEnhancers =
     (typeof window !== 'undefined' &&
-      // @ts-ignore
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+      (window as AppWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
     composeEnhancers;
 
   const store = createStore(
