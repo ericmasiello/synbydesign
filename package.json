@@ -41,7 +41,6 @@
     "express": "~4.16.4",
     "lodash-es": "~4.17.11",
     "logrocket": "^0.6.19",
-    "mixpanel-browser": "^2.25.0",
     "node-fetch": "~2.3.0",
     "query-string": "~6.2.0",
     "react": "~16.7.0",

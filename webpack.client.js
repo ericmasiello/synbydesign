@@ -17,9 +17,6 @@ module.exports = (env = {}, { mode }) => {
   const envPlugin = new webpack.DefinePlugin({
     'process.env.SW_ID': JSON.stringify(new Date().toISOString()),
     'process.env.INCLUDE_SW': JSON.stringify(includeServiceWorker),
-    'process.env.MIXPANEL_TOKEN': JSON.stringify(
-      process.env.MIXPANEL_TOKEN || now.env.MIXPANEL_TOKEN,
-    ),
     'process.env.SENTRY_CLIENT_DSN': JSON.stringify(
       process.env.SENTRY_CLIENT_DSN || now.env.SENTRY_CLIENT_DSN,
     ),

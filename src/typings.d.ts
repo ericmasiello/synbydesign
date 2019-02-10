@@ -18,15 +18,6 @@ declare module '*.json' {
   export = value;
 }
 
-declare module 'mixpanel-browser' {
-  interface Mixpanel {
-    init: (token: string) => void;
-    track: (eventName: string, trackDetails?: object) => void;
-  }
-  const mixpanel: Mixpanel;
-  export = mixpanel;
-}
-
 type Tag = React.ReactType;
 
 interface PortfolioThumbMeta {

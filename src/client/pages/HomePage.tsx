@@ -52,9 +52,6 @@ export class HomePage extends React.Component<Props, {}> {
   };
 
   loadNextPortfolioPage = () => {
-    import('../utils/tracking').then(tracking =>
-      tracking.default('Clicked next page'),
-    );
     this.props.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: this.props.currentPageNumber + 1,
