@@ -124,6 +124,49 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
+    title: 'Priority Construction',
+    description:
+      'Mobile responsive website project for Baltimore, MD based construction website',
+    meta: {
+      isSVG: false,
+      websiteUrl: 'http://www.priorityconst.com',
+      thumb: {
+        row: 'span 3',
+        column: 'span 3',
+      },
+    },
+    category: ['web'],
+    tags: ['React', 'Gatsby', 'Mobile/Responsive Design'],
+    imagePaths: [
+      {
+        originalUrl:
+          'v1545963773/synbydesign/priority-construction/priority-construction-home.png',
+        title: 'Homepage',
+        priority: 1,
+      },
+      {
+        originalUrl:
+          'v1545963773/synbydesign/priority-construction/priority-construction-gallery.png',
+        title: 'Gallery',
+      },
+      {
+        originalUrl:
+          'v1545963773/synbydesign/priority-construction/priority-construction-about.png',
+        title: 'About',
+      },
+      {
+        originalUrl:
+          'v1545963773/synbydesign/priority-construction/priority-construction-mobile-menu.png',
+        title: 'Mobile Menu',
+      },
+      {
+        originalUrl:
+          'v1545963773/synbydesign/priority-construction/priority-construction-mobile.png',
+        title: 'Mobile Responsive Design',
+      },
+    ],
+  },
+  {
     title: 'Expansion Broadcast at Bump N Grind',
     description: '',
     meta: {
