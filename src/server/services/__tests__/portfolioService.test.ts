@@ -1,4 +1,5 @@
 import { list, getById } from '../portfolioService';
+jest.mock('../../data/portfolio');
 
 describe('list', () => {
   test('it should return default paginated data when no filters are applied', () => {
@@ -111,8 +112,8 @@ describe('list', () => {
 
 describe('getById', () => {
   test('should return a portfolio item if a match is found', () => {
-    return getById('rmr-software-solutions').then(result => {
-      expect((result as Portfolio).id).toBe('rmr-software-solutions');
+    return getById('mock-rmr-software-solutions').then(result => {
+      expect((result as Portfolio).id).toBe('mock-rmr-software-solutions');
     });
   });
   test('should return undefined if a match is not found', () => {
