@@ -1,8 +1,7 @@
 // tslint:disable max-line-length
-
 const PortfolioList: RawPortfolio[] = [
   {
-    title: 'Mastering React Native',
+    title: 'Mock Mastering React Native',
     description: `
       <blockquote>
         <p>Leverage frontend development skills to build impressive iOS and Android applications with React Native.</p>
@@ -31,20 +30,21 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963778/synbydesign/master-react-native-front.png',
-        title: 'Mastering React Native - front cover',
+        title: 'Mock Mastering React Native - front cover',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963776/synbydesign/master-react-native-back.png',
-        title: 'Mastering React Native - back cover',
+        title: 'Mock Mastering React Native - back cover',
         description: '',
         priority: 0,
       },
       {
         originalUrl:
           'v1545963779/synbydesign/master-react-native-print-marks.png',
-        title: 'Mastering React Native - front and back cover with crop marks',
+        title:
+          'Mock Mastering React Native - front and back cover with crop marks',
         description: '',
         priority: 0,
         meta: {
@@ -59,7 +59,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'Stencil',
+    title: 'Mock Stencil',
     description: `<p>Stencil was built to serve as component library for customer facing pages within Vistaprint Digital.
     Namely, it services our product pages by exposing commonly used UI assets prebaked, reusable, React components.
     Stencil was built in close collaboration with the design team within Vistaprint Digital and its usage has been widely adopted.</p>
@@ -84,7 +84,7 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963374/synbydesign/stencil-splash.png',
-        title: 'Stencil Splash Screen and Logo',
+        title: 'Mock Stencil Splash Screen and Logo',
         description: '',
         priority: 1,
         meta: {
@@ -93,89 +93,38 @@ const PortfolioList: RawPortfolio[] = [
       },
       {
         originalUrl: 'v1545963373/synbydesign/stencil-buttons.png',
-        title: 'Stencil Button Documentation',
+        title: 'Mock Stencil Button Documentation',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963375/synbydesign/stencil-colors.png',
-        title: 'Stencil Color Palette Documentation',
+        title: 'Mock Stencil Color Palette Documentation',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963375/synbydesign/stencil-home.png',
-        title: 'Stencil Documentation Home Page',
+        title: 'Mock Stencil Documentation Home Page',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963375/synbydesign/stencil-media-cards.png',
-        title: 'Stencil Media Cards Documentation',
+        title: 'Mock Stencil Media Cards Documentation',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963374/synbydesign/stencil-package-cards.png',
-        title: 'Stencil Package Cards Documentation',
+        title: 'Mock Stencil Package Cards Documentation',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Priority Construction',
-    description:
-      'Mobile responsive website project for Baltimore, MD based construction website',
-    meta: {
-      isSVG: false,
-      websiteUrl: 'http://www.priorityconst.com',
-      thumb: {
-        row: 'span 2',
-        column: 'span 3',
-      },
-    },
-    category: ['web'],
-    tags: ['React', 'Gatsby', 'Mobile/Responsive Design'],
-    imagePaths: [
-      {
-        originalUrl:
-          '/v1550337927/synbydesign/priority-construction/synbydesign_priority-construction_priority-construction-gallery-crop.png',
-        title: 'Anthem House cover photo',
-        priority: 1,
-        meta: {
-          usage: ['hero'],
-          backgroundStyles: {
-            size: 'cover',
-            applyGradient: false,
-            filter: 'none',
-          },
-        },
-      },
-      {
-        originalUrl:
-          'v1545963773/synbydesign/priority-construction/priority-construction-home.png',
-        title: 'Homepage',
-      },
-      {
-        originalUrl:
-          'v1545963773/synbydesign/priority-construction/priority-construction-about.png',
-        title: 'About',
-      },
-      {
-        originalUrl:
-          'v1545963773/synbydesign/priority-construction/priority-construction-mobile-menu.png',
-        title: 'Mobile Menu',
-      },
-      {
-        originalUrl:
-          'v1545963773/synbydesign/priority-construction/priority-construction-mobile.png',
-        title: 'Mobile Responsive Design',
-      },
-    ],
-  },
-  {
-    title: 'Expansion Broadcast at Bump N Grind',
+    title: 'Mock Expansion Broadcast at Bump N Grind',
     description: '',
     meta: {
       stackDesign: false,
@@ -192,7 +141,7 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963773/synbydesign/exbc_live_promo_2015-10-23.png',
-        title: 'EXBC at BNG Harry R4NS0M web promo',
+        title: 'Mock EXBC at BNG Harry R4NS0M web promo',
         description: '',
         priority: 1,
         meta: {
@@ -201,14 +150,14 @@ const PortfolioList: RawPortfolio[] = [
       },
       {
         originalUrl: 'v1545963773/synbydesign/exbc_live_promo_2015-06-26.png',
-        title: 'EXBC @ BNG (Posers) web promo',
+        title: 'Mock EXBC @ BNG (Posers) web promo',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Anarchostar',
+    title: 'Mock Anarchostar',
     description: `<p>Anarchostar was a music label run by founder, DJ Distal. His goal for the site was to build a comicbook-like experience
       that compliemented the music, with particular tracks pairing with different panels from the comic. The illustrations
       were done by a Brazilian artist. I partnered with local graphic designers, Catherine Anne, to build the living web experience.</p>
@@ -237,13 +186,13 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963766/synbydesign/anarchostar.jpg',
-        title: 'Anarchostar homepage',
+        title: 'Mock Anarchostar homepage',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963765/synbydesign/anarchostar-tile1.jpg',
-        title: 'Anarchostar homepage hero tile',
+        title: 'Mock Anarchostar homepage hero tile',
         description: '',
         priority: 0,
         meta: {
@@ -252,20 +201,20 @@ const PortfolioList: RawPortfolio[] = [
       },
       {
         originalUrl: 'v1545963766/synbydesign/anarchostar-tile2.jpg',
-        title: 'Anarchostar homepage spaceship tile',
+        title: 'Mock Anarchostar homepage spaceship tile',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963765/synbydesign/anarchostar-tile3.jpg',
-        title: 'Anarchostar homepage 3-up tile',
+        title: 'Mock Anarchostar homepage 3-up tile',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Sonic Butter flyers',
+    title: 'Mock Sonic Butter flyers',
     description: '',
     meta: {
       stackDesign: true,
@@ -282,13 +231,13 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963775/synbydesign/Just4Heads-color.png',
-        title: 'Just 4 Heads flyer',
+        title: 'Mock Just 4 Heads flyer',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963775/synbydesign/Just4Heads-color-bg.png',
-        title: 'Just 4 Heads flyer',
+        title: 'Mock Just 4 Heads flyer',
         description: '',
         priority: 0,
         meta: {
@@ -301,20 +250,20 @@ const PortfolioList: RawPortfolio[] = [
       {
         originalUrl:
           'v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg',
-        title: 'Deep Foc.us Takeover at Sonic Butter flyer',
+        title: 'Mock Deep Foc.us Takeover at Sonic Butter flyer',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg',
-        title: 'EXBC Takeover at Sonic Butter flyer',
+        title: 'Mock EXBC Takeover at Sonic Butter flyer',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Petrol flyers',
+    title: 'Mock Petrol flyers',
     description: `
       Petrol was a monthly electronic dance music dance event hosted by some close friends and I in Baltimore, Maryland.
       We brought through many great artists including VIVEK, Goth-Trad, and Photek.`,
@@ -333,31 +282,31 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963780/synbydesign/petrol-distal.jpg',
-        title: 'Petrol Distal flyer',
+        title: 'Mock Petrol Distal flyer',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963779/synbydesign/petrol-vivek.jpg',
-        title: 'Petrol V.I.V.I.K flyer',
+        title: 'Mock Petrol V.I.V.I.K flyer',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963779/synbydesign/petrol-gothtrad.jpg',
-        title: 'Petrol Goth-Trad flyer',
+        title: 'Mock Petrol Goth-Trad flyer',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963779/synbydesign/petrol-general-flier.jpg',
-        title: 'Petrol General flyer',
+        title: 'Mock Petrol General flyer',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963780/synbydesign/petrol.jpg',
-        title: 'Petrol flyer',
+        title: 'Mock Petrol flyer',
         description: '',
         priority: 0,
         meta: {
@@ -367,15 +316,11 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'RMR Software Solutions',
+    title: 'Mock RMR Software Solutions',
     meta: {
       stackDesign: false,
       websiteUrl: '',
       isSVG: true,
-      thumb: {
-        row: 'span 1',
-        column: 'span 2',
-      },
     },
     category: ['logos'],
     tags: [],
@@ -420,7 +365,7 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [],
   },
   {
-    title: 'Deinfamous sticker',
+    title: 'Mock Deinfamous sticker',
     description: 'Illustration and sticker for Deinfamous',
     meta: {
       stackDesign: false,
@@ -443,7 +388,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'EXBC vs. Dirtbox Radio flyer',
+    title: 'Mock EXBC vs. Dirtbox Radio flyer',
     description: 'EXBC vs. Dirtbox Radio flyer',
     meta: {
       stackDesign: true,
@@ -466,7 +411,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'Catherine Anne Design',
+    title: 'Mock Catherine Anne Design',
     description: 'cannedesign',
     meta: {
       stackDesign: false,
@@ -490,20 +435,20 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963772/synbydesign/cannedesign-desktop.png',
-        title: 'Desktop landing page',
+        title: 'Mock Desktop landing page',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963775/synbydesign/cannedesign-mobile.png',
-        title: 'Mobile landing page',
+        title: 'Mock Mobile landing page',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Expansion Barcast flyer',
+    title: 'Mock Expansion Barcast flyer',
     description: 'Expansion Barcast flyer',
     meta: {
       stackDesign: true,
@@ -520,14 +465,14 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963775/synbydesign/expansion-barcast-2012-06-22.jpg',
-        title: 'Expansion Barcast flyer',
+        title: 'Mock Expansion Barcast flyer',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Expansion Broadcast',
+    title: 'Mock Expansion Broadcast',
     description: `
       <p>Expansion Broadcast (EXBC) was a podcast I cofounded and ran with the aid of my crewmates for over 10 years. EXBC went through many iterations. Initially it focused as an internet radio broadcast, then a live Friday evening event, and finally
       found its calling as a weekly podcast focusing on underground electronic music in the Washington, DC area.</p>
@@ -555,7 +500,7 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963772/synbydesign/exbc-logo.jpg',
-        title: 'Expansion Broadcast logo',
+        title: 'Mock Expansion Broadcast logo',
         description: '',
         priority: 0,
         meta: {
@@ -564,32 +509,32 @@ const PortfolioList: RawPortfolio[] = [
       },
       {
         originalUrl: 'v1546203723/synbydesign/exbc-desktop.png',
-        title: 'Expansion Broadcast desktop website',
+        title: 'Mock Expansion Broadcast desktop website',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1546204824/synbydesign/exbc-mobile-crop.png',
-        title: 'Expansion Broadcast mobile website',
+        title: 'Mock Expansion Broadcast mobile website',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963774/synbydesign/exbc-business-card.jpg',
-        title: 'Front and back of DJ IllEffect/Erictronica business card',
+        title: 'Mock Front and back of DJ IllEffect/Erictronica business card',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963774/synbydesign/exbc-promo.jpg',
-        title: 'EXBC web promo featuring LXSX Frank and Jett Chandon',
+        title: 'Mock EXBC web promo featuring LXSX Frank and Jett Chandon',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Thnk DFRNT flyer',
+    title: 'Mock Thnk DFRNT flyer',
     description: `
       <p>Apple Juice was a series of electronic music events in Washington, DC hosted by
       Harry Ranson, Ray Casil, and I using the alias DJ IllEffect (and occassionally Erictronica). This particular instance of Apple Juice
@@ -610,14 +555,14 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963729/synbydesign/thnkdfrnt.jpg',
-        title: '',
+        title: 'Mock ',
         description: '',
         priority: 0,
       },
       {
         originalUrl:
           'c_crop,h_580,w_580,x_20,y_120/v1545963729/synbydesign/thnk%20dfrnt.jpg',
-        title: '',
+        title: 'Mock ',
         description: '',
         priority: 0,
         meta: {
@@ -632,7 +577,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'Chocolate Milk Logo',
+    title: 'Mock Chocolate Milk Logo',
     description: 'Chocolatemilk Logo',
     meta: {
       stackDesign: false,
@@ -644,7 +589,8 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963768/synbydesign/chocolatemilk.jpg',
-        title: 'Chocolate Milk flyer featuring 4 cows with a heart and DC flag',
+        title:
+          'Mock Chocolate Milk flyer featuring 4 cows with a heart and DC flag',
         description: '',
         priority: 0,
         meta: {
@@ -659,7 +605,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'Deep Foc.us',
+    title: 'Mock Deep Foc.us',
     description: 'Deep Foc.us music blog.',
     meta: {
       stackDesign: false,
@@ -685,19 +631,19 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963770/synbydesign/deepfocus-home.jpg',
-        title: 'Deep Foc.us Desktop Design',
+        title: 'Mock Deep Foc.us Desktop Design',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963769/synbydesign/deepfocus-iphone.jpg',
-        title: 'Deep Foc.us Mobile Design',
+        title: 'Mock Deep Foc.us Mobile Design',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963769/synbydesign/deepfocus-logo-with-gradient.jpg',
-        title: 'Deep Foc.us Logo Design with gradient backdrop',
+        title: 'Mock Deep Foc.us Logo Design with gradient backdrop',
         description: '',
         priority: 0,
         meta: {
@@ -711,14 +657,14 @@ const PortfolioList: RawPortfolio[] = [
       },
       {
         originalUrl: 'v1545963769/synbydesign/deepfocus-logo.png',
-        title: 'Deep Foc.us Logo Design',
+        title: 'Mock Deep Foc.us Logo Design',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Sage Dragon',
+    title: 'Mock Sage Dragon',
     description: "Sage Dragon's website for the mobile game Spellbroken",
     meta: {
       stackDesign: false,
@@ -743,26 +689,26 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963728/synbydesign/sagedragon-desktop.png',
-        title: 'Sage Dragon (Desktop)',
+        title: 'Mock Sage Dragon (Desktop)',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963715/synbydesign/sagedragon-tablet.png',
-        title: 'Sage Dragon (Tablet)',
+        title: 'Mock Sage Dragon (Tablet)',
         description: '',
         priority: 1,
       },
       {
         originalUrl: 'v1545963718/synbydesign/sagedragon-mobile.png',
-        title: 'Sage Dragon (Mobile)',
+        title: 'Mock Sage Dragon (Mobile)',
         description: '',
         priority: 0,
       },
       {
         originalUrl:
           'c_crop,e_sharpen:100,h_840,w_1300,y_120/v1545963715/synbydesign/sagedragon-tablet.png',
-        title: '',
+        title: 'Mock ',
         description: '',
         priority: 0,
         meta: {
@@ -777,7 +723,7 @@ const PortfolioList: RawPortfolio[] = [
     ],
   },
   {
-    title: 'Eighty Eight DC',
+    title: 'Mock Eighty Eight DC',
     description: 'Eighty Eight DC',
     meta: {
       stackDesign: false,
@@ -805,26 +751,26 @@ const PortfolioList: RawPortfolio[] = [
       {
         originalUrl:
           'c_crop,e_blur:100,h_2440,w_2120,x_1500,y_0/v1545963774/synbydesign/eightyeightdc-homepage.png',
-        title: 'Eighty Eight DC Homepage',
+        title: 'Mock Eighty Eight DC Homepage',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963800/synbydesign/eightyeightdc-category.png',
-        title: 'Eighty Eight DC Topic Category Page',
+        title: 'Mock Eighty Eight DC Topic Category Page',
         description: '',
         priority: 0,
       },
       {
         originalUrl: 'v1545963771/synbydesign/eightyeightdc-posts.jpg',
-        title: 'Eighty Eight DC Topic Posts Page',
+        title: 'Mock Eighty Eight DC Topic Posts Page',
         description: '',
         priority: 1,
       },
     ],
   },
   {
-    title: 'Sigma Performance Group',
+    title: 'Mock Sigma Performance Group',
     description: '',
     meta: {
       stackDesign: false,
@@ -841,14 +787,14 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963730/synbydesign/sigmaperfgroup.jpg',
-        title: 'Sigma Performance Group website screenshot',
+        title: 'Mock Sigma Performance Group website screenshot',
         description: '',
         priority: 0,
       },
     ],
   },
   {
-    title: 'Incognito Logo',
+    title: 'Mock Incognito Logo',
     description: 'Logo for Incognito electronic events and production service',
     meta: {
       stackDesign: false,
@@ -864,7 +810,7 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl: 'v1545963775/synbydesign/incognito.jpg',
-        title: '',
+        title: 'Mock ',
         description: '',
         priority: 0,
         meta: {
@@ -879,7 +825,7 @@ const PortfolioList: RawPortfolio[] = [
       },
       {
         originalUrl: 'v1545963775/synbydesign/incognito.jpg',
-        title: '',
+        title: 'Mock ',
         description: '',
         priority: 0,
       },

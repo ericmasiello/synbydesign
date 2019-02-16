@@ -22,7 +22,7 @@ Object {
       declarative syntax of JSX and React but still achieve near-native app performance.
       </p>
     ",
-      "id": "mastering-react-native",
+      "id": "mock-mastering-react-native",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -31,7 +31,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963778/synbydesign/master-react-native-front.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963778/synbydesign/master-react-native-front.png",
-          "title": "Mastering React Native - front cover",
+          "title": "Mock Mastering React Native - front cover",
         },
         Object {
           "description": "",
@@ -40,7 +40,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963776/synbydesign/master-react-native-back.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963776/synbydesign/master-react-native-back.png",
-          "title": "Mastering React Native - back cover",
+          "title": "Mock Mastering React Native - back cover",
         },
         Object {
           "description": "",
@@ -59,7 +59,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
-          "title": "Mastering React Native - front and back cover with crop marks",
+          "title": "Mock Mastering React Native - front and back cover with crop marks",
         },
       ],
       "meta": Object {
@@ -74,7 +74,7 @@ Object {
         "websiteUrl": "https://www.amazon.com/Mastering-React-Native-Eric-Masiello/dp/1785885782/ref=sr_1_1_sspa?ie=UTF8&qid=1519501994&sr=8-1-spons&keywords=mastering+react+native&psc=1",
       },
       "tags": Array [],
-      "title": "Mastering React Native",
+      "title": "Mock Mastering React Native",
     },
     Object {
       "category": Array [
@@ -88,7 +88,7 @@ Object {
     We encapsulated each of these UI components into React components that can be easily imported and customized by other developers.
     </p>
     ",
-      "id": "stencil",
+      "id": "mock-stencil",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -102,7 +102,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963374/synbydesign/stencil-splash.png",
           "priority": 1,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963374/synbydesign/stencil-splash.png",
-          "title": "Stencil Splash Screen and Logo",
+          "title": "Mock Stencil Splash Screen and Logo",
         },
         Object {
           "description": "",
@@ -111,7 +111,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963373/synbydesign/stencil-buttons.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963373/synbydesign/stencil-buttons.png",
-          "title": "Stencil Button Documentation",
+          "title": "Mock Stencil Button Documentation",
         },
         Object {
           "description": "",
@@ -120,7 +120,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963375/synbydesign/stencil-colors.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963375/synbydesign/stencil-colors.png",
-          "title": "Stencil Color Palette Documentation",
+          "title": "Mock Stencil Color Palette Documentation",
         },
         Object {
           "description": "",
@@ -129,7 +129,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963375/synbydesign/stencil-home.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963375/synbydesign/stencil-home.png",
-          "title": "Stencil Documentation Home Page",
+          "title": "Mock Stencil Documentation Home Page",
         },
         Object {
           "description": "",
@@ -138,7 +138,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963375/synbydesign/stencil-media-cards.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963375/synbydesign/stencil-media-cards.png",
-          "title": "Stencil Media Cards Documentation",
+          "title": "Mock Stencil Media Cards Documentation",
         },
         Object {
           "description": "",
@@ -147,7 +147,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963374/synbydesign/stencil-package-cards.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963374/synbydesign/stencil-package-cards.png",
-          "title": "Stencil Package Cards Documentation",
+          "title": "Mock Stencil Package Cards Documentation",
         },
       ],
       "meta": Object {
@@ -166,14 +166,14 @@ Object {
         "React",
         "SCSS",
       ],
-      "title": "Stencil",
+      "title": "Mock Stencil",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "",
-      "id": "expansion-broadcast-at-bump-n-grind",
+      "id": "mock-expansion-broadcast-at-bump-n-grind",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -188,7 +188,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963773/synbydesign/exbc_live_promo_2015-10-23.png",
           "priority": 1,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963773/synbydesign/exbc_live_promo_2015-10-23.png",
-          "title": "EXBC at BNG Harry R4NS0M web promo",
+          "title": "Mock EXBC at BNG Harry R4NS0M web promo",
         },
         Object {
           "description": "",
@@ -197,7 +197,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963773/synbydesign/exbc_live_promo_2015-06-26.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963773/synbydesign/exbc_live_promo_2015-06-26.png",
-          "title": "EXBC @ BNG (Posers) web promo",
+          "title": "Mock EXBC @ BNG (Posers) web promo",
         },
       ],
       "meta": Object {
@@ -211,7 +211,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Expansion Broadcast at Bump N Grind",
+      "title": "Mock Expansion Broadcast at Bump N Grind",
     },
     Object {
       "category": Array [
@@ -224,7 +224,7 @@ Object {
       that supported his original vision.
       </p>
       ",
-      "id": "anarchostar",
+      "id": "mock-anarchostar",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -233,7 +233,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963766/synbydesign/anarchostar.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963766/synbydesign/anarchostar.jpg",
-          "title": "Anarchostar homepage",
+          "title": "Mock Anarchostar homepage",
         },
         Object {
           "description": "",
@@ -247,7 +247,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963765/synbydesign/anarchostar-tile1.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963765/synbydesign/anarchostar-tile1.jpg",
-          "title": "Anarchostar homepage hero tile",
+          "title": "Mock Anarchostar homepage hero tile",
         },
         Object {
           "description": "",
@@ -256,7 +256,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963766/synbydesign/anarchostar-tile2.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963766/synbydesign/anarchostar-tile2.jpg",
-          "title": "Anarchostar homepage spaceship tile",
+          "title": "Mock Anarchostar homepage spaceship tile",
         },
         Object {
           "description": "",
@@ -265,7 +265,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963765/synbydesign/anarchostar-tile3.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963765/synbydesign/anarchostar-tile3.jpg",
-          "title": "Anarchostar homepage 3-up tile",
+          "title": "Mock Anarchostar homepage 3-up tile",
         },
       ],
       "meta": Object {
@@ -285,14 +285,14 @@ Object {
         "Wordpress Custom Theme",
         "Wordpress Plugin",
       ],
-      "title": "Anarchostar",
+      "title": "Mock Anarchostar",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "",
-      "id": "sonic-butter-flyers",
+      "id": "mock-sonic-butter-flyers",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -301,7 +301,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/Just4Heads-color.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/Just4Heads-color.png",
-          "title": "Just 4 Heads flyer",
+          "title": "Mock Just 4 Heads flyer",
         },
         Object {
           "description": "",
@@ -318,7 +318,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/Just4Heads-color-bg.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/Just4Heads-color-bg.png",
-          "title": "Just 4 Heads flyer",
+          "title": "Mock Just 4 Heads flyer",
         },
         Object {
           "description": "",
@@ -327,7 +327,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg",
-          "title": "Deep Foc.us Takeover at Sonic Butter flyer",
+          "title": "Mock Deep Foc.us Takeover at Sonic Butter flyer",
         },
         Object {
           "description": "",
@@ -336,7 +336,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg",
-          "title": "EXBC Takeover at Sonic Butter flyer",
+          "title": "Mock EXBC Takeover at Sonic Butter flyer",
         },
       ],
       "meta": Object {
@@ -350,7 +350,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Sonic Butter flyers",
+      "title": "Mock Sonic Butter flyers",
     },
     Object {
       "category": Array [
@@ -359,7 +359,7 @@ Object {
       "description": "
       Petrol was a monthly electronic dance music dance event hosted by some close friends and I in Baltimore, Maryland.
       We brought through many great artists including VIVEK, Goth-Trad, and Photek.",
-      "id": "petrol-flyers",
+      "id": "mock-petrol-flyers",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -368,7 +368,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963780/synbydesign/petrol-distal.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963780/synbydesign/petrol-distal.jpg",
-          "title": "Petrol Distal flyer",
+          "title": "Mock Petrol Distal flyer",
         },
         Object {
           "description": "",
@@ -377,7 +377,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/petrol-vivek.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/petrol-vivek.jpg",
-          "title": "Petrol V.I.V.I.K flyer",
+          "title": "Mock Petrol V.I.V.I.K flyer",
         },
         Object {
           "description": "",
@@ -386,7 +386,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/petrol-gothtrad.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/petrol-gothtrad.jpg",
-          "title": "Petrol Goth-Trad flyer",
+          "title": "Mock Petrol Goth-Trad flyer",
         },
         Object {
           "description": "",
@@ -395,7 +395,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/petrol-general-flier.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/petrol-general-flier.jpg",
-          "title": "Petrol General flyer",
+          "title": "Mock Petrol General flyer",
         },
         Object {
           "description": "",
@@ -409,7 +409,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963780/synbydesign/petrol.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963780/synbydesign/petrol.jpg",
-          "title": "Petrol flyer",
+          "title": "Mock Petrol flyer",
         },
       ],
       "meta": Object {
@@ -423,13 +423,13 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Petrol flyers",
+      "title": "Mock Petrol flyers",
     },
     Object {
       "category": Array [
         "logos",
       ],
-      "id": "rmr-software-solutions",
+      "id": "mock-rmr-software-solutions",
       "imagePaths": Array [],
       "meta": Object {
         "isSVG": true,
@@ -605,14 +605,14 @@ Object {
         </g>
       </svg>",
       "tags": Array [],
-      "title": "RMR Software Solutions",
+      "title": "Mock RMR Software Solutions",
     },
     Object {
       "category": Array [
         "illustration",
       ],
       "description": "Illustration and sticker for Deinfamous",
-      "id": "deinfamous-sticker",
+      "id": "mock-deinfamous-sticker",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -633,14 +633,14 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Deinfamous sticker",
+      "title": "Mock Deinfamous sticker",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "EXBC vs. Dirtbox Radio flyer",
-      "id": "exbc-vs-dirtbox-radio-flyer",
+      "id": "mock-exbc-vs-dirtbox-radio-flyer",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -661,14 +661,14 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "EXBC vs. Dirtbox Radio flyer",
+      "title": "Mock EXBC vs. Dirtbox Radio flyer",
     },
     Object {
       "category": Array [
         "web",
       ],
       "description": "cannedesign",
-      "id": "catherine-anne-design",
+      "id": "mock-catherine-anne-design",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -677,7 +677,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963772/synbydesign/cannedesign-desktop.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963772/synbydesign/cannedesign-desktop.png",
-          "title": "Desktop landing page",
+          "title": "Mock Desktop landing page",
         },
         Object {
           "description": "",
@@ -686,7 +686,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/cannedesign-mobile.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/cannedesign-mobile.png",
-          "title": "Mobile landing page",
+          "title": "Mock Mobile landing page",
         },
       ],
       "meta": Object {
@@ -710,7 +710,7 @@ Object {
         "Mobile/Responsive Design",
         "Wordpress Custom Theme",
       ],
-      "title": "Catherine Anne Design",
+      "title": "Mock Catherine Anne Design",
     },
   ],
   "pageSize": 10,
@@ -740,7 +740,7 @@ Object {
       declarative syntax of JSX and React but still achieve near-native app performance.
       </p>
     ",
-      "id": "mastering-react-native",
+      "id": "mock-mastering-react-native",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -749,7 +749,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963778/synbydesign/master-react-native-front.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963778/synbydesign/master-react-native-front.png",
-          "title": "Mastering React Native - front cover",
+          "title": "Mock Mastering React Native - front cover",
         },
         Object {
           "description": "",
@@ -758,7 +758,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963776/synbydesign/master-react-native-back.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963776/synbydesign/master-react-native-back.png",
-          "title": "Mastering React Native - back cover",
+          "title": "Mock Mastering React Native - back cover",
         },
         Object {
           "description": "",
@@ -777,7 +777,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/master-react-native-print-marks.png",
-          "title": "Mastering React Native - front and back cover with crop marks",
+          "title": "Mock Mastering React Native - front and back cover with crop marks",
         },
       ],
       "meta": Object {
@@ -792,7 +792,7 @@ Object {
         "websiteUrl": "https://www.amazon.com/Mastering-React-Native-Eric-Masiello/dp/1785885782/ref=sr_1_1_sspa?ie=UTF8&qid=1519501994&sr=8-1-spons&keywords=mastering+react+native&psc=1",
       },
       "tags": Array [],
-      "title": "Mastering React Native",
+      "title": "Mock Mastering React Native",
     },
     Object {
       "category": Array [
@@ -806,7 +806,7 @@ Object {
     We encapsulated each of these UI components into React components that can be easily imported and customized by other developers.
     </p>
     ",
-      "id": "stencil",
+      "id": "mock-stencil",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -820,7 +820,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963374/synbydesign/stencil-splash.png",
           "priority": 1,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963374/synbydesign/stencil-splash.png",
-          "title": "Stencil Splash Screen and Logo",
+          "title": "Mock Stencil Splash Screen and Logo",
         },
         Object {
           "description": "",
@@ -829,7 +829,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963373/synbydesign/stencil-buttons.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963373/synbydesign/stencil-buttons.png",
-          "title": "Stencil Button Documentation",
+          "title": "Mock Stencil Button Documentation",
         },
         Object {
           "description": "",
@@ -838,7 +838,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963375/synbydesign/stencil-colors.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963375/synbydesign/stencil-colors.png",
-          "title": "Stencil Color Palette Documentation",
+          "title": "Mock Stencil Color Palette Documentation",
         },
         Object {
           "description": "",
@@ -847,7 +847,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963375/synbydesign/stencil-home.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963375/synbydesign/stencil-home.png",
-          "title": "Stencil Documentation Home Page",
+          "title": "Mock Stencil Documentation Home Page",
         },
         Object {
           "description": "",
@@ -856,7 +856,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963375/synbydesign/stencil-media-cards.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963375/synbydesign/stencil-media-cards.png",
-          "title": "Stencil Media Cards Documentation",
+          "title": "Mock Stencil Media Cards Documentation",
         },
         Object {
           "description": "",
@@ -865,7 +865,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963374/synbydesign/stencil-package-cards.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963374/synbydesign/stencil-package-cards.png",
-          "title": "Stencil Package Cards Documentation",
+          "title": "Mock Stencil Package Cards Documentation",
         },
       ],
       "meta": Object {
@@ -884,14 +884,14 @@ Object {
         "React",
         "SCSS",
       ],
-      "title": "Stencil",
+      "title": "Mock Stencil",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "",
-      "id": "expansion-broadcast-at-bump-n-grind",
+      "id": "mock-expansion-broadcast-at-bump-n-grind",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -906,7 +906,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963773/synbydesign/exbc_live_promo_2015-10-23.png",
           "priority": 1,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963773/synbydesign/exbc_live_promo_2015-10-23.png",
-          "title": "EXBC at BNG Harry R4NS0M web promo",
+          "title": "Mock EXBC at BNG Harry R4NS0M web promo",
         },
         Object {
           "description": "",
@@ -915,7 +915,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963773/synbydesign/exbc_live_promo_2015-06-26.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963773/synbydesign/exbc_live_promo_2015-06-26.png",
-          "title": "EXBC @ BNG (Posers) web promo",
+          "title": "Mock EXBC @ BNG (Posers) web promo",
         },
       ],
       "meta": Object {
@@ -929,7 +929,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Expansion Broadcast at Bump N Grind",
+      "title": "Mock Expansion Broadcast at Bump N Grind",
     },
     Object {
       "category": Array [
@@ -942,7 +942,7 @@ Object {
       that supported his original vision.
       </p>
       ",
-      "id": "anarchostar",
+      "id": "mock-anarchostar",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -951,7 +951,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963766/synbydesign/anarchostar.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963766/synbydesign/anarchostar.jpg",
-          "title": "Anarchostar homepage",
+          "title": "Mock Anarchostar homepage",
         },
         Object {
           "description": "",
@@ -965,7 +965,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963765/synbydesign/anarchostar-tile1.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963765/synbydesign/anarchostar-tile1.jpg",
-          "title": "Anarchostar homepage hero tile",
+          "title": "Mock Anarchostar homepage hero tile",
         },
         Object {
           "description": "",
@@ -974,7 +974,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963766/synbydesign/anarchostar-tile2.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963766/synbydesign/anarchostar-tile2.jpg",
-          "title": "Anarchostar homepage spaceship tile",
+          "title": "Mock Anarchostar homepage spaceship tile",
         },
         Object {
           "description": "",
@@ -983,7 +983,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963765/synbydesign/anarchostar-tile3.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963765/synbydesign/anarchostar-tile3.jpg",
-          "title": "Anarchostar homepage 3-up tile",
+          "title": "Mock Anarchostar homepage 3-up tile",
         },
       ],
       "meta": Object {
@@ -1003,14 +1003,14 @@ Object {
         "Wordpress Custom Theme",
         "Wordpress Plugin",
       ],
-      "title": "Anarchostar",
+      "title": "Mock Anarchostar",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "",
-      "id": "sonic-butter-flyers",
+      "id": "mock-sonic-butter-flyers",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1019,7 +1019,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/Just4Heads-color.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/Just4Heads-color.png",
-          "title": "Just 4 Heads flyer",
+          "title": "Mock Just 4 Heads flyer",
         },
         Object {
           "description": "",
@@ -1036,7 +1036,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/Just4Heads-color-bg.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/Just4Heads-color-bg.png",
-          "title": "Just 4 Heads flyer",
+          "title": "Mock Just 4 Heads flyer",
         },
         Object {
           "description": "",
@@ -1045,7 +1045,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg",
-          "title": "Deep Foc.us Takeover at Sonic Butter flyer",
+          "title": "Mock Deep Foc.us Takeover at Sonic Butter flyer",
         },
         Object {
           "description": "",
@@ -1054,7 +1054,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg",
-          "title": "EXBC Takeover at Sonic Butter flyer",
+          "title": "Mock EXBC Takeover at Sonic Butter flyer",
         },
       ],
       "meta": Object {
@@ -1068,7 +1068,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Sonic Butter flyers",
+      "title": "Mock Sonic Butter flyers",
     },
   ],
   "pageSize": 5,
@@ -1090,7 +1090,7 @@ Object {
       "description": "
       Petrol was a monthly electronic dance music dance event hosted by some close friends and I in Baltimore, Maryland.
       We brought through many great artists including VIVEK, Goth-Trad, and Photek.",
-      "id": "petrol-flyers",
+      "id": "mock-petrol-flyers",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1099,7 +1099,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963780/synbydesign/petrol-distal.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963780/synbydesign/petrol-distal.jpg",
-          "title": "Petrol Distal flyer",
+          "title": "Mock Petrol Distal flyer",
         },
         Object {
           "description": "",
@@ -1108,7 +1108,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/petrol-vivek.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/petrol-vivek.jpg",
-          "title": "Petrol V.I.V.I.K flyer",
+          "title": "Mock Petrol V.I.V.I.K flyer",
         },
         Object {
           "description": "",
@@ -1117,7 +1117,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/petrol-gothtrad.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/petrol-gothtrad.jpg",
-          "title": "Petrol Goth-Trad flyer",
+          "title": "Mock Petrol Goth-Trad flyer",
         },
         Object {
           "description": "",
@@ -1126,7 +1126,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963779/synbydesign/petrol-general-flier.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963779/synbydesign/petrol-general-flier.jpg",
-          "title": "Petrol General flyer",
+          "title": "Mock Petrol General flyer",
         },
         Object {
           "description": "",
@@ -1140,7 +1140,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963780/synbydesign/petrol.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963780/synbydesign/petrol.jpg",
-          "title": "Petrol flyer",
+          "title": "Mock Petrol flyer",
         },
       ],
       "meta": Object {
@@ -1154,13 +1154,13 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Petrol flyers",
+      "title": "Mock Petrol flyers",
     },
     Object {
       "category": Array [
         "logos",
       ],
-      "id": "rmr-software-solutions",
+      "id": "mock-rmr-software-solutions",
       "imagePaths": Array [],
       "meta": Object {
         "isSVG": true,
@@ -1336,14 +1336,14 @@ Object {
         </g>
       </svg>",
       "tags": Array [],
-      "title": "RMR Software Solutions",
+      "title": "Mock RMR Software Solutions",
     },
     Object {
       "category": Array [
         "illustration",
       ],
       "description": "Illustration and sticker for Deinfamous",
-      "id": "deinfamous-sticker",
+      "id": "mock-deinfamous-sticker",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1364,14 +1364,14 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Deinfamous sticker",
+      "title": "Mock Deinfamous sticker",
     },
     Object {
       "category": Array [
         "flyers",
       ],
       "description": "EXBC vs. Dirtbox Radio flyer",
-      "id": "exbc-vs-dirtbox-radio-flyer",
+      "id": "mock-exbc-vs-dirtbox-radio-flyer",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1392,14 +1392,14 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "EXBC vs. Dirtbox Radio flyer",
+      "title": "Mock EXBC vs. Dirtbox Radio flyer",
     },
     Object {
       "category": Array [
         "web",
       ],
       "description": "cannedesign",
-      "id": "catherine-anne-design",
+      "id": "mock-catherine-anne-design",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1408,7 +1408,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963772/synbydesign/cannedesign-desktop.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963772/synbydesign/cannedesign-desktop.png",
-          "title": "Desktop landing page",
+          "title": "Mock Desktop landing page",
         },
         Object {
           "description": "",
@@ -1417,7 +1417,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/cannedesign-mobile.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/cannedesign-mobile.png",
-          "title": "Mobile landing page",
+          "title": "Mock Mobile landing page",
         },
       ],
       "meta": Object {
@@ -1441,7 +1441,7 @@ Object {
         "Mobile/Responsive Design",
         "Wordpress Custom Theme",
       ],
-      "title": "Catherine Anne Design",
+      "title": "Mock Catherine Anne Design",
     },
   ],
   "pageSize": 5,
@@ -1461,7 +1461,7 @@ Object {
         "flyers",
       ],
       "description": "Expansion Barcast flyer",
-      "id": "expansion-barcast-flyer",
+      "id": "mock-expansion-barcast-flyer",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1470,7 +1470,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/expansion-barcast-2012-06-22.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/expansion-barcast-2012-06-22.jpg",
-          "title": "Expansion Barcast flyer",
+          "title": "Mock Expansion Barcast flyer",
         },
       ],
       "meta": Object {
@@ -1484,7 +1484,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Expansion Barcast flyer",
+      "title": "Mock Expansion Barcast flyer",
     },
     Object {
       "category": Array [
@@ -1498,7 +1498,7 @@ Object {
       found its calling as a weekly podcast focusing on underground electronic music in the Washington, DC area.</p>
       <p>I managed the weekly DJ schedule, day-to-day operations, design, and maintenance of the website.</p>
     ",
-      "id": "expansion-broadcast",
+      "id": "mock-expansion-broadcast",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1512,7 +1512,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963772/synbydesign/exbc-logo.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963772/synbydesign/exbc-logo.jpg",
-          "title": "Expansion Broadcast logo",
+          "title": "Mock Expansion Broadcast logo",
         },
         Object {
           "description": "",
@@ -1521,7 +1521,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1546203723/synbydesign/exbc-desktop.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1546203723/synbydesign/exbc-desktop.png",
-          "title": "Expansion Broadcast desktop website",
+          "title": "Mock Expansion Broadcast desktop website",
         },
         Object {
           "description": "",
@@ -1530,7 +1530,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1546204824/synbydesign/exbc-mobile-crop.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1546204824/synbydesign/exbc-mobile-crop.png",
-          "title": "Expansion Broadcast mobile website",
+          "title": "Mock Expansion Broadcast mobile website",
         },
         Object {
           "description": "",
@@ -1539,7 +1539,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963774/synbydesign/exbc-business-card.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963774/synbydesign/exbc-business-card.jpg",
-          "title": "Front and back of DJ IllEffect/Erictronica business card",
+          "title": "Mock Front and back of DJ IllEffect/Erictronica business card",
         },
         Object {
           "description": "",
@@ -1548,7 +1548,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963774/synbydesign/exbc-promo.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963774/synbydesign/exbc-promo.jpg",
-          "title": "EXBC web promo featuring LXSX Frank and Jett Chandon",
+          "title": "Mock EXBC web promo featuring LXSX Frank and Jett Chandon",
         },
       ],
       "meta": Object {
@@ -1569,7 +1569,7 @@ Object {
         "Wordpress Plugin",
         "Print Design",
       ],
-      "title": "Expansion Broadcast",
+      "title": "Mock Expansion Broadcast",
     },
     Object {
       "category": Array [
@@ -1582,7 +1582,7 @@ Object {
       marketing campaign <em>Think Different</em> with DFRNT's peculiar DJ name.
       </p>
       ",
-      "id": "thnk-dfrnt-flyer",
+      "id": "mock-thnk-dfrnt-flyer",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1591,7 +1591,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963729/synbydesign/thnkdfrnt.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963729/synbydesign/thnkdfrnt.jpg",
-          "title": "",
+          "title": "Mock ",
         },
         Object {
           "description": "",
@@ -1610,7 +1610,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/c_crop,h_580,w_580,x_20,y_120/v1545963729/synbydesign/thnk%20dfrnt.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/c_crop,h_580,w_580,x_20,y_120/v1545963729/synbydesign/thnk%20dfrnt.jpg",
-          "title": "",
+          "title": "Mock ",
         },
       ],
       "meta": Object {
@@ -1622,14 +1622,14 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Thnk DFRNT flyer",
+      "title": "Mock Thnk DFRNT flyer",
     },
     Object {
       "category": Array [
         "logos",
       ],
       "description": "Chocolatemilk Logo",
-      "id": "chocolate-milk-logo",
+      "id": "mock-chocolate-milk-logo",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1648,7 +1648,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963768/synbydesign/chocolatemilk.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963768/synbydesign/chocolatemilk.jpg",
-          "title": "Chocolate Milk flyer featuring 4 cows with a heart and DC flag",
+          "title": "Mock Chocolate Milk flyer featuring 4 cows with a heart and DC flag",
         },
       ],
       "meta": Object {
@@ -1657,7 +1657,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Chocolate Milk Logo",
+      "title": "Mock Chocolate Milk Logo",
     },
     Object {
       "category": Array [
@@ -1665,7 +1665,7 @@ Object {
         "design",
       ],
       "description": "Deep Foc.us music blog.",
-      "id": "deep-foc-us",
+      "id": "mock-deep-foc-us",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1674,7 +1674,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963770/synbydesign/deepfocus-home.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963770/synbydesign/deepfocus-home.jpg",
-          "title": "Deep Foc.us Desktop Design",
+          "title": "Mock Deep Foc.us Desktop Design",
         },
         Object {
           "description": "",
@@ -1683,7 +1683,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963769/synbydesign/deepfocus-iphone.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963769/synbydesign/deepfocus-iphone.jpg",
-          "title": "Deep Foc.us Mobile Design",
+          "title": "Mock Deep Foc.us Mobile Design",
         },
         Object {
           "description": "",
@@ -1702,7 +1702,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963769/synbydesign/deepfocus-logo-with-gradient.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963769/synbydesign/deepfocus-logo-with-gradient.jpg",
-          "title": "Deep Foc.us Logo Design with gradient backdrop",
+          "title": "Mock Deep Foc.us Logo Design with gradient backdrop",
         },
         Object {
           "description": "",
@@ -1711,7 +1711,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963769/synbydesign/deepfocus-logo.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963769/synbydesign/deepfocus-logo.png",
-          "title": "Deep Foc.us Logo Design",
+          "title": "Mock Deep Foc.us Logo Design",
         },
       ],
       "meta": Object {
@@ -1734,14 +1734,14 @@ Object {
         "jQuery Mobile",
         "logo",
       ],
-      "title": "Deep Foc.us",
+      "title": "Mock Deep Foc.us",
     },
     Object {
       "category": Array [
         "web",
       ],
       "description": "Sage Dragon's website for the mobile game Spellbroken",
-      "id": "sage-dragon",
+      "id": "mock-sage-dragon",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1750,7 +1750,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963728/synbydesign/sagedragon-desktop.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963728/synbydesign/sagedragon-desktop.png",
-          "title": "Sage Dragon (Desktop)",
+          "title": "Mock Sage Dragon (Desktop)",
         },
         Object {
           "description": "",
@@ -1759,7 +1759,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963715/synbydesign/sagedragon-tablet.png",
           "priority": 1,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963715/synbydesign/sagedragon-tablet.png",
-          "title": "Sage Dragon (Tablet)",
+          "title": "Mock Sage Dragon (Tablet)",
         },
         Object {
           "description": "",
@@ -1768,7 +1768,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963718/synbydesign/sagedragon-mobile.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963718/synbydesign/sagedragon-mobile.png",
-          "title": "Sage Dragon (Mobile)",
+          "title": "Mock Sage Dragon (Mobile)",
         },
         Object {
           "description": "",
@@ -1787,7 +1787,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/c_crop,e_sharpen:100,h_840,w_1300,y_120/v1545963715/synbydesign/sagedragon-tablet.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/c_crop,e_sharpen:100,h_840,w_1300,y_120/v1545963715/synbydesign/sagedragon-tablet.png",
-          "title": "",
+          "title": "Mock ",
         },
       ],
       "meta": Object {
@@ -1813,14 +1813,14 @@ Object {
         "Mobile/Responsive Design",
         "Wordpress Custom Theme",
       ],
-      "title": "Sage Dragon",
+      "title": "Mock Sage Dragon",
     },
     Object {
       "category": Array [
         "web",
       ],
       "description": "Eighty Eight DC",
-      "id": "eighty-eight-dc",
+      "id": "mock-eighty-eight-dc",
       "imagePaths": Array [
         Object {
           "largeUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_700,f_auto/c_crop,e_blur:100,h_770,w_1850,x_1650,y_385/v1545963774/synbydesign/eightyeightdc-homepage.png",
@@ -1845,7 +1845,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/c_crop,e_blur:100,h_2440,w_2120,x_1500,y_0/v1545963774/synbydesign/eightyeightdc-homepage.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/c_crop,e_blur:100,h_2440,w_2120,x_1500,y_0/v1545963774/synbydesign/eightyeightdc-homepage.png",
-          "title": "Eighty Eight DC Homepage",
+          "title": "Mock Eighty Eight DC Homepage",
         },
         Object {
           "description": "",
@@ -1854,7 +1854,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963800/synbydesign/eightyeightdc-category.png",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963800/synbydesign/eightyeightdc-category.png",
-          "title": "Eighty Eight DC Topic Category Page",
+          "title": "Mock Eighty Eight DC Topic Category Page",
         },
         Object {
           "description": "",
@@ -1863,7 +1863,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963771/synbydesign/eightyeightdc-posts.jpg",
           "priority": 1,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963771/synbydesign/eightyeightdc-posts.jpg",
-          "title": "Eighty Eight DC Topic Posts Page",
+          "title": "Mock Eighty Eight DC Topic Posts Page",
         },
       ],
       "meta": Object {
@@ -1883,14 +1883,14 @@ Object {
         "Mobile/Responsive Design",
         "Wordpress Custom Theme",
       ],
-      "title": "Eighty Eight DC",
+      "title": "Mock Eighty Eight DC",
     },
     Object {
       "category": Array [
         "web",
       ],
       "description": "",
-      "id": "sigma-performance-group",
+      "id": "mock-sigma-performance-group",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1899,7 +1899,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963730/synbydesign/sigmaperfgroup.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963730/synbydesign/sigmaperfgroup.jpg",
-          "title": "Sigma Performance Group website screenshot",
+          "title": "Mock Sigma Performance Group website screenshot",
         },
       ],
       "meta": Object {
@@ -1918,14 +1918,14 @@ Object {
         "Design/Branding",
         "PHP",
       ],
-      "title": "Sigma Performance Group",
+      "title": "Mock Sigma Performance Group",
     },
     Object {
       "category": Array [
         "logos",
       ],
       "description": "Logo for Incognito electronic events and production service",
-      "id": "incognito-logo",
+      "id": "mock-incognito-logo",
       "imagePaths": Array [
         Object {
           "description": "",
@@ -1945,7 +1945,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/incognito.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/incognito.jpg",
-          "title": "",
+          "title": "Mock ",
         },
         Object {
           "description": "",
@@ -1954,7 +1954,7 @@ Object {
           "originalUrl": "https://res.cloudinary.com/do50usfvq/image/upload/f_auto/v1545963775/synbydesign/incognito.jpg",
           "priority": 0,
           "thumbUrl": "https://res.cloudinary.com/do50usfvq/image/upload/w_200,f_auto/v1545963775/synbydesign/incognito.jpg",
-          "title": "",
+          "title": "Mock ",
         },
       ],
       "meta": Object {
@@ -1967,7 +1967,7 @@ Object {
         "websiteUrl": "",
       },
       "tags": Array [],
-      "title": "Incognito Logo",
+      "title": "Mock Incognito Logo",
     },
   ],
   "pageSize": 10,

@@ -10,7 +10,7 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "SENTRY_SERVER_DSN": "https://995661752b5b4457846a68fa19fb7cf8@sentry.io/1361193",
+    "SENTRY_SERVER_DSN": "https://c8b61de8eedf469d9acb1dc783acf0d3@sentry.io/1361199",
     "SENTRY_CLIENT_DSN": "https://995661752b5b4457846a68fa19fb7cf8@sentry.io/1361193",
     "LOGROCKET": "nzurcg/syn-by-design-client-prod"
   },

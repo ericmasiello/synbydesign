@@ -41,12 +41,18 @@ const resume: Resume = {
       organization: 'Vistaprint Digital',
       roles: [
         {
+          title: 'UI Architect',
+          yearFrom: '2019',
+        },
+        {
           title: 'Senior Software Engineer',
           yearFrom: '2016',
         },
       ],
       accomplishments: [
-        'Technical lead for Vistaprint Website Builder',
+        'Technical lead for flagship Vistaprint Website Builder',
+        'Designed in-house UI learning program',
+        'Dramatically expanded website builder capabilities; enabling customers to create entirely customized "blocks"',
         'Vistaprint Digital UI Component library architect',
         'Full stack engineer across multiple products utilizing React and Node JS running on Heroku and AWS',
         'Mentor junior & senior engineers on front-end and Node development',
