@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as Sentry from '@sentry/browser';
 import * as tinyColor from 'tinycolor2';
 import base from './styles/base';
 import { PAGE, COLORS, pageBorderWidth } from './styles/vars';
