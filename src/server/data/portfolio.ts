@@ -131,7 +131,7 @@ const PortfolioList: RawPortfolio[] = [
       isSVG: false,
       websiteUrl: 'http://www.priorityconst.com',
       thumb: {
-        row: 'span 3',
+        row: 'span 2',
         column: 'span 3',
       },
     },
@@ -140,14 +140,22 @@ const PortfolioList: RawPortfolio[] = [
     imagePaths: [
       {
         originalUrl:
-          'v1545963773/synbydesign/priority-construction/priority-construction-home.png',
-        title: 'Homepage',
+          '/v1550337927/synbydesign/priority-construction/synbydesign_priority-construction_priority-construction-gallery-crop.png',
+        title: 'Anthem House cover photo',
         priority: 1,
+        meta: {
+          usage: ['hero'],
+          backgroundStyles: {
+            size: 'cover',
+            applyGradient: false,
+            filter: 'none',
+          },
+        },
       },
       {
         originalUrl:
-          'v1545963773/synbydesign/priority-construction/priority-construction-gallery.png',
-        title: 'Gallery',
+          'v1545963773/synbydesign/priority-construction/priority-construction-home.png',
+        title: 'Homepage',
       },
       {
         originalUrl:
@@ -364,6 +372,10 @@ const PortfolioList: RawPortfolio[] = [
       stackDesign: false,
       websiteUrl: '',
       isSVG: true,
+      thumb: {
+        row: 'span 1',
+        column: 'span 2',
+      },
     },
     category: ['logos'],
     tags: [],
