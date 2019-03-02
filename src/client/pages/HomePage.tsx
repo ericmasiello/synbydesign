@@ -4,6 +4,10 @@ import { Store } from 'redux';
 import { connect } from 'react-redux';
 import Hero from '../components/Hero';
 import PortfolioGallery from '../components/Portfolio/PortfolioGallery';
+import Item from '../components/Portfolio/PortfolioItem';
+import GalleryItem from '../components/Portfolio/PortfolioGalleryItem';
+import GalleryLink from '../components/Portfolio/PortfolioGalleryLink';
+import Heart from '../components/Heart';
 import Header from '../components/HeaderOnline';
 import Resume from '../components/Resume';
 import Meta from '../components/Meta';
@@ -29,9 +33,24 @@ interface Props {
   resume: Resume;
   existsMorePortfolioItems: boolean;
   currentPageNumber: number;
+  focusedPortfolioId?: string;
 }
 
-export class HomePage extends React.Component<Props, {}> {
+interface State {
+  setFocus: boolean;
+}
+
+export class HomePage extends React.Component<Props, State> {
+  state = { setFocus: false };
+
+  private focusedElm = React.createRef<HTMLDivElement>();
+
+  componentDidUpdate() {
+    if (this.focusedElm.current) {
+      this.focusedElm.current.focus();
+    }
+  }
+
   componentDidMount() {
     // TODO: only fetch if we don't have the data
     if (this.props.portfolioItems.length <= 1) {
@@ -52,6 +71,7 @@ export class HomePage extends React.Component<Props, {}> {
   };
 
   loadNextPortfolioPage = () => {
+    this.setState({ setFocus: true });
     this.props.fetchPortfolioItems({
       pageSize: pageRequest.pageSize,
       requestedPageNumber: this.props.currentPageNumber + 1,
@@ -65,6 +85,7 @@ export class HomePage extends React.Component<Props, {}> {
       addLike,
       existsMorePortfolioItems,
       resume,
+      focusedPortfolioId,
     } = this.props;
 
     return (
@@ -72,11 +93,33 @@ export class HomePage extends React.Component<Props, {}> {
         <Meta />
         <Header />
         <Hero />
-        <PortfolioGallery
-          id="gallery"
-          items={portfolioItems}
-          addLike={addLike}
-        />
+        <PortfolioGallery id="gallery" aria-live="polite">
+          {portfolioItems.map(item => {
+            const row = item.meta && item.meta.thumb && item.meta.thumb.row;
+            const column =
+              item.meta && item.meta.thumb && item.meta.thumb.column;
+
+            return (
+              <GalleryItem key={item.id} row={row} column={column}>
+                <span
+                  ref={item.id === focusedPortfolioId ? this.focusedElm : null}
+                  tabIndex={-1}
+                />
+                <GalleryLink to={`/portfolio/${item.id}`}>
+                  <Item {...item} />
+                  <Heart
+                    data-id={item.id}
+                    onClick={event => {
+                      event.preventDefault();
+                      addLike && addLike(item.id);
+                    }}
+                    selected={item.liked}
+                  />
+                </GalleryLink>
+              </GalleryItem>
+            );
+          })}
+        </PortfolioGallery>
         {existsMorePortfolioItems && (
           <Button onClick={this.loadNextPortfolioPage}>View more</Button>
         )}
@@ -91,11 +134,19 @@ function mapStateToProps(state: AppState) {
   const existsMorePortfolioItems =
     portfolioMeta.currentPageNumber < portfolioMeta.totalPages;
 
+  const focusedPortfolioId =
+    portfolioMeta.currentPageNumber > 1
+      ? state.portfolioItems[
+          state.portfolioItems.length - portfolioMeta.pageSize
+        ].id
+      : undefined;
+
   return {
     portfolioItems: portfolio.likedPortfolioItemsSelector(state),
     resume: state.resume,
     existsMorePortfolioItems,
     currentPageNumber: portfolioMeta.currentPageNumber,
+    focusedPortfolioId,
   };
 }
 

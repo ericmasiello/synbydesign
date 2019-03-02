@@ -7,6 +7,7 @@ import { shadow } from '../../styles/mixins';
 
 interface Props {
   to: string;
+  children: React.ReactNode;
 }
 
 export const PortfolioGalleryLink: React.SFC<Props> = props => {
