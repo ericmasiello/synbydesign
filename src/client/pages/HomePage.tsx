@@ -28,6 +28,7 @@ interface Props {
   fetchResume: ThunkActionCreator<any>;
   fetchLikes: ThunkActionCreator<any>;
   addLike: ThunkActionCreator<any>;
+  removeLike: ThunkActionCreator<any>;
   className?: string;
   portfolioItems: LikedPortfolio[];
   resume: Resume;
@@ -46,7 +47,7 @@ export class HomePage extends React.Component<Props, State> {
   private focusedElm = React.createRef<HTMLDivElement>();
 
   componentDidUpdate() {
-    if (this.focusedElm.current) {
+    if (this.focusedElm.current && this.state.setFocus) {
       this.focusedElm.current.focus();
     }
   }
@@ -83,6 +84,7 @@ export class HomePage extends React.Component<Props, State> {
       className,
       portfolioItems,
       addLike,
+      removeLike,
       existsMorePortfolioItems,
       resume,
       focusedPortfolioId,
@@ -108,10 +110,19 @@ export class HomePage extends React.Component<Props, State> {
                 <GalleryLink to={`/portfolio/${item.id}`}>
                   <Item {...item} />
                   <Heart
+                    aria-label={`Like ${item.title}`}
+                    role="switch"
+                    aria-checked={item.liked}
                     data-id={item.id}
                     onClick={event => {
                       event.preventDefault();
-                      addLike && addLike(item.id);
+                      // reset value to avoid setting focus
+                      this.setState({ setFocus: false });
+                      if (item.liked) {
+                        removeLike(item.id);
+                      } else {
+                        addLike(item.id);
+                      }
                     }}
                     selected={item.liked}
                   />
@@ -169,6 +180,7 @@ const WrappedComponent = connect(
     fetchResume: resume.fetchResume,
     fetchLikes: likes.fetchLikes,
     addLike: likes.addLike,
+    removeLike: likes.removeLike,
   },
   // @ts-ignore
 )(StyledHomePage);

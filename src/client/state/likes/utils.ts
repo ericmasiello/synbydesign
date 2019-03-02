@@ -3,6 +3,13 @@ import * as browser from '../../utils/browser';
 
 export const LOCAL_STORAGE_KEY = 'SYN_BY_DESIGN:LIKES';
 
+const updateLikes = (likes: Set<Like>) => {
+  window.localStorage.setItem(
+    LOCAL_STORAGE_KEY,
+    JSON.stringify(Array.from(likes)),
+  );
+};
+
 export const getLikes = (): Set<Like> => {
   if (!browser.isBrowser()) {
     return new Set();
@@ -28,10 +35,23 @@ export const addLike = (like: Like): Like | undefined => {
 
   likes.add(like);
 
-  window.localStorage.setItem(
-    LOCAL_STORAGE_KEY,
-    JSON.stringify(Array.from(likes)),
-  );
+  updateLikes(likes);
 
   return like;
+};
+
+export const removeLike = (like: Like): boolean => {
+  if (!browser.isBrowser()) {
+    return false;
+  }
+
+  const likes = getLikes();
+
+  const removed = likes.delete(like);
+
+  if (removed) {
+    updateLikes(likes);
+  }
+
+  return removed;
 };

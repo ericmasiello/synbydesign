@@ -14,5 +14,9 @@ export const likeReducer: Reducer<Like[]> = (state = [] as Like[], action) => {
     return [...state, action.payload];
   }
 
+  if (action.type === types.REMOVE_LIKE) {
+    return state.filter(like => like !== action.payload);
+  }
+
   return state;
 };
