@@ -2,13 +2,16 @@ import { likeAction, unlikeAction } from '../likeService';
 import fetch from 'node-fetch';
 jest.mock('node-fetch');
 
+// workaround to get around ts error when casting as jest.Mock
+const fetchMock: unknown = fetch;
+
 const mockResolve = jest.fn(() =>
   Promise.resolve({
     status: 200,
     statusText: 'OK',
   } as Response),
 );
-(fetch as jest.Mock<{}>).mockImplementation(mockResolve);
+(fetchMock as jest.Mock<{}>).mockImplementation(mockResolve);
 
 beforeEach(() => {
   mockResolve.mockClear();
