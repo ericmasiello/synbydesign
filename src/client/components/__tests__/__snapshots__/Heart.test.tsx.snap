@@ -3,7 +3,8 @@
 exports[`should render 1`] = `
 <button>
   <svg
-    className="sc-bdVaJa dmueGN"
+    className="sc-bdVaJa kxTICB"
+    fill="transparent"
     viewBox="-4.75 11.781 10.5 9.5"
   >
     <path

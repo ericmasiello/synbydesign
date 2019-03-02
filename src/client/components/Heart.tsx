@@ -6,7 +6,6 @@ import { pxToRem } from '../styles/utils';
 export const HeartIcon = styled.svg`
   height: ${pxToRem(30)};
   width: ${pxToRem(30)};
-  fill: transparent;
   stroke: ${COLORS.highlight};
   transition-property: fill, transform, filter;
   transition: 0.3s;
@@ -21,11 +20,14 @@ interface Props extends React.HTMLProps<HTMLButtonElement> {
 }
 
 export const Heart: React.SFC<Props> = props => {
-  const { className, tag: Tag, children, ...rest } = props;
+  const { className, tag: Tag, children, selected, ...rest } = props;
   return (
     // @ts-ignore
     <Tag className={className} {...rest}>
-      <HeartIcon viewBox="-4.75 11.781 10.5 9.5">
+      <HeartIcon
+        viewBox="-4.75 11.781 10.5 9.5"
+        fill={selected ? COLORS.highlight : 'transparent'}
+      >
         <path
           strokeWidth="0.75"
           strokeMiterlimit="10"
@@ -50,15 +52,10 @@ export default styled(Heart)`
   background: none;
   padding: ${pxToRem(10)};
 
-  ${HeartIcon} {
-    ${props => (props.selected ? `fill: ${COLORS.highlight}` : '')};
-  }
-
   &:hover,
   &:focus,
   &:active {
     ${HeartIcon} {
-      fill: ${COLORS.highlight};
       transform: scale(1.2);
       filter: contrast(1.5);
     }
