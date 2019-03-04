@@ -26,7 +26,8 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
-    "prepush": "npm-run-all --parallel test:coverage lint"
+    "prepush": "npm-run-all --parallel test:coverage lint",
+    "deploy": "now alias"
   },
   "author": "Eric Masiello",
   "license": "ISC",
