@@ -27,18 +27,21 @@ export class HeaderOnline extends React.Component<Props> {
 
   render() {
     return (
-      <Sticky
-        render={stick => (
+      <Sticky>
+        {stick => (
           <Header stick={stick} setRef={this.setRef}>
             <Link to="/">
-              <Logo />
+              <Logo
+                tag="h1"
+                aria-label="Syn By Design: Eric Masiello's Portfolio"
+              />
             </Link>
             {this.props.location.pathname === '/' ? (
               <Nav offsetElement={this.header} />
             ) : null}
           </Header>
         )}
-      />
+      </Sticky>
     );
   }
 }

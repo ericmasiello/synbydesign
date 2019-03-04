@@ -151,7 +151,8 @@ describe('deleteInactiveCaches', () => {
     const mockActiveCacheName = `${swCache.CACHE_PREFIX}4`;
     await swCache.deleteInactiveCaches(mockActiveCacheName);
 
-    expect((window.caches.delete as jest.Mock<{}>).mock.calls).toHaveLength(4);
+    // @ts-ignore
+    expect(window.caches.delete.mock.calls).toHaveLength(4);
     expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}1`);
     expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}2`);
     expect(window.caches.delete).toBeCalledWith(`${swCache.CACHE_PREFIX}3`);

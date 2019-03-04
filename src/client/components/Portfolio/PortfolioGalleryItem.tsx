@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { pxToRem } from '../../styles/utils';
 import { GALLERY } from '../../styles/vars';
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLLIElement> {
   className?: string;
   row?: string;
   column?: string;

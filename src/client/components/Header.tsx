@@ -21,7 +21,7 @@ export class Header extends React.Component<Props> {
   }
 }
 
-export default styled(Header)`
+export default styled(React.memo(Header))`
   position: relative;
   background-color: rgba(255, 255, 255, 0.9);
   top: 0;

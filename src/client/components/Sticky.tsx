@@ -5,10 +5,10 @@ interface State {
 }
 
 interface Props {
-  render: (stick: boolean) => JSX.Element;
+  children: (stick: boolean) => JSX.Element;
 }
 
-class Sticky extends React.Component<Props, State> {
+class Sticky extends React.PureComponent<Props, State> {
   state = {
     stick:
       typeof window !== 'undefined' && window.pageYOffset > 0 ? true : false,
@@ -31,8 +31,8 @@ class Sticky extends React.Component<Props, State> {
   }
 
   render() {
-    return this.props.render(this.state.stick);
+    return this.props.children(this.state.stick);
   }
 }
 
-export default Sticky;
+export default React.memo(Sticky);

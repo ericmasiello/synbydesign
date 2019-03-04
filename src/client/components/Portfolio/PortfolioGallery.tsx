@@ -1,50 +1,21 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Item from './PortfolioItem';
 import { pxToRem } from '../../styles/utils';
 import { maxWidth, GALLERY } from '../../styles/vars';
-import GalleryItem from './PortfolioGalleryItem';
-import GalleryLink from './PortfolioGalleryLink';
 import Heart from '../Heart';
-import { ThunkActionCreator } from '../../../types';
 
-interface Props extends React.HTMLProps<HTMLElement> {
-  items: LikedPortfolio[];
+interface Props extends React.HTMLProps<HTMLUListElement> {
   tag?: Tag;
-  addLike: ThunkActionCreator<Like>;
 }
 
 export const PortfolioGallery: React.SFC<Props> = props => {
-  const { items, tag: Tag, addLike, ...rest } = props;
-  return (
-    // @ts-ignore
-    <Tag {...rest}>
-      {items.map(item => {
-        const row = item.meta && item.meta.thumb && item.meta.thumb.row;
-        const column = item.meta && item.meta.thumb && item.meta.thumb.column;
+  const { tag: Tag, ...rest } = props;
 
-        return (
-          <GalleryItem key={item.id} row={row} column={column}>
-            <GalleryLink to={`/portfolio/${item.id}`}>
-              <Item {...item} />
-              <Heart
-                data-id={item.id}
-                onClick={event => {
-                  event.preventDefault();
-                  addLike(item.id);
-                }}
-                selected={item.liked}
-              />
-            </GalleryLink>
-          </GalleryItem>
-        );
-      })}
-    </Tag>
-  );
+  // @ts-ignore
+  return <Tag {...rest} />;
 };
 
 PortfolioGallery.displayName = 'PortfolioGallery';
-
 PortfolioGallery.defaultProps = {
   tag: 'ul',
 };

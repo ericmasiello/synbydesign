@@ -30,7 +30,8 @@ const mockNext = jest.fn() as NextFunction;
 describe('portofolioController', () => {
   test('should send response as json', async () => {
     const mockList = jest.fn(() => Promise.resolve(mockListResponse));
-    (list as jest.Mock<{}>).mockImplementation(mockList);
+    // @ts-ignore
+    list.mockImplementation(mockList);
 
     const mockReq = {} as Request;
     mockReq.query = {};
@@ -53,7 +54,8 @@ describe('portofolioController', () => {
 
   test('should pass query params to list method', async () => {
     const mockList = jest.fn(() => Promise.resolve(mockListResponse));
-    (list as jest.Mock<{}>).mockImplementation(mockList);
+    // @ts-ignore
+    list.mockImplementation(mockList);
 
     const mockReq = {} as Request;
     const query = {
@@ -80,7 +82,8 @@ describe('portofolioController', () => {
 
   test('should send an error response', async () => {
     const mockList = jest.fn(() => Promise.reject(new Error('some error')));
-    (list as jest.Mock<{}>).mockImplementation(mockList);
+    // @ts-ignore
+    list.mockImplementation(mockList);
 
     const mockReq = {} as Request;
     mockReq.query = {};
@@ -96,7 +99,8 @@ describe('portofolioController', () => {
 describe('portofolioDetailController', () => {
   test('should pass the param id to getById', async () => {
     const mockGetById = jest.fn(() => Promise.resolve(mockPortfolioItem));
-    (getById as jest.Mock<{}>).mockImplementation(mockGetById);
+    // @ts-ignore
+    getById.mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
     mockReq.params = { id: 'the-id' };
@@ -110,7 +114,8 @@ describe('portofolioDetailController', () => {
 
   test('should send response as json', async () => {
     const mockGetById = jest.fn(() => Promise.resolve(mockPortfolioItem));
-    (getById as jest.Mock<{}>).mockImplementation(mockGetById);
+    // @ts-ignore
+    getById.mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
     mockReq.params = { id: 'the-id' };
@@ -124,7 +129,8 @@ describe('portofolioDetailController', () => {
 
   test('should respond with a 404 when item is not found', async () => {
     const mockGetById = jest.fn(() => Promise.resolve(undefined));
-    (getById as jest.Mock<{}>).mockImplementation(mockGetById);
+    // @ts-ignore
+    getById.mockImplementation(mockGetById);
 
     const mockReq = {} as Request;
     mockReq.params = { id: 'the-id' };

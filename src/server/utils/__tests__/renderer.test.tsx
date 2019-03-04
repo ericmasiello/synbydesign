@@ -28,7 +28,8 @@ jest.mock('react-dom/server');
   return sheet;
 });
 
-(renderToString as jest.Mock<{}>).mockImplementation(jest.fn(() => '<html />'));
+// @ts-ignore
+renderToString.mockImplementation(jest.fn(() => '<html />'));
 
 test('should render head as a string', () => {
   const url = '/';

@@ -23,7 +23,7 @@ export const NotFoundPage: React.SFC<Props> = ({
     <div className={className}>
       <Meta />
       <Header>
-        <Logo />
+        <Logo tag="h1" aria-label="Syn By Design: Eric Masiello's Portfolio" />
       </Header>
       <NotFound />
     </div>
