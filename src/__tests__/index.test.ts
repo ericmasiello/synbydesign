@@ -4,7 +4,9 @@ import appStartup from '../server/utils/appStartup';
 jest.mock('../server/app');
 
 const mockListen = jest.fn();
-(app.listen as jest.Mock<{}>).mockImplementation(mockListen);
+
+// @ts-ignore
+app.listen.mockImplementation(mockListen);
 
 test('should start the app', () => {
   expect(app.listen).toBeCalledWith(app.get('port') || 3000, appStartup);

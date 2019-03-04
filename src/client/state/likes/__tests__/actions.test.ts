@@ -4,7 +4,8 @@ import * as utils from '../utils';
 import { AxiosInstance } from '../../../../../node_modules/axios';
 jest.mock('../utils');
 
-(utils.getLikes as jest.Mock<{}>).mockImplementation(() => {
+// @ts-ignore
+utils.getLikes.mockImplementation(() => {
   const s = new Set();
   s.add('foo');
   s.add('bar');
@@ -51,7 +52,8 @@ describe('fetchLikes', () => {
 describe('addLike', () => {
   describe('new like added', () => {
     beforeEach(() => {
-      (utils.addLike as jest.Mock<{}>).mockImplementation(s => s);
+      // @ts-ignore
+      utils.addLike.mockImplementation(s => s);
     });
 
     test('should only dispatch a ADD_LIKE action when submitting successfully', () => {
@@ -100,7 +102,8 @@ describe('addLike', () => {
 
   describe('pre existing like added', () => {
     beforeEach(() => {
-      (utils.addLike as jest.Mock<{}>).mockImplementation(() => undefined);
+      // @ts-ignore
+      utils.addLike.mockImplementation(() => undefined);
     });
 
     test('should not dispatch a ADD_LIKE action', () => {

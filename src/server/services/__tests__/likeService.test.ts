@@ -2,16 +2,14 @@ import { likeAction, unlikeAction } from '../likeService';
 import fetch from 'node-fetch';
 jest.mock('node-fetch');
 
-// workaround to get around ts error when casting as jest.Mock
-const fetchMock: unknown = fetch;
-
 const mockResolve = jest.fn(() =>
   Promise.resolve({
     status: 200,
     statusText: 'OK',
   } as Response),
 );
-(fetchMock as jest.Mock<{}>).mockImplementation(mockResolve);
+// @ts-ignore
+fetch.mockImplementation(mockResolve);
 
 beforeEach(() => {
   mockResolve.mockClear();
@@ -27,6 +25,7 @@ describe('likeAction', () => {
 
   test('calls Google sheet with a like action', () => {
     return likeAction('123').then(result => {
+      // @ts-ignore
       const url = new URL(mockResolve.mock.calls[0][0]);
 
       expect(url.searchParams.get('action')).toBe('like');
@@ -35,6 +34,7 @@ describe('likeAction', () => {
 
   test('calls Google sheet with the appropriate custom parameters', () => {
     return likeAction('123', 'the-title').then(result => {
+      // @ts-ignore
       const url = new URL(mockResolve.mock.calls[0][0]);
 
       expect(url.searchParams.get('id')).toBe('123');
@@ -53,6 +53,7 @@ describe('unlikeAction', () => {
 
   test('calls Google sheet with a like action', () => {
     return unlikeAction('123').then(result => {
+      // @ts-ignore
       const url = new URL(mockResolve.mock.calls[0][0]);
 
       expect(url.searchParams.get('action')).toBe('unlike');
@@ -61,6 +62,7 @@ describe('unlikeAction', () => {
 
   test('calls Google sheet with the appropriate custom parameters', () => {
     return unlikeAction('123', 'the-title').then(result => {
+      // @ts-ignore
       const url = new URL(mockResolve.mock.calls[0][0]);
 
       expect(url.searchParams.get('id')).toBe('123');

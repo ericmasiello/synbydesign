@@ -35,9 +35,12 @@ describe('likeController', () => {
     beforeEach(() => {
       mockGetById.mockClear();
       mockLikeAction.mockClear();
-      (mockRes.json as jest.Mock<{}>).mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (likeAction as jest.Mock<{}>).mockImplementation(mockLikeAction);
+      // @ts-ignore
+      mockRes.json.mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      likeAction.mockImplementation(mockLikeAction);
     });
 
     it('should respond with a success response', () => {
@@ -78,15 +81,16 @@ describe('likeController', () => {
 
     beforeEach(() => {
       mockGetById.mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (mockNext as jest.Mock<{}>).mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      mockNext.mockClear();
     });
 
     it('should call next with a boom error', () => {
       return likeController(mockReq, mockRes, mockNext).then(() => {
-        const error = (mockNext as jest.Mock<{}>).mock.calls[0][0] as boom<
-          null
-        >;
+        // @ts-ignore
+        const error = mockNext.mock.calls[0][0] as boom<null>;
 
         expect(mockNext).toBeCalled();
         expect(error.message).toBe('Error in Portfolio.getById');
@@ -121,17 +125,19 @@ describe('likeController', () => {
 
     beforeEach(() => {
       mockGetById.mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (mockNext as jest.Mock<{}>).mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      mockNext.mockClear();
       mockLikeAction.mockClear();
-      (likeAction as jest.Mock<{}>).mockImplementation(mockLikeAction);
+      // @ts-ignore
+      likeAction.mockImplementation(mockLikeAction);
     });
 
     it('should call next with a boom error', () => {
       return likeController(mockReq, mockRes, mockNext).then(() => {
-        const error = (mockNext as jest.Mock<{}>).mock.calls[0][0] as boom<
-          null
-        >;
+        // @ts-ignore
+        const error = mockNext.mock.calls[0][0] as boom<null>;
 
         expect(mockNext).toBeCalled();
         expect(error.message).toBe('Not found');
@@ -166,17 +172,19 @@ describe('likeController', () => {
 
     beforeEach(() => {
       mockGetById.mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (mockNext as jest.Mock<{}>).mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      mockNext.mockClear();
       mockLikeAction.mockClear();
-      (likeAction as jest.Mock<{}>).mockImplementation(mockLikeAction);
+      // @ts-ignore
+      likeAction.mockImplementation(mockLikeAction);
     });
 
     it('should call next with a boom error', () => {
       return likeController(mockReq, mockRes, mockNext).then(() => {
-        const error = (mockNext as jest.Mock<{}>).mock.calls[0][0] as boom<
-          null
-        >;
+        // @ts-ignore
+        const error = mockNext.mock.calls[0][0] as boom<null>;
 
         expect(mockNext).toBeCalled();
         expect(error.message).toBe('Server error');
@@ -215,9 +223,12 @@ describe('unlikeController', () => {
     beforeEach(() => {
       mockGetById.mockClear();
       mockUnlikeAction.mockClear();
-      (mockRes.json as jest.Mock<{}>).mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (unlikeAction as jest.Mock<{}>).mockImplementation(mockUnlikeAction);
+      // @ts-ignore
+      mockRes.json.mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      unlikeAction.mockImplementation(mockUnlikeAction);
     });
 
     it('should respond with a success response', () => {
@@ -258,15 +269,16 @@ describe('unlikeController', () => {
 
     beforeEach(() => {
       mockGetById.mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (mockNext as jest.Mock<{}>).mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      mockNext.mockClear();
     });
 
     it('should call next with a boom error', () => {
       return unlikeController(mockReq, mockRes, mockNext).then(() => {
-        const error = (mockNext as jest.Mock<{}>).mock.calls[0][0] as boom<
-          null
-        >;
+        // @ts-ignore
+        const error = mockNext.mock.calls[0][0] as boom<null>;
 
         expect(mockNext).toBeCalled();
         expect(error.message).toBe('Error in Portfolio.getById');
@@ -301,17 +313,19 @@ describe('unlikeController', () => {
 
     beforeEach(() => {
       mockGetById.mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (mockNext as jest.Mock<{}>).mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      mockNext.mockClear();
       mockUnlikeAction.mockClear();
-      (unlikeAction as jest.Mock<{}>).mockImplementation(mockUnlikeAction);
+      // @ts-ignore
+      unlikeAction.mockImplementation(mockUnlikeAction);
     });
 
     it('should call next with a boom error', () => {
       return unlikeController(mockReq, mockRes, mockNext).then(() => {
-        const error = (mockNext as jest.Mock<{}>).mock.calls[0][0] as boom<
-          null
-        >;
+        // @ts-ignore
+        const error = mockNext.mock.calls[0][0] as boom<null>;
 
         expect(mockNext).toBeCalled();
         expect(error.message).toBe('Not found');
@@ -346,17 +360,19 @@ describe('unlikeController', () => {
 
     beforeEach(() => {
       mockGetById.mockClear();
-      (getById as jest.Mock<{}>).mockImplementation(mockGetById);
-      (mockNext as jest.Mock<{}>).mockClear();
+      // @ts-ignore
+      getById.mockImplementation(mockGetById);
+      // @ts-ignore
+      mockNext.mockClear();
       mockUnlikeAction.mockClear();
-      (unlikeAction as jest.Mock<{}>).mockImplementation(mockUnlikeAction);
+      // @ts-ignore
+      unlikeAction.mockImplementation(mockUnlikeAction);
     });
 
     it('should call next with a boom error', () => {
       return unlikeController(mockReq, mockRes, mockNext).then(() => {
-        const error = (mockNext as jest.Mock<{}>).mock.calls[0][0] as boom<
-          null
-        >;
+        // @ts-ignore
+        const error = mockNext.mock.calls[0][0] as boom<null>;
 
         expect(mockNext).toBeCalled();
         expect(error.message).toBe('Server error');

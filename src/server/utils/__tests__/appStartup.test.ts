@@ -3,6 +3,7 @@ import app from '../../app';
 jest.mock('../../app');
 
 let originalLog: any;
+// @ts-ignore
 app.get = jest.fn(() => '1234');
 
 beforeEach(() => {

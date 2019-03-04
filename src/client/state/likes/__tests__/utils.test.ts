@@ -5,7 +5,8 @@ jest.mock('../../../utils/browser');
 describe('getLikes', () => {
   describe('non-browser environment', () => {
     beforeEach(() => {
-      (browser.isBrowser as jest.Mock<{}>).mockImplementation(() => false);
+      // @ts-ignore
+      browser.isBrowser.mockImplementation(() => false);
     });
 
     test('should return an empty set', () => {
@@ -16,7 +17,8 @@ describe('getLikes', () => {
 
   describe('browser environment', () => {
     beforeEach(() => {
-      (browser.isBrowser as jest.Mock<{}>).mockImplementation(() => true);
+      // @ts-ignore
+      browser.isBrowser.mockImplementation(() => true);
     });
 
     describe('with data', () => {
@@ -56,7 +58,8 @@ describe('getLikes', () => {
 describe('addLike', () => {
   describe('non-browser environment', () => {
     beforeEach(() => {
-      (browser.isBrowser as jest.Mock<{}>).mockImplementation(() => false);
+      // @ts-ignore
+      browser.isBrowser.mockImplementation(() => false);
     });
 
     xtest('should return the passed in value', () => {
@@ -68,7 +71,8 @@ describe('addLike', () => {
 
   describe('browser environment', () => {
     beforeEach(() => {
-      (browser.isBrowser as jest.Mock<{}>).mockImplementation(() => true);
+      // @ts-ignore
+      browser.isBrowser.mockImplementation(() => true);
       // @ts-ignore
       window.localStorage = {
         getItem: jest
