@@ -3,7 +3,33 @@ import { ThunkActionCreator, LikeAction } from '../../../types.d';
 import * as types from './types';
 import { AnyAction } from 'redux';
 import * as utils from './utils';
-import { likeAction } from '../../../server/services/likeService';
+
+// TODO: this is duplicate of what exists in likeService
+const createAction = (
+  action: LikeActionType,
+  id: string,
+  title?: string,
+): Promise<StatusResponse> => {
+  const url = new URL(
+    'https://script.google.com/macros/s/AKfycbwErydNjqBnj4xo_AHcAro-UziMCuciiMEORMQMuJ-fxhk4XxE/exec',
+  );
+
+  url.searchParams.set('id', id);
+  url.searchParams.set('action', action);
+  if (title) {
+    url.searchParams.set('description', title);
+  }
+
+  return fetch(url.toString()).then(result => {
+    return {
+      code: result.status,
+      message: result.statusText,
+    };
+  });
+};
+
+export const likeAction = (id: string, title?: string) =>
+  createAction('like', id, title);
 
 export const fetchLikesActionCreator = (likes: Like[]): LikeAction => ({
   type: types.FETCH_LIKES,

@@ -1,6 +1,6 @@
 import rawPortfolioList from '../data/portfolio';
-import kebabCase from 'lodash-es/kebabCase';
-import chunk from 'lodash-es/chunk';
+import { kebabCase, chunk } from 'lodash';
+// import chunk from 'lodash/chunk';
 
 const IMAGE_HOSTING_URL = 'https://res.cloudinary.com/do50usfvq/image/upload';
 const LARGE = 'w_700';

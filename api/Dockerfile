@@ -4,7 +4,7 @@ FROM node:10.7.0
 ENV NPM_CONFIG_LOGLEVEL warn
 
 # export listening port
-ENV PORT 3000
+ENV PORT 5000
 EXPOSE $PORT
 
 WORKDIR /opt/code

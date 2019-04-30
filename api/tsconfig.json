@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+      "target": "ES2017",
+      "strict": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "build"
+  },
+  "include": [
+      "./src/**/*",
+      "typings.d.ts"
+  ],
+  "exclude": [
+    "./src/__mocks__/**/*"
+  ]
+}

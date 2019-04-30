@@ -1,25 +1,3 @@
-declare module '*.jpg' {
-  const value: any;
-  export = value;
-}
-
-declare module '*.png' {
-  const value: any;
-  export = value;
-}
-
-declare module '*.svg' {
-  const value: any;
-  export = value;
-}
-
-declare module '*.json' {
-  const value: any;
-  export = value;
-}
-
-type Tag = React.ReactType;
-
 interface PortfolioThumbMeta {
   fit?:
     | 'cover'
@@ -205,16 +183,6 @@ interface AppState {
 interface Context {
   url?: string;
   notFound?: boolean;
-}
-
-interface AppWindow extends Window {
-  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
-  INITIAL_STATE?: any;
-}
-
-interface ServiceWorkerEvent extends ExtendableEvent {
-  request: Request;
-  respondWith: (arg: Promise<any>) => void;
 }
 
 interface StatusResponse {

@@ -26,8 +26,7 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",
-    "prepush": "npm-run-all --parallel test:coverage lint",
-    "deploy": "now deploy && now alias"
+    "prepush": "npm-run-all --parallel test:coverage lint"
   },
   "author": "Eric Masiello",
   "license": "ISC",
@@ -94,7 +93,6 @@
     "jest": "24.1.0",
     "jest-styled-components": "~6.3.1",
     "nodemon": "^1.18.10",
-    "now": "^12.1.14",
     "npm-run-all": "4.1.5",
     "prettier": "^1.16.4",
     "raw-loader": "~1.0.0",
