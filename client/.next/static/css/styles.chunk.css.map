@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/styles.chunk.css","sources":["webpack:///./pages/test.css"],"sourcesContent":[":global body {\n    background-color: lime;\n}\n\n.example {\n    color: red;\n}"],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;","sourceRoot":""}
