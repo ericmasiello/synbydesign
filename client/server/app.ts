@@ -1,25 +1,19 @@
 import * as express from 'express';
 import * as next from 'next';
-// import * as pathMatch from 'path-match';
+import portfolioControllerFactory from './controllers/portfolio';
 
 const port = parseInt(process.env.PORT || '', 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-// const route = pathMatch();
-// const match = route('/about/:name');
 
 app
   .prepare()
   .then(() => {
     const server = express();
+    const portfolioController = portfolioControllerFactory(app);
 
-    // FIXME: remove any
-    server.get('/portfolio/:id', (req: any, res: any) => {
-      const actualPage = '/portfolio';
-      const queryParams = { id: req.params.id };
-      app.render(req, res, actualPage, queryParams);
-    });
+    server.get('/portfolio/:id', portfolioController.detail);
 
     server.get('*', (req: any, res: any) => {
       return handle(req, res);

@@ -10,11 +10,6 @@ interface StatelessPage<P = {}> extends React.SFC<P> {
   getInitialProps?: (ctx: any) => Promise<P>;
 }
 
-type Portfolio = {
-  id: string;
-  title: string;
-};
-
 type Props = { portfolioItems: Portfolio[] };
 
 const IndexPage: StatelessPage<Props> = (props: Props) => {
@@ -48,8 +43,6 @@ const IndexPage: StatelessPage<Props> = (props: Props) => {
 IndexPage.getInitialProps = async function() {
   const res = await fetch('http://localhost:4000/portfolio');
   const data = await res.json();
-
-  console.log(`Show data fetched. Count: ${data.length}`);
 
   return {
     portfolioItems: data,

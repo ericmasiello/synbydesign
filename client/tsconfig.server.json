@@ -8,6 +8,6 @@
         "outDir": "build"
     },
     "include": [
-        "./server.ts"
+        "./server"
     ],
   }
