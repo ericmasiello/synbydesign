@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as compression from 'compression';
+import * as cors from 'cors';
 import * as Sentry from '@sentry/node';
 import apiRouter from './routes/api';
 import errorMiddleware from './middleware/errorMiddleware';
@@ -13,6 +14,7 @@ Sentry.init({
 const app = express();
 app.disable('x-powered-by'); // removes 'X-Powered-By: Express' header
 app.use(Sentry.Handlers.requestHandler());
+app.use(cors());
 app.use(compression()); // enable gzip compression
 app.set('port', process.env.PORT || 4000);
 app.use(
