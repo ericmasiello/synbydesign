@@ -1,3 +1,8 @@
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+
 import app from './app';
 
-app.listen(5000, () => console.log(`Listening on port: ${app.get('port')}`));
+app.listen(app.get('port'), () =>
+  console.log(`Listening on port: ${app.get('port')}`),
+);
