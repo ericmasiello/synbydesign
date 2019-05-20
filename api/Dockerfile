@@ -1,4 +1,4 @@
-FROM node:10.7.0
+FROM node:10.15.0
 
 # reset npm loglevel (https://github.com/nodejs/docker-node/issues/57)
 ENV NPM_CONFIG_LOGLEVEL warn
