@@ -12,4 +12,12 @@
 
 ## Testing
 
-1. `npm test`
+`npm test`
+
+## Deploy via `now`
+
+`npm run deploy`
+
+### Deploy to production
+
+`npm run deploy:prod`
