@@ -25,3 +25,26 @@
 ### Deploy to production
 
 `npm run deploy:prod`
+
+#### Run development server with VS Code debugging
+
+First, run `npm run build`. Then run `Launch Client` via VS Code debugger.
+
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Client",
+      "cwd": "${workspaceFolder}/client",
+      "program": "${workspaceFolder}/client/build/app.js",
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ],
+      "runtimeVersion": "10.15.3"
+    },
+  ]
+}
+```
