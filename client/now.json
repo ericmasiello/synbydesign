@@ -1,0 +1,21 @@
+{
+    "name": "synbydesign",
+    "version": 1,
+    "type": "docker",
+    "alias": [
+      "synbydesign.com",
+      "www.synbydesign.com",
+      "ericmasiello.com",
+      "www.ericmasiello.com"
+    ],
+    "env": {
+      "NODE_ENV": "production",
+      "API": "https://api.synbydesign.com"
+    },
+    "scale": {
+      "sfo1": {
+        "min": 1,
+        "max": "auto"
+      }
+    }
+  }

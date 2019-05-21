@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
+import './test.css';
 
 interface StatelessPage<P = {}> extends React.SFC<P> {
   getInitialProps?: (ctx: any) => Promise<P>;
@@ -11,7 +12,7 @@ type Props = { portfolioItem: Portfolio };
 
 const PortfolioPage: StatelessPage<Props> = (props: Props) => {
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title={`Portfolio | ${props.portfolioItem.title}`}>
       <p>
         <Link href="/">
           <a>Home</a>
@@ -27,11 +28,8 @@ const PortfolioPage: StatelessPage<Props> = (props: Props) => {
 
 PortfolioPage.getInitialProps = async function(context) {
   const { id } = context.query;
-  console.log(`Gonna fetch id: ${id}`);
-  const res = await fetch(`http://localhost:4000/portfolio/${id}`);
+  const res = await fetch(`${process.env.API}/portfolio/${id}`);
   const portfolioItem = await res.json();
-
-  console.log(`Fetched show: ${portfolioItem.title}`);
 
   return { portfolioItem };
 };

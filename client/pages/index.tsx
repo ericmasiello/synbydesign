@@ -41,7 +41,7 @@ const IndexPage: StatelessPage<Props> = (props: Props) => {
 };
 
 IndexPage.getInitialProps = async function() {
-  const res = await fetch('http://localhost:4000/portfolio');
+  const res = await fetch(`${process.env.API}/portfolio`);
   const data = await res.json();
 
   return {
