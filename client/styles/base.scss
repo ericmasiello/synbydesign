@@ -2,11 +2,15 @@
 
 :root {
   --colors-bg: #fff;
-  --colors-base: #424141;
-  --base-font-fmaily: 'Source Sans Pro', sans-serif;
+  --colors-body: #424141;
+  --colors-link: rgba(201, 0, 68, 0.75);
+  --body-font-fmaily: 'Source Sans Pro', sans-serif;
   --body-weight-light: 300;
   --body-weight-medium: 400;
   --body-weight-bold: 600;
+  --header-font-famlily: 'Lato', sans-serif;
+  --header-weight-medium: 400;
+  --header-weight-bold: 700;
 }
 
 html {
@@ -21,8 +25,8 @@ html {
 
 
 html {
-  font-family: var(--base-font-fmaily);
-  color: var(--colors-base);
+  font-family: var(--body-font-fmaily);
+  color: var(--colors-body);
   font-size: 100%;
 }
 
@@ -33,16 +37,14 @@ body {
   line-height: 1.35;
   font-weight: var(--body-weight-light);
 
-  /* @media only screen and (min-width: 992px) {
-    font-size: ${pxToRem(15)};
+  @media only screen and (min-width: 992px) {
+    font-size: 0.9375rem;
   }
 
   @media only screen and (min-width: 1200px) {
-    font-size: ${pxToRem(16)};
-  } */
+    font-size: 1rem
+  }
 }
-
-/*
 
 input, textarea, select, button {
   font-size: inherit;
@@ -58,8 +60,8 @@ button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  ${headerFont()};
-  font-weight: ${HEADER_WEIGHTS.medium};
+  font-family: var(--header-font-famlily);
+  font-weight: var(--header-weight-medium);
   line-height: 1.1;
 }
 
@@ -71,7 +73,7 @@ h1, h2, h3, h4, h5, h6, p {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: ${COLORS.link};
+  color: var(--colors-link);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -89,4 +91,3 @@ img {
 blockquote {
   margin: 0;
 }
-*/

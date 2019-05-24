@@ -4,7 +4,6 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Header from '../components/HeaderOnline';
-import * as css from './test.css';
 
 interface StatelessPage<P = {}> extends React.SFC<P> {
   getInitialProps?: (ctx: any) => Promise<P>;
@@ -17,7 +16,7 @@ const IndexPage: StatelessPage<Props> = (props: Props) => {
     <Layout title="Home | Next.js + TypeScript Example">
       <Header />
       <Hero />
-      <h1 className={css.example}>Hello Next.js 👋</h1>
+      <h1>Hello Next.js 👋</h1>
       <p>
         <Link href="/about">
           <a>About</a>

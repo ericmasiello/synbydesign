@@ -2,7 +2,6 @@ import * as React from 'react';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
-import './test.css';
 
 interface StatelessPage<P = {}> extends React.SFC<P> {
   getInitialProps?: (ctx: any) => Promise<P>;
