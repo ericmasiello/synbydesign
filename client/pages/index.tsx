@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import Header from '../components/HeaderOnline';
-import css from './test.css';
+import * as css from './test.css';
 
 interface StatelessPage<P = {}> extends React.SFC<P> {
   getInitialProps?: (ctx: any) => Promise<P>;
