@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600');
+
+:root {
+  --colors-bg: #fff;
+  --colors-base: #424141;
+  --base-font-fmaily: 'Source Sans Pro', sans-serif;
+  --body-weight-light: 300;
+  --body-weight-medium: 400;
+  --body-weight-bold: 600;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--colors-bg);
+}
+
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-family: var(--base-font-fmaily);
+  color: var(--colors-base);
+  font-size: 100%;
+}
+
+
+body {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  font-weight: var(--body-weight-light);
+
+  /* @media only screen and (min-width: 992px) {
+    font-size: ${pxToRem(15)};
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: ${pxToRem(16)};
+  } */
+}
+
+/*
+
+input, textarea, select, button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  ${headerFont()};
+  font-weight: ${HEADER_WEIGHTS.medium};
+  line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: ${COLORS.link};
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+blockquote {
+  margin: 0;
+}
+*/
