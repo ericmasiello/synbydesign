@@ -1,0 +1,15 @@
+.errorScreen {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem 2.5rem;
+
+    a {
+       display: block;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        display: flex;
+        align-items: center;
+    }
+}
