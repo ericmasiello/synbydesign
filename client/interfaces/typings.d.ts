@@ -13,7 +13,15 @@ declare module '*.svg' {
   export = value;
 }
 
-type Tag = string | React.ComponentType<any>;
+interface FlexibleComponentProps
+  extends Omit<React.AllHTMLAttributes<HTMLElement>, 'as'> {
+  /**
+   * Which HTML tag or custom Component should be rendered
+   */
+  as?: React.ElementType;
+}
+
+// type Tag = string | React.ComponentType<any>;
 
 type Portfolio = {
   id: string;

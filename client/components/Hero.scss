@@ -1,0 +1,22 @@
+.hero {
+    background-color: #e4e4e4;
+    text-transform: uppercase;
+    padding: 1rem var(--horizontal-padding);
+    max-width: var(--max-page-width);
+    margin: auto;
+  
+    @media (min-width: 1200px) {
+      padding-top: 8.75rem;
+      margin-bottom: 3.2rem;
+    }
+}
+
+.heroCopy {
+    font-family: var(--header-font-famlily);
+    position: relative;
+    max-width: 6em;
+
+    @media (min-width: 1200px) {
+        bottom: -3.2rem;
+    }
+}

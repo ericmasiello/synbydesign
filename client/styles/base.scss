@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600');
 
 :root {
-  --colors-bg: #fff;
-  --colors-body: #424141;
-  --colors-link: rgba(201, 0, 68, 0.75);
+  
   --body-font-fmaily: 'Source Sans Pro', sans-serif;
   --body-weight-light: 300;
   --body-weight-medium: 400;
@@ -11,12 +9,49 @@
   --header-font-famlily: 'Lato', sans-serif;
   --header-weight-medium: 400;
   --header-weight-bold: 700;
+
+  /* colors */
+  --color-bg: #fff;
+  --color-body: #424141;
+  --color-link: rgba(201, 0, 68, 0.75);
+  --color-muted: #787575;
+  --color-highlight: #c90044;
+
+  /* typography */
+  --type-small: 0.75rem;
+  --type-small-lh: 1.6;
+
+  --type-base: 1rem;
+  --type-base-lh: 1.6;
+
+  --type-t5: 1.3rem;
+  --type-t5-lh: 1.6;
+
+  --type-t4: 1.5rem;
+  --type-t4-lh: 1.6;
+
+  --type-t3: 2rem;
+  --type-t3-lh: 1.3;
+
+  --type-t2: 2.5rem;
+  --type-t2-lh: 1.2;
+
+  --type-t1: 3rem;
+  --type-t1-lh: 1.1;
+
+  --type-jumbo: 4rem;
+  --type-jumbo-lh: 1.1;
+
+  /* spacing and sizing */
   --max-page-width: 100rem;
+  --horizontal-padding: 2.5rem;
+  --page-border-width: 1vmin;
+  --header-spacing: 1.5vh;
 }
 
 html {
   box-sizing: border-box;
-  background-color: var(--colors-bg);
+  background-color: var(--color-bg);
 }
 
 
@@ -27,7 +62,7 @@ html {
 
 html {
   font-family: var(--body-font-fmaily);
-  color: var(--colors-body);
+  color: var(--color-body);
   font-size: 100%;
 }
 
@@ -74,7 +109,7 @@ h1, h2, h3, h4, h5, h6, p {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: var(--colors-link);
+  color: var(--color-link);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
