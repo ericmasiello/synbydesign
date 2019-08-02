@@ -19,6 +19,7 @@ interface FlexibleComponentProps
    * Which HTML tag or custom Component should be rendered
    */
   as?: React.ElementType;
+  className?: string;
 }
 
 // type Tag = string | React.ComponentType<any>;

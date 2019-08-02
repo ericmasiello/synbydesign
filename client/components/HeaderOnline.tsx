@@ -4,7 +4,7 @@ import Logo from './Logo';
 const HeaderOnline: React.SFC<{}> = () => {
   return (
     <div>
-      <Logo tag="h1" aria-label="Syn By Design: Eric Masiello's Portfolio" />
+      <Logo as="h1" aria-label="Syn By Design: Eric Masiello's Portfolio" />
       Header online
     </div>
   );

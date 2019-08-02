@@ -3,14 +3,12 @@ import * as logo from '../images/synbydesignlogo.svg';
 import * as styles from './Logo.scss';
 import classNames from 'classnames';
 
-interface Props extends React.HTMLAttributes<HTMLElement> {
-  tag?: Tag;
-}
+interface Props extends FlexibleComponentProps {}
 
 const Logo: React.SFC<Props> = props => {
-  const { tag: Tag = 'div', className, ...rest } = props;
+  const { as: Comp = 'div', className, ...rest } = props;
   return (
-    <Tag
+    <Comp
       className={classNames(styles.logo, className)}
       {...rest}
       dangerouslySetInnerHTML={{ __html: logo }}
