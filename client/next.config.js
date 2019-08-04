@@ -32,8 +32,8 @@ module.exports = withTypescript(
         config.plugins.push(imageMinPlugin);
 
         // Do not run type checking twice:
-        if (options.isServer)
-          config.plugins.push(new ForkTsCheckerWebpackPlugin());
+        // if (options.isServer)
+        //   config.plugins.push(new ForkTsCheckerWebpackPlugin());
 
         return config;
       },

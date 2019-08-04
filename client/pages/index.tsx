@@ -2,6 +2,8 @@ import * as React from 'react';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout';
+import { connect } from 'react-redux';
+import { bar, baz } from '../store';
 
 interface StatelessPage<P = {}> extends React.SFC<P> {
   getInitialProps?: (ctx: any) => Promise<P>;
@@ -35,7 +37,9 @@ const IndexPage: StatelessPage<Props> = (props: Props) => {
   );
 };
 
-IndexPage.getInitialProps = async function() {
+IndexPage.getInitialProps = async function({ reduxStore }) {
+  reduxStore.dispatch(bar);
+
   const res = await fetch(`${process.env.API}/portfolio`);
   const data = await res.json();
 
@@ -44,4 +48,7 @@ IndexPage.getInitialProps = async function() {
   };
 };
 
-export default IndexPage;
+export default connect(
+  null,
+  { bar, baz },
+)(IndexPage);
