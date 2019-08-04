@@ -1,5 +1,11 @@
 .hero {
-    background-color: #e4e4e4;
+    background-color: rgba(228,228,228,0.5);
+    // TODO: optimize image, maybe upload to cloudinary
+    background-image:
+        linear-gradient(90deg, rgba(228,228,228,0.95) 0%, rgba(228,228,228,0.5) 100%),
+        url('/static/photo.jpg');
+    background-size: cover;
+    background-position: 50% 0;
     text-transform: uppercase;
     padding: 1rem var(--horizontal-padding);
     max-width: var(--max-page-width);
@@ -13,6 +19,7 @@
 
 .heroCopy {
     font-family: var(--header-font-famlily);
+    filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.4));
     position: relative;
     max-width: 6em;
 
