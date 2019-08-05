@@ -16,7 +16,7 @@ const defaultState: IAppState = {
   foo: '',
 };
 
-const fooReducer: Reducer<string | undefined> = (state, action) => {
+const fooReducer: Reducer<string | undefined> = (state = '', action) => {
   switch (action.type) {
     case 'FOO':
       return 'foo';
