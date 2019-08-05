@@ -1,0 +1,13 @@
+diff --git a/node_modules/@types/react-redux/index.d.ts b/node_modules/@types/react-redux/index.d.ts
+index 6ef2715..5150c44 100644
+--- a/node_modules/@types/react-redux/index.d.ts
++++ b/node_modules/@types/react-redux/index.d.ts
+@@ -96,7 +96,7 @@ export type GetProps<C> = C extends ComponentType<infer P> ? P : never;
+ export type ConnectedComponentClass<
+     C extends ComponentType<any>,
+     P
+-> = ComponentClass<JSX.LibraryManagedAttributes<C, P>> & hoistNonReactStatics.NonReactStatics<C> & {
++> = ComponentClass<JSX.LibraryManagedAttributes<C, P>> & {
+     WrappedComponent: C;
+ };
+ 

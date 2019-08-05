@@ -12,7 +12,8 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "deploy": "now",
-    "deploy:prod": "now && now alias"
+    "deploy:prod": "now && now alias",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@sentry/browser": "^5.5.0",
@@ -50,6 +51,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "jest": "^24.8.0",
     "now": "^15.3.0",
+    "patch-package": "^6.1.2",
     "rimraf": "^2.6.3",
     "svg-inline-loader": "^0.8.0",
     "ts-jest": "^24.0.2",
