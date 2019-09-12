@@ -1,0 +1,40 @@
+{
+  "name": "with-redux",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@sentry/browser": "^5.5.0",
+    "@types/hoist-non-react-statics": "^3.3.1",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "classnames": "^2.2.6",
+    "express": "^4.17.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.8.0",
+    "dotenv": "^8.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "identity-obj-proxy": "^3.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "jest": "^24.8.0",
+    "node-sass": "^4.12.0",
+    "now": "^15.3.0",
+    "rimraf": "^2.6.3",
+    "svg-inline-loader": "^0.8.0"
+  },
+  "license": "ISC"
+}

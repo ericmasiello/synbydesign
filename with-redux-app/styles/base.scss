@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600');
+
+:root {
+  
+  --body-font-fmaily: 'Source Sans Pro', sans-serif;
+  --body-weight-light: 300;
+  --body-weight-medium: 400;
+  --body-weight-bold: 600;
+  --header-font-famlily: 'Lato', sans-serif;
+  --header-weight-medium: 400;
+  --header-weight-bold: 700;
+
+  /* colors */
+  --color-bg: #fff;
+  --color-body: #424141;
+  --color-link: rgba(201, 0, 68, 0.75);
+  --color-muted: #787575;
+  --color-highlight: #c90044;
+
+  /* typography */
+  --type-small: 0.75rem;
+  --type-small-lh: 1.6;
+
+  --type-base: 1rem;
+  --type-base-lh: 1.6;
+
+  --type-t5: 1.3rem;
+  --type-t5-lh: 1.6;
+
+  --type-t4: 1.5rem;
+  --type-t4-lh: 1.6;
+
+  --type-t3: 2rem;
+  --type-t3-lh: 1.3;
+
+  --type-t2: 2.5rem;
+  --type-t2-lh: 1.2;
+
+  --type-t1: 3rem;
+  --type-t1-lh: 1.1;
+
+  --type-jumbo: 4rem;
+  --type-jumbo-lh: 1.1;
+
+  /* spacing and sizing */
+  --max-page-width: 100rem;
+  --horizontal-padding: 2.5rem;
+  --page-border-width: 1vmin;
+  --header-spacing: 1.5vh;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+}
+
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+html {
+  font-family: var(--body-font-fmaily);
+  color: var(--color-body);
+  font-size: 100%;
+}
+
+
+body {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  font-weight: var(--body-weight-light);
+
+  @media only screen and (min-width: 992px) {
+    font-size: 0.9375rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 1rem
+  }
+}
+
+input, textarea, select, button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset],
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-font-famlily);
+  font-weight: var(--header-weight-medium);
+  line-height: 1.1;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: var(--color-link);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+blockquote {
+  margin: 0;
+}

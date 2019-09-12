@@ -1,0 +1,22 @@
+.nav {}
+
+.navList {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    padding-right: 1rem;
+    text-transform: uppercase;
+    font-weight: var(--body-weight-bold);
+
+    &:first-child {
+        padding-left: 0;
+    }
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
