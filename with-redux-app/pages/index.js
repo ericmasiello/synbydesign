@@ -3,20 +3,21 @@ import Link from 'next/link';
 import { connect } from 'react-redux';
 import {
   setPortfolioItems,
-  fetchPortfolioItems,
+  getPortfolioItems,
   fetchPortfolioData,
 } from '../store/portfolio';
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
 
 function Index(props) {
-  const { fetchPortfolioItems, portfolioItems } = props;
+  const { getPortfolioItems, portfolioItems } = props;
   useEffect(() => {
-    fetchPortfolioItems();
-  }, [fetchPortfolioItems]);
+    if (!Array.isArray(portfolioItems) || portfolioItems.length === 0) {
+      getPortfolioItems();
+    }
+  }, [getPortfolioItems]);
 
   return (
-    <Layout title="Home | Syn By Design: Eric Masiello's Portfolio">
+    <Layout title="Syn By Design: Eric Masiello's Portfolio">
       <h1>Hello world function</h1>
       <ul>
         {portfolioItems.map(item => (
@@ -47,7 +48,8 @@ const mapStateToProps = state => {
     portfolioItems: state.portfolioItems,
   };
 };
+
 export default connect(
   mapStateToProps,
-  { fetchPortfolioItems },
+  { getPortfolioItems },
 )(Index);
