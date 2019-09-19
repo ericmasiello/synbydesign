@@ -12,7 +12,12 @@ const HeaderOnline = props => {
     <Comp className={classes} {...rest}>
       <div className={styles.inner}>
         <Link href="/">
-          <Logo as="h1" aria-label="Syn By Design: Eric Masiello's Portfolio" />
+          <a>
+            <Logo
+              as="h1"
+              aria-label="Syn By Design: Eric Masiello's Portfolio"
+            />
+          </a>
         </Link>
         <Nav className={styles.nav} />
       </div>
