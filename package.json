@@ -1,169 +1,20 @@
 {
-  "name": "syn-by-design",
-  "version": "3.6.0",
-  "description": "Eric Masiello's portfolio",
+  "name": "synbydesign",
+  "version": "1.0.0",
+  "description": "This repository is my personal portfolio, resume, and playground where I experiment with interesting technology.",
   "main": "index.js",
   "scripts": {
-    "predev": "npm run dev:build-server",
-    "dev": "npm-run-all --parallel dev:server dev:watch-server dev:watch-client",
-    "build": "run-s prod:*",
-    "clean": "rimraf public; rimraf views",
-    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "dev:build-server": "npm run build-server -- --mode development",
-    "dev:watch-server": "npm run build-server -- --mode development --watch",
-    "prod:build-server": "npm run build-server -- --mode production",
-    "build-server": "webpack --config webpack.server.js",
-    "predev:build-client": "npm run clean",
-    "dev:build-client": "webpack --config webpack.client.js --mode development",
-    "predev:watch-client": "npm run clean",
-    "dev:watch-client": "webpack --config webpack.client.js --mode development --watch",
-    "preprod:build-client": "npm run clean",
-    "prod:build-client": "webpack --config webpack.client.js --mode production",
-    "start": "node build/bundle.js",
-    "lint": "tslint 'src/**/*.ts?(x)' --format stylish -p tsconfig-client.json",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "test:coverage": "npm run test -- --coverage",
-    "prepush": "npm-run-all --parallel test:coverage lint",
-    "deploy": "now alias"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Eric Masiello",
-  "license": "ISC",
-  "dependencies": {
-    "@sentry/browser": "^4.6.4",
-    "@sentry/node": "^4.6.4",
-    "await-to-js": "~2.1.1",
-    "axios": "0.18.0",
-    "boom": "~7.3.0",
-    "compression": "~1.7.3",
-    "ejs": "~2.6.1",
-    "express": "~4.16.4",
-    "lodash-es": "~4.17.11",
-    "logrocket": "^0.6.19",
-    "node-fetch": "~2.3.0",
-    "query-string": "~6.3.0",
-    "react": "~16.8.3",
-    "react-dom": "~16.8.3",
-    "react-helmet": "5.2.0",
-    "react-loadable": "^5.5.0",
-    "react-redux": "5.1.1",
-    "react-router-config": "1.0.0-beta.4",
-    "react-router-dom": "4.3.1",
-    "redux": "3.7.2",
-    "redux-thunk": "2.3.0",
-    "reselect": "~3.0.1",
-    "serialize-javascript": "1.6.1",
-    "styled-components": "^4.1.3",
-    "tinycolor2": "~1.4.1",
-    "winston": "^3.2.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericmasiello/synbydesign.git"
   },
-  "devDependencies": {
-    "@types/axios": "~0.14.0",
-    "@types/boom": "~7.2.1",
-    "@types/compression": "0.0.36",
-    "@types/enzyme": "^3.9.0",
-    "@types/express": "~4.16.1",
-    "@types/jest": "^24.0.9",
-    "@types/lodash-es": "^4.17.2",
-    "@types/node-fetch": "^2.1.6",
-    "@types/query-string": "~6.2.0",
-    "@types/react": "^16.8.6",
-    "@types/react-dom": "^16.8.2",
-    "@types/react-helmet": "^5.0.8",
-    "@types/react-loadable": "^5.5.0",
-    "@types/react-redux": "^6.0.11",
-    "@types/react-router-config": "^1.1.1",
-    "@types/react-router-dom": "~4.3.1",
-    "@types/react-test-renderer": "^16.8.1",
-    "@types/redux": "~3.6.31",
-    "@types/redux-thunk": "~2.1.32",
-    "@types/serialize-javascript": "~1.5.0",
-    "@types/styled-components": "^4.1.4",
-    "@types/tinycolor2": "~1.4.1",
-    "@types/winston": "~2.4.4",
-    "copy-webpack-plugin": "^4.6.0",
-    "enzyme": "~3.9.0",
-    "enzyme-adapter-react-16": "~1.10.0",
-    "file-loader": "~3.0.1",
-    "html-webpack-plugin": "~3.2.0",
-    "husky": "~0.14.3",
-    "image-webpack-loader": "~4.6.0",
-    "imagemin-webpack-plugin": "~2.4.2",
-    "jest": "24.1.0",
-    "jest-styled-components": "~6.3.1",
-    "nodemon": "^1.18.10",
-    "now": "^12.1.14",
-    "npm-run-all": "4.1.5",
-    "prettier": "^1.16.4",
-    "raw-loader": "~1.0.0",
-    "react-test-renderer": "~16.8.3",
-    "rimraf": "~2.6.3",
-    "serviceworker-webpack-plugin": "1.0.1",
-    "svg-inline-loader": "~0.8.0",
-    "ts-jest": "^24.0.0",
-    "ts-loader": "^5.3.3",
-    "tslint": "~5.13.1",
-    "tslint-config-airbnb": "~5.11.1",
-    "tslint-config-prettier": "~1.18.0",
-    "tslint-loader": "~3.5.4",
-    "tslint-react": "~3.6.0",
-    "typescript": "^3.2.2",
-    "webpack": "^4.28.2",
-    "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "~3.1.2",
-    "webpack-merge": "~4.1.5",
-    "webpack-node-externals": "~1.7.2"
+  "keywords": [],
+  "author": "Eric Masiello <eric.j.masiello@gmail.com> (http://synbydesign.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericmasiello/synbydesign/issues"
   },
-  "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig-jest.json"
-      }
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "collectCoverageFrom": [
-      "**/*.{ts,tsx}"
-    ],
-    "transform": {
-      "^.+\\.(j|t)sx?$": "ts-jest"
-    },
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!lodash-es)"
-    ],
-    "testMatch": [
-      "**/__tests__/*.(ts|tsx)"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/",
-      "/src/typings.d.ts",
-      "/src/global.d.ts",
-      "/src/types.d.ts",
-      "/src/serviceworker.d.ts"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 40,
-        "functions": 40,
-        "lines": 40,
-        "statements": 40
-      }
-    },
-    "setupFiles": [
-      "./test/setup.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|jpg|png|svg)$": "<rootDir>/test/empty-module.js"
-    },
-    "watchPathIgnorePatterns": [
-      "<rootDir>/public",
-      "<rootDir>/build"
-    ]
-  }
+  "homepage": "https://github.com/ericmasiello/synbydesign#readme"
 }
