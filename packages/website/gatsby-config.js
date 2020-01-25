@@ -6,6 +6,21 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resume`,
+        path: `${__dirname}/src/data/resume/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/src/data/portfolio/`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

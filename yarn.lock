@@ -5308,7 +5308,7 @@ gatsby-react-router-scroll@^2.1.20:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
-gatsby-source-filesystem@^2.1.40:
+gatsby-source-filesystem@^2.1.46:
   version "2.1.46"
   resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.46.tgz#ab90c4520f0664218c7334dbec6cd90acc85cf9d"
   integrity sha512-5LC90+qMKK+/hJzZxKcazx5JvvOO1wHH+ZE7JDSHSzZ1QB+RKWnkvG4a7n6dyiFybo1HN3ql5YQXQLkBEiIfMg==
@@ -5351,6 +5351,14 @@ gatsby-telemetry@^1.1.47:
     stack-trace "^0.0.10"
     stack-utils "1.0.2"
     uuid "3.3.3"
+
+gatsby-transformer-json@^2.2.25:
+  version "2.2.25"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.25.tgz#22e08af51958d24d95dba7866d998cb2c49ffead"
+  integrity sha512-vOJrHua/ljg4v5BSDU6QXpIHdSkLVZ23BfmYIF7OuM2xeXqJOzrwKW1Nb4tylg97RPtEuhYDINW1UsKNdWqd5g==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    bluebird "^3.7.2"
 
 gatsby-transformer-sharp@^2.3.7:
   version "2.3.13"
