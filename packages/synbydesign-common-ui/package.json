@@ -1,0 +1,8 @@
+{
+    "name": "synbydesign-common-ui",
+    "version": "0.1.0",
+  
+    "dependencies": {
+      "cross-env": "5.0.5"
+    }
+}

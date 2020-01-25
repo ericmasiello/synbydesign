@@ -1,20 +1,4 @@
 {
-  "name": "synbydesign",
-  "version": "1.0.0",
-  "description": "This repository is my personal portfolio, resume, and playground where I experiment with interesting technology.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ericmasiello/synbydesign.git"
-  },
-  "keywords": [],
-  "author": "Eric Masiello <eric.j.masiello@gmail.com> (http://synbydesign.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ericmasiello/synbydesign/issues"
-  },
-  "homepage": "https://github.com/ericmasiello/synbydesign#readme"
+    "private": true,
+    "workspaces": ["packages/*"]
 }
