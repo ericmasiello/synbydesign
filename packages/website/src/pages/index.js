@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import greeting from '@synbydesign/common-ui';
+import { Example } from '@synbydesign/common-ui';
+import '@synbydesign/common-ui/dist/index.css'
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -62,7 +63,9 @@ const IndexPage = () => {
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
           <Image />
         </div>
-        <button onClick={greeting}>Hello</button>
+        <Example>
+          Hello World
+        </Example>
         <ul>
           {data.allPortfolioJson.nodes.map(item => (
             <li key={item.id}>
