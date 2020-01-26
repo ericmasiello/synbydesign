@@ -39,33 +39,35 @@ const IndexPage = () => {
           }
         }
       }
-      resume: resumeJson {
-        lead
-        ownerName
-        ownerTitle
-        professionalExperience {
-          accomplishments
-          organization
-          roles {
+      resume: markdownRemark(fileAbsolutePath: {regex: "/data/resume/"}) {
+        frontmatter {
+          lead
+          ownerName
+          ownerTitle
+          professionalExperience {
+            accomplishments
+            organization
+            roles {
+              title
+              yearFrom
+              yearTo
+            }
+          }
+          relatedExperience {
+            accomplishments
+            meta
+            role {
+              title
+              yearFrom
+              yearTo
+            }
             title
-            yearFrom
-            yearTo
+            website {
+              url
+            }
           }
+          skills
         }
-        relatedExperience {
-          accomplishments
-          meta
-          role {
-            title
-            yearFrom
-            yearTo
-          }
-          title
-          website {
-            url
-          }
-        }
-        skills
       }
     }
   `)
@@ -75,7 +77,7 @@ const IndexPage = () => {
         <SEO title="Home" />
         <h1>Hi people</h1>
         <pre>
-          {JSON.stringify(data.resume, null, 2)}
+          {JSON.stringify(data.resume.frontmatter, null, 2)}
         </pre>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
           <Image />
