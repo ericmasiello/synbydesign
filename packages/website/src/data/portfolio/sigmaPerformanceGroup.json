@@ -1,0 +1,31 @@
+{
+  "title": "Sigma Performance Group",
+  "description": "",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "",
+    "isSVG": false,
+    "thumb": {
+      "column": "span 1",
+      "row": "span 2",
+      "position": "0 100%"
+    }
+  },
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "(X)HTML",
+    "CSS",
+    "Design/Branding",
+    "PHP"
+  ],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963730/synbydesign/sigmaperfgroup.jpg",
+      "title": "Sigma Performance Group website screenshot",
+      "description": "",
+      "priority": 0
+    }
+  ]
+}

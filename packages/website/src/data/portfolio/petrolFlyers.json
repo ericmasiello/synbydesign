@@ -1,0 +1,55 @@
+{
+  "title": "Petrol flyers",
+  "description": "\n      Petrol was a monthly electronic dance music dance event hosted by some close friends and I in Baltimore, Maryland.\n      We brought through many great artists including VIVEK, Goth-Trad, and Photek.",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "",
+    "isSVG": false,
+    "thumb": {
+      "row": "span 2",
+      "column": "span 2"
+    },
+    "highlightColor": "#EA9190"
+  },
+  "category": [
+    "flyers"
+  ],
+  "tags": [],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963780/synbydesign/petrol-distal.jpg",
+      "title": "Petrol Distal flyer",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963779/synbydesign/petrol-vivek.jpg",
+      "title": "Petrol V.I.V.I.K flyer",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963779/synbydesign/petrol-gothtrad.jpg",
+      "title": "Petrol Goth-Trad flyer",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963779/synbydesign/petrol-general-flier.jpg",
+      "title": "Petrol General flyer",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963780/synbydesign/petrol.jpg",
+      "title": "Petrol flyer",
+      "description": "",
+      "priority": 0,
+      "meta": {
+        "usage": [
+          "hero"
+        ]
+      }
+    }
+  ]
+}

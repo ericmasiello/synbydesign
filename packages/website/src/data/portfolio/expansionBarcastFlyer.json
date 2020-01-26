@@ -1,0 +1,26 @@
+{
+  "title": "Expansion Barcast flyer",
+  "description": "Expansion Barcast flyer",
+  "meta": {
+    "stackDesign": true,
+    "websiteUrl": "",
+    "isSVG": false,
+    "thumb": {
+      "fit": "contain",
+      "row": "span 3",
+      "column": "span 2"
+    }
+  },
+  "category": [
+    "flyers"
+  ],
+  "tags": [],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963775/synbydesign/expansion-barcast-2012-06-22.jpg",
+      "title": "Expansion Barcast flyer",
+      "description": "",
+      "priority": 0
+    }
+  ]
+}

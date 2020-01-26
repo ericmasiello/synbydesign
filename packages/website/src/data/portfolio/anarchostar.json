@@ -1,0 +1,55 @@
+{
+  "title": "Anarchostar",
+  "description": "<p>Anarchostar was a music label run by founder, DJ Distal. His goal for the site was to build a comicbook-like experience\n      that compliemented the music, with particular tracks pairing with different panels from the comic. The illustrations\n      were done by a Brazilian artist. I partnered with local graphic designers, Catherine Anne, to build the living web experience.</p>\n      <p>In order to make the site maintainable by Distal, I built the site using Wordpress and created a custom parallax theme\n      that supported his original vision.\n      </p>\n      ",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "http://projects.synbydesign.com/anarchostar/",
+    "isSVG": false,
+    "highlightColor": "rgba(231, 26, 33, 0.8)",
+    "thumb": {
+      "row": "span 4",
+      "column": "span 2"
+    }
+  },
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "HTML5 Audio",
+    "Mobile/Responsive Design",
+    "Parallax",
+    "Wordpress Custom Theme",
+    "Wordpress Plugin"
+  ],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963766/synbydesign/anarchostar.jpg",
+      "title": "Anarchostar homepage",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963765/synbydesign/anarchostar-tile1.jpg",
+      "title": "Anarchostar homepage hero tile",
+      "description": "",
+      "priority": 0,
+      "meta": {
+        "usage": [
+          "hero"
+        ]
+      }
+    },
+    {
+      "originalUrl": "v1545963766/synbydesign/anarchostar-tile2.jpg",
+      "title": "Anarchostar homepage spaceship tile",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963765/synbydesign/anarchostar-tile3.jpg",
+      "title": "Anarchostar homepage 3-up tile",
+      "description": "",
+      "priority": 0
+    }
+  ]
+}

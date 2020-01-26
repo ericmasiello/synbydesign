@@ -1,0 +1,64 @@
+{
+  "title": "Deep Foc.us",
+  "description": "Deep Foc.us music blog.",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "",
+    "isSVG": false,
+    "thumb": {
+      "column": "span 2",
+      "row": "span 2"
+    }
+  },
+  "category": [
+    "web",
+    "design"
+  ],
+  "tags": [
+    "CSS/SCSS",
+    "HTML5",
+    "UX Consulting",
+    "Visual Design",
+    "Wordpress Custom Theme",
+    "Wordpress Plugin",
+    "Design",
+    "jQuery Mobile",
+    "logo"
+  ],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963770/synbydesign/deepfocus-home.jpg",
+      "title": "Deep Foc.us Desktop Design",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963769/synbydesign/deepfocus-iphone.jpg",
+      "title": "Deep Foc.us Mobile Design",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963769/synbydesign/deepfocus-logo-with-gradient.jpg",
+      "title": "Deep Foc.us Logo Design with gradient backdrop",
+      "description": "",
+      "priority": 0,
+      "meta": {
+        "usage": [
+          "hero"
+        ],
+        "backgroundStyles": {
+          "filter": "blur(1px)",
+          "size": "contain",
+          "applyGradient": false
+        }
+      }
+    },
+    {
+      "originalUrl": "v1545963769/synbydesign/deepfocus-logo.png",
+      "title": "Deep Foc.us Logo Design",
+      "description": "",
+      "priority": 0
+    }
+  ]
+}

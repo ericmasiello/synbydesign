@@ -1,0 +1,42 @@
+{
+  "title": "Catherine Anne Design",
+  "description": "cannedesign",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "",
+    "isSVG": false,
+    "detail": {
+      "grid": [
+        "70%",
+        "30%"
+      ]
+    },
+    "thumb": {
+      "row": "span 3"
+    }
+  },
+  "category": [
+    "web"
+  ],
+  "tags": [
+    "CSS/SCSS",
+    "JavaScript",
+    "jQuery",
+    "Mobile/Responsive Design",
+    "Wordpress Custom Theme"
+  ],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963772/synbydesign/cannedesign-desktop.png",
+      "title": "Desktop landing page",
+      "description": "",
+      "priority": 0
+    },
+    {
+      "originalUrl": "v1545963775/synbydesign/cannedesign-mobile.png",
+      "title": "Mobile landing page",
+      "description": "",
+      "priority": 0
+    }
+  ]
+}

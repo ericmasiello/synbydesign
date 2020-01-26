@@ -1,0 +1,31 @@
+{
+  "title": "Chocolate Milk Logo",
+  "description": "Chocolatemilk Logo",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "",
+    "isSVG": false
+  },
+  "category": [
+    "logos"
+  ],
+  "tags": [],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963768/synbydesign/chocolatemilk.jpg",
+      "title": "Chocolate Milk flyer featuring 4 cows with a heart and DC flag",
+      "description": "",
+      "priority": 0,
+      "meta": {
+        "usage": [
+          "gallery"
+        ],
+        "backgroundStyles": {
+          "applyGradient": false,
+          "filter": "blur(1px) grayscale(100%)",
+          "size": "20%"
+        }
+      }
+    }
+  ]
+}

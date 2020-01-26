@@ -1,0 +1,42 @@
+{
+  "title": "Incognito Logo",
+  "description": "Logo for Incognito electronic events and production service",
+  "meta": {
+    "stackDesign": false,
+    "websiteUrl": "",
+    "isSVG": false,
+    "highlightColor": "#fcc52d",
+    "thumb": {
+      "position": "0 100%"
+    }
+  },
+  "category": [
+    "logos"
+  ],
+  "tags": [],
+  "imagePaths": [
+    {
+      "originalUrl": "v1545963775/synbydesign/incognito.jpg",
+      "title": "",
+      "description": "",
+      "priority": 0,
+      "meta": {
+        "usage": [
+          "hero"
+        ],
+        "backgroundStyles": {
+          "applyGradient": false,
+          "size": "20%",
+          "filter": "hue-rotate(90deg)",
+          "backgroundPosition": "0 0"
+        }
+      }
+    },
+    {
+      "originalUrl": "v1545963775/synbydesign/incognito.jpg",
+      "title": "",
+      "description": "",
+      "priority": 0
+    }
+  ]
+}

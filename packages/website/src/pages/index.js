@@ -48,8 +48,6 @@ const IndexPage = () => {
       }
     }
   `)
-
-  console.log(data.resumeJson, data.allPortfolioJson)
   
   return (
       <Layout>
@@ -76,7 +74,7 @@ const IndexPage = () => {
             </li>
           ))}
         </ul>
-        <Link to="/page-2/">Go to page 2</Link>
+        <Link to="/anarchostar/">Anarchostar</Link>
       </Layout>
     )
   }
