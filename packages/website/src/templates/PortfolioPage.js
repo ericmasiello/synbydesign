@@ -1,13 +1,24 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
 
 function PortfolioPageTemplate(props) {
     console.log(props.data);
+    const { data: { portfolio: { frontmatter: portfolio }, images, coverImage } } = props;
 
     // TODO: do work to marry up the image content w/ the alt attribute value
     return (
         <div>
-            This is the portfolio page
+            <h1>{portfolio.title}</h1>
+            <Img sizes={coverImage.sizes} />
+            <h2>Images</h2>
+            <ul>
+            {images.edges.map(({ node }) => (
+                <li key={node.id}>
+                    <Img sizes={node.sizes} />
+                </li>
+            ))}
+            </ul>
         </div>
     )
 }
