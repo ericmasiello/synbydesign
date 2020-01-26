@@ -32,7 +32,6 @@ export const query = graphql`
                 title
                 meta {
                     highlightColor
-                    stackDesign
                     thumb {
                         column
                         row

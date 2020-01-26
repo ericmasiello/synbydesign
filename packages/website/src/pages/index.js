@@ -9,16 +9,37 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query Portfolio {
-      allPortfolioJson(sort: {order: ASC, fields: title}) {
+    query PortfolioLandingPage {
+      allPortfolio: allMarkdownRemark {
         nodes {
           id
-          title
-          tags
-          description
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            coverImage {
+              src
+              alt
+            }
+            meta {
+              thumb {
+                row
+                column
+              }
+            }
+          }
         }
       }
-      resumeJson {
+      allCoverImages: allImageSharp {
+        nodes {
+          id
+          resize {
+            originalName
+          }
+        }
+      }
+      resume: resumeJson {
         lead
         ownerName
         ownerTitle
@@ -56,8 +77,6 @@ const IndexPage = () => {
         <pre>
           {JSON.stringify(data.resumeJson, null, 2)}
         </pre>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
           <Image />
         </div>
@@ -65,16 +84,15 @@ const IndexPage = () => {
           Hello World
         </Example>
         <ul>
-          {data.allPortfolioJson.nodes.map(item => (
+          {data.allPortfolio.nodes.map(item => (
             <li key={item.id}>
               <article>
-                <h2>{item.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: item.description}} />
+                <h2><Link to={item.fields.slug}>{item.frontmatter.title}</Link></h2>
               </article>
             </li>
           ))}
         </ul>
-        <Link to="/anarchostar/">Anarchostar</Link>
+        
       </Layout>
     )
   }
