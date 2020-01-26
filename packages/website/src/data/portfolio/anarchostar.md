@@ -1,34 +1,32 @@
 ---
-title: 'Anarchostar'
+title: Anarchostar
 coverImage:
-    src: 'anarchostar.jpg'
-    alt: 'Anarchostar homepage screenshot'
+    src: anarchostar.jpg
+    alt: Anarchostar homepage screenshot
 meta:
-    stackDesign: false
-    highlightColor: 'rgba(231, 26, 33, 0.8)'
+    highlightColor: rgba(231, 26, 33, 0.8)
     thumb:
-        row: 'span 4'
-        column: 'span 2'
+        row: span 4
+        column: span 2
 categories: [
-    'web'
+    web
 ]
-tags: [
-    'HTML5 Audio',
-    'Mobile/Responsive Design',
-    'Parallax',
-    'Wordpress Custom Theme',
-    'Wordpress Plugin'
-]
+tags:
+    - HTML5 Audio,
+    - Mobile/Responsive Design,
+    - Parallax,
+    - Wordpress Custom Theme,
+    - Wordpress Plugin
 images:
-    -   src: 'anarchostar-tile1.jpg'
-        alt: 'Anarchostar homepage hero tile'
+    -   src: anarchostar-tile1.jpg
+        alt: Anarchostar homepage hero tile
         meta:
             usage:
-                - 'hero'
-    -   src: 'anarchostar-tile2.jpg'
-        alt: 'Anarchostar homepage spaceship tile'
-    -   src: 'anarchostar-tile3.jpg'
-        alt: 'Anarchostar homepage 3-up tile'
+                - hero
+    -   src: anarchostar-tile2.jpg
+        alt: Anarchostar homepage spaceship tile
+    -   src: anarchostar-tile3.jpg
+        alt: Anarchostar homepage 3-up tile
 ---
 
 Anarchostar was a music label run by founder, DJ Distal. His goal for the site was to build a comicbook-like experience
