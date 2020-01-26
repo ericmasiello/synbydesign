@@ -75,7 +75,7 @@ const IndexPage = () => {
         <SEO title="Home" />
         <h1>Hi people</h1>
         <pre>
-          {JSON.stringify(data.resumeJson, null, 2)}
+          {JSON.stringify(data.resume, null, 2)}
         </pre>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
           <Image />
