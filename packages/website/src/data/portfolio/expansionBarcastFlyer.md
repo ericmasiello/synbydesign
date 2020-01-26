@@ -1,8 +1,8 @@
 ---
-title: Expansion Barcast flier
+title: Expansion Barcast flyer
 coverImage:
   src: expansion-barcast-2012-06-22.jpg
-  alt: Expansion Barcast flier
+  alt: Expansion Barcast flyer
 meta:
   stackDesign: true
   thumb:
@@ -10,8 +10,8 @@ meta:
     row: span 3
     column: span 2
 categories:
-- fliers
+- flyers
 tags: []
 images:
 - src: expansion-barcast-2012-06-22.jpg
-  alt: Expansion Barcast flier
+  alt: Expansion Barcast flyer

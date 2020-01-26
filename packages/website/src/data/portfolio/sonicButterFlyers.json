@@ -1,5 +1,5 @@
 {
-  "title": "Sonic Butter fliers",
+  "title": "Sonic Butter flyers",
   "description": "",
   "meta": {
     "stackDesign": true,
@@ -12,19 +12,19 @@
     }
   },
   "categories": [
-    "fliers"
+    "flyers"
   ],
   "tags": [],
   "images": [
     {
       "originalUrl": "v1545963775/synbydesign/Just4Heads-color.png",
-      "title": "Just 4 Heads flier",
+      "title": "Just 4 Heads flyer",
       "description": "",
       "priority": 0
     },
     {
       "originalUrl": "v1545963775/synbydesign/Just4Heads-color-bg.png",
-      "title": "Just 4 Heads flier",
+      "title": "Just 4 Heads flyer",
       "description": "",
       "priority": 0,
       "meta": {
@@ -38,13 +38,13 @@
     },
     {
       "originalUrl": "v1545963768/synbydesign/deep-focus-sonic-butter-takeover.jpg",
-      "title": "Deep Foc.us Takeover at Sonic Butter flier",
+      "title": "Deep Foc.us Takeover at Sonic Butter flyer",
       "description": "",
       "priority": 0
     },
     {
       "originalUrl": "v1545963775/synbydesign/exbc-sonic-butter-takeover.jpg",
-      "title": "EXBC Takeover at Sonic Butter flier",
+      "title": "EXBC Takeover at Sonic Butter flyer",
       "description": "",
       "priority": 0
     }

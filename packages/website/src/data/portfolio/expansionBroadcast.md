@@ -11,7 +11,7 @@ meta:
     row: span 2
     column: span 2
 categories:
-- fliers
+- flyers
 - web
 - business-cards
 - logos

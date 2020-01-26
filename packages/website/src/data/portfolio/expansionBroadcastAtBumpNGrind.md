@@ -9,7 +9,7 @@ meta:
     row: span 2
     column: span 2
 categories:
-- fliers
+- flyers
 images:
 - src: exbc_live_promo_2015-10-23.png
   alt: EXBC at BNG Harry R4NS0M web promo
