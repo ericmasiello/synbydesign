@@ -12,7 +12,7 @@
       "column": "span 3"
     }
   },
-  "category": [
+  "categories": [
     "development"
   ],
   "tags": [
@@ -20,7 +20,7 @@
     "React",
     "SCSS"
   ],
-  "imagePaths": [
+  "images": [
     {
       "originalUrl": "v1545963374/synbydesign/stencil-splash.png",
       "title": "Stencil Splash Screen and Logo",

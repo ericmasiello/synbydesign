@@ -17,7 +17,7 @@
       ]
     }
   },
-  "category": [
+  "categories": [
     "web"
   ],
   "tags": [
@@ -27,7 +27,7 @@
     "Mobile/Responsive Design",
     "Wordpress Custom Theme"
   ],
-  "imagePaths": [
+  "images": [
     {
       "originalUrl": "v1545963728/synbydesign/sagedragon-desktop.png",
       "title": "Sage Dragon (Desktop)",

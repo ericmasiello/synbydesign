@@ -1,6 +1,6 @@
 {
-  "title": "Thnk DFRNT flyer",
-  "description": "\n      <p>Apple Juice was a series of electronic music events in Washington, DC hosted by\n      Harry Ranson, Ray Casil, and I using the alias DJ IllEffect (and occassionally Erictronica). This particular instance of Apple Juice\n      featured international DJ/producer DFRNT. The idea for this flyer design was to blend Apple Computer's old\n      marketing campaign <em>Think Different</em> with DFRNT's peculiar DJ name.\n      </p>\n      ",
+  "title": "Thnk DFRNT flier",
+  "description": "\n      <p>Apple Juice was a series of electronic music events in Washington, DC hosted by\n      Harry Ranson, Ray Casil, and I using the alias DJ IllEffect (and occassionally Erictronica). This particular instance of Apple Juice\n      featured international DJ/producer DFRNT. The idea for this flier design was to blend Apple Computer's old\n      marketing campaign <em>Think Different</em> with DFRNT's peculiar DJ name.\n      </p>\n      ",
   "meta": {
     "stackDesign": true,
     "websiteUrl": "",
@@ -9,11 +9,11 @@
       "column": "span 2"
     }
   },
-  "category": [
-    "flyers"
+  "categories": [
+    "fliers"
   ],
   "tags": [],
-  "imagePaths": [
+  "images": [
     {
       "originalUrl": "v1545963729/synbydesign/thnkdfrnt.jpg",
       "title": "",

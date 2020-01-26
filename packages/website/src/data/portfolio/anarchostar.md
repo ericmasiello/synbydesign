@@ -8,9 +8,8 @@ meta:
     thumb:
         row: span 4
         column: span 2
-categories: [
-    web
-]
+categories: 
+    - web
 tags:
     - HTML5 Audio,
     - Mobile/Responsive Design,

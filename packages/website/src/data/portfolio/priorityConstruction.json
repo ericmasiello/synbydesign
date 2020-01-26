@@ -9,7 +9,7 @@
       "column": "span 3"
     }
   },
-  "category": [
+  "categories": [
     "web"
   ],
   "tags": [
@@ -17,7 +17,7 @@
     "Gatsby",
     "Mobile/Responsive Design"
   ],
-  "imagePaths": [
+  "images": [
     {
       "originalUrl": "/v1550337927/synbydesign/priority-construction/synbydesign_priority-construction_priority-construction-gallery-crop.png",
       "title": "Anthem House cover photo",

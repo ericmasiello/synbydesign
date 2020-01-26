@@ -11,7 +11,7 @@
       "position": "0 100%"
     }
   },
-  "category": [
+  "categories": [
     "web"
   ],
   "tags": [
@@ -20,7 +20,7 @@
     "Design/Branding",
     "PHP"
   ],
-  "imagePaths": [
+  "images": [
     {
       "originalUrl": "v1545963730/synbydesign/sigmaperfgroup.jpg",
       "title": "Sigma Performance Group website screenshot",
