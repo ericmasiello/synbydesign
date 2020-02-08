@@ -1,0 +1,24 @@
+.nav {
+  /* empty */
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  padding-right: 1rem;
+  text-transform: uppercase;
+  font-weight: var(--font-body-weight-bold);
+}
+
+.item:first-child {
+  padding-left: 0;
+}
+
+.item:last-child {
+  padding-right: 0;
+}

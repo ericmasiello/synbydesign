@@ -1,0 +1,16 @@
+.header {
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  min-height: 2.5rem;
+  max-height: 3.5rem;
+  height: 5vw;
+  margin-bottom: 1rem;
+}
+

@@ -1,0 +1,28 @@
+@keyframes pulse {
+	0% {
+		stroke: var(--color-logo);
+	}
+
+	70% {
+		stroke: var(--color-highlight);
+	}
+
+	100% {
+		stroke: var(--color-logo);
+	}
+}
+
+.logo {
+  display: flex;
+  margin: 0;
+}
+
+.logo svg {
+  fill: var(--color-logo);
+  stroke: var(--color-logo);
+  width: auto;
+}
+
+.logo :global(.logo-x) {
+  animation: pulse 5s infinite;
+}
