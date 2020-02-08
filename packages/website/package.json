@@ -24,6 +24,11 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "babel-jest": "^25.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "stylelint": "^13.0.0",
     "stylelint-config-css-modules": "^2.2.0",
@@ -41,7 +46,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint:style": "stylelint 'src/**/*.css'",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",

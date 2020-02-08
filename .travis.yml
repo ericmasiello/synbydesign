@@ -3,5 +3,9 @@ language: node_js
 notifications:
   email: false
 script:
+  - yarn workspace @synbydesign/common-ui build
+  - yarn
   - yarn workspace @synbydesign/common-ui run lint:style
+  - yarn workspace @synbydesign/common-ui run test
   - yarn workspace @synbydesign/website run lint:style
+  - yarn workspace @synbydesign/website run test
