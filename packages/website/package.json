@@ -24,7 +24,10 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "stylelint": "^13.0.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-ericmasiello": "^3.1.0"
   },
   "keywords": [
     "gatsby"
@@ -37,6 +40,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint:style": "stylelint 'src/**/*.css'",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

@@ -1,15 +1,15 @@
 @keyframes pulse {
-	0% {
-		stroke: var(--color-logo);
-	}
+  0% {
+    stroke: var(--color-logo);
+  }
 
-	70% {
-		stroke: var(--color-highlight);
-	}
+  70% {
+    stroke: var(--color-highlight);
+  }
 
-	100% {
-		stroke: var(--color-logo);
-	}
+  100% {
+    stroke: var(--color-logo);
+  }
 }
 
 .logo {

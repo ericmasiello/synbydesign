@@ -22,16 +22,15 @@
 html {
   box-sizing: border-box;
   background-color: var(--color-bg);
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-html {
   font-family: var(--font-base);
   color: var(--color--base);
   font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -39,8 +38,8 @@ body {
   font-size: 0.875rem;
   line-height: 1.35;
   font-weight: var(--font-body-weight-light);
-
 }
+
 @media only screen and (min-width: 992px) {
   body {
     font-size: 0.9375rem;
@@ -53,7 +52,10 @@ body {
   }
 }
 
-input, textarea, select, button {
+input,
+textarea,
+select,
+button {
   font-size: inherit;
   font-family: inherit;
   font-weight: inherit;
@@ -66,13 +68,24 @@ button {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-header);
   font-weight: var(--font-header-weight-medium);
   line-height: 1.1;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -81,11 +94,11 @@ a {
   background-color: transparent;
   text-decoration: none;
   color: var(--color-link);
-  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-img, svg {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
