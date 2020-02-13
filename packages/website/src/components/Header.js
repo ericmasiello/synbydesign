@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 import AnimatedLink from './AnimatedLink';
 import { Nav, NavList, NavItem } from './Nav';
 import Logo from './Logo';
+import { Text, Highlight } from './Type';
+import X from '../images/synbydesignlogo-x.inline.svg';
 import styles from './Header.module.css';
 
 function Header(props) {
@@ -19,12 +21,14 @@ function Header(props) {
           Syn By Design
         </Logo>
       </Link>
+      <Text as="p">Freelance <Highlight className={styles.role}>developer</Highlight>, <span className={styles.role}>trainer</span>, & <span className={styles.role}>consultant</span>.</Text>
       <Nav>
         <NavList>
           <NavItem><AnimatedLink as="a" href="#gallery">Selected Work</AnimatedLink></NavItem>
           <NavItem><AnimatedLink as="a" href="#resume">Resume</AnimatedLink></NavItem>
         </NavList>
       </Nav>
+      <X className={styles.x} />
     </header>
   )
 }

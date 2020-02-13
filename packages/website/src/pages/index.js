@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query PortfolioLandingPage {
-      allPortfolio: allMarkdownRemark {
+      allPortfolio: allMarkdownRemark(filter: {fields: {slug: {ne: "/resume/"}}}) {
         nodes {
           id
           fields {
@@ -71,12 +71,12 @@ const IndexPage = () => {
       }
     }
   `)
-  
+
   return (
       <Layout>
         <SEO title="Home" />
         <h1>Hi people</h1>
-        <pre>
+        <pre style={{ maxWidth: '100%', overflow: 'auto', }}>
           {JSON.stringify(data.resume.frontmatter, null, 2)}
         </pre>
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -94,7 +94,7 @@ const IndexPage = () => {
             </li>
           ))}
         </ul>
-        
+
       </Layout>
     )
   }

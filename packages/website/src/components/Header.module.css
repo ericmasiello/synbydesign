@@ -13,3 +13,17 @@
   height: 5vw;
   margin-bottom: 1rem;
 }
+
+.role {
+  font-weight: var(--font-body-weight-bold);
+}
+
+.x {
+  position: absolute;
+  width: 50vmax;
+  stroke-width: 4px;
+  stroke: var(--color-brand);
+  opacity: 0.6;
+  left: -23vmax;
+  bottom: -20vmax;
+}

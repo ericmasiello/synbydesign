@@ -4,7 +4,7 @@
   }
 
   70% {
-    stroke: var(--color-highlight);
+    stroke: var(--color-brand);
   }
 
   100% {
@@ -20,7 +20,7 @@
 .logo svg {
   fill: var(--color-logo);
   stroke: var(--color-logo);
-  width: auto;
+  width: 20rem;
 }
 
 .logo :global(.logo-x) {

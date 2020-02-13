@@ -6,7 +6,7 @@
 }
 
 .link:hover {
-  color: var(--color-highlight);
+  color: var(--color-brand);
 }
 
 .link::after {
@@ -17,7 +17,7 @@
   height: 1px;
   left: 0;
   bottom: -3px;
-  background-color: var(--color-highlight);
+  background-color: var(--color-brand);
   transition: all ease 0.3s;
 }
 
