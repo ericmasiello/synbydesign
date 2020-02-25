@@ -1,0 +1,28 @@
+.role {
+  position: relative;
+}
+
+.title {
+  color: var(--color-brand);
+  margin-bottom: 0.25rem;
+}
+
+.role:nth-last-of-type(1) .title {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 115rem) {
+  .timeline {
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: translateX(-100%);
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 115rem) {
+  .parentheses {
+    display: none;
+  }
+}

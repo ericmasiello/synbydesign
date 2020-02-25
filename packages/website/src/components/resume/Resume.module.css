@@ -1,0 +1,58 @@
+.resume {
+  --resume-border: rgba(212, 207, 209, 0.5);
+
+  display: grid;
+  grid-template-areas:
+    'header'
+    'skills'
+    'experience'
+    'freelance'
+    'education';
+  grid-gap: 1.25rem 2rem;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+@media (min-width: 62.5rem) {
+  .resume {
+    grid-template-areas:
+      'header header'
+      'skills skills'
+      'experience freelance'
+      'experience education';
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+@media (min-width: 62.5rem) {
+  .experience {
+    border-right: 1px solid var(--resume-border);
+    padding-right: 1rem;
+  }
+}
+
+.freelance {
+  grid-area: freelance;
+}
+
+.education {
+  grid-area: education;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: var(--font-body-weight-bold);
+  margin-bottom: 0.5rem;
+}

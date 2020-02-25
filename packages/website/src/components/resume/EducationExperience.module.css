@@ -1,0 +1,7 @@
+.title {
+  font-weight: var(--font-body-weight-bold);
+}
+
+.meta {
+  font-weight: var(--font-body-weight-medium);
+}

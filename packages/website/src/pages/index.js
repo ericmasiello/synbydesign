@@ -6,6 +6,7 @@ import '@synbydesign/common-ui/dist/index.css'
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Resume from '../components/resume/Resume';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -67,6 +68,12 @@ const IndexPage = () => {
             }
           }
           skills
+          education {
+            degree
+            institution
+            location
+            year
+          }
         }
       }
     }
@@ -75,6 +82,7 @@ const IndexPage = () => {
   return (
       <Layout>
         <SEO title="Home" />
+        <Resume {...data.resume.frontmatter} />
         <h1>Hi people</h1>
         <pre style={{ maxWidth: '100%', overflow: 'auto', }}>
           {JSON.stringify(data.resume.frontmatter, null, 2)}
