@@ -21,9 +21,11 @@
 .x {
   position: absolute;
   width: 50vmax;
+  max-width: 700px;
   stroke-width: 4px;
-  stroke: var(--color-brand);
+  stroke: var(--color-brand-invert);
   opacity: 0.6;
-  left: -23vmax;
-  bottom: -20vmax;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-50%) translateY(50%);
 }

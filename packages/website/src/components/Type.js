@@ -6,7 +6,7 @@ import styles from './Type.module.css';
 export function H(props) {
   const { as: Component, level, className, ...rest } = props;
   const classes = classNames(styles.h, {
-    [styles.h1]: !!level,
+    [styles[`h${level}`]]: !!level,
   }, className);
   return <Component className={classes} {...rest} />
 }
@@ -48,5 +48,19 @@ Highlight.defaultProps = {
 };
 
 Highlight.propTypes = {
+  as: PropTypes.elementType,
+};
+
+export function Muted(props) {
+  const { as: Component, small, className, ...rest } = props;
+  const classes = classNames(styles.muted, className);
+  return <Component className={classes} {...rest} />
+}
+
+Muted.defaultProps = {
+  as: 'span'
+};
+
+Muted.propTypes = {
   as: PropTypes.elementType,
 };

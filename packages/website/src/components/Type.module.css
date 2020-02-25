@@ -45,3 +45,7 @@
 .highlight {
   color: var(--color-highlight);
 }
+
+.muted {
+  color: var(--color-muted);
+}

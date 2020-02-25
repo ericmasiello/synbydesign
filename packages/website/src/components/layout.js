@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
 import "./layout.css"
+import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,20 +31,12 @@ const Layout = ({ children }) => {
 
       </Helmet>
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <main className={styles.content}>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
     </>
   )
 }
