@@ -82,7 +82,7 @@ const IndexPage = () => {
   return (
       <Layout>
         <SEO title="Home" />
-        <Resume {...data.resume.frontmatter} />
+        <Resume id="resume" {...data.resume.frontmatter} />
         <h1>Hi people</h1>
         <pre style={{ maxWidth: '100%', overflow: 'auto', }}>
           {JSON.stringify(data.resume.frontmatter, null, 2)}
