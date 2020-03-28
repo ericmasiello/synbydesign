@@ -19,48 +19,38 @@
 }
 
 .x {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 50vmax;
   max-width: 700px;
   stroke-width: 4px;
   stroke: var(--color-brand-invert);
+  filter: invert(var(--scroll-invert, 0));
   opacity: 0.6;
-  left: 0;
-  bottom: 0;
-  transform:
-    translateX(-45%)
-    translateY(40%)
-    rotate(0);
+  transform: translateX(-45%) translateY(40%) rotate(0);
   animation: rotateX 200s infinite backwards;
   animation-timing-function: linear;
-  animation-delay: 0;
+  animation-delay: 0s;
+}
+
+.x :global(svg) {
+  transform: translateX(calc(var(--scroll-amount, 0%) * 0.15)) translateY(calc(var(--scroll-amount, 0%) * -0.15));
 }
 
 @keyframes rotateX {
   0% {
     opacity: 0.6;
-    transform:
-      translateX(-45%)
-      translateY(40%)
-      rotate(0deg)
-      scale(1);
+    transform: translateX(-45%) translateY(40%) rotate(0deg) scale(1);
   }
 
   50% {
     opacity: 0.3;
-    transform:
-      translateX(-45%)
-      translateY(40%)
-      rotate(180deg)
-      scale(1.5);
+    transform: translateX(-45%) translateY(40%) rotate(180deg) scale(1.5);
   }
 
   100% {
     opacity: 0.6;
-    transform:
-      translateX(-45%)
-      translateY(40%)
-      rotate(360deg)
-      scale(1);
+    transform: translateX(-45%) translateY(40%) rotate(360deg) scale(1);
   }
 }
