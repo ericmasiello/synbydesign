@@ -20,8 +20,6 @@
   --content-max-width: 100rem; /* 1600px */
 }
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600&display=swap');
-
 html {
   box-sizing: border-box;
   background-color: var(--color-bg);
