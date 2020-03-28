@@ -26,6 +26,7 @@ function Header(props) {
         <NavList>
           <NavItem><AnimatedLink as="a" href="#gallery">Selected Work</AnimatedLink></NavItem>
           <NavItem><AnimatedLink as="a" href="#resume">Resume</AnimatedLink></NavItem>
+          <NavItem><AnimatedLink as="a" href="https://medium.com/@EricMasiello">Blog</AnimatedLink></NavItem>
         </NavList>
       </Nav>
       <X className={styles.x} />
