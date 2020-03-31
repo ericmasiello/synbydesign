@@ -45,24 +45,28 @@ professionalExperience:
 - organization: Vistaprint Digital
   roles:
 
+  - title: Principal Engineer
+    yearFrom: '2020'
+    yearTo: Present
   - title: UI Architect
     yearFrom: '2019'
+    yearTo: Present
   - title: Senior Software Engineer
     yearFrom: '2016'
+    yearTo: '2020'
 
   accomplishments:
 
+  - Lead accessibility training initiative for tribe
   - Technical lead for flagship Vistaprint Website Builder
-  - Designed in-house UI learning program
+  - Designed in-house front-end learning program
   - Dramatically expanded website builder capabilities; enabling customers to create
     entirely customized "blocks"
   - Vistaprint Digital UI Component library architect
-  - Full stack engineer across multiple products utilizing React and Node JS running
-    on Heroku and AWS
+  - Full stack engineer across multiple products utilizing React and Node JS
   - Mentor junior & senior engineers on front-end and Node development
   - Career coach and manager for junior & senior engineers
-  - 'Creator of the Front-end Learning Guild: a biweekly meetup to discuss and learn
-    about front-end technologies'
+  - 'Creator of the Front-end Learning Guild: a biweekly meetup to discuss and learn about front-end technologies'
 
 - organization: Advisory Board Company
   roles:
