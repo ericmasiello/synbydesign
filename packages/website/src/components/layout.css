@@ -10,7 +10,7 @@
   --color-base: #424141;
   --color-muted: #787575;
   --color-brand: #c90044;
-  --color-brand-invert: #36FFBB;
+  --color-brand-invert: #36ffbb;
   --color-highlight: #5f2058;
   --color-link: rgba(201, 0, 68, 0.6);
   --color-logo: #3b3b3b;
@@ -62,9 +62,9 @@ button {
   font-weight: inherit;
 }
 
-input[type=button],
-input[type=submit],
-input[type=reset],
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
 button {
   cursor: pointer;
 }
