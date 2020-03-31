@@ -7,7 +7,7 @@
     "build": "npm run build:common-ui; npm run build:website",
     "build:common-ui": "yarn workspace @synbydesign/common-ui build",
     "build:website": "yarn workspace @synbydesign/website build",
-    "format": "pretty-quick --pattern '**/*.*(js|jsx|json|yml|scss|css|html)'"
+    "format": "pretty-quick"
   },
   "devDependencies": {
     "husky": "^4.2.3",
@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged --pattern '**/*.*(js|jsx|json|yml|scss|css|html)'"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }
