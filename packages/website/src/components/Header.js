@@ -11,20 +11,19 @@ import styles from './Header.module.css';
 function Header(props) {
   const { className, ...rest } = props;
 
-  const xRef = useRef();
-
   const handleScroll = useCallback(() => {
-    if (!xRef.current) {
-      return;
-    }
     requestAnimationFrame(() => {
-      const scroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const amount = `${scroll / 100}%`;
-      const invert = `${scroll / 100}%`;
+      const scrollDistance = document.body.scrollTop || document.documentElement.scrollTop;
+      const amount = scrollDistance / 100;
+
+      if (scrollDistance > 200) {
+        document.body.style.setProperty('--spin-play-state', 'running');
+      } else {
+        document.body.style.removeProperty('--spin-play-state');
+      }
       document.body.style.setProperty('--scroll-amount', amount);
-      document.body.style.setProperty('--scroll-invert', invert);
     });
-  }, [xRef]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -64,9 +63,7 @@ function Header(props) {
           </NavItem>
         </NavList>
       </Nav>
-      <div ref={xRef} className={styles.x}>
-        <X />
-      </div>
+      <X className={styles.x} />
     </header>
   );
 }
