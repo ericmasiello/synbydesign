@@ -9,7 +9,10 @@ function ResumeSkills(props) {
   return (
     <Component className={classes} {...rest}>
       {skills.map((skill, i) => (
-        <li key={skill}>{i > 0 && <span aria-hidden className={styles.bullet} />}{skill}</li>
+        <li key={skill}>
+          {i > 0 && <span aria-hidden className={styles.bullet} />}
+          {skill}
+        </li>
       ))}
     </Component>
   );
@@ -18,11 +21,11 @@ function ResumeSkills(props) {
 ResumeSkills.defaultProps = {
   as: 'ul',
   skills: [],
-}
+};
 
 ResumeSkills.propTypes = {
   as: PropTypes.oneOf(['ul', 'ol']),
   skills: PropTypes.arrayOf(PropTypes.string),
-}
+};
 
 export default ResumeSkills;

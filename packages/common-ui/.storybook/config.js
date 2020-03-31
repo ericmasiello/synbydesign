@@ -15,7 +15,6 @@ const theme = create({
   brandUrl: 'https://example.com',
 });
 
-
 addDecorator(withInfo);
 addDecorator(withKnobs);
 addParameters({
@@ -29,14 +28,13 @@ addParameters({
   },
 });
 
-
 function loadStories() {
   // forces index.story to load first
   require('../src/storybook/index.story');
 
   // load additional stories
   const req = require.context('../src', true, /\.story\.jsx?$/);
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);

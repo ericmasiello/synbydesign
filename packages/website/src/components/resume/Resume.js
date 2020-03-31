@@ -10,7 +10,6 @@ import { Text } from '../Type';
 import styles from './Resume.module.css';
 
 function Resume(props) {
-
   const {
     as: Component,
     ownerName,
@@ -26,12 +25,7 @@ function Resume(props) {
   const classes = classNames(styles.resume, className);
   return (
     <Component className={classes} {...rest}>
-      <ResumeHeader
-        className={styles.header}
-        ownerName={ownerName}
-        ownerTitle={ownerTitle}
-        lead={lead}
-      />
+      <ResumeHeader className={styles.header} ownerName={ownerName} ownerTitle={ownerTitle} lead={lead} />
       <section className={styles.skills}>
         <Text as="h2" className={styles.title}>
           Technical Skills
@@ -42,22 +36,17 @@ function Resume(props) {
         <Text as="h2" className={styles.title}>
           Professional Experience
         </Text>
-        {professionalExperience.map(experience => (
-          <ProfessionalExperience
-            key={experience.organization}
-            {...experience}
-          />
+        {professionalExperience.map((experience) => (
+          <ProfessionalExperience key={experience.organization} {...experience} />
         ))}
       </section>
       <section className={styles.freelance}>
         <Text as="h2" className={styles.title}>
           Freelance &amp; Related Experience
         </Text>
-        {relatedExperience.map(experience => (
+        {relatedExperience.map((experience) => (
           <RelatedExperience
-            key={`${experience.title}${experience.role.title}${
-              experience.role.yearFrom
-            }`}
+            key={`${experience.title}${experience.role.title}${experience.role.yearFrom}`}
             {...experience}
           />
         ))}
@@ -66,7 +55,7 @@ function Resume(props) {
         <Text as="h2" className={styles.title}>
           Education &amp; Training
         </Text>
-        {education.map(edu => (
+        {education.map((edu) => (
           <EducationExperience key={edu.institution} {...edu} />
         ))}
       </section>
@@ -79,35 +68,41 @@ Resume.defaultProps = {
   education: [],
   professionalExperience: [],
   relatedExperience: [],
-}
+};
 
 Resume.propTypes = {
   as: PropTypes.elementType,
   ownerName: PropTypes.string,
   ownerTitle: PropTypes.string,
   lead: PropTypes.string,
-  professionalExperience: PropTypes.arrayOf(PropTypes.shape({
-    accomplishments: PropTypes.arrayOf(PropTypes.string),
-    organization: PropTypes.string,
-    roles: PropTypes.arrayOf(PropTypes.shape({
+  professionalExperience: PropTypes.arrayOf(
+    PropTypes.shape({
+      accomplishments: PropTypes.arrayOf(PropTypes.string),
+      organization: PropTypes.string,
+      roles: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          yearFrom: PropTypes.string,
+          yearTo: PropTypes.string,
+        })
+      ),
+    })
+  ),
+  relatedExperience: PropTypes.arrayOf(
+    PropTypes.shape({
+      accomplishments: PropTypes.arrayOf(PropTypes.string),
+      meta: PropTypes.string,
+      role: PropTypes.shape({
+        title: PropTypes.string,
+        yearFrom: PropTypes.string,
+        yearTo: PropTypes.string,
+      }),
       title: PropTypes.string,
-      yearFrom: PropTypes.string,
-      yearTo: PropTypes.string,
-    })),
-  })),
-  relatedExperience: PropTypes.arrayOf(PropTypes.shape({
-    accomplishments: PropTypes.arrayOf(PropTypes.string),
-    meta: PropTypes.string,
-    role: PropTypes.shape({
-      title: PropTypes.string,
-      yearFrom: PropTypes.string,
-      yearTo: PropTypes.string,
-    }),
-    title: PropTypes.string,
-    website: PropTypes.shape({
-      url: PropTypes.string,
-    }),
-  })),
+      website: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    })
+  ),
   skills: PropTypes.arrayOf(PropTypes.string),
   education: PropTypes.shape({
     degree: PropTypes.string,
@@ -115,6 +110,6 @@ Resume.propTypes = {
     location: PropTypes.string,
     year: PropTypes.string,
   }),
-}
+};
 
 export default Resume;

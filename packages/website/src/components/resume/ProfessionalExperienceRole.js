@@ -15,14 +15,7 @@ function Timeline({ from: fromDate, to: toDate = 'Present' }) {
 }
 
 function ProfessionalExperienceRole(props) {
-  const {
-    as: Component,
-    className,
-    title,
-    yearFrom,
-    yearTo,
-    ...rest
-  } = props;
+  const { as: Component, className, title, yearFrom, yearTo, ...rest } = props;
   const classes = classNames(styles.role, className);
   return (
     <Component className={classes} {...rest}>
@@ -34,11 +27,11 @@ function ProfessionalExperienceRole(props) {
 }
 
 ProfessionalExperienceRole.defaultProps = {
-  as: 'div'
-}
+  as: 'div',
+};
 
 ProfessionalExperienceRole.propTypes = {
   as: PropTypes.elementType,
-}
+};
 
 export default ProfessionalExperienceRole;

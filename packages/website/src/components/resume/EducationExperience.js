@@ -4,15 +4,7 @@ import { Text, Muted } from '../Type';
 import styles from './EducationExperience.module.css';
 
 function EducationExperience(props) {
-  const {
-    as: Component,
-    className,
-    institution,
-    location,
-    year,
-    degree,
-    ...rest
-  } = props;
+  const { as: Component, className, institution, location, year, degree, ...rest } = props;
   return (
     <Component className={className} {...rest}>
       <Text as="h2" className={styles.title}>
@@ -32,11 +24,11 @@ function EducationExperience(props) {
 }
 
 EducationExperience.defaultProps = {
-  as: 'article'
-}
+  as: 'article',
+};
 
 EducationExperience.propTypes = {
   as: PropTypes.elementType,
-}
+};
 
 export default EducationExperience;

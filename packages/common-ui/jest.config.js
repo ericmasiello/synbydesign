@@ -1,12 +1,6 @@
 module.exports = {
-  testPathIgnorePatterns: [
-    'examples',
-    '__tests__/util',
-  ],
-  collectCoverageFrom: [
-    '!src/components/**/*.story.js',
-    'src/components/**/*.js',
-  ],
+  testPathIgnorePatterns: ['examples', '__tests__/util'],
+  collectCoverageFrom: ['!src/components/**/*.story.js', 'src/components/**/*.js'],
   coverageThreshold: {
     global: {
       branches: 100,

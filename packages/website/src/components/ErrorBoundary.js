@@ -11,10 +11,8 @@ class ErrorBoundary extends React.Component {
     if (this.state.error) {
       return (
         <div>
-            <p>Dang, something went wrong...</p>
-            <pre>
-                {this.state.error.message}
-            </pre>
+          <p>Dang, something went wrong...</p>
+          <pre>{this.state.error.message}</pre>
         </div>
       );
     }

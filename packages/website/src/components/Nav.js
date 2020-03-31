@@ -6,9 +6,7 @@ import styles from './Nav.module.css';
 export function Nav(props) {
   const { className, as: Component, ...rest } = props;
   const classes = classNames(styles.nav, className);
-  return (
-    <Component className={classes} {...rest} />
-  );
+  return <Component className={classes} {...rest} />;
 }
 
 Nav.propTypes = {
@@ -22,9 +20,7 @@ Nav.defaultProps = {
 export function NavList(props) {
   const { className, as: Component, ...rest } = props;
   const classes = classNames(styles.list, className);
-  return (
-    <Component className={classes} {...rest} />
-  );
+  return <Component className={classes} {...rest} />;
 }
 
 NavList.propTypes = {
@@ -38,9 +34,7 @@ NavList.defaultProps = {
 export function NavItem(props) {
   const { className, as: Component, ...rest } = props;
   const classes = classNames(styles.item, className);
-  return (
-    <Component className={classes} {...rest} />
-  );
+  return <Component className={classes} {...rest} />;
 }
 
 NavItem.propTypes = {

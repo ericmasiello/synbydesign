@@ -37,10 +37,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     graphql(`
       query FetchData {
-        portfolio: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data/portfolio/"}}) {
+        portfolio: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/data/portfolio/" } }) {
           edges {
             node {
               frontmatter {
@@ -58,15 +58,14 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
-    `).then(result => {
+    `).then((result) => {
       result.data.portfolio.edges.forEach(({ node }) => {
-
-        const images = `/${node.frontmatter.images.map(image => image.src).join('|')}/`;
+        const images = `/${node.frontmatter.images.map((image) => image.src).join('|')}/`;
         const coverImage = node.frontmatter.coverImage.src;
 
         createPage({
           path: node.fields.slug,
-        //   layout: 'gallery', // this uses the layout template found in layouts/gallery.js
+          //   layout: 'gallery', // this uses the layout template found in layouts/gallery.js
           component: path.resolve(`./src/templates/PortfolioPage.js`),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.

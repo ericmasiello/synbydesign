@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./Header"
-import "./layout.css"
+import Header from './Header';
+import './layout.css';
 import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
@@ -23,12 +23,15 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
       <Helmet>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600&display=swap" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600&display=swap"
+        />
       </Helmet>
       <Header />
       <main className={styles.content}>{children}</main>
@@ -38,11 +41,11 @@ const Layout = ({ children }) => {
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

@@ -5,14 +5,18 @@ import styles from './Type.module.css';
 
 export function H(props) {
   const { as: Component, level, className, ...rest } = props;
-  const classes = classNames(styles.h, {
-    [styles[`h${level}`]]: !!level,
-  }, className);
-  return <Component className={classes} {...rest} />
+  const classes = classNames(
+    styles.h,
+    {
+      [styles[`h${level}`]]: !!level,
+    },
+    className
+  );
+  return <Component className={classes} {...rest} />;
 }
 
 H.defaultProps = {
-  as: 'span'
+  as: 'span',
 };
 
 H.propTypes = {
@@ -22,14 +26,18 @@ H.propTypes = {
 
 export function Text(props) {
   const { as: Component, small, className, ...rest } = props;
-  const classes = classNames(styles.text, {
-    [styles.textSmall]: small,
-  }, className);
-  return <Component className={classes} {...rest} />
+  const classes = classNames(
+    styles.text,
+    {
+      [styles.textSmall]: small,
+    },
+    className
+  );
+  return <Component className={classes} {...rest} />;
 }
 
 Text.defaultProps = {
-  as: 'span'
+  as: 'span',
 };
 
 Text.propTypes = {
@@ -40,11 +48,11 @@ Text.propTypes = {
 export function Highlight(props) {
   const { as: Component, small, className, ...rest } = props;
   const classes = classNames(styles.highlight, className);
-  return <Component className={classes} {...rest} />
+  return <Component className={classes} {...rest} />;
 }
 
 Highlight.defaultProps = {
-  as: 'span'
+  as: 'span',
 };
 
 Highlight.propTypes = {
@@ -54,11 +62,11 @@ Highlight.propTypes = {
 export function Muted(props) {
   const { as: Component, small, className, ...rest } = props;
   const classes = classNames(styles.muted, className);
-  return <Component className={classes} {...rest} />
+  return <Component className={classes} {...rest} />;
 }
 
 Muted.defaultProps = {
-  as: 'span'
+  as: 'span',
 };
 
 Muted.propTypes = {

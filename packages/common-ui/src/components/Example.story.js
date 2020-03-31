@@ -5,8 +5,4 @@ import Example from './Example';
 
 storiesOf('Example', module)
   .addDecorator(withKnobs)
-  .add('default', () => (
-    <Example>
-      Hello World
-    </Example>
-  ));
+  .add('default', () => <Example>Hello World</Example>);
