@@ -21,7 +21,7 @@ H.defaultProps = {
 
 H.propTypes = {
   as: PropTypes.elementType,
-  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
 };
 
 export function Text(props) {

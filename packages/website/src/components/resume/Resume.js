@@ -104,12 +104,14 @@ Resume.propTypes = {
     })
   ),
   skills: PropTypes.arrayOf(PropTypes.string),
-  education: PropTypes.shape({
-    degree: PropTypes.string,
-    institution: PropTypes.string,
-    location: PropTypes.string,
-    year: PropTypes.string,
-  }),
+  education: PropTypes.arrayOf(
+    PropTypes.shape({
+      degree: PropTypes.string,
+      institution: PropTypes.string,
+      location: PropTypes.string,
+      year: PropTypes.string,
+    })
+  ),
 };
 
 export default Resume;
