@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import SEO from '../components/seo';
 
 function attributedImage(image, meta) {
   if (!image || !meta || image.sizes.originalName !== meta.src) {
@@ -40,6 +41,7 @@ function PortfolioPageTemplate(props) {
   // TODO: do work to marry up the image content w/ the alt attribute value
   return (
     <div>
+      <SEO title={portfolio.title} />
       <h1>{title}</h1>
       {img || svg}
       <h2>Images</h2>
