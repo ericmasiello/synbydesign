@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
 import AnimatedLink from './AnimatedLink';
@@ -30,7 +30,7 @@ function Header(props) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   const classes = classNames(styles.header, className);
   return (

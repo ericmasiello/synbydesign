@@ -29,7 +29,7 @@ function PortfolioPageTemplate(props) {
     },
   } = props;
 
-  const { title, images: metaImages, meta, svgSource, tags, coverImage: metaCoverImage } = portfolio;
+  const { title, images: metaImages, svgSource, coverImage: metaCoverImage } = portfolio;
 
   const attributedCoverImage = attributedImage(coverImage, metaCoverImage);
   const attributedImages = metaImages && metaImages.map(mapMetaToImageData(images.nodes));
@@ -40,7 +40,7 @@ function PortfolioPageTemplate(props) {
   // TODO: do work to marry up the image content w/ the alt attribute value
   return (
     <div>
-      <h1>{portfolio.title}</h1>
+      <h1>{title}</h1>
       {img || svg}
       <h2>Images</h2>
       <ul>
