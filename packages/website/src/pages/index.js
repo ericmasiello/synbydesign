@@ -79,7 +79,10 @@ function IndexPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const data = useStaticQuery(graphql`
     query PortfolioLandingPage {
-      allPortfolio: allMarkdownRemark(filter: { fields: { slug: { ne: "/resume/" } } }) {
+      allPortfolio: allMarkdownRemark(
+        filter: { fields: { slug: { ne: "/resume/" } } }
+        sort: { order: ASC, fields: frontmatter___order }
+      ) {
         nodes {
           id
           fields {

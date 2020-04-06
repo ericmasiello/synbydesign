@@ -1,5 +1,6 @@
 ---
 title: Priority Construction
+order: 3
 coverImage:
   src: synbydesign_priority-construction_priority-construction-gallery-crop.png
   alt: Anthem House cover photo

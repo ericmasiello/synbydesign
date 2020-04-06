@@ -1,5 +1,6 @@
 ---
 title: Mastering React Native
+order: 1
 coverImage:
   src: master-react-native-front.png
   alt: Mastering React Native book - front cover

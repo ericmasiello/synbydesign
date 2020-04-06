@@ -1,5 +1,6 @@
 ---
 title: Stencil
+order: 2
 coverImage:
   src: stencil-splash.png
   alt: Stencil Splash Screen and Logo
@@ -40,6 +41,5 @@ has been widely adopted.
 
 While building Stencil I served as UI architect and primary contributor. My experience with building component libraries
 informed much of the CSS design. We follow BEM with a strong emphasis on shallow selectors.
-This design is critical for scaling CSS. We encapsulated each of these UI components 
+This design is critical for scaling CSS. We encapsulated each of these UI components
 into React components that can be easily imported and customized by other developers.
-  
