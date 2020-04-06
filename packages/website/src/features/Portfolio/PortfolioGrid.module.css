@@ -50,11 +50,29 @@ export const GALLERY = Object.freeze({
   border: 2px solid var(--color-brand-invert);
 }
 
+/* TODO: turn this background-color on/off based on scroll position */
+.link::after {
+  content: '';
+  position: absolute;
+  transition: opacity 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-brand-invert);
+  opacity: 0.5;
+}
+
 .link:hover,
 .link:focus {
   filter: grayscale(0);
   border-color: transparent;
   outline: 3px auto var(--color-brand);
+}
+
+.link:hover::after,
+.link:focus::after {
+  opacity: 0.05;
 }
 
 .image {
