@@ -12,7 +12,7 @@ function ProfessionalExperience(props) {
   return (
     <Component className={classes} {...rest}>
       <hgroup>
-        <H tag="h1" className={styles.org}>
+        <H as="h4" className={styles.org}>
           {organization}
         </H>
         {roles.map((role) => (

@@ -19,7 +19,7 @@ function ProfessionalExperienceRole(props) {
   const classes = classNames(styles.role, className);
   return (
     <Component className={classes} {...rest}>
-      <Text as="h2" className={styles.title}>
+      <Text as="h5" className={styles.title}>
         {title} <Timeline from={yearFrom} to={yearTo} />
       </Text>
     </Component>

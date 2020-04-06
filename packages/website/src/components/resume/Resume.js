@@ -27,13 +27,13 @@ function Resume(props) {
     <Component className={classes} {...rest}>
       <ResumeHeader className={styles.header} ownerName={ownerName} ownerTitle={ownerTitle} lead={lead} />
       <section className={styles.skills}>
-        <Text as="h2" className={styles.title}>
+        <Text as="h3" className={styles.title}>
           Technical Skills
         </Text>
         <ResumeSkills skills={skills} />
       </section>
       <section className={styles.experience}>
-        <Text as="h2" className={styles.title}>
+        <Text as="h3" className={styles.title}>
           Professional Experience
         </Text>
         {professionalExperience.map((experience) => (
@@ -41,7 +41,7 @@ function Resume(props) {
         ))}
       </section>
       <section className={styles.freelance}>
-        <Text as="h2" className={styles.title}>
+        <Text as="h3" className={styles.title}>
           Freelance &amp; Related Experience
         </Text>
         {relatedExperience.map((experience) => (
@@ -52,7 +52,7 @@ function Resume(props) {
         ))}
       </section>
       <section className={styles.education}>
-        <Text as="h2" className={styles.title}>
+        <Text as="h3" className={styles.title}>
           Education &amp; Training
         </Text>
         {education.map((edu) => (

@@ -1,2 +1,2 @@
-export { default as Example } from './components/Example';
+export { default as Button } from './components/Button';
 export { default as VisuallyHidden } from './components/VisuallyHidden';

@@ -98,6 +98,10 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+a:focus {
+  outline: 3px auto var(--color-brand);
+}
+
 img,
 svg {
   max-width: 100%;

@@ -1,7 +1,7 @@
 ---
 title: Sonic Butter flyers
 coverImage:
-  src: Just4Heads-color.png
+  src: just4heads-color.png
   alt: Just 4 Heads flyer
 meta:
   stackDesign: true
@@ -9,12 +9,13 @@ meta:
   thumb:
     row: span 2
     column: span 2
+    fit: contain
 categories:
 - flyers
 images:
-- src: Just4Heads-color.png
+- src: just4heads-color.png
   alt: Just 4 Heads flyer
-- src: Just4Heads-color-bg.png
+- src: just4heads-color-bg.png
   alt: Just 4 Heads flyer
   meta:
     usage:

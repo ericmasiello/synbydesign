@@ -31,11 +31,44 @@ export const GALLERY = Object.freeze({
   }
 }
 
+.item {
+  position: relative;
+  display: flex;
+}
+
 @media (min-width: 50rem) {
   .item {
     grid-column: var(--item-column);
     grid-row: var(--item-row);
   }
+}
+
+.link {
+  width: 100%;
+  transition: filter 0.2s;
+  filter: grayscale(0.35);
+  border: 2px solid var(--color-brand-invert);
+}
+
+.link:hover,
+.link:focus {
+  filter: grayscale(0);
+  border-color: transparent;
+  outline: 3px auto var(--color-brand);
+}
+
+.image {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.image :global(img) {
+  position: static;
+  object-fit: var(--image-fit, cover) !important;
+  object-position: var(--image-position, 50% 0) !important;
 }
 
 .svg,

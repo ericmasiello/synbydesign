@@ -7,6 +7,8 @@ meta:
   stackDesign: true
   thumb:
     column: span 2
+    row: span 3
+    fit: contain
 categories:
 - flyers
 images:

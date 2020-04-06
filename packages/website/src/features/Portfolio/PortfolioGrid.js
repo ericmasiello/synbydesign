@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './PortfolioGrid.module.css';
@@ -56,17 +57,26 @@ PortfolioGridLink.propTypes = {
 };
 
 export function PortfolioGridImage(props) {
-  const { as: Component, className, ...rest } = props;
+  const { as: Component, className, fit, position, ...rest } = props;
+  const style = useMemo(
+    () => ({
+      '--image-fit': fit,
+      '--image-position': position,
+    }),
+    [fit, position]
+  );
   const classes = classNames(styles.image, className);
-  return <Component className={classes} {...rest} />;
+  return <Component className={classes} style={style} {...rest} />;
 }
 
 PortfolioGridImage.defaultProps = {
-  as: 'div',
+  as: Img,
 };
 
 PortfolioGridImage.propTypes = {
   as: PropTypes.elementType,
+  fit: PropTypes.string,
+  position: PropTypes.string,
 };
 
 export function PortfolioGridSVG(props) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
-import Example from './Example';
+import Button from './Button';
 
-storiesOf('Example', module)
+storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('default', () => <Example>Hello World</Example>);
+  .add('default', () => <Button>Hello World</Button>);

@@ -47,7 +47,7 @@ function Header(props) {
       <Nav>
         <NavList>
           <NavItem>
-            <AnimatedLink as="a" href="#gallery">
+            <AnimatedLink as="a" href="#work">
               Selected Work
             </AnimatedLink>
           </NavItem>

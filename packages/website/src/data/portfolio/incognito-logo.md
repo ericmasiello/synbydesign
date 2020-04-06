@@ -6,7 +6,7 @@ coverImage:
 meta:
   highlightColor: "#fcc52d"
   thumb:
-    position: 0 100%
+    fit: contain
 categories:
 - logos
 images:

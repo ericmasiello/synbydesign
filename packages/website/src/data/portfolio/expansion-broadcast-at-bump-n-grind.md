@@ -8,6 +8,7 @@ meta:
   thumb:
     row: span 2
     column: span 2
+    fit: contain
 categories:
 - flyers
 images:

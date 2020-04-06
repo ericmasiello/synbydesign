@@ -7,6 +7,7 @@ meta:
   thumb:
     row: span 2
     column: span 2
+    fit: contain
   highlightColor: "#EA9190"
 categories:
 - flyers
