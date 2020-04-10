@@ -56,6 +56,20 @@ PortfolioGridLink.propTypes = {
   as: PropTypes.elementType,
 };
 
+export function PortfolioGridContent(props) {
+  const { as: Component, className, ...rest } = props;
+  const classes = classNames(styles.content, className);
+  return <Component className={classes} {...rest} />;
+}
+
+PortfolioGridContent.defaultProps = {
+  as: 'div',
+};
+
+PortfolioGridContent.propTypes = {
+  as: PropTypes.elementType,
+};
+
 export function PortfolioGridImage(props) {
   const { as: Component, className, fit, position, ...rest } = props;
   const style = useMemo(

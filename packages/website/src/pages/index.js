@@ -11,7 +11,9 @@ import {
   PortfolioGridSVG,
   PortfolioGridItem,
   PortfolioGridLink,
+  PortfolioGridContent,
 } from '../features/Portfolio/PortfolioGrid';
+import { H } from '../components/Type';
 import styles from './index.module.css';
 
 // TODO: move this to another module
@@ -185,7 +187,6 @@ function IndexPage() {
             return (
               <PortfolioGridItem key={id} row={gridRow} column={gridColumn}>
                 <PortfolioGridLink to={fields.slug}>
-                  <VisuallyHidden as="h3">{title}</VisuallyHidden>
                   {svgSource ? (
                     <PortfolioGridSVG src={svgSource} />
                   ) : (
@@ -198,6 +199,11 @@ function IndexPage() {
                       />
                     )
                   )}
+                  <PortfolioGridContent>
+                    <H as="h3" level={5} upper bold>
+                      {title}
+                    </H>
+                  </PortfolioGridContent>
                 </PortfolioGridLink>
               </PortfolioGridItem>
             );

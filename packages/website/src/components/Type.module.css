@@ -32,6 +32,14 @@
   line-height: 1.6;
 }
 
+.h--upper {
+  text-transform: uppercase;
+}
+
+.h--bold {
+  font-weight: var(--font-header-weight-bold);
+}
+
 .text {
   font-family: var(--font-base);
   font-size: 1rem;

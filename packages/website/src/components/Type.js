@@ -4,11 +4,13 @@ import classNames from 'classnames';
 import styles from './Type.module.css';
 
 export function H(props) {
-  const { as: Component, level, className, ...rest } = props;
+  const { as: Component, level, className, bold, upper, ...rest } = props;
   const classes = classNames(
     styles.h,
     {
       [styles[`h${level}`]]: !!level,
+      [styles.hUpper]: !!upper,
+      [styles.hBold]: !!bold,
     },
     className
   );
@@ -22,6 +24,8 @@ H.defaultProps = {
 H.propTypes = {
   as: PropTypes.elementType,
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  bold: PropTypes.bool,
+  upper: PropTypes.bool,
 };
 
 export function Text(props) {

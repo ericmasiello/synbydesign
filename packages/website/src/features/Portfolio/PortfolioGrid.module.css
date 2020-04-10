@@ -1,14 +1,7 @@
-/*
-export const GALLERY = Object.freeze({
-  itemPadding: 16,
-  minItemSize: 300,
-  fullSize: 800,
-});
-*/
-
 .grid {
   --min-item-size: 18.75rem;
   --item-gap: 1rem;
+  --animation-speed: 0.8s;
   max-width: var(--content-max-width);
   padding: 0;
   margin: 0 auto;
@@ -48,19 +41,10 @@ export const GALLERY = Object.freeze({
   transition: filter 0.2s;
   filter: grayscale(0.35);
   border: 2px solid var(--color-brand-invert);
-}
-
-/* TODO: turn this background-color on/off based on scroll position */
-.link::after {
-  content: '';
-  position: absolute;
-  transition: opacity 0.2s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--color-brand-invert);
-  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .link:hover,
@@ -73,6 +57,32 @@ export const GALLERY = Object.freeze({
 .link:hover::after,
 .link:focus::after {
   opacity: 0.05;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-bg);
+  color: var(--color-base);
+  padding: 0.5rem;
+  transition: var(--animation-speed);
+  opacity: 0;
+}
+
+.content > :global(*) {
+  margin: 0;
+}
+
+.link:hover .content,
+.link:focus .content {
+  opacity: 0.8;
 }
 
 .image {
@@ -95,4 +105,17 @@ export const GALLERY = Object.freeze({
   height: 100%;
   object-fit: cover;
   fill: var(--color-brand);
+}
+
+.image,
+.svg {
+  transition: var(--animation-speed);
+}
+
+.link:hover .image,
+.link:focus .image,
+.link:hover .svg,
+.link:focus .svg {
+  filter: blur(3px);
+  transform: scale(1.2);
 }
