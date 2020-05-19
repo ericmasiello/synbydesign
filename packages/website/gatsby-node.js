@@ -1,6 +1,12 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
+function getMetaUsage(usage) {
+  return (image) => {
+    return image && image.meta && image.meta.usage && image.meta.usage.indexOf(usage) > -1
+  }
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
@@ -49,6 +55,9 @@ exports.createPages = ({ graphql, actions }) => {
                 }
                 images {
                   src
+                  meta {
+                    usage
+                  }
                 }
               }
               fields {
@@ -60,8 +69,22 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then((result) => {
       result.data.portfolio.edges.forEach(({ node }) => {
-        const images = `/${node.frontmatter.images.map((image) => image.src).join('|')}/`;
-        const coverImage = node.frontmatter.coverImage.src;
+        const imageFilesNames = `/${node.frontmatter.images.map((image) => image.src).join('|')}/`;
+        const coverImageFileName = node.frontmatter.coverImage.src;
+
+        const heroImage = node.frontmatter.images.find(getMetaUsage('hero'));
+        const backgroundImage = node.frontmatter.images.find(getMetaUsage('background'));
+
+        const heroImageFilesName = heroImage ? heroImage.src : "";
+        const backgroundImageFileName = backgroundImage ? backgroundImage.src : "";
+
+        if (heroImageFilesName) {
+          console.log({ heroImageFilesName })
+        }
+
+        if (backgroundImageFileName) {
+          console.log({ backgroundImageFileName })
+        }
 
         createPage({
           path: node.fields.slug,
@@ -70,8 +93,10 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,
-            images,
-            coverImage,
+            images: imageFilesNames,
+            coverImage: coverImageFileName,
+            heroImage: heroImageFilesName,
+            backgroundImage: backgroundImageFileName,
           },
         });
       });

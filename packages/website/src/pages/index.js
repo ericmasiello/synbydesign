@@ -14,63 +14,11 @@ import {
   PortfolioGridContent,
 } from '../features/Portfolio/PortfolioGrid';
 import { H } from '../components/Type';
+import { mergePortfolioListWithCoverImage } from '../utils/portfolio';
+import { limit } from '../utils/list';
 import styles from './index.module.css';
 
-// TODO: move this to another module
-function mergePortfolioListWithImage(portfolioList, images) {
-  return portfolioList.map((portfolioItem) => {
-    const imageSrc = portfolioItem?.frontmatter?.coverImage?.src;
-    // find image in images list
-    const image = imageSrc && images[binarySearch(imageSrc, images, (imageNode) => imageNode?.fluid?.originalName)];
-
-    if (!image) {
-      return portfolioItem;
-    }
-
-    return {
-      ...portfolioItem,
-      frontmatter: {
-        ...portfolioItem.frontmatter,
-        coverImage: {
-          ...portfolioItem.frontmatter.coverImage,
-          fluid: image.fluid,
-        },
-      },
-    };
-  });
-}
-
-// TODO: move this to another module
-function binarySearch(value, list, getValue) {
-  let first = 0; //left endpoint
-  let last = list.length - 1; //right endpoint
-  let position = -1;
-  let found = false;
-  let middle;
-
-  while (found === false && first <= last) {
-    middle = Math.floor((first + last) / 2);
-    if (getValue(list[middle]) === value) {
-      found = true;
-      position = middle;
-    } else if (getValue(list[middle]) > value) {
-      //if in lower half
-      last = middle - 1;
-    } else {
-      //in in upper half
-      first = middle + 1;
-    }
-  }
-  return position;
-}
-
-// TODO: move this to another module
-function limit(limit = 1) {
-  return (_, i) => i < limit;
-}
-
 const PAGE_SIZE = 7;
-
 /*
  TODO:
   1. store currentPage in localStorage so that it can be retained when switching pages
@@ -157,7 +105,8 @@ function IndexPage() {
   `);
 
   const { allCoverImages, allPortfolio } = data;
-  const portfolioList = useMemo(() => mergePortfolioListWithImage(allPortfolio.nodes, allCoverImages.nodes), [
+
+  const portfolioList = useMemo(() => mergePortfolioListWithCoverImage(allPortfolio.nodes, allCoverImages.nodes), [
     allPortfolio.nodes,
     allCoverImages.nodes,
   ]);
