@@ -1,0 +1,25 @@
+/* add css styles here (optional) */
+
+html {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: white;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.sb-show-main {
+  background-color: #f5f5f5;
+}

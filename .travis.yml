@@ -1,17 +1,11 @@
 sudo: false
 language: node_js
-cache:
-  directories:
-    - node_modules
-node_js: 8
 notifications:
   email: false
 script:
-  - npm run lint
-  - npm run test
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
-    on:
-      master: true
+  - yarn workspace @synbydesign/common-ui build
+  - yarn
+  - yarn workspace @synbydesign/common-ui run lint:style
+  - yarn workspace @synbydesign/common-ui run test
+  - yarn workspace @synbydesign/website run lint:style
+  - yarn workspace @synbydesign/website run test

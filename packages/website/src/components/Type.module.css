@@ -1,0 +1,59 @@
+.h {
+  font-family: var(--font-header);
+}
+
+.h--1 {
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.h--2 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.h--3 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.h--4 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.h--5 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.h--6 {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.h--upper {
+  text-transform: uppercase;
+}
+
+.h--bold {
+  font-weight: var(--font-header-weight-bold);
+}
+
+.text {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text--small {
+  font-size: 0.75rem;
+}
+
+.highlight {
+  color: var(--color-highlight);
+}
+
+.muted {
+  color: var(--color-muted);
+}
