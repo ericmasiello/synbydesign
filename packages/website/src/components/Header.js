@@ -47,18 +47,18 @@ function Header(props) {
       <Nav>
         <NavList>
           <NavItem>
-            <AnimatedLink as="a" href="#work">
-              Selected Work
-            </AnimatedLink>
-          </NavItem>
-          <NavItem>
             <AnimatedLink as="a" href="#resume">
               Resume
             </AnimatedLink>
           </NavItem>
           <NavItem>
             <AnimatedLink as="a" href="https://medium.com/@EricMasiello">
-              Blog
+              Medium Blog
+            </AnimatedLink>
+          </NavItem>
+          <NavItem>
+            <AnimatedLink as="a" href="https://www.linkedin.com/in/ericmasiello/">
+              LinkedIn Profile
             </AnimatedLink>
           </NavItem>
         </NavList>
