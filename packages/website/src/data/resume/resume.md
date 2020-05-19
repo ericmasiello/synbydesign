@@ -11,14 +11,15 @@ lead: |2-
 skills:
 
 - Web application development
-- Responsive web design
 - Single page applications
 - React
 - React Native
 - Redux
-- ES2015/16+
+- Modern JavaScript
+- Gatsby
 - Typescript
 - Styled Components
+- CSS Modules
 - Node
 - Express JS
 - HTML5
@@ -26,8 +27,8 @@ skills:
 - SCSS
 - Jest
 - Mocha
+- React Testing Library
 - Enzyme
-- Angular
 - jQuery
 - Webpack
 - Gulp
@@ -37,7 +38,6 @@ skills:
 - Git
 - Cross browser development
 - MySQL
-- Postgres
 - Mongo
 
 professionalExperience:
@@ -57,11 +57,10 @@ professionalExperience:
 
   accomplishments:
 
-  - Lead accessibility training initiative for tribe
-  - Technical lead for flagship Vistaprint Website Builder
+  - Developed front-end and accessibility standards and training
   - Designed in-house front-end learning program
-  - Dramatically expanded website builder capabilities; enabling customers to create
-    entirely customized "blocks"
+  - Architect of Print Designer UI library; optimized for mobile experiences via custom build scripts supporting tree shaking, small CSS modules, and flexibility via components and custom hooks
+  - Technical architect and team lead for rearchitecture of flagship Website Builder; dramatically expanding builder capabilities and enabling customers to create entirely customized "blocks"
   - Vistaprint Digital UI Component library architect
   - Full stack engineer across multiple products utilizing React and Node JS
   - Mentor junior & senior engineers on front-end and Node development
