@@ -28,10 +28,16 @@
   stroke: var(--color-brand-invert);
   filter: invert(calc(var(--scroll-amount, 0) * 1%)) opacity(calc((100 - var(--scroll-amount, 0)) / 100));
   opacity: 0.6;
-  animation: rotateX 300s infinite backwards;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-play-state: var(--spin-play-state, paused);
+  transform: translateX(-45%) translateY(40%) rotate(20deg) scale(1.2);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .x {
+    animation: rotateX 300s infinite backwards;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-play-state: var(--spin-play-state, paused);
+  }
 }
 
 @keyframes rotateX {

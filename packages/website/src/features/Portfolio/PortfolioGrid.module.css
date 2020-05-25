@@ -1,11 +1,17 @@
 .grid {
   --min-item-size: 18.75rem;
   --item-gap: 1rem;
-  --animation-speed: 0.8s;
+  --animation-speed: 0;
   max-width: var(--content-max-width);
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .grid {
+    --animation-speed: 0.8s;
+  }
 }
 
 @media (min-width: calc(18.75rem * 2)) {
