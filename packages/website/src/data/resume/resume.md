@@ -168,21 +168,23 @@ relatedExperience:
     title: Developer, Designer
     yearFrom: '2018'
   accomplishments:
-  - Typescript, Express, React, Redux, Webpack, HTML5, Styled Components, REST API,
-    responsive design
+  - Gatsby, Yarn Workspaces, CSS Modules
 
 education:
 - institution: University of Maryland, Baltimore County
   location: Catonsville, MD
   year: '2003'
   degree: Bachelor of Science Information Systems Management
+- institution: Jamstack Conf
+  year: '2020'
+  location: Online
+- institution: JS Conf
+  year: '2018'
+  location: Carlsbad, CA
 - institution: Chain React Conference
   year: '2017'
   location: Portland, OR
 - institution: Scrum Alliance
   degree: Certified ScrumMaster
   year: '2017'
-  location: Washington, DC
-- institution: Steven Krug's Usability Testing Workshop
-  year: '2009'
   location: Washington, DC

@@ -28,7 +28,7 @@
   stroke: var(--color-brand-invert);
   filter: invert(calc(var(--scroll-amount, 0) * 1%)) opacity(calc((100 - var(--scroll-amount, 0)) / 100));
   opacity: 0.6;
-  animation: rotateX 150s infinite backwards;
+  animation: rotateX 300s infinite backwards;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-play-state: var(--spin-play-state, paused);
