@@ -3,8 +3,8 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 function getMetaUsage(usage) {
   return (image) => {
-    return image && image.meta && image.meta.usage && image.meta.usage.indexOf(usage) > -1
-  }
+    return image && image.meta && image.meta.usage && image.meta.usage.indexOf(usage) > -1;
+  };
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -75,16 +75,8 @@ exports.createPages = ({ graphql, actions }) => {
         const heroImage = node.frontmatter.images.find(getMetaUsage('hero'));
         const backgroundImage = node.frontmatter.images.find(getMetaUsage('background'));
 
-        const heroImageFilesName = heroImage ? heroImage.src : "";
-        const backgroundImageFileName = backgroundImage ? backgroundImage.src : "";
-
-        if (heroImageFilesName) {
-          console.log({ heroImageFilesName })
-        }
-
-        if (backgroundImageFileName) {
-          console.log({ backgroundImageFileName })
-        }
+        const heroImageFilesName = heroImage ? heroImage.src : '';
+        const backgroundImageFileName = backgroundImage ? backgroundImage.src : '';
 
         createPage({
           path: node.fields.slug,
