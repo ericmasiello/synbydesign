@@ -42,7 +42,7 @@ function Header(props) {
         Freelance <span className={styles.role}>developer</span>, <span className={styles.role}>trainer</span>, &{' '}
         <span className={styles.role}>consultant</span>.
       </Text>
-      <Nav>
+      <Nav className={styles.nav}>
         <NavList>
           <NavItem>
             <AnimatedLink as="a" href="#resume">
