@@ -18,8 +18,6 @@ function Header(props) {
 
       if (scrollDistance > 200) {
         document.body.style.setProperty('--spin-play-state', 'running');
-      } else {
-        document.body.style.removeProperty('--spin-play-state');
       }
       document.body.style.setProperty('--scroll-amount', amount);
     });
