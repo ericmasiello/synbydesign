@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { H } from '../Type';
 import styles from './ResumeHeader.module.css';
 
 function ResumeHeader(props) {
   const { as: Component, ownerName, ownerTitle, lead, className, ...rest } = props;
+  const classes = classNames(styles.header, className);
+
   return (
-    <Component className={className} {...rest}>
+    <Component className={classes} {...rest}>
       <H level={4} as="h3" className={styles.name}>
         {ownerName}
       </H>

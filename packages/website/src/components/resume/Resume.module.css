@@ -1,5 +1,7 @@
 .resume {
   --resume-border: rgba(212, 207, 209, 0.5);
+  --resume-v-gap: 1.25rem;
+  --resume-h-gap: 2rem;
 
   display: grid;
   grid-template-areas:
@@ -8,7 +10,7 @@
     'experience'
     'freelance'
     'education';
-  grid-gap: 1.25rem 2rem;
+  grid-gap: var(--resume-v-gap) var(--resume-h-gap);
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 0 2.5rem;
