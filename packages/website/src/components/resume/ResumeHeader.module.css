@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(90deg, rgba(78, 0, 94, 1) 14%, rgba(19, 52, 185, 1) 100%);
+  background: linear-gradient(90deg, rgba(78, 0, 94, 0.95) 14%, rgba(19, 52, 185, 0.95) 100%);
   color: #fff;
   padding: var(--resume-v-gap) var(--resume-h-gap);
   margin-left: calc(var(--resume-h-gap) * -1);

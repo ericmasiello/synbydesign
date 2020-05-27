@@ -1,3 +1,6 @@
 .content {
   position: relative;
+
+  /* ensure content appears above spinning "X" */
+  z-index: 2;
 }
