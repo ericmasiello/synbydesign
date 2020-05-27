@@ -35,9 +35,9 @@
     "safari >= 6"
   ],
   "peerDependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "prop-types": ">= 15.7.2",
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
   },
   "dependencies": {
     "classnames": "^2.2.6"
@@ -93,9 +93,9 @@
     "rollup-plugin-url": "^2.2.2",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.2.0",
     "stylelint-config-css-modules": "^2.2.0",
-    "stylelint-config-ericmasiello": "^3.1.0",
+    "stylelint-config-ericmasiello": "^4.0.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
   }
