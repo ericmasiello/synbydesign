@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
-import { attributedImage, mapMetaToImageData, getImageByUsage } from '../utils/portfolio';
+import { attributedImage, mapMetaToImageData } from '../utils/portfolio';
 
 function PortfolioPageTemplate(props) {
   const {
@@ -10,20 +10,13 @@ function PortfolioPageTemplate(props) {
       portfolio: { frontmatter: portfolio },
       images,
       coverImage,
-      heroImage,
-      backgroundImage,
     },
   } = props;
 
   const { title, images: metaImages, svgSource, coverImage: metaCoverImage } = portfolio;
 
   const attributedCoverImage = attributedImage(coverImage, metaCoverImage);
-  console.log({ heroImage })
-  console.log({ metaImages })
   const attributedOtherImages = metaImages && metaImages.map(mapMetaToImageData(images.nodes));
-  // const attributedHeroImage = heroImage && mapMetaToImageData([heroImage])()
-  // const heroImage = getImageByUsage('hero')(attributedOtherImages.concat(attributedCoverImage)) || getImageByUsage('background')(attributedOtherImages.concat(attributedCoverImage)) || attributedCoverImage;
-  // console.group({ heroImage });
 
   const img = attributedCoverImage && <Img fluid={attributedCoverImage.fluid} alt={attributedCoverImage.alt} />;
   const svg = svgSource && <div dangerouslySetInnerHTML={{ __html: svgSource }} />;
@@ -48,7 +41,13 @@ function PortfolioPageTemplate(props) {
 export default PortfolioPageTemplate;
 
 export const query = graphql`
-  query PortfolioPageQuery($slug: String!, $images: String!, $coverImage: String!, $heroImage: String!, $backgroundImage: String!) {
+  query PortfolioPageQuery(
+    $slug: String!
+    $images: String!
+    $coverImage: String!
+    $heroImage: String!
+    $backgroundImage: String!
+  ) {
     portfolio: markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
