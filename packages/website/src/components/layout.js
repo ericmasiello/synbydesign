@@ -5,7 +5,7 @@ import '@synbydesign/common-ui/dist/index.css';
 import styles from './Layout.module.css';
 
 const FONT_CRITICAL = 'https://fonts.googleapis.com/css?Source+Sans+Pro:300,600&display=swap';
-const FONTS = 'https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:300,400,600&display=swap';
+const FONTS_NON_CRITICAL = 'https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:400&display=swap';
 
 const Layout = ({ children }) => {
   return (
@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
           The plugin is configured via Netlify's plugins page https://app.netlify.com/teams/ericmasiello/plugins
         */}
         <link rel="stylesheet" href={FONT_CRITICAL} />
-        <link rel="stylesheet" href={FONTS} />
+        <link rel="stylesheet" href={FONTS_NON_CRITICAL} />
       </Helmet>
       <main className={styles.content}>{children}</main>
     </>
