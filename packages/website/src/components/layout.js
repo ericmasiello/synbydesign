@@ -12,7 +12,14 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link rel="preload" href={FONTS} as="style" />
-        <link rel="stylesheet" href={FONTS} media="print" id="google-font-link" />
+        {/*
+          NOTE: the below <link /> automatically has the following two attributes added to it
+          at build time via netlify-plugin-inline-critical-css
+          * media="print"
+          * onload="this.meida='all'"
+          The plugin is configured via Netlify's plugins page https://app.netlify.com/teams/ericmasiello/plugins
+        */}
+        <link rel="stylesheet" href={FONTS} />
       </Helmet>
       <main className={styles.content}>{children}</main>
     </>
