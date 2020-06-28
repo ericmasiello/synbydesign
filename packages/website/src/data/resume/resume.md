@@ -14,6 +14,8 @@ skills:
 - Single page applications
 - React
 - React Native
+- Accessibility
+- Performance
 - Redux
 - Modern JavaScript
 - Gatsby
@@ -57,6 +59,7 @@ professionalExperience:
 
   accomplishments:
 
+  - Partnered with the a11y working group to define and ratify an organization-wide accessibility RFC
   - Developed front-end and accessibility standards and training
   - Designed in-house front-end learning program
   - Architect of Print Designer UI library; optimized for mobile experiences via custom build scripts supporting tree shaking, small CSS modules, and flexibility via components and custom hooks
