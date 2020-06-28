@@ -4,8 +4,9 @@ import { Helmet } from 'react-helmet';
 import '@synbydesign/common-ui/dist/index.css';
 import styles from './Layout.module.css';
 
-const FONT_CRITICAL = 'https://fonts.googleapis.com/css?Source+Sans+Pro:300,600&display=swap';
-const FONTS_NON_CRITICAL = 'https://fonts.googleapis.com/css?family=Lato:400,700|Source+Sans+Pro:400&display=swap';
+const FONT_CRITICAL = 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap';
+const FONTS_NON_CRITICAL =
+  'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro&display=swap';
 
 const Layout = ({ children }) => {
   return (
