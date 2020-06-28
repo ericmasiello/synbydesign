@@ -61,7 +61,9 @@ function Header(props) {
           </NavItem>
         </NavList>
       </Nav>
-      <X className={styles.x} />
+      <span className={styles.xWrapper}>
+        <X className={styles.x} />
+      </span>
     </header>
   );
 }
