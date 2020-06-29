@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="true" />
         <link rel="preload" href={FONTS} as="style" />
         {/*
           NOTE: the below <link />s automatically has the following two attributes added to it
