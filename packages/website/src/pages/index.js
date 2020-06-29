@@ -4,6 +4,7 @@ import { VisuallyHidden } from '@synbydesign/common-ui';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Resume from '../components/resume/Resume';
 
 function IndexPage() {
@@ -58,6 +59,7 @@ function IndexPage() {
         </VisuallyHidden>
         <Resume id="resume" {...data.resume.frontmatter} />
       </Layout>
+      <Footer />
     </>
   );
 }
