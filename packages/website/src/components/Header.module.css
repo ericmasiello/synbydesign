@@ -5,6 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2.5rem;
+}
+
+.header--slim {
+  min-height: 0;
+  align-items: flex-start;
 }
 
 .nav {
