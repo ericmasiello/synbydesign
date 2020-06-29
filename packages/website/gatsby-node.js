@@ -7,6 +7,7 @@ function getMetaUsage(usage) {
   };
 }
 
+// TODO: add code that conditionally loads this based off an env variable
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
