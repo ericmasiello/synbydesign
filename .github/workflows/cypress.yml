@@ -10,7 +10,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: yarn build:common-ui && yarn workspace @synbydesign/website start
+          start: yarn workspace @synbydesign/website start
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:8000'
           wait-on-timeout: 300
