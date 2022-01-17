@@ -5,4 +5,4 @@ import Button from './Button';
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('default', () => <Button>Hello World</Button>);
+  .add('default', () => <Button className="foobar">Hello World</Button>);

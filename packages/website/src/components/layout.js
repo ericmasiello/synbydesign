@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import '@synbydesign/common-ui/dist/index.css';
 import styles from './Layout.module.css';
 
 const FONTS =
