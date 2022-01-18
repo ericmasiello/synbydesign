@@ -10,6 +10,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `aboutme`,
+        path: `${__dirname}/src/data/aboutme/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `resume`,
         path: `${__dirname}/src/data/resume/`,
       },

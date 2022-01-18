@@ -6,10 +6,14 @@ import SEO from '../components/seo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Resume from '../components/resume/Resume';
+import AboutMe from '../components/AboutMe';
 
 function IndexPage() {
   const data = useStaticQuery(graphql`
     query PortfolioLandingPage {
+      aboutme: markdownRemark(fileAbsolutePath: { regex: "/data/aboutme/" }) {
+        html
+      }
       resume: markdownRemark(fileAbsolutePath: { regex: "/data/resume/" }) {
         frontmatter {
           lead
@@ -54,9 +58,11 @@ function IndexPage() {
       <SEO title="Home" />
       <Header />
       <Layout>
+        <AboutMe id="about-me" content={data.aboutme.html} />
         <VisuallyHidden as="h2" id="resume-title">
           Resume
         </VisuallyHidden>
+
         <Resume id="resume" {...data.resume.frontmatter} />
       </Layout>
       <Footer />
