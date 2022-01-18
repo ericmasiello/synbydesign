@@ -8,6 +8,7 @@
     'header'
     'skills'
     'experience'
+    'talks'
     'freelance'
     'education';
   grid-gap: var(--resume-v-gap) var(--resume-h-gap);
@@ -22,7 +23,7 @@
       'header header'
       'skills skills'
       'experience freelance'
-      'experience education';
+      'talks education';
   }
 }
 
@@ -43,6 +44,10 @@
     border-right: 1px solid var(--resume-border);
     padding-right: 1rem;
   }
+}
+
+.talks {
+  grid-area: talks;
 }
 
 .freelance {

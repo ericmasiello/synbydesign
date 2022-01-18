@@ -6,6 +6,7 @@ import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
 import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
+import Talks from './Talks';
 import { Text } from '../Type';
 import styles from './Resume.module.css';
 
@@ -19,6 +20,7 @@ function Resume(props) {
     relatedExperience,
     education,
     skills,
+    talks,
     className,
     ...rest
   } = props;
@@ -39,6 +41,12 @@ function Resume(props) {
         {professionalExperience.map((experience) => (
           <ProfessionalExperience key={experience.organization} {...experience} />
         ))}
+      </section>
+      <section className={styles.talks}>
+        <Text as="h3" className={styles.title}>
+          Talks
+        </Text>
+        <Talks talks={talks} />
       </section>
       <section className={styles.freelance}>
         <Text as="h3" className={styles.title}>
@@ -109,6 +117,14 @@ Resume.propTypes = {
       degree: PropTypes.string,
       institution: PropTypes.string,
       location: PropTypes.string,
+      year: PropTypes.string,
+    })
+  ),
+  talks: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      url: PropTypes.string,
       year: PropTypes.string,
     })
   ),

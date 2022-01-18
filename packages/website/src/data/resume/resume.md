@@ -47,12 +47,15 @@ professionalExperience:
 - organization: Vistaprint Digital
   roles:
 
-  - title: Principal Engineer
+  - title: Domain Architect
+    yearFrom: '2021'
+    yearTo: Present
+  - title: Principal Software Engineer
     yearFrom: '2020'
     yearTo: Present
   - title: UI Architect
     yearFrom: '2019'
-    yearTo: Present
+    yearTo: '2021'
   - title: Senior Software Engineer
     yearFrom: '2016'
     yearTo: '2020'
@@ -113,7 +116,45 @@ professionalExperience:
   - Lead developer for Census Human Resource Information System (CHRIS) using on .NET
     and SQL Server
 
+talks:
+
+- title: Opinionated React Testing
+  description: 'In the course course of developing Design Stack, Vista''s component library for design experiences, I set a high bar for our libraries test coverage: 100%. More to say here... blah blah blah'
+  url: https://gitlab.com/ericmasiello/testing-react-workshop
+  year: '2021'
+
+- title: React Performance
+  description: FIXME
+  url: https://slides.com/ericmasiello/react-performance
+  year: 'FIXME'
+
+- title: How to Tree Shake
+  description: FIXME
+  url: https://slides.com/ericmasiello/tree-shaking
+  year: 'FIXME'
+
+- title: Let's Make an Accessible Component
+  description: FIXME
+  url: https://slides.com/ericmasiello/accessible-component
+  year: 'FIXME'
+
 relatedExperience:
+
+- title: General Assembly
+  role:
+    title: 'Instructor: JavaScript 101 Workshop'
+    yearFrom: '2017'
+    yearTo: '2021'
+  accomplishments:
+  - Teach students the basics of JavaScript and the DOM
+
+- title: General Assembly
+  role:
+    title: 'Instructor: Code in One Day'
+    yearFrom: '2017'
+    yearTo: '2021'
+  accomplishments:
+  - Teach a non-technical audience the basics of front-end web development using semantic HTML and CSS technologies. Students apply these skills to build an accessible and responsive brochure website.
 
 - title: General Assembly
   role:
@@ -122,14 +163,6 @@ relatedExperience:
     yearTo: '2018'
   accomplishments:
   - Teach students how to build web sites using HTML5, CSS, JavaScript, and jQuery
-
-- title: General Assembly
-  role:
-    title: 'Instructor: JavaScript 101 Workshop'
-    yearFrom: '2017'
-    yearTo: Present
-  accomplishments:
-  - Teach students the basics of JavaScript and the DOM
 
 - title: Packt Publishing <em>Mastering React Native</em> Book
   role:
@@ -144,7 +177,7 @@ relatedExperience:
     title: 'Instructor: API Workshop'
     yearFrom: '2017'
   accomplishments:
-  - Teach students the basics of working with RESTful APIs
+  - Teach students with limited technical experience the fundamentals interacting with RESTful APIs. I created custom course material that explained key concepts including HTTP verbs and JSON data. I also created a back-end service use Node and a front-end using React, Redux, and Redux Saga. These services were used by students to implement custom routes and controllers using Express.
 
 - title: Redux Workshop
   role:
@@ -163,15 +196,6 @@ relatedExperience:
   accomplishments:
   - Provide insight and assess technical accuracy of video content and offer suggestions
     to improve relevance for an audiences new to React programming
-
-- title: Syn By Design
-  website:
-    url: http://synbydesign.com
-  role:
-    title: Developer, Designer
-    yearFrom: '2018'
-  accomplishments:
-  - Gatsby, Yarn Workspaces, CSS Modules
 
 education:
 - institution: University of Maryland, Baltimore County
