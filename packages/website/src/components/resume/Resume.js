@@ -6,6 +6,7 @@ import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
 import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
+import Talks from './Talks';
 import { Text } from '../Type';
 import styles from './Resume.module.css';
 
@@ -19,6 +20,7 @@ function Resume(props) {
     relatedExperience,
     education,
     skills,
+    talks,
     className,
     ...rest
   } = props;
@@ -32,33 +34,43 @@ function Resume(props) {
         </Text>
         <ResumeSkills skills={skills} />
       </section>
-      <section className={styles.experience}>
-        <Text as="h3" className={styles.title}>
-          Professional Experience
-        </Text>
-        {professionalExperience.map((experience) => (
-          <ProfessionalExperience key={experience.organization} {...experience} />
-        ))}
-      </section>
-      <section className={styles.freelance}>
-        <Text as="h3" className={styles.title}>
-          Freelance &amp; Related Experience
-        </Text>
-        {relatedExperience.map((experience) => (
-          <RelatedExperience
-            key={`${experience.title}${experience.role.title}${experience.role.yearFrom}`}
-            {...experience}
-          />
-        ))}
-      </section>
-      <section className={styles.education}>
-        <Text as="h3" className={styles.title}>
-          Education &amp; Training
-        </Text>
-        {education.map((edu) => (
-          <EducationExperience key={edu.institution} {...edu} />
-        ))}
-      </section>
+      <div className={styles.col1}>
+        <section className={styles.experience}>
+          <Text as="h3" className={styles.title}>
+            Professional Experience
+          </Text>
+          {professionalExperience.map((experience) => (
+            <ProfessionalExperience key={experience.organization} {...experience} />
+          ))}
+        </section>
+        <section className={styles.talks}>
+          <Text as="h3" className={styles.title}>
+            Talks &amp; Workshops
+          </Text>
+          <Talks talks={talks} />
+        </section>
+      </div>
+      <div className={styles.col2}>
+        <section className={styles.freelance}>
+          <Text as="h3" className={styles.title}>
+            Freelance &amp; Related Experience
+          </Text>
+          {relatedExperience.map((experience) => (
+            <RelatedExperience
+              key={`${experience.title}${experience.role.title}${experience.role.yearFrom}`}
+              {...experience}
+            />
+          ))}
+        </section>
+        <section className={styles.education}>
+          <Text as="h3" className={styles.title}>
+            Education &amp; Training
+          </Text>
+          {education.map((edu) => (
+            <EducationExperience key={edu.institution} {...edu} />
+          ))}
+        </section>
+      </div>
     </Component>
   );
 }
@@ -109,6 +121,14 @@ Resume.propTypes = {
       degree: PropTypes.string,
       institution: PropTypes.string,
       location: PropTypes.string,
+      year: PropTypes.string,
+    })
+  ),
+  talks: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      url: PropTypes.string,
       year: PropTypes.string,
     })
   ),

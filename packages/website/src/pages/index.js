@@ -48,6 +48,12 @@ function IndexPage() {
             location
             year
           }
+          talks {
+            title
+            description
+            url
+            year
+          }
         }
       }
     }

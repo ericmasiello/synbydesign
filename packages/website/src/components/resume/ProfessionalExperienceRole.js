@@ -1,18 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Text, Muted } from '../Type';
+import { Text } from '../Type';
+import Timeline from './Timeline';
 import styles from './ProfessionalExperienceRole.module.css';
-
-function Timeline({ from: fromDate, to: toDate = 'Present' }) {
-  return (
-    <Text small as={Muted} className={styles.timeline}>
-      <span className={styles.parentheses}>(</span>
-      {fromDate} &mdash; {toDate}
-      <span className={styles.parentheses}>)</span>
-    </Text>
-  );
-}
 
 function ProfessionalExperienceRole(props) {
   const { as: Component, className, title, yearFrom, yearTo, ...rest } = props;
@@ -20,7 +11,10 @@ function ProfessionalExperienceRole(props) {
   return (
     <Component className={classes} {...rest}>
       <Text as="h5" className={styles.title}>
-        {title} <Timeline from={yearFrom} to={yearTo} />
+        {title}{' '}
+        <Timeline className={styles.timeline} parenthesesClassName={styles.parentheses}>
+          {yearFrom} &mdash; {yearTo ?? 'Present'}
+        </Timeline>
       </Text>
     </Component>
   );

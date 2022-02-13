@@ -47,12 +47,15 @@ professionalExperience:
 - organization: Vistaprint Digital
   roles:
 
-  - title: Principal Engineer
+  - title: Domain Architect
+    yearFrom: '2021'
+    yearTo: Present
+  - title: Principal Software Engineer
     yearFrom: '2020'
     yearTo: Present
   - title: UI Architect
     yearFrom: '2019'
-    yearTo: Present
+    yearTo: '2021'
   - title: Senior Software Engineer
     yearFrom: '2016'
     yearTo: '2020'
@@ -113,7 +116,45 @@ professionalExperience:
   - Lead developer for Census Human Resource Information System (CHRIS) using on .NET
     and SQL Server
 
+talks:
+
+- title: Opinionated React Testing Workshop
+  description: 'In developing Design Stack, Vista''s component library for design experiences, I set a high bar for our libraries'' test coverage: 100%. This high bar forced me to understand deeply the testing technologies and how to best author tests to be resilient, comprehensive, and beneficial to other engineers. In this workshop, I cover the most valuable parts of Jest''s API, explain when snapshot testing is appropriate, and demystify all the confusing aspects of React Testing Library. Lastly, I share a fair amount of my own opinion on organizing and authoring tests as documentation.'
+  url: https://gitlab.com/ericmasiello/testing-react-workshop
+  year: '2021'
+
+- title: React Performance
+  description: This talk covers techniques for improving the performance of your React application. It discusses code-splitting, memoization, performant usage of React context, and how to measure the impact of your code change using Chrome's performance profiler and React's developer tools.
+  url: https://slides.com/ericmasiello/react-performance
+  year: '2019'
+
+- title: How to Tree Shake
+  description: While we'd like to believe build tools will always magically "do the right thing," the truth is we must author JavaScript libraries "correctly" to support the diverse environments we'll want to execute our code. This talk explains the impact CommonJS and ES Modules have on these environments. It compares Rollup to Webpack, explaining when each is the appropriate choice. And finally, it touches on "side-effects" and how to mitigate their impact on code bundles.
+  url: https://slides.com/ericmasiello/tree-shaking
+  year: '2019'
+
+- title: Let's Make an Accessible Component
+  description: At Vistaprint, we believe accessibility is vital. This talk showcases a tabbed interface. I explain why it is inaccessible and then walk through how to refactor the code to maintain the same visual presentation but make it fully accessible to keyboard and screen reader users using ARIA roles, labels, and JavaScript.
+  url: https://slides.com/ericmasiello/accessible-component
+  year: '2018'
+
 relatedExperience:
+
+- title: General Assembly
+  role:
+    title: 'Instructor: JavaScript 101 Workshop'
+    yearFrom: '2017'
+    yearTo: '2021'
+  accomplishments:
+  - Teach students the basics of JavaScript and the DOM
+
+- title: General Assembly
+  role:
+    title: 'Instructor: Code in One Day'
+    yearFrom: '2017'
+    yearTo: '2021'
+  accomplishments:
+  - Teach a non-technical audience the basics of front-end web development using semantic HTML and CSS technologies. Students apply these skills to build an accessible and responsive brochure website.
 
 - title: General Assembly
   role:
@@ -122,14 +163,6 @@ relatedExperience:
     yearTo: '2018'
   accomplishments:
   - Teach students how to build web sites using HTML5, CSS, JavaScript, and jQuery
-
-- title: General Assembly
-  role:
-    title: 'Instructor: JavaScript 101 Workshop'
-    yearFrom: '2017'
-    yearTo: Present
-  accomplishments:
-  - Teach students the basics of JavaScript and the DOM
 
 - title: Packt Publishing <em>Mastering React Native</em> Book
   role:
@@ -144,7 +177,7 @@ relatedExperience:
     title: 'Instructor: API Workshop'
     yearFrom: '2017'
   accomplishments:
-  - Teach students the basics of working with RESTful APIs
+  - Teach students with limited technical experience the fundamentals interacting with RESTful APIs. I created custom course material that explained key concepts including HTTP verbs and JSON data. I also created a back-end service use Node and a front-end using React, Redux, and Redux Saga. These services were used by students to implement custom routes and controllers using Express.
 
 - title: Redux Workshop
   role:
@@ -163,15 +196,6 @@ relatedExperience:
   accomplishments:
   - Provide insight and assess technical accuracy of video content and offer suggestions
     to improve relevance for an audiences new to React programming
-
-- title: Syn By Design
-  website:
-    url: http://synbydesign.com
-  role:
-    title: Developer, Designer
-    yearFrom: '2018'
-  accomplishments:
-  - Gatsby, Yarn Workspaces, CSS Modules
 
 education:
 - institution: University of Maryland, Baltimore County
