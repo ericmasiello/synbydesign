@@ -1,8 +1,15 @@
 /// <reference types="cypress" />
 
-context('Assertions', () => {
+context('Tour', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8000');
+    // Inject the axe-core library
+    cy.injectAxe();
+  });
+
+  it('is accessible', () => {
+    // first a11y test
+    cy.checkA11y();
   });
 
   it('should have a title', () => {

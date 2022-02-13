@@ -1,4 +1,4 @@
-## <span aria-title="waving hand">👋</span> Hi. I'm Eric Masiello, and this is what I'm all about.
+## <span aria-label="waving hand">👋</span> Hi. I'm Eric Masiello, and this is what I'm all about.
 
 I am a principal software engineer and domain architect at [Vista](https://vista.com/) where my teams and I develop front-end libraries that make design capabilities scale. Our tech stack is primarily TypeScript, React, and MobX. While I love building user interfaces, building libraries that support rich experiences adds the additional challenge of designing for more than just my needs. Not to mention, I must consider other important requirements such as accessibility, performance, and our API's design.
 
