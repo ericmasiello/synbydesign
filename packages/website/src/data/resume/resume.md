@@ -118,25 +118,25 @@ professionalExperience:
 
 talks:
 
-- title: Opinionated React Testing
-  description: 'In the course course of developing Design Stack, Vista''s component library for design experiences, I set a high bar for our libraries test coverage: 100%. More to say here... blah blah blah'
+- title: Opinionated React Testing Workshop
+  description: 'In developing Design Stack, Vista''s component library for design experiences, I set a high bar for our libraries'' test coverage: 100%. This high bar forced me to understand deeply the testing technologies and how to best author tests to be resilient, comprehensive, and beneficial to other engineers. In this workshop, I cover the most valuable parts of Jest''s API, explain when snapshot testing is appropriate, and demystify all the confusing aspects of React Testing Library. Lastly, I share a fair amount of my own opinion on organizing and authoring tests as documentation.'
   url: https://gitlab.com/ericmasiello/testing-react-workshop
   year: '2021'
 
 - title: React Performance
-  description: FIXME
+  description: This talk covers techniques for improving the performance of your React application. It discusses code-splitting, memoization, performant usage of React context, and how to measure the impact of your code change using Chrome's performance profiler and React's developer tools.
   url: https://slides.com/ericmasiello/react-performance
-  year: 'FIXME'
+  year: '2019'
 
 - title: How to Tree Shake
-  description: FIXME
+  description: While we'd like to believe build tools will always magically "do the right thing," the truth is we must author JavaScript libraries "correctly" to support the diverse environments we'll want to execute our code. This talk explains the impact CommonJS and ES Modules have on these environments. It compares Rollup to Webpack, explaining when each is the appropriate choice. And finally, it touches on "side-effects" and how to mitigate their impact on code bundles.
   url: https://slides.com/ericmasiello/tree-shaking
-  year: 'FIXME'
+  year: '2019'
 
 - title: Let's Make an Accessible Component
-  description: FIXME
+  description: At Vistaprint, we believe accessibility is vital. This talk showcases a tabbed interface. I explain why it is inaccessible and then walk through how to refactor the code to maintain the same visual presentation but make it fully accessible to keyboard and screen reader users using ARIA roles, labels, and JavaScript.
   url: https://slides.com/ericmasiello/accessible-component
-  year: 'FIXME'
+  year: '2018'
 
 relatedExperience:
 

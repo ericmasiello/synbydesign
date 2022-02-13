@@ -7,10 +7,8 @@
   grid-template-areas:
     'header'
     'skills'
-    'experience'
-    'talks'
-    'freelance'
-    'education';
+    'col1'
+    'col2';
   grid-gap: var(--resume-v-gap) var(--resume-h-gap);
   max-width: var(--content-max-width);
   margin: 0 auto;
@@ -22,8 +20,7 @@
     grid-template-areas:
       'header header'
       'skills skills'
-      'experience freelance'
-      'talks education';
+      'col1 col2';
   }
 }
 
@@ -35,27 +32,19 @@
   grid-area: skills;
 }
 
-.experience {
-  grid-area: experience;
+.col1 {
+  grid-area: col1;
 }
 
 @media (min-width: 62.5rem) {
-  .experience {
+  .col1 {
     border-right: 1px solid var(--resume-border);
     padding-right: 1rem;
   }
 }
 
-.talks {
-  grid-area: talks;
-}
-
-.freelance {
-  grid-area: freelance;
-}
-
-.education {
-  grid-area: education;
+.col2 {
+  grid-area: col2;
 }
 
 .title {

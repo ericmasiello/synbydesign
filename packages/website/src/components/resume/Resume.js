@@ -34,39 +34,43 @@ function Resume(props) {
         </Text>
         <ResumeSkills skills={skills} />
       </section>
-      <section className={styles.experience}>
-        <Text as="h3" className={styles.title}>
-          Professional Experience
-        </Text>
-        {professionalExperience.map((experience) => (
-          <ProfessionalExperience key={experience.organization} {...experience} />
-        ))}
-      </section>
-      <section className={styles.talks}>
-        <Text as="h3" className={styles.title}>
-          Talks
-        </Text>
-        <Talks talks={talks} />
-      </section>
-      <section className={styles.freelance}>
-        <Text as="h3" className={styles.title}>
-          Freelance &amp; Related Experience
-        </Text>
-        {relatedExperience.map((experience) => (
-          <RelatedExperience
-            key={`${experience.title}${experience.role.title}${experience.role.yearFrom}`}
-            {...experience}
-          />
-        ))}
-      </section>
-      <section className={styles.education}>
-        <Text as="h3" className={styles.title}>
-          Education &amp; Training
-        </Text>
-        {education.map((edu) => (
-          <EducationExperience key={edu.institution} {...edu} />
-        ))}
-      </section>
+      <div className={styles.col1}>
+        <section className={styles.experience}>
+          <Text as="h3" className={styles.title}>
+            Professional Experience
+          </Text>
+          {professionalExperience.map((experience) => (
+            <ProfessionalExperience key={experience.organization} {...experience} />
+          ))}
+        </section>
+        <section className={styles.talks}>
+          <Text as="h3" className={styles.title}>
+            Talks &amp; Workshops
+          </Text>
+          <Talks talks={talks} />
+        </section>
+      </div>
+      <div className={styles.col2}>
+        <section className={styles.freelance}>
+          <Text as="h3" className={styles.title}>
+            Freelance &amp; Related Experience
+          </Text>
+          {relatedExperience.map((experience) => (
+            <RelatedExperience
+              key={`${experience.title}${experience.role.title}${experience.role.yearFrom}`}
+              {...experience}
+            />
+          ))}
+        </section>
+        <section className={styles.education}>
+          <Text as="h3" className={styles.title}>
+            Education &amp; Training
+          </Text>
+          {education.map((edu) => (
+            <EducationExperience key={edu.institution} {...edu} />
+          ))}
+        </section>
+      </div>
     </Component>
   );
 }
