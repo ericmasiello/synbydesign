@@ -101,7 +101,6 @@ p {
 
 a {
   background-color: transparent;
-  text-decoration: none;
   color: var(--color-link);
   -webkit-tap-highlight-color: transparent;
 }
