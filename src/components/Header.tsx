@@ -8,7 +8,11 @@ import { Text } from './Type';
 import X from '../images/synbydesignlogo-x.inline.svg';
 import * as styles from './Header.module.css';
 
-function Header(props) {
+type Props = {
+  slim?: boolean;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export const Header = (props: Props) => {
   const { className, slim, ...rest } = props;
 
   const handleScroll = useCallback(() => {
@@ -19,7 +23,7 @@ function Header(props) {
       if (scrollDistance > 200) {
         document.body.style.setProperty('--spin-play-state', 'running');
       }
-      document.body.style.setProperty('--scroll-amount', amount);
+      document.body.style.setProperty('--scroll-amount', String(amount));
     });
   }, []);
 
@@ -66,6 +70,4 @@ function Header(props) {
       )}
     </header>
   );
-}
-
-export default Header;
+};

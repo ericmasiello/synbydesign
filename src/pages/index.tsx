@@ -5,8 +5,7 @@ import { VisuallyHidden } from '../components/VisuallyHidden';
 import Layout from '../components/layout';
 // @ts-ignore
 import SEO from '../components/seo';
-// @ts-ignore
-import Header from '../components/Header';
+import { Header } from '../components/Header';
 // @ts-ignore
 import Footer from '../components/Footer';
 // @ts-ignore
