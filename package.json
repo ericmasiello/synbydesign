@@ -69,6 +69,7 @@
     "clean": "gatsby clean",
     "lint:script": "eslint . --max-warnings 0",
     "lint:style": "stylelint 'src/**/*.css'",
+    "type-check": "tsc --noEmit",
     "test": "jest src",
     "test:watch": "jest --watch",
     "cypress": "cypress open",

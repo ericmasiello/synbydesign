@@ -4,5 +4,6 @@ notifications:
   email: false
 script:
   - npm i
+  - npm run type-check
   - npm run lint:style
   - npm run test
