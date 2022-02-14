@@ -13,7 +13,7 @@ module.exports = {
     __PATH_PREFIX__: ``,
   },
   testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.js`, `<rootDir>/src/setupTests.js`],
-  setupFilesAfterEnv: ['<rootDir>/src/setupTestsPost.js'],
+  setupFiles: [`<rootDir>/loadershim.js`],
+  setupFilesAfterEnv: ['<rootDir>/src/jest-setup.js'],
   testEnvironment: 'jsdom',
 };
