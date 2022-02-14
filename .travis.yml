@@ -4,5 +4,5 @@ notifications:
   email: false
 script:
   - yarn
-  - yarn workspace @synbydesign/website run lint:style
-  - yarn workspace @synbydesign/website run test
+  - yarn lint:style
+  - yarn test
