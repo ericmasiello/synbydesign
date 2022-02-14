@@ -21,7 +21,7 @@ function Talks(props) {
         );
         return (
           <li key={talk.title}>
-            <Text as="h4" className={styles.title}>
+            <Text component="h4" className={styles.title}>
               {talk.url ? <a href={talk.url}>{composedTitle}</a> : talk.title}
             </Text>
             {talk.description}

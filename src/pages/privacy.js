@@ -13,7 +13,7 @@ function PrivacyPage() {
       <Header slim />
       <Layout>
         <Container>
-          <H as="h2" level={3}>
+          <H component="h2" level={3}>
             Privacy Policy
           </H>
           <p>

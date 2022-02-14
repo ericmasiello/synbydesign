@@ -42,7 +42,7 @@ function Header(props) {
       </Link>
       {!slim && (
         <>
-          <Text as="p">
+          <Text component="p">
             Freelance <span className={styles.role}>developer</span>, <span className={styles.role}>trainer</span>, &{' '}
             <span className={styles.role}>consultant</span>.
           </Text>

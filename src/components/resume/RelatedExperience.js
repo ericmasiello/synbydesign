@@ -13,20 +13,20 @@ function RelatedExperience(props) {
   return (
     <Component className={classes} {...rest}>
       <hgroup>
-        <Text as="h4" data-title className={styles.title}>
+        <Text component="h4" data-title className={styles.title}>
           <span className={styles.titleContent} data-title-content dangerouslySetInnerHTML={{ __html: title }} />{' '}
           {years && (
-            <Text small as={Muted}>
+            <Text small component={Muted}>
               ({years})
             </Text>
           )}
         </Text>
         {meta && (
-          <Text small as="p" data-meta className={styles.meta}>
+          <Text small component="p" data-meta className={styles.meta}>
             {meta}
           </Text>
         )}
-        <Text as="h5" data-role-title className={styles.role}>
+        <Text component="h5" data-role-title className={styles.role}>
           {role.title}
         </Text>
         {website && <RelatedExperienceWebsite {...website} className={styles.website} />}

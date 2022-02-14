@@ -10,7 +10,7 @@ function ProfessionalExperienceRole(props) {
   const classes = classNames(styles.role, className);
   return (
     <Component className={classes} {...rest}>
-      <Text as="h5" className={styles.title}>
+      <Text component="h5" className={styles.title}>
         {title}{' '}
         <Timeline className={styles.timeline} parenthesesClassName={styles.parentheses}>
           {yearFrom} &mdash; {yearTo ?? 'Present'}
