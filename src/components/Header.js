@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import AnimatedLink from './AnimatedLink';
+import { AnimatedLink } from './AnimatedLink';
 import { Nav, NavList, NavItem } from './Nav';
 import Logo from './Logo';
 import { Text } from './Type';
@@ -49,19 +49,13 @@ function Header(props) {
           <Nav className={styles.nav}>
             <NavList>
               <NavItem>
-                <AnimatedLink as="a" href="#resume">
-                  Resume
-                </AnimatedLink>
+                <AnimatedLink href="#resume">Resume</AnimatedLink>
               </NavItem>
               <NavItem>
-                <AnimatedLink as="a" href="https://medium.com/@EricMasiello">
-                  Medium Blog
-                </AnimatedLink>
+                <AnimatedLink href="https://medium.com/@EricMasiello">Medium Blog</AnimatedLink>
               </NavItem>
               <NavItem>
-                <AnimatedLink as="a" href="https://www.linkedin.com/in/ericmasiello/">
-                  LinkedIn Profile
-                </AnimatedLink>
+                <AnimatedLink href="https://www.linkedin.com/in/ericmasiello/">LinkedIn Profile</AnimatedLink>
               </NavItem>
             </NavList>
           </Nav>
