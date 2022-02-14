@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { H } from '../Type';
 import { PlainList } from '../PlainList';
-import ProfessionalExperienceRole from './ProfessionalExperienceRole';
+import { ProfessionalExperienceRole } from './ProfessionalExperienceRole';
 import * as styles from './ProfessionalExperience.module.css';
 
 function ProfessionalExperience(props) {
