@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 import { AnimatedLink } from './AnimatedLink';
 import { Nav, NavList, NavItem } from './Nav';
-import Logo from './Logo';
+import { Logo } from './Logo';
 import { Text } from './Type';
 import X from '../images/synbydesignlogo-x.inline.svg';
 import * as styles from './Header.module.css';
@@ -36,7 +36,7 @@ function Header(props) {
   return (
     <header className={classes} {...rest}>
       <Link to="/">
-        <Logo as="h1" className={styles.logo}>
+        <Logo component="h1" className={styles.logo}>
           Syn By Design
         </Logo>
       </Link>
