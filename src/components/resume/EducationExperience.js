@@ -10,7 +10,7 @@ function EducationExperience(props) {
       <Text component="h4" className={styles.title}>
         {institution}
         <div className={styles.meta} data-meta>
-          {location && <React.Fragment>{`${location} `}</React.Fragment>}
+          {location && <>{`${location} `}</>}
           {year && (
             <Text small component={Muted} data-year>
               ({year})

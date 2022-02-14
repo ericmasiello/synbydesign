@@ -1,12 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Text } from '../Type';
-import Timeline from './Timeline';
+import { Timeline } from './Timeline';
+import type { ElementType } from 'react';
+import type { FlexibleComponent } from '../../@types/FlexibleComponent';
 import * as styles from './ProfessionalExperienceRole.module.css';
 
-function ProfessionalExperienceRole(props) {
-  const { as: Component, className, title, yearFrom, yearTo, ...rest } = props;
+type Props = {
+  className?: string;
+  title: string;
+  yearFrom: string;
+  yearTo?: string;
+};
+
+export const ProfessionalExperienceRole = <T extends ElementType = 'div'>(props: FlexibleComponent<T, Props>) => {
+  const { component: Component = 'div', className, title, yearFrom, yearTo, ...rest } = props;
   const classes = classNames(styles.role, className);
   return (
     <Component className={classes} {...rest}>
@@ -18,14 +26,4 @@ function ProfessionalExperienceRole(props) {
       </Text>
     </Component>
   );
-}
-
-ProfessionalExperienceRole.defaultProps = {
-  as: 'div',
 };
-
-ProfessionalExperienceRole.propTypes = {
-  as: PropTypes.elementType,
-};
-
-export default ProfessionalExperienceRole;

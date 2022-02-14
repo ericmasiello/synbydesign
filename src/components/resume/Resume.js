@@ -6,7 +6,7 @@ import ResumeSkills from './ResumeSkills';
 import ProfessionalExperience from './ProfessionalExperience';
 import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
-import Talks from './Talks';
+import { Talks } from './Talks';
 import { Text } from '../Type';
 import * as styles from './Resume.module.css';
 

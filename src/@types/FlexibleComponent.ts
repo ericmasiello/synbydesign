@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { ElementType, ComponentPropsWithoutRef } from 'react';
+import type { ElementType, ComponentPropsWithoutRef } from 'react';
 
 type PolymorphicComponent<T extends ElementType> = {
   /**
