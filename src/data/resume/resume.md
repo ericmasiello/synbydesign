@@ -11,34 +11,33 @@ lead: |2-
 skills:
 
 - Web application development
-- Single page applications
-- React
-- React Native
+- npm library development
+- Cross browser development
 - Accessibility
 - Performance
-- Redux
-- Modern JavaScript
-- Gatsby
+- React
+- React Native
+- JavaScript
 - Typescript
+- HTML5
+- CSS
+- SCSS
 - Styled Components
 - CSS Modules
 - Node
 - Express JS
-- HTML5
-- CSS
-- SCSS
+- Redux
+- Gatsby
 - Jest
 - Mocha
 - React Testing Library
-- Enzyme
-- jQuery
 - Webpack
+- Rollup
 - Gulp
 - Babel
 - Wordpress
 - PHP
 - Git
-- Cross browser development
 - MySQL
 - Mongo
 
