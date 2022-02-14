@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import PlainList from '../PlainList';
+import { PlainList } from '../PlainList';
 import { Text } from '../Type';
 import Timeline from './Timeline';
 import * as styles from './Talks.module.css';

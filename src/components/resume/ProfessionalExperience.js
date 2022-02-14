@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { H } from '../Type';
-import PlainList from '../PlainList';
+import { PlainList } from '../PlainList';
 import ProfessionalExperienceRole from './ProfessionalExperienceRole';
 import * as styles from './ProfessionalExperience.module.css';
 

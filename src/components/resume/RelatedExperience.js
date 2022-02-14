@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import PlainList from '../PlainList';
+import { PlainList } from '../PlainList';
 import { Text, Muted } from '../Type';
 import RelatedExperienceWebsite from './RelatedExperienceWebsite';
 import * as styles from './RelatedExperience.module.css';

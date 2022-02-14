@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import VisuallyHidden from '../components/VisuallyHidden';
+import { VisuallyHidden } from '../components/VisuallyHidden';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Header from '../components/Header';
@@ -65,7 +65,7 @@ function IndexPage() {
       <Header />
       <Layout>
         <AboutMe id="about-me" content={data.aboutme.html} />
-        <VisuallyHidden as="h2" id="resume-title">
+        <VisuallyHidden component="h2" id="resume-title">
           Resume
         </VisuallyHidden>
 

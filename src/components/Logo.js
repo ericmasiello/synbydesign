@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import VisuallyHidden from './VisuallyHidden';
+import { VisuallyHidden } from './VisuallyHidden';
 import SynByDesignLogo from '../images/synbydesignlogo.inline.svg';
 import * as styles from './Logo.module.css';
 
