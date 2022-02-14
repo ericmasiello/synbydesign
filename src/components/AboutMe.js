@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './AboutMe.module.css';
+import * as styles from './AboutMe.module.css';
 
 function AboutMe(props) {
   const { as: Component, content, className, ...rest } = props;

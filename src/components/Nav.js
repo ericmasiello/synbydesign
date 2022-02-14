@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './Nav.module.css';
+import * as styles from './Nav.module.css';
 
 export function Nav(props) {
   const { className, as: Component, ...rest } = props;

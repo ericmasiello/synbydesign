@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, Muted } from '../Type';
-import styles from './EducationExperience.module.css';
+import * as styles from './EducationExperience.module.css';
 
 function EducationExperience(props) {
   const { as: Component, className, institution, location, year, degree, ...rest } = props;

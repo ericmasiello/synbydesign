@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { H } from '../Type';
-import styles from './ResumeHeader.module.css';
+import * as styles from './ResumeHeader.module.css';
 
 function ResumeHeader(props) {
   const { as: Component, ownerName, ownerTitle, lead, className, ...rest } = props;

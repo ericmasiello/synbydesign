@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './PlainList.module.css';
+import * as styles from './PlainList.module.css';
 
 function PlainList(props) {
   const { as: Component, className, ...rest } = props;

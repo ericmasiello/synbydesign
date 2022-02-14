@@ -1,5 +1,6 @@
 import React from 'react';
 import GatsbyPageWrapper from './src/components/GatsbyPageWrapper';
+// eslint-disable-next-line
 import googleAnalytics from 'raw-loader!./src/includes/ga.js.txt';
 
 export const wrapPageElement = GatsbyPageWrapper;

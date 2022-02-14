@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './PortfolioGrid.module.css';
+import * as styles from './PortfolioGrid.module.css';
 
 export function PortfolioGrid(props) {
   const { as: Component, className, ...rest } = props;

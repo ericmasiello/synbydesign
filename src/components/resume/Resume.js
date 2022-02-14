@@ -8,7 +8,7 @@ import RelatedExperience from './RelatedExperience';
 import EducationExperience from './EducationExperience';
 import Talks from './Talks';
 import { Text } from '../Type';
-import styles from './Resume.module.css';
+import * as styles from './Resume.module.css';
 
 function Resume(props) {
   const {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import styles from './AnimatedLink.module.css';
+import * as styles from './AnimatedLink.module.css';
 
 function AnimatedLink(props) {
   const { as: Component, className, ...rest } = props;

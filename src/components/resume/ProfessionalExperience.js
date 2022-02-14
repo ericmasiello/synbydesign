@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { H } from '../Type';
 import PlainList from '../PlainList';
 import ProfessionalExperienceRole from './ProfessionalExperienceRole';
-import styles from './ProfessionalExperience.module.css';
+import * as styles from './ProfessionalExperience.module.css';
 
 function ProfessionalExperience(props) {
   const { as: Component, className, organization, roles, accomplishments, ...rest } = props;

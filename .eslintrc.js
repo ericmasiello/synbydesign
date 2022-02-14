@@ -13,7 +13,17 @@ const rulesAsErrors = Object.keys(config.rules).reduce((acc, key) => {
 
 module.exports = {
   extends: 'react-app',
+  plugins: ['cypress'],
+  env: {
+    'cypress/globals': true,
+  },
   rules: {
+    'cypress/no-assigning-return-values': 'error',
+    'cypress/no-unnecessary-waiting': 'error',
+    'cypress/assertion-before-screenshot': 'error',
+    'cypress/no-force': 'error',
+    'cypress/no-async-tests': 'error',
+    'cypress/no-pause': 'error',
     'no-unused-vars': 'error',
     ...rulesAsErrors,
     // Forbid the use of extraneous packages
@@ -22,8 +32,11 @@ module.exports = {
       'error',
       {
         devDependencies: [
+          '.eslintrc.js',
+          'jest-preprocess.js',
           'src/setupTests.js',
           '**/*{.,_}{stories,story}.{js,jsx}',
+          'cypress/**', // tape, common npm pattern
           'test/**', // tape, common npm pattern
           'tests/**', // also common npm pattern
           'spec/**', // mocha, rspec-like pattern

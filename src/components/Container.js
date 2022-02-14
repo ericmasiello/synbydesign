@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './Container.module.css';
+import * as styles from './Container.module.css';
 
 function Container(props) {
   const { component: Component = 'div', className, ...rest } = props;

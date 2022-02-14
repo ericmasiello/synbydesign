@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './ResumeSkills.module.css';
+import * as styles from './ResumeSkills.module.css';
 
 function ResumeSkills(props) {
   const { as: Component, skills, className, ...rest } = props;

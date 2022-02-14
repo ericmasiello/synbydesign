@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PlainList from '../PlainList';
 import { Text, Muted } from '../Type';
 import RelatedExperienceWebsite from './RelatedExperienceWebsite';
-import styles from './RelatedExperience.module.css';
+import * as styles from './RelatedExperience.module.css';
 
 function RelatedExperience(props) {
   const { as: Component, className, title, meta, role, website, accomplishments, ...rest } = props;

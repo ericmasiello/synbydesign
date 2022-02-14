@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import VisuallyHidden from './VisuallyHidden';
 import SynByDesignLogo from '../images/synbydesignlogo.inline.svg';
-import styles from './Logo.module.css';
+import * as styles from './Logo.module.css';
 
 function Logo(props) {
   const { className, as: Component, children, ...rest } = props;

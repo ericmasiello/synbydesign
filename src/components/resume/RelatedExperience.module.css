@@ -1,31 +1,3 @@
-/*
-&:not(:last-of-type) {
-    margin-bottom: 2rem;
-  }
-
-  .related-experience__title {
-    margin-bottom: 0;
-  }
-
-  .related-experience__title__content {
-    font-weight: ${HEADER_WEIGHTS.bold};
-  }
-
-  .related-experience__meta {
-    margin-bottom: 0;
-  }
-
-  .related-experience__role {
-    color: ${COLORS.highlight};
-    margin-bottom: 0.5rem;
-  }
-
-  .related-experience__website {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  */
-
 .experience:not(:last-of-type) {
   margin-bottom: 2rem;
 }

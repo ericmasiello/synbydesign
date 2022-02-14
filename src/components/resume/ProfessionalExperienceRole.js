@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Text } from '../Type';
 import Timeline from './Timeline';
-import styles from './ProfessionalExperienceRole.module.css';
+import * as styles from './ProfessionalExperienceRole.module.css';
 
 function ProfessionalExperienceRole(props) {
   const { as: Component, className, title, yearFrom, yearTo, ...rest } = props;

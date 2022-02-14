@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import PlainList from '../PlainList';
 import { Text } from '../Type';
 import Timeline from './Timeline';
-import styles from './Talks.module.css';
+import * as styles from './Talks.module.css';
 
 function Talks(props) {
   const { as, talks, className, ...rest } = props;

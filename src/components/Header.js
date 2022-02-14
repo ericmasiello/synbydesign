@@ -6,7 +6,7 @@ import { Nav, NavList, NavItem } from './Nav';
 import Logo from './Logo';
 import { Text } from './Type';
 import X from '../images/synbydesignlogo-x.inline.svg';
-import styles from './Header.module.css';
+import * as styles from './Header.module.css';
 
 function Header(props) {
   const { className, slim, ...rest } = props;

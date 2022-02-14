@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Container from './Container';
 import AnimatedLink from './AnimatedLink';
-import styles from './Footer.module.css';
+import * as styles from './Footer.module.css';
 
 function Footer(props) {
   const { component = 'footer', className, ...rest } = props;

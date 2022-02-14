@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import styles from './Layout.module.css';
+import * as styles from './Layout.module.css';
 
 const FONTS =
   'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap';
