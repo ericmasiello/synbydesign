@@ -1,14 +1,18 @@
 import React, { useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import AnimatedLink from './AnimatedLink';
+import { AnimatedLink } from './AnimatedLink';
 import { Nav, NavList, NavItem } from './Nav';
-import Logo from './Logo';
+import { Logo } from './Logo';
 import { Text } from './Type';
 import X from '../images/synbydesignlogo-x.inline.svg';
 import * as styles from './Header.module.css';
 
-function Header(props) {
+type Props = {
+  slim?: boolean;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export const Header = (props: Props) => {
   const { className, slim, ...rest } = props;
 
   const handleScroll = useCallback(() => {
@@ -19,7 +23,7 @@ function Header(props) {
       if (scrollDistance > 200) {
         document.body.style.setProperty('--spin-play-state', 'running');
       }
-      document.body.style.setProperty('--scroll-amount', amount);
+      document.body.style.setProperty('--scroll-amount', String(amount));
     });
   }, []);
 
@@ -36,32 +40,26 @@ function Header(props) {
   return (
     <header className={classes} {...rest}>
       <Link to="/">
-        <Logo as="h1" className={styles.logo}>
+        <Logo component="h1" className={styles.logo}>
           Syn By Design
         </Logo>
       </Link>
       {!slim && (
         <>
-          <Text as="p">
+          <Text component="p">
             Freelance <span className={styles.role}>developer</span>, <span className={styles.role}>trainer</span>, &{' '}
             <span className={styles.role}>consultant</span>.
           </Text>
           <Nav className={styles.nav}>
             <NavList>
               <NavItem>
-                <AnimatedLink as="a" href="#resume">
-                  Resume
-                </AnimatedLink>
+                <AnimatedLink href="#resume">Resume</AnimatedLink>
               </NavItem>
               <NavItem>
-                <AnimatedLink as="a" href="https://medium.com/@EricMasiello">
-                  Medium Blog
-                </AnimatedLink>
+                <AnimatedLink href="https://medium.com/@EricMasiello">Medium Blog</AnimatedLink>
               </NavItem>
               <NavItem>
-                <AnimatedLink as="a" href="https://www.linkedin.com/in/ericmasiello/">
-                  LinkedIn Profile
-                </AnimatedLink>
+                <AnimatedLink href="https://www.linkedin.com/in/ericmasiello/">LinkedIn Profile</AnimatedLink>
               </NavItem>
             </NavList>
           </Nav>
@@ -72,6 +70,4 @@ function Header(props) {
       )}
     </header>
   );
-}
-
-export default Header;
+};

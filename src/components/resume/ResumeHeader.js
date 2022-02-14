@@ -10,10 +10,10 @@ function ResumeHeader(props) {
 
   return (
     <Component className={classes} {...rest}>
-      <H level={4} as="h3" className={styles.name}>
+      <H level={4} component="h3" className={styles.name}>
         {ownerName}
       </H>
-      <H level={6} as="h4" className={styles.title}>
+      <H level={6} component="h4" className={styles.title}>
         {ownerTitle}
       </H>
       <p>{lead}</p>

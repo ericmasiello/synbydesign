@@ -7,12 +7,12 @@ function EducationExperience(props) {
   const { as: Component, className, institution, location, year, degree, ...rest } = props;
   return (
     <Component className={className} {...rest}>
-      <Text as="h4" className={styles.title}>
+      <Text component="h4" className={styles.title}>
         {institution}
         <div className={styles.meta} data-meta>
-          {location && <React.Fragment>{`${location} `}</React.Fragment>}
+          {location && <>{`${location} `}</>}
           {year && (
-            <Text small as={Muted} data-year>
+            <Text small component={Muted} data-year>
               ({year})
             </Text>
           )}

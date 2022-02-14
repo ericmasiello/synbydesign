@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { H } from '../Type';
-import PlainList from '../PlainList';
-import ProfessionalExperienceRole from './ProfessionalExperienceRole';
+import { PlainList } from '../PlainList';
+import { ProfessionalExperienceRole } from './ProfessionalExperienceRole';
 import * as styles from './ProfessionalExperience.module.css';
 
 function ProfessionalExperience(props) {
@@ -12,7 +12,7 @@ function ProfessionalExperience(props) {
   return (
     <Component className={classes} {...rest}>
       <hgroup>
-        <H as="h4" className={styles.org}>
+        <H component="h4" className={styles.org}>
           {organization}
         </H>
         {roles.map((role) => (

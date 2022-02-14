@@ -1,16 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import PlainList from '../PlainList';
+import { PlainList } from '../PlainList';
 import { Text } from '../Type';
-import Timeline from './Timeline';
+import { Timeline } from './Timeline';
+import type { ReactNode } from 'react';
+import type { FlexibleComponent } from '../../@types/FlexibleComponent';
 import * as styles from './Talks.module.css';
 
-function Talks(props) {
-  const { as, talks, className, ...rest } = props;
+type Talk = {
+  title?: string;
+  description?: string;
+  url?: string;
+  year?: string;
+};
+
+type Props = {
+  children: ReactNode;
+  className?: string;
+  talks: Talk[];
+};
+
+export const Talks = (props: FlexibleComponent<'ul', Props>) => {
+  const { component = 'ul', talks, className, ...rest } = props;
   const classes = classNames(styles.talks, className);
   return (
-    <PlainList as={as} className={classes} {...rest}>
+    <PlainList component={component} className={classes} {...rest}>
       {talks.map((talk) => {
         const composedTitle = talk.year ? (
           <>
@@ -21,7 +35,7 @@ function Talks(props) {
         );
         return (
           <li key={talk.title}>
-            <Text as="h4" className={styles.title}>
+            <Text component="h4" className={styles.title}>
               {talk.url ? <a href={talk.url}>{composedTitle}</a> : talk.title}
             </Text>
             {talk.description}
@@ -30,22 +44,4 @@ function Talks(props) {
       })}
     </PlainList>
   );
-}
-
-Talks.defaultProps = {
-  talks: [],
 };
-
-Talks.propTypes = {
-  as: PropTypes.oneOf(['ul', 'ol']),
-  talks: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      url: PropTypes.string,
-      year: PropTypes.string,
-    })
-  ),
-};
-
-export default Talks;

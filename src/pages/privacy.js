@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { H } from '../components/Type';
-import Header from '../components/Header';
+import { Header } from '../components/Header';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
 
@@ -13,7 +13,7 @@ function PrivacyPage() {
       <Header slim />
       <Layout>
         <Container>
-          <H as="h2" level={3}>
+          <H component="h2" level={3}>
             Privacy Policy
           </H>
           <p>

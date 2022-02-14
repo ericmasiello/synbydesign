@@ -13,11 +13,15 @@ const rulesAsErrors = Object.keys(config.rules).reduce((acc, key) => {
 
 module.exports = {
   extends: 'react-app',
-  plugins: ['cypress'],
+  plugins: ['cypress', 'testing-library'],
   env: {
     'cypress/globals': true,
   },
   rules: {
+    'testing-library/await-async-query': 'error',
+    'testing-library/no-await-sync-query': 'error',
+    'testing-library/no-debugging-utils': 'error',
+    'testing-library/no-dom-import': 'off',
     'cypress/no-assigning-return-values': 'error',
     'cypress/no-unnecessary-waiting': 'error',
     'cypress/assertion-before-screenshot': 'error',
@@ -34,7 +38,7 @@ module.exports = {
         devDependencies: [
           '.eslintrc.js',
           'jest-preprocess.js',
-          'src/setupTests.js',
+          'src/jest-setup.js',
           '**/*{.,_}{stories,story}.{js,jsx}',
           'cypress/**', // tape, common npm pattern
           'test/**', // tape, common npm pattern
