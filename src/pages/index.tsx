@@ -1,11 +1,17 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { VisuallyHidden } from '../components/VisuallyHidden';
+// @ts-ignore
 import Layout from '../components/layout';
+// @ts-ignore
 import SEO from '../components/seo';
+// @ts-ignore
 import Header from '../components/Header';
+// @ts-ignore
 import Footer from '../components/Footer';
+// @ts-ignore
 import Resume from '../components/resume/Resume';
+// @ts-ignore
 import AboutMe from '../components/AboutMe';
 
 function IndexPage() {
