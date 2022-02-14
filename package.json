@@ -4,10 +4,8 @@
     "packages/*"
   ],
   "scripts": {
-    "lint:script": "yarn workspace @synbydesign/website lint:script; yarn workspace @synbydesign/common-ui lint:script",
-    "build": "yarn run build:common-ui; yarn run build:website",
-    "build:common-ui": "yarn workspace @synbydesign/common-ui build",
-    "build:website": "yarn workspace @synbydesign/website build",
+    "lint:script": "yarn workspace @synbydesign/website lint:script",
+    "build": "yarn workspace @synbydesign/website build",
     "format": "pretty-quick",
     "build:netlify": "netlify build"
   },

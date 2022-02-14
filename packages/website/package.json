@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "author": "Eric Masiello",
   "dependencies": {
-    "@synbydesign/common-ui": "0.1.0",
     "classnames": "^2.2.6",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",

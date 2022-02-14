@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { VisuallyHidden } from '@synbydesign/common-ui';
+import VisuallyHidden from '../components/VisuallyHidden';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Header from '../components/Header';
