@@ -1,0 +1,34 @@
+---
+// See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
+import classNames from 'classnames';
+import { Content as AboutMe } from './AboutMe.md';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'div', class: className, ...rest } = Astro.props;
+const classes = classNames('about-me', className);
+---
+
+<Element class={classes} {...rest}>
+  <AboutMe />
+</Element>
+
+<style>
+  .about-me {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 1rem 2.5rem 6rem;
+    min-height: 100vh;
+    font-family: var(--font-base);
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .about-me h2 {
+    font-weight: var(--font-body-weight-medium);
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+</style>

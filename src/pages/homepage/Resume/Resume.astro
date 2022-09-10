@@ -1,0 +1,122 @@
+---
+// See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
+import * as ResumeMarkdown from './Resume.md';
+import ResumeHeader from './ResumeHeader.astro';
+import Text from '../../../components/Text.astro';
+import classNames from 'classnames';
+import ResumeSkills from './ResumeSkills.astro';
+import RelatedExperience from './RelatedExperience.astro';
+import type {
+  Education,
+  ProfessionalExperience as ProfessionalExperienceType,
+  RelatedExperience as RelatedExperienceType,
+  Talk,
+} from './Resume';
+import ProfessionalExperience from './ProfessionalExperience.astro';
+import Talks from './Talks.astro';
+import EducationExperience from './EducationExperience.astro';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+interface ResumeFrontmatter {
+  name: string;
+  title: string;
+  lead: string;
+  skills: string[];
+  education: Education[];
+  professionalExperience: ProfessionalExperienceType[];
+  relatedExperience: RelatedExperienceType[];
+  talks: Talk[];
+}
+
+const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
+
+const { as: Element = 'div', class: className, ...rest } = Astro.props;
+const classes = classNames('resume', className);
+---
+
+<Element class={classes} {...rest}>
+  <ResumeHeader lead={resume.lead} ownerName={resume.name} ownerTitle={resume.title} />
+  <section class="skills">
+    <Text as="h3" class="title">Technical Skills</Text>
+    <ResumeSkills skills={resume.skills} />
+  </section>
+  <div class="col1">
+    <section class="experience">
+      <Text as="h3" class="title">Professional Experience</Text>
+      {resume.professionalExperience.map((experience) => <ProfessionalExperience {...experience} />)}
+    </section>
+    <section class="talks">
+      <Text as="h3" class="title">Talks &amp; Workshops</Text>
+      <Talks talks={resume.talks} />
+    </section>
+  </div>
+  <div class="col2">
+    <section class="freelance">
+      <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
+      {resume.relatedExperience.map((experience) => <RelatedExperience {...experience} />)}
+    </section>
+    <section class="education">
+      <Text as="h3" class="title">Education &amp; Training</Text>
+      {resume.education.map((edu) => <EducationExperience {...edu} />)}
+    </section>
+  </div>
+</Element>
+<style>
+  .resume {
+    --resume-border: rgba(212, 207, 209, 0.5);
+    --resume-v-gap: 1.25rem;
+    --resume-h-gap: 2rem;
+
+    display: grid;
+    grid-template-areas:
+      'header'
+      'skills'
+      'col1'
+      'col2';
+    grid-gap: var(--resume-v-gap) var(--resume-h-gap);
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  @media (min-width: 62.5rem) {
+    .resume {
+      grid-template-areas:
+        'header header'
+        'skills skills'
+        'col1 col2';
+    }
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .skills {
+    grid-area: skills;
+  }
+
+  .col1 {
+    grid-area: col1;
+  }
+
+  @media (min-width: 62.5rem) {
+    .col1 {
+      border-right: 1px solid var(--resume-border);
+      padding-right: 1rem;
+    }
+  }
+
+  .col2 {
+    grid-area: col2;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-weight: var(--font-body-weight-bold);
+    margin-bottom: 0.5rem;
+  }
+</style>

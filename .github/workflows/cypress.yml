@@ -8,11 +8,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
-          start: npm start
+          start: npm run dev
           # quote the url to be safe against YML parsing surprises
-          wait-on: 'http://localhost:8000'
+          wait-on: 'http://localhost:3000'
           wait-on-timeout: 300
           browser: chrome
           headless: true

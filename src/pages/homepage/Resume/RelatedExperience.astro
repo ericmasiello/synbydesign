@@ -1,0 +1,84 @@
+---
+import classNames from 'classnames';
+import Text from '../../../components/Text.astro';
+import PlainList from '../../../components/PlainList.astro';
+import type { RelatedExperience } from './Resume';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | 'title' | 'role'>, RelatedExperience {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'article', class: className, title, meta, role, website, accomplishments, ...rest } = Astro.props;
+const classes = classNames('experience', className);
+const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo}` : role.yearFrom;
+---
+
+<Element class={classes} {...rest}>
+  <hgroup>
+    <Text as="h4" data-title class="title">
+      <span class="title-content" data-title-content set:html={title}></span>{' '}
+      {
+        years && (
+          <Text small muted>
+            ({years})
+          </Text>
+        )
+      }
+    </Text>
+    {
+      meta && (
+        <Text small as="p" data-meta class="meta">
+          {meta}
+        </Text>
+      )
+    }
+    <Text as="h5" data-role-title class="role">
+      {role.title}
+    </Text>
+    {
+      website && (
+        <a href={website.url} class="website">
+          {website.url}
+        </a>
+      )
+    }
+  </hgroup>
+  {
+    accomplishments.length > 0 && (
+      <section>
+        <PlainList>
+          {accomplishments.map((accomplishment) => (
+            <li>{accomplishment}</li>
+          ))}
+        </PlainList>
+      </section>
+    )
+  }
+</Element>
+<style>
+  .experience:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    margin-bottom: 0;
+  }
+
+  .title-content {
+    font-weight: var(--font-header-weight-bold);
+  }
+
+  .meta {
+    margin-bottom: 0;
+  }
+
+  .role {
+    color: var(--color-brand);
+    margin-bottom: 0.5rem;
+  }
+
+  .website {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+</style>

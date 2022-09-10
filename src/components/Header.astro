@@ -1,0 +1,80 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../config';
+import SynByDesignLogo from './SynByDesignLogo.astro';
+import VisuallyHidden from './VisuallyHidden.astro';
+import Text from './Text.astro';
+import classNames from 'classnames';
+
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  slim?: boolean;
+}
+
+const { href, class: className, slim = false, ...rest } = Astro.props;
+// const isActive = href === Astro.url.pathname;
+
+const classes = classNames('header', className, {
+  slim: slim,
+});
+---
+
+<header class={classes}>
+  <a href="/">
+    <h1 class="logo"><VisuallyHidden>{SITE_TITLE}</VisuallyHidden> <SynByDesignLogo /></h1>
+  </a>
+  {
+    !slim && (
+      <>
+        <Text as="p">
+          Freelance <span class="role">developer</span>, <span class="role">trainer</span>, &{' '}
+          <span class="role">consultant</span>.
+        </Text>
+        <nav>
+          <HeaderLink href="/#resume">Resume</HeaderLink>
+          <HeaderLink href="/blog">Blog</HeaderLink>
+          <HeaderLink href="/about">About</HeaderLink>
+          <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
+            Twitter
+          </HeaderLink>
+          <HeaderLink href="https://github.com/withastro/astro" target="_blank">
+            GitHub
+          </HeaderLink>
+        </nav>
+      </>
+    )
+  }
+</header>
+<style>
+  .header {
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+
+  .slim {
+    min-height: 0;
+    align-items: flex-start;
+  }
+
+  nav {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    min-height: 2.5rem;
+    max-height: 3.5rem;
+    height: 5vw;
+    margin-bottom: 1rem;
+  }
+
+  .role {
+    font-weight: var(--font-body-weight-bold);
+  }
+</style>

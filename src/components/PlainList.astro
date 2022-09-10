@@ -1,0 +1,28 @@
+---
+import classNames from 'classnames';
+
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: 'ul' | 'ol';
+}
+
+const { as: Element = 'ul', class: className, slot, ...rest } = Astro.props;
+
+const classes = classNames('list', className);
+---
+
+<Element class={classes} {...rest}>
+  <slot />
+</Element>
+
+<style>
+  .list {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  .list > li {
+    margin-bottom: 0.5rem;
+  }
+</style>

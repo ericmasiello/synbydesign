@@ -1,0 +1,16 @@
+---
+import Text from '../../../components/Text.astro';
+
+interface Props {
+  class?: string | null;
+  parenthesesClass?: string | null;
+}
+
+const { class: className, parenthesesClass } = Astro.props;
+---
+
+<Text small muted class={className}>
+  <span class={parenthesesClass}>(</span>
+  <slot />
+  <span class={parenthesesClass}>)</span>
+</Text>

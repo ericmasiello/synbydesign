@@ -1,8 +1,0 @@
-.experience:not(:last-of-type) {
-  margin-bottom: 2rem;
-}
-
-.org {
-  margin-bottom: 0.5rem;
-  font-weight: var(--font-body-weight-bold);
-}
