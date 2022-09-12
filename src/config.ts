@@ -3,3 +3,7 @@
 
 export const SITE_TITLE = 'Syn By Design';
 export const SITE_DESCRIPTION = 'My collection of past web development work and resume';
+export const MY_NAME = 'Eric Masiello';
+export const MEDIUM_BLOG = 'https://medium.com/@EricMasiello';
+export const LINKEDIN = 'https://www.linkedin.com/in/ericmasiello/';
+export const TWITTER = 'https://twitter.com/ericmasiello';

@@ -1,13 +1,41 @@
 ---
+import Container from './Container.astro';
+import AnimatedLink from './AnimatedLink.astro';
+import { MY_NAME } from '../config';
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
-</footer>
+<Container as="footer" class="footer">
+  <AnimatedLink href="mailto:eric.j.masiello@gmail.com">
+    Contact Me{' '}
+    <span role="img" aria-label="envolope with heart"> 💌</span>
+  </AnimatedLink>
+  <span class="copyright">
+    &copy; {today.getFullYear()}{' '}
+    {MY_NAME}.{' '}All rights reserved.
+  </span>
+</Container>
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
-	}
+  .footer {
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+  }
+
+  @media (min-width: 31.25rem) {
+    .footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .copyright {
+    display: block;
+    margin-block-start: 1rem;
+  }
+
+  @media (min-width: 31.25rem) {
+    .copyright {
+      margin-block-start: 0;
+    }
+  }
 </style>

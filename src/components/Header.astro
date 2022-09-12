@@ -1,10 +1,10 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../config';
+import { LINKEDIN, SITE_TITLE, TWITTER } from '../config';
 import SynByDesignLogo from './SynByDesignLogo.astro';
 import VisuallyHidden from './VisuallyHidden.astro';
 import Text from './Text.astro';
 import classNames from 'classnames';
+import AnimatedLink from './AnimatedLink.astro';
 
 export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
   slim?: boolean;
@@ -29,16 +29,22 @@ const classes = classNames('header', className, {
           Freelance <span class="role">developer</span>, <span class="role">trainer</span>, &{' '}
           <span class="role">consultant</span>.
         </Text>
-        <nav>
-          <HeaderLink href="/#resume">Resume</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
-          <HeaderLink href="/about">About</HeaderLink>
-          <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
-            Twitter
-          </HeaderLink>
-          <HeaderLink href="https://github.com/withastro/astro" target="_blank">
-            GitHub
-          </HeaderLink>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <AnimatedLink href="/#resume">Resume</AnimatedLink>
+            </li>
+            <li class="nav-item">
+              <AnimatedLink href={TWITTER} target="_blank">
+                Twitter
+              </AnimatedLink>
+            </li>
+            <li class="nav-item">
+              <AnimatedLink href={LINKEDIN} target="_blank">
+                LinkedIn Profile
+              </AnimatedLink>
+            </li>
+          </ul>
         </nav>
       </>
     )
@@ -76,5 +82,30 @@ const classes = classNames('header', className, {
 
   .role {
     font-weight: var(--font-body-weight-bold);
+  }
+
+  .nav {
+    /* empty */
+  }
+
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    padding-inline-end: 1rem;
+    text-transform: uppercase;
+    font-weight: var(--font-body-weight-bold);
+  }
+
+  .nav-item:first-child {
+    padding-inline-start: 0;
+  }
+
+  .nav-item:last-child {
+    padding-inline-end: 0;
   }
 </style>

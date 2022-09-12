@@ -1,0 +1,22 @@
+---
+import classNames from 'classnames';
+
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'div', slot, class: className, ...rest } = Astro.props;
+
+const classes = classNames('container', className);
+---
+
+<Element className={classes} {...rest}><slot /></Element>
+
+<style>
+  .container {
+    padding-inline-start: 2.5rem;
+    padding-inline-end: 2.5rem;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+  }
+</style>
