@@ -1,0 +1,34 @@
+---
+import classNames from 'classnames';
+import H from '../../H.astro';
+import PlainList from '../../PlainList.astro';
+import ProfessionalExperienceRole from './ProfessionalExperienceRole.astro';
+import type { ProfessionalExperience } from './Resume';
+
+interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'>, ProfessionalExperience {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'hgroup', class: className, organization, roles, accomplishments, ...rest } = Astro.props;
+const classes = classNames('experience', className);
+---
+
+<Element class={classes} {...rest}>
+  <hgroup>
+    <H as="h4" class="org">
+      {organization}
+    </H>
+    {roles.map((role) => <ProfessionalExperienceRole {...role} />)}
+  </hgroup>
+  {
+    accomplishments.length > 0 && (
+      <div>
+        <PlainList>
+          {accomplishments.map((accomplishment) => (
+            <li>{accomplishment}</li>
+          ))}
+        </PlainList>
+      </div>
+    )
+  }
+</Element>

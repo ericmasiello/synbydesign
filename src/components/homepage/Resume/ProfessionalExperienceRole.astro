@@ -1,0 +1,53 @@
+---
+import classNames from 'classnames';
+import type { Role } from './Resume';
+import Text from '../../Text.astro';
+import Timeline from './Timeline.astro';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | 'title'>, Role {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'div', class: className, title, yearFrom, yearTo, ...rest } = Astro.props;
+const classes = classNames('role', className);
+---
+
+<Element class={classes} {...rest}>
+  <Text as="h5" class="title">
+    {title}{' '}
+    <Timeline class="timeline" parenthesesClass="parentheses">
+      {yearFrom} &mdash; {yearTo ?? 'Present'}
+    </Timeline>
+  </Text>
+</Element>
+
+<style>
+  .role {
+    position: relative;
+  }
+
+  .title {
+    color: var(--color-brand);
+    margin-bottom: 0.25rem;
+  }
+
+  .role:nth-last-of-type(1) .title {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 115rem) {
+    .timeline {
+      position: absolute;
+      top: 0;
+      left: -1rem;
+      transform: translateX(-100%);
+      line-height: 1.6;
+    }
+  }
+
+  @media (min-width: 115rem) {
+    .parentheses {
+      display: none;
+    }
+  }
+</style>

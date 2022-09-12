@@ -1,0 +1,40 @@
+---
+import classNames from 'classnames';
+import H from '../../H.astro';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
+  as?: keyof HTMLElementTagNameMap;
+  ownerName: string;
+  ownerTitle: string;
+  lead: string;
+}
+
+const { as: Element = 'hgroup', ownerName, ownerTitle, lead, class: className, ...rest } = Astro.props;
+const classes = classNames('header', className);
+---
+
+<Element class={classes} {...rest}>
+  <H level={4} as="h3" class="name">{ownerName}</H>
+  <H level={6} as="h4" class="title">{ownerTitle}</H>
+  <p>{lead}</p>
+</Element>
+
+<style>
+  .header {
+    background: linear-gradient(90deg, rgba(78, 0, 94, 0.95) 14%, rgba(19, 52, 185, 0.95) 100%);
+    color: #fff;
+    padding: var(--resume-v-gap) var(--resume-h-gap);
+    margin-inline-start: calc(var(--resume-h-gap) * -1);
+    margin-inline-end: calc(var(--resume-h-gap) * -1);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  }
+
+  .name {
+    margin-bottom: 0;
+  }
+
+  .title {
+    margin-bottom: 0.25rem;
+    color: var(--color-brand-invert);
+  }
+</style>

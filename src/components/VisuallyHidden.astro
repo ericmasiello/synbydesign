@@ -1,0 +1,25 @@
+---
+import classNames from 'classnames';
+
+interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'span', class: className, slot, ...rest } = Astro.props;
+
+const classes = classNames('visually-hidden', className);
+---
+
+<Element class={classes} {...rest}><slot /></Element>
+
+<style>
+  .visually-hidden {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+</style>

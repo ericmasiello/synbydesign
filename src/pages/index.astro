@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AboutMe from '../components/homepage/AboutMe.astro';
+import Resume from '../components/homepage/Resume/Resume.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import VisuallyHidden from '../components/VisuallyHidden.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <AboutMe id="about-me" />
+      <VisuallyHidden as="h2" id="resume-title">Resume</VisuallyHidden>
+      <Resume id="resume" />
+    </main>
+    <Footer />
+  </body>
+</html>

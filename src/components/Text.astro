@@ -1,0 +1,33 @@
+---
+import classNames from 'classnames';
+
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: keyof HTMLElementTagNameMap;
+  small?: boolean;
+  muted?: boolean;
+}
+
+const { as: Element = 'span', small = false, muted = false, slot, class: className, ...rest } = Astro.props;
+
+const classes = classNames('text', className, { small: small, muted: muted });
+---
+
+<Element class={classes} {...rest}>
+  <slot />
+</Element>
+
+<style>
+  .text {
+    font-family: var(--font-base);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .small {
+    font-size: 0.75rem;
+  }
+
+  .muted {
+    color: var(--color-muted);
+  }
+</style>

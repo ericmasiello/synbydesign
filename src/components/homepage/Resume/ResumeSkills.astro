@@ -1,0 +1,54 @@
+---
+import classNames from 'classnames';
+
+interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  skills: string[];
+}
+
+const { class: className, skills, ...rest } = Astro.props;
+
+const classes = classNames('skills', className);
+---
+
+<ul class={classes} {...rest}>
+  {
+    skills.map((skill, i) => (
+      <li>
+        {i > 0 && <span aria-hidden="true" class="bullet" />}
+        {skill}
+      </li>
+    ))
+  }
+</ul>
+<style>
+  .skills {
+    list-style-type: none;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  .skills > li {
+    display: inline-block;
+  }
+
+  .skills > li:not(:last-child) {
+    padding-inline-end: 1rem;
+  }
+
+  .bullet {
+    position: relative;
+  }
+
+  .bullet::before {
+    content: '\00B7';
+    position: absolute;
+    width: 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 180%;
+  }
+</style>

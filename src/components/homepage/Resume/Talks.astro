@@ -1,0 +1,39 @@
+---
+import Text from '../../Text.astro';
+import PlainList from '../../PlainList.astro';
+import type { Talk } from './Resume';
+import Timeline from './Timeline.astro';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | 'title'> {
+  talks: Talk[];
+}
+
+const { talks, ...rest } = Astro.props;
+---
+
+<PlainList {...rest}>
+  {
+    talks.map((talk) => {
+      const composedTitle = talk.year ? (
+        <>
+          {talk.title} <Timeline>{talk.year}</Timeline>
+        </>
+      ) : (
+        talk.title
+      );
+      return (
+        <li>
+          <Text as="h4" class="title">
+            {talk.url ? <a href={talk.url}>{composedTitle}</a> : talk.title}
+          </Text>
+          {talk.description}
+        </li>
+      );
+    })
+  }
+</PlainList>
+<style>
+  .title {
+    margin-bottom: 0.25rem;
+  }
+</style>

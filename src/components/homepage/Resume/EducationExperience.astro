@@ -1,0 +1,37 @@
+---
+import Text from '../../Text.astro';
+import type { Education } from './Resume';
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'>, Education {
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { as: Element = 'article', degree, institution, location, year, ...rest } = Astro.props;
+---
+
+<Element {...rest}>
+  <Text as="h4" class="title">
+    {institution}
+    <div class="meta" data-meta>
+      {location && <>{`${location} `}</>}
+      {
+        year && (
+          <Text small muted data-year>
+            ({year})
+          </Text>
+        )
+      }
+    </div>
+  </Text>
+  {degree && <p data-degree>{degree}</p>}
+</Element>
+
+<style>
+  .title {
+    font-weight: var(--font-body-weight-bold);
+  }
+
+  .meta {
+    font-weight: var(--font-body-weight-medium);
+  }
+</style>
