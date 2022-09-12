@@ -36,12 +36,11 @@ professionalExperience:
       - "Designed in-house front-end learning program"
       - "Architect of Print Designer UI library; optimized for mobile experiences via custom build scripts supporting tree shaking, small CSS modules, and flexibility via components and custom hooks"
       - "Technical architect and team lead for rearchitecture of flagship Website Builder; dramatically expanding builder capabilities and enabling customers to create entirely customized \"blocks\""
-      - "Vistaprint Digital UI Component library architect"
+      - "VistaPrint Digital UI Component library architect"
       - "Full stack engineer across multiple products utilizing React and Node JS"
       - "Mentor junior & senior engineers on front-end and Node development"
       - "Career coach and manager for junior & senior engineers"
-      - "Creator of the Front-end Learning Guild: a biweekly meetup to discuss and learn about front-end technologies"
-    organization: "Vistaprint Digital"
+    organization: "Vista"
     roles: 
       - 
         title: "Domain Architect"
