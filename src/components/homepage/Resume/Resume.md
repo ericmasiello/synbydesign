@@ -99,6 +99,15 @@ professionalExperience:
 relatedExperience: 
   - 
     accomplishments: 
+      - "Enabled white-labeling of Encoda BackOffice Product"
+      - "Adopted end-to-end and visual regression testing"
+      - "Actively migrating front-end to a components to solve scalability and promote best practices"
+    role: 
+      title: "Consultant"
+      yearFrom: "2022"
+    title: "Encoda"
+  - 
+    accomplishments: 
       - "Teach students the basics of JavaScript and the DOM"
     role: 
       title: "Instructor: JavaScript 101 Workshop"
