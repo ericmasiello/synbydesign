@@ -1,4 +1,4 @@
-**/*.md
+src/components/**/*.md
 .cache
 package.json
 package-lock.json
