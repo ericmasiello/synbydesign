@@ -8,6 +8,11 @@ import puppeteer from 'puppeteer';
 
   await page.emulateMediaType('screen');
 
+  await page.evaluate(() => {
+    // forces 2 column layout for PDF generation
+    document.body.classList.add('PDF_GENERATION');
+  });
+
   await page.pdf({
     path: 'resume.pdf',
     margin: { top: '15px', right: '5px', bottom: '15px', left: '5px' },

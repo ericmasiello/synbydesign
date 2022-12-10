@@ -121,8 +121,18 @@ const classes = classNames('resume', format, className);
     }
   }
 
-  /* forces two column for PDF generation */
-  .resume:where(.print) {
+  /* Responsive for browsering /print on the web */
+  @media (min-width: 62.5rem) {
+    .resume:where(.print) {
+      column-count: 2;
+      column-gap: 0;
+      column-fill: auto;
+      display: block;
+    }
+  }
+
+  /* Forces two column layout when generating a pdf via scripts/pdf.mjs */
+  :global(body.PDF_GENERATION) .resume:where(.print) {
     column-count: 2;
     column-gap: 0;
     column-fill: auto;
