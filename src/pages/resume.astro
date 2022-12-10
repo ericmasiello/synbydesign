@@ -1,0 +1,27 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Resume from '../components/homepage/Resume/Resume.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import VisuallyHidden from '../components/VisuallyHidden.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main>
+      <VisuallyHidden as="h1" id="resume-title">Resume</VisuallyHidden>
+      <Resume id="resume" format="print" />
+    </main>
+    <Footer format="print" />
+    <style>
+      :global(html) {
+        --h-space: 2rem !important;
+        font-size: 90% !important;
+      }
+    </style>
+  </body>
+</html>
