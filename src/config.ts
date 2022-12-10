@@ -7,3 +7,4 @@ export const MY_NAME = 'Eric Masiello';
 export const MEDIUM_BLOG = 'https://medium.com/@EricMasiello';
 export const LINKEDIN = 'https://www.linkedin.com/in/ericmasiello/';
 export const TWITTER = 'https://twitter.com/ericmasiello';
+export const EMAIL = 'eric.j.masiello@gmail.com';
