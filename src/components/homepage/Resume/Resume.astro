@@ -41,7 +41,14 @@ const classes = classNames('resume', format, className);
 ---
 
 <Element class={classes} {...rest}>
-  <ResumeHeader class="lead" lead={resume.lead} ownerName={resume.name} ownerTitle={resume.title} />
+  <ResumeHeader
+    as={format === 'print' ? 'header' : 'hgroup'}
+    class="lead"
+    lead={resume.lead}
+    ownerName={resume.name}
+    ownerTitle={resume.title}
+    email={format === 'print' ? 'eric.j.masiello@gmail.com' : undefined}
+  />
   <section class="skills">
     <div>
       <Text as="h3" class="title inline inline-title">Extensive Experience</Text>

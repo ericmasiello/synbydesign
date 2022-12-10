@@ -11,6 +11,6 @@ it('should exist', () => {
     .should('exist');
 });
 
-it('should contain an email contact', () => {
-  cy.get('a[href*="mailto:eric.j.masiello@gmail.com"]').should('exist');
+it('should contain an email contact in the header', () => {
+  cy.get('header a[href*="mailto:eric.j.masiello@gmail.com"]').should('exist');
 });

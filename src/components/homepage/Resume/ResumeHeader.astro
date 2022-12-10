@@ -1,20 +1,32 @@
 ---
 import classNames from 'classnames';
 import H from '../../H.astro';
+import Text from '../../Text.astro';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
   ownerName: string;
   ownerTitle: string;
   lead: string;
+  email?: string;
 }
 
-const { as: Element = 'hgroup', ownerName, ownerTitle, lead, class: className, ...rest } = Astro.props;
+const { as: Element = 'hgroup', ownerName, ownerTitle, lead, email, class: className, ...rest } = Astro.props;
 const classes = classNames('header', className);
+const nameClasses = classNames('name', { 'with-email': Boolean(email) });
 ---
 
 <Element class={classes} {...rest}>
-  <H level={4} as="h3" class="name">{ownerName}</H>
+  <H level={4} as="h3" class={nameClasses}
+    >{ownerName}
+    {
+      email ? (
+        <Text as="a" href="mailto:eric.j.masiello@gmail.com">
+          eric.j.masiello@gmail.com
+        </Text>
+      ) : null
+    }
+  </H>
   <H level={6} as="h4" class="title">{ownerTitle}</H>
   <p>{lead}</p>
 </Element>
@@ -31,6 +43,16 @@ const classes = classNames('header', className);
 
   .name {
     margin-bottom: 0;
+  }
+
+  .name:where(.with-email) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  a {
+    color: var(--color-bg);
   }
 
   .title {
