@@ -19,7 +19,7 @@ import Wrapper from './Wrapper.astro';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
-  wrapColumns?: boolean;
+  format?: 'web' | 'print';
 }
 
 interface ResumeFrontmatter {
@@ -36,8 +36,8 @@ interface ResumeFrontmatter {
 
 const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
 
-const { as: Element = 'div', class: className, wrapColumns = false, ...rest } = Astro.props;
-const classes = classNames('resume', className);
+const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
+const classes = classNames('resume', format, className);
 ---
 
 <Element class={classes} {...rest}>
@@ -52,7 +52,7 @@ const classes = classNames('resume', className);
       <ResumeSkills class="inline" skills={resume.learning} />
     </div>
   </section>
-  <Wrapper class="columns" wrap={wrapColumns}>
+  <Wrapper class="columns" wrap={format === 'print'}>
     <div class="col col1">
       <section class="experience">
         <Text as="h3" class="title">Professional Experience</Text>
@@ -81,7 +81,6 @@ const classes = classNames('resume', className);
     --resume-border: rgba(212, 207, 209, 0.5);
     --resume-v-gap: 1.25rem;
     --resume-h-gap: 2rem;
-    --h-space: 2.5rem;
 
     display: grid;
     grid-template-areas:
@@ -95,14 +94,13 @@ const classes = classNames('resume', className);
     padding-inline: var(--h-space);
   }
 
-  :global(html.isPDF) .resume {
-    --h-space: 2rem;
+  .resume.print {
     padding-inline: 0;
   }
 
-  :global(html.isPDF) .resume > .lead,
-  :global(html.isPDF) .resume > .skills,
-  :global(html.isPDF) .resume > .columns {
+  .resume.print > .lead,
+  .resume.print > .skills,
+  .resume.print > .columns {
     padding-inline: var(--h-space);
     margin-inline: 0;
   }
@@ -118,7 +116,7 @@ const classes = classNames('resume', className);
   }
 
   /* forces two column for PDF generation */
-  :global(html.isPDF) .resume {
+  .resume.print {
     column-count: 2;
     column-gap: 0;
     column-fill: auto;
@@ -129,7 +127,7 @@ const classes = classNames('resume', className);
     grid-area: header;
   }
 
-  :global(html.isPDF) .header {
+  .resume.print .header {
     column-span: all;
     margin-block-end: 2rem;
   }
@@ -142,7 +140,7 @@ const classes = classNames('resume', className);
     margin-block-end: 1rem;
   }
 
-  :global(html.isPDF) .skills {
+  .resume.print .skills {
     column-span: all;
     margin-block-end: 1rem;
   }

@@ -3,17 +3,33 @@ import Container from './Container.astro';
 import AnimatedLink from './AnimatedLink.astro';
 import { MY_NAME } from '../config';
 const today = new Date();
+
+export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
+  format?: 'web' | 'print';
+}
+
+const { format = 'web' } = Astro.props;
 ---
 
 <Container as="footer" class="footer">
-  <AnimatedLink href="mailto:eric.j.masiello@gmail.com">
-    Contact Me{' '}
-    <span role="img" aria-label="envolope with heart"> 💌</span>
-  </AnimatedLink>
-  <span class="copyright">
-    &copy; {today.getFullYear()}{' '}
-    {MY_NAME}.{' '}All rights reserved.
-  </span>
+  {
+    format === 'print' ? (
+      <a href="mailto:eric.j.masiello@gmail.com">Email: eric.j.masiello@gmail.com</a>
+    ) : (
+      <>
+        <AnimatedLink href="mailto:eric.j.masiello@gmail.com">
+          Contact Me{' '}
+          <span role="img" aria-label="envolope with heart">
+            {' '}
+            💌
+          </span>
+        </AnimatedLink>
+        <span class="copyright">
+          &copy; {today.getFullYear()} {MY_NAME}. All rights reserved.
+        </span>
+      </>
+    )
+  }
 </Container>
 <style>
   .footer {

@@ -19,6 +19,7 @@
   --color-gallery-border-highlight: #d4cfd1;
   --color-gallery-bg: #e0dcde;
   --content-max-width: 100rem; /* 1600px */
+  --h-space: 2.5rem;
 }
 
 html {
