@@ -101,13 +101,11 @@ const classes = classNames('resume', format, className);
     padding-inline: var(--h-space);
   }
 
-  .resume.print {
+  .resume:where(.print) {
     padding-inline: 0;
   }
 
-  .resume.print > .lead,
-  .resume.print > .skills,
-  .resume.print > .columns {
+  .resume:where(.print) > :is(.lead, .skills, .columns) {
     padding-inline: var(--h-space);
     margin-inline: 0;
   }
@@ -123,7 +121,7 @@ const classes = classNames('resume', format, className);
   }
 
   /* forces two column for PDF generation */
-  .resume.print {
+  .resume:where(.print) {
     column-count: 2;
     column-gap: 0;
     column-fill: auto;
@@ -134,7 +132,7 @@ const classes = classNames('resume', format, className);
     grid-area: header;
   }
 
-  .resume.print .header {
+  .resume:where(.print) .header {
     column-span: all;
     margin-block-end: 2rem;
   }
@@ -147,7 +145,7 @@ const classes = classNames('resume', format, className);
     margin-block-end: 1rem;
   }
 
-  .resume.print .skills {
+  .resume:where(.print) .skills {
     column-span: all;
     margin-block-end: 1rem;
   }
