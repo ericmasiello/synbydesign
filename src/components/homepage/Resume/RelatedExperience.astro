@@ -57,11 +57,12 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
 </Element>
 <style>
   .experience:not(:last-of-type) {
-    margin-bottom: 2rem;
+    margin-block-end: 1.5rem;
+    page-break-before: left;
   }
 
   .title {
-    margin-bottom: 0;
+    margin-block-end: 0.125rem;
   }
 
   .title-content {
@@ -69,16 +70,16 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
   }
 
   .meta {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   .role {
     color: var(--color-brand);
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
   }
 
   .website {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
   }
 </style>

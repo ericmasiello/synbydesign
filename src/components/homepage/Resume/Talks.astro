@@ -11,12 +11,14 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | '
 const { talks, ...rest } = Astro.props;
 ---
 
-<PlainList {...rest}>
+<PlainList spacing="large" {...rest}>
   {
     talks.map((talk) => {
       const composedTitle = talk.year ? (
         <>
-          {talk.title} <Timeline>{talk.year}</Timeline>
+          {talk.title}
+          {'  '}
+          <Timeline>{talk.year}</Timeline>
         </>
       ) : (
         talk.title
@@ -34,6 +36,6 @@ const { talks, ...rest } = Astro.props;
 </PlainList>
 <style>
   .title {
-    margin-bottom: 0.25rem;
+    margin-block-end: 0.5rem;
   }
 </style>

@@ -15,10 +15,10 @@ const classes = classNames('experience', className);
 
 <Element class={classes} {...rest}>
   <hgroup>
-    <H as="h4" class="org">
+    <H as="h4" class="org" bold>
       {organization}
     </H>
-    {roles.map((role) => <ProfessionalExperienceRole {...role} />)}
+    <PlainList class="roles" spacing="small">{roles.map((role) => <ProfessionalExperienceRole {...role} />)}</PlainList>
   </hgroup>
   {
     accomplishments.length > 0 && (
@@ -32,3 +32,12 @@ const classes = classNames('experience', className);
     )
   }
 </Element>
+<style>
+  .org {
+    margin-block-end: 0.5rem;
+  }
+
+  .roles {
+    margin-block-end: 0.5rem;
+  }
+</style>

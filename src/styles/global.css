@@ -1,125 +1,126 @@
 :root {
-	--font-base: 'Source Sans Pro', sans-serif;
-	--font-header: 'Lato', sans-serif;
-	--font-body-weight-light: 300;
-	--font-body-weight-medium: 400;
-	--font-body-weight-bold: 600;
-	--font-header-weight-medium: 400;
-	--font-header-weight-bold: 700;
-	--color-bg: #fff;
-	--color-base: #424141;
-	--color-muted: #787575;
-	--color-brand: #c90044;
-	--color-brand-invert: #36ffbb;
-	--color-highlight: #5f2058;
-	--color-link: rgba(201, 0, 68, 0.8);
-	--color-logo: #3b3b3b;
-	--color-gallery-border: rgba(212, 207, 209, 0.5);
-	--color-gallery-border-highlight: #d4cfd1;
-	--color-gallery-bg: #e0dcde;
-	--content-max-width: 100rem; /* 1600px */
-  }
-  
-  html {
-	box-sizing: border-box;
-	background-color: var(--color-bg);
-	font-family: var(--font-base);
-	color: var(--color--base);
-	font-size: 100%;
-  }
-  
-  *,
-  *::before,
-  *::after {
-	box-sizing: inherit;
-  }
-  
+  --font-base: 'Source Sans Pro', sans-serif;
+  --font-header: 'Lato', sans-serif;
+  --font-body-weight-light: 300;
+  --font-body-weight-medium: 400;
+  --font-body-weight-bold: 600;
+  --font-header-weight-medium: 400;
+  --font-header-weight-bold: 700;
+  --font-size-body: 0.875rem;
+  --color-bg: #fff;
+  --color-base: #424141;
+  --color-muted: #787575;
+  --color-brand: #c90044;
+  --color-brand-invert: #36ffbb;
+  --color-highlight: #5f2058;
+  --color-link: rgba(201, 0, 68, 0.8);
+  --color-logo: #3b3b3b;
+  --color-gallery-border: rgba(212, 207, 209, 0.5);
+  --color-gallery-border-highlight: #d4cfd1;
+  --color-gallery-bg: #e0dcde;
+  --content-max-width: 100rem; /* 1600px */
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+  font-family: var(--font-base);
+  color: var(--color--base);
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: 1.4;
+  font-weight: var(--font-body-weight-light);
+}
+
+@media only screen and (min-width: 992px) {
   body {
-	margin: 0;
-	font-size: 0.875rem;
-	line-height: 1.4;
-	font-weight: var(--font-body-weight-light);
+    font-size: 0.9375rem;
   }
-  
-  @media only screen and (min-width: 992px) {
-	body {
-	  font-size: 0.9375rem;
-	}
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 1rem;
   }
-  
-  @media only screen and (min-width: 1200px) {
-	body {
-	  font-size: 1rem;
-	}
+}
+
+/* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html,
+  body {
+    scroll-behavior: smooth;
   }
-  
-  /* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
-  @media screen and (prefers-reduced-motion: no-preference) {
-	html,
-	body {
-	  scroll-behavior: smooth;
-	}
-  }
-  
-  input,
-  textarea,
-  select,
-  button {
-	font-size: inherit;
-	font-family: inherit;
-	font-weight: inherit;
-  }
-  
-  input[type='button'],
-  input[type='submit'],
-  input[type='reset'],
-  button {
-	cursor: pointer;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-	font-family: var(--font-header);
-	font-weight: var(--font-header-weight-medium);
-	line-height: 1.1;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-	margin-block-start: 0;
-	margin-block-end: 1rem;
-  }
-  
-  a {
-	background-color: transparent;
-	color: var(--color-link);
-	-webkit-tap-highlight-color: transparent;
-  }
-  
-  a:focus {
-	outline: 3px auto var(--color-brand);
-  }
-  
-  img,
-  svg {
-	max-width: 100%;
-	height: auto;
-  }
-  
-  img {
-	vertical-align: middle;
-	border: 0;
-  }
-  
-  blockquote {
-	margin: 0;
-  }
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  font-weight: var(--font-header-weight-medium);
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+}
+
+a {
+  background-color: transparent;
+  color: var(--color-link);
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus {
+  outline: 3px auto var(--color-brand);
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+blockquote {
+  margin: 0;
+}

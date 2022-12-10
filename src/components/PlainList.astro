@@ -3,11 +3,12 @@ import classNames from 'classnames';
 
 export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
   as?: 'ul' | 'ol';
+  spacing?: 'none' | 'small' | 'normal' | 'large';
 }
 
-const { as: Element = 'ul', class: className, slot, ...rest } = Astro.props;
+const { as: Element = 'ul', spacing = 1, class: className, slot, ...rest } = Astro.props;
 
-const classes = classNames('list', className);
+const classes = classNames('list', spacing, className);
 ---
 
 <Element class={classes} {...rest}>
@@ -22,7 +23,19 @@ const classes = classNames('list', className);
     padding: 0;
   }
 
+  .list.none > :global(li) {
+    margin-block-end: 0;
+  }
+
+  .list.small > :global(li) {
+    margin-block-end: 0.125rem;
+  }
+
   .list > :global(li) {
+    margin-block-end: 0.25rem;
+  }
+
+  .list.large > :global(li) {
     margin-block-end: 0.5rem;
   }
 </style>
