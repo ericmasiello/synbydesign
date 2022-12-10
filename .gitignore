@@ -20,3 +20,7 @@ pnpm-debug.log*
 
 # Resume PDF generation
 resume.pdf
+
+# cypress
+cypress/videos
+cypress/screenshots
