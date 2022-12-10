@@ -1,6 +1,8 @@
 ---
 // See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
 import * as ResumeMarkdown from './Resume.md';
+import * as ContactMarkdown from '../../../common/contact.md';
+import type { ContactFrontmatter } from '../../../common/contact';
 import classNames from 'classnames';
 import ResumeHeader from './ResumeHeader.astro';
 import Text from '../../Text.astro';
@@ -35,6 +37,7 @@ interface ResumeFrontmatter {
 }
 
 const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
+const contact = ContactMarkdown.frontmatter as ContactFrontmatter;
 
 const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
 const classes = classNames('resume', format, className);
@@ -47,7 +50,7 @@ const classes = classNames('resume', format, className);
     lead={resume.lead}
     ownerName={resume.name}
     ownerTitle={resume.title}
-    email={format === 'print' ? 'eric.j.masiello@gmail.com' : undefined}
+    email={format === 'print' ? contact.email : undefined}
   />
   <section class="skills">
     <div>
