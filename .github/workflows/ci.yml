@@ -25,7 +25,7 @@ jobs:
       - name: Cypress visual tests 🧪
         uses: cypress-io/github-action@v3.0.3
         with:
-          start: npm run dev
+          # No need to run `npm run dev` because the server is still running from the previous step
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 300
           browser: chrome
