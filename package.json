@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "cypress": "cypress open",
-    "visual": "percy exec -- cypress run",
+    "visual": "percy exec -- cypress run --browser chrome --headless --config-file cypress.config.visual.ts",
     "generate:resume": "node scripts/pdf.mjs"
   },
   "dependencies": {

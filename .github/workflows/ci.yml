@@ -29,6 +29,8 @@ jobs:
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 300
           browser: chrome
+          record: false
+          parallel: true
           command: npm run visual
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
