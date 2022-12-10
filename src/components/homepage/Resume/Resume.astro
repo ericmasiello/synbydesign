@@ -1,6 +1,8 @@
 ---
 // See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
 import * as ResumeMarkdown from './Resume.md';
+import * as ContactMarkdown from '../../../common/contact.md';
+import type { ContactFrontmatter } from '../../../common/contact';
 import classNames from 'classnames';
 import ResumeHeader from './ResumeHeader.astro';
 import Text from '../../Text.astro';
@@ -15,16 +17,19 @@ import type {
 import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
+import Wrapper from './Wrapper.astro';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
+  format?: 'web' | 'print';
 }
 
 interface ResumeFrontmatter {
   name: string;
   title: string;
   lead: string;
-  skills: string[];
+  expertise: string[];
+  learning: string[];
   education: Education[];
   professionalExperience: ProfessionalExperienceType[];
   relatedExperience: RelatedExperienceType[];
@@ -32,37 +37,54 @@ interface ResumeFrontmatter {
 }
 
 const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
+const contact = ContactMarkdown.frontmatter as ContactFrontmatter;
 
-const { as: Element = 'div', class: className, ...rest } = Astro.props;
-const classes = classNames('resume', className);
+const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
+const classes = classNames('resume', format, className);
 ---
 
 <Element class={classes} {...rest}>
-  <ResumeHeader lead={resume.lead} ownerName={resume.name} ownerTitle={resume.title} />
+  <ResumeHeader
+    as={format === 'print' ? 'header' : 'hgroup'}
+    class="lead"
+    lead={resume.lead}
+    ownerName={resume.name}
+    ownerTitle={resume.title}
+    email={format === 'print' ? contact.email : undefined}
+  />
   <section class="skills">
-    <Text as="h3" class="title">Technical Skills</Text>
-    <ResumeSkills skills={resume.skills} />
+    <div>
+      <Text as="h3" class="title inline inline-title">Extensive Experience</Text>
+      <ResumeSkills class="inline" skills={resume.expertise} />
+    </div>
+    <div>
+      <Text as="h3" class="title inline inline-title">Learning</Text>
+      <ResumeSkills class="inline" skills={resume.learning} />
+    </div>
   </section>
-  <div class="col1">
-    <section class="experience">
-      <Text as="h3" class="title">Professional Experience</Text>
-      {resume.professionalExperience.map((experience) => <ProfessionalExperience {...experience} />)}
-    </section>
-    <section class="talks">
-      <Text as="h3" class="title">Talks &amp; Workshops</Text>
-      <Talks talks={resume.talks} />
-    </section>
-  </div>
-  <div class="col2">
-    <section class="freelance">
-      <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
-      {resume.relatedExperience.map((experience) => <RelatedExperience {...experience} />)}
-    </section>
-    <section class="education">
-      <Text as="h3" class="title">Education &amp; Training</Text>
-      {resume.education.map((edu) => <EducationExperience {...edu} />)}
-    </section>
-  </div>
+  <Wrapper class="columns" wrap={format === 'print'}>
+    <div class="col col1">
+      <section class="experience">
+        <Text as="h3" class="title">Professional Experience</Text>
+        {resume.professionalExperience.map((experience) => <ProfessionalExperience {...experience} />)}
+      </section>
+      <section class="talks">
+        <Text as="h3" class="title">Talks &amp; Workshops</Text>
+        <Talks talks={resume.talks} />
+      </section>
+    </div>
+
+    <div class="col col2">
+      <section class="freelance">
+        <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
+        {resume.relatedExperience.map((experience) => <RelatedExperience {...experience} />)}
+      </section>
+      <section class="education">
+        <Text as="h3" class="title">Education &amp; Training</Text>
+        {resume.education.map((edu) => <EducationExperience {...edu} />)}
+      </section>
+    </div>
+  </Wrapper>
 </Element>
 <style>
   .resume {
@@ -79,7 +101,16 @@ const classes = classNames('resume', className);
     grid-gap: var(--resume-v-gap) var(--resume-h-gap);
     max-width: var(--content-max-width);
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding-inline: var(--h-space);
+  }
+
+  .resume:where(.print) {
+    padding-inline: 0;
+  }
+
+  .resume:where(.print) > :is(.lead, .skills, .columns) {
+    padding-inline: var(--h-space);
+    margin-inline: 0;
   }
 
   @media (min-width: 62.5rem) {
@@ -88,15 +119,43 @@ const classes = classNames('resume', className);
         'header header'
         'skills skills'
         'col1 col2';
+      grid-template-columns: 1fr 1fr;
     }
+  }
+
+  /* forces two column for PDF generation */
+  .resume:where(.print) {
+    column-count: 2;
+    column-gap: 0;
+    column-fill: auto;
+    display: block;
   }
 
   .header {
     grid-area: header;
   }
 
+  .resume:where(.print) .header {
+    column-span: all;
+    margin-block-end: 2rem;
+  }
+
   .skills {
     grid-area: skills;
+  }
+
+  .skills > *:not(:last-of-type) {
+    margin-block-end: 1rem;
+  }
+
+  .resume:where(.print) .skills {
+    column-span: all;
+    margin-block-end: 1rem;
+  }
+
+  .col:not(:last-of-type),
+  .col > *:not(:last-of-type) {
+    margin-block-end: 2rem;
   }
 
   .col1 {
@@ -105,7 +164,6 @@ const classes = classNames('resume', className);
 
   @media (min-width: 62.5rem) {
     .col1 {
-      border-right: 1px solid var(--resume-border);
       padding-inline-end: 1rem;
     }
   }
@@ -117,6 +175,15 @@ const classes = classNames('resume', className);
   .title {
     text-transform: uppercase;
     font-weight: var(--font-body-weight-bold);
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
+  }
+
+  .inline {
+    display: inline;
+    margin-block-end: 0;
+  }
+
+  .inline-title {
+    margin-inline-end: 0.5rem;
   }
 </style>

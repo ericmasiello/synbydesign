@@ -1,0 +1,14 @@
+---
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: keyof HTMLElementTagNameMap;
+  wrap?: boolean;
+}
+
+const { as = 'div', slot, class: className, wrap = false, ...rest } = Astro.props;
+
+const Element = wrap ? as : Fragment;
+---
+
+<Element class={className} {...rest}>
+  <slot />
+</Element>

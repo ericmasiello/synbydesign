@@ -8,12 +8,12 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | '
   as?: keyof HTMLElementTagNameMap;
 }
 
-const { as: Element = 'div', class: className, title, yearFrom, yearTo, ...rest } = Astro.props;
+const { as: Element = 'li', class: className, title, yearFrom, yearTo, ...rest } = Astro.props;
 const classes = classNames('role', className);
 ---
 
 <Element class={classes} {...rest}>
-  <Text as="h5" class="title">
+  <Text as="span" class="title">
     {title}{' '}
     <Timeline class="timeline" parenthesesClass="parentheses">
       {yearFrom} &mdash; {yearTo ?? 'Present'}
@@ -28,7 +28,6 @@ const classes = classNames('role', className);
 
   .title {
     color: var(--color-brand);
-    margin-bottom: 0.25rem;
   }
 
   .role:nth-last-of-type(1) .title {

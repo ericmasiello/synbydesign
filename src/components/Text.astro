@@ -19,12 +19,35 @@ const classes = classNames('text', className, { small: small, muted: muted });
 <style>
   .text {
     font-family: var(--font-base);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: var(--font-size-body);
+  }
+
+  @media only screen and (min-width: 992px) {
+    .text {
+      font-size: 0.9375rem;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .text {
+      font-size: 1rem;
+    }
   }
 
   .small {
     font-size: 0.75rem;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .small {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .text {
+      font-size: 0.85rem;
+    }
   }
 
   .muted {

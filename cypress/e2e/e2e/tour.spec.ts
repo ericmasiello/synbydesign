@@ -27,7 +27,16 @@ context('Tour', () => {
 
   it('is accessible', () => {
     // first a11y test
-    cy.checkA11y(null, null, terminalLog);
+    cy.checkA11y(
+      null,
+      {
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag21a', 'wcag2aa', 'wcag21aa'],
+        },
+      },
+      terminalLog
+    );
   });
 
   it('should have a title', () => {
