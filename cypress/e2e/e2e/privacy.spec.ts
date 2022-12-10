@@ -1,5 +1,5 @@
 beforeEach(() => {
-  cy.visit('http://localhost:3000/privacy');
+  cy.visit('/privacy');
 });
 
 /**
@@ -12,4 +12,8 @@ it('should exist', () => {
 
 it('should contain an email contact', () => {
   cy.get('a[href*="mailto:eric.j.masiello@gmail.com"]').should('exist');
+});
+
+it('passes visual regression', () => {
+  cy.percySnapshot('Privacy Page', { widths: [375, 768, 992, 1200] });
 });

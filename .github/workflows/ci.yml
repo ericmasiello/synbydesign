@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Cypress run
+      - name: Cypress e2e tests
         uses: cypress-io/github-action@v4
         with:
           start: npm run dev
@@ -21,3 +21,18 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cypress visual tests 🧪
+        uses: cypress-io/github-action@v3.0.3
+        with:
+          # No need to run `npm run dev` because the server is still running from the previous step
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 300
+          browser: chrome
+          record: false
+          parallel: true
+          command: npm run visual
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}

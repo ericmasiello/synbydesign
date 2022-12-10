@@ -1,16 +1,13 @@
 ---
 import Container from './Container.astro';
 import AnimatedLink from './AnimatedLink.astro';
-import { MY_NAME } from '../config';
-import * as ContactMarkdown from '../common/contact.md';
-import type { ContactFrontmatter } from '../common/contact';
+import { EMAIL, MY_NAME } from '../config';
 
 const today = new Date();
-const contact = ContactMarkdown.frontmatter as ContactFrontmatter;
 ---
 
 <Container as="footer" class="footer">
-  <AnimatedLink href={`mailto:${contact.email}`}>
+  <AnimatedLink href={`mailto:${EMAIL}`}>
     Contact Me{' '}
     <span role="img" aria-label="envolope with heart">
       {' '}

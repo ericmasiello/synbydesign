@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "cypress": "cypress open",
+    "visual": "percy exec -- cypress run --browser chrome --headless --config-file cypress.config.visual.ts",
     "generate:resume": "node scripts/pdf.mjs"
   },
   "dependencies": {
@@ -20,6 +21,8 @@
     "puppeteer": "^19.4.0"
   },
   "devDependencies": {
+    "@percy/cli": "^1.16.0",
+    "@percy/cypress": "^3.1.2",
     "axe-core": "^4.5.2",
     "cypress": "^12.0.2",
     "cypress-axe": "^1.1.0",

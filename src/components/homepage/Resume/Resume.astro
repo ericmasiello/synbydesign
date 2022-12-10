@@ -1,8 +1,6 @@
 ---
 // See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
 import * as ResumeMarkdown from './Resume.md';
-import * as ContactMarkdown from '../../../common/contact.md';
-import type { ContactFrontmatter } from '../../../common/contact';
 import classNames from 'classnames';
 import ResumeHeader from './ResumeHeader.astro';
 import Text from '../../Text.astro';
@@ -18,6 +16,7 @@ import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
 import Wrapper from './Wrapper.astro';
+import { EMAIL } from '../../../config';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
@@ -37,7 +36,6 @@ interface ResumeFrontmatter {
 }
 
 const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
-const contact = ContactMarkdown.frontmatter as ContactFrontmatter;
 
 const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
 const classes = classNames('resume', format, className);
@@ -50,7 +48,7 @@ const classes = classNames('resume', format, className);
     lead={resume.lead}
     ownerName={resume.name}
     ownerTitle={resume.title}
-    email={format === 'print' ? contact.email : undefined}
+    email={format === 'print' ? EMAIL : undefined}
   />
   <section class="skills">
     <div>
@@ -123,8 +121,18 @@ const classes = classNames('resume', format, className);
     }
   }
 
-  /* forces two column for PDF generation */
-  .resume:where(.print) {
+  /* Responsive for browsering /print on the web */
+  @media (min-width: 62.5rem) {
+    .resume:where(.print) {
+      column-count: 2;
+      column-gap: 0;
+      column-fill: auto;
+      display: block;
+    }
+  }
+
+  /* Forces two column layout when generating a pdf via scripts/pdf.mjs */
+  :global(body.PDF_GENERATION) .resume:where(.print) {
     column-count: 2;
     column-gap: 0;
     column-fill: auto;

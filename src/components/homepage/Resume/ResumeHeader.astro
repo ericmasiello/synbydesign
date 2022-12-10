@@ -2,8 +2,7 @@
 import classNames from 'classnames';
 import H from '../../H.astro';
 import Text from '../../Text.astro';
-import * as ContactMarkdown from '../../../common/contact.md';
-import type { ContactFrontmatter } from '../../../common/contact';
+import { EMAIL } from '../../../config';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
@@ -12,7 +11,7 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   lead: string;
   email?: string;
 }
-const contact = ContactMarkdown.frontmatter as ContactFrontmatter;
+
 const { as: Element = 'hgroup', ownerName, ownerTitle, lead, email, class: className, ...rest } = Astro.props;
 const classes = classNames('header', className);
 const nameClasses = classNames('name', { 'with-email': Boolean(email) });
@@ -23,8 +22,8 @@ const nameClasses = classNames('name', { 'with-email': Boolean(email) });
     >{ownerName}
     {
       email ? (
-        <Text as="a" href={`mailto:${contact.email}`}>
-          {contact.email}
+        <Text as="a" href={`mailto:${EMAIL}`}>
+          {EMAIL}
         </Text>
       ) : null
     }
