@@ -20,7 +20,7 @@ function terminalLog(violations) {
 
 context('Tour', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
     // Inject the axe-core library
     cy.injectAxe();
   });
