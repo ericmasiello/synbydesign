@@ -25,6 +25,10 @@ context('Tour', () => {
     cy.injectAxe();
   });
 
+  it('passes visual regression', () => {
+    cy.percySnapshot('Homepage', { widths: [375, 768, 992, 1200] });
+  });
+
   it('is accessible', () => {
     // first a11y test
     cy.checkA11y(
