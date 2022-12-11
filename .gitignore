@@ -19,7 +19,7 @@ pnpm-debug.log*
 .DS_Store
 
 # Resume PDF generation
-resume.pdf
+ericmasiello_resume.pdf
 
 # cypress
 cypress/videos
