@@ -14,7 +14,7 @@ import puppeteer from 'puppeteer';
   });
 
   await page.pdf({
-    path: 'resume.pdf',
+    path: 'ericmasiello_resume.pdf',
     margin: { top: '15px', right: '5px', bottom: '15px', left: '5px' },
     printBackground: true,
     format: 'A4',
