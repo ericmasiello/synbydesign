@@ -18,7 +18,7 @@ function terminalLog(violations) {
   cy.task('table', violationData);
 }
 
-context('Tour', () => {
+context('Homepage', () => {
   beforeEach(() => {
     cy.visit('/');
     // Inject the axe-core library
