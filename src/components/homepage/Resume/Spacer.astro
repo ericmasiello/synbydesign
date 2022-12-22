@@ -3,11 +3,11 @@ import classNames from 'classnames';
 
 export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
   as?: keyof HTMLElementTagNameMap;
-  vSpacing?: 'none' | 'small' | 'large';
+  size?: 'none' | 'small' | 'large';
 }
 
-const { as: Element = 'section', slot, class: className, vSpacing = 'none', ...rest } = Astro.props;
-const classes = classNames('resume-section', vSpacing, className);
+const { as: Element = 'section', slot, class: className, size = 'none', ...rest } = Astro.props;
+const classes = classNames('spacer', size, className);
 ---
 
 <Element class={classes} {...rest}>

@@ -15,8 +15,7 @@ import type {
 import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
-import Wrapper from './Wrapper.astro';
-import ResumeGroup from './ResumeGroup.astro';
+import Spacer from './Spacer.astro';
 import { EMAIL, PHONE, WEBSITE } from '../../../config';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
@@ -40,6 +39,16 @@ const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
 
 const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
 const classes = classNames('resume', format, className);
+/*
+ * When printing for PDF, we need text to "flow" into each column naturally. This is achived via
+ * a shared container `column-count: 2` applied.
+ */
+const FlowColumnWrapper = format === 'print' ? 'div' : Fragment;
+/*
+ * When rendering on the home page, I want more control over the segmentation of the columns. For this
+ * I use CSS grid and wrap each column of content in a `div`.
+ */
+const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
 ---
 
 <Element class={classes} {...rest} data-cy="resume">
@@ -53,7 +62,7 @@ const classes = classNames('resume', format, className);
     phone={format === 'print' ? PHONE : undefined}
     websiteUrl={format === 'print' ? WEBSITE : undefined}
   />
-  <ResumeGroup vSpacing="none" as="section" class="skills">
+  <Spacer size="none" as="section" class="skills">
     <div>
       <Text as="h3" class="title inline inline-title">Extensive Experience</Text>
       <ResumeSkills class="inline" skills={resume.expertise} />
@@ -62,30 +71,30 @@ const classes = classNames('resume', format, className);
       <Text as="h3" class="title inline inline-title">Learning</Text>
       <ResumeSkills class="inline" skills={resume.learning} />
     </div>
-  </ResumeGroup>
-  <Wrapper class="flow-columns" wrap={format === 'print'}>
-    <Wrapper class="col col1" wrap={format !== 'print'}>
-      <ResumeGroup vSpacing="none" as="section" class="experience">
+  </Spacer>
+  <FlowColumnWrapper class="flow-columns">
+    <GridColumnWrapper class="col col1">
+      <Spacer size="none" as="section" class="experience">
         <Text as="h3" class="title">Professional Experience</Text>
         {resume.professionalExperience.map((experience) => <ProfessionalExperience {...experience} />)}
-      </ResumeGroup>
-      <ResumeGroup vSpacing="large" as="section" class="talks">
+      </Spacer>
+      <Spacer size="large" as="section" class="talks">
         <Text as="h3" class="title">Talks &amp; Workshops</Text>
         <Talks talks={resume.talks} />
-      </ResumeGroup>
-    </Wrapper>
+      </Spacer>
+    </GridColumnWrapper>
 
-    <Wrapper class="col col2" wrap={format !== 'print'}>
-      <ResumeGroup vSpacing="large" as="section" class="freelance">
+    <GridColumnWrapper class="col col2">
+      <Spacer size="large" as="section" class="freelance">
         <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
         {resume.relatedExperience.map((experience) => <RelatedExperience {...experience} />)}
-      </ResumeGroup>
-      <ResumeGroup vSpacing="large" as="section" class="education">
+      </Spacer>
+      <Spacer size="large" as="section" class="education">
         <Text as="h3" class="title">Education &amp; Training</Text>
         {resume.education.map((edu) => <EducationExperience {...edu} />)}
-      </ResumeGroup>
-    </Wrapper>
-  </Wrapper>
+      </Spacer>
+    </GridColumnWrapper>
+  </FlowColumnWrapper>
 </Element>
 <style>
   .resume {
