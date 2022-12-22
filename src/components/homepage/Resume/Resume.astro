@@ -134,7 +134,7 @@ const classes = classNames('resume', format, className);
   }
 
   /* Forces two column layout when generating a pdf via scripts/pdf.mjs */
-  :global(body.PDF_GENERATION) .resume:where(.print) {
+  .resume:where(.print) {
     column-count: 2;
     column-gap: 0;
     column-fill: auto;
