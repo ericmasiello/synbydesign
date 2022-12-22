@@ -10,7 +10,7 @@ import type { Props as SpacerProps } from './Spacer.astro';
 export interface Props extends Omit<SpacerProps, 'slot'>, ProfessionalExperience {}
 
 const { as = 'article', class: className, organization, roles, accomplishments, ...rest } = Astro.props;
-const classes = classNames('experience', className);
+const classes = classNames('professional-experience', className);
 ---
 
 <Spacer class={classes} {...rest} as={as}>
@@ -33,6 +33,9 @@ const classes = classNames('experience', className);
   }
 </Spacer>
 <style>
+  .professional-experience {
+    break-inside: avoid-page;
+  }
   .org {
     margin-block-end: 0.5rem;
   }

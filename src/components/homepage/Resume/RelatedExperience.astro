@@ -9,7 +9,7 @@ import type { Props as SpacerProps } from './Spacer.astro';
 export interface Props extends Omit<SpacerProps, 'slot' | 'title' | 'role'>, RelatedExperience {}
 
 const { as = 'article', class: className, title, meta, role, website, accomplishments, ...rest } = Astro.props;
-const classes = classNames('experience', className);
+const classes = classNames('related-experience', className);
 const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo}` : role.yearFrom;
 ---
 
@@ -56,7 +56,10 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
   }
 </Spacer>
 <style>
-  .experience:not(:last-of-type) {
+  .related-experience {
+    break-inside: avoid;
+  }
+  .related-experience:not(:last-of-type) {
     page-break-before: left;
   }
 

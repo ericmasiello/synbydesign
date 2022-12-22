@@ -3,6 +3,7 @@ import Text from '../../Text.astro';
 import PlainList from '../../PlainList.astro';
 import type { Talk } from './Resume';
 import Timeline from './Timeline.astro';
+import Spacer from './Spacer.astro';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | 'title'> {
   talks: Talk[];
@@ -11,7 +12,7 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | '
 const { talks, ...rest } = Astro.props;
 ---
 
-<PlainList spacing="large" {...rest}>
+<PlainList spacing="none" {...rest}>
   {
     talks.map((talk) => {
       const composedTitle = talk.year ? (
@@ -24,12 +25,12 @@ const { talks, ...rest } = Astro.props;
         talk.title
       );
       return (
-        <li>
+        <Spacer size="small" as="li" class="talk">
           <Text as="h4" class="title">
             {talk.url ? <a href={talk.url}>{composedTitle}</a> : talk.title}
           </Text>
           {talk.description}
-        </li>
+        </Spacer>
       );
     })
   }
@@ -37,5 +38,9 @@ const { talks, ...rest } = Astro.props;
 <style>
   .title {
     margin-block-end: 0.5rem;
+  }
+
+  .talk {
+    break-inside: avoid;
   }
 </style>
