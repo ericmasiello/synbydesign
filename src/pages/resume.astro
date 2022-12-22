@@ -13,12 +13,17 @@ import VisuallyHidden from '../components/VisuallyHidden.astro';
   <body>
     <main>
       <VisuallyHidden as="h1" id="resume-title">Resume</VisuallyHidden>
-      <Resume id="resume" format="print" />
+      <Resume id="resume" format="print" class="resume" />
     </main>
     <style>
       :global(html) {
         --h-space: 2rem !important;
         font-size: 90% !important;
+      }
+
+      /* Styling uses on web-only version of page */
+      :global(body:not(:is(.PDF_GENERATION))) .resume {
+        padding-block-end: 3rem;
       }
     </style>
   </body>
