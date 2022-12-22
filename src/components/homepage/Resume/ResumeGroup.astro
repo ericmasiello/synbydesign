@@ -1,0 +1,25 @@
+---
+import classNames from 'classnames';
+
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: keyof HTMLElementTagNameMap;
+  vSpacing?: 'none' | 'small' | 'large';
+}
+
+const { as: Element = 'section', slot, class: className, vSpacing = 'none', ...rest } = Astro.props;
+const classes = classNames('resume-section', vSpacing, className);
+---
+
+<Element class={classes} {...rest}>
+  <slot />
+</Element>
+
+<style>
+  .small:not(:first-of-type) {
+    margin-block-start: 1rem;
+  }
+
+  .large:not(:first-of-type) {
+    margin-block-start: 2rem;
+  }
+</style>

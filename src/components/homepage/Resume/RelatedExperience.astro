@@ -45,13 +45,13 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
   </hgroup>
   {
     accomplishments.length > 0 && (
-      <section>
+      <div>
         <PlainList>
           {accomplishments.map((accomplishment) => (
             <li>{accomplishment}</li>
           ))}
         </PlainList>
-      </section>
+      </div>
     )
   }
 </Element>

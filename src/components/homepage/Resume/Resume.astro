@@ -16,6 +16,7 @@ import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
 import Wrapper from './Wrapper.astro';
+import ResumeGroup from './ResumeGroup.astro';
 import { EMAIL, PHONE, WEBSITE } from '../../../config';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
@@ -52,7 +53,7 @@ const classes = classNames('resume', format, className);
     phone={format === 'print' ? PHONE : undefined}
     websiteUrl={format === 'print' ? WEBSITE : undefined}
   />
-  <section class="skills">
+  <ResumeGroup vSpacing="none" as="section" class="skills">
     <div>
       <Text as="h3" class="title inline inline-title">Extensive Experience</Text>
       <ResumeSkills class="inline" skills={resume.expertise} />
@@ -61,29 +62,29 @@ const classes = classNames('resume', format, className);
       <Text as="h3" class="title inline inline-title">Learning</Text>
       <ResumeSkills class="inline" skills={resume.learning} />
     </div>
-  </section>
-  <Wrapper class="columns" wrap={format === 'print'}>
-    <div class="col col1">
-      <section class="experience">
+  </ResumeGroup>
+  <Wrapper class="flow-columns" wrap={format === 'print'}>
+    <Wrapper class="col col1" wrap={format !== 'print'}>
+      <ResumeGroup vSpacing="none" as="section" class="experience">
         <Text as="h3" class="title">Professional Experience</Text>
         {resume.professionalExperience.map((experience) => <ProfessionalExperience {...experience} />)}
-      </section>
-      <section class="talks">
+      </ResumeGroup>
+      <ResumeGroup vSpacing="large" as="section" class="talks">
         <Text as="h3" class="title">Talks &amp; Workshops</Text>
         <Talks talks={resume.talks} />
-      </section>
-    </div>
+      </ResumeGroup>
+    </Wrapper>
 
-    <div class="col col2">
-      <section class="freelance">
+    <Wrapper class="col col2" wrap={format !== 'print'}>
+      <ResumeGroup vSpacing="large" as="section" class="freelance">
         <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
         {resume.relatedExperience.map((experience) => <RelatedExperience {...experience} />)}
-      </section>
-      <section class="education">
+      </ResumeGroup>
+      <ResumeGroup vSpacing="large" as="section" class="education">
         <Text as="h3" class="title">Education &amp; Training</Text>
         {resume.education.map((edu) => <EducationExperience {...edu} />)}
-      </section>
-    </div>
+      </ResumeGroup>
+    </Wrapper>
   </Wrapper>
 </Element>
 <style>
@@ -108,7 +109,7 @@ const classes = classNames('resume', format, className);
     padding-inline: 0;
   }
 
-  .resume:where(.print) > :is(.lead, .skills, .columns) {
+  .resume:where(.print) > :is(.lead, .skills, .flow-columns) {
     padding-inline: var(--h-space);
     margin-inline: 0;
   }
@@ -195,5 +196,18 @@ const classes = classNames('resume', format, className);
 
   .inline-title {
     margin-inline-end: 0.5rem;
+  }
+
+  /*
+    KLUDGE: top margins work better when using a column (flow) layout.
+    the <section> elements refer to each top level grouping and
+    the <article> elements refer to each child grouping.
+  */
+  /* .resume:where(.print) :global(section:not(:first-child)) {
+    margin-block-start: 2rem;
+  } */
+
+  .resume:where(.print) :global(article:not(:first-of-type)) {
+    margin-block-start: 1rem;
   }
 </style>
