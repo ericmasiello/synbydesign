@@ -6,7 +6,7 @@ export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
   size?: 'none' | 'small' | 'large';
 }
 
-const { as: Element = 'section', slot, class: className, size = 'none', ...rest } = Astro.props;
+const { as: Element = 'div', slot, class: className, size = 'none', ...rest } = Astro.props;
 const classes = classNames('spacer', size, className);
 ---
 

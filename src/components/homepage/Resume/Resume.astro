@@ -62,7 +62,7 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
     phone={format === 'print' ? PHONE : undefined}
     websiteUrl={format === 'print' ? WEBSITE : undefined}
   />
-  <Spacer size="none" as="section" class="skills">
+  <Spacer size="large" as="section" class="skills">
     <div>
       <Text as="h3" class="title inline inline-title">Extensive Experience</Text>
       <ResumeSkills class="inline" skills={resume.expertise} />
@@ -74,9 +74,9 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
   </Spacer>
   <FlowColumnWrapper class="flow-columns">
     <GridColumnWrapper class="col col1">
-      <Spacer size="none" as="section" class="experience">
+      <Spacer size="large" as="section" class="experience">
         <Text as="h3" class="title">Professional Experience</Text>
-        {resume.professionalExperience.map((experience) => <ProfessionalExperience {...experience} />)}
+        {resume.professionalExperience.map((experience) => <ProfessionalExperience size="small" {...experience} />)}
       </Spacer>
       <Spacer size="large" as="section" class="talks">
         <Text as="h3" class="title">Talks &amp; Workshops</Text>
@@ -87,11 +87,11 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
     <GridColumnWrapper class="col col2">
       <Spacer size="large" as="section" class="freelance">
         <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
-        {resume.relatedExperience.map((experience) => <RelatedExperience {...experience} />)}
+        {resume.relatedExperience.map((experience) => <RelatedExperience size="small" {...experience} />)}
       </Spacer>
       <Spacer size="large" as="section" class="education">
         <Text as="h3" class="title">Education &amp; Training</Text>
-        {resume.education.map((edu) => <EducationExperience {...edu} />)}
+        {resume.education.map((edu) => <EducationExperience size="small" {...edu} />)}
       </Spacer>
     </GridColumnWrapper>
   </FlowColumnWrapper>
@@ -205,18 +205,5 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
 
   .inline-title {
     margin-inline-end: 0.5rem;
-  }
-
-  /*
-    KLUDGE: top margins work better when using a column (flow) layout.
-    the <section> elements refer to each top level grouping and
-    the <article> elements refer to each child grouping.
-  */
-  /* .resume:where(.print) :global(section:not(:first-child)) {
-    margin-block-start: 2rem;
-  } */
-
-  .resume:where(.print) :global(article:not(:first-of-type)) {
-    margin-block-start: 1rem;
   }
 </style>
