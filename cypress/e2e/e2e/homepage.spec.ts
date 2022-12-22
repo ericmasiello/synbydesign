@@ -62,4 +62,20 @@ context('Homepage', () => {
 
     cy.get('#resume').contains(/eric masiello/i);
   });
+
+  context('Resume', () => {
+    it('should not display my email address in the resume header', () => {
+      cy.get('[data-cy="resume"] a[href*="mailto:eric.j.masiello@gmail.com"]').should('not.exist');
+    });
+
+    it('should not display my website address in the resume header', () => {
+      cy.get('[data-cy="resume"] a').contains('synbydesign.com').should('not.exist');
+    });
+
+    it('should not display [a/my] phone number in the header', () => {
+      cy.get('[data-cy="resume"] a')
+        .contains(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)
+        .should('not.exist');
+    });
+  });
 });

@@ -41,7 +41,7 @@ const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro
 const classes = classNames('resume', format, className);
 ---
 
-<Element class={classes} {...rest}>
+<Element class={classes} {...rest} data-cy="resume">
   <ResumeHeader
     as={format === 'print' ? 'header' : 'hgroup'}
     class="lead"
