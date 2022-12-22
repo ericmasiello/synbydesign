@@ -9,7 +9,7 @@ interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'>, Professi
   as?: keyof HTMLElementTagNameMap;
 }
 
-const { as: Element = 'hgroup', class: className, organization, roles, accomplishments, ...rest } = Astro.props;
+const { as: Element = 'article', class: className, organization, roles, accomplishments, ...rest } = Astro.props;
 const classes = classNames('experience', className);
 ---
 
