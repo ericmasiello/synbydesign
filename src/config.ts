@@ -8,3 +8,6 @@ export const MEDIUM_BLOG = 'https://medium.com/@EricMasiello';
 export const LINKEDIN = 'https://www.linkedin.com/in/ericmasiello/';
 export const TWITTER = 'https://twitter.com/ericmasiello';
 export const EMAIL = 'eric.j.masiello@gmail.com';
+export const WEBSITE = 'https://synbydesign.com';
+// comes from .env
+export const PHONE = import.meta.env.SECRET_PHONE;

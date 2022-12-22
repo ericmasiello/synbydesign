@@ -16,7 +16,7 @@ import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
 import Wrapper from './Wrapper.astro';
-import { EMAIL } from '../../../config';
+import { EMAIL, PHONE, WEBSITE } from '../../../config';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
@@ -49,6 +49,8 @@ const classes = classNames('resume', format, className);
     ownerName={resume.name}
     ownerTitle={resume.title}
     email={format === 'print' ? EMAIL : undefined}
+    phone={format === 'print' ? PHONE : undefined}
+    websiteUrl={format === 'print' ? WEBSITE : undefined}
   />
   <section class="skills">
     <div>
