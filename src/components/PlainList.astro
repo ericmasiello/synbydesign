@@ -6,7 +6,7 @@ export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
   spacing?: 'none' | 'small' | 'normal' | 'large';
 }
 
-const { as: Element = 'ul', spacing = 1, class: className, slot, ...rest } = Astro.props;
+const { as: Element = 'ul', spacing = 'normal', class: className, slot, ...rest } = Astro.props;
 
 const classes = classNames('list', spacing, className);
 ---
