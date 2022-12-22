@@ -1,3 +1,5 @@
+import { axeRunOptions, terminalLog } from './helpers/axe';
+
 beforeEach(() => {
   cy.visit('/resume');
 });
@@ -9,6 +11,12 @@ it('should exist', () => {
   cy.get('h1')
     .contains(/resume/i)
     .should('exist');
+});
+
+it('is accessible', () => {
+  // Inject the axe-core library
+  cy.injectAxe();
+  cy.checkA11y(null, axeRunOptions, terminalLog);
 });
 
 it('should contain an email contact in the header', () => {

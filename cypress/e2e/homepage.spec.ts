@@ -1,28 +1,10 @@
 /// <reference types="cypress" />
 
-function terminalLog(violations) {
-  cy.task(
-    'log',
-    `${violations.length} accessibility violation${violations.length === 1 ? '' : 's'} ${
-      violations.length === 1 ? 'was' : 'were'
-    } detected`
-  );
-  // pluck specific keys to keep the table readable
-  const violationData = violations.map(({ id, impact, description, nodes }) => ({
-    id,
-    impact,
-    description,
-    nodes: nodes.length,
-  }));
-
-  cy.task('table', violationData);
-}
+import { axeRunOptions, terminalLog } from './helpers/axe';
 
 context('Homepage', () => {
   beforeEach(() => {
     cy.visit('/');
-    // Inject the axe-core library
-    cy.injectAxe();
   });
 
   it('passes visual regression', () => {
@@ -30,17 +12,9 @@ context('Homepage', () => {
   });
 
   it('is accessible', () => {
-    // first a11y test
-    cy.checkA11y(
-      null,
-      {
-        runOnly: {
-          type: 'tag',
-          values: ['wcag2a', 'wcag21a', 'wcag2aa', 'wcag21aa'],
-        },
-      },
-      terminalLog
-    );
+    // Inject the axe-core library
+    cy.injectAxe();
+    cy.checkA11y(null, axeRunOptions, terminalLog);
   });
 
   it('should have a title', () => {
