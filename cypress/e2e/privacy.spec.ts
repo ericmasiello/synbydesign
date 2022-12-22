@@ -1,3 +1,5 @@
+import { axeRunOptions, terminalLog } from './helpers/axe';
+
 beforeEach(() => {
   cy.visit('/privacy');
 });
@@ -8,6 +10,12 @@ beforeEach(() => {
  */
 it('should exist', () => {
   cy.get('h1').contains(/privacy policy/i);
+});
+
+it('is accessible', () => {
+  // Inject the axe-core library
+  cy.injectAxe();
+  cy.checkA11y(null, axeRunOptions, terminalLog);
 });
 
 it('should contain an email contact', () => {

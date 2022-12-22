@@ -2,7 +2,6 @@
 import classNames from 'classnames';
 import H from '../../H.astro';
 import Text from '../../Text.astro';
-import { EMAIL } from '../../../config';
 
 export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   as?: keyof HTMLElementTagNameMap;
@@ -10,21 +9,48 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   ownerTitle: string;
   lead: string;
   email?: string;
+  phone?: string;
+  websiteUrl?: string;
 }
 
-const { as: Element = 'hgroup', ownerName, ownerTitle, lead, email, class: className, ...rest } = Astro.props;
+const {
+  as: Element = 'hgroup',
+  ownerName,
+  ownerTitle,
+  lead,
+  email,
+  phone,
+  websiteUrl,
+  class: className,
+  ...rest
+} = Astro.props;
 const classes = classNames('header', className);
-const nameClasses = classNames('name', { 'with-email': Boolean(email) });
+const websiteHost = websiteUrl ? new URL(websiteUrl).hostname : '';
+const nameClasses = classNames('name', { 'with-contact': Boolean(email) || Boolean(phone) || Boolean(websiteUrl) });
 ---
 
 <Element class={classes} {...rest}>
   <H level={4} as="h3" class={nameClasses}
     >{ownerName}
     {
-      email ? (
-        <Text as="a" href={`mailto:${EMAIL}`}>
-          {EMAIL}
-        </Text>
+      email || phone ? (
+        <div class="contact">
+          {email ? (
+            <Text as="a" href={`mailto:${email}`}>
+              {email}
+            </Text>
+          ) : null}
+          {phone ? (
+            <Text as="a" href={`tel:${phone}`}>
+              {phone}
+            </Text>
+          ) : null}
+          {websiteUrl ? (
+            <Text as="a" href={websiteUrl}>
+              {websiteHost}
+            </Text>
+          ) : null}
+        </div>
       ) : null
     }
   </H>
@@ -46,10 +72,10 @@ const nameClasses = classNames('name', { 'with-email': Boolean(email) });
     margin-bottom: 0;
   }
 
-  .name:where(.with-email) {
+  .name:where(.with-contact) {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: end;
   }
 
   a {
@@ -59,5 +85,18 @@ const nameClasses = classNames('name', { 'with-email': Boolean(email) });
   .title {
     margin-bottom: 0.25rem;
     color: var(--color-brand-invert);
+  }
+
+  .contact {
+    display: grid;
+    text-align: end;
+  }
+
+  .contact a:link {
+    text-decoration: none;
+  }
+
+  .contact a:is(:hover, :active) {
+    text-decoration: underline;
   }
 </style>
