@@ -1,0 +1,25 @@
+---
+import classNames from 'classnames';
+
+export interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  as?: keyof HTMLElementTagNameMap;
+  size?: 'none' | 'small' | 'large';
+}
+
+const { as: Element = 'div', slot, class: className, size = 'none', ...rest } = Astro.props;
+const classes = classNames('spacer', size, className);
+---
+
+<Element class={classes} {...rest}>
+  <slot />
+</Element>
+
+<style>
+  .small:not(:first-of-type) {
+    margin-block-start: 1rem;
+  }
+
+  .large:not(:first-of-type) {
+    margin-block-start: 2rem;
+  }
+</style>

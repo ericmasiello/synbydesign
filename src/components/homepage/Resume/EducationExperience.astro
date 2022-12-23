@@ -1,15 +1,17 @@
 ---
+import classNames from 'classnames';
 import Text from '../../Text.astro';
 import type { Education } from './Resume';
+import Spacer from './Spacer.astro';
+import type { Props as SpacerProps } from './Spacer.astro';
 
-export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'>, Education {
-  as?: keyof HTMLElementTagNameMap;
-}
+export interface Props extends Omit<SpacerProps, 'slot'>, Education {}
 
-const { as: Element = 'article', degree, institution, location, year, ...rest } = Astro.props;
+const { as = 'article', degree, institution, location, year, className, ...rest } = Astro.props;
+const classes = classNames('education-experience', className);
 ---
 
-<Element {...rest}>
+<Spacer class={classes} {...rest} as={as}>
   <Text as="h4" class="title">
     {institution}
     <div class="meta" data-meta>
@@ -24,12 +26,16 @@ const { as: Element = 'article', degree, institution, location, year, ...rest } 
     </div>
   </Text>
   {degree && <p data-degree>{degree}</p>}
-</Element>
+</Spacer>
 
 <style>
+  .education-experience {
+    break-inside: avoid;
+  }
+
   .title {
     font-weight: var(--font-body-weight-bold);
-    margin-block-end: 0.5rem;
+    margin-block-end: 0.25rem;
   }
 
   .meta {

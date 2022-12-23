@@ -3,17 +3,17 @@ import classNames from 'classnames';
 import Text from '../../Text.astro';
 import PlainList from '../../PlainList.astro';
 import type { RelatedExperience } from './Resume';
+import Spacer from './Spacer.astro';
+import type { Props as SpacerProps } from './Spacer.astro';
 
-export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot' | 'title' | 'role'>, RelatedExperience {
-  as?: keyof HTMLElementTagNameMap;
-}
+export interface Props extends Omit<SpacerProps, 'slot' | 'title' | 'role'>, RelatedExperience {}
 
-const { as: Element = 'article', class: className, title, meta, role, website, accomplishments, ...rest } = Astro.props;
-const classes = classNames('experience', className);
+const { as = 'article', class: className, title, meta, role, website, accomplishments, ...rest } = Astro.props;
+const classes = classNames('related-experience', className);
 const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo}` : role.yearFrom;
 ---
 
-<Element class={classes} {...rest}>
+<Spacer class={classes} {...rest} as={as}>
   <hgroup>
     <Text as="h4" data-title class="title">
       <span class="title-content" data-title-content set:html={title}></span>{' '}
@@ -45,19 +45,21 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
   </hgroup>
   {
     accomplishments.length > 0 && (
-      <section>
+      <div>
         <PlainList>
           {accomplishments.map((accomplishment) => (
             <li>{accomplishment}</li>
           ))}
         </PlainList>
-      </section>
+      </div>
     )
   }
-</Element>
+</Spacer>
 <style>
-  .experience:not(:last-of-type) {
-    margin-block-end: 1.5rem;
+  .related-experience {
+    break-inside: avoid;
+  }
+  .related-experience:not(:last-of-type) {
     page-break-before: left;
   }
 
