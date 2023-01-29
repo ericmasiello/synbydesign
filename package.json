@@ -16,7 +16,7 @@
     "@astrojs/mdx": "^0.11.1",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.1.7",
+    "astro": "^2.0.2",
     "classnames": "^2.3.1",
     "puppeteer": "^19.4.0"
   },
