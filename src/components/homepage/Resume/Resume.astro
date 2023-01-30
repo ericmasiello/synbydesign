@@ -55,6 +55,47 @@ const educationData = (await getCollection('education'))
     return a.year < b.year ? 1 : -1;
   });
 
+const professionalExperience = await getCollection('professionalExperience');
+
+function getLatestRoleYear(roles: (typeof professionalExperience)[number]['data']['roles']) {
+  return roles.reduce<number>((acc, role) => {
+    if (role.yearTo === undefined) {
+      return Number.POSITIVE_INFINITY;
+    }
+    if (role.yearTo > acc) {
+      return role.yearTo;
+    }
+    return acc;
+  }, 0);
+}
+
+const professionalExperienceData = professionalExperience
+  .map((entry) => entry.data)
+  .map((entry) => {
+    const latestRoleYear = getLatestRoleYear(entry.roles);
+    return { ...entry, latestRoleYear };
+  })
+  .sort((a, b) => {
+    if (a.latestRoleYear > b.latestRoleYear) {
+      return -1;
+    } else if (a.latestRoleYear === b.latestRoleYear) {
+      return 0;
+    }
+    return 1;
+  })
+  .map((entry) => ({
+    ...entry,
+    roles: entry.roles.sort((a, b) => {
+      if (a.yearFrom > b.yearFrom) {
+        return -1;
+      } else if (a.yearFrom === b.yearFrom) {
+        return 0;
+      }
+      return 1;
+    }),
+  }))
+  .map(({ latestRoleYear, ...entry }) => entry);
+
 const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
 const classes = classNames('resume', format, className);
 /*
@@ -94,7 +135,7 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
     <GridColumnWrapper class="col col1">
       <Spacer size="large" as="section" class="experience">
         <Text as="h3" class="title">Professional Experience</Text>
-        {resume.professionalExperience.map((experience) => <ProfessionalExperience size="small" {...experience} />)}
+        {professionalExperienceData.map((experience) => <ProfessionalExperience size="small" {...experience} />)}
       </Spacer>
       <Spacer size="large" as="section" class="talks">
         <Text as="h3" class="title">Talks &amp; Workshops</Text>

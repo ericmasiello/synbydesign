@@ -3,17 +3,9 @@ import type { CollectionEntry } from 'astro:content';
 
 export type Education = CollectionEntry<'education'>['data'];
 
-export interface Role {
-  title: string;
-  yearFrom?: string;
-  yearTo?: string;
-}
+export type ProfessionalExperience = CollectionEntry<'professionalExperience'>['data'];
 
-export interface ProfessionalExperience {
-  organization: string;
-  roles: Role[];
-  accomplishments: string[];
-}
+export type Role = ProfessionalExperience['roles'][number];
 
 export interface Website {
   url: string;
