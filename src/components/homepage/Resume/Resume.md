@@ -1,27 +1,4 @@
 --- 
-education: 
-  - 
-    degree: "Bachelor of Science in Information Systems Management"
-    institution: "University of Maryland, Baltimore County"
-    location: "Catonsville, MD"
-    year: "2003"
-  - 
-    institution: "Jamstack Conf"
-    location: Online
-    year: "2020"
-  - 
-    institution: "JS Conf"
-    location: "Carlsbad, CA"
-    year: "2018"
-  - 
-    institution: "Chain React Conference"
-    location: "Portland, OR"
-    year: "2017"
-  - 
-    degree: "Certified ScrumMaster"
-    institution: "Scrum Alliance"
-    location: "Washington, DC"
-    year: "2017"
 lead: "\n\
     \x20   Over 15 years of professional experience in web development and design\n\
     \x20   with a passion for developing and testing rich internet applications using modern\n\

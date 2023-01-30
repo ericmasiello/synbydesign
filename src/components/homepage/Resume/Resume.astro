@@ -1,5 +1,6 @@
 ---
 // See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
+import { getCollection } from 'astro:content';
 import * as ResumeMarkdown from './Resume.md';
 import classNames from 'classnames';
 import ResumeHeader from './ResumeHeader.astro';
@@ -11,7 +12,7 @@ import type {
   ProfessionalExperience as ProfessionalExperienceType,
   RelatedExperience as RelatedExperienceType,
   Talk,
-} from './Resume';
+} from './ResumeTypes.astro';
 import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
@@ -36,6 +37,23 @@ interface ResumeFrontmatter {
 }
 
 const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
+
+const educationData = (await getCollection('education'))
+  .map((entry) => entry.data)
+  .sort((a, b) => {
+    // prioritize higher ed first
+    // then do reverse chronological order
+    if (a.isHigherEducationInstitution === true && b.isHigherEducationInstitution) {
+      return a.year < b.year ? 1 : -1;
+    }
+    if (a.isHigherEducationInstitution) {
+      return -1;
+    }
+    if (b.isHigherEducationInstitution) {
+      return 1;
+    }
+    return a.year < b.year ? 1 : -1;
+  });
 
 const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
 const classes = classNames('resume', format, className);
@@ -91,7 +109,7 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
       </Spacer>
       <Spacer size="large" as="section" class="education">
         <Text as="h3" class="title">Education &amp; Training</Text>
-        {resume.education.map((edu) => <EducationExperience size="small" {...edu} />)}
+        {educationData.map((edu) => <EducationExperience size="small" {...edu} />)}
       </Spacer>
     </GridColumnWrapper>
   </FlowColumnWrapper>

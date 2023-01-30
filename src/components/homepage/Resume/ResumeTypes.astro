@@ -1,9 +1,7 @@
-export interface Education {
-  degree: string;
-  institution: string;
-  location: string;
-  year: string;
-}
+---
+import type { CollectionEntry } from 'astro:content';
+
+export type Education = CollectionEntry<'education'>['data'];
 
 export interface Role {
   title: string;
@@ -35,3 +33,4 @@ export interface Talk {
   url?: string;
   year: string;
 }
+---
