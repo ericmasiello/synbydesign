@@ -19,10 +19,5 @@ export interface RelatedExperience {
   website?: Website;
 }
 
-export interface Talk {
-  description: string;
-  title: string;
-  url?: string;
-  year: string;
-}
+export type Talk = CollectionEntry<'talks'>['data'];
 ---
