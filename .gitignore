@@ -24,3 +24,6 @@ ericmasiello_resume.pdf
 # cypress
 cypress/videos
 cypress/screenshots
+
+# astro
+.astro

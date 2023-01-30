@@ -2,7 +2,7 @@
 import classNames from 'classnames';
 import Text from '../../Text.astro';
 import PlainList from '../../PlainList.astro';
-import type { RelatedExperience } from './Resume';
+import type { RelatedExperience } from './ResumeTypes.astro';
 import Spacer from './Spacer.astro';
 import type { Props as SpacerProps } from './Spacer.astro';
 
@@ -16,7 +16,7 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
 <Spacer class={classes} {...rest} as={as}>
   <hgroup>
     <Text as="h4" data-title class="title">
-      <span class="title-content" data-title-content set:html={title}></span>{' '}
+      <span class="title-content" data-title-content set:html={title} />{' '}
       {
         years && (
           <Text small muted>
