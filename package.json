@@ -13,8 +13,8 @@
     "generate:resume": "node scripts/pdf.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.11.1",
-    "@astrojs/rss": "^1.0.0",
+    "@astrojs/mdx": "^0.15.1",
+    "@astrojs/rss": "^2.1.0",
     "@astrojs/sitemap": "^1.0.0",
     "astro": "^2.0.2",
     "classnames": "^2.3.1",
