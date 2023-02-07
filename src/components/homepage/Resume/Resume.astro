@@ -1,18 +1,10 @@
 ---
-// See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
-import { getCollection } from 'astro:content';
-import * as ResumeMarkdown from './Resume.md';
+import { getCollection, getEntryBySlug } from 'astro:content';
 import classNames from 'classnames';
 import ResumeHeader from './ResumeHeader.astro';
 import Text from '../../Text.astro';
 import ResumeSkills from './ResumeSkills.astro';
 import RelatedExperience from './RelatedExperience.astro';
-import type {
-  Education,
-  ProfessionalExperience as ProfessionalExperienceType,
-  RelatedExperience as RelatedExperienceType,
-  Talk,
-} from './ResumeTypes.astro';
 import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
@@ -24,19 +16,7 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   format?: 'web' | 'print';
 }
 
-interface ResumeFrontmatter {
-  name: string;
-  title: string;
-  lead: string;
-  expertise: string[];
-  learning: string[];
-  education: Education[];
-  professionalExperience: ProfessionalExperienceType[];
-  relatedExperience: RelatedExperienceType[];
-  talks: Talk[];
-}
-
-const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
+const resume = (await getEntryBySlug('resume', 'primary')).data;
 
 const educationData = (await getCollection('education'))
   .map((entry) => entry.data)
@@ -54,6 +34,53 @@ const educationData = (await getCollection('education'))
     }
     return a.year < b.year ? 1 : -1;
   });
+
+const talksData = (await getCollection('talks')).map((entry) => entry.data).sort((a, b) => (a.year < b.year ? 1 : -1));
+
+const relatedExperience = (await getCollection('relatedExperience'))
+  .map((entry) => entry.data)
+  .sort((a, b) => (a.role.yearFrom < b.role.yearFrom ? 1 : -1));
+
+const professionalExperience = await getCollection('professionalExperience');
+
+function getLatestRoleYear(roles: (typeof professionalExperience)[number]['data']['roles']) {
+  return roles.reduce<number>((acc, role) => {
+    if (role.yearTo === undefined) {
+      return Number.POSITIVE_INFINITY;
+    }
+    if (role.yearTo > acc) {
+      return role.yearTo;
+    }
+    return acc;
+  }, 0);
+}
+
+const professionalExperienceData = professionalExperience
+  .map((entry) => entry.data)
+  .map((entry) => {
+    const latestRoleYear = getLatestRoleYear(entry.roles);
+    return { ...entry, latestRoleYear };
+  })
+  .sort((a, b) => {
+    if (a.latestRoleYear > b.latestRoleYear) {
+      return -1;
+    } else if (a.latestRoleYear === b.latestRoleYear) {
+      return 0;
+    }
+    return 1;
+  })
+  .map((entry) => ({
+    ...entry,
+    roles: entry.roles.sort((a, b) => {
+      if (a.yearFrom > b.yearFrom) {
+        return -1;
+      } else if (a.yearFrom === b.yearFrom) {
+        return 0;
+      }
+      return 1;
+    }),
+  }))
+  .map(({ latestRoleYear, ...entry }) => entry);
 
 const { as: Element = 'div', class: className, format = 'web', ...rest } = Astro.props;
 const classes = classNames('resume', format, className);
@@ -85,27 +112,33 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
       <Text as="h3" class="title inline inline-title">Extensive Experience</Text>
       <ResumeSkills class="inline" skills={resume.expertise} />
     </div>
-    <div>
-      <Text as="h3" class="title inline inline-title">Learning</Text>
-      <ResumeSkills class="inline" skills={resume.learning} />
-    </div>
+    {
+      resume.learning ? (
+        <div>
+          <Text as="h3" class="title inline inline-title">
+            Learning
+          </Text>
+          <ResumeSkills class="inline" skills={resume.learning} />
+        </div>
+      ) : null
+    }
   </Spacer>
   <FlowColumnWrapper class="flow-columns">
     <GridColumnWrapper class="col col1">
       <Spacer size="large" as="section" class="experience">
         <Text as="h3" class="title">Professional Experience</Text>
-        {resume.professionalExperience.map((experience) => <ProfessionalExperience size="small" {...experience} />)}
+        {professionalExperienceData.map((experience) => <ProfessionalExperience size="small" {...experience} />)}
       </Spacer>
       <Spacer size="large" as="section" class="talks">
         <Text as="h3" class="title">Talks &amp; Workshops</Text>
-        <Talks talks={resume.talks} />
+        <Talks talks={talksData} />
       </Spacer>
     </GridColumnWrapper>
 
     <GridColumnWrapper class="col col2">
       <Spacer size="large" as="section" class="freelance">
         <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
-        {resume.relatedExperience.map((experience) => <RelatedExperience size="small" {...experience} />)}
+        {relatedExperience.map((experience) => <RelatedExperience size="small" {...experience} />)}
       </Spacer>
       <Spacer size="large" as="section" class="education">
         <Text as="h3" class="title">Education &amp; Training</Text>

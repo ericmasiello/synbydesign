@@ -1,0 +1,25 @@
+---
+import Text from '../../Text.astro';
+import type { RelatedExperience } from './ResumeTypes.astro';
+
+export interface Props
+  extends Pick<RelatedExperience, 'title'>,
+    Pick<RelatedExperience['role'], 'yearFrom' | 'yearTo'> {
+  as?: keyof HTMLElementTagNameMap;
+  class?: astroHTML.JSX.BaseHTMLAttributes['class'];
+}
+
+const { as = 'h4', class: className, title, yearFrom, yearTo } = Astro.props;
+const years = yearFrom && yearTo ? `${yearFrom} — ${yearTo}` : yearFrom;
+---
+
+<Text as={as} data-title class={className}>
+  <span class="title-content" data-title-content set:html={title} />{' '}
+  {
+    years && (
+      <Text small muted>
+        ({years})
+      </Text>
+    )
+  }
+</Text>

@@ -4,27 +4,27 @@ import Text from '../../Text.astro';
 import PlainList from '../../PlainList.astro';
 import type { RelatedExperience } from './ResumeTypes.astro';
 import Spacer from './Spacer.astro';
+import RelatedExperienceTitle from './RelatedExperienceTitle.astro';
 import type { Props as SpacerProps } from './Spacer.astro';
 
 export interface Props extends Omit<SpacerProps, 'slot' | 'title' | 'role'>, RelatedExperience {}
 
 const { as = 'article', class: className, title, meta, role, website, accomplishments, ...rest } = Astro.props;
 const classes = classNames('related-experience', className);
-const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo}` : role.yearFrom;
 ---
 
 <Spacer class={classes} {...rest} as={as}>
   <hgroup>
-    <Text as="h4" data-title class="title">
-      <span class="title-content" data-title-content set:html={title} />{' '}
-      {
-        years && (
-          <Text small muted>
-            ({years})
-          </Text>
-        )
-      }
-    </Text>
+    {
+      website?.url ? (
+        <a href={website.url}>
+          <RelatedExperienceTitle as="h4" class="title" title={title} yearFrom={role.yearFrom} yearTo={role.yearFrom} />
+        </a>
+      ) : (
+        <RelatedExperienceTitle as="h4" class="title" title={title} yearFrom={role.yearFrom} yearTo={role.yearFrom} />
+      )
+    }
+
     {
       meta && (
         <Text small as="p" data-meta class="meta">
@@ -35,13 +35,6 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
     <Text as="h5" data-role-title class="role">
       {role.title}
     </Text>
-    {
-      website && (
-        <a href={website.url} class="website">
-          {website.url}
-        </a>
-      )
-    }
   </hgroup>
   {
     accomplishments.length > 0 && (
@@ -77,11 +70,6 @@ const years = role.yearFrom && role.yearTo ? `${role.yearFrom} — ${role.yearTo
 
   .role {
     color: var(--color-brand);
-    margin-block-end: 0.5rem;
-  }
-
-  .website {
-    display: block;
     margin-block-end: 0.5rem;
   }
 </style>
