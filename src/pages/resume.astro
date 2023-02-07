@@ -9,6 +9,8 @@ import VisuallyHidden from '../components/VisuallyHidden.astro';
 <html lang="en">
   <head>
     <BaseHead title={`Resume for Eric Masiello, ${SITE_TITLE}`} description="Resume for Eric Masiello" />
+    <!-- ensure this page is not indexed since the production version will have my phone in plain text -->
+    <meta name="robots" content="noindex" />
   </head>
   <body>
     <main>
