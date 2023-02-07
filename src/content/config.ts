@@ -2,6 +2,17 @@
 import { string } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 // 2. Define your collection(s)
+
+const role = z.object({
+  title: z.string(),
+  yearFrom: z.number(),
+  yearTo: z.number().optional(),
+});
+
+const website = z.object({
+  url: z.string(),
+});
+
 const educationCollection = defineCollection({
   schema: z.object({
     degree: z.string().optional(),
@@ -16,13 +27,17 @@ const professionalExperienceCollection = defineCollection({
   schema: z.object({
     organization: z.string(),
     accomplishments: z.array(z.string()),
-    roles: z.array(
-      z.object({
-        title: z.string(),
-        yearFrom: z.number(),
-        yearTo: z.number().optional(),
-      })
-    ),
+    roles: z.array(role),
+  }),
+});
+
+const relatedExperienceCollection = defineCollection({
+  schema: z.object({
+    accomplishments: z.array(z.string()),
+    role: role,
+    title: z.string(),
+    website: website.optional(),
+    meta: z.string().optional(),
   }),
 });
 
@@ -41,4 +56,5 @@ export const collections = {
   education: educationCollection,
   professionalExperience: professionalExperienceCollection,
   talks: talksCollection,
+  relatedExperience: relatedExperienceCollection,
 };

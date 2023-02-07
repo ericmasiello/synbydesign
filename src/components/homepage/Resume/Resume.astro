@@ -57,6 +57,10 @@ const educationData = (await getCollection('education'))
 
 const talksData = (await getCollection('talks')).map((entry) => entry.data).sort((a, b) => (a.year < b.year ? 1 : -1));
 
+const relatedExperience = (await getCollection('relatedExperience'))
+  .map((entry) => entry.data)
+  .sort((a, b) => (a.role.yearFrom < b.role.yearFrom ? 1 : -1));
+
 const professionalExperience = await getCollection('professionalExperience');
 
 function getLatestRoleYear(roles: (typeof professionalExperience)[number]['data']['roles']) {
@@ -148,7 +152,7 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
     <GridColumnWrapper class="col col2">
       <Spacer size="large" as="section" class="freelance">
         <Text as="h3" class="title">Freelance &amp; Related Experience</Text>
-        {resume.relatedExperience.map((experience) => <RelatedExperience size="small" {...experience} />)}
+        {relatedExperience.map((experience) => <RelatedExperience size="small" {...experience} />)}
       </Spacer>
       <Spacer size="large" as="section" class="education">
         <Text as="h3" class="title">Education &amp; Training</Text>
