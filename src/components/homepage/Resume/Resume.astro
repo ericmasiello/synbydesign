@@ -1,18 +1,10 @@
 ---
-// See https://docs.astro.build/en/guides/markdown-content/#importing-markdown
-import { getCollection } from 'astro:content';
-import * as ResumeMarkdown from './Resume.md';
+import { getCollection, getEntryBySlug } from 'astro:content';
 import classNames from 'classnames';
 import ResumeHeader from './ResumeHeader.astro';
 import Text from '../../Text.astro';
 import ResumeSkills from './ResumeSkills.astro';
 import RelatedExperience from './RelatedExperience.astro';
-import type {
-  Education,
-  ProfessionalExperience as ProfessionalExperienceType,
-  RelatedExperience as RelatedExperienceType,
-  Talk,
-} from './ResumeTypes.astro';
 import ProfessionalExperience from './ProfessionalExperience.astro';
 import Talks from './Talks.astro';
 import EducationExperience from './EducationExperience.astro';
@@ -24,19 +16,7 @@ export interface Props extends Omit<astroHTML.JSX.BaseHTMLAttributes, 'slot'> {
   format?: 'web' | 'print';
 }
 
-interface ResumeFrontmatter {
-  name: string;
-  title: string;
-  lead: string;
-  expertise: string[];
-  learning: string[];
-  education: Education[];
-  professionalExperience: ProfessionalExperienceType[];
-  relatedExperience: RelatedExperienceType[];
-  talks: Talk[];
-}
-
-const resume = ResumeMarkdown.frontmatter as ResumeFrontmatter;
+const resume = (await getEntryBySlug('resume', 'primary')).data;
 
 const educationData = (await getCollection('education'))
   .map((entry) => entry.data)
@@ -132,10 +112,16 @@ const GridColumnWrapper = format === 'web' ? 'div' : Fragment;
       <Text as="h3" class="title inline inline-title">Extensive Experience</Text>
       <ResumeSkills class="inline" skills={resume.expertise} />
     </div>
-    <div>
-      <Text as="h3" class="title inline inline-title">Learning</Text>
-      <ResumeSkills class="inline" skills={resume.learning} />
-    </div>
+    {
+      resume.learning ? (
+        <div>
+          <Text as="h3" class="title inline inline-title">
+            Learning
+          </Text>
+          <ResumeSkills class="inline" skills={resume.learning} />
+        </div>
+      ) : null
+    }
   </Spacer>
   <FlowColumnWrapper class="flow-columns">
     <GridColumnWrapper class="col col1">

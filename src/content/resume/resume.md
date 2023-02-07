@@ -1,4 +1,5 @@
---- 
+---
+slug: "primary"
 lead: "\n\
     \x20   Over 15 years of professional experience in web development and design\n\
     \x20   with a passion for developing and testing rich internet applications using modern\n\
