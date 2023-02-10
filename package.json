@@ -26,6 +26,7 @@
     "axe-core": "^4.5.2",
     "cypress": "^12.0.2",
     "cypress-axe": "^1.1.0",
-    "cypress-log-to-output": "^1.1.2"
+    "cypress-log-to-output": "^1.1.2",
+    "lost-pixel": "^3.0.5"
   }
 }
