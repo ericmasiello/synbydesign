@@ -27,3 +27,5 @@ cypress/screenshots
 
 # astro
 .astro
+# Local Netlify folder
+.netlify
