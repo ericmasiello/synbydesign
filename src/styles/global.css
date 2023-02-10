@@ -36,6 +36,14 @@ html {
   box-sizing: inherit;
 }
 
+code {
+  font-family: monospace;
+  background: var(--color-highlight);
+  color: var(--color-bg);
+  padding: 0.15em;
+  font-size: 0.9em;
+}
+
 body {
   margin: 0;
   font-size: var(--font-size-body);
