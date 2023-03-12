@@ -2,7 +2,7 @@
 
 accomplishments:
 
-- Lead migration of VistaPrint's primary Print Designer to a new modern, React, and MobX-based framework, providing strategy and technical guidance across seven teams
+- Leading the migration of VistaPrint's primary Print Designer to a new modern, React, and MobX-based framework, providing strategy and technical guidance across seven teams
 - Designed and implemented an accessible routing solution for an embeddable design experience
 - Partnered with the a11y working group to define and ratify an organization-wide accessibility RFC
 - Developed front-end and accessibility standards and training
