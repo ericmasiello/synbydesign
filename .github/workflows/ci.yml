@@ -3,19 +3,20 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Cypress e2e tests
-        uses: cypress-io/github-action@v4
+      - name: Cypress e2e tests 🔨
+        uses: cypress-io/github-action@v5.6.1
         with:
           start: npm run dev
           # quote the url to be safe against YML parsing surprises
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 300
           browser: chrome
-          headless: true
+          headed: false
           record: true
           parallel: true
         env:
@@ -30,7 +31,7 @@ jobs:
           wait-on-timeout: 300
           browser: chrome
           record: false
-          parallel: true
+          parallel: false
           command: npm run visual
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
