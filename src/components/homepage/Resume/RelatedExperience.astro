@@ -18,10 +18,10 @@ const classes = classNames('related-experience', className);
     {
       website?.url ? (
         <a href={website.url}>
-          <RelatedExperienceTitle as="h4" class="title" title={title} yearFrom={role.yearFrom} yearTo={role.yearFrom} />
+          <RelatedExperienceTitle as="h4" class="title" title={title} yearFrom={role.yearFrom} yearTo={role.yearTo} />
         </a>
       ) : (
-        <RelatedExperienceTitle as="h4" class="title" title={title} yearFrom={role.yearFrom} yearTo={role.yearFrom} />
+        <RelatedExperienceTitle as="h4" class="title" title={title} yearFrom={role.yearFrom} yearTo={role.yearTo} />
       )
     }
 
