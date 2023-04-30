@@ -30,8 +30,8 @@ const nameClasses = classNames('name', { 'with-contact': Boolean(email) || Boole
 ---
 
 <Element class={classes} {...rest}>
-  <H level={4} as="h3" class={nameClasses}
-    >{ownerName}
+  <H level={4} as="h3" class={nameClasses}>
+    {ownerName}
     {
       email || phone ? (
         <div class="contact">
@@ -61,6 +61,7 @@ const nameClasses = classNames('name', { 'with-contact': Boolean(email) || Boole
 <style>
   .header {
     background: linear-gradient(90deg, rgba(78, 0, 94, 0.95) 14%, rgba(19, 52, 185, 0.95) 100%);
+    background: linear-gradient(to right in oklab, rgb(30% 0% 36% / 95%) 0%, rgb(7% 20% 72% / 95%) 100%);
     color: #fff;
     padding: var(--resume-v-gap) var(--resume-h-gap);
     margin-inline-start: calc(var(--resume-h-gap) * -1);
