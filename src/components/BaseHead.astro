@@ -10,7 +10,7 @@ export interface Props {
   image?: string;
 }
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const { title, description, image = '/favicon.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -37,9 +37,6 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true" />
 {
   /*
 	NOTE: the below <link />s automatically has the following two attributes added to it
