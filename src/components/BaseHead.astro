@@ -1,6 +1,7 @@
 ---
-// Import the global.css file here so that it is included on
+// Import the global.css and fonts.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import '../styles/fonts.css';
 import '../styles/global.css';
 
 export interface Props {
@@ -10,9 +11,6 @@ export interface Props {
 }
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
-
-const FONTS =
-  'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap';
 ---
 
 <!-- Global Metadata -->
@@ -42,7 +40,6 @@ const FONTS =
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true" />
-<link rel="preload" href={FONTS} as="style" />
 {
   /*
 	NOTE: the below <link />s automatically has the following two attributes added to it
@@ -52,4 +49,3 @@ const FONTS =
 	The plugin is configured via Netlify's plugins page https://app.netlify.com/teams/ericmasiello/plugins
 */
 }
-<link rel="stylesheet" href={FONTS} />
