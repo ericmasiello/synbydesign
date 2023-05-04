@@ -1,6 +1,6 @@
 ---
 accomplishments: 
-  - "Provide insight and assess the technical accuracy of video content and offer suggestions to improve relevance for an audiences new to React programming"
+  - "Provide insight and assess the technical accuracy of video content and offer suggestions to improve relevance for audiences new to React programming"
 role: 
   title: "Technical Reviewer"
   yearFrom: 2015
