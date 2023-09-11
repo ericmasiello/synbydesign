@@ -4,7 +4,7 @@ import puppeteer from 'puppeteer';
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
-  await page.goto('http://localhost:3000/resume');
+  await page.goto('http://localhost:4321/resume');
 
   await page.emulateMediaType('screen');
 
