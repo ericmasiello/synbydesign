@@ -13,19 +13,20 @@
     "generate:resume": "node scripts/pdf.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.15.1",
-    "@astrojs/rss": "^2.1.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "astro": "^2.0.2",
+    "@astrojs/mdx": "^1.0.3",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^3.0.12",
     "classnames": "^2.3.1",
     "puppeteer": "^19.4.0"
   },
   "devDependencies": {
-    "@percy/cli": "^1.22.0",
+    "@percy/cli": "^1.27.1",
     "@percy/cypress": "^3.1.2",
     "axe-core": "^4.5.2",
-    "cypress": "^12.0.2",
+    "cypress": "^13.1.0",
     "cypress-axe": "^1.1.0",
-    "cypress-log-to-output": "^1.1.2"
+    "cypress-log-to-output": "^1.1.2",
+    "typescript": "^5.2.2"
   }
 }

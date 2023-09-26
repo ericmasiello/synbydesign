@@ -1,5 +1,4 @@
 // 1. Import utilities from `astro:content`
-import { string } from 'astro/zod';
 import { z, defineCollection } from 'astro:content';
 // 2. Define your collection(s)
 

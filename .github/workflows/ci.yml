@@ -13,7 +13,7 @@ jobs:
         with:
           start: npm run dev
           # quote the url to be safe against YML parsing surprises
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:4321'
           wait-on-timeout: 300
           browser: chrome
           headed: false
@@ -27,7 +27,7 @@ jobs:
         uses: cypress-io/github-action@v3.0.3
         with:
           # No need to run `npm run dev` because the server is still running from the previous step
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:4321'
           wait-on-timeout: 300
           browser: chrome
           record: false
