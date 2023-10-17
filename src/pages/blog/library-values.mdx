@@ -1,0 +1,33 @@
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'A lesson learned in software values'
+description: ''
+pubDate: 'Oct 04 2023'
+---
+
+A few years ago, I was tapped by internal leaders at Vista to develop a "design experience platform." I had a few UI libraries under my belt and was experienced with general UI development as well as UI build tools. I was excited to shift away from the work I had most of my career: customer facing application development. In my new role as platform architect, my customers are developers at Vista that want to build design experiences across the website.
+
+Having both consumeed and built several component libraries, over time I developed a position that UI libraries are at their best when they are highly flexible. Reflecting back, I developed this value because I saw how often UX designers would unknowingly "bend the rules" of components I developed. For example, a component only called for a vertically stacked treatment of two elements. But now our designers are asking for a horizontally arranged treatment. Sometimes, the UX problem could be solved with the original stacked treatment. But other times, due to circumstanstances specific to this page, application, or view, a new version was required. Using Brad Frost's "Atomic Design" metaphor, I consequently shifted my focus toward exposing the "atoms" of a design, leaving much of the larger component composition (molecules) to the consuming application code.
+
+## Designing the atoms of design
+
+(What does it mean to ship the atoms of a design experience? What was i repsonsible for?
+
+- Managing and opterating on data sources that are unique for a DEX.
+- Delivering composable components for UI for editing text, accessibility (focus state), panning, previews, etc.
+  )
+
+(What I delivered was a a bunch hooks, providers, and components)
+
+## Where my values didn't align with our customers
+
+## The silver bullet
+
+We could still ship what was customers wanted with our components
+
+## Lessons learned
+
+- Building the right abstraction is hard.
+- I aspired for an audience that I didn't have
+- Building small components still makes sense because, if nothing else, it provides the internal team the primitives for developing more complex interfaces
+- But what I initially shipped missed the mark

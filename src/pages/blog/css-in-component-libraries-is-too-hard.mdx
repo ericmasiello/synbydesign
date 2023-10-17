@@ -1,0 +1,87 @@
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'CSS in component libraries is too hard'
+description: ''
+pubDate: 'Oct 04 2023'
+# heroImage: 'images/synthwave-cityscape.png'
+---
+
+import hero from './images/synthwave-cityscape.png';
+import BlogHero from '../../components/BlogHero.astro';
+
+<BlogHero image={hero} />
+
+Over my career I've easily authored over two dozen different component libraries. Some of the libraries were general purpose, branded UI libraries and several were focused on a specific domain like uploading images, specialized preview libraries, etc. Nearly every one of them was built with React and some mixture of styling approaches and build tools. Putting aside the myriad considerations that go into the non-styling aspects of a component library, I'm convinced that in the year 2023, there does not exist a styling solution that to component libraries that bnlances:
+
+1. Library auhoring ergonomics
+2. Consumer ergonomics
+3. Simple build tooling
+4. Performance considerations
+
+Let's dive into each of these topics. I'll describe my highly subjective viewpoint on what "good" looks like for each. I'll then explain these desires are at odds with another.
+
+## Library author ergonomics
+
+As an individual writing my the code for the library, I've grown to appreciate two aspects of wriing CSS for my components:
+
+### Colocation
+
+I have a strong preference of "colocating" styles with the underlying components. In the React ecosystem, colocation typically takes one of two forms:
+
+1. CSS or CSS Modules
+
+```tsx
+// src/Button/Button.tsx
+
+import * as styles from './Button.module.css';
+import { clsx } from 'clsx';
+
+interface ButtonProps { /* ... */ }
+
+export function Button(props: ButtonProps) {
+  const { className, ..rest } = props;
+  return <button className={clsx(styles.button, className)} {...rest}>;
+}
+```
+
+```css
+/* src/Button/Button.module.css */
+
+.button {
+  /* your styles go here */
+}
+```
+
+2. CSS in JS
+
+```tsx
+// src/Button/Button.tsx
+
+import * as styles from './Button.module.css';
+import { css } from '@emotion/css';
+
+const styles = css`
+ // your styles go here
+`
+
+interface ButtonProps { /* ... */ }
+
+export function Button(props: ButtonProps) {
+  const { className, ..rest } = props;
+  return <button className={clsx(styles, className)} {...rest}>;
+}
+```
+
+While I certainly appreciate keeping related code next to each other so I can simply _find it_, the the primary benefit of colocation is "delete-ability." In the old days, your template and business logic lives in one place in your code repositiry and the CSS typically ended up in a some other area of your repository. With time, the parellelism you created would drift, with styles from different components bleeding into the same files. Then, once the inevitable moment of refactoring arises, you attempt to delete all the legacy code. But now that your vestigial button code now has crept into your header styles, the clean up task becomes far more challenging. Keeping related code together acts as a strong reminder to keep these separations clear and furthermore makes the effort of deleting vestigial code far easiser.
+
+### Unique classname generation
+
+It's critical that your library's class names do not conflict with the host application's. If your library exports a `Button` component, you may attempt to style it with the class name `button`.
+
+```css
+.button {
+  /* button component styles */
+}
+```
+
+The problem here is

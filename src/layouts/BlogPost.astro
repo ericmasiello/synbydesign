@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BlogHero from '../components/BlogHero.astro'
 
 export interface Props {
 	content: {
@@ -28,23 +30,16 @@ const {
 			}
 			hr {
   				border-top: 1px solid #DDD;
-				margin: 1rem 0;
+					margin: 1rem 0;
 			}
 		</style>
 	</head>
 
 	<body>
-		<Header />
+		<Header slim />
 		<main>
-			<article>
-				{heroImage && (
-					<img
-						width={720}
-						height={360}
-						src={heroImage}
-						alt=""
-					/>
-				)}
+			<article class="article">
+				
 				<h1 class="title">{title}</h1>
 				{pubDate && <time>{pubDate}</time>}
 				{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
@@ -55,3 +50,27 @@ const {
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.article {
+		max-width: var(--content-max-width);
+		margin: 0 auto;
+		padding-inline: var(--h-space);
+	}
+
+	body:has(.article) {
+		font-size: 1rem;
+	}
+
+	@media only screen and (min-width: 992px) {
+		body:has(.article) {
+			font-size: 1.1rem;
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+		body:has(.article) {
+			font-size: 1.2rem;
+		}
+	}
+</style>

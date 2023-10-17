@@ -59,6 +59,17 @@ const resumeCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      cover: image().refine((img) => img.width >= 1080, {
+        message: 'Cover image must be at least 1080 pixels wide!',
+      }),
+      coverAlt: z.string(),
+    }),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
@@ -67,4 +78,5 @@ export const collections = {
   professionalExperience: professionalExperienceCollection,
   talks: talksCollection,
   relatedExperience: relatedExperienceCollection,
+  blog: blogCollection,
 };

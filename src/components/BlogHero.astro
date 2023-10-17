@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+  image: ImageMetadata
+}
+
+const { image } = Astro.props;
+---
+
+<Image src={image} class="bloghero" alt="" widths={[240, 540, 720, image.width]} />
+
+<style>
+  .bloghero {
+    margin-block: 2.5rem;
+    border-radius: 0.5rem;
+    aspect-ratio: 20/9;
+    object-fit: cover;
+  }
+</style>
