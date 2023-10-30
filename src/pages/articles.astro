@@ -1,0 +1,33 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Resume from '../components/homepage/Resume/Resume.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import VisuallyHidden from '../components/VisuallyHidden.astro';
+import Header from '../components/Header.astro';
+import H from '../components/H.astro';
+import PlainList from '../components/PlainList.astro';
+import Container from '../components/Container.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={`Resume for Eric Masiello, ${SITE_TITLE}`} description="Resume for Eric Masiello" />
+    <!-- ensure this page is not indexed since the production version will have my phone in plain text -->
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <main>
+      <Header slim />
+      <Container>
+        <H as="h2" level={2}>Articles</H>
+        <PlainList>
+          <li><a href="https://ericmasiello.hashnode.dev/css-in-react-libraries-is-all-compromises">CSS in React libraries is all compromises</a></li>
+          <li><a href="https://medium.com/gitconnected/create-more-extensible-react-components-with-the-as-prop-pattern-b79bcbcf4024">Create more extensible React components with the “as” prop pattern</a></li>
+          <li><a href="https://medium.com/@EricMasiello/when-to-use-rems-ems-px-or-whatever-else-in-css-5ae37176af1c">When to use rems, ems, px, or whatever else in CSS</a></li>
+          <li><a href="https://medium.com/gitconnected/bem-css-in-react-e0d4a4721872">BEM CSS in React</a>
+        </PlainList>
+      </Container>
+    </main>   
+  </body>
+</html>
