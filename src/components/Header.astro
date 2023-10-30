@@ -35,8 +35,13 @@ const classes = classNames('header', className, {
               <AnimatedLink href="/#resume">Resume</AnimatedLink>
             </li>
             <li class="nav-item">
+              <AnimatedLink href={"/articles"}>
+                Articles
+              </AnimatedLink>
+            </li>
+            <li class="nav-item">
               <AnimatedLink href={TWITTER} target="_blank">
-                Twitter
+                Twitter/X
               </AnimatedLink>
             </li>
             <li class="nav-item">
@@ -90,9 +95,16 @@ const classes = classNames('header', className, {
 
   .nav-list {
     display: flex;
+    font-size: 0.75rem;
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  @media(min-width: 500px) {
+    .nav-list {
+      font-size: var(--font-size-body);
+    }
   }
 
   .nav-item {
