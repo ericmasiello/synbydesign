@@ -1,0 +1,40 @@
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'Designing a new React component module format'
+description: ''
+pubDate: 'Oct 04 2023'
+---
+
+## Dreaming of what could be <br/> (⚠️ This does not exist ⚠️)
+
+I love how Astro and several other modern frameworks offer a first class support for styling components. I'd love to see something similar in the React world. The precise API is unclear but I could imagine something like this:
+
+```tsx
+import { clsx } from 'clsx';
+
+interface ButtonProps { /* ... */ }
+
+export function Button(props: ButtonProps) {
+  const { className, ..rest } = props;
+  return <button className={clsx('button', className)} {...rest}>;
+}
+
+Button.style = (
+  <style>
+    .button {
+      border: 1px solid #ccc;
+      background-color: orange;
+      font-weight: 600;
+    }
+  </style>
+)
+```
+
+While this looks like CSS in JS, the point is that it very much _is not_. Everthing within the `<style>...</style>` is static CSS - much as if you had written it in a separate .css file. The emitted code is a `Button.js` along with a 1 or more CSS files (I'll say more on this below).
+
+To achieve this, there'd need to exist a compiler that knows how to parse this code. Because we'd need the compiler to work with existing toolchains and because toolchains typically hande code based on file extension, I'd argue these components warrant a new file extension - perhaps `*.react`?
+
+### Where it gets tricky
+
+- Do we emit 1 CSS file for the entire library?
+- Or do we attempt to chunk CSS files by component? But if we do, what do we do with shared styles between components? Do those go into separate files? And if so, how do they get loaded?

@@ -1,0 +1,16 @@
+<div class="callout" data-attr="callout"><slot /></div>
+
+<style>
+  .callout {
+    padding: 1rem;
+    border: 3px double var(--color-brand-invert);
+    border-radius: 4px;
+    font-weight: 400;
+    filter: brightness(0.8);
+    margin-block-end: 1rem;
+  }
+
+  .callout :global(:nth-child(n-1)) { 
+    margin-block-end: 0;
+  }
+</style>

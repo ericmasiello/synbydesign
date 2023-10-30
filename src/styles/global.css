@@ -133,3 +133,7 @@ img {
 blockquote {
   margin: 0;
 }
+
+pre.astro-code {
+  padding: 0.75rem;
+}

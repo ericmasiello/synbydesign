@@ -1,22 +1,21 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-title: 'CSS in component libraries is too hard'
+title: 'React component library CSS is too hard'
 description: ''
 pubDate: 'Oct 04 2023'
-# heroImage: 'images/synthwave-cityscape.png'
 ---
 
-import hero from './images/synthwave-cityscape.png';
+import hero from '../../images/synthwave-cityscape.png';
 import BlogHero from '../../components/BlogHero.astro';
+import Callout from '../../components/Callout.astro';
 
 <BlogHero image={hero} />
 
-Over my career I've easily authored over two dozen different component libraries. Some of the libraries were general purpose, branded UI libraries and several were focused on a specific domain like uploading images, specialized preview libraries, etc. Nearly every one of them was built with React and some mixture of styling approaches and build tools. Putting aside the myriad considerations that go into the non-styling aspects of a component library, I'm convinced that in the year 2023, there does not exist a styling solution that to component libraries that bnlances:
+Over my career I've easily authored over two dozen different component libraries. Some of the libraries were general purpose, branded UI libraries and several were focused on a specific domains like uploading content, specialized preview libraries, etc. Nearly every one of them was built with React and used some mixture of styling approaches and build tools. Putting aside the myriad considerations that go into the non-styling aspects of a component library, I'm convinced that in the year 2023, there does not exist a styling solution that to component libraries that bnlances:
 
 1. Library auhoring ergonomics
-2. Consumer ergonomics
-3. Simple build tooling
-4. Performance considerations
+2. Minimal build tooling
+3. Consumer ergonomics
 
 Let's dive into each of these topics. I'll describe my highly subjective viewpoint on what "good" looks like for each. I'll then explain these desires are at odds with another.
 
@@ -28,7 +27,7 @@ As an individual writing my the code for the library, I've grown to appreciate t
 
 I have a strong preference of "colocating" styles with the underlying components. In the React ecosystem, colocation typically takes one of two forms:
 
-1. CSS or CSS Modules
+1. CSS or CSS Modules imports
 
 ```tsx
 // src/Button/Button.tsx
@@ -72,11 +71,45 @@ export function Button(props: ButtonProps) {
 }
 ```
 
-While I certainly appreciate keeping related code next to each other so I can simply _find it_, the the primary benefit of colocation is "delete-ability." In the old days, your template and business logic lives in one place in your code repositiry and the CSS typically ended up in a some other area of your repository. With time, the parellelism you created would drift, with styles from different components bleeding into the same files. Then, once the inevitable moment of refactoring arises, you attempt to delete all the legacy code. But now that your vestigial button code now has crept into your header styles, the clean up task becomes far more challenging. Keeping related code together acts as a strong reminder to keep these separations clear and furthermore makes the effort of deleting vestigial code far easiser.
+While I certainly appreciate keeping related code next to each other so I can simply _find it_, the the primary benefit of colocation is "delete-ability." In the old days, your template and business logic lived in one place in your code repositiry and the CSS typically ended up in a some other area. With time, the parellelism you created would drift, with styles from different components bleeding into the same files. Then, once the inevitable moment of refactoring arises, you attempt to delete all the legacy code. But now that your vestigial button code now has crept into other component styles, the clean up task becomes far more challenging. Keeping related code together acts as a strong reminder to keep these separations clear and furthermore makes the effort of deleting code far easiser.
 
-### Unique classname generation
+What I like about both of these approaches is they put the component "in control" of their CSS dependency. With CSS/CSS Modules imports, the component must explicitly `import` the CSS file.
 
-It's critical that your library's class names do not conflict with the host application's. If your library exports a `Button` component, you may attempt to style it with the class name `button`.
+```ts
+// CSS import
+import './Button.css';
+
+// CSS Module style import
+import styles from './Button.module.css';
+```
+
+And with CSS in JS, the styles typically live in the same module as the component or are imported like any other JavaScript dependency.
+
+```ts
+import { css } from '@emotion/css';
+
+const styles = css`
+  // styles...
+`;
+```
+
+However, each have downsides. JavaScript does not natively support importing CSS. Thus, this is is not something the browser (or other JavaScript runtimes) know what to do with:
+
+```ts
+// ❌ nope
+import './Button.css';
+
+// ❌ nope again
+import styles from './Button.module.css';
+```
+
+Thus in all liklihood, you'll need a higher order build tool (e.g., Webpack, Rollup, Vite) to handle this for you. If you're using a meta framework, they likely support this out-of-the-box.
+
+With CSS in JS, there's arguably a few downsides. I've heard many developers argue they dislike the authoring experience and find writing CSS inside a JavaScript backticks awkward. It doesn't bother me. However, what does bother me is the undisputed performance hit. CSS in JS is literally that: CSS that's wrapped in JavaScript strings, bundled up with the rest of your JavaScript code, and then at runtime dynamically injected into the CSSOM as plain CSS via `style` elements. This means the application's JavaScript artifacts are larger and all that extra CSS has to be downloaded, parsed, and executed. Byte for byte, this is much more expensive then downloading plain CSS.
+
+### Unique class name generation
+
+It's critical that your library's class names do not conflict with the host application's. For example, if your library exports a `Button` component, you may attempt to style it with the class name `button`.
 
 ```css
 .button {
@@ -84,4 +117,85 @@ It's critical that your library's class names do not conflict with the host appl
 }
 ```
 
-The problem here is
+Now what happens if the host application also defines a component with a class name of `button`? While allowing host applications to customize your library's styles may be desirabled, you certainly don't want this to happen by accident. To avoid these global class name collisions, you need to do _something_. While some frameworks utilize modern CSS techniques for scoping (e.g., Astro uses the `:has` selector), the most reliable approach is to either to use tools to autogenerate a unique class name.
+
+<Callout>
+  Another technique for avoiding name collisions requires you create a manual "namespace". You can use tools like SASS
+  to assit with this work. BEM (Block Element Modifier) is alternative way you can namespace your class names in a
+  methodical way. As someone that advocated for BEM for many years, I've unfortunately learned that even if I get my
+  teammates to stop complaining about how ugly the class names are, they are confused by the when to make something a
+  block versus an element. So after years of trying to make BEM happen, I've moved on.
+</Callout>
+
+## Minimal build tooling
+
+The best build tooling is no build tooling. Unfortunately, that's practically impossible.
+
+Unpacking an elaborate Webpack, Vite/ESBuild, or Rollup configuration is something that elluds most developers I've worked with. Many don't understand the boundaries and composition of Babel, TypeScript compiler, plugins, loaders, Webpack, Rollup, or the many other tools at play. Moreover, build tools are yet another list of dependencies that developers must maintain: security updates, mismatched dependencies, breaking changes, and so forth. I'm not afraid of them but "knowing" them is only half the battle. For these reasons I live squarly in the "less is more" camp of build tools.
+
+To me, I cannot dev without TypeScript. I find it essential as both an author of software but also a consumer of other libraries. Thus at a minimum, `tsc` or some tool that converts TypeScript to JavaScript is in my toolchain. But can I realistically stop there?
+
+## Consumer ergonomics
+
+When I ship a library, getting my library's components in their code has to be easy. The ideal case would like this:
+
+```tsx
+import { FancyComponent } from 'my-react-library';
+
+export function Home() {
+  return (
+    <div>
+      {/* stuff ... */}
+      <FancyComponent />
+      {/* more stuff ... */}
+    </div>
+  );
+}
+```
+
+That code may look simple enough but ask yourself, how are the styles for `FancyComponent` loaded inot the host application?
+
+### CSS in JS
+
+This is one area where CSS in JS really shines. Because the styles are also managed by JavaScript, importing a component _is_ that simple. If you're not using CSS in JS, the CSS for `FancyComponent` or any other component from `'my-react-library'` needs to be loaded somehow. The downside is of course the same downside already mentioned, CSS in JS is not a performant way to load CSS. So while it offers great consumer ergonomics, the negative performance hit makes CSS in JS an unviable solution for me.
+
+### CSS/CSS Modules imports / Single CSS artifact
+
+If in your library code you choose to import your CSS dependencies, then you're likely using something like Rollup Plugin Post CSS. These tools create a single CSS artifact for your library code. Consequently, for a consumer to use your library code, they'll need to import the CSS artifact:
+
+```tsx
+import 'my-react-library/styles.css';
+```
+
+At this point, you're relying on the application's build tools to handle this non-standard CSS import. Most modern application frameworks support this out of the box.
+
+As I said, using Rollup with Rollup Plugin Post CSS results in a _single_ CSS artifact. If your library is small, that's likely OK. However, if you're creating a large component library, particularly one where consumers are likely to only use small parts of it, then this is not a great fit.
+
+### Supporting multiple CSS artifacts
+
+At Vista, our core UI component library publishes mulitple CSS artifacts to a CDN. This makes sense because its a relatively large library and its used throughout the website. This means if I work on the home page component and I only used a few of our component library's components, I'll only load the necessary CSS for those components. Additionally, because I've loaded them from a CDN, additional page visits further in the funnel will benefit from the cached CSS.
+
+The effort of publishing CSS to a CDN is outside the scope of this article. However, to produce multiple CSS artifacts from a library requires you forego explicitly importing CSS dependencies in your library's component code. So what do you do?
+
+At Vista, while the need for SASS is lessoning as more and more features move to native CSS, we still utilize it to handle many of the CSS features that just aren't quite ready for primetime.
+
+Now you'll need to reach for some other tools. You can likely get by with just the SASS CLI to concatenate, minify, and of course convert SASS to pure CSS. However, becauase we're not importing CSS (or SASS) modules into our components, we've lost our ability to leverage CSS Mdoules and consequently, autognerated, unique class names 😖.
+
+<Callout>
+  At Vista, one our UI component library's requirements is that it must offer a non-React API as well. For this reason,
+  we actaully prefer to have human readable class names (as opposed to the autognerated ones created by CSS modules).
+  However, this is not true for many of the other libraries we've built.
+</Callout>
+
+## So where does this leave me?
+
+While I appreciate the simplicity of the CSS in JS approach, the performance impact to my customer's immediately takes it off the table. That then leaves which flavor of CSS do I want?
+
+1. Autognerated unique class names in a single CSS file
+2. Manually namespaced class names split across several CSS files
+
+The reality is that most of the libraries I work on are quite small. Thus, splitting CSS into multiple files doesn't today offer enough upside to forego the benefits of CSS modules. So for these reasons, option 1 is my go-to choice. To achieve this, I build my libraries with Rollup, `@rollup/plugin-typescript`, and `rollup-plugin-postcss`. It's more build tools than I'd prefer to use but I can live with it.
+
+I plan to look at TS-UP in the near future. It's a newer build chain build on top of ESBuild and has (experimental) support for CSS imports. Given that its ESBuild, I'd expect it to be faster than Rollup but might otherwise not offer any major benefits.
+
+If any of the libraries I maintain reach a point where I need to consider splitting the CSS into mulitple artifacts, I may revisit my old friend Gulp and see if I can build a soluiton that supports multiple CSS files, TypeScript, and CSS modules 🤞🏻.
