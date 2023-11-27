@@ -1,138 +1,132 @@
-@layer variables, base;
+:root {
+  --font-base: 'Source Sans Pro', sans-serif;
+  --font-header: 'Lato', sans-serif;
+  --font-body-weight-light: 300;
+  --font-body-weight-medium: 400;
+  --font-body-weight-bold: 600;
+  --font-header-weight-medium: 400;
+  --font-header-weight-bold: 700;
+  --font-size-body: 0.875rem;
+  --color-bg: #fff;
+  --color-base: #2d2d2d;
+  --color-muted: #787575;
+  --color-brand: #c90044;
+  --color-brand-invert: #36ffbb;
+  --color-highlight: #5f2058;
+  --color-link: rgba(201, 0, 68, 0.8);
+  --color-logo: #3b3b3b;
+  --content-max-width: 100rem; /* 1600px */
+  --h-space: 2.5rem;
+}
 
-@layer variables {
-  :root {
-    --font-base: 'Source Sans Pro', sans-serif;
-    --font-header: 'Lato', sans-serif;
-    --font-body-weight-light: 300;
-    --font-body-weight-medium: 400;
-    --font-body-weight-bold: 600;
-    --font-header-weight-medium: 400;
-    --font-header-weight-bold: 700;
-    --font-size-body: 0.875rem;
-    --color-bg: #fff;
-    --color-base: #2d2d2d;
-    --color-muted: #787575;
-    --color-brand: #c90044;
-    --color-brand-invert: #36ffbb;
-    --color-highlight: #5f2058;
-    --color-link: rgba(201, 0, 68, 0.8);
-    --color-logo: #3b3b3b;
-    --content-max-width: 100rem; /* 1600px */
-    --h-space: 2.5rem;
+html {
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+  font-family: var(--font-base);
+  color: var(--color-base);
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+code {
+  font-family: monospace;
+  background: var(--color-highlight);
+  color: var(--color-bg);
+  padding: 0.15em;
+  font-size: 0.9em;
+}
+
+body {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: 1.4;
+  font-weight: var(--font-body-weight-light);
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    font-size: 0.9375rem;
   }
 }
 
-@layer base {
-  html {
-    box-sizing: border-box;
-    background-color: var(--color-bg);
-    font-family: var(--font-base);
-    color: var(--color-base);
-    font-size: 100%;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
-  code {
-    font-family: monospace;
-    background: var(--color-highlight);
-    color: var(--color-bg);
-    padding: 0.15em;
-    font-size: 0.9em;
-  }
-
+@media only screen and (min-width: 1200px) {
   body {
-    margin: 0;
-    font-size: var(--font-size-body);
-    line-height: 1.4;
-    font-weight: var(--font-body-weight-light);
+    font-size: 1rem;
   }
+}
 
-  @media only screen and (min-width: 992px) {
-    body {
-      font-size: 0.9375rem;
-    }
+/* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html,
+  body {
+    scroll-behavior: smooth;
   }
+}
 
-  @media only screen and (min-width: 1200px) {
-    body {
-      font-size: 1rem;
-    }
-  }
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
 
-  /* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
-  @media screen and (prefers-reduced-motion: no-preference) {
-    html,
-    body {
-      scroll-behavior: smooth;
-    }
-  }
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+button {
+  cursor: pointer;
+}
 
-  input,
-  textarea,
-  select,
-  button {
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  font-weight: var(--font-header-weight-medium);
+  line-height: 1.4;
+}
 
-  input[type='button'],
-  input[type='submit'],
-  input[type='reset'],
-  button {
-    cursor: pointer;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-header);
-    font-weight: var(--font-header-weight-medium);
-    line-height: 1.4;
-  }
+a {
+  background-color: transparent;
+  color: var(--color-link);
+  -webkit-tap-highlight-color: transparent;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin-block-start: 0;
-    margin-block-end: 1rem;
-  }
+a:focus {
+  outline: 3px auto var(--color-brand);
+}
 
-  a {
-    background-color: transparent;
-    color: var(--color-link);
-    -webkit-tap-highlight-color: transparent;
-  }
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
 
-  a:focus {
-    outline: 3px auto var(--color-brand);
-  }
+img {
+  vertical-align: middle;
+  border: 0;
+}
 
-  img,
-  svg {
-    max-width: 100%;
-    height: auto;
-  }
-
-  img {
-    vertical-align: middle;
-    border: 0;
-  }
-
-  blockquote {
-    margin: 0;
-  }
+blockquote {
+  margin: 0;
 }

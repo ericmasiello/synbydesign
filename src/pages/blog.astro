@@ -15,22 +15,20 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			@layer base {
-				ul {
-					list-style-type: none;
-					padding: unset;
-				}
-				ul li {
-					display: flex;
-				}
-				ul li time {
-					flex: 0 0 130px;
-					font-style: italic;
-					color: #888;
-				}
-				ul li a:visited {
-					color: #8e32dc;
-				}
+			ul {
+				list-style-type: none;
+				padding: unset;
+			}
+			ul li {
+				display: flex;
+			}
+			ul li time {
+				flex: 0 0 130px;
+				font-style: italic;
+				color: #888;
+			}
+			ul li a:visited {
+				color: #8e32dc;
 			}
 		</style>
 	</head>
