@@ -94,7 +94,9 @@ const classes = classNames('header', className, {
   }
 
   .nav-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 1rem;
     font-size: 0.75rem;
     list-style-type: none;
     margin: 0;
@@ -108,16 +110,7 @@ const classes = classNames('header', className, {
   }
 
   .nav-item {
-    padding-inline-end: 1rem;
     text-transform: uppercase;
     font-weight: var(--font-body-weight-bold);
-  }
-
-  .nav-item:first-child {
-    padding-inline-start: 0;
-  }
-
-  .nav-item:last-child {
-    padding-inline-end: 0;
   }
 </style>
