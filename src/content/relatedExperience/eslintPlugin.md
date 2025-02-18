@@ -1,6 +1,6 @@
 ---
 accomplishments: 
-  - "Developed an ESLint pluign to enforce CSS-asset patterns"
+  - "Developed an ESLint plugin to enforce CSS-asset patterns"
 role: 
   title: "Developer"
   yearFrom: 2023
