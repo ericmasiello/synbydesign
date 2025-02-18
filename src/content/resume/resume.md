@@ -3,40 +3,36 @@ slug: "primary"
 lead: "\n\
     \x20   Over 15 years of professional experience in web development and design\n\
     \x20   with a passion for developing and testing rich internet applications using modern\n\
-    \x20   JavaScript frameworks"
+    \x20   JavaScript & TypeScript frameworks"
 name: "Eric Masiello"
-title: "Full Stack JavaScript Engineer"
+title: "Full Stack JavaScript/TypeScript Engineer"
 expertise: 
-  - "Web application development"
-  - "JS library development expert"
-  - Accessibility
-  - Performance
-  - React
-  - "React Native"
+  - Scaling large front-end applications & teams
+  - Automated Testing  
+  - "JS/TS library development"
+  - React  
   - JavaScript
   - "Advanced TypeScript"
+  - Accessibility
   - HTML
-  - CSS
-  - Emotion
+  - CSS  
   - "CSS Modules"
-  - Node
-  - "Express JS"
-  - Redux
+  - Node  
   - MobX
   - React Query
-  - Gatsby
   - Next.js
-  - Jest
+  - Gatsby  
   - Vitest
   - Cypress
-  - "React Testing Library"
+  - "React Testing Library"  
   - Webpack
   - Rollup
-  - Babel
+  - Vite
   - Git
+  - "React Native"
+  - Performance
   - Technical Writing
-learning: 
-  - Remix
-  - Rust
+learning:     
   - Swift
   - SwiftUI
+  - "AI & ML Fundamentals"
