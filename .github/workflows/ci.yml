@@ -1,38 +1,40 @@
-name: Cypress Tests
-on: [push]
+name: E2E Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  cypress-run:
+  e2e-tests:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Cypress e2e tests 🔨
-        uses: cypress-io/github-action@v5.6.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          start: npm run dev
-          # quote the url to be safe against YML parsing surprises
-          wait-on: 'http://localhost:4321'
-          wait-on-timeout: 300
-          browser: chrome
-          headed: false
-          record: true
-          parallel: true
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Start Astro server
+        run: |
+          npm run dev &
+          npx wait-on http://localhost:4321
+
+      - name: Run Cypress E2E tests
+        run: npx cypress run
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Cypress visual tests 🧪
-        uses: cypress-io/github-action@v3.0.3
-        with:
-          # No need to run `npm run dev` because the server is still running from the previous step
-          wait-on: 'http://localhost:4321'
-          wait-on-timeout: 300
-          browser: chrome
-          record: false
-          parallel: false
-          command: npm run visual
+        run: npx cypress run
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

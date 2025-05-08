@@ -27,6 +27,7 @@
     "cypress": "^13.17.0",
     "cypress-axe": "^1.6.0",
     "cypress-log-to-output": "^1.1.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wait-on": "^8.0.3"
   }
 }
