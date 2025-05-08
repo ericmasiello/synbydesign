@@ -11,6 +11,7 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
 
     steps:
       - name: Checkout code
@@ -30,6 +31,12 @@ jobs:
           npx wait-on http://localhost:4321
 
       - name: Run Cypress E2E tests
+        run: npx cypress run --browser chrome
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      - name: Cypress visual tests 🧪
         run: npx cypress run
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
