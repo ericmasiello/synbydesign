@@ -20,24 +20,26 @@ const classes = classNames('list', spacing, className);
     list-style-type: none;
     margin-block-start: 0;
     margin-block-end: 1rem;
-    padding: 0;
-
-    --gap: 0.5rem;
+    padding: 0;    
+    --gap: var(--list-gap);
+    
 
     &.none {
       --gap: 0;
     }
 
-    &.small {
-      --gap: 0.25rem;
+    &.small {      
+      --gap: var(--list-gap-small)
     }
 
     &.large {
-      --gap: 1rem;
+      --gap: var(--list-gap-large)
     }
   }
 
   .list > :global(li):not(:last-child) {
-    margin-block-end: var(--gap);
+    margin-block-end: calc(var(--gap) * var(--list-gap-multiple));
   }
+
+  
 </style>
