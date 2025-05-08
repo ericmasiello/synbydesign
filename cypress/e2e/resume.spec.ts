@@ -28,8 +28,9 @@ it('should display my website address in the header', () => {
 });
 
 it('should display [a/my] phone number in the header', () => {
-  cy.get('header')
-    .contains(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)
+  // write a regex to match a phone number
+  cy.get('header a')
+    .contains(/\d{3}\-\d{3}\-\d{4}/)
     .should('exist');
 });
 

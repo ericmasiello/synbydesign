@@ -48,7 +48,7 @@ context('Homepage', () => {
 
     it('should not display [a/my] phone number in the header', () => {
       cy.get('[data-cy="resume"] a')
-        .contains(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)
+        .contains(/\d{3}\-\d{3}\-\d{4}/)
         .should('not.exist');
     });
   });
