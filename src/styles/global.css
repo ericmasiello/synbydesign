@@ -17,6 +17,15 @@
   --color-logo: #3b3b3b;
   --content-max-width: 100rem; /* 1600px */
   --h-space: 2.5rem;
+  --list-gap: 0.5rem;
+  --list-gap-small: 0.25rem;
+  --list-gap-large: 1rem;
+  --list-gap-multiple: 1;
+}
+
+/* Tightens up spacing so that PDF version fits on two pages */
+body.PDF_GENERATION {
+  --list-gap-multiple: 0.25;
 }
 
 html {
