@@ -18,7 +18,7 @@
     "@astrojs/sitemap": "^3.0.0",
     "astro": "^3.0.12",
     "classnames": "^2.5.1",
-    "puppeteer": "^19.11.1"
+    "puppeteer": "^24.8.1"
   },
   "devDependencies": {
     "@percy/cli": "^1.30.10",
